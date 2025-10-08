@@ -1,0 +1,1051 @@
+test_language,word_id,word,valid,weight
+eng_gb,000053,to campaign,1,1
+eng_gb,000006,to decite,0,0
+eng_gb,000064,to review,1,3
+eng_gb,000036,to futt,0,1
+eng_gb,000039,to megalize,0,0
+eng_gb,000100,to celebrate,1,5
+eng_gb,000027,to bourble,0,0
+eng_gb,000038,to markle,0,0
+eng_gb,000067,to demolish,1,2
+eng_gb,000059,to fear,1,4
+eng_gb,000142,to abolish,1,3
+eng_gb,000134,to administer,1,2
+eng_gb,000047,to preyout,0,1
+eng_gb,000088,to root,1,1
+eng_gb,000140,to erode,1,2
+eng_gb,000144,to study,1,3
+eng_gb,000130,to distinguish,1,5
+eng_gb,000017,to fabulation,0,2
+eng_gb,000049,to savedown,0,1
+eng_gb,000005,to outlate,0,1
+eng_gb,000124,to join,1,4
+eng_gb,000133,to compile,1,2
+eng_gb,000071,to sink,1,3
+eng_gb,000103,to settle,1,5
+eng_gb,000122,to motivate,1,5
+eng_gb,000086,to encompass,1,0
+eng_gb,000008,to driggle,0,0
+eng_gb,000108,to witness,1,3
+eng_gb,000020,to chariover,0,2
+eng_gb,000132,to mention,1,6
+eng_gb,000136,to emerge,1,4
+eng_gb,000042,to strang,0,0
+eng_gb,000114,to struggle,1,6
+eng_gb,000025,to prinkle,0,0
+eng_gb,000111,to permit,1,5
+eng_gb,000138,to yell,1,4
+eng_gb,000030,to oldenate,0,1
+eng_gb,000149,to promise,1,0
+eng_gb,000126,to complicate,1,2
+eng_gb,000022,to skey,0,1
+eng_gb,000089,to violate,1,3
+eng_gb,000135,to squeeze,1,5
+eng_gb,000115,to unleash,1,0
+eng_gb,000015,to digame,0,1
+eng_gb,000099,to congratulate,1,3
+eng_gb,000048,to honch,0,0
+eng_gb,000011,to numbelate,0,1
+eng_gb,000001,to keepsick,0,2
+eng_gb,000129,to name,1,4
+eng_gb,000110,to colour,1,2
+eng_gb,000093,to hesitate,1,5
+eng_gb,000080,to organize,1,4
+eng_gb,000013,to wordle,0,0
+eng_gb,000150,to complement,1,0
+eng_gb,000041,to mayto,0,3
+eng_gb,000107,to box,1,1
+eng_gb,000072,to repair,1,4
+eng_gb,000112,to type,1,3
+eng_gb,000102,to authorise,1,4
+eng_gb,000106,to reform,1,0
+eng_gb,000104,to wait,1,4
+eng_gb,000063,to commission,1,0
+eng_gb,000057,to quote,1,5
+eng_gb,000012,to eaude,0,1
+eng_gb,000092,to trace,1,4
+eng_gb,000096,to address,1,4
+eng_gb,000035,to kinnear,0,1
+eng_gb,000070,to judge,1,6
+eng_gb,000075,to waste,1,5
+eng_gb,000082,to stay,1,4
+eng_gb,000125,to conceive,1,4
+eng_gb,000131,to announce,1,5
+eng_gb,000016,to monadate,0,1
+eng_gb,000056,to inherit,1,5
+eng_gb,000018,to pronate,0,0
+dan_dk,001300,at blinke,1,1
+dan_dk,001301,at messe,1,1
+dan_dk,001302,at fortolke,1,1
+dan_dk,001303,at kontrive,0,1
+dan_dk,001304,at asedere,0,1
+dan_dk,001305,at stejle,1,1
+dan_dk,001306,at spire,1,1
+dan_dk,001307,at beregne,1,1
+dan_dk,001309,at beflode,0,1
+dan_dk,001310,at forplimme,0,1
+dan_dk,001312,at mose,1,1
+dan_dk,001313,at mene,1,1
+dan_dk,001314,at profilere,1,1
+dan_dk,001315,at anføre,1,1
+dan_dk,001317,at tendere,1,1
+dan_dk,001318,at påfylde,1,1
+dan_dk,001319,at fetorere,0,1
+dan_dk,001320,at stive,1,1
+dan_dk,001321,at uddele,1,1
+dan_dk,001322,at save,1,1
+dan_dk,001326,at svie,1,1
+dan_dk,001327,at uforlive,0,1
+dan_dk,001328,at slæbe,1,1
+dan_dk,001329,at tilspidse,1,1
+dan_dk,001330,at adstrere,0,1
+dan_dk,001331,at kime,1,1
+dan_dk,001332,at forstå,1,1
+dan_dk,001333,at nære,1,1
+dan_dk,001334,at plabbe,0,1
+dan_dk,001335,at glimte,1,1
+dan_dk,001337,at rekognoscere,1,1
+dan_dk,001340,at svatte,0,1
+dan_dk,001341,at lide,1,1
+dan_dk,001342,at spytte,1,1
+dan_dk,001343,at normalisere,1,1
+dan_dk,001345,at bedaske,0,1
+dan_dk,001346,at stalle,1,1
+dan_dk,001347,at vanære,1,1
+dan_dk,001348,at ynke,1,1
+dan_dk,001349,at pludisere,0,1
+dan_dk,001350,at lege,1,1
+dan_dk,001351,at lamme,1,1
+dan_dk,001352,at plirske,0,1
+dan_dk,001354,at fatte,1,1
+dan_dk,001356,at have,1,1
+dan_dk,001357,at udgrysse,0,1
+dan_dk,001358,at udstøde,1,1
+dan_dk,001360,at fremlægge,1,1
+dan_dk,001361,at aftage,1,1
+dan_dk,001364,at stabilisere,1,1
+dan_dk,001365,at blyfte,0,1
+dan_dk,001366,at tie,1,1
+dan_dk,001367,at klørme,0,1
+dan_dk,001369,at isytere,0,1
+dan_dk,001370,at stråle,1,1
+dan_dk,001372,at fordre,1,1
+dan_dk,001374,at entrosse,0,1
+dan_dk,001375,at hvidte,1,1
+dan_dk,001376,at glyfte,0,1
+dan_dk,001377,at anfrippe,0,1
+dan_dk,001379,at tvosle,0,1
+dan_dk,001380,at tråde,1,1
+dan_dk,001381,at sørge,1,1
+dan_dk,001382,at adle,1,1
+dan_dk,001383,at infugere,0,1
+dan_dk,001384,at undvriske,0,1
+dan_dk,001385,at frygte,1,1
+dan_dk,001387,at dufte,1,1
+dan_dk,001389,at runge,1,1
+dan_dk,001390,at defyrere,0,1
+dan_dk,001393,at undergå,1,1
+dan_dk,001395,at fæste,1,1
+dan_dk,001396,at ronfe,0,1
+dan_dk,001397,at impledere,0,1
+dan_dk,001398,at liste,1,1
+deu_de,000547,schwören,1,2
+deu_de,000599,abkratzen,1,0
+deu_de,000484,vereinlichen,0,0
+deu_de,000552,zurückstecken,1,3
+deu_de,000513,erdulden,1,2
+deu_de,000494,seitern,0,0
+deu_de,000480,schuttern,0,0
+deu_de,000489,schildieren,0,0
+deu_de,000572,festlegen,1,6
+deu_de,000521,umstellen,1,4
+deu_de,000557,halbieren,1,3
+deu_de,000477,sträubern,0,0
+deu_de,000459,aggressieren,0,0
+deu_de,000563,bauen,1,4
+deu_de,000525,kleben,1,4
+deu_de,000531,probieren,1,5
+deu_de,000520,bremsen,1,4
+deu_de,000586,glasieren,1,2
+deu_de,000559,stillen,1,1
+deu_de,000505,hineinbekommen,1,1
+deu_de,000482,pöhlen,0,0
+deu_de,000560,fliehen,1,4
+deu_de,000544,zermalmen,1,0
+deu_de,000475,bemollen,0,1
+deu_de,000577,schmieren,1,3
+deu_de,000451,verhutzeln,0,0
+deu_de,000570,einarbeiten,1,2
+deu_de,000551,zerdrücken,1,3
+deu_de,000473,herauspasten,0,0
+deu_de,000509,verfeinern,1,3
+deu_de,000497,eindräuen,0,1
+deu_de,000492,erkrellen,0,0
+deu_de,000589,wählen,1,5
+deu_de,000462,dreien,0,0
+deu_de,000508,hochjagen,1,3
+deu_de,000593,herstellen,1,6
+deu_de,000548,binden,1,5
+deu_de,000532,herausfinden,1,5
+deu_de,000487,einpfauen,0,1
+deu_de,000565,verderben,1,0
+deu_de,000553,krönen,1,2
+deu_de,000495,vertrenken,0,1
+deu_de,000502,erinnern,1,5
+deu_de,000486,abstitzen,0,1
+deu_de,000595,leisten,1,4
+deu_de,000491,schweiken,0,0
+deu_de,000474,schlopfen,0,0
+deu_de,000504,geschehen,1,3
+deu_de,000472,ausblintern,0,1
+deu_de,000536,entfremden,1,3
+deu_de,000556,orientieren,1,4
+deu_de,000516,chiffrieren,1,2
+deu_de,000519,lecken,1,2
+deu_de,000555,mögen,1,3
+deu_de,000507,steuern,1,3
+deu_de,000591,leihen,1,3
+deu_de,000506,heraufsetzen,1,0
+deu_de,000526,hinstürzen,1,4
+deu_de,000542,beherrschen,1,7
+deu_de,000575,hineinstopfen,1,3
+deu_de,000470,umhaupten,0,1
+deu_de,000580,zählen,1,3
+deu_de,000458,plaschen,0,0
+deu_de,000566,umrahmen,1,3
+deu_de,000479,entklupfern,0,0
+deu_de,000465,entlaben,0,1
+deu_de,000457,gemaunen,0,1
+deu_de,000561,mindern,1,2
+deu_de,000576,vergessen,1,4
+deu_de,000588,hinhauen,1,2
+deu_de,000512,ansprechen,1,3
+deu_de,000594,fordern,1,5
+deu_de,000540,niederkämpfen,1,3
+deu_de,000534,mitlaufen,1,4
+deu_de,000499,verballen,0,0
+ell_gr,001503,προσφέρω,1,1
+ell_gr,001451,αισθάνομαι,1,1
+ell_gr,001437,κεριστάζομαι,0,1
+ell_gr,001509,αριστεύω,1,1
+ell_gr,001404,γελοστίζω,0,1
+ell_gr,001440,νερολλάζω,0,1
+ell_gr,001533,παρατηρώ,1,1
+ell_gr,001453,θεσπίζω,1,1
+ell_gr,001528,απολύω,1,1
+ell_gr,001473,εζητείνω,0,1
+ell_gr,001449,εκτοξεύω,1,1
+ell_gr,001470,δευτεριλώνω,0,1
+ell_gr,001407,προηγούμαι,1,1
+ell_gr,001443,επαινώ,1,1
+ell_gr,001517,γευμανώνω,0,1
+ell_gr,001436,οδεύω,1,1
+ell_gr,001540,καμαρώνω,1,1
+ell_gr,001402,φεροκρατώ,0,1
+ell_gr,001543,λυσσομανώ,1,1
+ell_gr,001482,καραβαίνω,0,1
+ell_gr,001526,προάγω,1,1
+ell_gr,001511,καραδοκώ,1,1
+ell_gr,001522,αστοιχολώ,0,1
+ell_gr,001494,νοτοχαρίζω,0,1
+ell_gr,001532,επιστρέφω,1,1
+ell_gr,001492,εκτυπώνω,1,1
+ell_gr,001444,χρωστώ,1,1
+ell_gr,001408,παστεριώνω,1,1
+ell_gr,001542,υπολογίζω,1,1
+ell_gr,001415,ζώομαι,0,1
+ell_gr,001447,σιχαίνομαι,1,1
+ell_gr,001478,παρανοικλίνω,0,1
+ell_gr,001486,ανθώ,1,1
+ell_gr,001536,θαλασσοδέρνω,1,1
+ell_gr,001406,τεσσάνομαι,0,1
+ell_gr,001468,μαγειρεύω,1,1
+ell_gr,001423,δυσαρεστώ,1,1
+ell_gr,001469,ρούχομαι,0,1
+ell_gr,001521,περιστρέφω,1,1
+ell_gr,001446,ναυλώνω,1,1
+ell_gr,001487,πληροφορώ,1,1
+ell_gr,001452,συμβαδίζω,1,1
+ell_gr,001544,εγκαταλείπω,1,1
+ell_gr,001497,ανατινάζω,1,1
+ell_gr,001496,ψηλοδηγώ,0,1
+ell_gr,001419,ατενασσάνω,0,1
+ell_gr,001516,παρακολουθώ,1,1
+ell_gr,001430,τρυγώ,1,1
+ell_gr,001409,νικοδημίζω,0,1
+ell_gr,001502,υστερώ,1,1
+ell_gr,001507,υπερισχύω,1,1
+ell_gr,001512,θορυβώ,1,1
+ell_gr,001405,υπονοώ,1,1
+ell_gr,001442,βαλοιδώ,0,1
+ell_gr,001428,μουχλιάζω,1,1
+ell_gr,001476,φρεσκάρω,1,1
+ell_gr,001411,οργανώνω,1,1
+ell_gr,001471,αξιοποιώ,1,1
+ell_gr,001527,φθίνω,1,1
+ell_gr,001498,συγκινώ,1,1
+ell_gr,001545,αυξάνω,1,1
+ell_gr,001510,βανατρυλώνω,0,1
+ell_gr,001506,περιφρονώ,1,1
+ell_gr,001508,κρεπώνω,0,1
+ell_gr,001550,καπνίζω,1,1
+ell_gr,001520,ισοπλίζω,0,1
+ell_gr,001460,ωραιοπλαίω,0,1
+ell_gr,001421,δωστολογώ,0,1
+ell_gr,001491,τρεναρίζω,0,1
+ell_gr,001445,μεθοδεύω,1,1
+ell_gr,001464,περιλαμβάνω,1,1
+ell_gr,001514,μουσκεύω,1,1
+ell_gr,001420,πατώ,1,1
+ell_gr,001439,απαρτερώ,0,1
+ell_gr,001499,στενοχωρώ,1,1
+spa_es,000905,despejar,1,1
+spa_es,000906,conjeturar,1,0
+spa_es,000908,emprestar,0,1
+spa_es,000909,menudear,1,1
+spa_es,000911,corsar,0,2
+spa_es,000912,dislocar,1,0
+spa_es,000917,hormiguear,1,3
+spa_es,000919,enfriar,1,3
+spa_es,000923,adoptar,1,7
+spa_es,000925,trincar,1,1
+spa_es,000928,escarivar,0,2
+spa_es,000929,borrar,1,5
+spa_es,000930,abrigar,1,2
+spa_es,000931,incluir,1,6
+spa_es,000933,arreprender,0,1
+spa_es,000935,manifestar,1,8
+spa_es,000939,inclustrar,0,1
+spa_es,000940,subvenir,1,0
+spa_es,000943,acoger,1,4
+spa_es,000945,encarapar,0,1
+spa_es,000947,acarestar,0,2
+spa_es,000948,expegar,0,1
+spa_es,000951,lucir,1,2
+spa_es,000952,reintegrar,1,7
+spa_es,000954,marchar,1,7
+spa_es,000956,franquear,1,4
+spa_es,000957,lujar,0,0
+spa_es,000959,ardalar,0,1
+spa_es,000960,causar,1,6
+spa_es,000961,agigantar,1,1
+spa_es,000963,descascar,1,0
+spa_es,000964,presechar,0,1
+spa_es,000966,caracterizar,1,6
+spa_es,000968,irritar,1,6
+spa_es,000975,evitar,1,7
+spa_es,000976,enterojar,0,1
+spa_es,000982,escarlar,0,1
+spa_es,000983,radicar,1,2
+spa_es,000984,chupar,1,5
+spa_es,000986,prohibir,1,7
+spa_es,000987,abandejarse,0,0
+spa_es,000990,lavar,1,4
+spa_es,000992,firagar,0,2
+spa_es,000993,labrar,1,0
+spa_es,000994,anajuar,0,2
+spa_es,000995,desescombrar,1,0
+spa_es,001000,lunazar,0,1
+spa_es,001001,eclipsar,1,2
+spa_es,001002,seguir,1,5
+spa_es,001003,recuperar,1,7
+spa_es,001006,exalajar,0,0
+spa_es,001007,aplaudir,1,7
+spa_es,001009,quemeler,0,2
+spa_es,001011,ablandar,1,3
+spa_es,001012,transpirar,1,3
+spa_es,001013,holgar,1,1
+spa_es,001015,cargar,1,5
+spa_es,001018,punzar,1,0
+spa_es,001020,minar,1,1
+spa_es,001021,heder,1,0
+spa_es,001022,mariposear,1,2
+spa_es,001023,girar,1,6
+spa_es,001024,bombardear,1,7
+spa_es,001025,murmurar,1,5
+spa_es,001032,ciregar,0,2
+spa_es,001033,traficar,1,3
+spa_es,001034,mojar,1,4
+spa_es,001036,trompitar,0,0
+spa_es,001037,carolgar,0,2
+spa_es,001039,centrar,1,3
+spa_es,001040,travelar,0,2
+spa_es,001042,enredarar,0,1
+spa_es,001043,codear,1,0
+spa_es,001048,heromar,0,1
+spa_es,001050,pagar,1,6
+fin_fi,000700,vahvistaa,1,5
+fin_fi,000605,taapia,0,2
+fin_fi,000750,nukkua,1,3
+fin_fi,000713,kolahtaa,1,5
+fin_fi,000693,lietsoa,1,0
+fin_fi,000610,myreillä,0,3
+fin_fi,000647,askeuttaa,0,0
+fin_fi,000654,salata,1,4
+fin_fi,000676,tallata,1,1
+fin_fi,000691,piilottaa,1,6
+fin_fi,000656,puistattaa,1,0
+fin_fi,000742,sortaa,1,1
+fin_fi,000682,jaksaa,1,3
+fin_fi,000622,ensiä,0,4
+fin_fi,000711,kummastua,1,2
+fin_fi,000721,muistella,1,3
+fin_fi,000733,kiertää,1,5
+fin_fi,000749,siittää,1,0
+fin_fi,000632,raveta,0,2
+fin_fi,000703,purra,1,3
+fin_fi,000671,lausua,1,4
+fin_fi,000670,aateloida,1,1
+fin_fi,000744,tunkea,1,4
+fin_fi,000631,unittaa,0,2
+fin_fi,000695,kulua,1,2
+fin_fi,000717,avata,1,3
+fin_fi,000686,teloittaa,1,3
+fin_fi,000603,rinautua,0,3
+fin_fi,000665,hakea,1,4
+fin_fi,000618,leksauttaa,0,1
+fin_fi,000636,olintaa,0,3
+fin_fi,000672,luovuttaa,1,5
+fin_fi,000667,pidentää,1,3
+fin_fi,000697,liittää,1,3
+fin_fi,000619,rohittaa,0,3
+fin_fi,000701,heijastaa,1,4
+fin_fi,000689,päättää,1,3
+fin_fi,000688,ojentautua,1,2
+fin_fi,000645,ketkautua,0,2
+fin_fi,000738,laajentaa,1,7
+fin_fi,000623,solikoida,0,0
+fin_fi,000732,komentaa,1,2
+fin_fi,000718,taitaa,1,5
+fin_fi,000748,tyynnyttää,1,0
+fin_fi,000694,kelvata,1,5
+fin_fi,000644,viitiä,0,2
+fin_fi,000708,vaania,1,0
+fin_fi,000715,myöntää,1,5
+fin_fi,000736,vioittaa,1,0
+fin_fi,000706,manipuloida,1,5
+fin_fi,000666,napsauttaa,1,6
+fin_fi,000617,tahdata,0,3
+fin_fi,000626,tuudata,0,4
+fin_fi,000608,älväyttää,0,3
+fin_fi,000702,sattua,1,5
+fin_fi,000607,sinteyttää,0,2
+fin_fi,000615,kempiä,0,2
+fin_fi,000730,päästää,1,3
+fin_fi,000678,kuoria,1,4
+fin_fi,000624,öltyä,0,3
+fin_fi,000640,suovia,0,2
+fin_fi,000669,porata,1,2
+fin_fi,000664,hioa,1,3
+fin_fi,000705,nuuhkia,1,0
+fin_fi,000696,sitoa,1,5
+fin_fi,000716,kasata,1,3
+fin_fi,000614,lenata,0,3
+fin_fi,000611,narvitella,0,2
+fin_fi,000707,kohdistaa,1,3
+fin_fi,000629,puutata,0,3
+fin_fi,000679,nousta,1,3
+fin_fi,000690,langeta,1,3
+fin_fi,000612,raaksiutua,0,4
+fin_fi,000675,tapahtua,1,4
+fin_fi,000620,kehtäyttää,0,3
+fra_fr,000751,autoriser,1,3
+fra_fr,000752,éphrasir,0,0
+fra_fr,000756,brancher,1,2
+fra_fr,000762,barriculer,0,0
+fra_fr,000765,tripler,1,3
+fra_fr,000766,mériter,1,4
+fra_fr,000767,diffamer,1,0
+fra_fr,000769,engouffrer,1,2
+fra_fr,000770,lire,1,5
+fra_fr,000773,déranger,1,5
+fra_fr,000774,fâcher,1,3
+fra_fr,000781,hésiter,1,7
+fra_fr,000786,tramoner,0,0
+fra_fr,000788,rire,1,5
+fra_fr,000790,tinquer,0,0
+fra_fr,000793,ticqueler,0,0
+fra_fr,000795,criver,0,0
+fra_fr,000796,assiéger,1,0
+fra_fr,000797,goûter,1,5
+fra_fr,000798,camper,1,2
+fra_fr,000801,julir,0,0
+fra_fr,000804,hebdonner,0,0
+fra_fr,000807,lifrer,0,1
+fra_fr,000808,justifier,1,5
+fra_fr,000810,duper,1,2
+fra_fr,000811,priver,1,2
+fra_fr,000812,voisiner,1,0
+fra_fr,000813,auréoler,1,1
+fra_fr,000814,engorger,1,0
+fra_fr,000815,mépriser,1,4
+fra_fr,000817,loircir,0,0
+fra_fr,000819,augmenter,1,7
+fra_fr,000821,gouverner,1,2
+fra_fr,000825,circer,0,0
+fra_fr,000827,éclore,1,0
+fra_fr,000831,écraser,1,4
+fra_fr,000833,redoubler,1,4
+fra_fr,000837,crêmir,0,0
+fra_fr,000838,bondir,1,3
+fra_fr,000841,castrer,1,2
+fra_fr,000844,sectionner,1,3
+fra_fr,000845,frégir,0,0
+fra_fr,000847,secouer,1,3
+fra_fr,000848,aspecter,0,0
+fra_fr,000849,respirer,1,5
+fra_fr,000850,défavoriser,1,3
+fra_fr,000853,chevaucher,1,0
+fra_fr,000854,suffire,1,2
+fra_fr,000855,siffler,1,4
+fra_fr,000856,soeurer,0,1
+fra_fr,000857,voler,1,6
+fra_fr,000861,aiger,0,1
+fra_fr,000862,borner,1,3
+fra_fr,000865,atomiser,1,2
+fra_fr,000866,crimer,0,0
+fra_fr,000867,cambrioler,1,4
+fra_fr,000868,équilibrer,1,3
+fra_fr,000871,monter,1,5
+fra_fr,000872,tapisser,1,2
+fra_fr,000873,déchétir,0,1
+fra_fr,000879,incliner,1,3
+fra_fr,000882,annir,0,1
+fra_fr,000885,géliner,0,0
+fra_fr,000887,cheminer,1,2
+fra_fr,000888,entourer,1,4
+fra_fr,000889,développer,1,6
+fra_fr,000890,truger,0,1
+fra_fr,000891,creuser,1,3
+fra_fr,000892,puire,0,0
+fra_fr,000893,fourevuer,0,1
+fra_fr,000895,trafiquer,1,0
+fra_fr,000896,esquisser,1,2
+fra_fr,000898,alutiner,0,0
+fra_fr,000899,barbouiller,1,2
+fra_fr,000900,dissuser,0,0
+gle_ie,001980,beachtaím,1,1
+gle_ie,002078,deonaím,1,1
+gle_ie,001963,aithisím,1,1
+gle_ie,002064,comhréitím,1,1
+gle_ie,002099,triomaím,1,1
+gle_ie,002093,neallaím,0,1
+gle_ie,002024,liúim,1,1
+gle_ie,002004,beallaím,0,1
+gle_ie,002096,fuasclaím,1,1
+gle_ie,001997,díchóimeáilim,1,1
+gle_ie,001965,geannaím,0,1
+gle_ie,001960,grionnaím,0,1
+gle_ie,002057,séidim,1,1
+gle_ie,002070,stampáilim,1,1
+gle_ie,001966,ceannaím,1,1
+gle_ie,001998,briotáilim,0,1
+gle_ie,002088,plóym,0,1
+gle_ie,002061,leaispeánaim,0,1
+gle_ie,002017,tochlaím,1,1
+gle_ie,001977,riugáilim,0,1
+gle_ie,002092,freastalaím,1,1
+gle_ie,001976,díbrím,1,1
+gle_ie,002083,tiálaim,1,1
+gle_ie,002091,préachaim,1,1
+gle_ie,002014,cáithim,1,1
+gle_ie,002037,rabhlacaim,0,1
+gle_ie,002011,maithim,1,1
+gle_ie,002033,cnaím,1,1
+gle_ie,002097,ceoiráilim,0,1
+gle_ie,002003,crúbáil,1,1
+gle_ie,002023,músclaím,1,1
+gle_ie,001958,admhaím,1,1
+gle_ie,002031,sáinním,1,1
+gle_ie,001953,plearólaim,0,1
+gle_ie,002005,treascraím,1,1
+gle_ie,002007,ploghlaimím,0,1
+gle_ie,001951,preannaím,0,1
+gle_ie,002032,saolaím,1,1
+gle_ie,001956,nótáilim,1,1
+gle_ie,001985,comhfhreagraím,1,1
+gle_ie,002001,diúinseáilim,0,1
+gle_ie,001962,stiallaim,1,1
+gle_ie,002048,soláthraím,1,1
+gle_ie,002047,teorannaím,1,1
+gle_ie,001970,plagraím,0,1
+gle_ie,002052,scoraim,1,1
+gle_ie,002094,fógraím,1,1
+gle_ie,001984,plaisricim,0,1
+gle_ie,001969,ciapaim,1,1
+gle_ie,002026,druileálaim,1,1
+gle_ie,002067,tiontaím,1,1
+gle_ie,002063,néireáilim,0,1
+gle_ie,002050,sciamhaím,1,1
+gle_ie,002053,timrím,0,1
+gle_ie,002077,laghdaím,1,1
+gle_ie,002036,smutaim,1,1
+gle_ie,001996,siúcraím,1,1
+gle_ie,002041,cairtfhostaím,1,1
+gle_ie,001973,stollaim,1,1
+gle_ie,001986,roinnim,1,1
+gle_ie,002019,satlaím,1,1
+gle_ie,002054,tráim,1,1
+gle_ie,001959,tolabaím,0,1
+gle_ie,001994,breagóilim,0,1
+gle_ie,002013,deograím,0,1
+gle_ie,001988,beannaím,1,1
+gle_ie,002082,bioraím,1,1
+gle_ie,001952,diúgaim,1,1
+gle_ie,002076,brionlacaim,0,1
+gle_ie,002009,treoraím,1,1
+gle_ie,001955,creallaím,0,1
+gle_ie,002098,leoinseálim,0,1
+gle_ie,002072,duaithním,1,1
+gle_ie,002049,leomhaim,1,1
+gle_ie,002015,tearánaim,0,1
+isl_is,001822,að slaura,0,1
+isl_is,001846,að vita,1,1
+isl_is,001879,að snyrta,1,1
+isl_is,001862,að brotta,0,1
+isl_is,001872,að sölna,1,1
+isl_is,001943,að aflaufga,1,1
+isl_is,001882,að beiða,1,1
+isl_is,001908,að skalla,1,1
+isl_is,001866,að viga,0,1
+isl_is,001853,að kalka,1,1
+isl_is,001924,að raupa,1,1
+isl_is,001897,að öskra,1,1
+isl_is,001855,að hæða,1,1
+isl_is,001887,að telja,1,1
+isl_is,001899,að hugnast,1,1
+isl_is,001907,að bylta,1,1
+isl_is,001809,að sefna,0,1
+isl_is,001874,að fullgera,1,1
+isl_is,001868,að fangelsa,1,1
+isl_is,001837,að puskra,0,1
+isl_is,001812,að tosta,0,1
+isl_is,001838,að lasa,0,1
+isl_is,001948,að kýla,1,1
+isl_is,001922,að innlima,1,1
+isl_is,001912,að neyfa,0,1
+isl_is,001883,að verðmeta,1,1
+isl_is,001875,að gagla,0,1
+isl_is,001919,að rifna,1,1
+isl_is,001947,að stríðala,1,1
+isl_is,001888,að birta,1,1
+isl_is,001911,að óhlýðnast,1,1
+isl_is,001917,að ilna,0,1
+isl_is,001898,að grafa,1,1
+isl_is,001876,að meðtaka,1,1
+isl_is,001950,að móðga,1,1
+isl_is,001913,að maula,1,1
+isl_is,001935,að gutla,1,1
+isl_is,001921,að hlarra,0,1
+isl_is,001810,að bama,0,1
+isl_is,001833,að skaprauna,1,1
+isl_is,001940,að siggja,0,1
+isl_is,001851,að sarta,0,1
+isl_is,001819,að bregna,0,1
+isl_is,001867,að tifa,1,1
+isl_is,001916,að aðhafast,1,1
+isl_is,001914,að tálga,1,1
+isl_is,001891,að íhuga,1,1
+isl_is,001870,að sneppa,0,1
+isl_is,001878,að fullkosta,0,1
+isl_is,001829,að bósa,0,1
+isl_is,001835,að sjóast,1,1
+isl_is,001865,að svara,1,1
+isl_is,001896,að tofa,0,1
+isl_is,001850,að einkenna,1,1
+isl_is,001901,að treysta,1,1
+isl_is,001859,að titna,0,1
+isl_is,001864,að kanna,1,1
+isl_is,001856,að krofna,0,1
+isl_is,001852,að nægja,1,1
+isl_is,001804,að mikla,1,1
+isl_is,001939,að kafna,1,1
+isl_is,001936,að drjúpa,1,1
+isl_is,001813,að einkanýta,1,1
+isl_is,001847,að teila,0,1
+isl_is,001906,að yfirbuga,1,1
+isl_is,001842,að klytja,0,1
+isl_is,001844,að lagast,1,1
+isl_is,001894,að freyða,1,1
+isl_is,001827,að seytla,1,1
+isl_is,001808,að vélrita,1,1
+isl_is,001823,að strauja,1,1
+isl_is,001890,að nugsa,0,1
+isl_is,001923,að varðveita,1,1
+isl_is,001928,að nöldra,1,1
+isl_is,001848,að klana,0,1
+ita_it,000301,sigillare,1,0
+ita_it,000303,bendare,1,0
+ita_it,000304,piastrellare,1,1
+ita_it,000306,anticipare,1,2
+ita_it,000308,partorire,1,0
+ita_it,000315,escogitare,1,0
+ita_it,000316,ritrovare,1,5
+ita_it,000319,ordinare,1,5
+ita_it,000320,vacillare,1,1
+ita_it,000321,danneggiare,1,4
+ita_it,000324,abbattere,1,3
+ita_it,000325,moralizzare,1,2
+ita_it,000326,nevicare,1,4
+ita_it,000327,occasionare,1,0
+ita_it,000330,ristagnare,1,0
+ita_it,000333,tardare,1,0
+ita_it,000334,localizzare,1,3
+ita_it,000338,ricordare,1,3
+ita_it,000340,captare,1,0
+ita_it,000344,ponderare,1,1
+ita_it,000346,sloggiare,1,0
+ita_it,000348,sortare,0,1
+ita_it,000349,addirsi,1,0
+ita_it,000352,appincare,0,3
+ita_it,000356,raddoppiare,1,4
+ita_it,000357,bastare,1,3
+ita_it,000358,bunire,0,3
+ita_it,000360,acciambellare,1,0
+ita_it,000361,pelere,0,3
+ita_it,000365,curare,1,2
+ita_it,000366,nesare,0,4
+ita_it,000367,milettare,0,1
+ita_it,000369,meletare,0,3
+ita_it,000370,lifare,0,3
+ita_it,000371,pattuire,1,0
+ita_it,000372,poltrire,1,0
+ita_it,000374,fostare,0,4
+ita_it,000376,superare,1,3
+ita_it,000378,spalionire,0,3
+ita_it,000380,nuntare,0,4
+ita_it,000381,pentirsi,1,2
+ita_it,000382,vutare,0,3
+ita_it,000383,bocare,0,3
+ita_it,000385,disfare,1,1
+ita_it,000389,alterare,1,2
+ita_it,000392,mescolare,1,3
+ita_it,000393,morsicare,1,0
+ita_it,000394,armonizzare,1,3
+ita_it,000395,prulpare,0,4
+ita_it,000399,continuare,1,4
+ita_it,000401,vivacchiare,1,0
+ita_it,000403,monetare,1,0
+ita_it,000404,influentare,0,2
+ita_it,000406,tenzonare,1,0
+ita_it,000407,bestemmiare,1,3
+ita_it,000410,persistere,1,3
+ita_it,000412,milere,0,6
+ita_it,000415,bettere,0,3
+ita_it,000418,burcare,0,3
+ita_it,000422,pietrificare,1,1
+ita_it,000423,vividare,0,3
+ita_it,000424,nobilitare,1,0
+ita_it,000427,pientare,0,3
+ita_it,000428,liscotare,0,3
+ita_it,000431,guntare,0,2
+ita_it,000432,lodare,1,0
+ita_it,000433,crecolere,0,4
+ita_it,000435,curintare,0,4
+ita_it,000441,coagulare,1,2
+ita_it,000442,avocatare,0,3
+ita_it,000443,oltraggiare,1,1
+ita_it,000445,vomitare,1,2
+ita_it,000447,addottrinare,1,1
+ita_it,000448,inzeppare,1,1
+ita_it,000449,registrare,1,4
+por_pt,001604,parecer,1,1
+por_pt,001713,eximir,1,1
+por_pt,001730,brandoar,0,1
+por_pt,001694,sonhoar,0,1
+por_pt,001652,desembaraçar,1,1
+por_pt,001602,imprimir,1,1
+por_pt,001626,olhoar ,0,1
+por_pt,001615,telefonear ,0,1
+por_pt,001674,defuntar,1,1
+por_pt,001637,suprir,1,1
+por_pt,001622,vidroar ,0,1
+por_pt,001702,azedar,1,1
+por_pt,001728,nascer,1,1
+por_pt,001680,saber,1,1
+por_pt,001676,torrar,1,1
+por_pt,001623,confundir,1,1
+por_pt,001668,partir,1,1
+por_pt,001701,camar,0,1
+por_pt,001657,infiltrar,1,1
+por_pt,001717,borrachar,0,1
+por_pt,001662,envelhecer,1,1
+por_pt,001706,comover,1,1
+por_pt,001729,numeroar,0,1
+por_pt,001732,comidar,0,1
+por_pt,001687,orçar,1,1
+por_pt,001737,beneficiar,1,1
+por_pt,001605,anotar,1,1
+por_pt,001710,bambuzar,0,1
+por_pt,001712,constatar,1,1
+por_pt,001646,jornadar,0,1
+por_pt,001664,extenuar,1,1
+por_pt,001689,recrear,1,1
+por_pt,001718,iterar,1,1
+por_pt,001673,bestificar,1,1
+por_pt,001669,importar,1,1
+por_pt,001704,exigir,1,1
+por_pt,001734,enfumaçar,1,1
+por_pt,001672,jogar,1,1
+por_pt,001750,desencaixar,1,1
+por_pt,001621,razonar ,0,1
+por_pt,001603,caducar,1,1
+por_pt,001610,aguarar ,0,1
+por_pt,001681,namorear,0,1
+por_pt,001677,estar,1,1
+por_pt,001693,oscilar,1,1
+por_pt,001699,cabelar,0,1
+por_pt,001618,costurar,1,1
+por_pt,001716,vomitoar,0,1
+por_pt,001644,rasurar,1,1
+por_pt,001640,cuspear,0,1
+por_pt,001678,tabelar,1,1
+por_pt,001707,topar,1,1
+por_pt,001684,bananar,0,1
+por_pt,001624,negar,1,1
+por_pt,001629,cantar,1,1
+por_pt,001639,pular,1,1
+por_pt,001682,arrumar,1,1
+por_pt,001721,neutralizar,1,1
+por_pt,001726,suportar,1,1
+por_pt,001700,desvairar,1,1
+por_pt,001686,triunfar,1,1
+por_pt,001675,esconderijar,0,1
+por_pt,001715,legitimar,1,1
+por_pt,001642,bruxar,0,1
+por_pt,001720,inscrever,1,1
+por_pt,001654,caçar,1,1
+por_pt,001714,sinar,0,1
+por_pt,001698,folhear,1,1
+por_pt,001703,apoiar,1,1
+por_pt,001645,caixoar,0,1
+por_pt,001697,corantear,0,1
+por_pt,001612,ventoar ,0,1
+por_pt,001696,intermedear,0,1
+por_pt,001620,jorrar,1,1
+por_pt,001635,delinquir,1,1
+swe_se,000152,att nöka,0,2
+swe_se,000155,att patonera,0,1
+swe_se,000156,att draspa,0,1
+swe_se,000158,att talera,0,0
+swe_se,000159,att bröcka,0,2
+swe_se,000162,att jarpa,0,1
+swe_se,000163,att truska,0,1
+swe_se,000166,att krasta,0,0
+swe_se,000168,att fluska,0,1
+swe_se,000169,att gnerva,0,0
+swe_se,000171,att nyska,0,1
+swe_se,000172,att rinta,0,1
+swe_se,000174,att fjorpa,0,2
+swe_se,000176,att tärkna,0,2
+swe_se,000178,att stifanera,0,0
+swe_se,000183,att märna,0,2
+swe_se,000185,att sympra,0,1
+swe_se,000190,att hystra,0,1
+swe_se,000192,att spärga,0,1
+swe_se,000193,att lurvera,0,2
+swe_se,000194,att snöta,0,1
+swe_se,000195,att hiska,0,1
+swe_se,000196,att lypsa,0,1
+swe_se,000197,att trimsa,0,1
+swe_se,000199,att hynta,0,2
+swe_se,000201,att ljuga,1,5
+swe_se,000202,att behärska,1,6
+swe_se,000203,att raska,1,2
+swe_se,000206,att uppskatta,1,5
+swe_se,000207,att samarbeta,1,5
+swe_se,000209,att tillbringa,1,4
+swe_se,000211,att ekipera,1,2
+swe_se,000213,att definiera,1,4
+swe_se,000215,att rösta,1,6
+swe_se,000217,att färga,1,3
+swe_se,000218,att hänga,1,4
+swe_se,000219,att jämföra,1,7
+swe_se,000221,att meditera,1,3
+swe_se,000223,att närvara,1,3
+swe_se,000227,att berika,1,2
+swe_se,000229,att ärva,1,6
+swe_se,000236,att hoppa,1,6
+swe_se,000238,att montera,1,5
+swe_se,000239,att idrotta,1,3
+swe_se,000241,att gilla,1,4
+swe_se,000242,att lukta,1,5
+swe_se,000244,att förstå,1,4
+swe_se,000245,att hinna,1,4
+swe_se,000246,att sätta,1,4
+swe_se,000247,att stelna,1,2
+swe_se,000248,att regna,1,6
+swe_se,000250,att injicera,1,3
+swe_se,000255,att vänja,1,4
+swe_se,000257,att gräla,1,4
+swe_se,000258,att söndra,1,2
+swe_se,000260,att repa,1,2
+swe_se,000262,att ofreda,1,2
+swe_se,000263,att perforera,1,2
+swe_se,000265,att tigga,1,3
+swe_se,000268,att spetsa,1,4
+swe_se,000269,att sammanträffa,1,3
+swe_se,000270,att dansa,1,4
+swe_se,000271,att överdriva,1,6
+swe_se,000274,att konsultera,1,6
+swe_se,000275,att bedöva,1,5
+swe_se,000276,att oroa,1,6
+swe_se,000284,att lasta,1,4
+swe_se,000285,att förbjuda,1,5
+swe_se,000286,att inrätta,1,4
+swe_se,000287,att kränka,1,3
+swe_se,000289,att dölja,1,0
+swe_se,000291,att remittera,1,4
+swe_se,000293,att undersöka,1,5
+swe_se,000296,att ambulera,1,1
+swe_se,000300,att vakna,1,6
+nor_no,001221,å hindre,1,1
+nor_no,001266,å flimse,0,1
+nor_no,001296,å knytte,1,1
+nor_no,001258,å somle,1,1
+nor_no,001252,å forringe,1,1
+nor_no,001253,å feile,1,1
+nor_no,001270,å strymse,0,1
+nor_no,001289,å lostre,0,1
+nor_no,001236,å destillere,1,1
+nor_no,001275,å hakre,0,1
+nor_no,001264,å samordne,1,1
+nor_no,001265,å bulke,1,1
+nor_no,001231,å rømme,1,1
+nor_no,001297,å skjogge,0,1
+nor_no,001229,å formilde,1,1
+nor_no,001209,å gondere,0,1
+nor_no,001256,å bo,1,1
+nor_no,001259,å tyte,1,1
+nor_no,001234,å gjæmse,0,1
+nor_no,001282,å fletre,0,1
+nor_no,001203,å vokse,1,1
+nor_no,001292,å slutte,1,1
+nor_no,001269,å flånde,0,1
+nor_no,001273,å fortrenge,1,1
+nor_no,001233,å spindre,0,1
+nor_no,001298,å skumme,1,1
+nor_no,001240,å flamme,1,1
+nor_no,001277,å minske,1,1
+nor_no,001249,å bevege,1,1
+nor_no,001254,å støkre,0,1
+nor_no,001274,å likne,1,1
+nor_no,001278,å fantere,0,1
+nor_no,001288,å repetere,1,1
+nor_no,001239,å bevæske,0,1
+nor_no,001215,å prate,1,1
+nor_no,001204,å forløse,1,1
+nor_no,001220,å utgi,1,1
+nor_no,001287,å distribuere,1,1
+nor_no,001241,å skane,0,1
+nor_no,001243,å buldre,1,1
+nor_no,001267,å pendle,1,1
+nor_no,001211,å rive,1,1
+nor_no,001294,å lade,1,1
+nor_no,001284,å smiltre,0,1
+nor_no,001232,å skåkke,0,1
+nor_no,001210,å dominere,1,1
+nor_no,001218,å brøsse,0,1
+nor_no,001201,å snilse,0,1
+nor_no,001255,å pile,1,1
+nor_no,001276,å smyrre,0,1
+nor_no,001226,å spulte,0,1
+nor_no,001263,å offentliggjøre,1,1
+nor_no,001207,å kamuflere,1,1
+nor_no,001246,å oppsøke,1,1
+nor_no,001242,å tåle,1,1
+nor_no,001261,å anslå,1,1
+nor_no,001228,å forenkle,1,1
+nor_no,001237,å stille,1,1
+nor_no,001227,å dumpe,1,1
+nor_no,001245,å nåkke,0,1
+nor_no,001224,å skjelke,0,1
+nor_no,001299,å frane,0,1
+nor_no,001225,å moralisere,1,1
+nor_no,001279,å dekke,1,1
+nor_no,001248,å kyne,0,1
+nor_no,001214,å lokke,1,1
+nor_no,001290,å subbe,1,1
+nor_no,001223,å sikle,1,1
+nor_no,001205,å lekke,1,1
+nor_no,001283,å fjemme,0,1
+nor_no,001235,å prikke,1,1
+nor_no,001257,å referere,1,1
+nor_no,001250,å anbefale,1,1
+nor_no,001222,å melde,1,1
+nor_no,001216,å ramle,1,1
+nld_nl,001052,losmaken,1,2
+nld_nl,001055,ondersteunen,1,1
+nld_nl,001056,duwen,1,4
+nld_nl,001057,betreffen,1,3
+nld_nl,001063,inschrijven,1,4
+nld_nl,001065,toevoegen,1,3
+nld_nl,001066,moeien,1,0
+nld_nl,001067,groeibaren,0,4
+nld_nl,001069,opkomen,1,1
+nld_nl,001071,ondertekenen,1,4
+nld_nl,001072,trechtingen,0,5
+nld_nl,001073,camoufleren,1,2
+nld_nl,001076,vandagen,0,7
+nld_nl,001077,ademen,1,3
+nld_nl,001078,stremen,0,4
+nld_nl,001079,valteren,0,4
+nld_nl,001082,degraderen,1,1
+nld_nl,001083,beladen,1,0
+nld_nl,001087,kenschetsen,1,0
+nld_nl,001090,examineren,1,3
+nld_nl,001091,hypnotiseren,1,3
+nld_nl,001092,nestelen,1,0
+nld_nl,001093,dribbelen,1,2
+nld_nl,001094,krimpen,1,1
+nld_nl,001096,blanden,0,4
+nld_nl,001102,vanoveren,0,5
+nld_nl,001103,nakijken,1,3
+nld_nl,001104,geuren,1,1
+nld_nl,001105,nacijferen,1,0
+nld_nl,001106,bijeennemen,1,0
+nld_nl,001109,putten,1,0
+nld_nl,001110,openslaan,1,1
+nld_nl,001115,naarmen,0,5
+nld_nl,001116,bezetten,1,2
+nld_nl,001117,prikken,1,2
+nld_nl,001118,banen,1,0
+nld_nl,001120,bouden,0,5
+nld_nl,001124,toelaten,1,3
+nld_nl,001127,gruizelen,1,0
+nld_nl,001132,sloeten,0,4
+nld_nl,001134,ploegen,1,0
+nld_nl,001135,afbreden,0,3
+nld_nl,001136,najagen,1,1
+nld_nl,001137,amheden,0,6
+nld_nl,001139,belegenen,0,3
+nld_nl,001140,veroorloven,1,0
+nld_nl,001141,aanhitsen,1,0
+nld_nl,001142,brengen,1,4
+nld_nl,001144,inzoeken,0,2
+nld_nl,001147,vuivelen,0,3
+nld_nl,001148,bevallen,1,3
+nld_nl,001150,beamen,1,1
+nld_nl,001151,hamsteren,1,0
+nld_nl,001152,dolaren,0,3
+nld_nl,001153,verpaarden,0,5
+nld_nl,001154,detineren,1,0
+nld_nl,001156,botsen,1,2
+nld_nl,001157,ontkippen,0,3
+nld_nl,001160,cementen,1,0
+nld_nl,001161,lichtvollen,0,3
+nld_nl,001165,panden,1,0
+nld_nl,001168,broekgaan,0,5
+nld_nl,001169,instemmen,1,2
+nld_nl,001170,brabbelen,1,0
+nld_nl,001171,geeuwen,1,0
+nld_nl,001172,dretten,0,4
+nld_nl,001174,verhekken,0,2
+nld_nl,001179,vandaagen,0,5
+nld_nl,001180,stabiliseren,1,3
+nld_nl,001181,strikken,1,0
+nld_nl,001184,geteren,0,4
+nld_nl,001187,royeren,1,0
+nld_nl,001189,glooien,1,0
+nld_nl,001195,ovelen,0,4
+nld_nl,001200,halen,1,5
