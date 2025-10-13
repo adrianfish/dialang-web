@@ -18,6 +18,7 @@ func main()  {
 	mux.HandleFunc("/scoresa", handlers.ScoreSA)
 	mux.HandleFunc("/starttest", handlers.StartTest)
 	mux.HandleFunc("/submitbasket", handlers.SubmitBasket)
+	mux.HandleFunc("/submitquestionnaire", handlers.SubmitQuestionnaire)
 
 	log.Fatal(http.ListenAndServe(":80", session.SessionManager.LoadAndSave(mux)))
 }

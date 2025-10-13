@@ -3,11 +3,13 @@ package handlers
 import (
 	"encoding/json"
 	"errors"
+	"math"
 	"strings"
 	"fmt"
 	"log"
 	"net/http"
 	"github.com/dialangproject/web/data"
+	"github.com/dialangproject/web/datacapture"
 	"github.com/dialangproject/web/session"
 	"github.com/dialangproject/web/models"
 )
@@ -43,10 +45,13 @@ func ScoreVSPT(w http.ResponseWriter, r *http.Request) {
 
 	session.SessionManager.Put(r.Context(), "session", dialangSession)
 
+    datacapture.LogVSPTResponses(&dialangSession, responses)
+    datacapture.LogVSPTScores(&dialangSession)
+
 	json.NewEncoder(w).Encode(map[string]any{"vsptZScore": zScore, "vsptMearaScore": mearaScore, "vsptLevel": level})
 }
 
-func getBand(tl string, responses map[string]bool) (float64, float64, string, error) {
+func getBand(tl string, responses map[string]bool) (float64, int, string, error) {
 
 	zScore, mearaScore := getScore(tl, responses)
 	bands, ok := data.VSPTBands[tl]
@@ -57,7 +62,7 @@ func getBand(tl string, responses map[string]bool) (float64, float64, string, er
 	for _, b := range bands {
 		log.Println(b)
 		if mearaScore >= float64(b.Low) && mearaScore <= float64(b.High) {
-			return zScore, mearaScore, b.Level, nil
+			return zScore, int(math.Round(mearaScore)), b.Level, nil
 		}
 	}
 

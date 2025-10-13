@@ -61,7 +61,7 @@ type DialangSession struct {
 	TestDone       bool        `json:"testDone"`
 	TestDifficulty string      `json:"testDifficulty"`
 	VsptSubmitted  bool        `json:"vsptSubmitted"`
-	VsptMearaScore float64     `json:"vsptMearaScore"`
+	VsptMearaScore int     `json:"vsptMearaScore"`
 	VsptZScore     float64     `json:"vsptZScore"`
 	VsptLevel      string      `json:"vsptLevel"`
 	SaSubmitted    bool         `json:"saSubmitted"`

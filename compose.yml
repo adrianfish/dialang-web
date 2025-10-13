@@ -1,0 +1,41 @@
+version: '3.8'
+services:
+  proxy:
+    image: adrianfish/dialang-proxy
+    depends_on:
+      web:
+        condition: service_started
+      content:
+        condition: service_started
+    ports:
+      - "80:80"
+    restart: unless-stopped
+  content:
+    image: adrianfish/dialang-content
+    restart: unless-stopped
+  web:
+    env_file:
+      - .env
+    image: adrianfish/dialang-web
+    depends_on:
+      database:
+        condition: service_started
+    restart: unless-stopped
+  database:
+    env_file:
+      - .env
+    image: adrianfish/dialang-database
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: dialang
+      POSTGRES_HOST_AUTH_METHOD: md5
+    restart: unless-stopped
+  datacapture:
+    image: adrianfish/dialang-datacapture
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: dialang-data-capture
+      POSTGRES_HOST_AUTH_METHOD: md5
+    restart: unless-stopped

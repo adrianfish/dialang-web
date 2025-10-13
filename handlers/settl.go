@@ -31,7 +31,12 @@ func SetTL(w http.ResponseWriter, r *http.Request) {
 	v.PassId = utils.GenerateUUID()
 
 	v.Referrer = r.Referer()
+	realIP := r.Header.Get("X-Real-IP")
+	forwardedFor := r.Header.Values("X-Forwarded-For")
+	log.Printf("forwardedFor: %v\n", forwardedFor)
+	log.Printf("realIP: %v\n", realIP)
 	v.IPAddress = r.RemoteAddr
+	log.Printf("IP Address: %v\n", v.IPAddress)
 
 	if v.SessionId == "" {
     	v.SessionId = utils.GenerateUUID()

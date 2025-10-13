@@ -29,13 +29,15 @@ func init() {
 
 	dbHost := os.Getenv("DIALANG_DB_HOST")
 	if dbHost == "" {
-		dbHost = "dialang-db-1"
+		dbHost = "dialang-database-1"
 	}
+	dbUser := os.Getenv("POSTGRES_USER")
+	dbPassword := os.Getenv("POSTGRES_PASSWORD")
 
 	log.Printf("Connecting to dialang database at %v\n", dbHost)
 
-	pw := "e785598fffccc098afda8eb6e42494e5"
-	connStr := "postgres://dialangadmin:" + pw + "@" + dbHost + "/dialang?sslmode=disable"
+	//pw := "e785598fffccc098afda8eb6e42494e5"
+	connStr := "postgres://" + dbUser + ":" + dbPassword + "@" + dbHost + "/dialang?sslmode=disable"
 	thisDb, err := sql.Open("postgres", connStr)
 	if err != nil {
 		log.Fatal(err)
