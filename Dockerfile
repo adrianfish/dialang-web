@@ -1,4 +1,4 @@
-FROM golang:1.25
+FROM golang:alpine3.22 as builder
 
 RUN mkdir /common
 COPY common/ /common
@@ -18,8 +18,14 @@ COPY data/ data/
 COPY db/ db/
 COPY scoring/ scoring/
 COPY session/ session/
-COPY data-files/ data-files/
-RUN CGO_ENABLED=0 GOOS=linux go build -o dialang-web
-RUN chmod o+x dialang-web
+RUN CGO_ENABLED=0 go build -ldflags="-s -w" -o dialang-web .
 
-CMD ["/app/dialang-web"]
+FROM scratch
+
+WORKDIR /app
+
+COPY data-files/ data-files/
+
+COPY --from=builder /app/dialang-web .
+
+CMD ["./dialang-web"]
