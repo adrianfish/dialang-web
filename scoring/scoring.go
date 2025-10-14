@@ -7,7 +7,6 @@ import (
 	"strings"
 	"slices"
 	"strconv"
-	"github.com/dialangproject/web/db"
 	"github.com/dialangproject/web/data"
 	"github.com/dialangproject/web/models"
 )
@@ -117,16 +116,16 @@ func GetSaPPEAndLevel(skill string, responses map[string]bool) (float64, string,
  */
 func GetScoredIdResponseItem(itemId int, responseId int) (*models.ScoredItem, error) {
 
-	item, iErr := db.GetItem(itemId)
-	if iErr != nil {
+	item, ok := data.Items[itemId]
+	if !ok {
 		return nil, errors.New("Failed to get item for itemId: " + strconv.Itoa(itemId))
 	}
 
-	scoredItem := models.ScoredItem{Item: item}
+	scoredItem := models.ScoredItem{Item: &item}
 	scoredItem.ResponseId = responseId
 
-	answer, aErr := db.GetAnswer(responseId)
-	if aErr != nil {
+	answer, ok := data.Answers[responseId]
+	if !ok {
 		return nil, errors.New("Failed to get answer for responseId: " + strconv.Itoa(responseId))
 	}
 
@@ -143,15 +142,15 @@ func GetScoredIdResponseItem(itemId int, responseId int) (*models.ScoredItem, er
 
 func GetScoredTextResponseItem(itemId int, answerText string) (*models.ScoredItem, error) {
 
-	item, err := db.GetItem(itemId)
-	if err != nil {
+	item, ok := data.Items[itemId]
+	if !ok {
 		return nil, errors.New("Failed to get item for itemId: " + strconv.Itoa(itemId))
 	}
 
-	scoredItem := models.ScoredItem{Item: item}
+	scoredItem := models.ScoredItem{Item: &item}
 	scoredItem.ResponseText = answerText
 
-	for _, correctAnswer := range db.GetAnswersForItem(itemId) {
+	for _, correctAnswer := range data.ItemAnswers[itemId] {
 		if removeWhiteSpaceAndPunctuation(correctAnswer.Text) == removeWhiteSpaceAndPunctuation(answerText) {
 			scoredItem.Score = item.Weight;
 			scoredItem.Correct = true
@@ -174,8 +173,8 @@ func GetItemGrade(tl string, skill string, bookletId int, scoredItems []*models.
 	log.Printf("RAW SCORE: %d\n", rawScore)
 	log.Printf("TOTAL WEIGHT: %d\n", totalWeight)
 
-	itemGrades, err := db.GetItemGrades(tl, skill, bookletId)
-	if err != nil {
+	itemGrades, ok := data.ItemGrades[fmt.Sprintf("%s#%s#%d", tl, skill, bookletId)]
+	if !ok {
 		log.Printf("Failed to get item grades for skill %s\n", skill)
 		return rawScore, 0, CEFR_LEVELS[1]
 	}
@@ -194,8 +193,7 @@ func GetItemGrade(tl string, skill string, bookletId int, scoredItems []*models.
  */
 func removeWhiteSpaceAndPunctuation(in string) string {
 
-	punctuationList := db.GetPunctuation()
-    if len(punctuationList) <= 0 {
+    if len(data.PunctuationList) <= 0 {
 		log.Println("No punctuation list found. Returning input unchanged ...")
     	return in
   	}
@@ -204,7 +202,7 @@ func removeWhiteSpaceAndPunctuation(in string) string {
 	firstPass := strings.Join(strings.Fields(in), " ")
 
 	for _, testChar := range firstPass {
-		if slices.Contains(punctuationList, fmt.Sprintf("%x", testChar)) {
+		if slices.Contains(data.PunctuationList, fmt.Sprintf("%x", testChar)) {
 			firstPass = strings.Replace(firstPass, string(testChar), "", -1)
 		}
 	}

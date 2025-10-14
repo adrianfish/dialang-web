@@ -15,7 +15,6 @@ COPY models/ models/
 COPY utils/ utils/
 COPY datacapture/ datacapture/
 COPY data/ data/
-COPY db/ db/
 COPY scoring/ scoring/
 COPY session/ session/
 RUN CGO_ENABLED=0 go build -ldflags="-s -w" -o dialang-web .

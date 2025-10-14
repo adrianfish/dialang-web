@@ -11,7 +11,7 @@ import (
 	"github.com/dialangproject/web/session"
 	"github.com/dialangproject/web/datacapture"
 	"github.com/dialangproject/web/models"
-	"github.com/dialangproject/web/db"
+	"github.com/dialangproject/web/data"
 	"github.com/dialangproject/web/scoring"
 )
 
@@ -74,7 +74,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 				scoredItem.ResponseId = answerId
 				scoredItem.PositionInTest = numScoredItems + 1
 				log.Printf("Item position in test: %d\n", scoredItem.PositionInTest)
-				scoredItem.Answers = db.GetAnswersForItem(itemId)
+				scoredItem.Answers = data.ItemAnswers[itemId]
 				itemList = append(itemList, scoredItem)
 				scoredBasket := models.ScoredBasket{Id: currentBasketId, Type: "mcq", Skill: scoredItem.Item.Skill, Items: []*models.ScoredItem{scoredItem}}
 				dialangSession.ScoredBaskets = append(dialangSession.ScoredBaskets, &scoredBasket)
@@ -108,7 +108,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					log.Printf("Item position in basket: %d\n", item.PositionInBasket)
 					log.Printf("Item position in test: %d\n", item.PositionInTest)
 					log.Println(item.BasketId)
-					item.Answers = db.GetAnswersForItem(item.Item.Id)
+					item.Answers = data.ItemAnswers[item.Item.Id]
 					itemsToLog = append(itemsToLog, item)
 					itemList = append(itemList, item)
 					basketItems = append(basketItems, item)
@@ -145,7 +145,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					}
 					item.PositionInTest = numScoredItems + item.PositionInBasket
 					log.Printf("Item position in test: %d\n", item.PositionInTest)
-					item.Answers = db.GetAnswersForItem(item.Item.Id)
+					item.Answers = data.ItemAnswers[item.Item.Id]
 					itemList = append(itemList, item)
 					itemsToLog = append(itemsToLog, item)
 					basketItems = append(basketItems, item)
@@ -183,7 +183,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					}
 					item.PositionInTest = numScoredItems + item.PositionInBasket
 					log.Printf("Item position in test: %d\n", item.PositionInTest)
-					item.Answers = db.GetAnswersForItem(item.Item.Id)
+					item.Answers = data.ItemAnswers[item.Item.Id]
 					itemList = append(itemList, item)
 					itemsToLog = append(itemsToLog, item)
 					basketItems = append(basketItems, item)
@@ -224,7 +224,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 
 					item.PositionInTest = numScoredItems + item.PositionInBasket
 					log.Printf("Item position in test: %d\n", item.PositionInTest)
-					item.Answers = db.GetAnswersForItem(item.Item.Id)
+					item.Answers = data.ItemAnswers[item.Item.Id]
 					itemList = append(itemList, item)
 					itemsToLog = append(itemsToLog, item)
 					basketItems = append(basketItems, item)
@@ -252,7 +252,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 	nextBasketNumber := dialangSession.CurrentBasketNumber + 1
     log.Printf("nextBasketNumber: %d\n", nextBasketNumber)
 
-	basketIds := db.GetBasketIdsForBooklet(dialangSession.BookletId)
+	basketIds := data.BookletBaskets[dialangSession.BookletId]
 
     if nextBasketNumber >= len(basketIds) {
     	// The test has finished. Grade it.

@@ -2,6 +2,7 @@ package data
 
 import (
 	"encoding/csv"
+	"encoding/json"
 	"io"
 	"log"
 	"os"
@@ -10,6 +11,7 @@ import (
 	"strconv"
 
 	"github.com/dialangproject/web/models"
+	commonmodels "github.com/dialangproject/common/models"
 )
 
 var VSPTWords map[string][]models.VSPTWord
@@ -20,6 +22,11 @@ var PreestWeights map[string]models.PreestWeight
 var PreestAssignments map[string][]models.PreestAssignment
 var BookletLengths map[int]int
 var BookletBaskets map[int][]int
+var ItemAnswers map[int][]commonmodels.Answer
+var Answers map[int]commonmodels.Answer
+var Items map[int]commonmodels.Item
+var PunctuationList []string
+var ItemGrades map[string]map[int]commonmodels.ItemGrade
 
 func init() {
 
@@ -31,6 +38,11 @@ func init() {
 	cachePreestAssignments()
 	cacheBookletLengths()
 	cacheBookletBaskets()
+	cacheItemAnswers()
+	cacheAnswers()
+	cacheItems()
+	cachePunctuation()
+	cacheItemGrades()
 }
 
 func cacheVSPTWords() {
@@ -39,6 +51,7 @@ func cacheVSPTWords() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -77,6 +90,7 @@ func cacheVSPTBands() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -119,6 +133,7 @@ func cacheSAWeights() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -157,6 +172,7 @@ func cacheSAGrades() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -189,6 +205,7 @@ func cachePreestWeights() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -222,6 +239,7 @@ func cachePreestAssignments() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -264,6 +282,7 @@ func cacheBookletLengths() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -292,6 +311,7 @@ func cacheBookletBaskets() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	defer f.Close()
 
 	reader := csv.NewReader(f)
 
@@ -319,4 +339,65 @@ func cacheBookletBaskets() {
 
 		BookletBaskets[bookletId] = basketIds
 	}
+}
+
+func cacheItemAnswers() {
+
+	f, err := os.Open("data-files/item-answers.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	ItemAnswers = map[int][]commonmodels.Answer{}
+	json.NewDecoder(f).Decode(&ItemAnswers)
+}
+
+func cacheAnswers() {
+
+	f, err := os.Open("data-files/answers.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	Answers = map[int]commonmodels.Answer{}
+	json.NewDecoder(f).Decode(&Answers)
+}
+
+func cacheItems() {
+
+	f, err := os.Open("data-files/items.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	Items = map[int]commonmodels.Item{}
+	json.NewDecoder(f).Decode(&Items)
+}
+
+func cachePunctuation() {
+
+	f, err := os.Open("data-files/punctuation.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	PunctuationList = []string{}
+	json.NewDecoder(f).Decode(&PunctuationList)
+}
+
+func cacheItemGrades() {
+
+	f, err := os.Open("data-files/item-grades.json")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	ItemGrades = map[string]map[int]commonmodels.ItemGrade{}
+
+	json.NewDecoder(f).Decode(&ItemGrades)
 }

@@ -81,12 +81,6 @@ type DialangSession struct {
 	TES            TES         `json:"tes"`
 }
 
-type ItemGrade struct {
-	PPE float64
-	SE float64
-	Grade int
-}
-
 /**
  * Test Execution Script
  */
