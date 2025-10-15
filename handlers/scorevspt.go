@@ -3,15 +3,16 @@ package handlers
 import (
 	"encoding/json"
 	"errors"
-	"math"
-	"strings"
 	"fmt"
-	"log"
-	"net/http"
+	commonmodels "github.com/dialangproject/common/models"
 	"github.com/dialangproject/web/data"
 	"github.com/dialangproject/web/datacapture"
-	"github.com/dialangproject/web/session"
 	"github.com/dialangproject/web/models"
+	"github.com/dialangproject/web/session"
+	"log"
+	"math"
+	"net/http"
+	"strings"
 )
 
 func ScoreVSPT(w http.ResponseWriter, r *http.Request) {
@@ -38,15 +39,15 @@ func ScoreVSPT(w http.ResponseWriter, r *http.Request) {
 		log.Fatal(err)
 	}
 
-    dialangSession.VsptZScore = zScore
-    dialangSession.VsptMearaScore = mearaScore
-    dialangSession.VsptLevel = level
-    dialangSession.VsptSubmitted = true
+	dialangSession.VsptZScore = zScore
+	dialangSession.VsptMearaScore = mearaScore
+	dialangSession.VsptLevel = level
+	dialangSession.VsptSubmitted = true
 
 	session.SessionManager.Put(r.Context(), "session", dialangSession)
 
-    datacapture.LogVSPTResponses(&dialangSession, responses)
-    datacapture.LogVSPTScores(&dialangSession)
+	datacapture.LogVSPTResponses(&dialangSession, responses)
+	datacapture.LogVSPTScores(&dialangSession)
 
 	json.NewEncoder(w).Encode(map[string]any{"vsptZScore": zScore, "vsptMearaScore": mearaScore, "vsptLevel": level})
 }
@@ -75,17 +76,19 @@ func getScore(tl string, responses map[string]bool) (float64, float64) {
 
 	log.Printf("Z Score: %f\n", Z)
 
-  	if Z <= 0 {
-    	return Z, 0
+	if Z <= 0 {
+		return Z, 0
 	} else {
 		return Z, Z * 1000
 	}
 }
 
-func getWordType(word *models.VSPTWord) int {
+func getWordType(word *commonmodels.VSPTWord) int {
 
 	var wordType int
-	if word.Valid == 1 { wordType = 1 }
+	if word.Valid == 1 {
+		wordType = 1
+	}
 	return wordType
 }
 
@@ -102,10 +105,10 @@ func getZScore(tl string, responses map[string]bool) float64 {
 	for _, word := range words {
 		wordType := getWordType(&word)
 
-		if (responses[word.WordId]) {
-		  yesResponses[wordType] += 1
+		if responses[word.WordId] {
+			yesResponses[wordType] += 1
 		} else {
-		  noResponses[wordType] += 1
+			noResponses[wordType] += 1
 		}
 	}
 
@@ -117,7 +120,7 @@ func getZScore(tl string, responses map[string]bool) float64 {
 	hits := yesResponses[1]
 
 	// False alarms. The number of yes responses to fake words.
-	falseAlarms := yesResponses[0];
+	falseAlarms := yesResponses[0]
 
 	if hits == 0 {
 		// No hits whatsoever results in a zero score
@@ -129,16 +132,16 @@ func getZScore(tl string, responses map[string]bool) float64 {
 
 func getVersion10ZScore(hits int, realWordsAnswered int, falseAlarms int, fakeWordsAnswered int) float64 {
 
-	h :=  float64(hits) / float64(realWordsAnswered)
+	h := float64(hits) / float64(realWordsAnswered)
 
-  	// The false alarm rate. False alarms divided by the total number of fake words answered.
+	// The false alarm rate. False alarms divided by the total number of fake words answered.
 	f := float64(falseAlarms) / float64(fakeWordsAnswered)
 
-  	if h == 1 && f == 1 {
-    	// This means the test taker has just clicked green for all the words
-    	return -1
+	if h == 1 && f == 1 {
+		// This means the test taker has just clicked green for all the words
+		return -1
 	} else {
-		rhs := (( 4 * h * (1 - f) ) - (2 * (h - f) * (1 + h - f))) / ((4 * h * (1 - f)) - ((h - f) * (1 + h - f)))
+		rhs := ((4 * h * (1 - f)) - (2 * (h - f) * (1 + h - f))) / ((4 * h * (1 - f)) - ((h - f) * (1 + h - f)))
 		return 1 - rhs
 	}
 }

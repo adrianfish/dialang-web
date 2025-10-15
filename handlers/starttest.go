@@ -3,36 +3,36 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"log"
-	"net/http"
 	"github.com/dialangproject/web/data"
+	"github.com/dialangproject/web/datacapture"
 	"github.com/dialangproject/web/models"
 	"github.com/dialangproject/web/session"
 	"github.com/dialangproject/web/utils"
-	"github.com/dialangproject/web/datacapture"
+	"log"
+	"net/http"
 )
 
 func StartTest(w http.ResponseWriter, r *http.Request) {
 
 	dialangSession := session.SessionManager.Get(r.Context(), "session").(models.DialangSession)
 
-    if (dialangSession.TES.TL == "" || dialangSession.TES.Skill == "") {
-      log.Println("Neither the test language or skill were set in the session. Returning 500 ...")
-	  w.WriteHeader(http.StatusInternalServerError)
-	  return
-    }
+	if dialangSession.TES.TL == "" || dialangSession.TES.Skill == "" {
+		log.Println("Neither the test language or skill were set in the session. Returning 500 ...")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
 
-    if len(dialangSession.ScoredItems) > 0 {
-      log.Println("The scored item list should be empty at this point. Returning 500 ...")
-	  w.WriteHeader(http.StatusInternalServerError)
-	  return
-    }
+	if len(dialangSession.ScoredItems) > 0 {
+		log.Println("The scored item list should be empty at this point. Returning 500 ...")
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
 
-  	dialangSession.BookletId = calculateBookletId(&dialangSession)
+	dialangSession.BookletId = calculateBookletId(&dialangSession)
 	log.Printf("BOOKLET ID: %d\n", dialangSession.BookletId)
 
 	bookletLength := data.BookletLengths[dialangSession.BookletId]
-  	log.Printf("BOOKLET LENGTH: %v\n", bookletLength)
+	log.Printf("BOOKLET LENGTH: %v\n", bookletLength)
 
 	dialangSession.CurrentBasketId = data.BookletBaskets[dialangSession.BookletId][0]
 	log.Printf("First Basket Id: %v\n", dialangSession.CurrentBasketId)
@@ -44,27 +44,27 @@ func StartTest(w http.ResponseWriter, r *http.Request) {
 
 	session.SessionManager.Put(r.Context(), "session", dialangSession)
 
-  	datacapture.LogTestStart(&dialangSession.PassId, &dialangSession.BookletId, &dialangSession.BookletLength)
-  //
-  /*
-  await docClient.send(
-    new UpdateCommand({
-      TableName: "dialang-data-capture",
-      Key: { "session_id": body.sessionId },
-      ExpressionAttributeValues: { ":vr": JSON.stringify(responses), ":vs": JSON.stringify([zScore, mearaScore, level]) },
-      UpdateExpression: "set vspt_responses_json = :vr, vspt_scores = :vs",
-      ReturnValues: "ALL_NEW",
-    })
-  );
+	datacapture.LogTestStart(&dialangSession.PassId, &dialangSession.BookletId, &dialangSession.BookletLength)
+	//
+	/*
+	  await docClient.send(
+	    new UpdateCommand({
+	      TableName: "dialang-data-capture",
+	      Key: { "session_id": body.sessionId },
+	      ExpressionAttributeValues: { ":vr": JSON.stringify(responses), ":vs": JSON.stringify([zScore, mearaScore, level]) },
+	      UpdateExpression: "set vspt_responses_json = :vr, vspt_scores = :vs",
+	      ReturnValues: "ALL_NEW",
+	    })
+	  );
 
-  const response = { session };
+	  const response = { session };
 
-  return {
-    statusCode: 200,
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(response),
-  };
-  */
+	  return {
+	    statusCode: 200,
+	    headers: { "Content-Type": "application/json" },
+	    body: JSON.stringify(response),
+	  };
+	*/
 	json.NewEncoder(w).Encode(map[string]any{"startBasket": dialangSession.CurrentBasketId, "totalItems": bookletLength})
 	return
 }
@@ -85,30 +85,20 @@ func calculateBookletId(dialangSession *models.DialangSession) int {
 
 	key := fmt.Sprintf("%s#%s", dialangSession.TES.TL, dialangSession.TES.Skill)
 
-	if dialangSession.TestDifficulty != "" {
-      	switch dialangSession.TestDifficulty {
-        	case "easy":
-          		return data.PreestAssignments[key][0].BookletId
-        	case "hard":
-          		return data.PreestAssignments[key][2].BookletId
-        	default:
-          		return data.PreestAssignments[key][1].BookletId
-		}
-	}
-
-    if dialangSession.VsptSubmitted == false && dialangSession.SaSubmitted == false {
+	if dialangSession.VsptSubmitted == false && dialangSession.SaSubmitted == false {
 		log.Println("No vsp or sa submitted")
-      	// No sa or vspt, request the default assignment.
-      	return data.PreestAssignments[key][1].BookletId
-    } else {
+		// No sa or vspt, request the default assignment.
+		log.Println(data.PreestAssignments[key])
+		return data.PreestAssignments[key][1].BookletId
+	} else {
 		log.Println("vsp or sa submitted")
-      	// if either test is done, then we need to get the grade 
-      	// associated with that test:
+		// if either test is done, then we need to get the grade
+		// associated with that test:
 
-		var vsptZScore, saPPE  float64
+		var vsptZScore, saPPE float64
 		if dialangSession.VsptSubmitted {
 			vsptZScore = dialangSession.VsptZScore
-		  	log.Printf("VSPT SUBMITTED. vsptZScore: %f\n", vsptZScore)
+			log.Printf("VSPT SUBMITTED. vsptZScore: %f\n", vsptZScore)
 		}
 		if dialangSession.SaSubmitted {
 			saPPE = dialangSession.SaPPE
@@ -125,12 +115,12 @@ func calculateBookletId(dialangSession *models.DialangSession) int {
 
 		var bookletId int
 		for _, ass := range data.PreestAssignments[key] {
-		  	fmt.Println(ass.Pe)
+			fmt.Println(ass.Pe)
 			if pe <= ass.Pe {
 				bookletId = ass.BookletId
-				break;
+				break
 			}
 		}
 		return bookletId
-    }
+	}
 }

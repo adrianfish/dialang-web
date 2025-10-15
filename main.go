@@ -1,14 +1,14 @@
 package main
 
 import (
-	"net/http"
 	"log"
+	"net/http"
 
 	"github.com/dialangproject/web/handlers"
 	"github.com/dialangproject/web/session"
 )
 
-func main()  {
+func main() {
 
 	mux := http.NewServeMux()
 

@@ -1,10 +1,10 @@
 package handlers
 
 import (
-	"net/http"
-	"github.com/dialangproject/web/session"
-	"github.com/dialangproject/web/models"
 	"github.com/dialangproject/web/datacapture"
+	"github.com/dialangproject/web/models"
+	"github.com/dialangproject/web/session"
+	"net/http"
 )
 
 func SubmitQuestionnaire(w http.ResponseWriter, r *http.Request) {

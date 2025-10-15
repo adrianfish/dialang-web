@@ -7,11 +7,10 @@ import (
 	"log"
 	"os"
 	"slices"
-	"strings"
 	"strconv"
+	"strings"
 
-	"github.com/dialangproject/web/models"
-	commonmodels "github.com/dialangproject/common/models"
+	"github.com/dialangproject/common/models"
 )
 
 var VSPTWords map[string][]models.VSPTWord
@@ -22,11 +21,11 @@ var PreestWeights map[string]models.PreestWeight
 var PreestAssignments map[string][]models.PreestAssignment
 var BookletLengths map[int]int
 var BookletBaskets map[int][]int
-var ItemAnswers map[int][]commonmodels.Answer
-var Answers map[int]commonmodels.Answer
-var Items map[int]commonmodels.Item
+var ItemAnswers map[int][]models.Answer
+var Answers map[int]models.Answer
+var Items map[int]models.Item
 var PunctuationList []string
-var ItemGrades map[string]map[int]commonmodels.ItemGrade
+var ItemGrades map[string]map[int]models.ItemGrade
 
 func init() {
 
@@ -65,7 +64,7 @@ func cacheVSPTWords() {
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		locale := r[0]
@@ -103,7 +102,7 @@ func cacheVSPTBands() {
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		low, err := strconv.Atoi(r[2])
@@ -181,12 +180,12 @@ func cacheSAGrades() {
 		log.Fatal(err)
 	}
 
-  	SAGrades = []models.SAGrade{}
+	SAGrades = []models.SAGrade{}
 
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		skill := r[0]
@@ -219,7 +218,7 @@ func cachePreestWeights() {
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		key := r[0]
@@ -228,10 +227,9 @@ func cachePreestWeights() {
 		coe, err := strconv.ParseFloat(r[3], 32)
 		weight := models.PreestWeight{sa, vspt, coe}
 
-    	PreestWeights[key] = weight
+		PreestWeights[key] = weight
 	}
 }
-
 
 func cachePreestAssignments() {
 
@@ -253,7 +251,7 @@ func cachePreestAssignments() {
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		pe, err := strconv.ParseFloat(r[1], 32)
@@ -296,7 +294,7 @@ func cacheBookletLengths() {
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		bookletId, err := strconv.Atoi(r[0])
@@ -325,7 +323,7 @@ func cacheBookletBaskets() {
 	for {
 		r, err := reader.Read()
 		if err == io.EOF {
-			break;
+			break
 		}
 
 		bookletId, err := strconv.Atoi(r[0])
@@ -349,7 +347,7 @@ func cacheItemAnswers() {
 	}
 	defer f.Close()
 
-	ItemAnswers = map[int][]commonmodels.Answer{}
+	ItemAnswers = map[int][]models.Answer{}
 	json.NewDecoder(f).Decode(&ItemAnswers)
 }
 
@@ -361,7 +359,7 @@ func cacheAnswers() {
 	}
 	defer f.Close()
 
-	Answers = map[int]commonmodels.Answer{}
+	Answers = map[int]models.Answer{}
 	json.NewDecoder(f).Decode(&Answers)
 }
 
@@ -373,7 +371,7 @@ func cacheItems() {
 	}
 	defer f.Close()
 
-	Items = map[int]commonmodels.Item{}
+	Items = map[int]models.Item{}
 	json.NewDecoder(f).Decode(&Items)
 }
 
@@ -397,7 +395,7 @@ func cacheItemGrades() {
 	}
 	defer f.Close()
 
-	ItemGrades = map[string]map[int]commonmodels.ItemGrade{}
+	ItemGrades = map[string]map[int]models.ItemGrade{}
 
 	json.NewDecoder(f).Decode(&ItemGrades)
 }

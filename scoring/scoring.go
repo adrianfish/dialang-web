@@ -1,18 +1,17 @@
 package scoring
 
 import (
-	"fmt"
-	"log"
 	"errors"
-	"strings"
-	"slices"
-	"strconv"
+	"fmt"
 	"github.com/dialangproject/web/data"
 	"github.com/dialangproject/web/models"
+	"log"
+	"slices"
+	"strconv"
+	"strings"
 )
 
-
-var CEFR_LEVELS = map[int]string{ 1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2" }
+var CEFR_LEVELS = map[int]string{1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2"}
 
 /**
  * Calculates the booklet id.
@@ -30,30 +29,19 @@ func CalculateBookletId(dialangSession *models.DialangSession) int {
 
 	key := fmt.Sprintf("%s#%s", dialangSession.TES.TL, dialangSession.TES.Skill)
 
-	if dialangSession.TestDifficulty != "" {
-      	switch dialangSession.TestDifficulty {
-        	case "easy":
-          		return data.PreestAssignments[key][0].BookletId
-        	case "hard":
-          		return data.PreestAssignments[key][2].BookletId
-        	default:
-          		return data.PreestAssignments[key][1].BookletId
-		}
-	}
-
-    if dialangSession.VsptSubmitted == false && dialangSession.SaSubmitted == false {
+	if dialangSession.VsptSubmitted == false && dialangSession.SaSubmitted == false {
 		log.Println("No vsp or sa submitted")
-      	// No sa or vspt, request the default assignment.
-      	return data.PreestAssignments[key][1].BookletId
-    } else {
+		// No sa or vspt, request the default assignment.
+		return data.PreestAssignments[key][1].BookletId
+	} else {
 		log.Println("vsp or sa submitted")
-      	// if either test is done, then we need to get the grade 
-      	// associated with that test:
+		// if either test is done, then we need to get the grade
+		// associated with that test:
 
-		var vsptZScore, saPPE  float64
+		var vsptZScore, saPPE float64
 		if dialangSession.VsptSubmitted {
 			vsptZScore = dialangSession.VsptZScore
-		  	log.Printf("VSPT SUBMITTED. vsptZScore: %f\n", vsptZScore)
+			log.Printf("VSPT SUBMITTED. vsptZScore: %f\n", vsptZScore)
 		}
 		if dialangSession.SaSubmitted {
 			saPPE = dialangSession.SaPPE
@@ -70,14 +58,14 @@ func CalculateBookletId(dialangSession *models.DialangSession) int {
 
 		var bookletId int
 		for _, ass := range data.PreestAssignments[key] {
-		  	fmt.Println(ass.Pe)
+			fmt.Println(ass.Pe)
 			if pe <= ass.Pe {
 				bookletId = ass.BookletId
-				break;
+				break
 			}
 		}
 		return bookletId
-    }
+	}
 }
 
 /**
@@ -130,11 +118,11 @@ func GetScoredIdResponseItem(itemId int, responseId int) (*models.ScoredItem, er
 	}
 
 	if answer.Correct == 1 {
-	  scoredItem.Correct = true
-	  scoredItem.Score = item.Weight
+		scoredItem.Correct = true
+		scoredItem.Score = item.Weight
 	} else {
-	  // Score will remain 0
-	  scoredItem.Correct = false
+		// Score will remain 0
+		scoredItem.Correct = false
 	}
 
 	return &scoredItem, nil
@@ -152,7 +140,7 @@ func GetScoredTextResponseItem(itemId int, answerText string) (*models.ScoredIte
 
 	for _, correctAnswer := range data.ItemAnswers[itemId] {
 		if removeWhiteSpaceAndPunctuation(correctAnswer.Text) == removeWhiteSpaceAndPunctuation(answerText) {
-			scoredItem.Score = item.Weight;
+			scoredItem.Score = item.Weight
 			scoredItem.Correct = true
 			break
 		}
@@ -162,7 +150,7 @@ func GetScoredTextResponseItem(itemId int, answerText string) (*models.ScoredIte
 
 func GetItemGrade(tl string, skill string, bookletId int, scoredItems []*models.ScoredItem) (int, int, string) {
 
-    log.Printf("NUM ITEMS: %d\n", len(scoredItems))
+	log.Printf("NUM ITEMS: %d\n", len(scoredItems))
 
 	var rawScore, totalWeight int
 	for _, item := range scoredItems {
@@ -180,10 +168,10 @@ func GetItemGrade(tl string, skill string, bookletId int, scoredItems []*models.
 	}
 
 	if itemGrade, ok := itemGrades[rawScore]; ok {
-    	return rawScore, itemGrade.Grade, CEFR_LEVELS[itemGrade.Grade]
+		return rawScore, itemGrade.Grade, CEFR_LEVELS[itemGrade.Grade]
 	} else {
 		log.Printf("No item grade for raw score %d. Returning default grade ...\n", rawScore)
-    	return rawScore, 0, CEFR_LEVELS[1]
+		return rawScore, 0, CEFR_LEVELS[1]
 	}
 }
 
@@ -193,10 +181,10 @@ func GetItemGrade(tl string, skill string, bookletId int, scoredItems []*models.
  */
 func removeWhiteSpaceAndPunctuation(in string) string {
 
-    if len(data.PunctuationList) <= 0 {
+	if len(data.PunctuationList) <= 0 {
 		log.Println("No punctuation list found. Returning input unchanged ...")
-    	return in
-  	}
+		return in
+	}
 
 	// Trim the white space, tokenize and join around space
 	firstPass := strings.Join(strings.Fields(in), " ")

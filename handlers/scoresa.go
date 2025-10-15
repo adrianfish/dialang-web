@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"encoding/json"
-	"strings"
-	"net/http"
-	"log"
 	"github.com/dialangproject/web/datacapture"
-	"github.com/dialangproject/web/scoring"
 	"github.com/dialangproject/web/models"
+	"github.com/dialangproject/web/scoring"
 	"github.com/dialangproject/web/session"
+	"log"
+	"net/http"
+	"strings"
 )
 
 func ScoreSA(w http.ResponseWriter, r *http.Request) {
@@ -24,12 +24,12 @@ func ScoreSA(w http.ResponseWriter, r *http.Request) {
 	var saResponses map[string]string
 	if err := decoder.Decode(&saResponses); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
-		return 
+		return
 	}
 
 	skill := dialangSession.TES.Skill
 
-  	responses := map[string]bool{}
+	responses := map[string]bool{}
 	for name, v := range saResponses {
 		if strings.HasPrefix(name, "statement:") {
 			wid := strings.Split(name, ":")[1]
@@ -37,16 +37,16 @@ func ScoreSA(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	saPPE, saLevel, err := scoring.GetSaPPEAndLevel(skill, responses);
+	saPPE, saLevel, err := scoring.GetSaPPEAndLevel(skill, responses)
 	if err != nil {
 		log.Printf("Failed to score self assessment for skill %s\n", skill)
 		w.WriteHeader(http.StatusInternalServerError)
 		return
 	}
 
-    dialangSession.SaPPE = saPPE
-    dialangSession.SaSubmitted = true
-    dialangSession.SaLevel = saLevel
+	dialangSession.SaPPE = saPPE
+	dialangSession.SaSubmitted = true
+	dialangSession.SaLevel = saLevel
 
 	session.SessionManager.Put(r.Context(), "session", dialangSession)
 

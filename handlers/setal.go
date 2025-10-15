@@ -1,9 +1,9 @@
 package handlers
 
 import (
-	"net/http"
 	"github.com/dialangproject/web/models"
 	"github.com/dialangproject/web/session"
+	"net/http"
 )
 
 func SetAL(w http.ResponseWriter, r *http.Request) {

@@ -21,16 +21,6 @@ services:
       database:
         condition: service_started
     restart: unless-stopped
-  database:
-    env_file:
-      - .env
-    image: adrianfish/dialang-database
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: dialang
-      POSTGRES_HOST_AUTH_METHOD: md5
-    restart: unless-stopped
   datacapture:
     image: adrianfish/dialang-datacapture
     environment:

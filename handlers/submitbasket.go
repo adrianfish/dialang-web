@@ -1,32 +1,32 @@
 package handlers
 
 import (
-	"strconv"
+	"encoding/json"
+	"github.com/dialangproject/web/data"
+	"github.com/dialangproject/web/datacapture"
+	"github.com/dialangproject/web/models"
+	"github.com/dialangproject/web/scoring"
+	"github.com/dialangproject/web/session"
 	"log"
 	"net/http"
 	"net/url"
-	"strings"
-	"encoding/json"
 	"slices"
-	"github.com/dialangproject/web/session"
-	"github.com/dialangproject/web/datacapture"
-	"github.com/dialangproject/web/models"
-	"github.com/dialangproject/web/data"
-	"github.com/dialangproject/web/scoring"
+	"strconv"
+	"strings"
 )
 
 func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 
 	dialangSession := session.SessionManager.Get(r.Context(), "session").(models.DialangSession)
 
-    if dialangSession.TES.TL == "" || dialangSession.TES.Skill == "" || dialangSession.CurrentBasketId == 0 {
+	if dialangSession.TES.TL == "" || dialangSession.TES.Skill == "" || dialangSession.CurrentBasketId == 0 {
 		log.Println("None of the test language, skill or current basket id were set in the session. Returning 500 ...")
 		w.WriteHeader(http.StatusInternalServerError)
 		return
-    }
+	}
 
 	basketType := r.FormValue("basketType")
-	if (basketType == "") {
+	if basketType == "" {
 		log.Println("No basketType supplied. Returning 400 (Bad Request) ...")
 		w.WriteHeader(http.StatusBadRequest)
 		return
@@ -42,14 +42,15 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 	log.Printf("basketType: %v\n", basketType)
 	log.Printf("currentBasketId: %v\n", currentBasketId)
 	log.Printf("currentBasketNumber: %v\n", dialangSession.CurrentBasketNumber)
-    log.Printf("scored item list length: %v\n", numScoredItems)
+	log.Printf("scored item list length: %v\n", numScoredItems)
 
 	returnMap := map[string]any{}
 
 	itemList := dialangSession.ScoredItems
 
 	switch basketType {
-		case "mcq": {
+	case "mcq":
+		{
 			log.Println("mcq")
 			itemId, itemIdErr := strconv.Atoi(r.FormValue("itemId"))
 			if itemIdErr != nil {
@@ -83,7 +84,8 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 			}
 		}
 
-		case "tabbedpane": {
+	case "tabbedpane":
+		{
 			itemsToLog := []*models.ScoredItem{}
 			responses := getMultipleIdResponses(&r.Form)
 			basketItems := []*models.ScoredItem{}
@@ -100,8 +102,8 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					} else {
 						log.Printf("No position supplied for item '%d. Returning 400 (Bad Request) ...\n", item.Item.Id)
 						w.WriteHeader(http.StatusBadRequest)
-					  	return
-				  	}
+						return
+					}
 
 					item.BasketId = currentBasketId
 					item.PositionInTest = numScoredItems + item.PositionInBasket
@@ -112,9 +114,9 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					itemsToLog = append(itemsToLog, item)
 					itemList = append(itemList, item)
 					basketItems = append(basketItems, item)
-			  	} else {
+				} else {
 					log.Println("No item returned from scoring")
-			  	}
+				}
 			}
 			slices.SortFunc(basketItems, positionInBasketSorter)
 			scoredBasket := models.ScoredBasket{Id: currentBasketId, Type: "tabbedpane", Skill: basketItems[0].Item.Skill, Items: basketItems}
@@ -123,7 +125,8 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 			datacapture.LogMultipleIdResponses(dialangSession.PassId, itemsToLog)
 		}
 
-		case "shortanswer": {
+	case "shortanswer":
+		{
 			responses := getMultipleTextualResponses(&r.Form)
 			basketItems := []*models.ScoredItem{}
 			itemsToLog := []*models.ScoredItem{}
@@ -149,18 +152,19 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					itemList = append(itemList, item)
 					itemsToLog = append(itemsToLog, item)
 					basketItems = append(basketItems, item)
-			  } else {
-				log.Println("No item returned from scoring")
-			  }
+				} else {
+					log.Println("No item returned from scoring")
+				}
 			}
 			slices.SortFunc(basketItems, positionInBasketSorter)
 			scoredBasket := models.ScoredBasket{Id: currentBasketId, Type: "shortanswer", Skill: basketItems[0].Item.Skill, Items: basketItems}
 			dialangSession.ScoredBaskets = append(dialangSession.ScoredBaskets, &scoredBasket)
 			returnMap["scoredBasket"] = scoredBasket
 			datacapture.LogMultipleTextualResponses(dialangSession.PassId, itemsToLog)
-      	}
+		}
 
-		case "gaptext": {
+	case "gaptext":
+		{
 			responses := getMultipleTextualResponses(&r.Form)
 			basketItems := []*models.ScoredItem{}
 			itemsToLog := []*models.ScoredItem{}
@@ -187,7 +191,7 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 					itemList = append(itemList, item)
 					itemsToLog = append(itemsToLog, item)
 					basketItems = append(basketItems, item)
-			  	} else {
+				} else {
 					log.Println("No item returned from scoring")
 				}
 			}
@@ -198,7 +202,8 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 			datacapture.LogMultipleTextualResponses(dialangSession.PassId, itemsToLog)
 		}
 
-		case "gapdrop": {
+	case "gapdrop":
+		{
 			responses := getMultipleIdResponses(&r.Form)
 			basketItems := []*models.ScoredItem{}
 			itemsToLog := []*models.ScoredItem{}
@@ -240,8 +245,9 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 			datacapture.LogMultipleIdResponses(dialangSession.PassId, itemsToLog)
 		}
 
-		default: {
-        	log.Println("Unrecognised basketType supplied. Returning 400 (Bad Request) ...")
+	default:
+		{
+			log.Println("Unrecognised basketType supplied. Returning 400 (Bad Request) ...")
 			w.WriteHeader(http.StatusBadRequest)
 			return
 		}
@@ -250,27 +256,27 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 	dialangSession.ScoredItems = itemList
 
 	nextBasketNumber := dialangSession.CurrentBasketNumber + 1
-    log.Printf("nextBasketNumber: %d\n", nextBasketNumber)
+	log.Printf("nextBasketNumber: %d\n", nextBasketNumber)
 
 	basketIds := data.BookletBaskets[dialangSession.BookletId]
 
-    if nextBasketNumber >= len(basketIds) {
-    	// The test has finished. Grade it.
+	if nextBasketNumber >= len(basketIds) {
+		// The test has finished. Grade it.
 		rawScore, itemGrade, itemLevel := scoring.GetItemGrade(dialangSession.TES.TL,
-                                        dialangSession.TES.Skill,
-                                        dialangSession.BookletId,
-                                        itemList)
+			dialangSession.TES.Skill,
+			dialangSession.BookletId,
+			itemList)
 
-      	log.Printf("ITEM GRADE: %d\n", itemGrade)
+		log.Printf("ITEM GRADE: %d\n", itemGrade)
 
 		dialangSession.ItemRawScore = rawScore
 		dialangSession.ItemGrade = itemGrade
 		dialangSession.ItemLevel = itemLevel
 
-	  	session.SessionManager.Put(r.Context(), "session", dialangSession)
+		session.SessionManager.Put(r.Context(), "session", dialangSession)
 
-	    datacapture.LogTestResult(&dialangSession)
-	    datacapture.LogTestFinish(dialangSession.PassId)
+		datacapture.LogTestResult(&dialangSession)
+		datacapture.LogTestFinish(dialangSession.PassId)
 
 		if dialangSession.ResultUrl != "" {
 			parts := strings.Split(dialangSession.ResultUrl, "?")
@@ -295,27 +301,27 @@ func SubmitBasket(w http.ResponseWriter, r *http.Request) {
 			url := parts[0] + params.String()
 			log.Printf("Redirect URL: %v\n", url)
 			returnMap["redirect"] = url
-	  		json.NewEncoder(w).Encode(returnMap)
+			json.NewEncoder(w).Encode(returnMap)
 		} else {
 			// We set testDone to true so the client js knows to enable the sa feedback and advice buttons
 			returnMap["itemLevel"] = itemLevel
 			returnMap["testDone"] = "true"
-	  		json.NewEncoder(w).Encode(returnMap)
+			json.NewEncoder(w).Encode(returnMap)
 		}
-    } else {
-      datacapture.LogBasket(dialangSession.PassId, currentBasketId, dialangSession.CurrentBasketNumber)
+	} else {
+		datacapture.LogBasket(dialangSession.PassId, currentBasketId, dialangSession.CurrentBasketNumber)
 
-	  nextBasketId := basketIds[nextBasketNumber]
+		nextBasketId := basketIds[nextBasketNumber]
 
-      dialangSession.CurrentBasketNumber = nextBasketNumber
-      dialangSession.CurrentBasketId = nextBasketId
-	  session.SessionManager.Put(r.Context(), "session", dialangSession)
+		dialangSession.CurrentBasketNumber = nextBasketNumber
+		dialangSession.CurrentBasketId = nextBasketId
+		session.SessionManager.Put(r.Context(), "session", dialangSession)
 
-	  returnMap["nextBasketId"] = nextBasketId
-	  returnMap["itemsCompleted"] = len(itemList)
+		returnMap["nextBasketId"] = nextBasketId
+		returnMap["itemsCompleted"] = len(itemList)
 
-	  json.NewEncoder(w).Encode(returnMap)
-    }
+		json.NewEncoder(w).Encode(returnMap)
+	}
 }
 
 func getMultipleIdResponses(params *url.Values) map[int]int {
@@ -353,7 +359,7 @@ func getMultipleTextualResponses(params *url.Values) map[int]string {
 		}
 
 		if itemId, err := strconv.Atoi(strings.Split(k, "-")[0]); err == nil {
-        	responses[itemId] = v[0]
+			responses[itemId] = v[0]
 		} else {
 			log.Println("Failed to convert item id to int", err)
 		}

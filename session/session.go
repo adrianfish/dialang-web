@@ -1,15 +1,14 @@
 package session
 
 import (
-	"time"
 	"github.com/alexedwards/scs/v2"
+	"time"
 )
 
 var SessionManager *scs.SessionManager
 
-func init()  {
+func init() {
 
 	SessionManager = scs.New()
 	SessionManager.Lifetime = 4 * time.Hour
 }
-

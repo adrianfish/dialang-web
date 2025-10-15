@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"encoding/json"
-	"net/http"
 	"log"
+	"net/http"
 
-	"github.com/dialangproject/web/utils"
 	"github.com/dialangproject/web/datacapture"
 	"github.com/dialangproject/web/models"
 	"github.com/dialangproject/web/session"
+	"github.com/dialangproject/web/utils"
 )
 
 func SetTL(w http.ResponseWriter, r *http.Request) {
@@ -16,6 +16,8 @@ func SetTL(w http.ResponseWriter, r *http.Request) {
 	r.ParseMultipartForm(1024)
 
 	dialangSession := session.SessionManager.Get(r.Context(), "session").(models.DialangSession)
+
+	dialangSession.ResetPass()
 
 	log.Printf("dialangSession: %v\n", dialangSession)
 
@@ -39,7 +41,7 @@ func SetTL(w http.ResponseWriter, r *http.Request) {
 	log.Printf("IP Address: %v\n", v.IPAddress)
 
 	if v.SessionId == "" {
-    	v.SessionId = utils.GenerateUUID()
+		v.SessionId = utils.GenerateUUID()
 		if err := datacapture.CreateSessionAndPass(&v); err != nil {
 			http.Error(w, "Failed to create session and pass", http.StatusInternalServerError)
 			return
@@ -59,7 +61,7 @@ func SetTL(w http.ResponseWriter, r *http.Request) {
 	session.SessionManager.Put(r.Context(), "session", dialangSession)
 
 	json.NewEncoder(w).Encode(map[string]string{
-		"passId": v.PassId,
+		"passId":    v.PassId,
 		"sessionId": v.SessionId,
 	})
 }
