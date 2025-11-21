@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/dialangproject/common/models"
+	"github.com/adrianfish/dialang-common/models"
 )
 
 var VSPTWords map[string][]models.VSPTWord

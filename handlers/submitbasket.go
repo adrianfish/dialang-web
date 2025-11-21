@@ -2,11 +2,11 @@ package handlers
 
 import (
 	"encoding/json"
-	"github.com/dialangproject/web/data"
-	"github.com/dialangproject/web/datacapture"
-	"github.com/dialangproject/web/models"
-	"github.com/dialangproject/web/scoring"
-	"github.com/dialangproject/web/session"
+	"github.com/adrianfish/dialang-web/data"
+	"github.com/adrianfish/dialang-web/datacapture"
+	"github.com/adrianfish/dialang-web/models"
+	"github.com/adrianfish/dialang-web/scoring"
+	"github.com/adrianfish/dialang-web/session"
 	"log"
 	"net/http"
 	"net/url"

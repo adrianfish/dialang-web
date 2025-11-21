@@ -1,3 +1,5 @@
+github.com/adrianfish/dialang-common v0.1.0 h1:ARhXciNq6d7osGAe0WbjAXKwJqbtRCg3mDPK2xu9InI=
+github.com/adrianfish/dialang-common v0.1.0/go.mod h1:R5I6jK0RYzmKn3/VZleA459vlRxllRhg4aruPH9Sqf0=
 github.com/alexedwards/scs/v2 v2.9.0 h1:xa05mVpwTBm1iLeTMNFfAWpKUm4fXAW7CeAViqBVS90=
 github.com/alexedwards/scs/v2 v2.9.0/go.mod h1:ToaROZxyKukJKT/xLcVQAChi5k6+Pn1Gvmdl7h3RRj8=
 github.com/google/uuid v1.6.0 h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=

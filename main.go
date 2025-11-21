@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dialangproject/web/handlers"
-	"github.com/dialangproject/web/session"
+	"github.com/adrianfish/dialang-web/handlers"
+	"github.com/adrianfish/dialang-web/session"
 )
 
 func main() {

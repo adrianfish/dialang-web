@@ -2,22 +2,14 @@ package models
 
 import (
 	"encoding/gob"
-	commonmodels "github.com/dialangproject/common/models"
+	commonmodels "github.com/adrianfish/dialang-common/models"
 )
-
-type SetTLParams struct {
-	SessionId     string `json:"sessionId"`
-	PassId        string `json:"passId"`
-	Al            string `json:"al"`
-	Tl            string `json:"tl"`
-	Skill         string `json:"skill"`
-	IPAddress     string
-	BrowserLocale string
-	Referrer      string
-}
 
 type DialangSession struct {
 	SessionId           string          `json:"sessionId"`
+	IPAddress     		string
+	BrowserLocale string
+	Referrer      string
 	PassId              string          `json:"passId"`
 	VsptSubmitted       bool            `json:"vsptSubmitted"`
 	VsptMearaScore      int             `json:"vsptMearaScore"`

@@ -3,8 +3,8 @@ package scoring
 import (
 	"errors"
 	"fmt"
-	"github.com/dialangproject/web/data"
-	"github.com/dialangproject/web/models"
+	"github.com/adrianfish/dialang-web/data"
+	"github.com/adrianfish/dialang-web/models"
 	"log"
 	"slices"
 	"strconv"

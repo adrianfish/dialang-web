@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	"github.com/dialangproject/web/models"
-	"github.com/dialangproject/web/session"
+	"github.com/adrianfish/dialang-web/models"
+	"github.com/adrianfish/dialang-web/session"
 	"net/http"
 )
 

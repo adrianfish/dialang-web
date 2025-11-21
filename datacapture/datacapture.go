@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/dialangproject/web/models"
+	"github.com/adrianfish/dialang-web/models"
 	_ "github.com/lib/pq"
 )
 
@@ -37,7 +37,6 @@ func init() {
 
 	log.Printf("Connecting to dialang-data-capture database at %v\n", dbHost)
 
-	//pw := "e785598fffccc098afda8eb6e42494e5"
 	connStr := "postgres://" + dbUser + ":" + dbPassword + "@" + dbHost + "/dialang-data-capture?sslmode=disable"
 	thisDb, err := sql.Open("postgres", connStr)
 	if err != nil {
@@ -113,21 +112,21 @@ func init() {
 	}
 }
 
-func CreateSessionAndPass(v *models.SetTLParams) error {
+func CreateSessionAndPass(s *models.DialangSession) error {
 
 	now := time.Now().Unix()
 
 	if _, err := db.Exec("INSERT INTO sessions (id, ip_address, started, browser_locale, referrer) values($1, $2, $3, $4, $5)",
-		v.SessionId,
-		v.IPAddress,
+		s.SessionId,
+		s.IPAddress,
 		now,
-		v.BrowserLocale,
-		v.Referrer); err != nil {
+		s.BrowserLocale,
+		s.Referrer); err != nil {
 		log.Println(err)
 		return err
 	}
 
-	if err := CreatePass(v); err != nil {
+	if err := CreatePass(s); err != nil {
 		log.Println(err)
 		return err
 	}
@@ -135,16 +134,16 @@ func CreateSessionAndPass(v *models.SetTLParams) error {
 	return nil
 }
 
-func CreatePass(v *models.SetTLParams) error {
+func CreatePass(s *models.DialangSession) error {
 
 	now := time.Now().Unix()
 
 	if _, err := db.Exec("INSERT INTO passes (id, session_id, al, tl, skill, started) values($1, $2, $3, $4, $5, $6)",
-		v.PassId,
-		v.SessionId,
-		v.Al,
-		v.Tl,
-		v.Skill,
+		s.PassId,
+		s.SessionId,
+		s.TES.AL,
+		s.TES.TL,
+		s.TES.Skill,
 		now); err != nil {
 
 		log.Println(err)

@@ -5,10 +5,10 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/dialangproject/web/datacapture"
-	"github.com/dialangproject/web/models"
-	"github.com/dialangproject/web/session"
-	"github.com/dialangproject/web/utils"
+	"github.com/adrianfish/dialang-web/datacapture"
+	"github.com/adrianfish/dialang-web/models"
+	"github.com/adrianfish/dialang-web/session"
+	"github.com/adrianfish/dialang-web/utils"
 )
 
 func SetTL(w http.ResponseWriter, r *http.Request) {
@@ -17,51 +17,40 @@ func SetTL(w http.ResponseWriter, r *http.Request) {
 
 	dialangSession := session.SessionManager.Get(r.Context(), "session").(models.DialangSession)
 
-	dialangSession.ResetPass()
-
 	log.Printf("dialangSession: %v\n", dialangSession)
 
-	v := models.SetTLParams{}
+	dialangSession.ResetPass()
 
-	v.Tl = r.FormValue("tl")
-	v.Skill = r.FormValue("skill")
-	if v.Tl == "" || v.Skill == "" {
+	dialangSession.TES.TL = r.FormValue("tl")
+	dialangSession.TES.Skill = r.FormValue("skill")
+
+	if dialangSession.TES.TL == "" || dialangSession.TES.Skill == "" {
 		http.Error(w, "No test language or skill supplied", http.StatusBadRequest)
 		return
 	}
 
-	v.PassId = utils.GenerateUUID()
+	dialangSession.PassId = utils.GenerateUUID()
 
-	v.Referrer = r.Referer()
-	realIP := r.Header.Get("X-Real-IP")
-	forwardedFor := r.Header.Values("X-Forwarded-For")
-	log.Printf("forwardedFor: %v\n", forwardedFor)
-	log.Printf("realIP: %v\n", realIP)
-	v.IPAddress = r.RemoteAddr
-	log.Printf("IP Address: %v\n", v.IPAddress)
+	dialangSession.Referrer = r.Referer()
+	dialangSession.IPAddress = r.RemoteAddr
 
-	if v.SessionId == "" {
-		v.SessionId = utils.GenerateUUID()
-		if err := datacapture.CreateSessionAndPass(&v); err != nil {
+	if dialangSession.SessionId == "" {
+		dialangSession.SessionId = utils.GenerateUUID()
+		if err := datacapture.CreateSessionAndPass(&dialangSession); err != nil {
 			http.Error(w, "Failed to create session and pass", http.StatusInternalServerError)
 			return
 		}
 	} else {
-		if err := datacapture.CreatePass(&v); err != nil {
+		if err := datacapture.CreatePass(&dialangSession); err != nil {
 			http.Error(w, "Failed to create pass", http.StatusInternalServerError)
 			return
 		}
 	}
 
-	dialangSession.SessionId = v.SessionId
-	dialangSession.PassId = v.PassId
-	dialangSession.TES.TL = v.Tl
-	dialangSession.TES.Skill = v.Skill
-
 	session.SessionManager.Put(r.Context(), "session", dialangSession)
 
 	json.NewEncoder(w).Encode(map[string]string{
-		"passId":    v.PassId,
-		"sessionId": v.SessionId,
+		"passId":    dialangSession.PassId,
+		"sessionId": dialangSession.SessionId,
 	})
 }

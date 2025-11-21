@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   proxy:
+    build: ../proxy
     image: adrianfish/dialang-proxy
     depends_on:
       web:
@@ -11,9 +12,15 @@ services:
       - "80:80"
     restart: unless-stopped
   content:
+    build: ../content
     image: adrianfish/dialang-content
     restart: unless-stopped
+    volumes:
+      - type: bind
+        source: ../content/generated-content
+        target: /usr/share/nginx/html/content
   web:
+    build: ../web
     env_file:
       - .env
     image: adrianfish/dialang-web
@@ -22,6 +29,7 @@ services:
         condition: service_started
     restart: unless-stopped
   datacapture:
+    build: ../datacapture
     image: adrianfish/dialang-datacapture
     environment:
       POSTGRES_USER: ${POSTGRES_USER}

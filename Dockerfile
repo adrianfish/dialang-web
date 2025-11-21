@@ -1,8 +1,5 @@
 FROM golang:alpine3.22 as builder
 
-RUN mkdir /common
-COPY common/ /common
-
 WORKDIR /app
 
 # pre-copy/cache go.mod for pre-downloading dependencies and only redownloading them in subsequent builds if they change
@@ -26,5 +23,7 @@ WORKDIR /app
 COPY data-files/ data-files/
 
 COPY --from=builder /app/dialang-web .
+
+EXPOSE 80
 
 CMD ["./dialang-web"]
