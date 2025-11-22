@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/adrianfish/dialang-web/handlers"
 	"github.com/adrianfish/dialang-web/session"
@@ -20,5 +21,5 @@ func main() {
 	mux.HandleFunc("/submitbasket", handlers.SubmitBasket)
 	mux.HandleFunc("/submitquestionnaire", handlers.SubmitQuestionnaire)
 
-	log.Fatal(http.ListenAndServe(":80", session.SessionManager.LoadAndSave(mux)))
+	log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), session.SessionManager.LoadAndSave(mux)))
 }
