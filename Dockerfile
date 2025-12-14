@@ -24,6 +24,8 @@ COPY data-files/ data-files/
 
 COPY --from=builder /app/dialang-web .
 
-EXPOSE 80
+ENV PORT=80
+
+EXPOSE $PORT
 
 CMD ["./dialang-web"]

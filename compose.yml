@@ -16,24 +16,23 @@ services:
     image: adrianfish/dialang-content
     restart: unless-stopped
     volumes:
-      - type: bind
-        source: ../content/generated-content
-        target: /usr/share/nginx/html/content
+      - "../content/generated-content:/usr/share/nginx/html/content"
   web:
     build: ../web
-    env_file:
-      - .env
     image: adrianfish/dialang-web
+    env_file:
+      - ./.env
     depends_on:
-      database:
+      datacapture:
         condition: service_started
     restart: unless-stopped
   datacapture:
     build: ../datacapture
     image: adrianfish/dialang-datacapture
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: dialang-data-capture
-      POSTGRES_HOST_AUTH_METHOD: md5
+    env_file:
+      - ./.env
+    volumes:
+      - db-data:/var/lib/postgresql
     restart: unless-stopped
+volumes:
+  db-data:

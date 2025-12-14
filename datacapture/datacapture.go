@@ -27,11 +27,7 @@ var saScoresStmt *sql.Stmt
 
 func init() {
 
-	dbHost := os.Getenv("DIALANG_DB_HOST")
-	if dbHost == "" {
-		dbHost = "dialang-datacapture-1"
-	}
-
+	dbHost := os.Getenv("DATACAPTURE_HOST")
 	dbUser := os.Getenv("POSTGRES_USER")
 	dbPassword := os.Getenv("POSTGRES_PASSWORD")
 
