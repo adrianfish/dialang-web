@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Choose one of the options below, and click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="930" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="208" />
+<div id="prompt">Welk woord ontbreekt?<br /><br />Bij de Dam ... u linksaf.</div>
+<div id="radios">
+    
+    <input type="radio" id="12934" name="response" value="12934" />
+    <label for="12934">slaat</label><br />
+    
+    <input type="radio" id="12935" name="response" value="12935" />
+    <label for="12935">staat</label><br />
+    
+    <input type="radio" id="12936" name="response" value="12936" />
+    <label for="12936">vertrekt</label><br />
+    
+    <input type="radio" id="12937" name="response" value="12937" />
+    <label for="12937">bepaalt</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

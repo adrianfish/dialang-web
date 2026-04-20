@@ -1,0 +1,68 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Roghnaigh ceann de na roghanna thíos, agus cliceáil an cnaipe leis an luch.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2284" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="747" />
+<div id="prompt">Kies het meest passende vervolg op de zin<br /><br />Ondanks de inspanningen van vele relaties<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="5481" name="response" value="5481" />
+    <label for="5481">heeft ons bedrijf de poorten moeten sluiten.</label><br />
+    
+    <input type="radio" id="5482" name="response" value="5482" />
+    <label for="5482">is ons bedrijf op de fles.</label><br />
+    
+    <input type="radio" id="5483" name="response" value="5483" />
+    <label for="5483">is ons bedrijf ermee opgehouden.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

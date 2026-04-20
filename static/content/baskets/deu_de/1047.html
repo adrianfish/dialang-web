@@ -1,0 +1,80 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Hören Sie sich die Tonaufnahme an, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche. Sie können die Tonaufnahme nur EINMAL abspielen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/001047.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/001047.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1047" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3780" />
+<div id="prompt">Kuulet lyhyen keskustelun. Valitse oikea vaihtoehto.<br /><br />Sää on pakastumassa tarkoittaa, että</div>
+<div id="radios">
+    
+    <input type="radio" id="182" name="response" value="182" />
+    <label for="182">sää lämpenee.</label><br />
+    
+    <input type="radio" id="183" name="response" value="183" />
+    <label for="183">sää ei muutu.</label><br />
+    
+    <input type="radio" id="184" name="response" value="184" />
+    <label for="184">sää kylmenee.</label><br />
+    
+    <input type="radio" id="185" name="response" value="185" />
+    <label for="185">tulee sade.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

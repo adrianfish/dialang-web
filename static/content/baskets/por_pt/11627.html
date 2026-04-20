@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Ouça a gravação e complete a tarefa preenchendo o(s) espaço(s) em branco.Clique sobre a caixa para aceder à lista das opções disponíveis. Escolha a sua resposta clicando com o rato sobre ela. Esta audição só poderá ser feita UMA VEZ.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/011627.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/011627.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11627" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Fjóla kaupir <select name="4872-response"><option></option><option value="1100">hvít hrísgrjón og 2 banana</option><option value="1101">brún hrísgrjón og 7 banana</option><option value="1102">bara hvít hrísgrjón</option><option value="1103">bara brún hrísgrjón</option></select> .</span>
+</div> 
+
+
+<input type="hidden" name="4872-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

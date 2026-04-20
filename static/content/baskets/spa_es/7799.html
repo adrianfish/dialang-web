@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Er þér annt um heilsuna? Hjá okkur getur þú ræktað líkamann á þann hátt sem þér best líkar. Tækjasalir með fullkomnum æfingatækjum. Hóp- eða einstaklingstímar hjá íþróttafræðingum og sjúkraþjálfurum. Á staðnum er sundlaug, ljósabekkir, gufubað og nuddstofa.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7799" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4760" />
+<div id="prompt">Hvernig fyrirtæki auglýsir?</div>
+<div id="radios">
+    
+    <input type="radio" id="11531" name="response" value="11531" />
+    <label for="11531">hárgreiðslustofa</label><br />
+    
+    <input type="radio" id="11532" name="response" value="11532" />
+    <label for="11532">líkamsræktarstöð</label><br />
+    
+    <input type="radio" id="11533" name="response" value="11533" />
+    <label for="11533">heilsuhæli</label><br />
+    
+    <input type="radio" id="11534" name="response" value="11534" />
+    <label for="11534">íþróttaskóli</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

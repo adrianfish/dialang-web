@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center>CENTRO DE ESTUDIOS SOCIOLÓGICOS "VITA VITAE" <p align=center>Alféizar, 21<p align=center> ALMERÍA<p align=center><p align=center>ASAMBLEA GENERAL ORDINARIA<p align=center><p align=center>CONVOCATORIA      <p>        Se pone en conocimiento de los Señores Socios que, según está estipulado en los Estatutos de nuestra Sociedad, artículos 15, 16 y 17, la Asamblea General Ordinaria se celebrará el día 28 de enero del presente año, a las 19:00 horas, en primera convocatoria y a las 19:30 horas en segunda convocatoria, en el salón de actos de nuestra sede y de acuerdo con el siguiente <p>            ORDEN DEL DÍA   <p>  1º. Exposición de actividades realizadas durante el año pasado.   <p>  2º. Aprobación de las cuentas correspondientes al Ejercicio anterior.     <p>  3º. Elección de nuevos cargos para la Junta Directiva.    <p>Las cuentas del Ejercicio de 1999 están expuestas en el tablón de anuncios de la sede,  ________________ desde el día 10 de enero, cualquier día laborable en horas de oficina.   <p> Para asistir a la Asamblea se recuerda que se deberá acreditar la condición de socio. <p> Almería, enero del 2000   <p>La Junta Directiva
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2327" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="769" />
+<div id="prompt">En esta convocatoria de asamblea el texto está incompleto. <br />Marque la opción correcta para completar el espacio en blanco.</div>
+<div id="radios">
+    
+    <input type="radio" id="5563" name="response" value="5563" />
+    <label for="5563">para todos aquellos socios que las quieran visitar</label><br />
+    
+    <input type="radio" id="5564" name="response" value="5564" />
+    <label for="5564">a disposición de los socios que quieran examinarlas</label><br />
+    
+    <input type="radio" id="5565" name="response" value="5565" />
+    <label for="5565">por si a los socios les apetece disponer de ellas</label><br />
+    
+    <input type="radio" id="5566" name="response" value="5566" />
+    <label for="5566">para que los socios puedan hacer un examen</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

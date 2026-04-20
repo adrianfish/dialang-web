@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                                Excmo. Señor:     <p>      Ana Rodríguez Pinar, de 24 años de edad, en posesión del título de licenciada en Filología Hispánica, con domicilio en Miranda del Castañar, provincia de Salamanca, calle Lope de Vega, 37 y con Documento Nacional de Identidad nº 78.486.137<p><b>EXPONE: </b>      <p>    Que desea realizar un doctorado sobre Teatro Barroco Español en la Universidad Autónoma de Barcelona durante el próximo curso académico, y hace constar:  <p>   1) Que no ha disfrutado con anterioridad de las ayudas para posgraduados otorgadas por ese Ministerio.     <p>   2) Que carece de los medios económicos necesarios para sufragar los gastos a que darán lugar los citados estudios.     <p>     En consecuencia,<p>SOLICITA:       <p>           _______________de las convocadas en fecha 12 de junio de 1999, asumiendo el compromiso de presentar la memoria de las actividades realizadas, así como el certificado de las calificaciones obtenidas.    <p>                         Madrid, 20 de junio de 1999<p>EXCMO. SR. MINISTRO DE EDUCACIÓN Y CULTURA. MADRID.                            
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2329" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="771" />
+<div id="prompt">Una estudiante solicita con una instancia una beca para<br />continuar sus estudios. Complete la instancia con la opción <br />adecuada.</div>
+<div id="radios">
+    
+    <input type="radio" id="5571" name="response" value="5571" />
+    <label for="5571">Me den la ayuda de una beca</label><br />
+    
+    <input type="radio" id="5572" name="response" value="5572" />
+    <label for="5572">Le sea ofrecida una beca</label><br />
+    
+    <input type="radio" id="5573" name="response" value="5573" />
+    <label for="5573">Me concedan el dinero de una beca</label><br />
+    
+    <input type="radio" id="5574" name="response" value="5574" />
+    <label for="5574">Le sea concedida una beca</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Fusion<br></b></p><p>I.C. Jacobsens søn Carl studerede bryggeridrift i ind- og udlandet og videreførte farens bryggergerning. Han opførte sit eget bryggeri, der fra 1882 kom til at hedde Ny Carlsberg. I 19o6 blev Gamle og Ny Carlsberg sluttet sammen og fik navnet Carlsberg Bryggerierne. Den internationale konkurrence  førte i 1970 til en sammenslutning mellem Danmarks to største bryggerier, Carlsberg og Tuborg. De blev herefter begge en del af De forenede Bryggerier A/S, og siden 1987 er gruppens navn Carlsberg A/S.<p><i>(baseret på Carlsbergs informationsbrochure)</i> 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2476" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3377" />
+<div id="prompt">Hvilke ølmærker producerer Carlsberg A/S?</div>
+<div id="radios">
+    
+    <input type="radio" id="5914" name="response" value="5914" />
+    <label for="5914">Carlsberg</label><br />
+    
+    <input type="radio" id="5915" name="response" value="5915" />
+    <label for="5915">Tuborg</label><br />
+    
+    <input type="radio" id="5916" name="response" value="5916" />
+    <label for="5916">Carlsberg og Tuborg</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

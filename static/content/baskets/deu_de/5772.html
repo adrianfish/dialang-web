@@ -1,0 +1,69 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bearbeiten Sie die Aufgabe und füllen Sie dazu die Lücke(n). Klicken Sie auf ein Feld, damit eine Liste mit Auswahlmöglichkeiten erscheint. Wählen Sie Ihre Antwort, indem Sie sie anklicken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5772" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>BUENAVENTURA S.A.
+Toledo, 134
+LUGO
+<select name="1353-response"><option></option><option value="9594">A todo el personal</option><option value="9595">A quien le interese</option><option value="9596">A todo el mundo</option><option value="9597">A todos vosotros</option></select> 
+A partir del próximo 15 de septiembre, el horario laboral será el siguiente:
+MAÑANAS: De 8:00 a 13:00
+TARDES: De 15:00 a 18:00
+La Dirección</span>
+</div> 
+
+
+<input type="hidden" name="1353-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Lees eerst de vraag en zoek daarna het antwoord in de drie teksten.<p><i>Tekst 1</i>          <p><b>Streetbasketball</b><p>Het streetbasketbal is vanaf 1 maart niet meer in sporthal Westroyen, maar zal weer plaatsvinden in de Rozenstraat op de donderdagmiddagen vanaf 15.00 uur.<p>Wil je weten waar je nog meer kan basketballen? In Tiel hebben we de volgende locaties:<p>-     De Balije<p>-     Sporthal Westroyen, handbalveld<p>-     Rozenstraat<p>-     Part Passewaay<p>-     Vuren-/Liendenlaan<p>-     Hoogendijkstraat/Betuwestraat<p>-     Buah Hati    <p><i>Tekst 2</i><p><b>Knutselen en spelen in de Poort</b><p>Wil je een gezellige woensdagmiddag met spelletjes, knutselen met papier, klei verf e.d. en heb je op woensdagmiddag van 14.00-15.30 uur vrij? Kom dan naar wijkcentrum de Poort aan de Nieuwe Tielseweg 28. Alle kinderen tussen 4 en 12 jaar zijn welkom. De kosten zijn Fl 1,50. Deskundige leiding staat klaar om jullie te ontvangen.<p>In de maand maart staat het volgende op het programma:<p>- 13 maart: werken met sierdeeg<p>- 20 maart: schatkistjes maken<p>- 27 maart: paasmandjes maken en paasspelletjes<p>- 3 april:  paastakken versieren en eieren verven<p>Tot ziens in de Poort!   <p><i>Tekst 3</i><p><b>Kinderwerk</b><p>Knutselclub voor kinderen van 6 tot 8 jaar op maandagmiddag eenmaal in de twee weken van 15.15 tot 16.45 uur in centrum Westroyen. De club heeft dringend extra begeleiding nodig. Heeft u belangstelling voor deze gezellige creatieve activiteit en wilt u meer informatie? Neem dan contact op met Petra van Koppen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2146" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="713" />
+<div id="prompt">U bent op zoek naar vrijwilligerswerk. In de krant staat een aantal berichten.<br />Welk is voor u van belang?</div>
+<div id="radios">
+    
+    <input type="radio" id="5203" name="response" value="5203" />
+    <label for="5203">Tekst 1</label><br />
+    
+    <input type="radio" id="5204" name="response" value="5204" />
+    <label for="5204">Tekst 2</label><br />
+    
+    <input type="radio" id="5205" name="response" value="5205" />
+    <label for="5205">Tekst 3</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

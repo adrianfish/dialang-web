@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Læs teksten, vælg et svar blandt valgmulighederne herunder, og klik så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                MUSIKK<p>I alle kulturer og til alle tider har menneskene uttrykt seg gjennom musikk. Det vil si at de har uttrykt seg uten ord, uten klart definerte betydninger og uten språkets begrensninger. Denne strømmen av toner, klanger og rytmer som vi kaller musikk, kan naturligvis oppfattes av alle, uansett kultur. Men når det gjelder opplevelsen, er det helt avgjørende hvor tilhørerne kommer fra. For det vi liker, hører nøye sammen med oppvekst, kultur og opplæring. Kulturell bakgrunn og opplæring er mye av forklaringen på hvorfor én type musikk blir likt av personer som kommer fra samme kulturelle bakgrunn, men kan være ren irritasjon for personer fra en annen kultur. På den annen side kan mennesker fra ulike kulturer og ulik opplæring i enkelte tilfeller ha samme opplevelse av musikken.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7997" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3080" />
+<div id="prompt">Hva ligger til grunn for vår oppfatning av musikk?</div>
+<div id="radios">
+    
+    <input type="radio" id="11881" name="response" value="11881" />
+    <label for="11881">Språket</label><br />
+    
+    <input type="radio" id="11882" name="response" value="11882" />
+    <label for="11882">Rytmen</label><br />
+    
+    <input type="radio" id="11883" name="response" value="11883" />
+    <label for="11883">Kulturen</label><br />
+    
+    <input type="radio" id="11884" name="response" value="11884" />
+    <label for="11884">Opplevelsen</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er di sikker på at du vil springe over sprogtesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Dit svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Det rigtige svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Dit svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Det rigtige svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="De rigtige svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '12':false,
+                        
+                        '13':false,
+                        
+                        '14':false,
+                        
+                        '17':false,
+                        
+                        '18':false,
+                        
+                        '19':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '33':false,
+                        
+                        '35':false,
+                        
+                    };
+
+                </script>
+                <h1>Egenvurdering - Skriftlig språkbruk</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="nor_no"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ja</td><td>Nei</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Jeg kan skrive enkle, enkeltstående deler av setninger og setninger.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Jeg kan skrive et kort, enkelt postkort.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Jeg kan beskrive hendelser og aktiviteter i korte og grove trekk og få med det viktigste.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="12_valid" type="radio" name="statement:12" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="12_invalid" type="radio" name="statement:12" value="no"/></td>
+                            <td>Jeg kan beskrive familien min, hvordan jeg bor, utdannelse og nåværende eller tidligere jobb.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="13_valid" type="radio" name="statement:13" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="13_invalid" type="radio" name="statement:13" value="no"/></td>
+                            <td>Jeg kan beskrive tidligere aktiviteter og personlige erfaringer.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Jeg kan skrive svært korte rapporter som formidler dagligdagse faktaopplysninger og gi begrunnelse for bestemte handlinger.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>Jeg kan beskrive de vesentlige detaljer ved uforutsigbare hendelser, som for eksempel en ulykke.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="18_valid" type="radio" name="statement:18" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="18_invalid" type="radio" name="statement:18" value="no"/></td>
+                            <td>Jeg kan beskrive drømmer, håp og ambisjoner.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="19_valid" type="radio" name="statement:19" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="19_invalid" type="radio" name="statement:19" value="no"/></td>
+                            <td>Jeg kan ta i mot og formidle beskjeder angående forespørsler, problemer osv.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>Jeg kan kort begrunne og forklare meninger, planer og handlinger.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Jeg kan forklare et synspunkt på en aktuell problemstilling og legge frem fordeler og ulemper ved ulike standpunkt.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>Jeg kan utvikle et resonnement og gi argumentere for eller mot et bestemt standpunkt.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Jeg kan vurdere ulike ideer og løsninger på et problem.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Jeg kan resonnere over årsaker, konsekvenser og hypotetiske situasjoner.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Jeg kan til en viss grad  utdype og underbygge standpunkter  med underpunkter, begrunnelser og relevante eksempler.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>Jeg kan beskrive komplekse emner klart og detaljert.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>Jeg kan bygge opp tekster med en hensiktsmessig, effektiv og logisk struktur slik at leseren lett kan få med seg det vesentlige.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Jeg kan skrive uten bruk av ordbok i alle sammenhenger.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Registrer svar" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Vil du sende svarene?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over egenvurderingen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

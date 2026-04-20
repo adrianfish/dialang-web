@@ -1,0 +1,68 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Complete la tarea rellenando la(s) casilla(s) vacía(s). Haga clic en la casilla para que aparezca una lista de opciones. Escoja su respuesta haciendo clic en ella.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5778" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>   Marbella, 28 de agosto de 1999    
+Queridos Tere y Ramón: 
+¿Qué tal las vacaciones? Las nuestras, estupendas. Lástima que estén acabándose. <select name="1358-response"><option></option><option value="9612">al cabo</option><option value="9613">después</option><option value="9614">dentro</option><option value="9615">de aquí</option></select> 
+de pocos días estaremos de nuevo en Madrid, con todo el tráfico del mundo, respirando contaminación, y por descontado en el trabajo. Lo bueno de volver es reencontrar a los amigos. 
+Ya os llamaremos desde casa.       
+Un beso a los niños y un fuerte abrazo para vosotros.   
+Matilde y Paco</span>
+</div> 
+
+
+<input type="hidden" name="1358-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

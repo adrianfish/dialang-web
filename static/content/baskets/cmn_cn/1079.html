@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on aikakauslehdestä. <p><b>Laajenee kuin valintatalo </b>   <p>Raahen Ollisaaressa valintatalo saa lähes neljänneksen lisää tilaa, kun aikaisemmin sen vieressä sijainneen postin tilat on otettu myymälän käyttöön. Joensuun Rantakylän Valintataloa on kasvatettu sisäisin muutoksin laajentamalla myymälää varaston suuntaan sekä kalustejärjestelyin.<p>Laajennusten myötä Valintatalot ovat entistäkin parempia omalla vahvuusalueellaan, tuoretuotekaupassa. Uudistusten jälkeen kasvavat muun muassa maitotaloustuotteiden, lihajalosteiden ja pakasteiden valikoimat selvästi. - Ja ostosten teko entistäkin selkeämmin järjestetyissä kaupoissa on todella nopeata ja joustavaa, listaa myyntipäällikkö Anneli Koskisalo uudistuneiden myymälöiden etuja asiakkaiden kannalta.<p>(<i>Me-lehti 10/97</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1079" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3798" />
+<div id="prompt">Valintatalo on</div>
+<div id="radios">
+    
+    <input type="radio" id="279" name="response" value="279" />
+    <label for="279">posti.</label><br />
+    
+    <input type="radio" id="280" name="response" value="280" />
+    <label for="280">huonekalukauppa.</label><br />
+    
+    <input type="radio" id="281" name="response" value="281" />
+    <label for="281">kauppa, jossa on monta pientä kauppaa.</label><br />
+    
+    <input type="radio" id="282" name="response" value="282" />
+    <label for="282">ruokakauppa.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

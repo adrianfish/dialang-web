@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Les teksten, og velg ett av svaralternativene under. Klikk så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ett försök att flyga ballong jorden runt utan mellanlandning blev inte långlivat. Ballongen kraschlandade bara fyra mil från startplatsen i Reno, Nevada, USA. Ombord fanns två amerikanska flygare samt en rysk före detta kosmonaut. De klarade sig utan skador. Trion hade tänkt sig att vara i luften i tre veckor.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4227" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2181" />
+<div id="prompt">Vilken rubrik passar bäst?</div>
+<div id="radios">
+    
+    <input type="radio" id="8221" name="response" value="8221" />
+    <label for="8221">Framgångsrikt ryskt-amerikanskt samarbete i rymden</label><br />
+    
+    <input type="radio" id="8222" name="response" value="8222" />
+    <label for="8222">Kraschlandning strax före målet</label><br />
+    
+    <input type="radio" id="8223" name="response" value="8223" />
+    <label for="8223">Lyckligt slut på misslyckat experiment</label><br />
+    
+    <input type="radio" id="8224" name="response" value="8224" />
+    <label for="8224">Tre ballongfarare landar efter tre veckor</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

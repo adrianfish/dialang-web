@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Seo alt in iris eolaíochta:<p>Ná bac cnámh an droma!<p>Ceapann an duine gurb é féin buaic na héabhlóide agus príomhorgánach an domhain. Ach dá sciobfaí chun siúil aN duine ó dhromchla an domhain leanfadh an bithsféar ar aghaidh go sona sásta. Dá sciobfaí chun siúil mar mhalairt na horgánaigh go léir atá gan chnámh droma, na hinveirteabraigh-feithidí, damháin alla, péisteanna, seilidí, prótasóin-mhillfí éiceachóras an domhain, ní mhairfeadh daoine ná aon ainmhithe veirteabracha agus ní bheadh fágtha ach fungais agus algaí.<p> Tá na horgánaigh gan chnámh droma chomh huilíoch sin gur féidir a rá go mbraitheann an bheatha orthu. Faoi seo tá 751, 000 gné orgánach gan chnámh droma ar domhan, timpeall 55% de na gnéithe uile. Cuir an líon sin i gcomparáid le 4, 000 mamach, níos lú ná 1% de na gnéithe uile. Ní maith le daoine an-chuid de na hainmhithe gan chnámh droma agus cothaíonn an naimhdeas agus an eagla seo ionsaí fíochmhar orthu le ceimiceáin agus eile. Ach dhéanfadh díothú na n-ainmhithe seo an-díobháil don éiceachóras, don bhithsféar agus faoi dheireadh don duine. B'fhéidir gur cheart modhanna comhaireachtála a chothú ar chúiseanna fadtéarmacha.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="25046" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5066" />
+<div id="prompt">Cad é príomhphointe an téacsa?</div>
+<div id="radios">
+    
+    <input type="radio" id="6341" name="response" value="6341" />
+    <label for="6341">Nach féidir leis na horgánaich gan chnámh droma maireachtáil gan an duine.</label><br />
+    
+    <input type="radio" id="6342" name="response" value="6342" />
+    <label for="6342">Dhéanfadh díothú na n-ainmhithe gan chnámh droma an-mhaitheas don éiceachóras, don bhithsféar agus don duine.</label><br />
+    
+    <input type="radio" id="6343" name="response" value="6343" />
+    <label for="6343">Mhillfí éiceachóras an domhain dá ndéanfaí réidh leis na horgánaigh go léir atá gan chnámh droma.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

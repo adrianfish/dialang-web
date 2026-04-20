@@ -1,0 +1,46 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                    };
+
+                </script>
+                <h1>自我评估——听力</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="cmn_cn"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>是</td><td>否</td><td></td></tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="提交答案" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>提交答案？</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过自我评估阶段吗？</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

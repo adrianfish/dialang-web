@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Vid min återkomst från Stockholm upptäckte jag att jag gått ifrån min planeringskalender. Förmodligen glömde jag den på skrivbordet eller nattduksbordet i rum 215. Jag hade mycket bråttom när jag lämnade hotellet igår.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4382" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2197" />
+<div id="prompt">Välj det alternativ som bäst avslutar brevet.</div>
+<div id="radios">
+    
+    <input type="radio" id="8415" name="response" value="8415" />
+    <label for="8415">Jag hoppas städpersonalen hittat kalendern och ber er eftersända den till mig så snart som möjligt.</label><br />
+    
+    <input type="radio" id="8416" name="response" value="8416" />
+    <label for="8416">Det var naturligtvis bra slarvigt av mig att glömma kvar kalendern, men jag får skylla på att jag hade brådis. Det vore bussigt av er om ni ville posta den till mig.</label><br />
+    
+    <input type="radio" id="8417" name="response" value="8417" />
+    <label for="8417">Hoppas kalendern dyker upp bland andra borttappade föremål så att ni omedelbart kan skicka den till min adress.</label><br />
+    
+    <input type="radio" id="8418" name="response" value="8418" />
+    <label for="8418">Ni uppmanas att skicka kalendern utan dröjsmål till min adress ifall den inlämnats av städerskan.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

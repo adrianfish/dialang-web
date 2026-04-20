@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klikkaa kysymyksen yläpuolella olevia numeroita nähdäksesi tehtävän kaikki kysymykset. Lue teksti ja valitse YKSI vaihtoehdoista ja klikkaa sitä hiirellä. Vastaa KAIKKIIN kysymyksiin, ennen kuin painat Eteenpäin-painiketta.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Une explosion a détruit une maison du centre ville. On pense qu'elle est due à une fuite de gaz. Le corps d'une dame âgée a été dégagé des décombres; son mari, qui était parti faire des courses, est encore sous le choc et il a été transporté à l'hôpital.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16405" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25112-tab"><a href="#tabs-2664"></a></li>
+        
+        <li id="25113-tab"><a href="#tabs-2665"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2664">
+        <div id="prompt">Choisissez la phrase qui correspond au texte. </div>
+        <div id="radios">
+            
+            <input type="radio" id="3988" basketid="" name="2664-response" value="3988" />
+            <label for="3988">La maison a été démolie mais il n&#39;y a pas eu de mort.</label><br />
+            
+            <input type="radio" id="3989" basketid="" name="2664-response" value="3989" />
+            <label for="3989">La maison a été en partie démolie et il y a eu deux blessés.</label><br />
+            
+            <input type="radio" id="3990" basketid="" name="2664-response" value="3990" />
+            <label for="3990">La maison a été démolie et il y a eu un mort .</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2665">
+        <div id="prompt">Choisissez la phrase qui correspond le mieux au texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3991" basketid="" name="2665-response" value="3991" />
+            <label for="3991">L&#39;explosion a été provoquée par un acte criminel.</label><br />
+            
+            <input type="radio" id="3992" basketid="" name="2665-response" value="3992" />
+            <label for="3992">L&#39;explosion a été provoquée par une fuite de gaz.</label><br />
+            
+            <input type="radio" id="3993" basketid="" name="2665-response" value="3993" />
+            <label for="3993">L&#39;explosion a probablement été provoquée par une fuite de gaz.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2664-position" value="1"/><br />
+
+<input type="hidden" name="2665-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2664",
+        
+        "2665",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Verborgen verleiders<p>Gebeurt het u nou ook vaak dat u uit een supermarkt komt met meer boodschappen dan u van plan was te kopen? Was er weer zo'n leuke reclame-aanbieding: zes ontbijtkoeken voor de prijs van vijf? Waren de perziken in blik deze week tien cent goedkoper? Kortom: werd u in de supermarkt verleid tot het kopen van dingen die u helemaal niet nodig heeft? Misschien heeft u zelfs dingen gekocht die u niet eens kunt gebruiken!<p>In het buitenland gebruikt men speciale methoden om de klant te verleiden om meer te kopen. Zo werd in Amerika bijvoorbeeld een dik tapijt in de supermarkt gelegd zodat klanten zich `thuis' zouden voelen. Bovendien werd bij de vleesafdeling de geur van gebraden vlees verspreid.<p>Mocht u na het bovenstaande denken dat de methode van de verborgen verleiders alleen maar in het buitenland wordt toegepast, dan moeten we u teleurstellen. Ook in Nederland gebruiken winkels verleidingsmethoden om u als klant meer te laten kopen. Dat is een reden waarom wij menen de Nederlandse consument ernstig te moeten waarschuwen. De kans dat u in de val loopt van de verborgen verleiders is niet gering.<p>Gemiddeld brengt de consument per week 52 minuten door in een supermarkt. Al die tijd loopt hij echter gevaar. Die 52 minuten zijn namelijk ruim voldoende om het oog te laten vallen op die leuke kop en schotel, die verleidelijke blikjes ansjovis of die grote ananas.<p>U hoeft niet veel moeite te doen om daar naar te kijken. Men heeft heel precies bedacht waar u kijkt, wat u het gemakkelijkst pakt en welke kleuren u het meest aantrekken.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2130" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="706" />
+<div id="prompt">Wat vindt de schrijver van deze tekst van supermarkten?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="5133" name="response" value="5133" />
+    <label for="5133">Hij vindt dat ze goede producten verkopen.</label><br />
+    
+    <input type="radio" id="5134" name="response" value="5134" />
+    <label for="5134">Hij vindt dat ze oneerlijke verkoopmethoden gebruiken.</label><br />
+    
+    <input type="radio" id="5135" name="response" value="5135" />
+    <label for="5135">Hij vindt dat ze slechte producten proberen te verkopen.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

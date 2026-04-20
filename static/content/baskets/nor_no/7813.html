@@ -1,0 +1,62 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Svar på oppgaven ved å fylle ut luken(e). Klikk på boksen for å få fram svaralternativene på skjermen. Klikk så med musen på det svaret du mener er rett.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7813" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>"I do think this course should be fun," he said.  "And people should get out of it what they want.  Some come here wanting to be very serious and even a bit competitive about their work.  And that's fine.  Others are very hesitant and find that a bit of humour can relax them. <select name="1478-response"><option></option><option value="11559">They tend to learn more.</option><option value="11560">You get all sorts on these courses.</option><option value="11561">I prefer the serious student.</option><option value="11562">We only accept professional people.</option></select> I've taught high court judges and dustmen and the mix is part of the fun." </span>
+</div> 
+
+
+<input type="hidden" name="1478-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

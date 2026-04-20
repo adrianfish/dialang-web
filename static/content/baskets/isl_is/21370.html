@@ -1,0 +1,80 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Hlustaðu á hljóðupptökuna og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni. Aðeins er hægt að leika upptökuna EINU SINNI.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/021370.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/021370.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="21370" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2278" />
+<div id="prompt">Lyssna på samtalet och välj sedan rätt alternativ.<br />Vad för ett problem har passageraren?</div>
+<div id="radios">
+    
+    <input type="radio" id="5160" name="response" value="5160" />
+    <label for="5160">Hon är inte på tåget till Malmö</label><br />
+    
+    <input type="radio" id="5161" name="response" value="5161" />
+    <label for="5161">Hon är inte på tåget till Uppsala</label><br />
+    
+    <input type="radio" id="5162" name="response" value="5162" />
+    <label for="5162">Hon är på fel station</label><br />
+    
+    <input type="radio" id="5163" name="response" value="5163" />
+    <label for="5163">Hon har inga pengar</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

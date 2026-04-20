@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p>Mon père avait été tellement impressionné par le paysage magnifique des Alpes qu'il m'a fortement déconseillé d'y aller.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7327" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2464" />
+<div id="prompt">Dans cette phrase : <br /></div>
+<div id="radios">
+    
+    <input type="radio" id="10952" name="response" value="10952" />
+    <label for="10952">il n&#39;y a pas d&#39;erreur.</label><br />
+    
+    <input type="radio" id="10953" name="response" value="10953" />
+    <label for="10953">il y a une erreur de vocabulaire.</label><br />
+    
+    <input type="radio" id="10954" name="response" value="10954" />
+    <label for="10954">il y a une erreur de grammaire.</label><br />
+    
+    <input type="radio" id="10955" name="response" value="10955" />
+    <label for="10955">il y a un mot en trop.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

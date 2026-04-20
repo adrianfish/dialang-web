@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst en vul de tekst in op de opengelaten plaats(en). Ga met behulp van uw muis in het betreffende hokje staan en typ dan uw antwoord in. Controleer uw spelling!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Der militärische Widerstand gegen die nationalsozialistische Elite kann nicht als "Alibi für die Wehrmacht" ausgegeben werden. Dieses Fazit zog Professor Hans Mommsen am Freitag bei einem Symposium "zu Motiven und Handlungsweisen der Militäropposition und der Bewegung des '20. Juli 1944'" in Frankfurt am Main. <p>Der Reflex ist seit zwei Jahren ähnlich: An Orten, an denen die vom Hamburger Institut für Sozialforschung erarbeitete Ausstellung über den Vernichtungskrieg der Wehrmacht gezeigt wird, dringen Konservative auf "Gegenakzente". Die Dokumentation der Verbrechen während der Feldzüge im Osten sei "zu einseitig" und verurteile die Angehörigen der Wehrmacht "pauschal". Dem müsse etwas entgegengesetzt werden, verlangten CDU-Politiker in Bremen und Frankfurt: Zugleich solle die Ausstellung "Aufstand des Gewissens" über den militärischen Widerstand zu sehen sein, die vom Militärgeschichtlichen Forschungsamt Anfang der 80er Jahre zusammengestellt wurde. <p>Es führe kein Weg daran vorbei, sagte Mommsen dagegen bei der vom Fritz-Bauer-Institut vorbereiteten Diskussion, sich folgende Tatsache einzugestehen: "daß eine beträchtliche Anzahl derjenigen, die am 20. Juli 1944 aktiv mitgewirkt und dabei vielfach ihr Leben geopfert haben, zuvor am Vernichtungskrieg teilgenommen, ihn jedenfalls streckenweise gebilligt und in einigen Fällen aktiv vorangetrieben haben". Zu "wirklicher Opposition" gegen das verbrecherische NS-Regime, zu dessen Säulen die Wehrmacht gehörte, seien nur wenige aus der Führungsetage des Militärs bereit gewesen. Zumal, so Mommsen, diese Führung von konservativem Antisemitismus geprägt gewesen sei. Der Entschluß, auf Hitler ein Attentat zu verüben, sei nach der Niederlage vor Moskau im Winter 1941 wesentlich dadurch motiviert worden, daß "Deutschland, wenn der Diktator nicht ausgeschaltet würde, in eine Katastrophe hineintriebe".<p>(nach: FR, 16.5.1998)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24901" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Anläßlich der <input type="text" name="2983-response" /> .</span>
+</div> 
+
+
+<input type="hidden" name="2983-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

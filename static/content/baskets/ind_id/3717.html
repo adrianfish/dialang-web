@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bacalah teks, dan pilih salah satu pilihan di bawah ini, kemudian pres tombol dengan menggunakan tetikus.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Fa una colazione ricca   71,6%<p>Uomini                   69,7%<p>Donne                    73,4%<p>Digiuna                  8,1%<p>Beve solo caffè         19,8%<p>Gli italiani hanno preso la sana abitudine di fare colazione al mattino? I maschi, più delle donne, hanno corretto l'errore del solo caffé al mattino e via al lavoro. Circa settantadue persone su cento in Italia non digiunano ormai più al mattino, otto su cento invece lo fanno ancora e meno di venti su cento bevono solo té o caffé senza cibi solidi in associazione.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3717" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1865" />
+<div id="prompt">Il testo, che riguarda il cambiamento delle abitudini degli italiani a colazione, riporta un dato diverso da quelli della tabella.<br />Quale informazione è quella diversa?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="7655" name="response" value="7655" />
+    <label for="7655">I maschi più delle donne ...</label><br />
+    
+    <input type="radio" id="7656" name="response" value="7656" />
+    <label for="7656">Circa settantadue persone su cento....</label><br />
+    
+    <input type="radio" id="7657" name="response" value="7657" />
+    <label for="7657">Otto su cento....</label><br />
+    
+    <input type="radio" id="7658" name="response" value="7658" />
+    <label for="7658">Meno di venti su cento...</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

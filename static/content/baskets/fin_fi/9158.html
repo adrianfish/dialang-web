@@ -1,0 +1,135 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klikkaa kysymyksen yläpuolella olevia numeroita nähdäksesi tehtävän kaikki kysymykset. Lue teksti ja valitse YKSI vaihtoehdoista ja klikkaa sitä hiirellä. Vastaa KAIKKIIN kysymyksiin, ennen kuin painat Eteenpäin-painiketta.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Onderwerp: voedingsgeld<p>Geachte medewerker,<p>Iedere medewerker die 40 uur in ons kinderdagverblijf werkt, betaalt Fl.25,- per maand aan voedingsgeld. Het blijkt dat nog steeds niet iedereen op de hoogte is waarom deze regeling is ingevoerd. Met dit schrijven wil ik dit verduidelijken.<p>Als het voedingsgeld niet ingevoerd was en de dranken en maaltijden nog steeds gratis waren, dan zouden deze dranken en maaltijden door de belastingdienst als inkomen beschouwd worden. In dat geval zou er ook belasting over geheven worden. Dat zou flinke financiële consequenties hebben: medewerkers zouden namelijk die belasting zelf moeten betalen. Per saldo waren ze dan duurder uit geweest dan met de regeling van het voedingsgeld.<p>Fl.25,- bij een 40-urige werkweek is een bedrag van ongeveer Fl.1,25 per dag. Dat is bijzonder weinig. Daar heb je koffie, thee, en tussen de middag een maaltijd voor. Die Fl.25,- is bovendien geen weggegooid geld. In de teamvergadering hebben we afgesproken dat we dit voedingsgeld reserveren voor o.a. cursussen en extra zaken voor personeel waarbij je kunt denken aan kerstpakketten en een uitstapje.<p>De regeling bestaat al enige tijd, maar af en toe komt het probleem toch weer naar voren:<p>-de een heeft een dieet;<p>-de ander lust het niet;<p>-de volgende ziet de bijdrage als reden om onbeperkt gebruik te maken van al het eten en drinken;<p>-weer een ander is van mening dat er niet genoeg eten wordt gekookt.<p>Over de eerste twee punten zijn al een paar maanden geleden afspraken gemaakt. Er kan voor een vervangende broodmaaltijd gezorgd worden. Heb je niet genoeg aan het eten dat gekookt wordt, dan zijn er twee opties:<p>-je neemt zelf brood mee, voor tijdens de pauze bijvoorbeeld;<p>-we spreken af dat er meer ingekocht en gekookt wordt voor de leidsters. Dit vind ik prima maar dan wordt er ook een hogere bijdrage berekend.<p>Als jullie andere suggesties hebben, dan hoor ik dat graag.<p>Met vriendelijke groeten,<p>Anneke van Pelt<p>directeur kinderdagverblijf
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="9158" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25167-tab"><a href="#tabs-649"></a></li>
+        
+        <li id="25168-tab"><a href="#tabs-650"></a></li>
+        
+        <li id="25169-tab"><a href="#tabs-651"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-649">
+        <div id="prompt">Wat schrijft mevrouw Van Pelt in deze brief?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12825" basketid="" name="649-response" value="12825" />
+            <label for="12825">De medewerkers moeten voedingsgeld gaan betalen.</label><br />
+            
+            <input type="radio" id="12826" basketid="" name="649-response" value="12826" />
+            <label for="12826">Er zijn nog steeds problemen over het voedingsgeld.</label><br />
+            
+            <input type="radio" id="12827" basketid="" name="649-response" value="12827" />
+            <label for="12827">Het voedingsgeld moet omhoog.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-650">
+        <div id="prompt">Wat vindt mevrouw Van Pelt van de medewerkers en het voedingsgeld?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12828" basketid="" name="650-response" value="12828" />
+            <label for="12828">Ze denkt dat de medewerkers hun mogelijkheden niet genoeg gebruiken.</label><br />
+            
+            <input type="radio" id="12829" basketid="" name="650-response" value="12829" />
+            <label for="12829">Ze vindt dat de medewerkers teveel problemen maken.</label><br />
+            
+            <input type="radio" id="12830" basketid="" name="650-response" value="12830" />
+            <label for="12830">Ze begrijpt de problemen die medewerkers hebben met het voedingsgeld.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-651">
+        <div id="prompt">Waarover wil mevrouw Van Pelt afspraken maken?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12831" basketid="" name="651-response" value="12831" />
+            <label for="12831">Over de hoeveelheid eten.</label><br />
+            
+            <input type="radio" id="12832" basketid="" name="651-response" value="12832" />
+            <label for="12832">Over de tijden waarop gegeten kan worden.</label><br />
+            
+            <input type="radio" id="12833" basketid="" name="651-response" value="12833" />
+            <label for="12833">Over het soort maaltijden.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="649-position" value="1"/><br />
+
+<input type="hidden" name="650-position" value="2"/><br />
+
+<input type="hidden" name="651-position" value="3"/><br />
+
+<script>
+    var itemIds = [
+        
+        "649",
+        
+        "650",
+        
+        "651",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

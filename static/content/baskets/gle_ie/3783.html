@@ -1,0 +1,70 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Líon an bearna/na bearnaí. Brúigh ar an mbosca leis an luch agus ansin clóscríobh an freagra. Bí cúramach go litríonn tú ceart iad!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3783" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="5" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Nuförtiden är de flesta hissar så automatiska att de inte behöver några hisskötare. De manövreras med knappar som skickar elektriska signaler genom ledningarna till motorn. När du har gått in i hissen <input type="text" name="2144-response" /> du på knappen med siffran för den våning där du vill <input type="text" name="2145-response" /> ur. En mekanism <input type="text" name="2146-response" /> dörrarna och hissen sätter sig i rörelse. Motorn kan dock inte <input type="text" name="2147-response" /> förrän dörren är ordentligt stängd. När hissen har kommit till rätt våning <input type="text" name="2148-response" /> den och dörren öppnas så att du kan stiga ur.</span>
+</div> 
+
+
+<input type="hidden" name="2144-position" value="1" />
+
+<input type="hidden" name="2145-position" value="2" />
+
+<input type="hidden" name="2146-position" value="3" />
+
+<input type="hidden" name="2147-position" value="4" />
+
+<input type="hidden" name="2148-position" value="5" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

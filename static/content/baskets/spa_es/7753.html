@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Den tradisjonelle flybilletten er på vei ut, og inn kommer plastkort og magnetstriper. Den største fordelen med dette konseptet er enkelheten.<p>Eurobonus-medlemmene kan reise billettløst innenfor Skandinavia med sitt EuroBonus-kort. Ring slik du pleier til ditt reisebyrå, eller til SAS, og bestill billett. Oppgi så ditt medlemsnummer og gi beskjed om at du ønsker elektronisk billett. Muligheten gjelder kun når du reiser med SAS og/eller Widerøe.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7753" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3050" />
+<div id="prompt">Velg den overskriften som passer best.</div>
+<div id="radios">
+    
+    <input type="radio" id="11441" name="response" value="11441" />
+    <label for="11441">Ring ditt nærmeste reisebyrå.</label><br />
+    
+    <input type="radio" id="11442" name="response" value="11442" />
+    <label for="11442">Ny avtale mellom SAS og Widerøe.</label><br />
+    
+    <input type="radio" id="11443" name="response" value="11443" />
+    <label for="11443">Nå kan du reise uten flybillett.</label><br />
+    
+    <input type="radio" id="11444" name="response" value="11444" />
+    <label for="11444">Bestill billett nå!</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

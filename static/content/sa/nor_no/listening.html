@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '02':false,
+                        
+                        '03':false,
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '09':false,
+                        
+                        '14':false,
+                        
+                        '15':false,
+                        
+                        '16':false,
+                        
+                        '22':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '29':false,
+                        
+                        '31':false,
+                        
+                        '35':false,
+                        
+                        '40':false,
+                        
+                        '41':false,
+                        
+                    };
+
+                </script>
+                <h1>Egenvurdering - Lytteforståelse</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="nor_no"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ja</td><td>Nei</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="02_valid" type="radio" name="statement:02" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="02_invalid" type="radio" name="statement:02" value="no"/></td>
+                            <td>Jeg kan følge med når folk snakker langsomt med tydelig uttale og lange pauser slik at jeg får tak i meningen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Jeg kan forstå spørsmål og instruksjoner og følge korte og enkle anvisninger.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Jeg kan forstå nok til å gjennomføre, klare, enkle, rutinepregete ordvekslinger uten større vanskeligheter.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Jeg kan som regel oppfatte emnet for samtaler rundt meg når folk snakker langsomt og tydelig.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Jeg kan forstå nok til å klare meg i dagliglivet, forutsatt at folk snakker langsomt og tydelig.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="09_valid" type="radio" name="statement:09" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="09_invalid" type="radio" name="statement:09" value="no"/></td>
+                            <td>Jeg klarer å utføre små ærend i butikker, på postkontor eller i banker.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Jeg kan som regel følge hovedpunktene i en lengre samtale jeg overhører, forutsatt at folk taler tydelig og bruker normalisert språk.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="15_valid" type="radio" name="statement:15" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="15_invalid" type="radio" name="statement:15" value="no"/></td>
+                            <td>Jeg kan følge med i tydelig dagligdags samtale, men i virkelige situasjoner vil jeg noen ganger måtte spørre om å få gjentatt spesielle ord og utrykk.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="16_valid" type="radio" name="statement:16" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="16_invalid" type="radio" name="statement:16" value="no"/></td>
+                            <td>Jeg kan forstå klar og enkel informasjon om vanlige og dagligdagse eller yrkesrelaterte emner og oppfatte både det viktigste innholdet og detaljene, forutsatt at folk snakker tydelig og bruker en dialekt jeg er kjent med.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Jeg kan oppfatte hovedpoenget i tv- og radiosendinger om emner som jeg er fortrolig med og interessert i, når folk snakker forholdsvis langsomt og tydelig.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Jeg kan forstå vanlig talespråk om både kjente og ukjente emner som en kan møte i dagliglivet, i akademisk sammenheng eller i arbeidslivet enten jeg hører det i faktiske situasjoner eller innspilt på bånd. Kun ekstrem bakgrunnstøy, uklarheter i strukturen eller idiomatisk språkbruk skaper problemer for meg.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Jeg kan få med meg det vesentlige i forelesninger, taler og rapporter og andre typer presentasjoner hvor både språk og innhold er komplekst.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Jeg kan forstå meldinger og beskjeder om konkrete og abstrakte emner når den som snakker bruker et normalisert språk og vanlig tempo.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="29_valid" type="radio" name="statement:29" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="29_invalid" type="radio" name="statement:29" value="no"/></td>
+                            <td>Jeg kan forstå de fleste radiodokumentarer og de fleste andre typer muntlig språk i media når man bruker et normalisert talespråk. Jeg kan også oppfatte sinnsstemningen, tonefallet etc. til den som snakker.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Jeg kan følge med i livlige diskusjoner mellom mormålsbrukere.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Jeg kan følge de fleste typer forelesninger og diskusjoner og debatter uten særlige vansker.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="40_valid" type="radio" name="statement:40" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="40_invalid" type="radio" name="statement:40" value="no"/></td>
+                            <td>Jeg kan forstå alle typer talespråk fremført i høyt tempo av morsmålsbrukere, enten det er snakk om autentiske situasjoner eller det gjelder film og andre medier.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="41_valid" type="radio" name="statement:41" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="41_invalid" type="radio" name="statement:41" value="no"/></td>
+                            <td>Jeg kan følge fagspesifikke forelesninger og presentasjoner hvor det brukes mye slangpreget språk, dialekt eller ukjent terminologi.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Registrer svar" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Vil du sende svarene?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over egenvurderingen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

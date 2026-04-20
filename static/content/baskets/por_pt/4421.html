@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                June Redfern continues her journey by bicycle around Northern India in search of exotic ingredients.  Tonight she tries an elephant ride, visits the Taj Mahal palace and demonstrates how to prepare a supper of spicy Indian dishes fit for a prince!
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4421" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1190" />
+<div id="prompt">What type of television programme does the text describe?</div>
+<div id="radios">
+    
+    <input type="radio" id="8432" name="response" value="8432" />
+    <label for="8432">A wildlife documentary.</label><br />
+    
+    <input type="radio" id="8433" name="response" value="8433" />
+    <label for="8433">A cookery series.</label><br />
+    
+    <input type="radio" id="8434" name="response" value="8434" />
+    <label for="8434">A health and fitness show.</label><br />
+    
+    <input type="radio" id="8435" name="response" value="8435" />
+    <label for="8435">A holiday programme.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

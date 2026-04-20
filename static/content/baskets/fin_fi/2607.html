@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                "Funcionamos todo el fin de semana sin reloj. Los sábados nos levantamos tarde. Por la mañana vamos al mercado a comprar, ya que más tarde hay mucha gente. Por la tarde leemos un poco o escuchamos música y por la noche siempre cenamos fuera, y después, normalmente, vamos a bailar. Nos encanta a los dos la música. Los domingos cuando nos levantamos, salimos a comprar el periódico, tomamos el aperitivo y vamos a comer a casa de mis suegros. Por las tardes acostumbramos a alquilar una película y nos acostamos pronto"
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2607" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="868" />
+<div id="prompt">¿Qué hacen los fines de semana?</div>
+<div id="radios">
+    
+    <input type="radio" id="6521" name="response" value="6521" />
+    <label for="6521">Pasan las tardes del fin de semana en casa</label><br />
+    
+    <input type="radio" id="6522" name="response" value="6522" />
+    <label for="6522">Las mañanas del fin de semana van de compras</label><br />
+    
+    <input type="radio" id="6523" name="response" value="6523" />
+    <label for="6523">Las noches de los sábados se quedan en casa</label><br />
+    
+    <input type="radio" id="6524" name="response" value="6524" />
+    <label for="6524">Los domingos por la tarde, a menudo, van al cine</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

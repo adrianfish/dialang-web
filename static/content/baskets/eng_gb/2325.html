@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                                             Toledo, 8 de abril de 1998      <p>     Querida Sra. Rita:           <p>       Le escribo porque estoy en una situación difícil y no sé qué hacer. Mantengo una relación sentimental estable desde hace varios años, pero hace unos días conocí a una chica en una fiesta. Estuvimos hablando toda la noche y descubrimos que teníamos muchísimas cosas en común.<p>        Desde ese día nos hemos seguido viendo con bastante asiduidad, pienso en ella día y noche y creo que me estoy enamorando. Todavía no he hablado con mi pareja, pero pienso que ella ha notado algo.      <p>   Me siento incapaz de tomar una decisión y _________________________<p>Con todo afecto, le envío un cariñoso saludo.          <p>                                                                       Un indeciso 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2325" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="767" />
+<div id="prompt">En esta carta a un consultorio sentimental hay una frase incompleta. Marque la opción correcta para completar el espacio en blanco.</div>
+<div id="radios">
+    
+    <input type="radio" id="5555" name="response" value="5555" />
+    <label for="5555">quiero consejos, por favor</label><br />
+    
+    <input type="radio" id="5556" name="response" value="5556" />
+    <label for="5556">necesito tus buenos consejos</label><br />
+    
+    <input type="radio" id="5557" name="response" value="5557" />
+    <label for="5557">necesito que me aconseje</label><br />
+    
+    <input type="radio" id="5558" name="response" value="5558" />
+    <label for="5558">expídame un consejo, por favor</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

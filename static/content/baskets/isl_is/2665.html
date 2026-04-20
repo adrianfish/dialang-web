@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                * Últimamente todo me sale mal. La verdad es que estoy agobiado.<p>+ ¡Venga, no te preocupes! Cuéntame tus problemas, soy todo      ____________.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2665" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="892" />
+<div id="prompt">Marque la opción que corresponde a la palabra que falta para completar la expresión.</div>
+<div id="radios">
+    
+    <input type="radio" id="6613" name="response" value="6613" />
+    <label for="6613">orejas</label><br />
+    
+    <input type="radio" id="6614" name="response" value="6614" />
+    <label for="6614">oídos</label><br />
+    
+    <input type="radio" id="6615" name="response" value="6615" />
+    <label for="6615">atención</label><br />
+    
+    <input type="radio" id="6616" name="response" value="6616" />
+    <label for="6616">disposición</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                "The Replacement Killers" von Antoine Fuqua<p>Als Auftragskiller John Lee aus seinem blutigen Geschäft aussteigen will, legt er sich mit dem mächtigen Triadenchef Mr. Wei an. Für seine Flucht nach China braucht Lee neue Papiere von der Paßfälscherin Meg Coburn (Mira Sorvino), die so in die mörderische Hatz auf den melancholischen Killer gezogen wird. Das Hollywooddebüt von Hongkong-Action-Ikone Chow Yun-fat (und Til Schweiger) ist eine Geschichte vom Reißbrett: perfekt arrangiert, aber ohne Herz. Die Ersatzkiller sind reines Ersatzkino. Hongkong-Muckefuck.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6854" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2793" />
+<div id="prompt">Was ist richtig?<br /><br />Diese Rezension bewertet den Film "The Replacement Killers" im wesentlichen ...</div>
+<div id="radios">
+    
+    <input type="radio" id="10483" name="response" value="10483" />
+    <label for="10483">negativ.</label><br />
+    
+    <input type="radio" id="10484" name="response" value="10484" />
+    <label for="10484">positiv.</label><br />
+    
+    <input type="radio" id="10485" name="response" value="10485" />
+    <label for="10485">zu gleichen Teilen positiv und negativ.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

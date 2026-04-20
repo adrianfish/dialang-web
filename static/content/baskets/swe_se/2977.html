@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Välj ett av alternativen nedan och klicka på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2977" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3502" />
+<div id="prompt">Mange danskere elsker lakrids.<br />Hvilken kategori tilhører LAKRIDS?</div>
+<div id="radios">
+    
+    <input type="radio" id="7035" name="response" value="7035" />
+    <label for="7035">grøntsager</label><br />
+    
+    <input type="radio" id="7036" name="response" value="7036" />
+    <label for="7036">frugt</label><br />
+    
+    <input type="radio" id="7037" name="response" value="7037" />
+    <label for="7037">slik</label><br />
+    
+    <input type="radio" id="7038" name="response" value="7038" />
+    <label for="7038">kød</label><br />
+    
+    <input type="radio" id="7039" name="response" value="7039" />
+    <label for="7039">brød</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

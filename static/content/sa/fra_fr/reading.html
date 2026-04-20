@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '01':false,
+                        
+                        '03':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '11':false,
+                        
+                        '17':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '31':false,
+                        
+                        '32':false,
+                        
+                        '33':false,
+                        
+                        '34':false,
+                        
+                        '35':false,
+                        
+                        '36':false,
+                        
+                    };
+
+                </script>
+                <h1>Auto-évaluation - compréhension écrite</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="fra_fr"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Oui</td><td>Non</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="01_valid" type="radio" name="statement:01" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="01_invalid" type="radio" name="statement:01" value="no"/></td>
+                            <td>Je peux comprendre l&#39;idée générale de textes simples donnant des informations et des descriptions courtes et simples, surtout s&#39;ils contiennent des images qui facilitent  la compréhension.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Je peux comprendre des instructions simples et courtes surtout si elles sont illustrées.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Je peux comprendre des messages courts, simples, par exemple sur des cartes postales.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Je peux  comprendre des textes courts et simples écrits dans un langage quotidien.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="11_valid" type="radio" name="statement:11" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="11_invalid" type="radio" name="statement:11" value="no"/></td>
+                            <td>Je peux comprendre des lettres personnelles simples et courtes.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>Je peux chercher des informations spécifiques dont j&#39;ai besoin pour accomplir une tâche dans un long texte ou dans plusieurs textes courts.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>Je peux suffisamment bien comprendre la description d&#39;événements, de sentiments et de souhaits dans des lettres personnelles pour correspondre avec un ami ou  une connaissance.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Je peux  comprendre des instructions claires pour l&#39;utilisation d&#39;un appareil.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>Je peux lire différents écrits sur ce qui m&#39;intéresse et facilement comprendre les points essentiels.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Je peux rapidement lire des longs textes complexes en sachant repérer les détails importants.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Dans mon domaine, je peux acquérir des informations, des idées et des opinions de sources très spécialisées.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>Je peux comprendre des articles et rapports traitant de problèmes actuels dans lesquels les auteurs adoptent des positions ou des points de vue particuliers.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Je peux comprendre en détail un grand nombre de longs textes complexes si je peux relire les passages difficiles.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="32_valid" type="radio" name="statement:32" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="32_invalid" type="radio" name="statement:32" value="no"/></td>
+                            <td>Dans des longs textes complexes traitant de la vie sociale, professionnelle et universitaire, je peux identifier des détails comprenant des attitudes et opinions qui ne sont pas explicitement décrites.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>Je peux comprendre différents écrits en utilisant occasionnellement un dictionnaire.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="34_valid" type="radio" name="statement:34" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="34_invalid" type="radio" name="statement:34" value="no"/></td>
+                            <td>Je peux comprendre en détail des longues instructions complexes sur une nouvelle machine ou procédure même en dehors de mon domaine, si je peux relire les passages difficiles.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Je peux  comprendre et interpréter pratiquement toutes sortes de textes écrits, que ce soient des textes abstraits, à structures complexes ou des textes littéraires avec des traits familiers ou des textes documentés.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="36_valid" type="radio" name="statement:36" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="36_invalid" type="radio" name="statement:36" value="no"/></td>
+                            <td>Je peux comprendre les subtilités de style et les différents niveaux de sens d&#39;un grand nombre de longs textes complexes.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Envoyer les réponses" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Envoyer les réponses ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Êtes-vous sûr(e) de vouloir sauter l&#39;auto-évaluation ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Sinistre dégâts des eaux<p>N/ref : 11Z809<p>    Strasbourg, le 18 septembre 1998.<p>Madame,<p>Nous accusons réception de votre déclaration de sinistre que nous avons enregistrée sous les références indiquées plus haut.<p>Dès aujourd'hui, nous avons contacté les ETS Dupont, de Vincy (tel: O1 20 30 40 50) qui doivent prendre contact avec vous prochainement, afin de fixer une date de rendez-vous.<p>Restant à votre entière disposition, je vous prie d'agréer, Madame, l'expression de nos sentiments distingués.<p>     Monsieur France
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6935" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2442" />
+<div id="prompt">Choisissez la phrase qui correspond au contenu de la lettre.</div>
+<div id="radios">
+    
+    <input type="radio" id="10557" name="response" value="10557" />
+    <label for="10557">M. France  demande à son client de téléphoner aux ETS Dupont.</label><br />
+    
+    <input type="radio" id="10558" name="response" value="10558" />
+    <label for="10558">M. France   prévient son client que les Ets Dupont lui téléphoneront.</label><br />
+    
+    <input type="radio" id="10559" name="response" value="10559" />
+    <label for="10559">M. France prévient son client qu&#39;il va contacter les Ets Dupont.</label><br />
+    
+    <input type="radio" id="10560" name="response" value="10560" />
+    <label for="10560">M. France annonce qu&#39;il ne peut pas prendre en charge la réparation.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

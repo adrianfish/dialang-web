@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Léigh an téacs. Roghnaigh ceann amháin acu thíos agus ansin brúigh ar an gcnaipe leis an luch.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Streit um die Love Parade<p>(...) Die Berliner Hotels haben sich in einer unbürokratischen, schnellen Form bereit erklärt, mehr als 50.000 Mark der Kosten zu übernehmen. Die Gesamtkosten der Reinigung, um die es in den vergangenen Jahren immer wieder Streit mit den Veranstaltern gegeben hat, belaufen sich nach Hassemers Schätzungen auf rund 200.000 Mark.<p>Gleichzeitig appellierte Hassemer an weitere Nutznießer der Großdemonstration, sich finanziell zu beteiligen: "Ich halte es für eine gerechte Sache, wenn sich an der Beseitigung der Schäden auch die Getränkeindustrie, die Gaststätten und Reiseunternehmer sowie die Bahn beteiligen."<p>Zu dieser weltweit größten Veranstaltung der Techno-Generation werden in diesem Jahr wieder rund eine Million Teilnehmer in Berlin erwartet. Auf zwei Routen wollen sie durch den Tiergarten tanzen und sich am Großen Stern treffen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6851" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2792" />
+<div id="prompt">Mit welchem Satz beginnt der Text?<br />(A) Dem Geschäftsführer der Marketinggesellschaft  "Partner für Berlin", Volker Hassemer, ist es gelungen, weitere private Mittel für die Berlin-Werbung aufzutreiben.<br />(B) Der Streit um die Müllbeseitigung bei der Love Parade am 11. Juli steht nach Angaben des Geschäftsführers der Marketinggesellschaft "Partner für Berlin", Volker Hassemer, kurz vor der Lösung.<br />(C) Nachdem die Berliner Hotels sich jahrelang geweigert haben, sich an den Kosten der Stadtreinigung bei Großveranstaltungen zu beteiligen, wollen sie jetzt einen Teil des durch den Tourismus erzielten Gewinns der Stadt zukommen lassen.</div>
+<div id="radios">
+    
+    <input type="radio" id="10480" name="response" value="10480" />
+    <label for="10480">Satz (A)</label><br />
+    
+    <input type="radio" id="10481" name="response" value="10481" />
+    <label for="10481">Satz (B)</label><br />
+    
+    <input type="radio" id="10482" name="response" value="10482" />
+    <label for="10482">Satz (C)</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

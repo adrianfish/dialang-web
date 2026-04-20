@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'shortanswer';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escreva a(s) sua(s) resposta(s) na(s) caixa(s) apresentada(s).Verifique a ortografia no seu texto!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Restaurante El Salmonete<p>Cocina casera  <p>c/ Trapería, 69                 <p>Teléfono : 93-823-04-26<p>Cerrado domingos   <p>Visa y MasterCard    <p>Restaurante Ponsa<p>Cocina de mercado<p>Avda. del Puerto, 84<p>Teléfono : 93-325-12-01<p>Abierto de 13 a  16 h y de 20 a 23 h<p>Restaurante El Olivo    <p>Especialidad en pescados   <p>c/ Sierpes, 15    <p>Teléfono : 93-257-37-38  <p>Abierto a partir de las 13 h.   <p>Se reservan mesas                  <p>Restaurante Miramar<p>Cocina internacional<p>Avda. de las Palmeras, 65<p>Teléfono : 93-423-89-71<p>Abierto de 12 a 16 h y de 19 a 24 h<p>Servicio gratuito a  domicilio
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2592" />
+                        <input type="hidden" name="basketType" value="shortanswer" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    
+    <span>Escriba el nombre del restaurante que lleva comida a casa </span>
+    <input type="text" name="856-response" /><br />
+    <input type="hidden" name="856-position" value="1"/><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Sjötugur Norðmaður var í fyrradag sýknaður af ákæru um gáleysislegan vöfflubakstur. Átti Gunnar Bondø yfir höfði sér 10.000 króna sekt eða sjö daga fangelsi hefði hann verið fundinn sekur.<p> Bondø hugðist baka vöfflur í desember 1996 og setti smjör í vöfflujárnið. Þá hringdi síminn og Bondø gleymdi járninu í sambandi, og það kviknaði í því. Áður en Bondø náði að slökkva eldinn höfðu nágrannarnir hringt á slökkviliðið. Bondø var sektaður fyrir ógætilegan vöfflubakstur en neitaði að greiða. Því fór málið fyrir dóm í Niðarósi, sem komst í gær að þeirri niðurstöðu að ekki bæri að sekta hann.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7887" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4770" />
+<div id="prompt">Hvaða fyrirsögn passar best?</div>
+<div id="radios">
+    
+    <input type="radio" id="11660" name="response" value="11660" />
+    <label for="11660">Sjötugur Norðmaður fær makleg málagjöld</label><br />
+    
+    <input type="radio" id="11661" name="response" value="11661" />
+    <label for="11661">Brennt barn forðast eldinn</label><br />
+    
+    <input type="radio" id="11662" name="response" value="11662" />
+    <label for="11662">Oft veltir lítil þúfa þungu hlassi</label><br />
+    
+    <input type="radio" id="11663" name="response" value="11663" />
+    <label for="11663">Betur fór en á horfðist</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

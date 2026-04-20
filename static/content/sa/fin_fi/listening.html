@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '02':false,
+                        
+                        '03':false,
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '09':false,
+                        
+                        '14':false,
+                        
+                        '15':false,
+                        
+                        '16':false,
+                        
+                        '22':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '29':false,
+                        
+                        '31':false,
+                        
+                        '35':false,
+                        
+                        '40':false,
+                        
+                        '41':false,
+                        
+                    };
+
+                </script>
+                <h1>Itsearviointi - puheen ymmärtäminen</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="fin_fi"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Kyllä</td><td>Ei</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="02_valid" type="radio" name="statement:02" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="02_invalid" type="radio" name="statement:02" value="no"/></td>
+                            <td>Ymmärrän hidasta ja selkeää puhetta, jossa on pitkiä taukoja.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Ymmärrän kysymyksiä ja ohjeita sekä lyhyitä ja yksinkertaisia opastuksia.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Ymmärrän riittävästi selviytyäkseni yksinkertaisista rutiininomaisista jutteluista melko vaivattomasti.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Pystyn yleensä tunnistamaan puheenaiheen hitaasti ja selkeästi etenevästä keskustelusta. </td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Pärjään jokapäiväisissä tosielämän tilanteissa, jos puhe on selkeää ja hidasta.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="09_valid" type="radio" name="statement:09" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="09_invalid" type="radio" name="statement:09" value="no"/></td>
+                            <td>Selviydyn yksinkertaisista kauppa-, posti- ja pankkitilanteista.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Yleensä ymmärrän keskustelun pääkohdat, mikäli puhe on selkeää ja yleiskielistä.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="15_valid" type="radio" name="statement:15" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="15_invalid" type="radio" name="statement:15" value="no"/></td>
+                            <td>Ymmärrän selkeää puhetta jokapäiväisessä keskustelussa, vaikka tosielämän tilanteissa joudun pyytämään joskus joidenkin sanojen ja sanontojen toistamista.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="16_valid" type="radio" name="statement:16" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="16_invalid" type="radio" name="statement:16" value="no"/></td>
+                            <td>Ymmärrän tavallisia jokapäiväisiä ja töihin liittyviä asiatietoja ja tunnistan sekä tavallisia viestejä että yksityiskohtia, mikäli puhe on selkeää ja puhetapa on minulle tuttu.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Ymmärrän radio- ja televisio-ohjelmien pääkohdat, jos aihealue on tuttu ja minua kiinnostava ja jos kieli on suhteellisen hidaskulkuista ja selkeää.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Ymmärrän viestitettyä (lähetettyä) tai kasvokkain lähetettyä puhuttua yleiskieltä, joka käsittelee tuttuja ja tuntemattomia asioita, jotka esiintyvät normaaleissa henkilökohtaisissa, opiskeluun liittyvissä tai työelämän tilanteissa. Vain erittäin kova taustamelu, epäselvä rakenne ja/tai kielelle tyypillisten vakioilmaisujen käyttö tuottaa ongelmia.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Pystyn seuraamaan luentoja, puheita ja raportteja ja muita esityksiä, joissa käytetään monimutkaisia ajatusrakenteita ja vaikeaa kieltä.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Ymmärrän abstrakteja ja konkreettisia aiheita käsitteleviä kuulutuksia ja viestejä, jotka puhutaan yleiskielellä tavallisella puhenopeudella.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="29_valid" type="radio" name="statement:29" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="29_invalid" type="radio" name="statement:29" value="no"/></td>
+                            <td>Ymmärrän useimpia radiodokumentteja ja useimpia muita äänitteitä ja radiolähetyksiä, joissa käytetään yleiskieltä ja pystyn tunnistamaan puhujan mielialan ja äänensävyn.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Pystyn seuraamaan syntyperäisten kielenpuhujien välistä vilkasta keskustelua.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Pystyn suhteellisen helposti seuraamaan useimpia luentoja, keskusteluja ja väittelyjä. </td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="40_valid" type="radio" name="statement:40" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="40_invalid" type="radio" name="statement:40" value="no"/></td>
+                            <td>Ymmärrän helposti mitä tahansa puhekieltä, kasvokkain tai tiedotusvälineiden välityksellä puhuttua, kun puhutaan syntyperäisen kielenpuhujan nopeudella.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="41_valid" type="radio" name="statement:41" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="41_invalid" type="radio" name="statement:41" value="no"/></td>
+                            <td>Pystyn seuraamaan erikoisalojen luentoja ja esitelmiä, joissa käytetään puhekielenomaisia ja paikallisia ilmauksia tai vierasta terminologiaa.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Valmis" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ovatko vastauksesi valmiita?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa itsearviointivaiheen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

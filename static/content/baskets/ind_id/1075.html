@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bacalah teks, dan pilih salah satu pilihan di bawah ini, kemudian pres tombol dengan menggunakan tetikus.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä on <i>Classica</i>-lehdessä ollut levyarvostelu.</p><p><b>Yllättävän yhtenäinen kokonaisuus<br></b></p><p><i>Bernd Alois Zimmermann: Symphonie in einem Sattz. Karl Amadeus Hartmann: Sinfoniat nro 2 ja 5. Igor Stravinsky: Kolmosainen sinfonia. Bambergin sinfonikot, joht. Ingo Metzmacher.</i><p>Saksalaisen Karl Amedeus Hartmannin (1905 - 1963) kahdeksan sinfonian sarja kuuluu lajinsa tärkeimpiin 1900-luvun musiikissa. Yhtäältä Hartmann jatkoi Mahlerin ja Bergin perintöä mutta omaksui toisaalta vaikutteita myös uusklassismista. Usein uusklassismi ja ekspressionismi on haluttu nähdä vastakkaisina, jopa toisensa pois sulkevina ilmiöinä, mutta Hartmannin esimerkki osoittaa, ettei näin välttämättä ole.<p>Nuori saksalaiskapellimestari Ingo Metzmacher (s. 1957) on ottanut tehtäväkseen Hartmannin sinfonioiden kokonaislevytyksen. Levysarja on edennyt viidenteen julkaisuunsa, ja uudella levyllä, samoin kuin aiemmillakin, Hartmannin musiikin rinnalla on muiden 1900-luvulla merkittävien säveltäjien musiikkia. Tässä tapauksessa Hartmannin toinen (1946) ja viides (1950) ovat saaneet seurakseen Zimmermannin vähän tunnetun yksiosaisen varhaissinfonian vuodelta 1953 sekä Stravinskyn hienon kolmiosaisen sinfonian (1946). <p>Metzmacher on jo aiemmin näyttänyt leijonankyntensä 1900-luvun musiikin tulkitsijana, vaikka hän tehnyt paljon työtä myös perinteisen oopperaohjelmiston johtajana. Metzmacher piiskaa Bambergin sinfonikot verevään ja intoutuneeseen soitantaan, jossa ei kaihdeta teosten särmien viiltävyyttä. Hänen johdollaan sekä iskevät rytmipurkaukset että melodialinjojen hehkuva intensiteetti toteutuvat täysipainoisesti. Ehkä vain Stravinskyyn olisi kaivannut vieläkin tiukempaa otetta.<p><i>(Classica 1997)</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1075" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3796" />
+<div id="prompt">Arvostelijan mielestä</div>
+<div id="radios">
+    
+    <input type="radio" id="271" name="response" value="271" />
+    <label for="271">kapellimestari oli pilannut musiikin, kuten ennenkin.</label><br />
+    
+    <input type="radio" id="272" name="response" value="272" />
+    <label for="272">kapellimestari on liian temperamenttinen tällä levyllä.</label><br />
+    
+    <input type="radio" id="273" name="response" value="273" />
+    <label for="273">kapellimestari on jälleen onnistunut musiikin tulkinnassa.</label><br />
+    
+    <input type="radio" id="274" name="response" value="274" />
+    <label for="274">kapellimestari ei ole tarpeeksi temperamenttinen tällä levyllä.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

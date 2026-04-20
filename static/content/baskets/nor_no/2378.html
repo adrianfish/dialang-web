@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Les teksten, og velg ett av svaralternativene under. Klikk så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>NØRREBRO<br></b></p><p><b>Nørrebros bibliotek<br></b></p><p><b>Guldbergsgade 97<br></b></p><p><b>Tlf. 31 39 16 48<br></b></p><p><b>Børnebiblioteket<br></b></p><p>Tirsdag den 5. maj kl. 10-11.<p>Tirsdag den 26. maj kl. 10-11.<p>Lokale lånere i bedstemor-alderen læser højt af bibliotekets righoldige udvalg.<p>Tilmelding på tlf. 33 66 74 12.<p align=right>(<i>Københavns Kommunes Bibiloteker)</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2378" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3365" />
+<div id="prompt">Hvad foregår der på biblioteket de to tirsdage i maj?</div>
+<div id="radios">
+    
+    <input type="radio" id="5671" name="response" value="5671" />
+    <label for="5671">Ældre mennesker fra Nørrebro mødes og læser op for børn.</label><br />
+    
+    <input type="radio" id="5672" name="response" value="5672" />
+    <label for="5672">Bedstemødre fra hele landet mødes og læser op for børn.</label><br />
+    
+    <input type="radio" id="5673" name="response" value="5673" />
+    <label for="5673">Ældre mennesker mødes og læser op for hinanden.</label><br />
+    
+    <input type="radio" id="5674" name="response" value="5674" />
+    <label for="5674">Ældre mennesker mødes og snakker om de bøger de har læst.</label><br />
+    
+    <input type="radio" id="5675" name="response" value="5675" />
+    <label for="5675">Bedstemødre fra Nørrebro læser op for børn.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

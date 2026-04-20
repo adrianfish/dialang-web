@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Som ung rejste Andrea Rose fra Australien og ud i den store verden. Rejsen endte i Århus, hvor hun slog sig ned sammen med sin danske kæreste, fik børn og kastede sig over dansk kulturliv. Hun undrede sig over, at Århus ikke har en kulturnat, som man har det andre steder. Og så gik hun ellers i gang. I næste uge løber Århus Kulturnat af stabelen for anden gang.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2360" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3362" />
+<div id="prompt">Markér det rigtige udsagn:</div>
+<div id="radios">
+    
+    <input type="radio" id="5657" name="response" value="5657" />
+    <label for="5657">Andrea kom til Århus som ung for at arrangere kulturnat.</label><br />
+    
+    <input type="radio" id="5658" name="response" value="5658" />
+    <label for="5658">Andrea kom til Århus for at bo sammen med sin kæreste og arrangerer nu kulturnat i Århus.</label><br />
+    
+    <input type="radio" id="5659" name="response" value="5659" />
+    <label for="5659">Andrea mødte sin danske kæreste under den første kulturnat i Århus.</label><br />
+    
+    <input type="radio" id="5660" name="response" value="5660" />
+    <label for="5660">Andreas kæreste havde planer om at arrangere kulturnat i Århus da de mødtes.</label><br />
+    
+    <input type="radio" id="5661" name="response" value="5661" />
+    <label for="5661">Siden Andrea kom til Århus har der været afholdt kulturnat hvert andet år.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

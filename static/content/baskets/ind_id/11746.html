@@ -1,0 +1,70 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Selesaikan tugas dengan mengisi bagian-bagian yang kosong. Klik pada kotak untuk menampilkan daftar pilihan. Klik jawaban yang Anda pilih.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11746" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="4" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Liebe Anika,
+die Hochzeit war sehr feierlich. Annette war ganz aufgeregt, 
+<select name="2884-response"><option></option><option value="1425">denken</option><option value="1426">glauben</option><option value="1427">wissen</option><option value="1428">zu glauben</option></select> die Glocken zu läuten begannen. Du wirst es kaum <select name="2885-response"><option></option><option value="1429">dort</option><option value="1430">sie</option><option value="1431">Sie</option><option value="1432">so</option></select> , aber <select name="2886-response"><option></option><option value="1433">geheiratet</option><option value="1434">heiraten</option><option value="1435">heiratet</option><option value="1436">verheiratet</option></select> hat noch traditionell in weiß <select name="2887-response"><option></option><option value="1437">als</option><option value="1438">seit</option><option value="1439">während</option><option value="1440">wenn</option></select> .</span>
+</div> 
+
+
+<input type="hidden" name="2884-position" value="1" />
+
+<input type="hidden" name="2885-position" value="2" />
+
+<input type="hidden" name="2886-position" value="3" />
+
+<input type="hidden" name="2887-position" value="4" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

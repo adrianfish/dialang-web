@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '12':false,
+                        
+                        '13':false,
+                        
+                        '14':false,
+                        
+                        '17':false,
+                        
+                        '18':false,
+                        
+                        '19':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '33':false,
+                        
+                        '35':false,
+                        
+                    };
+
+                </script>
+                <h1>Autovalutazione - scrittura</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="ita_it"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Sì</td><td>No</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>So scrivere semplici espressioni e frasi isolate.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>So scrivere una cartolina breve e semplice.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Riesco a fare  brevi ed elementari descrizioni di fatti ed attività.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="12_valid" type="radio" name="statement:12" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="12_invalid" type="radio" name="statement:12" value="no"/></td>
+                            <td>So descrivere la mia famiglia, le  condizioni di vita, la scuola, il mio lavoro attuale o quello più recente.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="13_valid" type="radio" name="statement:13" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="13_invalid" type="radio" name="statement:13" value="no"/></td>
+                            <td>So descrivere le attività e le esperienze personali del passato.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>So scrivere relazioni molto brevi che trasmettono informazioni pratiche di routine e danno le motivazioni delle azioni intraprese.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>So descrivere i dettagli essenziali di un avvenimento imprevedibile, per esempio un incidente.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="18_valid" type="radio" name="statement:18" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="18_invalid" type="radio" name="statement:18" value="no"/></td>
+                            <td>So descrivere sogni, speranze e ambizioni.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="19_valid" type="radio" name="statement:19" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="19_invalid" type="radio" name="statement:19" value="no"/></td>
+                            <td>So scrivere messaggi riguardanti richieste d&#39;informazioni, problemi, ecc.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>So esporre in  breve le ragioni e i motivi di opinioni, progetti e azioni.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>So esprimere il punto di vista su un argomento evidenziando i vantaggi e gli svantaggi delle diverse scelte.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>So sviluppare un argomento  esponendo ragioni pro o contro un particolare punto di vista.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Sono in grado di valutare le diverse idee e soluzioni relative ad un problema.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>So riflettere su cause, conseguenze e  situazioni ipotetiche.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>So sviluppare e sostenere punti di vista, ampliandoli con elementi supplementari, ragioni ed esempi rilevanti. </td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>So fare una chiara e dettagliata descrizione di argomenti complessi.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>So organizzare una struttura logica appropriata ed efficace così da aiutare il lettore a trovarne i punti salienti.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Scrivo sempre  senza consultare il vocabolario.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Consegna le risposte" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Consegni le risposte?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la sezione relativa all&#39;autovalutazione?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

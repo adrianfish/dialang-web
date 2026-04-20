@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Coloque o feijão de molho em água de um dia para o outro. Escalde e raspe a orelha de porco. Leve o feijão a cozer na água juntamente com a orelha, os chouriços, o toucinho, as cebolas, o alho e o louro. <p>Tempere com sal e pimenta. Se for necessário junte mais água. Logo que as carnes e os chouriços estejam cozidos,  retire-os e corte-os aos bocados. Introduza na panela as batatas cortadas aos quadradinhos e os coentros picados.<p>Deixe ferver suavemente até a batata estar cozida. Retire a panela do lume e introduza as carnes já cortadas. Sirva imediatamente.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5524" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4476" />
+<div id="prompt">O texto anterior é uma receita de culinária. Pelos seus ingredientes podemos considerá-la:</div>
+<div id="radios">
+    
+    <input type="radio" id="9425" name="response" value="9425" />
+    <label for="9425">uma receita de sobremesa</label><br />
+    
+    <input type="radio" id="9426" name="response" value="9426" />
+    <label for="9426">uma receita para vegetarianos</label><br />
+    
+    <input type="radio" id="9427" name="response" value="9427" />
+    <label for="9427">uma salada</label><br />
+    
+    <input type="radio" id="9428" name="response" value="9428" />
+    <label for="9428">uma sopa de carnes e legumes</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

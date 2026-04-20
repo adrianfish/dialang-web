@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Viele Krebspatienten leiden oft noch Jahre nach der Behandlung unter Abgeschlagenheit und chronischer Erschöpfung. Sie gelten zwar prinzipiell als geheilt, fühlen sich aber trotzdem oft schlapp und antriebsarm. Alltägliche Tätigkeiten wie Treppensteigen und Spazierengehen sind für sie größte Belastungen, so daß ihnen die Rückkehr in das Alltags- und Berufsleben schwerfällt. Ruhe und Schonung ist in diesen Fällen normalerweise der Rat der Ärzte, in der Annahme, daß körperliche Anstrengung dem geschwächten Organismus schadet. "Die Betroffenen geraten so in einen Teufelskreis", beschreibt Dr. Fernando Dimeo vom Institut für Sportmedizin des Berliner Universitätsklinikums Benjamin Franklin das Problem. "Aufgrund des Bewegungsmangels verlieren sie an Kondition, so daß normale Tätigkeiten für sie immer anstrengender werden und sie sich um so mehr schonen." Es kommt zur Chronifizierung der ursprünglich krankheits- oder behandlungsbedingten Erschöpfung. Schon nach sechs Wochen Bettlägerigkeit, so die Erkenntnisse der Sportmediziner, hat sich die Muskelmasse um 18 Prozent, die Kraft sogar um 30 Prozent abgebaut.<p>...<p>    (FU: Nachrichten 3-4/98)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6911" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2795" />
+<div id="prompt">Mit welchem Satz geht der Text weiter?<br /><br />(A) Bewegungstherapie, die übrigens bereits einen festen Bestandteil bei anderen Erkrankungen darstellt, ist prinzipiell für alle Krebserkrankungen geeignet, die mit schweren Einschränkungen der Leistungsfähigkeit einhergehen.<br />(B) Die Anzahl der weißen Blutkörperchen und der Blutplättchen war deutlich höher, als bei den Patienten, die keine Bewegungstherapie mitgemacht hatten.<br />(C) Ein neuer Behandlungsansatz der chronischen Müdigkeit sieht deshalb ein dosiertes Ausdauertraining für die Krebspatienten vor.</div>
+<div id="radios">
+    
+    <input type="radio" id="10531" name="response" value="10531" />
+    <label for="10531">Satz (A)</label><br />
+    
+    <input type="radio" id="10532" name="response" value="10532" />
+    <label for="10532">Satz (B)</label><br />
+    
+    <input type="radio" id="10533" name="response" value="10533" />
+    <label for="10533">Satz (C)</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

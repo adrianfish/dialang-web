@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Sorten Muld<br></b></p><p>Sorten Muld har markeret sig stærkt på den danske scene, siden de i 1996 udgav den meget roste EP Sorten Muld, som de fulgte op med CD'en 'Mark II' fra 1997. Sorten Muld har som grundlæggende koncept at tage nogle af de kendte danske folkeviser op for så at instrumentere dem på yderst moderne vis. De mener, at historierne i de traditionsrige fortællinger sagtens kan klare endnu en gentagelse, og når man hører deres spændende fortolkninger, hvor de blander viserne sammen med techno og andre moderne rytmer, er man da heller ikke i tvivl om at de har ret. Stemningen i deres numre spænder vidt fra det sfæriske og smukke til mere regulær dansetechno.<p align=right>(<i>Koncerter på 5-øren</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2527" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3390" />
+<div id="prompt">Hvilken slags musik spiller gruppen?</div>
+<div id="radios">
+    
+    <input type="radio" id="6380" name="response" value="6380" />
+    <label for="6380">Sorten Muld synger om moderne byliv.</label><br />
+    
+    <input type="radio" id="6381" name="response" value="6381" />
+    <label for="6381">Sorten Muld spiller tradtionel folkemusik.</label><br />
+    
+    <input type="radio" id="6382" name="response" value="6382" />
+    <label for="6382">Sorten Muld nyfortolker gamle danske folkeviser.</label><br />
+    
+    <input type="radio" id="6383" name="response" value="6383" />
+    <label for="6383">Sorten Muld spiller moderne techno-jazz.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

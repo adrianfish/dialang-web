@@ -1,0 +1,119 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Cliquez sur les différents onglets numérotés pour passer d'une question à une autre. Pour chaque question, écoutez bien l'enregistrement et choisissez une des réponses à l'aide de la souris. Répondez à TOUTES les questions puis cliquez sur 'Suivant' pour poursuivre le test.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/005706.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/005706.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24937" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25155-tab"><a href="#tabs-4607"></a></li>
+        
+        <li id="25156-tab"><a href="#tabs-4608"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-4607">
+        <div id="prompt">Escolha a opção correcta, de acordo com o texto que ouviu.</div>
+        <div id="radios">
+            
+            <input type="radio" id="6238" basketid="" name="4607-response" value="6238" />
+            <label for="6238">A razão da manifestação é a vitória no mundial.</label><br />
+            
+            <input type="radio" id="6239" basketid="" name="4607-response" value="6239" />
+            <label for="6239">A razão da manifestação é um protesto pela falta de respeito pelo ambiente.</label><br />
+            
+            <input type="radio" id="6240" basketid="" name="4607-response" value="6240" />
+            <label for="6240">A razão da manifestação é um protesto por causa do desemprego.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-4608">
+        <div id="prompt">Escolha a opção correcta.</div>
+        <div id="radios">
+            
+            <input type="radio" id="6241" basketid="" name="4608-response" value="6241" />
+            <label for="6241">A manifestação é um protesto.</label><br />
+            
+            <input type="radio" id="6242" basketid="" name="4608-response" value="6242" />
+            <label for="6242">A manifestação é um pedido de desculpas.</label><br />
+            
+            <input type="radio" id="6243" basketid="" name="4608-response" value="6243" />
+            <label for="6243">A manifestação é um festival de música tradicional.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="4607-position" value="1"/><br />
+
+<input type="hidden" name="4608-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "4607",
+        
+        "4608",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

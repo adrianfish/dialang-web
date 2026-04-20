@@ -1,0 +1,66 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og ljúktu við verkefnið með því að fylla í eyðu(r)na(r). Smelltu á reit til þess að fá fram lista yfir valmöguleika. Veldu svarið með því að smella á það.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                RAMHAR, AN EA?<p>Ramhar?  Cé atá ramhar? Níor mhaith le duine ar bith go gcuirfí raimhre ina leith.  Ach go dtí le déanaí ní raibh aon sainmhíniú cruinn eolaíoch ar na téarma sin 'ramhar'.  Ba dheacair dá réir d'aon bhalcaire breá beathaithe a shéanadh gur ramhar a bhí sé.  Ní mar sin atá anois; tá deireadh leis an éiginnteacht, mar go bhfuil caighdeán na raimhre leagtha síos go hoifigiúil ag an lucht leighis i Stáit Aontaithe Mheiriceá.  Is féidir leat a chinntiú anois faoi dheireadh gur/nach duine ramhar tú.  Mar seo a dhéanfaidh tú an cinneadh.<p> Tomhais do mheáchan féin (i gcileagraim); ansin tomhais d'airde féin (i méadair) agus cearnaigh é.  Roinn an chéad fhigiúr ar an bhfigiúr cearnaithe.  Is ionann an freagra agus coimhéifeacht maise do choirp.  Anois má tá an freagra níos mó ná 30, is duine ramhar tú.  Más lú é ná 30, ní duine ramhar tú, agus bíodh an diabhal ag an duine a déarfadh a mhalairt.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11227" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>
+<select name="5157-response"><option></option><option value="381">suim a dhéanamh de do mheáchan agus de d'airde</option><option value="382">féachaint ort féin sa scáthán</option><option value="383">d'airde a chearnú</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="5157-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

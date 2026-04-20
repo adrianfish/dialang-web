@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Välj ett av alternativen nedan och klicka på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11615" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4859" />
+<div id="prompt">Stelpan þín hefur verið í vist allt sumarið hjá fólki sem þú þekkir svolítið en ekki mjög vel. <br />Þú vilt senda fólkinu bréf til að þakka fyrir hana og segja að hún vilji koma aftur. Hvaða bréf er best?</div>
+<div id="radios">
+    
+    <input type="radio" id="1049" name="response" value="1049" />
+    <label for="1049">Kæru herra og frú.
+Takk fyrir að hafa Sveinbjörgu í sumar. Henni fannst alveg ágætt að vera hjá ykkur. Kannski kemur hún aftur næsta sumar ef ykkur er sama.</label><br />
+    
+    <input type="radio" id="1050" name="response" value="1050" />
+    <label for="1050">Kæru Jón og Margrét.
+Mig langar að þakka kærlega fyrir Sveinbjörgu. Hún hefur haft gott af dvölinni hjá ykkur og er strax farin að bollaleggja að ráða sig aftur næsta sumar.</label><br />
+    
+    <input type="radio" id="1051" name="response" value="1051" />
+    <label for="1051">Kæru húsráðendur.
+Fyrir hönd Sveinbjargar vil ég koma á framfæri kæru þakklæti fyrir góða umönnun í sumar. Jafnframt vil ég sækja um dvöl fyrir hana að ári.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

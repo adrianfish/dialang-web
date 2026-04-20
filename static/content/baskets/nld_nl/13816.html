@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Μια ελαφριά ομίχλη είχε σκεπάσει τη μικρή αυτή πόλη, χαρίζοντας στις λάμπες ένα αχνό φωτοστέφανο. Οι προσόψεις των σπιτιών φάνταζαν στο βάθος της θολούρας με παράθυρα σκοτεινά και πόρτες κλειδωμένες για τη νύχτα. Τα βήματά του ηχούσαν στο δρόμο το στρωμένο με κυβόλιθους και από κάπου αλυχτούσε ένα σκυλί. Ρούφηξε τον αλμυρό αέρα και χαμογέλασε. Είχε αρχίσει να του αρέσει αυτό το μέρος. Η αλμύρα της θάλασσας που γέμιζε τον αέρα, η ησυχία που πλανιόταν παντού και που την έσπαζε μόνο ο ήχος του πελάγους καθώς έσπαζε στα βράχια. Αισθανόταν άνετα εδώ. Τον είχαν δεχτεί σαν δικό τους - και ήταν ανώνυμος!
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="13816" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4068" />
+<div id="prompt">Ποιος τίτλος ταιριάζει στο κείμενο που διαβάσατε;</div>
+<div id="radios">
+    
+    <input type="radio" id="2877" name="response" value="2877" />
+    <label for="2877">Χωρίς ταυτότητα</label><br />
+    
+    <input type="radio" id="2878" name="response" value="2878" />
+    <label for="2878">Το γαλάζιο της θάλασσας</label><br />
+    
+    <input type="radio" id="2879" name="response" value="2879" />
+    <label for="2879">Πέρα απ&#39; τον ορίζοντα</label><br />
+    
+    <input type="radio" id="2880" name="response" value="2880" />
+    <label for="2880">Στην άκρη του πελάγους</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

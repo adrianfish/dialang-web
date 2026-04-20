@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                GODE RÅD FOR BEDRE FORM<p>For å komme i bedre form bør du helst sykle til jobben. Det er en billig løsning som gir deg god trim. Hvis du helst vil starte litt roligere, kan du gå 10-20 minutter før du går på bussen. En annen måte å få god trim på, er å gå i trapper i stedet for å ta heisen.<p>Du vet det sikkert, men det er viktig å spise mindre fet mat og mindre sukker. Det er viktig at mer av fettet vi bruker kommer fra plantemargarin og fisk. Fiber, som det er mye av i for eksempel frukt, grønnsaker og grovt brød, er også viktig for bedre helse.<p>Klarer du å slutte å røyke? Det er nok det beste for deg, hvis du vil holde deg frisk og være i god form. Lærere og funksjonærer har vært flinke. De røyker mindre nå enn for noen år siden. Men industriarbeidere og folk som har yrker i helsesektoren, har ikke klart det så bra. De røyker like mye som før.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7764" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3053" />
+<div id="prompt"><br />De gode rådene for bedre form er:</div>
+<div id="radios">
+    
+    <input type="radio" id="11462" name="response" value="11462" />
+    <label for="11462">spise lite sukker, mosjonere, drikke mer vann</label><br />
+    
+    <input type="radio" id="11463" name="response" value="11463" />
+    <label for="11463">spise fiberrik mat, gå fort, jobbe i helsesektoren</label><br />
+    
+    <input type="radio" id="11464" name="response" value="11464" />
+    <label for="11464">trene mer, spise sunn mat, slutte å røyke</label><br />
+    
+    <input type="radio" id="11465" name="response" value="11465" />
+    <label for="11465">trene hver dag, spise fisk, røyke mindre</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,66 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Du skal svare på oppgaven ved å fylle inn det eller de ordene som mangler i luken(e). Klikk på boksen med musen, og skriv inn svaret. Kontroller at ordet/ordene er rett stavet.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5379" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>The results for Biology were as expected.  Klein, Jones and Phillips all got A grades though, <input type="text" name="1301-response" /> , Bircher only got a B.  The middle order candidates all passed. <input type="text" name="1302-response" /> , given the greater demands of the new syllabus and the year's relative academic weakness, the average grade was below our usual standards and the proportion of fails was slightly up on last year. <input type="text" name="1303-response" /> , I am not discouraged by the results and am confident that, with greater familiarity with the design of the new exam, we will be able to achieve higher standards next year.</span>
+</div> 
+
+
+<input type="hidden" name="1301-position" value="1" />
+
+<input type="hidden" name="1302-position" value="2" />
+
+<input type="hidden" name="1303-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

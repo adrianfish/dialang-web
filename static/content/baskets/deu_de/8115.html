@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8115" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3114" />
+<div id="prompt">Du vil søke på en stilling du har svært lyst på. Stillingen er "produktutvikler", og den ble utlyst i Aftenposten den 10.8. Hvilket av de fire alternativene nedenfor er den beste innledningen på søknaden?</div>
+<div id="radios">
+    
+    <input type="radio" id="12063" name="response" value="12063" />
+    <label for="12063">Hallo! Her kommer søknaden min. Håper dere har tid å ta en titt på den.</label><br />
+    
+    <input type="radio" id="12064" name="response" value="12064" />
+    <label for="12064">Jeg leste Aftenposten den 10.8. Der fikk jeg se en utlyst stilling som jeg har svært lyst på.</label><br />
+    
+    <input type="radio" id="12065" name="response" value="12065" />
+    <label for="12065">Jeg viser til utlyst stilling i Aftenposten den 10.8., og søker stillingen som produktutvikler ved Deres bedrift.</label><br />
+    
+    <input type="radio" id="12066" name="response" value="12066" />
+    <label for="12066">Jeg så i Aftenposten den 10.8. at Deres bedrift trenger en produktutvikler. Jeg tror jeg kan være den rette personen i så måte. Herved søker jeg den.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

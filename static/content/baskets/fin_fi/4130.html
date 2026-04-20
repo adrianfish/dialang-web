@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tunesië heeft alles wat u van een vakantieland mag verwachten; vierhonderd kilometer breed zandstrand aan het schoonste gedeelte van de Middellandse Zee, een uitstekend vakantieklimaat en prijzen die ...(1)... liggen dan in andere populaire vakantiebestemmingen. Voeg daarbij een keuze uit alle soorten hotels en appartementen, de unieke excursiemogelijkheden in dit oosterse land en u begrijpt waarom ieder jaar grote aantallen toeristen hun vakantie in Tunesië doorbrengen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4130" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1154" />
+<div id="prompt">Welk woord hoort op de plaats van ...(1)... ?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="8095" name="response" value="8095" />
+    <label for="8095">hoger</label><br />
+    
+    <input type="radio" id="8096" name="response" value="8096" />
+    <label for="8096">hetzelfde</label><br />
+    
+    <input type="radio" id="8097" name="response" value="8097" />
+    <label for="8097">lager</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

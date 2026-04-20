@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                A<p>Þetta er orðið óþolandi ástand. Samkvæmt reglum húsfélagsins er hundahald bannað en það lítur út fyrir að sumir séu ólæsir í þessu húsi. Þetta þarf að ræða sem fyrst. Fundur á þriðjudaginn kl. 20:00.<p>B<p>Mig langar kannski að við ræðum ýmis mál sem upp hafa komið hér í húsinu. Það eru ákveðnar reglur í gangi hér og ég held að það sé kannski best að reyna að fylgja þeim eins og hver og einn treystir sér til. Gaman væri að hittast kl. 20:00 á þriðjudaginn.<p>C<p>Nú höfum við fengið nýjan nágranna og hann er ferfættur! Þetta stangast á við reglur húsfélagsins og við verðum að leysa málið í bróðerni. Komum öll á fund á þriðjudaginn klukkan 20:00.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11610" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4854" />
+<div id="prompt">Þú býrð í blokk í Reykjavík þar sem bannað er að hafa hunda.<br />Nýi nágranninn er með hund sem geltir allan daginn. Þú skrifar bréf og boðar alla á fund til að ræða málið. Hvaða bréf er mest viðeigandi?</div>
+<div id="radios">
+    
+    <input type="radio" id="1031" name="response" value="1031" />
+    <label for="1031">A</label><br />
+    
+    <input type="radio" id="1032" name="response" value="1032" />
+    <label for="1032">B</label><br />
+    
+    <input type="radio" id="1033" name="response" value="1033" />
+    <label for="1033">C</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

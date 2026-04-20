@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Välj ett av alternativen nedan och klicka på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5783" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5092" />
+<div id="prompt">An bhfuil botún san abairt seo?<br /><br />Baintear geit asam nuair a chonaic mé é<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="9627" name="response" value="9627" />
+    <label for="9627">Baintear</label><br />
+    
+    <input type="radio" id="9628" name="response" value="9628" />
+    <label for="9628">geit</label><br />
+    
+    <input type="radio" id="9629" name="response" value="9629" />
+    <label for="9629">asam</label><br />
+    
+    <input type="radio" id="9630" name="response" value="9630" />
+    <label for="9630">chonaic</label><br />
+    
+    <input type="radio" id="9631" name="response" value="9631" />
+    <label for="9631">Níl aon bhotún ann</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

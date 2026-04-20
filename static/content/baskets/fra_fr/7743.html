@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis remplissez le(s) trou(s). Cliquez sur la case pour afficher la liste des réponses, puis choisissez votre réponse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Aðalstöðin FM 90,9/103,2</b><p>10.00 Bryndís. Morgunútvarp. 13.00 Ragnar Bjarnason. 16.00 Happy Days &amp; Bob Murray. 19.00 Kvöldtónar. 21.00 Bryndís.<p><b>Lindin FM 102,9</b><p>8.00 Blönduð tónlist. 9.00 Ræður. 9.30 Lofgjörðartónlist. 12.00 Íslensk tónlist. 14.00 Svart gospel. 15.00 Lofgjörðartónlist. 17.00 Lofgjörðartónlist. 20.00 Við lindina. 23.00 Tónlist fyrir svefninn.<p><b>Stjarnan FM 102,0</b><p>Klassískt rokk allan sólarhringinn. Fréttir kl. 12.<p><b>FM 957 FM 95,7</b><p>10.00 Hafliði Jónsson. 13.00 Pétur Árna. 16.00 Halli Kristins. 19.00 Jón Gunnar Geirdal. 22.00 Rólegt og rómantískt.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7743" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span><select name="4744-response"><option></option><option value="11421">Aðalstöðin FM 90,9/103,2</option><option value="11422">Lindin FM 102,9</option><option value="11423">Stjarnan FM 102,0</option><option value="11424">FM 957 FM 95,7</option></select> er útvarpsstöð sem alltaf er hægt að hlusta á.</span>
+</div> 
+
+
+<input type="hidden" name="4744-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

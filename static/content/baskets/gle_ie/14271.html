@@ -1,0 +1,69 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Líon an bearna/na bearnaí leis an tasc seo a chríochnú. Brúigh ar an bhosca le liosta roghanna a nochtú. Chun d'fhreagra a roghnú, cliceáil air.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14271" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Ist es nicht schade, daß man heutzutage so wenig Briefe schreibt?
+2 <select name="2957-response"><option></option><option value="3062">Denn man kann in Ruhe überlegen, was man anderen sagen möchte.</option><option value="3063">Ich schreibe nämlich gerne Briefe, weil ich mir dann in Ruhe überlegen kann, was ich anderen sagen möchte.</option><option value="3064">Ich schreibe nämlich ungern Briefe, weil ich mir nicht in Ruhe überlegen kann, was ich anderen sagen möchte.</option><option value="3065">Weil man nämlich in Ruhe überlegen kann, was man anderen sagen möchte.</option></select> 
+3 <select name="2958-response"><option></option><option value="3066">Außerdem bekommt doch jeder gerne Briefe.</option><option value="3067">Außerdem, wer bekommt schon gerne Briefe?</option><option value="3068">Und doch bekommt doch jeder Briefe.</option><option value="3069">Und wer bekommt schon Briefe?</option></select> 
+4 <select name="2959-response"><option></option><option value="3070">Man sollte seine Zeit sinnvoller nutzen.</option><option value="3071">Die Leute schreiben immer mehr gar keine Briefe.</option><option value="3072">Allerdings schreiben viele Leute gar keine Briefe mehr.</option><option value="3073">Es ist nämlich schade, dass viele Leute ihre Zeit dafür verwenden, Briefe zu schreiben, anstatt e-mail zu benutzen.</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="2957-position" value="1" />
+
+<input type="hidden" name="2958-position" value="2" />
+
+<input type="hidden" name="2959-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

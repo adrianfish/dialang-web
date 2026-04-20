@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Την άνοιξη, οι περισσότεροι φυσιολογικοί άνθρωποι νιώθουν αισιοδοξία και γεύονται τις χαρές της αναγέννησης της φύσης. Όμως η εποχή αυτή είναι η χειρότερη για όσους υποφέρουν από κατάθλιψη. Το χάσμα ανάμεσα στην πραγματικότητα και τον κόσμο των μελαγχολικών ανοίγει περισσότερο. Αιτία για την αύξηση  της μελαγχολίας, σε όσους πάσχουν από κατάθλιψη, είναι το γενικό κλίμα ευφορίας που επικρατεί κατά την άνοιξη. Ένα στα είκοσι άτομα που έχει καταθλιπτικές τάσεις υποφέρει περισσότερο τον Απρίλιο και το Μάιο. Οι περισσότεροι επιστήμονες συμφωνούν ότι η ιατρική αντιμετώπιση της κατάθλιψης γίνεται με δύο επιστημονικές μεθόδους. Μέσω συμβουλευτικής θεραπείας, που γίνεται από ένα ψυχίατρο, ή μέσω ιατρικής επέμβασης με φάρμακα.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14685" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4110" />
+<div id="prompt">Ποιος τίτλος ταιριάζει περισσότερο στο κείμενο που διαβάσατε;</div>
+<div id="radios">
+    
+    <input type="radio" id="3231" name="response" value="3231" />
+    <label for="3231">Τα προβλήματα της κατάθλιψης και πρόληψή τους</label><br />
+    
+    <input type="radio" id="3232" name="response" value="3232" />
+    <label for="3232">Κατάθλιψη και ποιοι υποφέρουν από αυτήν</label><br />
+    
+    <input type="radio" id="3233" name="response" value="3233" />
+    <label for="3233">Η επιρροή της άνοιξης στους καταθλιπτικούς</label><br />
+    
+    <input type="radio" id="3234" name="response" value="3234" />
+    <label for="3234">Αντιμετώπιση των προβλημάτων της κατάθλιψης</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Är ni på Sveriges Radio medvetna om att pensionärer utgör en större grupp av befolkningen än ungdomen? Om så är fallet, varför får vi som var unga på 30- , 40- och 50-talen så sällan höra de många fina låtarna som var populära på den tiden?
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4785" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2204" />
+<div id="prompt">Välj det alternativ som bäst avslutar insändaren.</div>
+<div id="radios">
+    
+    <input type="radio" id="8611" name="response" value="8611" />
+    <label for="8611">Kan ni inte visa lite respekt för min generation när ni planerar ert musikprogram, undrar Tonårig rappare</label><br />
+    
+    <input type="radio" id="8612" name="response" value="8612" />
+    <label for="8612">Måste allting ske på de gamlas villkor när det är ungdomen som borde gynnas, undrar Medelålders musikdiggare</label><br />
+    
+    <input type="radio" id="8613" name="response" value="8613" />
+    <label for="8613">Vore det inte bättre att låta de gamla låtarna gå i graven, undrar Pigg pensionär</label><br />
+    
+    <input type="radio" id="8614" name="response" value="8614" />
+    <label for="8614">Är det för mycket begärt att ni även tillgodoser de äldres musiksmak, undrar Flitig lyssnare</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

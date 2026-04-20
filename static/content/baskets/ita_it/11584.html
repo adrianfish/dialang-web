@@ -1,0 +1,64 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Completa l'esercizio riempendo lo spazio vuoto/gli spazi vuoti. Fai clic sul riquadro per visualizzare tutte le opzioni. Scegli la risposta cliccandoci sopra.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11584" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Reykjavík, 27. mars 1997
+<select name="4832-response"><option></option><option value="924">Kæri maður sem lest bréfið</option><option value="925">Ágæti viðtakandi</option><option value="926">Háæruverðugi herra</option><option value="927">Til þín sem lest bréfið</option></select> 
+Hér með sæki ég um skólavist fyrir námsárið 1997 - 1998. Ég útskrifaðist úr menntaskólanum ............</span>
+</div> 
+
+
+<input type="hidden" name="4832-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

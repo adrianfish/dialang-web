@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Signaler fra norsk reiselivsbransje og fra utenlandske turoperatører tyder på at Norge alt i alt får en god turistsommer. Overnattingsstatistikken for juni viser vekst fra de fleste hovedmarkedene unntatt Japan, Tyskland og Frankrike. Men trafikken fra disse landene tror man vil ta seg opp senere på sommeren.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7742" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3047" />
+<div id="prompt">Velg den overskriften som passer best.</div>
+<div id="radios">
+    
+    <input type="radio" id="11417" name="response" value="11417" />
+    <label for="11417">Stadig flere turister fra Japan, Tyskland og Frankrike.</label><br />
+    
+    <input type="radio" id="11418" name="response" value="11418" />
+    <label for="11418">Stort sett positiv vekst i sommerturismen.</label><br />
+    
+    <input type="radio" id="11419" name="response" value="11419" />
+    <label for="11419">Turistene svikter Norge.</label><br />
+    
+    <input type="radio" id="11420" name="response" value="11420" />
+    <label for="11420">Flere nordmenn ferierer utenlands.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

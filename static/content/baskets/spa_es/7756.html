@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y complete la tarea rellenando la(s) casilla(s) vacía(s). Haga clic en la casilla con el ratón y escriba la respuesta. ¡Verifique la ortografía!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                AUTOMATISK TILDELING AV BARNETRYGDEN<p>Fra 1. september 1998 kan du få barnetrygd for barn som fødes i Norge, uten at du må sette fram krav. Det er folkeregistrene som overfører opplysninger om nyfødte barn til trygdekontorene.<p>Du må likevel sette fram skriftlig krav om barnetrygd på fastsatt skjema dersom:<p>- barnets mor ikke er registrert som bosatt i Norge<p>- barnet er eldre enn seks måneder når retten til barnetrygd begynner å gjelde, selv om barnet tidligere har hatt rett til barnetrygd fra Norge.<p>- du har krav på utvidet barnetrygd, dvs trygd for ett barn mer enn det faktiske antall barn under 16 år, f eks fordi du er enslig forsørger.<p>- rett til barnetrygd skal vurderes etter EØS-avtalens regler eller regler i trygdeavtaler med andre land.<p>Dersom du kan få barnetrygd på grunnlag av den automatiske rutinen, vil du etter fødselen få tilsendt et foreløpig vedtak fra trygdekontoret sammen med et orienteringsbrev. Du skal melde fra til trygdekontoret innen tre uker hvis opplysningene vedtaket er basert på, ikke er korrekte. Utbetalingen av barnetrygd for det nyfødte barnet blir iverksatt ved første mulige utbetalingstidspunkt etter fristens utløp. Som hovedregel utbetales barnetrygden siste virkedag i hver måned.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7756" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Hvis du ikke framsetter noen krav, vil du få utbetalt barnetrygd <input type="text" name="3051-response" /> .</span>
+</div> 
+
+
+<input type="hidden" name="3051-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

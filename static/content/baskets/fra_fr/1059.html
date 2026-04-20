@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä ilmoitus on sanomalehdestä. <p><b>Mahtuisiko teidän perheeseenne uusi perheenjäsen? - Helsingin sosiaalivirasto etsii PERHEITÄ</b><p>jotka ovat kiinnostuneita ottamaan eri-ikäisiä lapsia ja nuoria perhehoitoon. Lapset tarvitsevat vahvoja ja turvallisia perheitä, missä ihmissuhteet ovat kunnossa.<p>Edellytämme perheiltä kykyä vastata sijoitetun lapsen tarpeisiin sekä valmiutta yhteistyöhön lapselle läheisten henkilöiden kanssa. Sosiaalityöntekijät ovat yhteistyössä perheiden kanssa ja hoidosta maksetaan korvaus.<p>Jos olet kiinnostunut perhehoitotyöstä, ota yhteyttä Lasten sijaishuoltotoimistoon, puhelin: 7927425 tai 5857837, 1.11. lukien vaihde 85934853.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1059" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3788" />
+<div id="prompt">Mikä väite on oikein tekstin mukaan?</div>
+<div id="radios">
+    
+    <input type="radio" id="229" name="response" value="229" />
+    <label for="229">Ilmoituksessa etsitään lapsille päivähoitopaikkoja.</label><br />
+    
+    <input type="radio" id="230" name="response" value="230" />
+    <label for="230">Hoitoperheen täytyy olla ongelmaton ja hyvätuloinen.</label><br />
+    
+    <input type="radio" id="231" name="response" value="231" />
+    <label for="231">Sosiaalityöntekijät ovat yhteydessä lapsiin jatkossakin.</label><br />
+    
+    <input type="radio" id="232" name="response" value="232" />
+    <label for="232">Perheet ottavat lapset hoitoonsa ilmaiseksi.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Lucía Pérez Campillo<p>C/ Ronda de Toledo, 158  4º- 2ª<p>28015 - Madrid                                                                                                           <p>Infotur<p>Avda. de las Palmeras, 35<p>03007 ALICANTE<p>                                                        Madrid, 23 de septiembre de 1999  <p>                                                                    Distinguidos señores:   <p>             En relación con el anuncio publicado por su empresa en el periódico Información, les escribo para expresarles mi interés por el puesto de trabajo que ofrecen.        <p> Creo que reúno todos los requisitos que solicitan. He cursado estudios de Hostelería y Turismo, soy una persona joven, tengo 32 años, y hasta el momento siempre he desempeñado ocupaciones que requerían estar en contacto con el público.         <p>               Adjunto les remito mi currículum vitae y los certificados de trabajo correspondientes a mis anteriores ocupaciones.           <p>               En caso de no ser seleccionada,_____________.                                                                            <p> Les saluda atentamente,<p>   Lucía Pérez
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2582" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="850" />
+<div id="prompt">Lea el texto y marque la opción correcta.</div>
+<div id="radios">
+    
+    <input type="radio" id="6459" name="response" value="6459" />
+    <label for="6459">devuélvanme en breve mis papeles</label><br />
+    
+    <input type="radio" id="6460" name="response" value="6460" />
+    <label for="6460">les rogaría que me devolvieran la documentación</label><br />
+    
+    <input type="radio" id="6461" name="response" value="6461" />
+    <label for="6461">quisiera, con la mayor brevedad, todos mis papeles</label><br />
+    
+    <input type="radio" id="6462" name="response" value="6462" />
+    <label for="6462">me devuelven la documentación</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

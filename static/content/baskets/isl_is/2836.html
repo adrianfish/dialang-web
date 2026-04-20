@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>LIBRERÍAS MODULARES<br></b></p><p><b>Lo mejor en librerías !!!<br></b></p><p><b>- Diferentes medidas<br></b></p><p><b>- Distintos materiales y acabados<br></b></p><p><b>- Preparadas, si es su deseo, para montarlas usted mismo</b><p>MUEBLES EL ROBLE<p>Joan Maragall, 15<p>28002 MADRID <p>Tels. 91.574.90.87 y 91.547.91.88
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2836" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="929" />
+<div id="prompt">Lea el anuncio y marque la afirmación que NO corresponde a la información</div>
+<div id="radios">
+    
+    <input type="radio" id="6763" name="response" value="6763" />
+    <label for="6763">Las librerías son todas de madera</label><br />
+    
+    <input type="radio" id="6764" name="response" value="6764" />
+    <label for="6764">Puede  montar las librerías usted mismo</label><br />
+    
+    <input type="radio" id="6765" name="response" value="6765" />
+    <label for="6765">El aspecto de las librerías es diverso</label><br />
+    
+    <input type="radio" id="6766" name="response" value="6766" />
+    <label for="6766">Hay librerías altas y librerías bajas</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

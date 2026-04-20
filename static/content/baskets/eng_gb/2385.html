@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Skolen består af en rar blanding af gamle historiske bygninger og nyere huse, samlet omkring to hyggelige gårdrum. Vi har plads til 80-100 elever på en række velholdte enkelt- og dobbeltværelser. Så mange, at der er plads til den forskellighed, der giver lidt kulør. Men ikke så mange, at du drukner i mængden.<p>(<i>Brochure fra Testrup Højskole</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2385" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3368" />
+<div id="prompt">Under hvilken overskrift hører teksten hjemme?</div>
+<div id="radios">
+    
+    <input type="radio" id="5686" name="response" value="5686" />
+    <label for="5686">Historie</label><br />
+    
+    <input type="radio" id="5687" name="response" value="5687" />
+    <label for="5687">Beliggenhed</label><br />
+    
+    <input type="radio" id="5688" name="response" value="5688" />
+    <label for="5688">Ankomst til højskolen</label><br />
+    
+    <input type="radio" id="5689" name="response" value="5689" />
+    <label for="5689">De ydre rammer</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,80 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Ακούστε προσεκτικά το μαγνητοφωνημένο κείμενο και επιλέξτε μία από τις παρακάτω επιλογές. Έπειτα πιέστε το πλήκτρο, χρησιμοποιώντας το ποντίκι. Μπορείτε να ακούσετε τον ήχο μόνο ΜΙΑ ΦΟΡΑ.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/012941.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/012941.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="12941" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5024" />
+<div id="prompt">Seo cuid d'agallamh chlár irise.<br /><br />Tá Sharon ag caint anseo faoi:</div>
+<div id="radios">
+    
+    <input type="radio" id="2332" name="response" value="2332" />
+    <label for="2332">chúrsaí ealaíne</label><br />
+    
+    <input type="radio" id="2333" name="response" value="2333" />
+    <label for="2333">chúrsaí oideachais</label><br />
+    
+    <input type="radio" id="2334" name="response" value="2334" />
+    <label for="2334">chúrsaí staire</label><br />
+    
+    <input type="radio" id="2335" name="response" value="2335" />
+    <label for="2335">chúrsaí creidimh</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center><b>Hótel Borg</b><p align=center><i>ristað brauð m/ marmelaði og osti<br></i></p><p align=center><i>glas af ávaxtasafa<br></i></p><p align=center><i>kornflögur<br></i></p><p align=center><i>lýsi<br></i></p><p align=center><i>súrmjólk<br></i></p><p align=center><i>te/kaffi</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7705" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4738" />
+<div id="prompt">Hvaða máltíð er verið að auglýsa?</div>
+<div id="radios">
+    
+    <input type="radio" id="11356" name="response" value="11356" />
+    <label for="11356">hádegismat</label><br />
+    
+    <input type="radio" id="11357" name="response" value="11357" />
+    <label for="11357">morgunmat</label><br />
+    
+    <input type="radio" id="11358" name="response" value="11358" />
+    <label for="11358">kvöldverð</label><br />
+    
+    <input type="radio" id="11359" name="response" value="11359" />
+    <label for="11359">síðdegiskaffi</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

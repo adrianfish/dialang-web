@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center><b>.......... after strong winds</b><p align=center><p>Last week's storms have left a trail of destruction across the Wye valley and South Shropshire.  The worst gales in a decade have left insurance companies facing hundreds of claims as property owners assessed the damage.  Hardly a building was left untouched and in Titley one house lost its roof in the 100mph winds.  According to Councillor John Price, repairs to Burton village hall are estimated to be in excess of £2,000.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4027" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1138" />
+<div id="prompt">Which words complete the headline ( ... after strong winds)?</div>
+<div id="radios">
+    
+    <input type="radio" id="8046" name="response" value="8046" />
+    <label for="8046">Houses repaired ...</label><br />
+    
+    <input type="radio" id="8047" name="response" value="8047" />
+    <label for="8047">Extensive damage ...</label><br />
+    
+    <input type="radio" id="8048" name="response" value="8048" />
+    <label for="8048">Hundreds homeless ...</label><br />
+    
+    <input type="radio" id="8049" name="response" value="8049" />
+    <label for="8049">Insurers pay out ...</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

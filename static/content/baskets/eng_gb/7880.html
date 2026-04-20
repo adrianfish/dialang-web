@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'shortanswer';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and type your answer(s) into the box(es) provided. Check your spelling!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Hrúturinn (21. mars - 19. apríl): </b>Fyrri hluta dags verður þú fyrir minni háttar vonbrigðum. Ákveðið verkefni á hug þinn allan í dag. Kvöldið verður óvanalega skemmtilegt.<p><b>Meyjan (23. ágúst - 22. sept.): </b>Dagurinn virðist líða hægt og þú átt erfitt með að einbeita þér að vinnu þinni fyrri hluta dagsins. Kvöldið lofar góðu varðandi félagslífið.<p><b>Steingeitin (22. des. - 19. jan.): </b>Þú átt gott með að vinna í hópi fólks í dag og nýtur þín vel í margmenni. Sjálfstraustið er upp á sitt besta í dag. Kvöldið verður rólegt.<p><b>Fiskarnir (19. febr. - 20 mars): </b>Fyrri hluta dagsins gengur allt að óskum en er kvöldar þarftu að hafa meira fyrir hlutunum. Happatölur eru 5, 23, og 34.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7880" />
+                        <input type="hidden" name="basketType" value="shortanswer" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    
+    <span>Hvert þeirra skemmtir sér líklega best í kvöld?</span>
+    <input type="text" name="4764-response" /><br />
+    <input type="hidden" name="4764-position" value="1"/><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

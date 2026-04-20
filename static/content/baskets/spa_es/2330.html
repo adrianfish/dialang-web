@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ministerio de Trabajo y Seguridad Social<p>Tesorería Territorial de la Seguridad Social<p>Zaragoza                    <p>       D. Bernardo GARRIDO TORRES, Jefe de Área de Recaudación de la Administración de la Seguridad Social de Zaragoza            <p>   CERTIFICA:                               <p>     Que, según resulta de los antecedentes que constan en esta Tesorería, se comprueba que la empresa 38/542.868/15, TUTUCA S.A., dedicada a la actividad de pirotecnia, domiciliada en Zaragoza, Avda. de Aragón, 87, ha cotizado las cuotas correspondientes al Régimen General de la Seguridad Social, hasta el mes de noviembre de 1999, no teniendo pendiente de ingreso ninguna reclamación por impago de cuotas.           <p>  Y para que conste donde ___________, a petición de la propia empresa, se expide la presente certificación en Zaragoza a quince de diciembre de mil novecientos noventa y nueve.    <p>                                                            Fdo: Bernardo Garrido Torres
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2330" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="772" />
+<div id="prompt">Marque la opción correcta para completar este certificado.</div>
+<div id="radios">
+    
+    <input type="radio" id="5575" name="response" value="5575" />
+    <label for="5575">quiera</label><br />
+    
+    <input type="radio" id="5576" name="response" value="5576" />
+    <label for="5576">proceda</label><br />
+    
+    <input type="radio" id="5577" name="response" value="5577" />
+    <label for="5577">le dé la real gana</label><br />
+    
+    <input type="radio" id="5578" name="response" value="5578" />
+    <label for="5578">le parezca</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

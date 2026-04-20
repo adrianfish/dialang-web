@@ -1,0 +1,119 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Tekan setiap tab untuk melihat jenis-jenis tes. bacalah teks, dan pilih salah satu pilihan, kemudian tekan tombol tetikus.  Cobalah SEMUA jenis tes sebelum menekan tombol Forward.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                En 38-årig svensk hade fått tips om ett ställe i Danmark där man kunde köpa billigt öl. Det passade honom bra eftersom han hade tänkt bjuda sina kompisar på nyårsfest. Dessutom hade han fått uppfattningen att det var fritt fram att ta in så mycket öl man ville efter EU-inträdet. Så förklarar sig 38-åringen i förhör med tullen. Det hjälpte dock inte: Mannen åtalades för försök till varusmuggling. Han försökte nämligen ta med sig inte mindre än 1900 flaskor öl till Sverige.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16447" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25138-tab"><a href="#tabs-2307"></a></li>
+        
+        <li id="25139-tab"><a href="#tabs-2308"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2307">
+        <div id="prompt">Vilket påstående är rätt?</div>
+        <div id="radios">
+            
+            <input type="radio" id="4093" basketid="" name="2307-response" value="4093" />
+            <label for="4093">Det framgår inte klart om mannen medvetet ville smuggla.</label><br />
+            
+            <input type="radio" id="4094" basketid="" name="2307-response" value="4094" />
+            <label for="4094">Inträdet i EU hjälper tullen att komma smugglare på spåren.</label><br />
+            
+            <input type="radio" id="4095" basketid="" name="2307-response" value="4095" />
+            <label for="4095">Mannen köpte 1900 flaskor därför att han hade goda utrymmen.</label><br />
+            
+            <input type="radio" id="4096" basketid="" name="2307-response" value="4096" />
+            <label for="4096">Tullfritt öl flödade på 38-åringens nyårsfest.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2308">
+        <div id="prompt">Vilken rubrik passar bäst?</div>
+        <div id="radios">
+            
+            <input type="radio" id="4097" basketid="" name="2308-response" value="4097" />
+            <label for="4097">Billigt öl blev dyrt i längden.</label><br />
+            
+            <input type="radio" id="4098" basketid="" name="2308-response" value="4098" />
+            <label for="4098">EU möjliggör obegränsad ölinförsel till Sverige.</label><br />
+            
+            <input type="radio" id="4099" basketid="" name="2308-response" value="4099" />
+            <label for="4099">Tullen maktlös gentemot ölsmugglare.</label><br />
+            
+            <input type="radio" id="4100" basketid="" name="2308-response" value="4100" />
+            <label for="4100">Åtal för fylleri på nyårsfest.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2307-position" value="1"/><br />
+
+<input type="hidden" name="2308-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2307",
+        
+        "2308",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

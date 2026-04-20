@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Læs teksten, vælg et svar blandt valgmulighederne herunder, og klik så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tekst 1<p>- Vooral in ontwikkelingslanden zijn er vaak meer factoren in het geding die gelijktijdig optreden.<p>- Iedereen kent de gevolgen van een bankcrisis, maar over de oorzaken bestaat minder overeenstemming.<p>- Er is meestal meer dan één oorzaak waardoor een bank kapot gaat.<p>Tekst 2<p>- Iedereen kent de gevolgen van een bankcrisis, maar over de oorzaken bestaat minder overeenstemming.<p>- Er is meestal meer dan één oorzaak waardoor een bank kapot gaat.<p>- Vooral in ontwikkelingslanden zijn er vaak meer factoren in het geding die gelijktijdig optreden.<p>Tekst 3<p>- Er is meestal meer dan één oorzaak waardoor een bank kapot gaat.<p>- Vooral in ontwikkelingslanden zijn er vaak meer factoren in het geding die gelijktijdig optreden.<p>- Iedereen kent de gevolgen van een bankcrisis, maar over de oorzaken bestaat minder overeenstemming.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3513" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1011" />
+<div id="prompt">In welke tekst staan de zinnen in de goede volgorde?</div>
+<div id="radios">
+    
+    <input type="radio" id="7534" name="response" value="7534" />
+    <label for="7534">Tekst 1</label><br />
+    
+    <input type="radio" id="7535" name="response" value="7535" />
+    <label for="7535">Tekst 2</label><br />
+    
+    <input type="radio" id="7536" name="response" value="7536" />
+    <label for="7536">Tekst 3</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er di sikker på at du vil springe over sprogtesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Dit svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Det rigtige svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Dit svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Det rigtige svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="De rigtige svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

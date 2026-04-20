@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Με πλήρη επίγνωση του χρέους και των ευθυνών μας απέναντι στην αποστολή μας, ως ασφαλιστικού οργανισμού, σας προσφέρουμε σήμερα το όραμά μας, ένα ολοκληρωμένο σύστημα υγείας. Γιατί κάτι έπρεπε να αλλάξει. Κάποιος πρέπει να τολμήσει και εμείς το τολμήσαμε. Για τον άνθρωπο και για την υγεία, το πολυτιμότερο αγαθό του ανθρώπου. Αυτή είναι η δική μας απάντηση στη δίκαιη και ανεκπλήρωτη ανάγκη του σύγχρονου ανθρώπου για ένα πραγματικά ολοκληρωμένο σύνολο  υπηρεσιών υγείας με αυστηρά επιλεγμένους γιατρούς, με σύγχρονα διαγνωστικά κέντρα και νοσηλευτικά ιδρύματα που σας προσφέρουν πρόληψη, διάγνωση και θεραπεία. Από την πιο απλή και καθημερινή φροντίδα της υγείας σας, μέχρι την πιο δύσκολη και περίπλοκη περίπτωση, ένα πλήρες δίκτυο ιατρικών υπηρεσιών, με ποιότητα και ανθρωπιά, σας αγκαλιάζει συνεχώς και κάνει την ανησυχία σας σιγουριά και την αδυναμία σας ελπίδα. Ελπίδα για το καλύτερο, γιατί εμείς πιστεύουμε ότι αξίζετε το καλύτερο.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14692" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4116" />
+<div id="prompt">Ο ασφαλιστικός οργανισμός προσφέρει στους πελάτες του</div>
+<div id="radios">
+    
+    <input type="radio" id="3255" name="response" value="3255" />
+    <label for="3255">φαρμακευτική περίθαλψη.</label><br />
+    
+    <input type="radio" id="3256" name="response" value="3256" />
+    <label for="3256">ιατρικές υπηρεσίες υψηλού επιπέδου.</label><br />
+    
+    <input type="radio" id="3257" name="response" value="3257" />
+    <label for="3257">δωρεάν εξετάσεις.</label><br />
+    
+    <input type="radio" id="3258" name="response" value="3258" />
+    <label for="3258">οικονομική βοήθεια.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

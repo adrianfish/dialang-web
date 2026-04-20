@@ -1,0 +1,119 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klikk på hver boks for å se oppgavene i minitesten. Les teksten, og velg ETT av svaralternativene. Klikk så på knappen med musen. Svar på ALLE oppgavene før du klikker på Send-knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                RESTAURANTE LAS 4 ESQUINAS <p>Carta:<p>I) Ensaladas<p>Mixta   500 Ptas.<p>Americana  350 Ptas.<p>Caprichosa  475 Ptas.<p>Cangrejo  580 Ptas.<p>Rusa  350 Ptas.<p>II)___________<p>Arroz negro 2.200 Ptas.<p>De carne  2.195 Ptas.<p>De verduras 2.050 Ptas.<p>De marisco  2.300 Ptas.<p>Mixta  2.250 Ptas.<p>III)_____________<p>Tarta de Santiago 200 Ptas.<p>Flan  150 Ptas.<p>Helado  225 Ptas.<p>Tarta queso 350 Ptas.<p>Fruta  150 Ptas.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11259" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25047-tab"><a href="#tabs-874"></a></li>
+        
+        <li id="25048-tab"><a href="#tabs-875"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-874">
+        <div id="prompt">Ponga  el título del apartado II) de la carta del Restaurante Las 4 esquinas.</div>
+        <div id="radios">
+            
+            <input type="radio" id="460" basketid="" name="874-response" value="460" />
+            <label for="460">Paellas</label><br />
+            
+            <input type="radio" id="461" basketid="" name="874-response" value="461" />
+            <label for="461">Pizzas</label><br />
+            
+            <input type="radio" id="462" basketid="" name="874-response" value="462" />
+            <label for="462">Entrantes</label><br />
+            
+            <input type="radio" id="463" basketid="" name="874-response" value="463" />
+            <label for="463">Bocadillos</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-875">
+        <div id="prompt">Ponga el título al apartado III) de la carta del Restaurante Las 4 esquinas.</div>
+        <div id="radios">
+            
+            <input type="radio" id="464" basketid="" name="875-response" value="464" />
+            <label for="464">Bebidas</label><br />
+            
+            <input type="radio" id="465" basketid="" name="875-response" value="465" />
+            <label for="465">Ingredientes</label><br />
+            
+            <input type="radio" id="466" basketid="" name="875-response" value="466" />
+            <label for="466">Postres</label><br />
+            
+            <input type="radio" id="467" basketid="" name="875-response" value="467" />
+            <label for="467">Aperitivos</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="874-position" value="1"/><br />
+
+<input type="hidden" name="875-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "874",
+        
+        "875",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,28 @@
+                <h1 id="welcome-title">欢迎使用DIALANG</h1>
+                <p id="welcome-text">欢迎使用DIALANG在线语言诊断测试系统。DIALANG将帮助你发现你在阅读、听力、写作、词汇及语法方面的水平及提高的方法。它也能帮助你评估并了解你自身的语言能力。</p>
+                <div id="procedure-title">步骤</div>
+                <p id="procedure-text">DIALANG系统包括几个阶段。点击下列图标以了解各阶段内容。点“前进”按钮可进入第一阶段。</p>
+                <map name="flowchartmap">
+                    <area shape="rect" coords="20,0,68,41" href="#" onclick="dialang.launchFlowchartDialog('1');" title="选择测试" alt="首先你应选择一项测试，测试的语种和技能可以自由组合。">
+                    <area shape="rect" coords="83,0,131,41" href="#" onclick="dialang.launchFlowchartDialog('2');" title="分级测试" alt="该阶段为自选阶段，将为你的语言水平粗略定级。你需决定屏幕上的单词是真词还是假词。它并没有看起来的那么简单哦！">
+                    <area shape="rect" coords="148,0,196,41" href="#" onclick="dialang.launchFlowchartDialog('3');" title="自我评估" alt="该阶段为自选阶段，但它是DIALANG的一个重要组成部分。你需要就与你使用或理解所测语言的能力相关的一些描述作出判断。该任务有助于你反思自身的语言能力、提高学习效率。你有可能低估或高估自身的语言水平，当出现上述情况时，DIALANG将会提示你。">
+                    <area shape="rect" coords="213,0,262,41" href="#" onclick="dialang.launchFlowchartDialog('4');" title="语言测试" alt="在该阶段，你将完成选定的语种及能力测试。应当注意的是如果你跳过分级测试和自我评估阶段，系统会给出一套对你来说可能过难或过易的测试题目。该测试有多种不同形式的题型：有的需要你输入答案，有的需要你从备选项中选出一个正确答案。你只有在完成测试后才能得到测试结果。">
+                    <area shape="rect" coords="281,0,329,41" href="#" onclick="dialang.launchFlowchartDialog('5');" title="反馈：结果和建议" alt="该部分将基于你已完成的任务为你提供大量反馈。你将获得语言测试结果、分级测试结果、专家建议和其他有用信息。你可以根据正确答案查看作答情况；可以了解测试结果的含义并得到有关如何继续提高语言技能方面的建议；还可以查看自我评估的结果及相关信息。&lt;br/&gt;&lt;br/&gt;你可在该部分退出系统或选择另一个测试。如果你选择同一语言下的另一个测试，将无需再做分级测试!">
+                </map>
+                <div><img src="/images/flowchart.gif" usemap="#flowchartmap"/></div> 
+                <div class="bottom-margin"></div>
+                <div id="dialog1" class="flowchart-dialog" title="选择测试">
+                    <div class="dialang-dialog-content">首先你应选择一项测试，测试的语种和技能可以自由组合。</div>
+                </div>
+                <div id="dialog2" class="flowchart-dialog" title="分级测试">
+                    <div class="dialang-dialog-content">该阶段为自选阶段，将为你的语言水平粗略定级。你需决定屏幕上的单词是真词还是假词。它并没有看起来的那么简单哦！</div>
+                </div>
+                <div id="dialog3" class="flowchart-dialog" title="自我评估">
+                    <div class="dialang-dialog-content">该阶段为自选阶段，但它是DIALANG的一个重要组成部分。你需要就与你使用或理解所测语言的能力相关的一些描述作出判断。该任务有助于你反思自身的语言能力、提高学习效率。你有可能低估或高估自身的语言水平，当出现上述情况时，DIALANG将会提示你。</div>
+                </div>
+                <div id="dialog4" class="flowchart-dialog" title="语言测试">
+                    <div class="dialang-dialog-content">在该阶段，你将完成选定的语种及能力测试。应当注意的是如果你跳过分级测试和自我评估阶段，系统会给出一套对你来说可能过难或过易的测试题目。该测试有多种不同形式的题型：有的需要你输入答案，有的需要你从备选项中选出一个正确答案。你只有在完成测试后才能得到测试结果。</div>
+                </div>
+                <div id="dialog5" class="flowchart-dialog" title="反馈：结果和建议">
+                    <div class="dialang-dialog-content">该部分将基于你已完成的任务为你提供大量反馈。你将获得语言测试结果、分级测试结果、专家建议和其他有用信息。你可以根据正确答案查看作答情况；可以了解测试结果的含义并得到有关如何继续提高语言技能方面的建议；还可以查看自我评估的结果及相关信息。&lt;br/&gt;&lt;br/&gt;你可在该部分退出系统或选择另一个测试。如果你选择同一语言下的另一个测试，将无需再做分级测试!</div>
+                </div>

@@ -1,0 +1,75 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Selesaikan tugas dengan mengisi bagian-bagian yang kosong. Klik pada kotak untuk menampilkan daftar pilihan. Klik jawaban yang Anda pilih.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5773" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>IMPORTANTE EMPRESA CONSTRUCTORA
+Precisa incorporar en sus oficinas de Valencia  
+         Secretaria de Dirección
+Dependerá directamente del Director Financiero
+Requisitos:
+· Diploma de Secretariado Internacional. 
+· Experiencia en funciones afines.
+· Conocimientos de Informática
+· Edad no superior a 45 años.
+· <select name="1354-response"><option></option><option value="9598">Dominada por el inglés</option><option value="9599">Si habla idiomas mejor</option><option value="9600">Dominio del idioma inglés</option><option value="9601">Mejor si dice algo en inglés</option></select> 
+ Sueldo a convenir. Incorporación inmediata.
+Remitan currículum a : Blasco &amp; Ibáñez
+                       C/ Dr. Caro, 76-78
+                       46011-Valencia</span>
+</div> 
+
+
+<input type="hidden" name="1354-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

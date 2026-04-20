@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Schweine am Joystick<p>Wenn die Schweinchen Ebony und Ivory Hunger haben, also fast immer, trotten sie zu ihrem Computer und nehmen einen Joystick ins Maul. Damit gilt es, einen kleinen Kreis auf dem Bildschirm zu bewegen, bis er auf dem blauen Fleck in der Mitte landet, und schon gibt es Futter. Dafür sorgt der Verhaltensforscher Stanley Curtis an der Universität von Pennsylvania. Curtis ist davon überzeugt, daß er seinen Tieren eine Art Sprache beibringen kann. Sie sollen lernen, kleine Symbole auf dem Monitor anzusteuern, um Wünsche auszudrücken, für die bloßes Grunzen nicht reicht.<p>          (nach: Der Spiegel, 19/98)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6840" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2788" />
+<div id="prompt">Was ist richtig?<br /><br />Futter gibt es für Ebony und Ivory, ...</div>
+<div id="radios">
+    
+    <input type="radio" id="10467" name="response" value="10467" />
+    <label for="10467">wenn sie den Joystick ins Maul nehmen und diesen bewegen.</label><br />
+    
+    <input type="radio" id="10468" name="response" value="10468" />
+    <label for="10468">wenn sie in bestimmter Weise mit dem Joystick die Position eines Kreises verändern.</label><br />
+    
+    <input type="radio" id="10469" name="response" value="10469" />
+    <label for="10469">wenn sie mit dem Maul einen blauen Fleck auf dem Monitor berühren.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

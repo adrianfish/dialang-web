@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>BELÆRENDE<br></b></p><p><b>"Kloge ord" af Isaac Newton med egen håndskrift<br></b></p><p>En mand gik ind på en skole i Visby i Sverige og bad om at låne en bog af Isaac Newton. Det måtte han godt, men skolen glemte at få hans navn. Bogen var næsten en million kr. værd, og man så ikke mere til den, før den blev solgt på en auktion i London til den latterligt lave pris 100.000 kr. - et røverkøb i bogstaveligste forstand. Visby Kommune  bliver nu nødt til at betale for bogen, hvis skolen skal have den tilbage. Køberen handlede nemlig i god tro, så derfor kan politiet ikke kræve, at han bare afleverer sin nyerhvervelse uden videre.<p>Ud over at 'kraft er lig med masse gange acceleration' og den slags, sagde Isaac Newton også: 'Selv af en fjende bør man modtage lærdom'. Og det er så forløbigt det eneste, de har modtaget på skolebibliotektet i denne sag.<p>(<i>Politiken</i>)</p><p align=right>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2349" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3359" />
+<div id="prompt">Hvilken oplysning er i overensstemmelse med teksten?</div>
+<div id="radios">
+    
+    <input type="radio" id="5642" name="response" value="5642" />
+    <label for="5642">den nye ejer har fået bogen meget billigt.</label><br />
+    
+    <input type="radio" id="5643" name="response" value="5643" />
+    <label for="5643">bogen er blevet solgt for en million kroner i London.</label><br />
+    
+    <input type="radio" id="5644" name="response" value="5644" />
+    <label for="5644">den nye ejer skal levere bogen tilbage.</label><br />
+    
+    <input type="radio" id="5645" name="response" value="5645" />
+    <label for="5645">den nye ejer godt vidste at bogen tilhørte en skole i Sverige.</label><br />
+    
+    <input type="radio" id="5646" name="response" value="5646" />
+    <label for="5646">kommunen i Visby har gode muligheder for at få bogen tilbage uden større omkostninger.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,80 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Hören Sie sich die Tonaufnahme an, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche. Sie können die Tonaufnahme nur EINMAL abspielen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/000972.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/000972.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="972" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3731" />
+<div id="prompt">Kuulet puheenvuoron siitä, miten teitittely on muuttunut ja<br />yleistynyt Suomessa. <br /><br />Milloin Suomessa teititellään?</div>
+<div id="radios">
+    
+    <input type="radio" id="12998" name="response" value="12998" />
+    <label for="12998">Kun puhutaan vanhan ihmisen kanssa.</label><br />
+    
+    <input type="radio" id="12999" name="response" value="12999" />
+    <label for="12999">Kun puhutaan pohjoismaalaisten ihmisten kanssa.</label><br />
+    
+    <input type="radio" id="13000" name="response" value="13000" />
+    <label for="13000">Kun halutaan olla kohteliaita.</label><br />
+    
+    <input type="radio" id="13001" name="response" value="13001" />
+    <label for="13001">Kun ollaan eurooppalaisten ihmisten kanssa.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

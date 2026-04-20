@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                1 Vorhersage des Wetters<p>2 Wer das Klima erforschen will, muss erst einmal eine grundlegende Frage beantworten: Was bestimmt überhaupt das Wetter?<p>3 Es ist noch nicht erforscht, ob das Wetter stärker von den Meeren oder von der Atmosphäre bestimmt wird.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24916" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2999" />
+<div id="prompt">Sie möchten den Satz 3 mit einfacheren Worten wiedergeben.</div>
+<div id="radios">
+    
+    <input type="radio" id="6221" name="response" value="6221" />
+    <label for="6221">Es stellt sich die Frage, ob das Meer oder die Atmosphäre das Wetter stärker beeinflußt. Das konnte bisher nicht geklärt werden.</label><br />
+    
+    <input type="radio" id="6222" name="response" value="6222" />
+    <label for="6222">Das Wetter richtet sich nach den Meeren und nach der Atmosphäre. Das wird gerade erforscht.</label><br />
+    
+    <input type="radio" id="6223" name="response" value="6223" />
+    <label for="6223">Es wird nicht erforscht, wovon das Wetter abhängt. Sicher ist nur, daß die Meereund die Atmosphäre dabei eine Rolle spielen.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

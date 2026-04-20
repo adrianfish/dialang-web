@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                FAX                                                              Fecha: 15-10-1999          Hora:  16:00                                                             <p> Número de páginas: 1<p>Destinatario: Sr. D. José Menéndez    <p>              Comercial Duero    <p>              Zamora <p>Remitente : Elena Ortiz<p>Genil Textiles   S.A.<p>Granada<p>Teléfono: 924-58-23-37<p>Número de fax: 924-56-43-25<p>Texto:        <p>    Estimado Sr. Menéndez:     <p>     Acabamos de recibir SU Fax, en el que NOS comunica que una parte del pedido que enviamos la semana pasada OS ha llegado en malas condiciones. Sentimos lo ocurrido y esperamos solucionar el problema lo antes posible.<p>                   Cordiales saludos,   <p>                                                                                  Elena Ortíz
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5779" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1359" />
+<div id="prompt">En este fax hay tres pronombres escritos en letras mayúsculas <br />marque el que no corresponde al texto.</div>
+<div id="radios">
+    
+    <input type="radio" id="9616" name="response" value="9616" />
+    <label for="9616">SU</label><br />
+    
+    <input type="radio" id="9617" name="response" value="9617" />
+    <label for="9617">NOS</label><br />
+    
+    <input type="radio" id="9618" name="response" value="9618" />
+    <label for="9618">OS</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

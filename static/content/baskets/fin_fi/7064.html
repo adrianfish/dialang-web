@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Das Positive zuerst: Industrie, Handel, Handwerk sowie Bund und Länder wollen 1998 in Ostdeutschland nicht weniger Lehrstellen als 1997 anbieten. Sie sind optimistisch, zumindest das Ergebnis des vergangenen Jahres wiederholen zu können. Angesichts der nach wie vor schwierigen Situation in der ostdeutschen Wirtschaft ist dies durchaus einer Anerkennung für die ausbildenden Unternehmen wert. Denn die ostdeutsche Wirtschaft ist keinesfalls auf einem Expansionskurs, der große Sprünge in der Lehrstellenbilanz zulassen würde.<p>(Berliner Zeitung, 25.3.98)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7064" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2802" />
+<div id="prompt">Welcher der folgenden Sätze drückt das gleiche aus wie der letzte Satz des Textes? </div>
+<div id="radios">
+    
+    <input type="radio" id="10667" name="response" value="10667" />
+    <label for="10667">... einem Expansionskurs, der es gestatten würde, weitaus mehr Lehrstellen anzubieten.</label><br />
+    
+    <input type="radio" id="10668" name="response" value="10668" />
+    <label for="10668">... einem Expansionskurs, der es ihr erlaubt, auch im Ausland wieder Lehrstellen anzubieten.</label><br />
+    
+    <input type="radio" id="10669" name="response" value="10669" />
+    <label for="10669">... einem Expansionskurs, der es ihr ermöglicht, an den Lehrstellen viel zu verdienen.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

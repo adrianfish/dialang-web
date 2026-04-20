@@ -1,0 +1,135 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Fai clic su ogni casella numerata per visualizzare ciascun quesito dell'esercizio. Leggi il testo e scegli UNA delle opzioni, poi fai clic sul pulsante usando il mouse. Rispondi a TUTTI i quesiti prima di premere 'Avanti'.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Une enquête a été ouverte après le vol, dimanche dernier, au Louvre d'une toile de Camille Corot. <p>Malgré une vitrine de protection, la toile a été détachée de son cadre. Il semblerait que la toile ait été prise entre 13h15 et 13h45. En raison de l'afflux de visiteurs en ce jour de gratuité, le voleur a pu sortir du Louvre sans se faire remarquer avec un tableau sous le bras.<p>S'agit-il de trafiquants de tableaux ou d'un collectionneur d'oeuvres d'art maniaque ou bien encore ce vol serait-il la conséquence d'un pari ?<p>Ce tableau est facilement identifiable par son style, donc peu revendable.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16401" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25103-tab"><a href="#tabs-2653"></a></li>
+        
+        <li id="25104-tab"><a href="#tabs-2654"></a></li>
+        
+        <li id="25105-tab"><a href="#tabs-2655"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2653">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au texte.<br /><br />Le jour du vol, il y avait ...</div>
+        <div id="radios">
+            
+            <input type="radio" id="3960" basketid="" name="2653-response" value="3960" />
+            <label for="3960">peu de personnes au musée.</label><br />
+            
+            <input type="radio" id="3961" basketid="" name="2653-response" value="3961" />
+            <label for="3961">assez de personnes.</label><br />
+            
+            <input type="radio" id="3962" basketid="" name="2653-response" value="3962" />
+            <label for="3962">beaucoup de personnes.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2654">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3963" basketid="" name="2654-response" value="3963" />
+            <label for="3963">Le voleur est entré dans le musée un jour de fermeture.</label><br />
+            
+            <input type="radio" id="3964" basketid="" name="2654-response" value="3964" />
+            <label for="3964">Le voleur a brisé une fenêtre pour entrer dans le musée.</label><br />
+            
+            <input type="radio" id="3965" basketid="" name="2654-response" value="3965" />
+            <label for="3965">Le voleur est entré comme tout le monde par la porte.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2655">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3966" basketid="" name="2655-response" value="3966" />
+            <label for="3966">Les gardiens ont vu le voleur s&#39;enfuir avec la toile sous le bras.</label><br />
+            
+            <input type="radio" id="3967" basketid="" name="2655-response" value="3967" />
+            <label for="3967">Des visiteurs ont vu le voleur détacher le tableau.</label><br />
+            
+            <input type="radio" id="3968" basketid="" name="2655-response" value="3968" />
+            <label for="3968">Le voleur est ressorti du musée sans être vu.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2653-position" value="1"/><br />
+
+<input type="hidden" name="2654-position" value="2"/><br />
+
+<input type="hidden" name="2655-position" value="3"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2653",
+        
+        "2654",
+        
+        "2655",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

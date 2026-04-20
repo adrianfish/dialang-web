@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Avisam-se todos os passageiros do voo 707, com saída prevista para as 14.00 horas, que a partida do avião está atrasada cerca de 30 minutos devido a más condições atmosféricas.<p>Assim que as condições de visibilidade melhorem, os senhores passageiros serão imediatamente avisados para se dirigirem para as portas de embarque. Entretanto pedimos o favor de permanecerem perto da área do aeroporto ou na esplanada do restaurante, pois não chove. Muito obrigado!
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5520" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4472" />
+<div id="prompt">Seleccione a afirmação verdadeira.</div>
+<div id="radios">
+    
+    <input type="radio" id="9410" name="response" value="9410" />
+    <label for="9410">A partida do avião está atrasada porque a noite dificulta a visibilidade.</label><br />
+    
+    <input type="radio" id="9411" name="response" value="9411" />
+    <label for="9411">A partida do avião está atrasada porque há muito nevoeiro.</label><br />
+    
+    <input type="radio" id="9412" name="response" value="9412" />
+    <label for="9412">A partida do avião está atrasada porque está a chover torrencialmente.</label><br />
+    
+    <input type="radio" id="9413" name="response" value="9413" />
+    <label for="9413">A partida do avião está atrasada porque há uma avaria mecânica.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

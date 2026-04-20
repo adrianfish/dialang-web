@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Διαβάστε το κείμενο και ολοκληρώστε την άσκηση, συμπληρώνοντας το κενό/τα κενά. Πιέστε το κουτάκι, για να παρουσιαστεί ένας κατάλογος επιλογών. Επιλέξτε την απάντησή σας, πατώντας σ' αυτήν.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center><b>Í ÖÐRUM HEIMI</b><p>Ný bók eftir Hildi Einarsdóttur, höfund bókarinnar Dekurdrengur á dreifýlisbomsum. Saga um 11 ára strák með fjörugt ímyndunarafl. Afi hans er besti vinur hans og þegar hann fellur frá finnst drengnum hann finna fyrir návist hans. Þegar hann segir fullorðna fólkinu frá því finnst því hann vera skrýtinn. Strákurinn lendir í ýmsum raunum í skólanum en eignast þar líka góða og trausta vini sem taka þátt í skemmtilegum og spennandi uppátækjum með honum.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7904" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Fullorðna fókinu finnst strákurinn skrýtinn af því <select name="4779-response"><option></option><option value="11699">hann verður var við afa sinn eftir að hann er látinn.</option><option value="11700">afi hans er besti vinur hans.</option><option value="11701">strákurinn er alltaf í návist afa síns.</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="4779-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

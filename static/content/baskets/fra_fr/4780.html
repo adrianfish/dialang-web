@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                É chegada a altura de dar a conhecer aos nossos estimados clientes a abertura da nossa esplanada, devidamente decorada com motivos de caça. Assim, nos próximos meses de Junho e Julho, proporcionamos 3 tipos de menus, cuidadosamente escolhidos pelo chefe de cozinha, para poderem disfrutar de mais um novo espaço que, estamos certos, vai ser do seu agrado.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4780" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4433" />
+<div id="prompt">O novo espaço de que se fala no texto pertence a:</div>
+<div id="radios">
+    
+    <input type="radio" id="8594" name="response" value="8594" />
+    <label for="8594">um restaurante onde certamente se come carne de veado e javali.</label><br />
+    
+    <input type="radio" id="8595" name="response" value="8595" />
+    <label for="8595">um restaurante especializado em pratos de peixe.</label><br />
+    
+    <input type="radio" id="8596" name="response" value="8596" />
+    <label for="8596">um bar.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

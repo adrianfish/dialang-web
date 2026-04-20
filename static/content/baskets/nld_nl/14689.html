@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Σήμερα ο μέσος όρος της ηλικίας των κατοίκων της Ευρωπαϊκής Ένωσης έφτασε περίπου τα 72 χρόνια και ο μέσος όρος ετών συνταξιοδότησης του Ευρωπαίου είναι περίπου 17 χρόνια. Ένα μεγάλο, λοιπόν, μέρος της ζωής μας το περνάμε ως συνταξιούχοι. Ο ένας, όμως, στους οκτώ συνταξιούχους της Ευρωπαϊκής Ένωσης είδε τη σύνταξή του να περικόπτεται τα πέντε τελευταία χρόνια, με αποτέλεσμα η αβεβαιότητα και η ανασφάλεια να μεγαλώνουν. Ένα από τα προγράμματα που ο ασφαλιστικός όμιλός μας σας προσφέρει έχει σχέση με τη σύνταξή σας.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14689" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4114" />
+<div id="prompt">Ποιος τίτλος ταιριάζει στη διαφήμιση που μόλις διαβάσατε;</div>
+<div id="radios">
+    
+    <input type="radio" id="3247" name="response" value="3247" />
+    <label for="3247">Ειδικά ασφαλιστικά προγράμματα</label><br />
+    
+    <input type="radio" id="3248" name="response" value="3248" />
+    <label for="3248">Η κυβέρνηση μειώνει τις συντάξεις</label><br />
+    
+    <input type="radio" id="3249" name="response" value="3249" />
+    <label for="3249">Συνταξιοδοτικό ασφαλιστικό πρόγραμμα</label><br />
+    
+    <input type="radio" id="3250" name="response" value="3250" />
+    <label for="3250">Μεγάλωσε ο μέσος όρος ηλικίας</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

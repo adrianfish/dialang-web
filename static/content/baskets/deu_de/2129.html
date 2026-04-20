@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Beste Oerolvrienden, <p>Het gaat goed met het straattheaterfestival Oerol op het eiland Terschelling! Met de brede steun van het ministerie van OC&amp;W, de lokale overheden en sponsors maar vooral de hartverwarmende reacties en steunbetuigingen van u, de OEROL-vriend, zijn wij wederom in staat een stormachtig programma te realiseren.<p>Het festival dit jaar heeft alles te maken met wind, met lucht, let wel: de blauwe lucht. Terschelling als luchtschip dat jullie meevoert naar de wereld van Oerol; het eiland als podium, de hemelkoepel zorgt voor de akoestiek.<p>Theater op locatie blijft, als vanouds, het belangrijkste onderdeel van het Oerolprogramma. Theater op unieke locaties op het eiland of in karakteristieke boerenschuren. Maar ook muziek uit alle windstreken, straattheater en beeldende kunst. Dit alles met de prachtige titel:  Vanachter de wolken kwam de wind.<p>Met de kop in de wind sta ik, als voorman van een fantastisch team, naar jullie uit te kijken. Op vrijdag de 13e dagen wij de weergoden uit met een openingsspektakel, als het even kan samen met jou. Zorg dat je erbij bent, het spektakel begint na aankomst van de laatste boot.<p>Tot Oerol!<p>Namens de organisatie,<p>Joost Molenaar
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2129" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="705" />
+<div id="prompt">Wat wil de schrijver van deze brief?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="5130" name="response" value="5130" />
+    <label for="5130">Aan mensen uitleggen wat het Oerolfestival is.</label><br />
+    
+    <input type="radio" id="5131" name="response" value="5131" />
+    <label for="5131">Aan mensen  de bezwaren van het Oerolfestival uitleggen.</label><br />
+    
+    <input type="radio" id="5132" name="response" value="5132" />
+    <label for="5132">Mensen uitnodigen om naar het festival te komen.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

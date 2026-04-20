@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Dal momento dell'acquisto fino alla consumazione i formaggi vanno mantenuti in un luogo fresco e arioso. L'ideale sarebbe una cella frigorifera ventilata perché la patina esterna del formaggio ha bisogno di rimanere soda e croccante, mentre l'interno deve mantenersi più morbido. Se non disponete di una cella frigorifera o di un luogo idoneo, usate un normale frigorifero, ma abbiate cura di avvolgere i formaggi nella carta paglia che assorbe l'umidità. TOGLIETELI DAL FRIGORIFERO DUE ORE PRIMA DI SERVIRE E PRESENTATELI SU UN PIATTO.<p>Non usate mai la forchetta o il coltello d'acciaio perché il metallo rovina i formaggi.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4990" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1895" />
+<div id="prompt">Considera la frase in lettere maiuscole.</div>
+<div id="radios">
+    
+    <input type="radio" id="8884" name="response" value="8884" />
+    <label for="8884">La frase è corretta.</label><br />
+    
+    <input type="radio" id="8885" name="response" value="8885" />
+    <label for="8885">La frase è sbagliata dal punto di vista ortografico.</label><br />
+    
+    <input type="radio" id="8886" name="response" value="8886" />
+    <label for="8886">La frase è sbagliata dal punto di vista grammaticale.</label><br />
+    
+    <input type="radio" id="8887" name="response" value="8887" />
+    <label for="8887">La frase è sbagliata dal punto di vista lessicale.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

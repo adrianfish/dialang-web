@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                                             Palma de Mallorca, 8-4-1999   <p> ¡Hola Asunción! <p>    Te escribo estas líneas para decirte que, después de casi doce años de noviazgo, Pepe y yo hemos decidido formar una familia. Así que nos casamos el 23 de julio y nos gustaría que vinieses a la boda.   <p>    Todavía no tenemos las invitaciones, pero he querido que fueras la primera en saberlo, puesto que tú me presentaste al chico ___  guapo ___  toda la Facultad de Derecho.  <p>    Te esperamos; no faltes.      <p>                                Un abrazo muy fuerte,                                                                                                    Carmen
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2333" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="775" />
+<div id="prompt">Marque la opción correcta para completar esta carta en los espacios en blanco.</div>
+<div id="radios">
+    
+    <input type="radio" id="5586" name="response" value="5586" />
+    <label for="5586">más / por</label><br />
+    
+    <input type="radio" id="5587" name="response" value="5587" />
+    <label for="5587">más / que</label><br />
+    
+    <input type="radio" id="5588" name="response" value="5588" />
+    <label for="5588">más / en</label><br />
+    
+    <input type="radio" id="5589" name="response" value="5589" />
+    <label for="5589">más / de</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,144 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Tekan setiap tab untuk melihat item tes. Dengarkan rekaman dan pilih salah satu pilihan, dan klik tombol dengan tetikus. Cobalah semua item sebelum menekan tombol Forward.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/000596.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/000596.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11833" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25064-tab"><a href="#tabs-1661"></a></li>
+        
+        <li id="25065-tab"><a href="#tabs-1662"></a></li>
+        
+        <li id="25066-tab"><a href="#tabs-1663"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-1661">
+        <div id="prompt">Quale di questi aggettivi riferiti ai capelli non hai sentito?</div>
+        <div id="radios">
+            
+            <input type="radio" id="1530" basketid="" name="1661-response" value="1530" />
+            <label for="1530">sani</label><br />
+            
+            <input type="radio" id="1531" basketid="" name="1661-response" value="1531" />
+            <label for="1531">forti</label><br />
+            
+            <input type="radio" id="1532" basketid="" name="1661-response" value="1532" />
+            <label for="1532">neutri</label><br />
+            
+            <input type="radio" id="1533" basketid="" name="1661-response" value="1533" />
+            <label for="1533">belli</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1662">
+        <div id="prompt">Qual è la caratteristica dello shampo Neutro Roberts Hair System?</div>
+        <div id="radios">
+            
+            <input type="radio" id="1534" basketid="" name="1662-response" value="1534" />
+            <label for="1534">Contiene essenze esotiche naturali.</label><br />
+            
+            <input type="radio" id="1535" basketid="" name="1662-response" value="1535" />
+            <label for="1535">Contiene vitamine.</label><br />
+            
+            <input type="radio" id="1536" basketid="" name="1662-response" value="1536" />
+            <label for="1536">Contiene balsamo.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1663">
+        <div id="prompt">Che cosa vuol dire l'espressione: SHAMPO NEUTRO?</div>
+        <div id="radios">
+            
+            <input type="radio" id="1537" basketid="" name="1663-response" value="1537" />
+            <label for="1537">Che è un prodotto di marca sconosciuta.</label><br />
+            
+            <input type="radio" id="1538" basketid="" name="1663-response" value="1538" />
+            <label for="1538">Che va bene sia per uomini che per donne.</label><br />
+            
+            <input type="radio" id="1539" basketid="" name="1663-response" value="1539" />
+            <label for="1539">Che contiene un detergente non aggressivo per i capelli.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="1661-position" value="1"/><br />
+
+<input type="hidden" name="1662-position" value="2"/><br />
+
+<input type="hidden" name="1663-position" value="3"/><br />
+
+<script>
+    var itemIds = [
+        
+        "1661",
+        
+        "1662",
+        
+        "1663",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Hvergi er meira um barneignir stúlkna á táningsaldri en í Bretlandi og hafa yfirvöld af því þó nokkrar áhyggjur. Hefur verið reynt að vinna gegn þessu með ýmiss konar fræðslu, en hún virðist hafa farið fyrir ofan garð og neðan hjá allt of mörgum. Nú hafa yfirvöld þó dottið niður á nýtt ráð og það virðist ætla að slá í gegn. Í sumum skólum þar sem vandinn hefur verið mikill hafa stúlkurnar verið beðnar að taka "sýndarbarn" í fóstur, tölvustýrða dúkku, sem heimtar sinn mat og engar refjar, neitar að sofa nema í réttri stellingu og vaknar upp með hljóðum á hverri nóttu. Er "strákurinn" aldrei verri en um helgar með alvarlegum afleiðingum fyrir félagslíf stúlknanna. Þessi reynsla af móðurhlutverkinu hefur haft mikil áhrif á stúlkurnar og þær eru sammála um, að það sé eins gott að fara varlega. Höfðu sumar á orði, að þær væru ekki vissar um, að þær langaði yfirleitt til að eignast barn síðar á ævinni.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7899" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4776" />
+<div id="prompt">Hvaða yfirskrift passar EKKI?</div>
+<div id="radios">
+    
+    <input type="radio" id="11685" name="response" value="11685" />
+    <label for="11685">Brennt barn forðast eldinn</label><br />
+    
+    <input type="radio" id="11686" name="response" value="11686" />
+    <label for="11686">Ekki er ráð nema í tíma sé tekið</label><br />
+    
+    <input type="radio" id="11687" name="response" value="11687" />
+    <label for="11687">Til þess eru vítin að varast þau</label><br />
+    
+    <input type="radio" id="11688" name="response" value="11688" />
+    <label for="11688">Barnið vex en brókin ekki</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

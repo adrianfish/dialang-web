@@ -1,0 +1,80 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lyt til lydoptagelsen, vælg et svar blandt valgmulighederne herunder, og klik så på knappen med musen. Du kan KUN afspille lyden EN gang.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/002547.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/002547.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2547" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="835" />
+<div id="prompt">Escuche la siguiente conversación entre dos personas en la calle y marque la opción correcta.<br />El texto da :</div>
+<div id="radios">
+    
+    <input type="radio" id="6422" name="response" value="6422" />
+    <label for="6422">instrucciones</label><br />
+    
+    <input type="radio" id="6423" name="response" value="6423" />
+    <label for="6423">advertencias</label><br />
+    
+    <input type="radio" id="6424" name="response" value="6424" />
+    <label for="6424">consejos</label><br />
+    
+    <input type="radio" id="6425" name="response" value="6425" />
+    <label for="6425">información</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er di sikker på at du vil springe over sprogtesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Dit svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Det rigtige svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Dit svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Det rigtige svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="De rigtige svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

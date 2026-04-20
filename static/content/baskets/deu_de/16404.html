@@ -1,0 +1,116 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klicken Sie auf jeden einzelnen 'Karteireiter', um die Aufgaben zu sehen. Lesen Sie den Text, wählen Sie EINE Auswahlmöglichkeit und klicken Sie dann mit der Maus auf die Schaltfläche. Bearbeiten Sie ALLE Aufgaben, bevor Sie auf 'Weiter' klicken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Gouesnon, le 24 avril 1998 <p>Chère Madame,<p>Veuillez trouver ci-joint un chèque d'un montant de 1.500 frs en règlement du loyer pour la chambre de mon fils, Luc.<p>Comme vous me l'aviez demandé, je tiens à vous faire savoir que Luc terminera son année universitaire mi-juin et qu'il ne reprendra pas sa chambre parce qu'il doit aller faire un séjour d'un an à l'étranger.<p>En vous remerciant pour ces deux années qu'il vient de passer dans cette chambre où il se sentait bien, je vous prie d'agréer, Madame, mes salutations distinguées.<p>                                                             Madame Barrière
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16404" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25110-tab"><a href="#tabs-2662"></a></li>
+        
+        <li id="25111-tab"><a href="#tabs-2663"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2662">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3981" basketid="" name="2662-response" value="3981" />
+            <label for="3981">Mme Barrière paie le loyer et demande la chambre pour l&#39;année suivante.</label><br />
+            
+            <input type="radio" id="3982" basketid="" name="2662-response" value="3982" />
+            <label for="3982">Mme Barrière paie le loyer et remercie pour l&#39;année que son fils vient de passer chez elle.</label><br />
+            
+            <input type="radio" id="3983" basketid="" name="2662-response" value="3983" />
+            <label for="3983">Mme Barrière paie le loyer et dit qu&#39;elle ne garde pas la chambre.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2663">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3984" basketid="" name="2663-response" value="3984" />
+            <label for="3984">Luc a fini ses études et cherche un emploi.</label><br />
+            
+            <input type="radio" id="3985" basketid="" name="2663-response" value="3985" />
+            <label for="3985">Luc n&#39;a pas fini ses études et va rester en France.</label><br />
+            
+            <input type="radio" id="3986" basketid="" name="2663-response" value="3986" />
+            <label for="3986">Luc n&#39;a pas fini ses études et part à l&#39;étranger.</label><br />
+            
+            <input type="radio" id="3987" basketid="" name="2663-response" value="3987" />
+            <label for="3987">Luc arrête ses études et cherche un emploi à l&#39;étranger.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2662-position" value="1"/><br />
+
+<input type="hidden" name="2663-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2662",
+        
+        "2663",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

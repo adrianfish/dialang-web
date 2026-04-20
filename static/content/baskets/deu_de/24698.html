@@ -1,0 +1,66 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bearbeiten Sie die Aufgabe und füllen Sie dazu die Lücke(n). Klicken Sie auf ein Feld, damit eine Liste mit Auswahlmöglichkeiten erscheint. Wählen Sie Ihre Antwort, indem Sie sie anklicken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24698" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Hva er "Klar Tale"?
+Klar Tale er Norges eneste lettleste avis for ungdom og voksne. Den er laget for voksne med lesevansker. Avisen har litt større <select name="3296-response"><option></option><option value="5879">bokstaver</option><option value="5880">opplag</option><option value="5881">nyheter</option><option value="5882">problemer</option></select> enn andre aviser. Det er færre vanskelige ord og setningene er <select name="3297-response"><option></option><option value="5883">kortere</option><option value="5884">lengre</option><option value="5885">finere</option><option value="5886">dyrere</option></select> . 
+Klar Tale kommer ut hver uke med 12 sider nyheter, sport, kultur og underholdning. Klar Tale kommer også på lydkassett og i blindeskrift. </span>
+</div> 
+
+
+<input type="hidden" name="3296-position" value="1" />
+
+<input type="hidden" name="3297-position" value="2" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

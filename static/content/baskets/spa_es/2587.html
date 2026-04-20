@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                El turrón es en España el dulce navideño por antonomasia. Sobre su origen, los eruditos no se han puesto de acuerdo. Se considera que el turrón, básicamente compuesto por almendras y miel, es una elaboración que puede haberse ideado simultáneamente en todos los países ricos en almendros y con una apicultura desarrollada. <p> De todos modos, algunos atribuyen al turrón una ascendencia árabe, ya que la especialidad denominada Alicante, era conocida en el norte de África muchos siglos antes que en la península Ibérica.<p> Se cree que el turrón de guirlache es de ascendencia mudéjar y, en un principio, se llamó "nuegada" porque se elaboraba con nueces y no con almendras.<p> No obstante, el turrón navideño por excelencia es el de Jijona, en cuya localidad también se producen otros tipos como los de yema, mazapán o guirlache. Otros turrones más novedosos son los de café, chocolate, coco, nuez, piñones, praliné, etc.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2587" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="853" />
+<div id="prompt">Lea el texto y marque el título que mejor se ajusta al <br />contenido del mismo.</div>
+<div id="radios">
+    
+    <input type="radio" id="6471" name="response" value="6471" />
+    <label for="6471">Los turrones árabes</label><br />
+    
+    <input type="radio" id="6472" name="response" value="6472" />
+    <label for="6472">Curiosidades sobre el turrón</label><br />
+    
+    <input type="radio" id="6473" name="response" value="6473" />
+    <label for="6473">Los nuevos turrones</label><br />
+    
+    <input type="radio" id="6474" name="response" value="6474" />
+    <label for="6474">Dulces hechos con turrón</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

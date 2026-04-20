@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'shortanswer';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and type your answer(s) into the box(es) provided. Check your spelling!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Cataluña y Baleares<p>El cielo estará hoy nuboso en la zona del Pirineo y a intervalos en las islas Baleares. Lloviznas a última hora de la tarde.<p>Galicia<p>Cielo nuboso con precipitaciones muy localizadas. Las temperaturas descenderán ligeramente y soplará viento moderado del noroeste.<p>Extremadura<p>Las lluvias típicas de la primavera se resisten a llegar. Los claros y el sol reinarán sobre toda la región. Temperaturas suaves.<p>Castilla-León<p>Empezará un descenso térmico importante. Habrá nieblas matinales. A primeras horas de la tarde los cielos se nublarán y lloverá en las zonas montañosas.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2593" />
+                        <input type="hidden" name="basketType" value="shortanswer" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    
+    <span>¿En qué región hará mejor tiempo?</span>
+    <input type="text" name="857-response" /><br />
+    <input type="hidden" name="857-position" value="1"/><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

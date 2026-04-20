@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                SERVICIO CATALÁN DE LA SALUD<p>Los servicios que ofrece la Comunidad Catalana sobre la salud son los siguientes:<p>a) Los CAP (Centros de Asistencia Primaria) y los consultorios, donde hay un médico de cabecera,  además de un equipo de profesionales especializados : médicos de distintas especialidades, pediatras, enfermeras y cada vez más, odontólogos y asistentes sociales. Los médicos de cabecera, además, atienden a domicilio y en urgencias.<p>b) Los médicos especialistas, que atienden en el CAP con consultas de especialidad o en los servicios de consulta externa de los hospitales.<p>c) Los hospitales, agrupados en la Red Hospitalaria de Utilización Pública de Cataluña.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2600" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="861" />
+<div id="prompt">Los médicos de cabecera del CAP :</div>
+<div id="radios">
+    
+    <input type="radio" id="6499" name="response" value="6499" />
+    <label for="6499">solamente visitan en la consulta</label><br />
+    
+    <input type="radio" id="6500" name="response" value="6500" />
+    <label for="6500">pueden visitar en casa y en la consulta</label><br />
+    
+    <input type="radio" id="6501" name="response" value="6501" />
+    <label for="6501">visitan en urgencias, solamente</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

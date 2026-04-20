@@ -1,0 +1,68 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis remplissez le(s) trou(s). Cliquez sur la case pour afficher la liste des réponses, puis choisissez votre réponse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Fjölskyldu- og húsdýragarðurinn er opinn alla daga frá kl. 10:00-18:00 á sumrin. <p>Frá 1. september-14. maí er opið 10:00-17:00 alla daga nema miðvikudaga. <p>Fjölskyldugarðurinn er opinn sem útivistarsvæði. <p>Fjölskyldu- og húsdýragarðurinn. <p>Laugardal, Hafrafell v/Engjaveg, <p>104 Reykjavík. <p>Sími 553 7700, Fax 553 7140.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11852" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Fjölskyldu- og húsdýragarðurinn er opinn <select name="4919-response"><option></option><option value="1553">alla daga á veturna</option><option value="1554">bara á miðvikudögum í júní</option><option value="1555">sex daga í viku á veturna</option><option value="1556">alltaf á kvöldin</option></select> .
+Þar er hægt að <select name="4920-response"><option></option><option value="1557">skoða hesta, kýr og kindur</option><option value="1558">sofa í tjaldi</option><option value="1559">sigla í bát og veiða</option><option value="1560">fara í fótbolta og sund</option></select> .</span>
+</div> 
+
+
+<input type="hidden" name="4919-position" value="1" />
+
+<input type="hidden" name="4920-position" value="2" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Vælg et svar blandt valgmulighederne herunder, og klik på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1945" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3922" />
+<div id="prompt">Tiina on tilannut Painopaikalta kaksi kirjaa, joita hän tarvitsee työssään. Kirjat eivät ole kuitenkaan vielä tulleet. Tiina lähettää myöhässä olevista kirjoitsta faksin Painopaikkaan. Mikä seuraavista aloituksista sopii parhaiten faksiin?</div>
+<div id="radios">
+    
+    <input type="radio" id="4779" name="response" value="4779" />
+    <label for="4779">Terve,
+On se kumma, että te ette saa lähetettyä sitä tilaustani. Olen odottanut jo kaksi viikkoa yli sovitun ajan, minkä vuoksi olen joutunut lykkäämään monia hommiani.</label><br />
+    
+    <input type="radio" id="4780" name="response" value="4780" />
+    <label for="4780">Hyvä vastaanottaja,
+Olen tehnyt teille tilaukseni jo kuukausi sitten. Tilauksen yhteydessä toimitusajaksi sovittiin kaksi viikkoa. En ole kuitenkaan vieläkään saanut tilausta, mistä on aiheutunut minulle monenlaisia lisäjärjestelyjä.</label><br />
+    
+    <input type="radio" id="4781" name="response" value="4781" />
+    <label for="4781">Päivää,
+Tilasin teiltä jo kuukausi sitten kaksi kirjaa. Missähän ne oikein ovat, sillä en ole vieläkään saanut niitä. Johan on kumma, että niitä ei kuulu, sillä olen joutunut myöhästyneen lähetyksen takia monenlaisiin ongelmiin.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er di sikker på at du vil springe over sprogtesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Dit svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Det rigtige svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Dit svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Det rigtige svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="De rigtige svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

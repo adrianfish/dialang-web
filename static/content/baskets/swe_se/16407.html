@@ -1,0 +1,116 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klicka på varje flik för att se de olika delarna i uppgiften. Läs texten och välj ETT av svarsalternativen. Klicka sedan på knappen. Försök lösa ALLA deluppgifter innan Du trycker på Gå vidare.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Il y a 27 ans, le maire de ce village en Bretagne a décidé de créer un village d'artisans.<p>En 1971, ils ne sont que deux artistes, l'un tisse et l'autre crée des bijoux.<p>Aujourd'hui , il y a 25 ateliers qui sont beaucoup visités l'été; mais vous pouvez les visiter quasiment toute l'année.<p>Grâce à cette idée un peu folle des années 70, une véritable activité artistique, économique et touristique est née dans ce village breton. Tous les habitants s'activent à rendre ce village original.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16407" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25116-tab"><a href="#tabs-2668"></a></li>
+        
+        <li id="25117-tab"><a href="#tabs-2669"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2668">
+        <div id="prompt">Choisissez la phrase qui correspond le mieux au texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="4000" basketid="" name="2668-response" value="4000" />
+            <label for="4000">Ce sont les artisans qui ont créé ce village d&#39;artisans.</label><br />
+            
+            <input type="radio" id="4001" basketid="" name="2668-response" value="4001" />
+            <label for="4001">C&#39;est le maire qui a créé le village d&#39;artisans.</label><br />
+            
+            <input type="radio" id="4002" basketid="" name="2668-response" value="4002" />
+            <label for="4002">Ce sont les habitants qui ont créé ce village d&#39;artisans.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2669">
+        <div id="prompt">Dans les phrases suivantes, choisissez celle qui correspond au texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="4003" basketid="" name="2669-response" value="4003" />
+            <label for="4003">Ce village est ouvert aux touristes surtout l&#39;hiver.</label><br />
+            
+            <input type="radio" id="4004" basketid="" name="2669-response" value="4004" />
+            <label for="4004">Ce village est ouvert aux artisans surtout l&#39;hiver.</label><br />
+            
+            <input type="radio" id="4005" basketid="" name="2669-response" value="4005" />
+            <label for="4005">Ce village est ouvert à tous presque toute l&#39;année.</label><br />
+            
+            <input type="radio" id="4006" basketid="" name="2669-response" value="4006" />
+            <label for="4006">Ce village est ouvert à tous toute l&#39;année.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2668-position" value="1"/><br />
+
+<input type="hidden" name="2669-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2668",
+        
+        "2669",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

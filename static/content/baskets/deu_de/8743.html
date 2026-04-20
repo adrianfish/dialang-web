@@ -1,0 +1,73 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, bearbeiten Sie dann die Aufgabe und füllen Sie dazu die Lücke(n). Klicken Sie mit der Maus auf das Feld und geben Sie Ihre Antwort ein. Achten Sie auf eine korrekte Schreibweise!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                UNGE BILFØRERE<p>En meget omfattende undersøkelse som Transportøkonomisk institutt har foretatt for Samferdselsdepartementet, avslører oppsiktsvekkende fakta om unge bilførere med ferskt førerkort. <p>Etter et halvt år med førerkort, har mer enn hver fjerde fører vært innblandet i ett eller flere uhell. Og mer enn hver tredje mannlige fører er innblandet i uhell i løpet av det første året med førerkort. Forskjellen mellom kvinner og menn skyldes at mennene kjører mye mer enn kvinnene. For menn og kvinner som kjører like mye, er forskjellen i risiko ubetydelig. <p>De yngste førerne har høyere risiko for alle typer ulykker, men det gjelder særlig utforkjøringsulykker. For en 18 åring med ferskt førerkort, er risikoen for å kjøre av veien i løpet av de to første månedene 10 ganger større enn for en 24-åring som har hatt "lappen" i minst fem år. Sammenlikner man med en erfaren bilist på rundt 50 år, er 18 åringens risiko de to første månedene hele 40 ganger høyere.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8743" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="5" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>En undersøkelse viser at de som nettopp har fått <input type="text" name="3227-response" /> har <input type="text" name="3228-response" /> risiko for å bli innblandet i en ulykke. Yngre bilførere har langt større <input type="text" name="3229-response" /> for å bli utsatt for en ulykke enn en mer <input type="text" name="3230-response" /> sjåfør. Særlig unge <input type="text" name="3231-response" /> er utsatt for ulykker. Dette skyldes at de bruker bilen oftere enn jentene. </span>
+</div> 
+
+
+<input type="hidden" name="3227-position" value="1" />
+
+<input type="hidden" name="3228-position" value="2" />
+
+<input type="hidden" name="3229-position" value="3" />
+
+<input type="hidden" name="3230-position" value="4" />
+
+<input type="hidden" name="3231-position" value="5" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Fai clic su ogni casella numerata per visualizzare ciascun quesito dell'esercizio. Leggi il testo e scegli UNA delle opzioni, poi fai clic sul pulsante usando il mouse. Rispondi a TUTTI i quesiti prima di premere 'Avanti'.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                FRUIT VAN DE TELER<p>Appels en peren rechtstreeks bij de fruitteler kopen is meestal goedkoper. Veel telers verkopen de groenten die ze op hun land verbouwen aan huis, de zogenoemde huisverkoop.<p>De voordelen zijn groot. De klant kan nu kwaliteit kiezen. De teler verkoopt klasse I, maar ook kwaliteitsklasse II en die is veel goedkoper. Het verschil is alleen cosmetisch, oftewel: het uiterlijk is iets minder fraai. Er zit een kurkvlekje op fruit uit klasse II of er zit een deukje in of het fruit heeft een wat minder rode kleur. Innerlijk is dit fruit gelijk aan klasse I. Het komt van dezelfde boom, van bijna dezelfde plek soms. Alleen had die ene vrucht pech met een tak die in de weg zat, waardoor hij een ingedeukte plek kreeg. <p>Een ander voordeel van de huisverkoop is de versheid. Fruit in de winkel is soms al veertien dagen uit de koelcel en verliest thuis eerder hardheid en sappigheid. Een teler haalt het kort van tevoren uit zijn eigen koelcel. Soms moet u bij de teler minimaal 3 kilo kopen (vijftien tot twintig appels). In najaar, winter en nog koude voorjaar zijn grote hoeveelheden echter geen enkelprobleem. Fruit kun je goed bewaren op een koele, donkere en windvrije plaatsin schuur, garage, bijkeuken, op het balkon of in de koelkast. 's Nachts een beetje vorst is geen probleem. Als het echt gaat vriezen, een paar kleden erover doen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="9156" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25162-tab"><a href="#tabs-644"></a></li>
+        
+        <li id="25163-tab"><a href="#tabs-645"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-644">
+        <div id="prompt">Wat zegt de schrijver over fruit van kwaliteitsklasse II?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12810" basketid="" name="644-response" value="12810" />
+            <label for="12810">Dat is alleen iets minder mooi dan fruit van kwaliteitsklasse I.</label><br />
+            
+            <input type="radio" id="12811" basketid="" name="644-response" value="12811" />
+            <label for="12811">Dat is iets duurder dan fruit van kwaliteitsklasse I.</label><br />
+            
+            <input type="radio" id="12812" basketid="" name="644-response" value="12812" />
+            <label for="12812">Dat is veel minder goed dan fruit van kwaliteitsklasse I.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-645">
+        <div id="prompt">Wat staat er in de zin: "Een ander .... koelcel" (derde alinea) over het fruit van de fruitteler?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12813" basketid="" name="645-response" value="12813" />
+            <label for="12813">Dat kan langer bewaard worden dan fruit uit de winkel.</label><br />
+            
+            <input type="radio" id="12814" basketid="" name="645-response" value="12814" />
+            <label for="12814">Dat wordt slap als je het thuis in de koelkast legt.</label><br />
+            
+            <input type="radio" id="12815" basketid="" name="645-response" value="12815" />
+            <label for="12815">Dat is soms moeilijk vers te houden door de grote hoeveelheden</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="644-position" value="1"/><br />
+
+<input type="hidden" name="645-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "644",
+        
+        "645",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Les teksten, og velg ett av svaralternativene under. Klikk så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center><b>                   INDUSTRIAS  LUGOPLAST, S.A.</b>    <p> LUIS FERNÁNDEZ NOVO, JEFE DE PERSONAL DE INDUSTRIAS LUGOPLAST, S.A.       <p>         CERTIFICA:           <p>                         Que el Sr. Fernando Ojea Cacheiro ha ocupado el cargo de Jefe de Producción en esta empresa desde octubre de 1997 hasta agosto de 1999, fecha en la que cesa por voluntad propia.         <p>          El Sr. Ojea Cacheiro ________________con responsabilidad, dedicación y a entera satisfacción de la empresa.<p>          Y para que conste, y a petición del interesado, expido el presente certificado.<p>Lugo, 31 de agosto de 1999. 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2324" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="766" />
+<div id="prompt">Marque la opción correcta para completar este certificado en el<br />espacio en blanco.</div>
+<div id="radios">
+    
+    <input type="radio" id="5551" name="response" value="5551" />
+    <label for="5551">ha hecho lo que tenía que hacer</label><br />
+    
+    <input type="radio" id="5552" name="response" value="5552" />
+    <label for="5552">ha realizado lo que le mandaban</label><br />
+    
+    <input type="radio" id="5553" name="response" value="5553" />
+    <label for="5553">ha desempeñado sus funciones</label><br />
+    
+    <input type="radio" id="5554" name="response" value="5554" />
+    <label for="5554">ha funcionado de maravilla</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

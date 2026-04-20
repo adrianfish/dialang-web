@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Det var en lørdag aften<br></b></p><p>Det var en lørdag aften<p>jeg sad og vented dig.<p>Det var en lørdag aften<p>jeg sad og vented dig.<p>Du loved mig at komme vist<p>men kom dog ej til mig.<p>Du loved mig at komme vist<p>men kom dog ej til mig.<p>Jeg lagde mig på sengen<p>og græd så bitterlig.<p>Og hver en gang at døren gik<p>jeg troede, det var dig.<p>Jeg stod op søndag morgen<p>og flettede mit hår; <p>så gik jeg mig til kirken hen<p>og om den kirkegård.<p>Men du kom ej til kirke<p>og ej i kirken ind.<p>For du har fået en anden kær<p>og slaget mig af sind.<p>Jeg gik mig hjem så ene <p>hen ad den kirkesti<p>og hvert et spor på stien var<p>der faldt min tåre i.<p>De røde bånd og skønne<p>som du engang mig gav<p>dem bærer jeg ret aldrig mer',<p>jeg stunder til min grav.<p>Hvor kan man plukke roser<p>hvor ingen roser gror!<p>Hvor kan man finde kærlighed<p>hvor kærlighed ej bor!<p>Jeg ville roser plukke<p>jeg plukker ingen fler', <p>jeg elsked dig så inderlig<p>jeg elsker aldrig mer'!<p>(<i>folkesang</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2697" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3412" />
+<div id="prompt">Hvad handler sangen om?</div>
+<div id="radios">
+    
+    <input type="radio" id="6669" name="response" value="6669" />
+    <label for="6669">en kvindes lykkelige kærlighed</label><br />
+    
+    <input type="radio" id="6670" name="response" value="6670" />
+    <label for="6670">en mands længsel efter en kvinde</label><br />
+    
+    <input type="radio" id="6671" name="response" value="6671" />
+    <label for="6671">en mands ulykkelige kærlighed</label><br />
+    
+    <input type="radio" id="6672" name="response" value="6672" />
+    <label for="6672">en kvindes ulykkelige kærlighed</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

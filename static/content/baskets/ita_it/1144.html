@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on <i>Kuluttajauutiset</i>-lehdestä.<p><b>Sohvassa vika<br></b></p><p>Mies tilasi kaksi nahkasohvaa, joissa on käsinojan etupuolella vaalea puinen paneli. Ostos maksoi yhteensä 7000 markkaa. Tilausta tehdessään mies maksoi 1000 markkaa käsirahaa. <p>Sohvat tuotiin miehen kotiin kahden viikon kuluttua. Silloin ilmeni, että toisen sohvan paneli oli värjäytynyt ruskeaksi kolmesta kohtaa.<p>Asiasta ilmoitettiin välittömästi liikkeeseen. Myyjä arveli värin johtuvan niissä kohdin olevista oksista, mutta lupasi korjata asian. <p>Muutaman viikon kuluttua myyjä ilmoitti uuden panelin tulleen liikkeeseen. Samalla hän kertoi, ettei liikkeellä ole puuseppää käytettävissään. Hän ehdotti, että asiakas itse vaihtaisi panelin, joka on kiinnitetty puutapeilla ja liimaamalla sohvan runkoon. Vaivastaan hän saisi 200 markan alennuksen. <p>Mies mietti asiaa ja tuli siihen tulokseen, että ehdotettu korvaus ei ole riittävä, jos sohvalle aiheutuu vahinkoa panelin vaihdosta. Hän halusi ammattitaitoisen puusepän tekevän työn liikkeen vastuulla. <p>Kuluttajaneuvojalta hän kuuli, ettei hänen pidäkään suostua ehdotettuun järjestelyyn. Kauppa vastaa vian korjauksista kustannuksellaan.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1144" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3814" />
+<div id="prompt">Miksi mies otti yhteyttä kuluttajaneuvojaan?</div>
+<div id="radios">
+    
+    <input type="radio" id="711" name="response" value="711" />
+    <label for="711">Sohva oli väärän värinen.</label><br />
+    
+    <input type="radio" id="712" name="response" value="712" />
+    <label for="712">Liike ei suostunut korvaamaan mitään.</label><br />
+    
+    <input type="radio" id="713" name="response" value="713" />
+    <label for="713">Liikkeen antama alennus sohvan korjauksesta oli liian pieni.</label><br />
+    
+    <input type="radio" id="714" name="response" value="714" />
+    <label for="714">Mies maksoi sohvasta liikaa, vaikka se oli viallinen.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

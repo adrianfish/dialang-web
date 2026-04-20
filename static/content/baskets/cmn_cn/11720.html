@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                L'horror è il genere letterario in cui la paura ha il ruolo di protagonista assoluta. In esso gli elementi sono finalizzati a spaventare il lettore. Per ottenere questo effetto vengono utilizzate principalmente due diverse strategie.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11720" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1934" />
+<div id="prompt">Come continua il testo?</div>
+<div id="radios">
+    
+    <input type="radio" id="1377" name="response" value="1377" />
+    <label for="1377">La prima consiste nell&#39;introdurre immediatamente chi legge in un&#39;atmosfera inquietante.</label><br />
+    
+    <input type="radio" id="1378" name="response" value="1378" />
+    <label for="1378">Tetri castelli diroccati nascondono belle e misteriose fanciulle.</label><br />
+    
+    <input type="radio" id="1379" name="response" value="1379" />
+    <label for="1379">Anche l&#39;ambientazione non riserva grandi sorprese: paesaggi spettrali, cieli notturni e misteriosi castelli ...</label><br />
+    
+    <input type="radio" id="1380" name="response" value="1380" />
+    <label for="1380">Gli istinti bestiali dell&#39;uomo prendono il sopravvento.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

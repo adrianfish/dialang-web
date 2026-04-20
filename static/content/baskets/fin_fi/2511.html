@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Om Filmhøjskolen<br></b></p><p>I 8 måneder af året afholder Filmhøjskolen sit lange højskolekursus for 106 elever fra hele verden. Tre måneder er skolen efteruddannelses- og kursussted for TV- og filmbranchens professionelle, og juli måned er tiden for de korte sommerkurser.</p><p>Du skal være fyldt 17½ år for at kunne deltage i kurserne.<p>Filmhøjskolen er desværre ikke i stand til at modtage familier med børn.<p>(<i>fra Filmhøjskolens brochure)</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2511" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3382" />
+<div id="prompt">Hvem er målgruppen for sommerkurserne på Filmhøjskolen?</div>
+<div id="radios">
+    
+    <input type="radio" id="6350" name="response" value="6350" />
+    <label for="6350">familier med børn</label><br />
+    
+    <input type="radio" id="6351" name="response" value="6351" />
+    <label for="6351">unge under 17½</label><br />
+    
+    <input type="radio" id="6352" name="response" value="6352" />
+    <label for="6352">alle over 17 ½ år</label><br />
+    
+    <input type="radio" id="6353" name="response" value="6353" />
+    <label for="6353">professionelle film- og tv-folk</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

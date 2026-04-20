@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p>¡Hola! <p>Me llamo Mónica y tengo 20 años. Me gustaría tener correspondencia con chicos y chicas de mi edad.  A MÍ ME GUSTAN salir con MIS amigos e ir al cine.              <p>Escribir a:   Mónica Cantero. Apartado de Correos 333, Huelva (España)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2154" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="717" />
+<div id="prompt">Señale si hay algún error en alguna de las palabras escritas en <br />mayúsculas en un anuncio publicado en una revista, o si no hay <br />ningún error.</div>
+<div id="radios">
+    
+    <input type="radio" id="5238" name="response" value="5238" />
+    <label for="5238">A MÍ</label><br />
+    
+    <input type="radio" id="5239" name="response" value="5239" />
+    <label for="5239">ME</label><br />
+    
+    <input type="radio" id="5240" name="response" value="5240" />
+    <label for="5240">GUSTAN</label><br />
+    
+    <input type="radio" id="5241" name="response" value="5241" />
+    <label for="5241">MIS</label><br />
+    
+    <input type="radio" id="5242" name="response" value="5242" />
+    <label for="5242">no hay ningún error</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tekst 1<p>- Weersdiensten worden voor de economie steeds belangrijker.<p>- Bedrijven kunnen met weersverwachtingen geld besparen.<p>- Als de weersdienst regen voorspelt, hoeft een wegenbouwer geen mensen op te roepen als het gaat regenen en een transportbedrijf kan een vrachtwagen een andere route laten kiezen als het in een bepaalde regio gaat sneeuwen.<p>Tekst 2<p>- Als de weersdienst regen voorspelt, hoeft een wegenbouwer geen mensen op te roepen als het gaat regenen en een transportbedrijf kan een vrachtwagen een andere route laten kiezen als het in een bepaalde regio gaat sneeuwen.<p>- Weersdiensten worden voor de economie steeds belangrijker.<p>- Bedrijven kunnen met weersverwachtingen geld besparen.<p>Tekst 3<p>- Bedrijven kunnen met weersverwachtingen geld besparen.<p>- Als de weersdienst regen voorspelt, hoeft een wegenbouwer geen mensen op te roepen als het gaat regenen en een transportbedrijf kan een vrachtwagen een andere route laten kiezen als het in een bepaalde regio gaat sneeuwen.<p>- Weersdiensten worden voor de economie steeds belangrijker.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3511" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1010" />
+<div id="prompt">In welke tekst staan de zinnen in de goede volgorde?</div>
+<div id="radios">
+    
+    <input type="radio" id="7531" name="response" value="7531" />
+    <label for="7531">Tekst 1</label><br />
+    
+    <input type="radio" id="7532" name="response" value="7532" />
+    <label for="7532">Tekst 2</label><br />
+    
+    <input type="radio" id="7533" name="response" value="7533" />
+    <label for="7533">Tekst 3</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

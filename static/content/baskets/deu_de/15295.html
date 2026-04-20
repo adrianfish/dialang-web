@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="15295" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4197" />
+<div id="prompt">Διαλέξτε μια από τις επιλογές. Ποια από τις επιλογές δίνει την καλύτερη περίληψη της διαφήμισης;<br /><br />Μια εικόνα γεμάτη Ελλάδα. Μια ατέλειωτη χρυσή αμμουδιά, το ηλιοβασίλεμα και την ηρεμία του τοπίου να ταράζει μονάχα το μελτέμι του Αιγαίου. Εκεί που το γαλάζιο της θάλασσας σμίγει με τα ασπροβαμμένα σπίτια και το πράσινο των βουνών με τη χρυσαφένια ακρογιαλιά. Ο κύβος ερρίφθη: διακοπές στην Ελλάδα με την αγαπημένη σας κάρτα D.</div>
+<div id="radios">
+    
+    <input type="radio" id="3687" name="response" value="3687" />
+    <label for="3687">Διακοπές στις όμορφες ακρογιαλιές της Ελλάδας με την κάρτα D.</label><br />
+    
+    <input type="radio" id="3688" name="response" value="3688" />
+    <label for="3688">Διακοπές στην Ελλάδα για μπάνιο και καλό φαγητό χωρίς κάρτα.</label><br />
+    
+    <input type="radio" id="3689" name="response" value="3689" />
+    <label for="3689">Διακοπές στα καταπράσινα βουνά της Ελλάδας με την κάρτα D.</label><br />
+    
+    <input type="radio" id="3690" name="response" value="3690" />
+    <label for="3690">Διακοπές με την κάρτα D, στο εξωτερικό και εσωτερικό ή όπου αλλού θέλετε.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

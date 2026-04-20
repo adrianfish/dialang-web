@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Perché la razza dei Pit Bull incarna - nella realtà e nella fantasia collettiva - la figura del cane killer? Questo cane è nato dall'incrocio di un Bull Dog e di un Terrier inglese e da questi ha ereditato i lati peggiori: forza mascellare e carattere imprevedibile.<p>Per chi lo accusa la ragione è semplice: il Pit Bull, come altre razze aggressive, è frutto di un'aberrante selezione genetica che comporta l'imprevedibilità e l'instabilità emotiva degli animali. Una teoria confermata dal nome: "Pit" indica l'arena utilizzata per i combattimenti fra cani, mentre "Bull" vuol dire toro. Questo cane è il frutto dei danni provocati da una selezione selvaggia. Per i difensori invece non esistono cani malvagi, ma solo padroni stupidi e incompetenti che forzano l'animale a divenire cattivo e pericoloso. In alcuni stati degli Usa è proibito tenerli in luoghi non recintati, non devono girare senza museruola e devono essere custoditi.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1905" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1796" />
+<div id="prompt">Quale opinione ha sui Pitt Bull chi li accusa?</div>
+<div id="radios">
+    
+    <input type="radio" id="4717" name="response" value="4717" />
+    <label for="4717">Sono cani coraggiosi.</label><br />
+    
+    <input type="radio" id="4718" name="response" value="4718" />
+    <label for="4718">Sono cani pericolosi.</label><br />
+    
+    <input type="radio" id="4719" name="response" value="4719" />
+    <label for="4719">Sono cani molto frequenti negli USA.</label><br />
+    
+    <input type="radio" id="4720" name="response" value="4720" />
+    <label for="4720">Sono cani nati da incroci.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

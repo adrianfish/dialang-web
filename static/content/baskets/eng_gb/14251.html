@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Το θέμα της επιλογής γιατρού δεν είναι εύκολη υπόθεση. Βασικό όμως στοιχείο αποτελεσματικότητας είναι η επιμέλεια με την οποία εργάζεται ο γιατρός και ο χρόνος που διαθέτει για κάθε περίπτωση. Υπάρχουν ίσως ορισμένες ιδιότητες ή συνήθειες, που πρέπει να έχει ένας γιατρός για να τον επιλέξετε, όπως:<p>Σας δίνει την εντύπωση ότι ασχολείται σοβαρά μαζί σας.<p>Σας παίρνει λεπτομερές γραπτό ιστορικό και στην επόμενη επίσκεψη το συμβουλεύεται.<p>Δε σας γράφει εξετάσεις πριν σας εξετάσει.<p>Δεν ανοίγει βιβλία μπροστά σας για να διαπιστώσει κάτι που αφορά την πάθησή σας ή δε σας λέει "δεν ξέρω τι έχετε" ή "δεν έχετε τίποτα".<p>Παίρνει υπόψη του τις ανάγκες και την προσωπικότητά σας.<p>Σε ορισμένες σοβαρές περιπτώσεις συμβουλεύεστε οπωσδήποτε και άλλο γιατρό για να έχετε και μια δεύτερη γνώμη.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14251" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4095" />
+<div id="prompt">Διαλέγουμε το γιατρο μας ανάλογα με</div>
+<div id="radios">
+    
+    <input type="radio" id="3016" name="response" value="3016" />
+    <label for="3016">τις συμβουλές των φίλων και συγγενών μας.</label><br />
+    
+    <input type="radio" id="3017" name="response" value="3017" />
+    <label for="3017">το αν δείχνει πραγματικό ενδιαφέρον για την περίπτωσή μας.</label><br />
+    
+    <input type="radio" id="3018" name="response" value="3018" />
+    <label for="3018">το πόσες εξετάσεις μας ζητά να κάνουμε.</label><br />
+    
+    <input type="radio" id="3019" name="response" value="3019" />
+    <label for="3019">το αν ενημερώνεται συχνά από ιατρικά βιβλία.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

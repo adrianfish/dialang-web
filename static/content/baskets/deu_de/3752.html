@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Si avvicina a Star Trek il mondo della consulenza finanziaria? La famosa serie di telefilm americani è stata in questi giorni presa in prestito per pubblicizzare su stampa e televisione i servizi computerizzati di pianificazione finanziaria offerti da promotori finanziari. Ecco quindi che il mondo virtuale dell'informatica scopre una nuova via per dimostrare la sua utilità tra le pareti domestiche. Diverse reti di promotori, consapevoli della necessità di fornire valore aggiunto al cliente, hanno infatti introdotto questo software nella loro strumentazione. L'uso del computer non appare per altro l'unica via per fornire consulenza finanziaria: alcune reti ritengono che una buona formazione del promotore e il contatto umano possano fare meglio dei semiconduttori. In ogni caso, anche quando la consulenza si basa sul computer, il promotore continua a mantenere un ruolo chiave: la sensibilità umana non è ancora stata sostituita da un chip.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3752" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1872" />
+<div id="prompt">L'articolo è apparso su un quotidiano economico. Quale frase riassume meglio il testo?</div>
+<div id="radios">
+    
+    <input type="radio" id="7683" name="response" value="7683" />
+    <label for="7683">L&#39;idea del computer nel lavoro del consulente finanziario deriva da Star Trek.</label><br />
+    
+    <input type="radio" id="7684" name="response" value="7684" />
+    <label for="7684">Il computer è lo strumento che semplifica la vita del consulente finanziario.</label><br />
+    
+    <input type="radio" id="7685" name="response" value="7685" />
+    <label for="7685">Un buon consulente finanziario al servizio computerizzato preferisce la cura del cliente.</label><br />
+    
+    <input type="radio" id="7686" name="response" value="7686" />
+    <label for="7686">Un buon consulente finanziario alla cura del cliente unisce l&#39;uso di servizi computerizzati.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

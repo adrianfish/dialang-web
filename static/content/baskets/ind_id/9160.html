@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Tekan setiap tab untuk melihat jenis-jenis tes. bacalah teks, dan pilih salah satu pilihan, kemudian tekan tombol tetikus.  Cobalah SEMUA jenis tes sebelum menekan tombol Forward.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Pasta</b><p>De kwaliteit<p>Als we het over pasta hebben in plaats van over deegwaren, vergeten we bijna dat niet de Italianen er de uitvinders van zijn, maar de Chinezen. Wat een en ander dan met Italië te maken zou hebben? Het gerucht gaat dat de Italiaanse ontdekkingsreiziger Marco Polo na zijn terugkeer uit China zijn landgenoten verblijdde met dit bijzondere, uit tarwebloem en water bereide en vervolgens gedroogde graanproduct. Waar of niet... pasta is niet alleen uit de Italiaanse keuken niet meer weg te denken, ook internationaal is dit product een ster van formaat.Deegwaren van goede kwaliteit zijn droog, glad en regelmatig van vorm (niet bloemig), ivoorwit tot lichtgeel van kleur, en licht doorschijnend.<p>Het is overigens een misvatting dat pasta je dik zou maken. Een normale portie van 150 g gekookte pasta (=75 g gedroogde pasta) bevat circa 210 kilocalorieën.<p>Pasta bevat net als aardappels of brood veel koolhydraten. Koolhydraten zijn gemakkelijk te verteren, geven een langdurig gevoel dat je genoeg gegeten hebt en zorgen voor een gelijkmatige energie-afgifte. Ideaal dus voor sporters en mensen die veel lichamelijk werk doen. Hoewel pasta op zichzelf dus niet dikmakend is, kunnen sommige sauzen dat wel zijn. Bijvoorbeeld sauzen met veel room, kaas en noten. Liever een slanke pasta? Maak dan een saus op basis van mager gehakt, verse groenten of een tomatensaus.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="9160" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25173-tab"><a href="#tabs-684"></a></li>
+        
+        <li id="25174-tab"><a href="#tabs-685"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-684">
+        <div id="prompt">Wat heeft Marco Polo waarschijnlijk gedaan?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12843" basketid="" name="684-response" value="12843" />
+            <label for="12843">De pasta naar China gebracht.</label><br />
+            
+            <input type="radio" id="12844" basketid="" name="684-response" value="12844" />
+            <label for="12844">De pasta naar Italië gebracht.</label><br />
+            
+            <input type="radio" id="12845" basketid="" name="684-response" value="12845" />
+            <label for="12845">De pasta naar veel landen gebracht.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-685">
+        <div id="prompt">Wat staat er in de 3e alinea?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12846" basketid="" name="685-response" value="12846" />
+            <label for="12846">Als je sport of hard werkt, wordt je niet dik van pasta.</label><br />
+            
+            <input type="radio" id="12847" basketid="" name="685-response" value="12847" />
+            <label for="12847">Als mensen dik worden van pasta, komt dat door de saus.</label><br />
+            
+            <input type="radio" id="12848" basketid="" name="685-response" value="12848" />
+            <label for="12848">Er bestaat speciale &#39;slanke pasta&#39; voor mensen die dik zijn.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="684-position" value="1"/><br />
+
+<input type="hidden" name="685-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "684",
+        
+        "685",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

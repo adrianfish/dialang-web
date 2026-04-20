@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Connaissez-vous le concours des meilleurs ouvriers de France?<p>C'est un concours qui a été créé en 1924 et qui a lieu tous les trois ans. Il s'adresse à tout ouvrier âgé de 23 à 35 ans, qu'il soit menuisier, pâtissier, ferronnier d'art, tapissier, coiffeur, boulanger ou ébéniste. 126 métiers sont ouverts à ce concours, incluant même la fabrication d'orgues ou la taxidermie.<p>Pour participer au XXIe concours des Meilleurs Ouvriers de France, il faut s'inscrire avant le 31 mars. Les ouvriers doivent réaliser une oeuvre ; ils ont 18 mois pour la réaliser et elle sera jugée lors de l'Exposition nationale qui se déroulera du 16 au 20 novembre prochain.<p>Celui qui gagne le concours reçoit le titre de Meilleur Ouvrier de France. C'est un diplôme du Ministère de l'Éducation Nationale, de la Recherche et de la Technologie.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="15034" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2554" />
+<div id="prompt">Choisissez la phrase qui correspond le mieux au texte.<br /><br />Le meilleur ouvrier est celui ...</div>
+<div id="radios">
+    
+    <input type="radio" id="3334" name="response" value="3334" />
+    <label for="3334">qui a bien travaillé depuis plusieurs années.</label><br />
+    
+    <input type="radio" id="3335" name="response" value="3335" />
+    <label for="3335">qui a créé une oeuvre dans les trois dernières années .</label><br />
+    
+    <input type="radio" id="3336" name="response" value="3336" />
+    <label for="3336">qui a créé une oeuvre spécialement pour le concours.</label><br />
+    
+    <input type="radio" id="3337" name="response" value="3337" />
+    <label for="3337">qui a déjà réalisé  trois oeuvres.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,68 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，完成填空。用鼠标点击文本框并输入答案。注意检查拼写！</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                ...Selvfølgelig kan I bo hos mig, jeg har masser af plads. Og jeg forslår, at vi finder en bagageboks på stationen, når I ankommer 19.24. Så kan vi nemlig nå i teatret kl. 20, og så samler vi jeres bagage op efter forstillingen. Jeg har bestilt billetter, og I er hermed inviteret i Det Kongelige Teater...
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7957" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>
+Skriv ordene korrekt her: <input type="text" name="3612-response" /><input type="text" name="3613-response" /> </span>
+</div> 
+
+
+<input type="hidden" name="3612-position" value="1" />
+
+<input type="hidden" name="3613-position" value="2" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

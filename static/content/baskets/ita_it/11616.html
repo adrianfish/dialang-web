@@ -1,0 +1,76 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Completa l'esercizio riempendo lo spazio vuoto/gli spazi vuoti. Fai clic sul riquadro per visualizzare tutte le opzioni. Scegli la risposta cliccandoci sopra.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11616" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>
+ <select name="4860-response"><option></option><option value="1052">14. febrúar 1996 Reykjavík</option><option value="1053">1996/02/14 Reykjavík</option><option value="1054">Reykjavík, 14. febrúar 1996</option><option value="1055">Reykjavík, 1996/02/14</option></select> 
+Karl Ólafsson
+Rauðarárstíg 73
+101 Reykjavík
+<select name="4861-response"><option></option><option value="1056">Ágæti viðskiptavinur</option><option value="1057">Besti viðskiptavinur</option><option value="1058">Kæri Karl</option><option value="1059">Karl Ólafsson</option></select> 
+Samkvæmt upplýsingum okkar hefur rafmagnsreikningurinn sem féll í gjalddaga þann 20. desember ekki enn verið greiddur. Vinsamlegast greiðið reikninginn eins fljótt og unnt er, eða hafið samband við skrifstofu okkar að Síðumúla 17. 
+Hafi reikningurinn verið greiddur biðjumst við velvirðingar á þessari ítrekun. 
+<select name="4862-response"><option></option><option value="1060">Sjáumst fljótlega,</option><option value="1061">Vertu blessaður,</option><option value="1062">Hjartans kveðjur,</option><option value="1063">Virðingarfyllst,</option></select> 
+f.h. Rafmagnsfélags bæjarins,
+Guðrún Gísladóttir, gjaldkeri</span>
+</div> 
+
+
+<input type="hidden" name="4860-position" value="1" />
+
+<input type="hidden" name="4861-position" value="2" />
+
+<input type="hidden" name="4862-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

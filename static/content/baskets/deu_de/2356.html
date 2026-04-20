@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Ingen dårlige tænder<br></b></p><p>Man skal være befalingsmand for at søge tjeneste i Siriuspatruljen. Af 50-60 ansøgere udvælges 35, som alle er fri for ægteskabelige forpligtelser. De frasorterede folk er typisk folk med sygdomme eller en belastende straffeattest. Dybdegående samtaler med psykologer danner grundlag for udvælgelse af otte mand, der skal på forskole i et halvt år. Den indbefatter skitrænings- og overlevelseskursus i Norge, uddannelse i skydning, sprængning, motorlære, fjernkending, røgdykning, brug af radio og førstehjælp. Sidstnævnte indbefatter nødplombering af tænder. Sluttelig optages 5-6 af de otte kandidater til et to år og to måneder langt ophold på Grønland. Det afbrydes kun af en uge på Island i forbindelse med et besøg hos en rigtig tandlæge. Månedslønnen er cirka 28.000 kroner, og med grønlandsk beskatning og ringe mulighed for at bruge penge bliver det til en god opsparing.<p align=right>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2356" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3361" />
+<div id="prompt">Hvilket af de følgende krav stilles der IKKE til folk der søger optagelse i Siriuspatruljen?</div>
+<div id="radios">
+    
+    <input type="radio" id="5652" name="response" value="5652" />
+    <label for="5652">Man skal have gode tænder.</label><br />
+    
+    <input type="radio" id="5653" name="response" value="5653" />
+    <label for="5653">Man skal være ugift.</label><br />
+    
+    <input type="radio" id="5654" name="response" value="5654" />
+    <label for="5654">Man skal have en ren straffeattest.</label><br />
+    
+    <input type="radio" id="5655" name="response" value="5655" />
+    <label for="5655">Man skal være psykisk stærk.</label><br />
+    
+    <input type="radio" id="5656" name="response" value="5656" />
+    <label for="5656">Man skal kunne tale grønlandsk.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

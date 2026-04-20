@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>The Holiday of a Lifetime - in China</b><p>A 15 night tour of Hong Kong to Beijing, including Xian, Guilin, Shanghai, Suzhou, Wuxi, Guangzhou, Nanjing.<p>From £1,399<p>The Price Includes:<p>*  scheduled-flights (non-stop) from London/Hong Kong and Beijing/London<p>*  total 15 nights accommodation<p>*  12 breakfasts, 13 lunches, 11 dinners (including farewell Peking Duck Dinner)<p>*  all excursions/sightseeing<p>*  all local transport (train/plane/boat)<p>*  3 evening entertainments<p>*  visa for China<p>*  tour guide<p>*  UK departure tax £12
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4402" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1186" />
+<div id="prompt">Read the advertisement and answer the following question:<br /><br />What is NOT included in the price of this holiday?</div>
+<div id="radios">
+    
+    <input type="radio" id="8419" name="response" value="8419" />
+    <label for="8419">Food</label><br />
+    
+    <input type="radio" id="8420" name="response" value="8420" />
+    <label for="8420">Hotels</label><br />
+    
+    <input type="radio" id="8421" name="response" value="8421" />
+    <label for="8421">Air fares</label><br />
+    
+    <input type="radio" id="8422" name="response" value="8422" />
+    <label for="8422">Car hire</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,67 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Valitse aukkoon / aukkoihin sopiva vaihtoehto. Klikkaa vastauskenttää saadaksesi vaihtoehdot näkyviin. Valitse sitten vastaus klikkaamalla sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="13134" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>
+Jürgen ist arbeitsloser Lehrer und nimmt deshalb an einer Umschulungsmaßnahme des Arbeitsamtes teil. <select name="2930-response"><option></option><option value="2415">erst</option><option value="2416">noch</option><option value="2417">schon</option><option value="2418">solange</option></select> sieht er eine Chance für sich. Er hat den Mut nicht verloren, <select name="2931-response"><option></option><option value="2419">dafür</option><option value="2420">obwohl</option><option value="2421">solange</option><option value="2422">während</option></select> er jetzt <select name="2932-response"><option></option><option value="2423">Dabei</option><option value="2424">Darin</option><option value="2425">Deshalb</option><option value="2426">Somit</option></select> zweieinhalb Jahre arbeitslos ist. </span>
+</div> 
+
+
+<input type="hidden" name="2930-position" value="1" />
+
+<input type="hidden" name="2931-position" value="2" />
+
+<input type="hidden" name="2932-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

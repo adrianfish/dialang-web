@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                VELÁZQUEZ Y LA INFANTA MARGARITA <p>Diego Rodríguez de Silva y Velázquez (Sevilla 1599- Madrid 1660) fue nombrado en 1623 pintor del rey Felipe IV. Entre sus diversas obras figuran los retratos de la hija del rey, la Infanta Margarita. Destinada desde su nacimiento a casarse con un príncipe austríaco, estos retratos se enviaban a Austria <b>CONSUSÍ </b>para que su futuro marido la fuera conociendo.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2614" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="873" />
+<div id="prompt">Lea el texto y marque la opción que corresponde a la palabra <br />CONSUSÍ en el mismo.</div>
+<div id="radios">
+    
+    <input type="radio" id="6536" name="response" value="6536" />
+    <label for="6536">con cierta regularidad</label><br />
+    
+    <input type="radio" id="6537" name="response" value="6537" />
+    <label for="6537">en una fecha determinada</label><br />
+    
+    <input type="radio" id="6538" name="response" value="6538" />
+    <label for="6538">una semana antes de casarse</label><br />
+    
+    <input type="radio" id="6539" name="response" value="6539" />
+    <label for="6539">bien embalados</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Click on each tab to view the testlet items. Read the text, and choose one of the options, then click on the button using the mouse. Attempt ALL items before pressing the Forward button.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                    Carantec, le 10 mai 1998.<p>Madame, Monsieur,<p>Nous venons par cette présente vous confirmer la réservation pour la période suivante :<p>du samedi 8 août 1998 au samedi 15 août 1998.<p>Nous vous précisons les horaires d'arrivée: à partir de 10 h, et les horaires de départ: à 9h.<p>Nous vous joignons le plan de l'appartement et nous vous demandons de bien vouloir nous faire parvenir 2.000 francs d'arrhes.<p>Restant à votre entière disposition,<p>Veuillez agréer, Madame, Monsieur, l'expression de nos salutations les plus distinguées.<p>M. le Directeur 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16406" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25114-tab"><a href="#tabs-2666"></a></li>
+        
+        <li id="25115-tab"><a href="#tabs-2667"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2666">
+        <div id="prompt">A qui s'adresse cette lettre?</div>
+        <div id="radios">
+            
+            <input type="radio" id="3994" basketid="" name="2666-response" value="3994" />
+            <label for="3994">Aux personnes qui vont réserver un appartement pour une semaine.</label><br />
+            
+            <input type="radio" id="3995" basketid="" name="2666-response" value="3995" />
+            <label for="3995">Aux personnes qui vont louer cet appartement à l&#39;année.</label><br />
+            
+            <input type="radio" id="3996" basketid="" name="2666-response" value="3996" />
+            <label for="3996">Aux personnes qui ont déjà réservé un appartement pour une semaine.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2667">
+        <div id="prompt">Choisissez la phrase qui correspond au texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3997" basketid="" name="2667-response" value="3997" />
+            <label for="3997">La réservation n&#39;est pas faite et une somme d&#39;argent doit être envoyée.</label><br />
+            
+            <input type="radio" id="3998" basketid="" name="2667-response" value="3998" />
+            <label for="3998">La réservation est faite et une somme d&#39;argent doit être envoyée.</label><br />
+            
+            <input type="radio" id="3999" basketid="" name="2667-response" value="3999" />
+            <label for="3999">La réservation est faite ;il ne faut pas envoyer d&#39;argent.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2666-position" value="1"/><br />
+
+<input type="hidden" name="2667-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2666",
+        
+        "2667",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

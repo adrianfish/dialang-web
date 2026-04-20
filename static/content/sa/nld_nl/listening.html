@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '02':false,
+                        
+                        '03':false,
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '09':false,
+                        
+                        '14':false,
+                        
+                        '15':false,
+                        
+                        '16':false,
+                        
+                        '22':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '29':false,
+                        
+                        '31':false,
+                        
+                        '35':false,
+                        
+                        '40':false,
+                        
+                        '41':false,
+                        
+                    };
+
+                </script>
+                <h1>Zelfbeoordeling - luisteren</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="nld_nl"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ja</td><td>Nee</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="02_valid" type="radio" name="statement:02" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="02_invalid" type="radio" name="statement:02" value="no"/></td>
+                            <td>Ik kan gesproken taal volgen die speciaal voor mij zeer langzaam en zorgvuldig met lange pauzes wordt gesproken.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Ik kan vragen, instructies en korte eenvoudige aanwijzingen begrijpen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Ik kan genoeg begrijpen om eenvoudige, routinematige conversaties zonder veel moeite te volgen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Ik kan meestal het onderwerp volgen van een gesprek dat langzaam en duidelijk in mijn omgeving wordt gevoerd.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Ik kan genoeg begrijpen om mijzelf  in concrete alledaagse situaties te redden als er langzaam en duidelijk wordt gesproken.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="09_valid" type="radio" name="statement:09" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="09_invalid" type="radio" name="statement:09" value="no"/></td>
+                            <td>Ik kan eenvoudige zaken afhandelen in een winkel, postkantoor of bank.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Ik kan meestal de hoofdpunten van een langer gesprek in mijn omgeving begrijpen, als er duidelijk en in standaardtaal wordt gesproken.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="15_valid" type="radio" name="statement:15" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="15_invalid" type="radio" name="statement:15" value="no"/></td>
+                            <td>Ik kan duidelijk gesproken alledaagse conversatie begrijpen, hoewel ik in de praktijk soms om herhaling van bepaalde woorden of uitdrukkingen moet vragen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="16_valid" type="radio" name="statement:16" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="16_invalid" type="radio" name="statement:16" value="no"/></td>
+                            <td>Ik kan directe, feitelijke informatie begrijpen over onderwerpen met betrekking tot algemene alledaagse zaken of het werk, als er duidelijk en met een redelijk bekend accent wordt gesproken.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Ik kan de hoofdpunten begrijpen in tv- en radioprogramma’s over bekende onderwerpen en onderwerpen die voor mij van belang zijn, als er betrekkelijk duidelijk en langzaam gesproken wordt.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Ik kan standaardtaal begrijpen, die live of indirect, via radio of televisie, gesproken wordt over bekende en onbekende onderwerpen die normaal zijn in het persoonlijk leven, het academisch leven of het beroepsleven. Alleen extreem achtergrondgeluid, een onduidelijke structuur en/of idiomatisch gebruik van woorden levert problemen op.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Ik kan de essentie volgen van lezingen, voordrachten en rapportages en andere presentatievormen waarin complexe ideeën en taal wordt gebruikt.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Ik kan aankondigingen en berichten begrijpen over concrete en abstracte onderwerpen die in de standaardtaal op een normale snelheid worden uitgesproken.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="29_valid" type="radio" name="statement:29" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="29_invalid" type="radio" name="statement:29" value="no"/></td>
+                            <td>Ik kan de meeste documentaires op de radio en het meeste opgenomen of uitgezonden studiomateriaal begrijpen, als er in de standaardtaal wordt gesproken, en ik kan de stemming, de toon, et cetera van de spreker identificeren.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Ik kan een geanimeerde discussie tussen moedertaalsprekers volgen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Ik kan de meeste lezingen, discussies en debatten met betrekkelijk gemak volgen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="40_valid" type="radio" name="statement:40" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="40_invalid" type="radio" name="statement:40" value="no"/></td>
+                            <td>Ik kan zonder moeite elk soort gesproken taal begrijpen, dat zowel live als opgenomen door moedertaalsprekers wordt gebruikt.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="41_valid" type="radio" name="statement:41" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="41_invalid" type="radio" name="statement:41" value="no"/></td>
+                            <td>Ik kan gespecialiseerde lezingen en presentaties volgen met een grote dosis informeel taalgebruik, regionale uitdrukkingen en onbekende terminologie.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Antwoorden ingeven" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Antwoorden insturen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u het onderdeel zelfbeoordeling wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

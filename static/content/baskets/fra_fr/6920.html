@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Dieter Schulte kann das Wort Lohnzurückhaltung nicht mehr hören. "Wenn in absehbarer Zeit keine erhebliche Trendwende auf dem Arbeitsmarkt einsetzt, müssen sich die Arbeitgeber auf Arbeitskämpfe einstellen", droht der Vorsitzende des Deutschen Gewerkschaftsbundes (DGB). Die Arbeitgeber sollten mehr Arbeitsplätze bereitstellen, fordert Schulte, oder aber die Gewerkschaften wollten mehr Lohn. Schließlich haben "zweieinhalb Jahre mit niedrigen Lohnabschlüssen" den Arbeitsmarkt nicht nennenswert entlastet.<p>Schützenhilfe erhält der Gewerkschafter von Heiner Flassbeck. Der Konjunkturforscher vom Deutschen Institut für  Wirtschaftsforschung (DIW) spricht sich in seinem Minderheitenvotum im jüngsten Gemeinschaftsgutachten für Lohnsteigerungen von bis zu vier Prozent aus: "Niedrige Lohnrunden haben die Bürger zu weniger Konsumausgaben gezwungen. Neue Arbeitsplätze wurden nicht geschaffen." Auch für den SPD-Vorsitzenden Oscar Lafontaine ist die Zeit der Bescheidenheit vorbei. "Die Löhne müssen sich wieder an der Inflationsrate und der Produktivität orientieren", mahnt Lafontaine.<p>Doch mehr Arbeitsplätze durch höhere Löhne, das Rezept geht nicht auf, wie Harmen Lehment, Arbeitsmarktexperte am Kieler Institut für Weltwirtschaft, in einer Studie über die künftigen Spielräume der Tarifpartner in Euro-Land herausgefunden hat. Lehment untersuchte, ob sich bescheidene Tarifabschlüsse positiv auf den Arbeitsmarkt auswirkten. Das Ergebnis: Wo in Europa die Jobmaschine ansprang, geschah es auf der Basis von niedrigen Lohnabschlüssen.<p>Demnach gilt die alte Beschäftigungsformel immer noch: Dauerhafte Lohnzurückhaltung wird mit einer Zunahme der Erwerbstätigenzahlen belohnt.<p>(nach: "Wirtschaftswoche" 22/98)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6920" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2796" />
+<div id="prompt">Welche Überschrift gibt am ehesten die Intention des Autors wieder?</div>
+<div id="radios">
+    
+    <input type="radio" id="10542" name="response" value="10542" />
+    <label for="10542">DGB droht mit Arbeitskämpfen</label><br />
+    
+    <input type="radio" id="10543" name="response" value="10543" />
+    <label for="10543">SPD fordert Ende der Bescheidenheit</label><br />
+    
+    <input type="radio" id="10544" name="response" value="10544" />
+    <label for="10544">Nur bescheidene Lohnforderungen bringen zusätzliche Arbeitsplätze</label><br />
+    
+    <input type="radio" id="10545" name="response" value="10545" />
+    <label for="10545">Wirtschaftsforschungsinstitut beklagt Konsumrückgang durch Lohnverzicht</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

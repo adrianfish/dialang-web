@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '02':false,
+                        
+                        '03':false,
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '09':false,
+                        
+                        '14':false,
+                        
+                        '15':false,
+                        
+                        '16':false,
+                        
+                        '22':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '29':false,
+                        
+                        '31':false,
+                        
+                        '35':false,
+                        
+                        '40':false,
+                        
+                        '41':false,
+                        
+                    };
+
+                </script>
+                <h1>Selbsteinschätzung - Hören</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="deu_de"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ja</td><td>Nein</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="02_valid" type="radio" name="statement:02" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="02_invalid" type="radio" name="statement:02" value="no"/></td>
+                            <td>Ich kann einem Gespräch folgen, wenn sehr langsam und deutlich gesprochen wird und wenn lange Pausen es mir ermöglichen, das Gesagte zu verstehen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Ich kann Fragen und Anweisungen verstehen und kurzen, einfachen Weisungen folgen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Ich kann genug verstehen, um mich in einfachen, routinemäßigen Situationen ohne große Anstrengung zu verständigen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Ich kann normalerweise das Thema eines Gesprächs in meiner Umgebung erkennen, wenn dieses langsam und deutlich geführt wird.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Ich kann genug verstehen, um konkreten Bedürfnissen im alltäglichen Leben gerecht zu werden, vorausgesetzt es wird deutlich und langsam gesprochen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="09_valid" type="radio" name="statement:09" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="09_invalid" type="radio" name="statement:09" value="no"/></td>
+                            <td>Ich kann einfache Angelegenheiten in Geschäften, Postämtern oder Banken erledigen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Ich kann normalerweise den wesentlichen Punkten einer längeren Diskussion um mich herum folgen, wenn deutlich gesprochen und Standardsprache verwendet wird.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="15_valid" type="radio" name="statement:15" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="15_invalid" type="radio" name="statement:15" value="no"/></td>
+                            <td>Ich kann einer alltäglichen Unterhaltung in deutlicher Sprechweise folgen, auch wenn ich in einer tatsächlichen Situation manchmal um Wiederholung einzelner Wörter und Sätze bitten muß.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="16_valid" type="radio" name="statement:16" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="16_invalid" type="radio" name="statement:16" value="no"/></td>
+                            <td>Ich kann einfache, sachliche Informationen über die geläufigen Themen des Alltags- und Berufslebens verstehen und sowohl allgemeine Aussagen als auch spezifische Details erkennen, sofern deutlich und mit geläufigem Akzent gesprochen wird.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Ich kann die wesentlichen Inhalte in Sendungen zu geläufigen Themen oder Themen, die für mich von persönlichem Interesse sind, erfassen, wenn relativ langsam und deutlich gesprochen wird.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Ich kann gesprochene Standardsprache verstehen, live oder durch Medienübertragung, sowohl zu bekannten als auch zu unbekannten Themen, welchen man normalerweise im persönlichen, akademischen oder beruflichen Leben begegnet. Nur extreme Hintergrundgeräusche, unklare Strukturen und/oder der Gebrauch idiomatischer Ausdrücke bereiten mir einige Probleme.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Ich kann den wesentlichen Punkten von Vorträgen, Gesprächen und Berichten sowie anderen Redebeiträgen mit komplexen Gedankengängen und komplexer Sprache folgen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Ich kann in Standardsprache und normaler Geschwindigkeit gesprochene Ansagen und Mitteilungen konkreten und abstrakten Inhalts verstehen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="29_valid" type="radio" name="statement:29" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="29_invalid" type="radio" name="statement:29" value="no"/></td>
+                            <td>Ich kann die meisten Rundfunkreportagen und fast alle anderen Tonaufnahmen oder -übertragungen in Standardsprache verstehen und dabei die Stimmung, den Tonfall, usw. des Sprechers heraushören.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Ich kann bei angeregter Unterhaltung unter Muttersprachlern mithalten.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Es fällt mir relativ leicht, den meisten Vorträgen, Diskussionen und Debatten zu folgen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="40_valid" type="radio" name="statement:40" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="40_invalid" type="radio" name="statement:40" value="no"/></td>
+                            <td>Ich habe keine Schwierigkeiten, jegliche Art von gesprochener Sprache bei hohem Sprechtempo zu verstehen, egal ob in authentischen Lebenssituationen oder in den Medien.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="41_valid" type="radio" name="statement:41" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="41_invalid" type="radio" name="statement:41" value="no"/></td>
+                            <td>Ich kann Fachvorträgen und Referaten folgen, in welchen in hohem Maße von Umgangssprache, regionalen sprachlichen Besonderheiten oder fremder Terminologie Gebrauch gemacht wird.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Antworten abschicken" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Antworten abschicken?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie die Selbsteinschätzung überspringen möchten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

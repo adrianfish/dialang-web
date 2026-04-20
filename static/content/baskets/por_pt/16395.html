@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Para visualizar os itens deste pequeno teste, clique sobre cada um dos números ou etiquetas que identificam os painéis.Leia o texto, escolha UMA das opções e clique com o rato no botão correspondente. Tente resolver TODOS os itens antes de carregar no botão Continuar.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Être l'aîné ou le cadet d'une famille n'est pas vécu de la même façon.<p>Notre rang dans la fratrie (ensemble des frères et soeurs) joue un rôle décisif sur notre caractère et sur notre approche de la vie.<p>L'aîné est souvent plus attendu ; il porte tous les espoirs des parents qui auront tendance à l'investir d'une mission plus lourde que ses cadets.<p>Autrefois la société s'organisait autour de lui. Aujourd'hui les aînés ne possèdent plus les privilèges socio-culturels attachés à leur rang. Mais ils gardent une place privilégiée; ils semblent affirmer avec plus d'autorité leur identité.<p>Quant aux cadets, ils s'avèrent plus sociables mais moins sûrs d'eux. Ils cherchent leur place. Ils cherchent à s'imposer dans des domaines où les aînés ne sont pas allés.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16395" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25097-tab"><a href="#tabs-2645"></a></li>
+        
+        <li id="25098-tab"><a href="#tabs-2646"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2645">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3942" basketid="" name="2645-response" value="3942" />
+            <label for="3942">Notre caractère est seulement héréditaire.</label><br />
+            
+            <input type="radio" id="3943" basketid="" name="2645-response" value="3943" />
+            <label for="3943">Notre caractère est influencé par la place dans la famille.</label><br />
+            
+            <input type="radio" id="3944" basketid="" name="2645-response" value="3944" />
+            <label for="3944">Notre caractère ne dépend pas de notre place dans la famille.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2646">
+        <div id="prompt">Le premier enfant d'une famille ...</div>
+        <div id="radios">
+            
+            <input type="radio" id="3945" basketid="" name="2646-response" value="3945" />
+            <label for="3945">est moins sûr de lui que les autres.</label><br />
+            
+            <input type="radio" id="3946" basketid="" name="2646-response" value="3946" />
+            <label for="3946">a plus de responsabilités que les autres.</label><br />
+            
+            <input type="radio" id="3947" basketid="" name="2646-response" value="3947" />
+            <label for="3947">a un caractère plus affirmé que les autres.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2645-position" value="1"/><br />
+
+<input type="hidden" name="2646-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2645",
+        
+        "2646",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

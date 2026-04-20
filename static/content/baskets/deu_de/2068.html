@@ -1,0 +1,75 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2068" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1849" />
+<div id="prompt">Sei stato invitato da un tuo amico a passare il week-end nella sua casa di campagna e avete già organizzato tutto. Purtroppo l'arrivo di un parente ti costringe a rimandare la gita. Devi perciò scrivere un fax al tuo amico per spiegargli il contrattempo. Come lo cominci?</div>
+<div id="radios">
+    
+    <input type="radio" id="4999" name="response" value="4999" />
+    <label for="4999">Carissimo Alfredo,
+sono molto dolente, ma devo comunicarti che...</label><br />
+    
+    <input type="radio" id="5000" name="response" value="5000" />
+    <label for="5000">Caro Alfredo,
+mi dispiace, ma...</label><br />
+    
+    <input type="radio" id="5001" name="response" value="5001" />
+    <label for="5001">Gentile Alfredo,
+ti dispiacerà sapere che...</label><br />
+    
+    <input type="radio" id="5002" name="response" value="5002" />
+    <label for="5002">Alfredo,
+non posso venire...</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

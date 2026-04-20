@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bacalah teks, dan pilih salah satu pilihan di bawah ini, kemudian pres tombol dengan menggunakan tetikus.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>A</b><p>Kære Marna<p>Jeg har givet varmemontørerne besked om, at de bare kan få min nøgle inde hos dig, når de kommer på onsdag mellem 8 og 12. Det er OK, ikke?<p>Lise<p><b>B</b><p>Kære Marna<p>Du ville vel ikke være så venlig at gøre mig en tjeneste? Jeg er frygtelig ked af at skulle ulejlige dig, men jeg kan ikke selv være hjemme på onsdag mellem 8 og 12, og de der varmemontører kommer jo, ved du. Jeg ringer i aften og hører, om jeg må aflevere nøglen til dig. Du må endelig sige nej, hvis det er ubelejligt for dig.<p>Lise<p><b>C<br></b></p><p>Hej Marna<p>Her har du min nøgle. Gider du godt lukke varmemontørerne ind for mig på onsdag, når de kommer på et eller andet tidspunkt mellem 8 og 12? Du er jo alligevel hjemme, ikke?<p>Lise</p><p><b>D<br></b></p><p>Kære Marna<p>Jeg ringer lige på hos dig i aften, når jeg kommer fra arbejde. Jeg vil høre, om du er hjemme på onsdag mellem 8 og 12, når varmemontørerne kommer, for så kunne du måske lukke dem ind til mig, når de er færdige inde hos dig. Vi tales ved i aften,<p>Lise
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7955" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3610" />
+<div id="prompt">Der skal sættes varmemålere op i din lejlighed, og montørerne skal have adgang til din lejlighed på et tidspunkt, hvor du ikke er hjemme. Du kommer godt ud af det med din nabo, en ældre kvinde, og I har tit hjulpet hinanden med forskellige ting. Du kan ikke lide at ringe på tidligt om morgenen, inden du tager på arbejde, så du smider en besked ind ad hendes brevsprække.<br /><br />Hvilken besked er mest passende i situationen?</div>
+<div id="radios">
+    
+    <input type="radio" id="11802" name="response" value="11802" />
+    <label for="11802">A</label><br />
+    
+    <input type="radio" id="11803" name="response" value="11803" />
+    <label for="11803">B</label><br />
+    
+    <input type="radio" id="11804" name="response" value="11804" />
+    <label for="11804">C</label><br />
+    
+    <input type="radio" id="11805" name="response" value="11805" />
+    <label for="11805">D</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

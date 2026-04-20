@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>a.</b> Oprivende historie om drengen, der blev født med sølvske i munden og tævet til psykisk lirekassemand af sin grevelige far. Alt sammen i den bedste mening.<p>(fra en boganmeldelse i <i>Weekendavisen</i>)<p><b>b.</b> En svigtet dreng dræber den nævenyttige nabo, som er blevet symbol på alt der gik galt. Forfatteren ser verden gennem drengens sanser og skaber en formidabel sproglig vision. Rå, tæt og rystende godt.<p>(fra en boganmeldelse i <i>Weekendavisen</i>)<p><b>c. </b>En bog om en middelklassedrengs opvækst i en tamilfamilie i Sri Lanka. En varm roman fuld af humor og sikre menneskeskildringer i sin beskrivelse af rejsen fra naivt iagttagende barn til en teenagers bittersøde møde med kærligheden - og virkeligheden.<p>(fra en boganmeldelse i <i>Ålborg Stiftstidende</i>)<p align=right>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2509" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3381" />
+<div id="prompt">Hvilken bog får mest ros for sproget?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="6347" name="response" value="6347" />
+    <label for="6347">bog a</label><br />
+    
+    <input type="radio" id="6348" name="response" value="6348" />
+    <label for="6348">bog  b</label><br />
+    
+    <input type="radio" id="6349" name="response" value="6349" />
+    <label for="6349">bog c</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,62 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Ολοκληρώστε την άσκηση, συμπληρώνοντας το κενό/τα κενά. Πιέστε το κουτάκι, για να παρουσιαστεί ένας κατάλογος επιλογών. Επιλέξτε την απάντησή σας, πατώντας σ' αυτήν.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3006" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Som børn var de altid oppe at skændes. De kunne aldrig <select name="3518-response"><option></option><option value="7082">enig</option><option value="7083">enes</option><option value="7084">ens</option></select> .</span>
+</div> 
+
+
+<input type="hidden" name="3518-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

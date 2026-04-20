@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                PARFUMERIE DROGISTERIJ HOLLESTELLE vraagt met spoed een gediplomeerde SCHOONHEIDSSPECIALISTE die tevens over goede contactuele eigenschappen beschikt. Ervaring in de parfumeriebranche strekt tot aanbeveling.<p>Gelieve uw sollicitatie te richten aan dhr. C. van Verseveld of mevr. F. Fokker.<p>PARFUMERIE DROGISTERIJ HOLLESTELLE<p>Slotlaan 37<p>3522 OK Zeist<p>Tel. 030 - 69 22 783
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2147" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="714" />
+<div id="prompt">Wat voor soort tekst is dit?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="5206" name="response" value="5206" />
+    <label for="5206">Een mededeling over de verhuizing van de schoonheidsspecialiste.</label><br />
+    
+    <input type="radio" id="5207" name="response" value="5207" />
+    <label for="5207">Een personeelsadvertentie voor een baan als schoonheidsspecialiste.</label><br />
+    
+    <input type="radio" id="5208" name="response" value="5208" />
+    <label for="5208">Een reclame voor een schoonheidsbehandeling.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

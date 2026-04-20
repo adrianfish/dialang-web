@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                The science and practice of caving owes much to a Romanian, Emil Racovita, who founded the world's first speleological institute at Cluj university, near the karst zone of the Apuseni mountains.  This offers the greatest range of possibilities, from easy strolling passages to vertical shafts and flooded tunnels; there are tourist caves such as Chiscau and Medziad, big river caves such as Humpleu, Magura and Cetatile Ponoruliu, and any number of crevices that only experts should get involved with.  The other main area is the southern Banat and the Mehedinti massif, with river caves such as Topolnita, Closani and Comarnic.<p>The last major discovery was made only in 1986, at Movile in Dobrogea, and the further reaches of many other caves are still being explored by Romanian enthusiasts, and constantly yield fresh surprises.  Interested groups or individuals should write to the Racovita Institute, Str Clincilor 5, 3400 Cluj or Str Frumoasa 11, 78114 Bucuresti, to enquire about co-operation and possible caves, several months in advance, stating your experience.  An offer to contribute gear and a share of the costs should increase your chances of acceptance by a local club.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4464" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1197" />
+<div id="prompt">Who was the text originally written for?</div>
+<div id="radios">
+    
+    <input type="radio" id="8470" name="response" value="8470" />
+    <label for="8470">for general visitors to Romania</label><br />
+    
+    <input type="radio" id="8471" name="response" value="8471" />
+    <label for="8471">for students of geography</label><br />
+    
+    <input type="radio" id="8472" name="response" value="8472" />
+    <label for="8472">for cavers visiting Romania</label><br />
+    
+    <input type="radio" id="8473" name="response" value="8473" />
+    <label for="8473">for Romanian historians</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

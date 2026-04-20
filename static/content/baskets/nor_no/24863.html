@@ -1,0 +1,66 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Svar på oppgaven ved å fylle ut luken(e). Klikk på boksen for å få fram svaralternativene på skjermen. Klikk så med musen på det svaret du mener er rett.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24863" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span><select name="2599-response"><option></option><option value="6045">Avant</option><option value="6046">D'abord</option><option value="6047">Un jour</option></select> il avait des problèmes de poids, <select name="2600-response"><option></option><option value="6048">alors</option><option value="6049">ensuite</option><option value="6050">maintenant</option></select> il a fait un régime très sévère, <select name="2601-response"><option></option><option value="6051">puis</option><option value="6052">enfin</option><option value="6053">alors</option><option value="6054">maintenant</option></select> il est presque trop mince.</span>
+</div> 
+
+
+<input type="hidden" name="2599-position" value="1" />
+
+<input type="hidden" name="2600-position" value="2" />
+
+<input type="hidden" name="2601-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

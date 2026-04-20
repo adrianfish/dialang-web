@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '02':false,
+                        
+                        '03':false,
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '09':false,
+                        
+                        '14':false,
+                        
+                        '15':false,
+                        
+                        '16':false,
+                        
+                        '22':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '29':false,
+                        
+                        '31':false,
+                        
+                        '35':false,
+                        
+                        '40':false,
+                        
+                        '41':false,
+                        
+                    };
+
+                </script>
+                <h1>Αυτοαξιολόγηση- κατανόηση προφορικού λόγου</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="ell_gr"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ναι</td><td>Όχι</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="02_valid" type="radio" name="statement:02" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="02_invalid" type="radio" name="statement:02" value="no"/></td>
+                            <td>Μπορώ να παρακολουθήσω λόγο ο οποίο είναι πολύ αργός, με προσεκτική άρθρωση και με μεγάλες παύσεις ώστε να πιάνω το νόημα</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Μπορώ να καταλάβω ερωτήσεις και εντολές και να ακολουθήσω μικρές και απλές οδηγίες.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Μπορώ να καταλάβω αρκετά ώστε να χειρίζομαι απλές, καθημερινές συναλλαγές χωρίς πολύ μεγάλη προσπάθεια.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Μπορώ γενικά να αναγνωρίσω το θέμα μια συζήτησης η οποία γίνεται αργά και καθαρά.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Μπορώ να καταλάβω αρκετά, ώστε να μπορώ να αντιμετωπίσω συγκεκριμένες ανάγκες στην καθημερινή ζωή με την προϋπόθεση ότι ο συνομιλητής μου μιλάει καθαρά και αργά.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="09_valid" type="radio" name="statement:09" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="09_invalid" type="radio" name="statement:09" value="no"/></td>
+                            <td>Μπορώ να χειριστώ απλές συναλλαγές σε καταστήματα, ταχυδρομεία και τράπεζες.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Μπορώ γενικά να παρακολουθήσω τα κύρια σημεία μιας εκτενούς συζήτησης που γίνεται κοντά μου, εφόσον η ομιλία είναι καθαρή και στην κοινή γλώσσα.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="15_valid" type="radio" name="statement:15" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="15_invalid" type="radio" name="statement:15" value="no"/></td>
+                            <td>Μπορώ να παρακολουθήσω τον καθαρό λόγο σε μια καθημερινή συζήτηση, αν και σε πραγματικές καταστάσεις, θα πρέπει μερικές φορές να ζητήσω να επαναληφθούν κάποιες λέξεις ή φράσεις.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="16_valid" type="radio" name="statement:16" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="16_invalid" type="radio" name="statement:16" value="no"/></td>
+                            <td>Μπορώ να καταλάβω απλές τεκμηριωμένες πληροφορίες για κοινά καθημερινά ή επαγγελματικά ζητήματα, αναγνωρίζοντας τόσο τα γενικά μηνύματα όσο και ειδικές λεπτομέρειες, εφόσον η ομιλία είναι καθαρή και γενικά ο επιτονισμός που χρησιμοποιείται είναι οικείος.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Μπορώ να κατανοήσω τα κύρια σημεία σε εκπομπές πάνω σε οικεία θέματα και θέματα που με ενδιαφέρουν όταν η γλώσσα είναι σχετικά αργή και καθαρή.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Μπορώ να καταλάβω την κοινή ομιλούμενη γλώσσα, ζωντανά ή από εκπομπή πάνω σε θέματα τόσο οικεία όσο και άγνωστα που συναντούμε στην προσωπική, ακαδημαϊκή ή επαγγελματική ζωή. Μόνο όταν υπάρχει υπερβολικός θόρυβος στο βάθος, ασαφής δομή και/ή ιδιωματική χρήση δημιουργούνται κάποια προβλήματα.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Μπορώ να παρακολουθήσω τα ουσιαστικά σημεία σε διαλέξεις, ομιλίες και εκθέσεις καθώς και άλλα είδη παρουσιάσεων στα οποία χρησιμοποιούνται σύνθετες ιδέες και γλώσσα.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Μπορώ να καταλάβω ανακοινώσεις και μηνύματα για συγκεκριμένα και αφηρημένα θέματα που γίνονται στην κοινή γλώσσα και σε κανονικό ρυθμό.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="29_valid" type="radio" name="statement:29" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="29_invalid" type="radio" name="statement:29" value="no"/></td>
+                            <td>Μπορώ να καταλάβω τα περισσότερα ραδιοφωνικά ντοκυμαντέρ και το μεγαλύτερο μέρος από το υπόλοιπο μαγνητοφωνημένο ή ζωντανό ακουστικό υλικό που γίνεται στην κοινή γλώσσα και μπορώ να αναγνωρίσω τη διάθεση, τον τόνο κτλ. του ομιλητή.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Μπορώ να προλαβαίνω μια ζωηρή συνομιλία μεταξύ φυσικών ομιλητών.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Μπορώ να παρακολουθήσω τις περισσότερες διαλέξεις, συζητήσεις και δημόσιες συζητήσεις με σχετική ευκολία.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="40_valid" type="radio" name="statement:40" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="40_invalid" type="radio" name="statement:40" value="no"/></td>
+                            <td>Δεν έχω δυσκολία να καταλάβω οποιοδήποτε είδος προφορικού λόγου, είτε είναι ζωντανό είτε είναι εκπομπή, που γίνεται σε γρήγορο φυσικό ρυθμό.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="41_valid" type="radio" name="statement:41" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="41_invalid" type="radio" name="statement:41" value="no"/></td>
+                            <td>Μπορώ να παρακολουθήσω εξειδικευμένες διαλέξεις και παρουσιάσεις οι οποίες περιέχουν σε μεγάλο βαθμό ιδωτισμούς, διαλεκτικά στοιχεία και άγνωστη ορολογία.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Υποβολή απαντήσεων" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Θα υποβάλετε απαντήσεις;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε βέβαιος/η ότι θέλετε να παραλείψετε το τμήμα της αυτοαξιολόγησης;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

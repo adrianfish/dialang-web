@@ -1,0 +1,69 @@
+                <script>
+                    dialang.session.currentBasketType = 'shortanswer';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，在文本框中输入正确答案。注意检查拼写！</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                CADENAS DE RADIO ESPAÑOLAS<p>ONDA CERO - Esta cadena de radio ofrece programas informativos, tertulias, debates, entrevistas con personajes de muchos campos de la actualidad y programas nocturnos de entretenimiento. <p>RNE/2- Radio Nacional de España 2  emite música clásica, programas culturales y  breves informativos. No hay publicidad.<p>CATALUNYA RADIO - Ofrece programas informativos, culturales, musicales, etc.  en lengua catalana, se emite en la Comunidad Autónoma de Cataluña.<p>CADENA DIAL - Radio eminentemente musical. Ofrecen lo mejor del panorama musical español con algunos concursos, entrevistas y novedades.<p>RM RADIO - Música folklórica española,  breves espacios informativos, concursos, programas con participación de los oyentes.<p>CANAL SUR - Esta cadena de radio es regional, emite para toda Andalucía. Su programación incluye espacios musicales, informativos y todo tipo de programas.<p>CADENA 40 PRINCIPALES -  Emite música para un público joven. Novedades nacionales e internacionales del campo musical.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2835" />
+                        <input type="hidden" name="basketType" value="shortanswer" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="prompt"></div>
+<div id="radios">
+    
+    <span>¿En qué cadena de radio se excluyen los anuncios comerciales?</span>
+    <input type="text" name="927-response" /><br />
+    <input type="hidden" name="927-position" value="1"/><br />
+    
+    <span>¿En qué cadena de radio hay un programa de música popular y tradicional española?</span>
+    <input type="text" name="928-response" /><br />
+    <input type="hidden" name="928-position" value="2"/><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

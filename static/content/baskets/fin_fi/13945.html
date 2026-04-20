@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Μετά τα οκτώ πετυχημένα καταστήματα που διαθέτει σ' όλη την Ελλάδα η γνωστή φίρμα "Αίολος" ίδρυσε και ένα ένατο, αυτή τη φορά στο διαδίκτυο (Internet). Η αναζήτηση για όλες τις νέες κυκλοφορίες μπορεί να γίνει με πολλούς τρόπους, για παράδειγμα με λέξη-κλειδί από τον τίτλο, με το όνομα του συγγραφέα, του εκδότη κτλ. Φυσικά θα μπορεί κανείς στη συνέχεια να παραγγείλει αυτό που θέλει μέσα από το διαδίκτυο χωρίς να βγει ούτε μια στιγμή από το σπίτι του.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="13945" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4081" />
+<div id="prompt">Τι κατάστημα είναι;</div>
+<div id="radios">
+    
+    <input type="radio" id="2928" name="response" value="2928" />
+    <label for="2928">Ένα πολυκατάστημα.</label><br />
+    
+    <input type="radio" id="2929" name="response" value="2929" />
+    <label for="2929">Ένα βιβλιοπωλείο.</label><br />
+    
+    <input type="radio" id="2930" name="response" value="2930" />
+    <label for="2930">Ένα δισκοπωλείο.</label><br />
+    
+    <input type="radio" id="2931" name="response" value="2931" />
+    <label for="2931">Ένα Ίντερνετ-καφέ.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

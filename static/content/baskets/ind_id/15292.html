@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Selesaikan tugas dengan mengisi bagian-bagian yang kosong. Klik pada kotak untuk menampilkan daftar pilihan. Klik jawaban yang Anda pilih.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="15292" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Πέτρο,
+Σου στέλνω την ασπρόμαυρη φωτογραφία μας από τότε που ήμασταν στο Δημοτικό. Την έψαχνα πολύ καιρό, και τελικά τη βρήκα. Ήμασταν τότε 8 ή 9 χρονών στη γειτονιά με την μπάλα. Βλέπεις πώς ήμασταν; Είχαμε και οι δύο πολλά μαλλιά, το ίδιο ύψος και <select name="4194-response"><option></option><option value="3675">φορούσαμε μπλε κοστούμι</option><option value="3676">φορούσαμε ένα μεγάλο σκούφο</option><option value="3677">φορούσαμε κοντά παντελόνια</option><option value="3678">φορούσαμε μπλε γραβάτα</option></select> . Τώρα λίγα μαλλιά και φοράμε κοντά παντελόνια μόνο στην πλαζ. Πόσο αλλάξαμε!
+    Ο καλός σου φίλος
+        Γιώργος</span>
+</div> 
+
+
+<input type="hidden" name="4194-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

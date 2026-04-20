@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Les teksten, og velg ett av svaralternativene under. Klikk så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                An E Coli outbreak which struck down nine fans at this year's Glastonbury Festival was due to cattle grazing on the site, an enquiry found.  An investigation was launched after revellers fell ill with the stomach bug.  Investigators intitially feared the outbreak of E Coli 157 was caused by poorly cooked food sold to people at the festival.<p>But the report yesterday by the Communicable Disease Surveillance Centre disclosed that the bacteria had found its way from cattle dung into mud on the site at Pilton, Somerset.  All the victims - who included a two-year old girl - made a complete recovery.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8027" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1481" />
+<div id="prompt">Where did the illness come from?</div>
+<div id="radios">
+    
+    <input type="radio" id="11908" name="response" value="11908" />
+    <label for="11908">festival revellers</label><br />
+    
+    <input type="radio" id="11909" name="response" value="11909" />
+    <label for="11909">poorly cooked food</label><br />
+    
+    <input type="radio" id="11910" name="response" value="11910" />
+    <label for="11910">cattle dung</label><br />
+    
+    <input type="radio" id="11911" name="response" value="11911" />
+    <label for="11911">a two-year old girl</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

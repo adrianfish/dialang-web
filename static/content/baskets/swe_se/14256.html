@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                "Ο πατέρας μου με έβαλε πολύ νωρίς στις επιχειρήσεις του. Πρέπει να είσαι άντρας στη δουλειά. Η γοητεία μιας γυναίκας δεν είναι αρκετή για να πετύχει. Πίσω από αυτήν χρειάζεται σκληρή δουλειά. Δούλεψα πολύ με σύνεση και αίσθηση νοικοκυριού. Και εξακολουθώ να τρέχω, βασιζόμενη βέβαια και σε μια σωστή οργάνωση του γραφείου μου με κατάλληλα επιλεγμένα στελέχη. Μια γυναίκα για να πετύχει πρέπει να πιστέψει πρώτη η ίδια ότι μπορεί να τα καταφέρει εξίσου καλά με άντρα. Η γυναίκα με τη δουλειά και την υπευθυνότητά της θα πείσει ότι μπορεί να συμπεριφερθεί σαν ένας σωστός άντρας επιχειρηματίας. Πρέπει να σέβεσαι τον εαυτό σου και τους συνεργάτες σου και να είσαι πάντα σωστή με κάθε αντικείμενο με το οποίο θα ασχοληθείς, γιατί μόνο έτσι θα σου πάνε όλα καλά. Οι επιτυχίες της στιγμής δεν οδηγούν πουθενά και δεν πρέπει κανείς να τις επιδιώκει".
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14256" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4099" />
+<div id="prompt">Τι απ' όλα όσα είπε η κυρία δεν εννοούσε;</div>
+<div id="radios">
+    
+    <input type="radio" id="3031" name="response" value="3031" />
+    <label for="3031">Να κυνηγάς τις περιστασιακές επιτυχίες.</label><br />
+    
+    <input type="radio" id="3032" name="response" value="3032" />
+    <label for="3032">Να είσαι συνεπής και υπεύθυνος.</label><br />
+    
+    <input type="radio" id="3033" name="response" value="3033" />
+    <label for="3033">Να επιλέγεις κατάλληλους συνεργάτες.</label><br />
+    
+    <input type="radio" id="3034" name="response" value="3034" />
+    <label for="3034">Να δουλεύεις σκληρά και υπεύθυνα.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

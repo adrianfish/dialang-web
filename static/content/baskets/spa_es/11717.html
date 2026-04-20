@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Quando si guastano le cartilagini sono guai seri. La cartilagine, pur essendo un tessuto molto elastico e resistente, non è tuttavia eterno, tanto meno invulnerabile. L'invecchiamento le fa perdere elasticità. Un'infiammazione può provocare serie patologie. Un trauma può romperla. In ogni caso, il tempo lentamente la logora. L'artrosi significa un danno, una degenerazione o un assottigliamento del tessuto: e in questo modo viene compromesso un equilibrio meccanico.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11717" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1931" />
+<div id="prompt">Il testo è tratto da una rivista scientifica. Come pensi che inizi?</div>
+<div id="radios">
+    
+    <input type="radio" id="1362" name="response" value="1362" />
+    <label for="1362">Da che cosa è costituita la cartilagine?</label><br />
+    
+    <input type="radio" id="1363" name="response" value="1363" />
+    <label for="1363">L&#39;artrosi è uno dei mali più diffusi oggi.</label><br />
+    
+    <input type="radio" id="1364" name="response" value="1364" />
+    <label for="1364">Compare il dolore, i muscoli compensano contraendosi.</label><br />
+    
+    <input type="radio" id="1365" name="response" value="1365" />
+    <label for="1365">Il riposo e  idonee terapie risolvono la fase acuta.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

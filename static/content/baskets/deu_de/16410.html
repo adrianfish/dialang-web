@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klicken Sie auf jeden einzelnen 'Karteireiter', um die Aufgaben zu sehen. Lesen Sie den Text, wählen Sie EINE Auswahlmöglichkeit und klicken Sie dann mit der Maus auf die Schaltfläche. Bearbeiten Sie ALLE Aufgaben, bevor Sie auf 'Weiter' klicken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                   La Baule, le 8 août 98<p>Chers Roger et Françoise,<p>Lorsque nous sommes arrivés ici, il faisait gris ; mais depuis huit jours, il fait du soleil. Les enfants sont tous les jours à la plage et se baignent. Quelle détente! Nous pensons à ceux qui sont restés dans le quartier et qui travaillent. Bon courage , c'est bientôt votre tour !<p>Avec toute notre amitié,<p>Thierry et Isabelle.<p>PS- merci encore de prendre notre courrier.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16410" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25120-tab"><a href="#tabs-2672"></a></li>
+        
+        <li id="25121-tab"><a href="#tabs-2673"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2672">
+        <div id="prompt">Choisissez la phrase qui correspond à la lettre ci-dessus.</div>
+        <div id="radios">
+            
+            <input type="radio" id="4013" basketid="" name="2672-response" value="4013" />
+            <label for="4013">Thierry et Isabelle sont des collègues de travail de Roger et Françoise.</label><br />
+            
+            <input type="radio" id="4014" basketid="" name="2672-response" value="4014" />
+            <label for="4014">Thierry et Isabelle sont des amis et voisins de Roger et Françoise.</label><br />
+            
+            <input type="radio" id="4015" basketid="" name="2672-response" value="4015" />
+            <label for="4015">Thierry et Isabelle font partie de la famille de Roger et Françoise.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2673">
+        <div id="prompt">Quand Thierry et Isabelle écrivent, ...</div>
+        <div id="radios">
+            
+            <input type="radio" id="4016" basketid="" name="2673-response" value="4016" />
+            <label for="4016">il fait beau.</label><br />
+            
+            <input type="radio" id="4017" basketid="" name="2673-response" value="4017" />
+            <label for="4017">il fait mauvais.</label><br />
+            
+            <input type="radio" id="4018" basketid="" name="2673-response" value="4018" />
+            <label for="4018">il pleut.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2672-position" value="1"/><br />
+
+<input type="hidden" name="2673-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2672",
+        
+        "2673",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

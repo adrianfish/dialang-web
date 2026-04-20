@@ -1,0 +1,119 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Click on each tab to view the testlet items. Listen to the recording and choose one of the options, then click on the button using the mouse. Attempt ALL items before pressing the Forward button.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/006407.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/006407.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16377" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25072-tab"><a href="#tabs-2625"></a></li>
+        
+        <li id="25073-tab"><a href="#tabs-2626"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2625">
+        <div id="prompt">Choisissez la phrase qui convient.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3862" basketid="" name="2625-response" value="3862" />
+            <label for="3862">Les bureaux sont ouverts tous les jours le matin et l&#39;après-midi.</label><br />
+            
+            <input type="radio" id="3863" basketid="" name="2625-response" value="3863" />
+            <label for="3863">Les bureaux sont fermés le vendredi après-midi.</label><br />
+            
+            <input type="radio" id="3864" basketid="" name="2625-response" value="3864" />
+            <label for="3864">Les bureaux sont ouverts le lundi, le mardi et le jeudi.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2626">
+        <div id="prompt">Choisissez la phrase qui convient.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3865" basketid="" name="2626-response" value="3865" />
+            <label for="3865">Le tribunal ne répond jamais par courrier.</label><br />
+            
+            <input type="radio" id="3866" basketid="" name="2626-response" value="3866" />
+            <label for="3866">Pour tous renseignements, vous devez vous présenter en personne.</label><br />
+            
+            <input type="radio" id="3867" basketid="" name="2626-response" value="3867" />
+            <label for="3867">Il est possible de téléphoner, d&#39;écrire ou de se présenter en personne.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2625-position" value="1"/><br />
+
+<input type="hidden" name="2626-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2625",
+        
+        "2626",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

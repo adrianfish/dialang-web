@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Διαβάστε το κείμενο και επιλέξτε μία τις παρακάτω επιλογές. Έπειτα πιέστε το πλήκτρο, χρησιμοποιώντας το ποντίκι.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Een reisverzekering van RO: een veilig gevoel<p>Met de vakantie voor de deur breekt ook de tijd weer aan van de reisverzekeringen. Hiervoor kunt u bij de RO uitstekend terecht. Bagage, ongevallen, extra reis- en verblijfkosten tijdens buitenlandse reizen zijn hiermee voor maximaal zes maanden verzekerd. Een veilig gevoel.<p>De reisverzekering<p>Buitengewone kosten, bagage en huur van een vervangend vervoermiddel worden uitstekend gedekt in de RO Ideale Reisverzekering. Deze verzekering sluit aan op de zorgverzekering van RO. U verzekert zich dus niet 'dubbel' en betaalt dan ook geen onnodige premie. Bovendien handelt RO eventuele schade snel af: uw zorgverzekering en uw reisverzekering zijn immers in <i>een</i> hand. De RO Ideale Reisverzekering, een veilig gevoel, ook al omdat u uw premie terug krijgt, als een geboekte reis onverhoopt niet doorgaat.<p>Doorlopend<p>Wie vaker in het buitenland komt voor vakanties, een lang weekend of gewoon een dagje winkelen, heeft veel voordeel bij een doorlopende reisverzekering in plaats van de RO Ideale Reisverzekering. Deze is een jaar lang geldig, zodat u voor de vakantie of het uitstapje over de grens niet steeds een verzekering hoeft te regelen. Bovendien is de doorlopende reisverzekering geldig in de hele wereld en zijn bijna alle sporten standaard meeverzekerd. Dus ook onderwatersporten en wintersporten. Vraag ernaar bij de RO-kantoren of stuur de bon op.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2133" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="707" />
+<div id="prompt">Als je vaak in het buitenland komt, hoeveel verzekeringen heb je dan bij RO nodig?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="5136" name="response" value="5136" />
+    <label for="5136">Een.</label><br />
+    
+    <input type="radio" id="5137" name="response" value="5137" />
+    <label for="5137">Twee.</label><br />
+    
+    <input type="radio" id="5138" name="response" value="5138" />
+    <label for="5138">Drie.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

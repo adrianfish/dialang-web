@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                A Éamoinn, a ghrá,<p>Braithim uaim go mór tú. Is fada liom go mbeidh an cúrsa críochnaithe le go bhféadfaimis bheith le chéile arís. Ní thaitníonn an cúrsa liom ar chor ar bith. Glaofaidh mé ort Dé hAoine ag a seacht nó mar sin agus bí ag fanacht leis an nglaoch an uair seo - ba bheag nár bhris mo chroí an uair dheireanach nuair a ghlaoigh mé agus nuair a d'inis do mháthair dom go raibh tú bailithe leat síos an sráidbhaile. Ná clis orm an uair seo, le do thoil!   <p>Le grá mór<p>Aoife
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6738" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5130" />
+<div id="prompt">Cén fáth gur scríobh  Aoife an nóta seo d'Éamonn?</div>
+<div id="radios">
+    
+    <input type="radio" id="10361" name="response" value="10361" />
+    <label for="10361">Ba mhaith léi insint d&#34;Eámonn faoin gcúrsa atá ar siúl aici.</label><br />
+    
+    <input type="radio" id="10362" name="response" value="10362" />
+    <label for="10362">Ba mhaith léi teacht abhaile.</label><br />
+    
+    <input type="radio" id="10363" name="response" value="10363" />
+    <label for="10363">Ba mhaith léi a chinntiú go mbeidh Éamonn ag baile nuair a ghlaofadh sí.</label><br />
+    
+    <input type="radio" id="10364" name="response" value="10364" />
+    <label for="10364">Ba mhaith léi a insint dó go bhfuil sí míshásta.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

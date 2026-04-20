@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                (1) Sieben Millionen Flaschen Eierlikör werden bei Verpoorten im Jahr abgefüllt.(2) Die Umsatzentwicklung sei negativ, da man sich vom allgemeinen Abwärtstrend der Spirituosenhersteller deutlich abhebe. (3) Steigendes Gesundheitsbewußtsein und nicht zuletzt die Angst um den Führerschein haben den Endverbraucher dazu gebracht, hochprozentige Alkoholika zu meiden. (4) Davon profitiert Eierlikör, der sich mit seinen 20 Prozent Alkohol zu den "niedergradigen" Spirituosen zählt und damit zur Zeit gut im Trend liegt.    
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6841" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2789" />
+<div id="prompt">In welchem Satz findet sich ein Widerspruch?</div>
+<div id="radios">
+    
+    <input type="radio" id="10470" name="response" value="10470" />
+    <label for="10470">Satz 1</label><br />
+    
+    <input type="radio" id="10471" name="response" value="10471" />
+    <label for="10471">Satz 2</label><br />
+    
+    <input type="radio" id="10472" name="response" value="10472" />
+    <label for="10472">Satz 3</label><br />
+    
+    <input type="radio" id="10473" name="response" value="10473" />
+    <label for="10473">Satz 4</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

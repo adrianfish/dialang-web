@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                De aardappel<p>De aardappel komt eigenlijk uit Zuid-Amerika. De Spanjaarden namen hem mee naar Europa. In het begin was de aardappel niet zo geliefd, want de mensen aten ook de vruchten van de plant. Daar werden ze ziek van. Maar toen men de knol, de aardappel dus, ontdekt had, veranderde dit helemaal. De aardappel was niet meer weg te denken uit de Europese keuken. <p>Koken<p>U kunt aardappels eerst schillen, maar het lekkerst en gezondst is het om de aardappel met schil en al te koken. Wel even schoonborstelen. Na het koken haalt u dan het schilletje ervan af. Brand uw handen niet! Gebruik keukenhandschoenen of een speciale aardappelvork. De tanden van deze vork staan in een driehoek. Daar steekt u de aardappel aan vast zonder dat hij uit elkaar valt.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2122" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="703" />
+<div id="prompt">Hoe maak je aardappels lekker en gezond klaar?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="5124" name="response" value="5124" />
+    <label for="5124">Eerst koken, dan schillen, daarna schoonmaken.</label><br />
+    
+    <input type="radio" id="5125" name="response" value="5125" />
+    <label for="5125">Eerst schillen, dan wassen en daarna koken.</label><br />
+    
+    <input type="radio" id="5126" name="response" value="5126" />
+    <label for="5126">Eerst schoonmaken, dan koken, daarna schillen</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

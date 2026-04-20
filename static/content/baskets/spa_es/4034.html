@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                More than 27,000 people are waiting for hospital treatment around the country, it was revealed this week.<p>In west Surrey, the number of patients on the waiting lists has gone up by nearly 20% in the last year and 10% in the previous six months.<p>Official figures from the Department of Health also confirm that, by the end of September, six patients in the district had been waiting longer than the maximum 18 months allowed under the Government's patient charter standards.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4034" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1142" />
+<div id="prompt">What is the main idea in the text?</div>
+<div id="radios">
+    
+    <input type="radio" id="8063" name="response" value="8063" />
+    <label for="8063">27,000 people in west Surrey are waiting for hospital treatment.</label><br />
+    
+    <input type="radio" id="8064" name="response" value="8064" />
+    <label for="8064">Six patients were waiting for treatment longer than the maximum 18 months.</label><br />
+    
+    <input type="radio" id="8065" name="response" value="8065" />
+    <label for="8065">Figures show that the number of patients on the waiting lists has gone-up.</label><br />
+    
+    <input type="radio" id="8066" name="response" value="8066" />
+    <label for="8066">The Government&#39;s patient charter standards specify that the maximum waiting time for treatment is 18 months.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

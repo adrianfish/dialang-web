@@ -1,0 +1,62 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Ολοκληρώστε την άσκηση, συμπληρώνοντας το κενό/τα κενά. Πιέστε το κουτάκι, για να παρουσιαστεί ένας κατάλογος επιλογών. Επιλέξτε την απάντησή σας, πατώντας σ' αυτήν.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1866" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Vuole essere soprattutto un'occasione per discutere il posto che occupa il giornalismo culturale nella quotidiana comunicazione delle idee; un giornalismo, quello delle pagine culturali, che lascia sempre una traccia, oltre la martellante  cronaca politica e di costume. Con l'intenzione di valorizzare un settore essenziale della comunicazione culturale dei giornali è nato, per iniziativa del Comune, a San Casciano dei Bagni, borgo medievale del Senese, un premio annuale da  assegnare, come è detto nel <select name="1775-response"><option></option><option value="4634">testo</option><option value="4635">servizio</option><option value="4636">bando</option><option value="4637">comunicazione</option></select> , "all'autore dell'articolo, inchiesta o servizio pubblicati nei quotidiani nazionali che con profondità di argomentazione, efficacia di scrittura e originalità di linguaggio ha affrontato e proposto ai lettori problemi, figure, opere, eventi che rappresentano la cultura italiana del passato e del presente".</span>
+</div> 
+
+
+<input type="hidden" name="1775-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

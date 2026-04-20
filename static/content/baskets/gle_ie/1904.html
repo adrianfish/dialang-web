@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Léigh an téacs. Roghnaigh ceann amháin acu thíos agus ansin brúigh ar an gcnaipe leis an luch.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ai fini della rimborsabilità, i farmaci sono divisi in tre classi: A,B,C. I farmaci delle classi A e B sono rimborsabili totalmente o parzialmente solo se prescritti su ricettario del Servizio Sanitario Nazionale.<p>CLASSE A. Per questi farmaci il Servizio Sanitario Nazionale si fa totalmente carico del costo del medicinale, tranne che per un ticket fisso dovuto dai cittadini, di lire 3.000 (per ricetta contenente una sola prescrizione) e di lire 6.000 (per ricetta con due o più prescrizioni). Una ricetta con ticket di 6.000 lire può contenere fino a sei prescrizioni se riguarda antibiotici monodose iniettabili, farmaci multidose iniettabili e medicinali relativi alle patologie croniche. Attualmente in classe A rientrano circa 3.700 confezioni.<p>CLASSE B. I cittadini non esenti devono pagare la metà del prezzo di vendita di ogni singola confezione, mentre non pagano il ticket sulla ricetta. Gli esenti invece pagano  soltanto il ticket sulla ricetta di 3.000 o di 6.000 mila lire. Le confezioni di farmaci di classe B sono circa 350.<p>CLASSE C. Sono farmaci a totale carico dei cittadini, esenti e non, e sono la maggior parte di quelli in commercio.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1904" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1795" />
+<div id="prompt">Qual è l'informazione principale?</div>
+<div id="radios">
+    
+    <input type="radio" id="4713" name="response" value="4713" />
+    <label for="4713">Il numero dei farmaci esistenti.</label><br />
+    
+    <input type="radio" id="4714" name="response" value="4714" />
+    <label for="4714">Il costo dei farmaci.</label><br />
+    
+    <input type="radio" id="4715" name="response" value="4715" />
+    <label for="4715">La gratuità o meno dei farmaci.</label><br />
+    
+    <input type="radio" id="4716" name="response" value="4716" />
+    <label for="4716">Le ricette dei farmaci.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

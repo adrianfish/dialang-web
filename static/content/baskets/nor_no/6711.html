@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Velg ett av svaralternativene under, og klikk på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6711" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5119" />
+<div id="prompt">Sa ghiota eolais anseo thíos, cén focal atá as riocht leis an gcuid eile den sliocht?<br /><br />Itheann Ciaróg Ciaróg Eile<br /><br />I Nua Eabhrach tá páistí ag fáil bháis as éadan le galar nua marfach atá á leathadh ar fud na cathrach ag ciaróga. Le dul i ngleic leis an tinneas téann An Dr Susan Kyle ar thóir na gciaróg. Cruthaíonn sí mianach nua feithide an Judas Breed ina bhfuil pór na ciaróige agus feithidí eile ann. Feithid aimrid atá san Iúdás seo a dhéanfas fiach  ar na gnáthchiaróga ach a dtiocfaidh deireadh leo mar nach féidir leo féin atáirgeadh a dhéanamh. Mar a bheadh súil leis, déanann Iúdás slad cairdiúil ar na ciaróga ar fud na cathrach, tugann páistí Nua Eabhrac slán, agus déantar laoch den Dr.Kyle</div>
+<div id="radios">
+    
+    <input type="radio" id="10321" name="response" value="10321" />
+    <label for="10321">cairdiúil</label><br />
+    
+    <input type="radio" id="10322" name="response" value="10322" />
+    <label for="10322">laoch</label><br />
+    
+    <input type="radio" id="10323" name="response" value="10323" />
+    <label for="10323">fiach</label><br />
+    
+    <input type="radio" id="10324" name="response" value="10324" />
+    <label for="10324">éadan</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

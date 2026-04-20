@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b><i>Carlsberg<br></i></b></p><p>Danmarks første bajerskølbryggeri startede brygningen den 10. november 1847. Uden for Københavns volde havde kaptajn i Borgervæbningen, brygger J.C. Jacobsen, opført et bryggeri, som fik navnet Carlsberg efter sønnen Carl og bakken i Valby. J.C. Jacobsen var en usædvanlig personlighed, dygtig og fremsynet. Han søgte stadig at forbedre produktionen og kvaliteten, og hans fortrinlige øl blev stærkt efterspurgt.<p align=right>(<i>Carlsbergs informationsbrochure</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2475" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3376" />
+<div id="prompt">Hvad hed Carlsbergs grundlægger?</div>
+<div id="radios">
+    
+    <input type="radio" id="5910" name="response" value="5910" />
+    <label for="5910">Carl Jacobsen</label><br />
+    
+    <input type="radio" id="5911" name="response" value="5911" />
+    <label for="5911">J.C. Jacobsen</label><br />
+    
+    <input type="radio" id="5912" name="response" value="5912" />
+    <label for="5912">Carl Berg</label><br />
+    
+    <input type="radio" id="5913" name="response" value="5913" />
+    <label for="5913">Carl Valby</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

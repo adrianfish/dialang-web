@@ -1,0 +1,119 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Brúigh ar gach lipéad le míreanna an teistín a fheiceáil. Léigh an téacs agus roghnaigh ceann amháin acu thíos. Ansin brúigh ar an gcnaipe leis an luch. Déan iarracht gach mír a dhéanamh sula mbrúnn tú ar Aghaidh.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                La maman de Pascal était contente de le voir enfin de retour. Mais elle avait été très inquiète. Quand elle sut que c'était à cause du ballon que Pascal rentrait en retard, elle se mit en colère, prit le ballon, ouvrit la fenêtre et le jeta dehors.<p>Lorsqu'on lâche un ballon il s'envole et disparaît. Mais le ballon de Pascal resta devant la fenêtre. Pascal et lui se regardèrent à travers la vitre. L'enfant était surpris que son ballon fût revenu, mais pas tellement. Un ami peut faire n'importe quoi pour vous.<p>Pascal ouvrit doucement la fenêtre, attrapa le ballon et alla le cacher dans sa chambre.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24864" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25149-tab"><a href="#tabs-2649"></a></li>
+        
+        <li id="25150-tab"><a href="#tabs-2650"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2649">
+        <div id="prompt">Choisissez la phrase qui correspond au texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="6055" basketid="" name="2649-response" value="6055" />
+            <label for="6055">La maman de Pascal est contente qu&#39;il rentre tôt.</label><br />
+            
+            <input type="radio" id="6056" basketid="" name="2649-response" value="6056" />
+            <label for="6056">Elle est contente de le voir mais est fâchée qu&#39;il rentre tard.</label><br />
+            
+            <input type="radio" id="6057" basketid="" name="2649-response" value="6057" />
+            <label for="6057">Elle n&#39;est pas contente qu&#39;il soit allé chez un ami.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2650">
+        <div id="prompt">Choisissez la phrase qui correspond au texte ci-dessus.</div>
+        <div id="radios">
+            
+            <input type="radio" id="6058" basketid="" name="2650-response" value="6058" />
+            <label for="6058">Pascal a perdu son ballon et est très en colère.</label><br />
+            
+            <input type="radio" id="6059" basketid="" name="2650-response" value="6059" />
+            <label for="6059">La maman de Pascal lui prend son ballon, le met dehors et le ballon s&#39;envole .</label><br />
+            
+            <input type="radio" id="6060" basketid="" name="2650-response" value="6060" />
+            <label for="6060">La maman de Pascal lui prend son ballon, le met dehors et le ballon ne s&#39;envole pas.</label><br />
+            
+            <input type="radio" id="6061" basketid="" name="2650-response" value="6061" />
+            <label for="6061">La maman de Pascal lui prend son ballon et le range dans la chambre de Pascal.</label><br />
+            
+            <input type="radio" id="6062" basketid="" name="2650-response" value="6062" />
+            <label for="6062">Pascal est content que son ballon soit parti.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2649-position" value="1"/><br />
+
+<input type="hidden" name="2650-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2649",
+        
+        "2650",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

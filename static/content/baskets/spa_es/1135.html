@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on aikakauslehden nuortenpalstalta.<p><b>Se tyttö ja se poika </b><p>Se tyttö oli kaikkea sitä. Se oli täydellinen. Se huomas sen pojan virheet. Se poika ei ollut täydellinen. Poika vaan rakasti tyttöä. Se tyttökin rakasti poikaa, mutta pelkäsi pojan epätäydellisyyttä. Se tyttö pelkäsi, että se poika vie tytön täydellisyyden muiden silmissä.<p>Yksi sateinen päivä tyttö ja poika oli kävelyllä, ja poika oli unohtanu sateenvarjon. Tyttö suuttui pojalle, eikä poika tiennyt miksi. Silloin sadepisarat alkoi sulattaa tytön sokerista kuorta. Alta paljastui tavallinen, viallinen tyttö. Pojan mielestä se tyttö oli kaunis tyttö. Aluks se tyttö pelästy, mutta sitten se tunsi olonsa onnellisemmaksi kuin ennen.<p>Oli sattunut se mitä tyttö oli pelännyt; sen tytön sokerikuori oli sulanut.<p>Oli tapahtunut se mitä tyttö oli toivonut; poika näki sokerikuoren alle ja rakasti.<p><i>(Kodin kuvalehti</i> <i>1996)</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1135" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3805" />
+<div id="prompt">Tytön "sokerikuori" tarkoittaa tekstissä, että</div>
+<div id="radios">
+    
+    <input type="radio" id="574" name="response" value="574" />
+    <label for="574">tyttö on täydellinen.</label><br />
+    
+    <input type="radio" id="575" name="response" value="575" />
+    <label for="575">tyttö näyttelee olevansa parempi kuin on.</label><br />
+    
+    <input type="radio" id="576" name="response" value="576" />
+    <label for="576">tyttö on onnellinen.</label><br />
+    
+    <input type="radio" id="577" name="response" value="577" />
+    <label for="577">tyttö pelkää vettä.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>LAS CLAVES QUE GARANTIZAN EL ÉXITO PERSONAL Y PROFESIONAL<br></b></p><p><b>Cultivar la autoestima</b><p>Es imprescindible para ser una persona segura de su capacidad y criterios. Con ello y una dosis importante de actitud positiva, los problemas se resuelven mejor y más rápido.<p><b>Flexibilidad e imaginación</b><p>No existe una sola solución para cada problema, siempre hay distintas formas de abordarlos. Hay que adoptar una mentalidad flexible, abierta a los cambios, cada vez más rápidos.<p><b>Divertirse</b><p>Disfrutar con el trabajo y la vida diaria, huyendo de la rutina es esencial para conseguir unos resultados brillantes.<p><b>Ser un "todo terreno"</b><p>Hay que esforzarse en convertirse en una persona y un profesional polivalente, capaz de ser eficaz en distintas áreas y  asumiendo distintas funciones.<p><b>El marqueting personal</b><p>Hay que hacerse valer día a día. Esto no hay que confundirlo con hacer la pelota a los amigos, a los compañeros o al jefe.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2863" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="947" />
+<div id="prompt">Lea el texto y marque la afirmación que corresponde al mismo.</div>
+<div id="radios">
+    
+    <input type="radio" id="6791" name="response" value="6791" />
+    <label for="6791">es importante hacer la pelota al jefe</label><br />
+    
+    <input type="radio" id="6792" name="response" value="6792" />
+    <label for="6792">hay que tener un coche &#34;todo terreno&#34;</label><br />
+    
+    <input type="radio" id="6793" name="response" value="6793" />
+    <label for="6793">hay que pasárselo bien trabajando</label><br />
+    
+    <input type="radio" id="6794" name="response" value="6794" />
+    <label for="6794">es importante que los problemas se resuelvan</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

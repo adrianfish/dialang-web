@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center><b>Mamma sló jólasveininn</b><p>New York. The Daily Telegraph.<p>JÓLASVEINN í New York lenti í miklum vanda við vinnu sína í verslunarmiðstöð þegar sonur hans bar kennsl á hann og fyrrverandi eiginkona hans krafði hann um barnsmeðlag og réðst að því búnu á hann með barsmíðum.<p>Málið hófst er Justin Ramirez, tveggja ára, settist í kjöltu jólasveins í verslunarmiðstöð og þekkti þar föður sinn, sem hafði farið huldu höfði frá því í sumar þar sem hann reyndi að komast hjá því að greiða meðlag með drengnum. "Pabbi er jólasveinn" hrópaði barnið og móðirin brá við skjótt, reif stefnu upp úr veski sínu og þrýsti í fang jólasveinsins.<p>Þegar móðirin kom síðar sama dag í verslunarmiðstöðina og sá eiginmanninn enn að störfum rann henni svo í skap að hún réðst á hann. Skelfingu lostin börn grétu þegar þau sáu jólasveininn lúbarinn og kalla varð til lögreglu. "Mér brá sjálfri þegar ég barði hann," sagði móðirin.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7896" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4774" />
+<div id="prompt">Af hverju brást konan við á þennan hátt þegar hún sá jólasveininn?</div>
+<div id="radios">
+    
+    <input type="radio" id="11678" name="response" value="11678" />
+    <label for="11678">Af því hann var barnsfaðir hennar og hafði ekki borgað með barni sínu.</label><br />
+    
+    <input type="radio" id="11679" name="response" value="11679" />
+    <label for="11679">Af því hún vildi ekki að eiginmaður hennar ynni sem jólasveinn.</label><br />
+    
+    <input type="radio" id="11680" name="response" value="11680" />
+    <label for="11680">Af því börnin í versluninni urðu skelfingu lostin og grétu þegar þau sáu jólasveininn.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

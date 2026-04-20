@@ -1,0 +1,78 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Roghnaigh ceann de na roghanna thíos, agus cliceáil an cnaipe leis an luch.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7879" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3579" />
+<div id="prompt">Du bor i lejlighed og har problemer med de unge mennesker, der for et par måneder siden flyttede ind ovenpå. De spiller meget høj musik hele natten. Du har prøvet at tale med dem om det, men de bliver ved med at larme. Nu har du besluttet at skrive til dem. Hvilket klagebrev er MINDST hensigtsmæssigt i situationen?</div>
+<div id="radios">
+    
+    <input type="radio" id="11631" name="response" value="11631" />
+    <label for="11631">Hvis I ikke snart holder op med at spille jeres modbydelige musik så højt og hele natten igennem, melder jeg jer til politiet! Jeg HAR talt med viceværten! 
+Underboen</label><br />
+    
+    <input type="radio" id="11632" name="response" value="11632" />
+    <label for="11632">I bedes venligst skrue ned for musikken efter kl. 22, 
+jævnfør husreglementet! 
+Underboen</label><br />
+    
+    <input type="radio" id="11633" name="response" value="11633" />
+    <label for="11633">Jeg har prøvet at sige det til jer flere gange: kunne I ikke skrue lidt ned for musikken, i hvert fald om natten?
+Det er en gammel ejendom, og her er meget lydt. 
+Underboen</label><br />
+    
+    <input type="radio" id="11634" name="response" value="11634" />
+    <label for="11634">Vil I ikke nok være søde og skrue bare en lille smule ned for musikken - bare om natten? Jeg står tidligt op og har virkelig brug for min nattesøvn.  
+Venlig hilsen
+underboen.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

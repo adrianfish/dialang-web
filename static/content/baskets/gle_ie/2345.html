@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Léigh an téacs. Roghnaigh ceann amháin acu thíos agus ansin brúigh ar an gcnaipe leis an luch.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>LØVEN<br></b></p><p><b>23. juli - 23. august<br></b></p><p>ØKONOMI:Har der været lavvande i kassen på det sidste, <p>kan du sikkert snakke dig ud af problemet nu. <p><b>FISKENE<br></b></p><p><b>19. februar - 20. marts<br></b></p><p>ØKONOMI: Det vil ikke være klogt at vente på en pludselig bedring af budgettet.<p>Find sparekniven frem, og sats på langtidsplanlægning.<p><b>STENBUKKEN<br></b></p><p><b>22. december - 20. januar<br></b></p><p>ØKONOMI: Pengeproblemer har du ikke ligefrem,<p>men du kommer sandsynligvis ud for uventede udgifter,<p>som ærgrer dig.<p><b>SKORPIONEN<br></b></p><p><b>24. oktober - 22. november<br></b></p><p>ØKONOMI: Din sans for pengesager kan ligge på et lille sted, <p>så det er overvejende sandsynligt, at du overskrider budgettet.<p align=right>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2345" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3358" />
+<div id="prompt">Hvem går det bedst for økonomisk i den kommende uge?</div>
+<div id="radios">
+    
+    <input type="radio" id="5634" name="response" value="5634" />
+    <label for="5634">Fisken</label><br />
+    
+    <input type="radio" id="5635" name="response" value="5635" />
+    <label for="5635">Løven</label><br />
+    
+    <input type="radio" id="5636" name="response" value="5636" />
+    <label for="5636">Stenbukken</label><br />
+    
+    <input type="radio" id="5637" name="response" value="5637" />
+    <label for="5637">Skorpion</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

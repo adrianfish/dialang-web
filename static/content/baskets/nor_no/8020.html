@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Les teksten, og svar på oppgaven ved å skrive inn det eller de ordene som mangler i luken(e). Klikk på boksen med musen, og skriv inn svaret. Kontroller at ordet/ordene er rett stavet.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                OSLO KOMMUNE<p>Oslo kommune er en av landets største arbeidsgivere med ca 50 000 ansatte. I 1997 var det ca. 75 virksomheter fordelt på 6 byrådsavdelinger, 33 etater, 25 bydelsforvaltninger, 6 kommunale særbedrifter og 11 aksjeselskap som stod for kommunens utøvende forvaltning og tjenesteproduksjon.<p>Oslo kommune har som målsetting å oppnå best mulig balanse mellom kjønnene i de forskjellige stillinger. Det er derfor ønskelig å få kvinnelige søkere til stillinger som tradisjonelt er mannsdominert. Når det gjelder lederstillinger og andre høyere stillinger er kvinner i dag underrepresentert. Kommunen er derfor interessert i at også kvinner søker disse stillingene.<p>Søknad sendes sammen med fotostatkopi/rettkjente avskrifter av vitnemål og attester til den arbeidsgiver som er oppgitt for den enkelte stilling. De som ønsker ansettelse i barnehage, må fremlegge tilfredsstillende politiattest. Søknadsfristen for alle stillinger er innen 14 dager fra utlysningsdato, hvis ikke annet er markert under den enkelte stilling.<p>Ved tiltredelse i stilling med over 15 timer per uke blir du medlem av Oslo Kommunale Pensjonskasse uten innskuddsplikt. OKP kan tilby sine medlemmer gunstige lån ved kjøp av bolig. 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8020" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="4" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Oslo kommune ønsker flere kvinner til <input type="text" name="3085-response" /> i kommunen. Årsaken til dette er at i disse stillingene er kvinner <input type="text" name="3086-response" /> . De som vil søke en stilling i kommunen, må sende søknad til den <input type="text" name="3087-response" /> som er oppført under hver stillingsannonse. De som blir ansatt med over 15 timer per uke, får visse <input type="text" name="3088-response" /> , økonomiske tilbud.</span>
+</div> 
+
+
+<input type="hidden" name="3085-position" value="1" />
+
+<input type="hidden" name="3086-position" value="2" />
+
+<input type="hidden" name="3087-position" value="3" />
+
+<input type="hidden" name="3088-position" value="4" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Διαβάστε το κείμενο και επιλέξτε μία τις παρακάτω επιλογές. Έπειτα πιέστε το πλήκτρο, χρησιμοποιώντας το ποντίκι.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ο σχολικός τροχονόμος είναι μέρος ενός προγράμματος με στόχο την ασφαλή μετάβαση των μαθητών από και προς τα σχολεία. Το πρόγραμμα βασίζεται στην εθελοντική προσφορά και συμμετέχουν οι σύλλογοι γονέων και κηδεμόνων του κάθε σχολείου. Η εκπαίδευση των εθελοντών τροχονόμων γίνεται από την τροχαία. Οι πρώτοι εθελοντές τροχονόμοι αποφασίστηκε να είναι όχι κάποιοι ξένοι αλλά οι μητέρες μαθητών οι οποίες, ντυμένες με ειδικές στολές και κρατώντας ένα σήμα stop, βοηθούν καθημερινά τους μικρούς μαθητές να διασχίζουν με ασφάλεια τους δρόμους έξω από τα σχολεία.<p>Οι σχολικοί τροχονόμοι είναι
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14128" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4090" />
+<div id="prompt">Το κείμενο που διαβάσατε είναι από άρθρο σε εφημερίδα. Επιλέξτε την πρόταση που ταιριάζει σ'  αυτό.</div>
+<div id="radios">
+    
+    <input type="radio" id="2990" name="response" value="2990" />
+    <label for="2990">μαθητές του σχολείου με στολή</label><br />
+    
+    <input type="radio" id="2991" name="response" value="2991" />
+    <label for="2991">δάσκαλοι των μαθητών κρατώντας ένα stop</label><br />
+    
+    <input type="radio" id="2992" name="response" value="2992" />
+    <label for="2992">εθελοντές δάσκαλοι και τροχονόμοι</label><br />
+    
+    <input type="radio" id="2993" name="response" value="2993" />
+    <label for="2993">μητέρες των παιδιών με στολή</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

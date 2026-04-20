@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Folkeafstemning 28. maj<br></b></p><p><b>Et kryds med hjertet<br></b></p><p>Danske vælgere lader i høj grad følelser afgøre, hvor krydset skal sættes ved folkeafstemningen om Amsterdam-traktaten. Det fremgår af en ny Gallup-undersøgelse, som offentliggøres i LO's nyhedsbrev 'Udspil'. Hver femte tilhænger af traktaten lægger vægt på, at Danmark som et lille land ikke kan klare sig uden for EU. Ja-sigerne fremhæver også begreber som fælleskab, medbestemmelse og indflydelse. Omvendt er hver femte modstander af traktaten mest optaget af Danmarks fremtidige indflydelse på beslutninger i EU. Nej'et bliver også begrundet med, at EU grundlæggende er udemokratisk og med ønsket om at bevare dansk kultur. Bliver det ikke et nej, mister Danmark suverænitet, lyder argumentet.<p>(<i>Politiken</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2517" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5308" />
+<div id="prompt">Hvilken holdning er IKKE ja-sigernes, i følge Gallups meningsmåling?</div>
+<div id="radios">
+    
+    <input type="radio" id="6358" name="response" value="6358" />
+    <label for="6358">Europæisk fælleskab er vigtigt.</label><br />
+    
+    <input type="radio" id="6359" name="response" value="6359" />
+    <label for="6359">Medbestemmelse i EU er vigtigt.</label><br />
+    
+    <input type="radio" id="6360" name="response" value="6360" />
+    <label for="6360">Indflydelse i EU er vigtigt.</label><br />
+    
+    <input type="radio" id="6361" name="response" value="6361" />
+    <label for="6361">Som lille land vil Danmark klare sig bedst uden for EU.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Si vous aimez la Bretagne, venez visiter ce petit port traditionnel qui est à la fois un port de pêche, une station balnéaire de charme, un site naturel exceptionnel, un centre d'activités nautiques et également la capitale des huîtres et un rendez-vous gastronomique.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6897" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2438" />
+<div id="prompt">Choisissez la phrase qui correspond le mieux au texte. </div>
+<div id="radios">
+    
+    <input type="radio" id="10511" name="response" value="10511" />
+    <label for="10511">Ce village est un port mais il n&#39;y a pas de plage.</label><br />
+    
+    <input type="radio" id="10512" name="response" value="10512" />
+    <label for="10512">Les poissons  sont la spécialité de ce village.</label><br />
+    
+    <input type="radio" id="10513" name="response" value="10513" />
+    <label for="10513">Il n&#39;est pas possible d&#39;y  faire du bateau à voile.</label><br />
+    
+    <input type="radio" id="10514" name="response" value="10514" />
+    <label for="10514">Il y a de très bons restaurants dans ce village.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

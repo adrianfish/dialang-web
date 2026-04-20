@@ -1,0 +1,63 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Complete la tarea rellenando la(s) casilla(s) vacía(s). Haga clic en la casilla para que aparezca una lista de opciones. Escoja su respuesta haciendo clic en ella.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3809" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Il brano è tratto da un racconto di Sandra Petrignani
+Ho sempre avuto una fiducia cieca nelle cose. Per questo non credo agli oroscopi. Le ragazze della mia età generalmente ci credono. La prima cosa che corrono a leggere aprendo il giornale è l'oroscopo. Ma io interpreto i segni concreti della vita, gli oggetti che incrocio con lo sguardo, i fatti che accadono. Quando si ha fiducia nelle cose, succede questo: non ci si affida alle premonizioni, alle coincidenze. Si valuta ciò che di concreto capita intorno. Si vedono righe sul volto di una persona e se ne deduce che è vecchia. Quando si ha fiducia nelle cose, soltanto nelle cose, non nelle idee, nelle fantasie, nei rapporti segreti che s'intrecciano sotterraneamente tra questo e quello, ci si comporta come faccio io. Come ho fatto io, fino a ora. Per diciotto anni. Dall'anno scorso almeno, quando è successo qualcosa di terribile che ancora mi dà gli incubi. Mi sveglia nel cuore della notte con il ricordo, mi sveglia l'immagine del sogno che porta i ricordi. E ho paura. Che le cose mi abbiano tradito, che potrebbero tradirmi ancora. <select name="1875-response"><option></option><option value="7732">Mia madre aveva l'abitudine di sgridarmi perché rientravo tardi la sera.</option><option value="7733">Quando si ha fiducia nelle cose si va sempre diritto, senza farsi impigliare nelle piccole cose.</option><option value="7734">Da qualche anno, da quando avevo lasciato il liceo, non trovavo più l'ebbrezza dell'incontro con gli amici.</option><option value="7735">Ero stata rimandata a settembre in greco.</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="1875-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

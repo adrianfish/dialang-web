@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                FEST FOR FLERE FESTLIGE KARI-ER<p>Det er blitt for få jenter i verden som heter Kari. Tre Kari-er i Knarvik i Lindås i Hordaland har tenkt å gjøre noe med det. På Karis navnedag den 25. november skal de holde en stor fest for festlige Kari-er. Da skal de feire navnet sitt og legge opp en strategi for å få flere foreldre til å gi datteren navnet Kari. I 1940 var Kari på 3. plass over populære navn i Norge. I 1997 fikk bare 65 jenter dette fornavnet.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7843" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3065" />
+<div id="prompt">Hva får vi vite om navnet "Kari"?</div>
+<div id="radios">
+    
+    <input type="radio" id="11601" name="response" value="11601" />
+    <label for="11601">Det er blitt mindre vanlig blant norske barn.</label><br />
+    
+    <input type="radio" id="11602" name="response" value="11602" />
+    <label for="11602">Stadig flere barn i Norge får dette navnet.</label><br />
+    
+    <input type="radio" id="11603" name="response" value="11603" />
+    <label for="11603">Det er det mest uvanlige navn i Norge.</label><br />
+    
+    <input type="radio" id="11604" name="response" value="11604" />
+    <label for="11604">Navnedagen blir alltid feiret med en fest.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Sie wollen frei über Ihre Zeit verfügen. Sie wollen selbst entscheiden, wann Sie zum Tanzunterricht gehen. Sie möchten alle Tanzlehrer des Tanzstudios kennenlernen und sich den Kurs so zusammenbauen, wie Sie es wünschen. Sie möchten Ihre Lerngeschwindigkeit selbst bestimmen, sich das Lernen leicht und angenehm machen und auch viele neue Gesichter kennenlernen. Sie möchten selbst bestimmen, wann der Kurs beginnt. Wählen Sie dann das "freie System"!<p>(Prospekt des Estudio Sudamerica, Berlin)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6516" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2774" />
+<div id="prompt">Was ist richtig?<br /><br />"Freies System" heißt ...</div>
+<div id="radios">
+    
+    <input type="radio" id="10079" name="response" value="10079" />
+    <label for="10079">freie Wahl des Tanzes, den man lernen will.</label><br />
+    
+    <input type="radio" id="10080" name="response" value="10080" />
+    <label for="10080">freie Wahl des Tanzstudios.</label><br />
+    
+    <input type="radio" id="10081" name="response" value="10081" />
+    <label for="10081">freie Wahl von Zeit und Lehrern.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                "Defronte era o bilhar, forrado de couro moderno trazido por Jones Bull, onde, por entre as ramagens verde-garrafa, esvoaçavam cegonhas prateadas. E, ao lado, achava-se o fumoir, a sala mais cómoda do Ramalhete: as otomanas tinham a fofa vastidão dos leitos; e o conchego quente, e um pouco sombrio dos estofos escarlates e pretos era alegrado pelas cores cantantes de velhas faianças holandesas" (Eça de Queirós, OS MAIAS)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4779" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4432" />
+<div id="prompt">Seleccione a opção correcta.</div>
+<div id="radios">
+    
+    <input type="radio" id="8588" name="response" value="8588" />
+    <label for="8588">As velhas faianças holandesas tinham cores alegres.</label><br />
+    
+    <input type="radio" id="8589" name="response" value="8589" />
+    <label for="8589">As velhas faianças holandesas eram sombrias.</label><br />
+    
+    <input type="radio" id="8590" name="response" value="8590" />
+    <label for="8590">As velhas faianças holandesas eram brancas.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

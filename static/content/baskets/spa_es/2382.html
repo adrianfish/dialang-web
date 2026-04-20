@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Lokalavis på lydbånd<br></b></p><p>Et gratis tilbud til blinde, svagtseende, ordblinde og andre borgere i København, som har svært ved at læse.<p>LYDAVISEN udkommer på kassettebånd på 90 minutters varighed og sendes ud med posten en gang om ugen.<p>Båndet indeholder dels stof fra lokalaviserne, dels artikler af mere generel interesse for hele byen.<p>Du kan tilmelde dig lydavisen hos<p><b>KKB-LYD<br></b></p><p><b>Lyrskovgade 2, 1. sal<br></b></p><p><b>1758 København V<br></b></p><p><b>Telefon 33 24 42 54<br></b></p><p>mandag - fredag kl. 10 -14, eller på dit lokale bibliotek<p>(<i>Københavns Kommunes Biblioteker</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2382" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3366" />
+<div id="prompt">Hvilken af følgende påstande er rigtig?</div>
+<div id="radios">
+    
+    <input type="radio" id="5676" name="response" value="5676" />
+    <label for="5676">Man skal hente lydavisen på posthuset hver uge.</label><br />
+    
+    <input type="radio" id="5677" name="response" value="5677" />
+    <label for="5677">Man skal selv hente lydavisen i Lyrskovgade hver uge.</label><br />
+    
+    <input type="radio" id="5678" name="response" value="5678" />
+    <label for="5678">Man skal hente lydavisen på sit lokale bibliotek hver uge.</label><br />
+    
+    <input type="radio" id="5679" name="response" value="5679" />
+    <label for="5679">Man får lydavisen tilsendt hver uge.</label><br />
+    
+    <input type="radio" id="5680" name="response" value="5680" />
+    <label for="5680">Man skal hente lydavisen hos lokalavisen hver uge.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

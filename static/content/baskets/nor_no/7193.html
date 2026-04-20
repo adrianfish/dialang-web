@@ -1,0 +1,79 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Velg ett av svaralternativene under, og klikk på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7193" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3531" />
+<div id="prompt">Du har skrevet en ansøgning om et job du er næsten sikker på at få. Hvilken af de følgende afslutninger er mest dristig?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="10691" name="response" value="10691" />
+    <label for="10691">I håb om et positivt svar, 
+venlig hilsen...</label><br />
+    
+    <input type="radio" id="10692" name="response" value="10692" />
+    <label for="10692">Kort sagt er jeg efter egen vurdering som skræddersyet til stillingen.
+Med venlig hilsen...</label><br />
+    
+    <input type="radio" id="10693" name="response" value="10693" />
+    <label for="10693">I håb om at komme i betragtning ved besættelsen af ovennævnte stilling,
+Med venlig hilsen...</label><br />
+    
+    <input type="radio" id="10694" name="response" value="10694" />
+    <label for="10694">Jeg håber at høre nærmere og kan træffes hjemme inden kl. 8.30 og efter kl. 17.00.
+Med venlig hilsen...</label><br />
+    
+    <input type="radio" id="10695" name="response" value="10695" />
+    <label for="10695">Jeg går ud fra at jeg kommer i betragtning ved besættelsen af stillingen.
+Med venlig hilsen...</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

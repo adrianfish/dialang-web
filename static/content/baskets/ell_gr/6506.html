@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Διαβάστε το κείμενο και επιλέξτε μία τις παρακάτω επιλογές. Έπειτα πιέστε το πλήκτρο, χρησιμοποιώντας το ποντίκι.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                "Ab morgen wird alles anders - Wege aus der Alkoholabhängigkeit"<p>"Wenn Essen zur Sucht wird"<p>"1001 tolle Tips für Haushalt, Küche, Garten"<p>"Keine Angst vor Krebs"
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6506" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2771" />
+<div id="prompt">In welcher Abteilung einer Buchhandlung finden Sie diese Bücher? <br /></div>
+<div id="radios">
+    
+    <input type="radio" id="10071" name="response" value="10071" />
+    <label for="10071">Abenteuerromane</label><br />
+    
+    <input type="radio" id="10072" name="response" value="10072" />
+    <label for="10072">Ratgeber/Sachbücher</label><br />
+    
+    <input type="radio" id="10073" name="response" value="10073" />
+    <label for="10073">Kinderbücher</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

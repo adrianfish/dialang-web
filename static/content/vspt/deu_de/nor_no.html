@@ -1,0 +1,1097 @@
+          <script>
+
+            var answered = {
+              
+              '001221':false,
+              
+              '001266':false,
+              
+              '001296':false,
+              
+              '001258':false,
+              
+              '001252':false,
+              
+              '001253':false,
+              
+              '001270':false,
+              
+              '001289':false,
+              
+              '001236':false,
+              
+              '001275':false,
+              
+              '001264':false,
+              
+              '001265':false,
+              
+              '001231':false,
+              
+              '001297':false,
+              
+              '001229':false,
+              
+              '001209':false,
+              
+              '001256':false,
+              
+              '001259':false,
+              
+              '001234':false,
+              
+              '001282':false,
+              
+              '001203':false,
+              
+              '001292':false,
+              
+              '001269':false,
+              
+              '001273':false,
+              
+              '001233':false,
+              
+              '001298':false,
+              
+              '001240':false,
+              
+              '001277':false,
+              
+              '001249':false,
+              
+              '001254':false,
+              
+              '001274':false,
+              
+              '001278':false,
+              
+              '001288':false,
+              
+              '001239':false,
+              
+              '001215':false,
+              
+              '001204':false,
+              
+              '001220':false,
+              
+              '001287':false,
+              
+              '001241':false,
+              
+              '001243':false,
+              
+              '001267':false,
+              
+              '001211':false,
+              
+              '001294':false,
+              
+              '001284':false,
+              
+              '001232':false,
+              
+              '001210':false,
+              
+              '001218':false,
+              
+              '001201':false,
+              
+              '001255':false,
+              
+              '001276':false,
+              
+              '001226':false,
+              
+              '001263':false,
+              
+              '001207':false,
+              
+              '001246':false,
+              
+              '001242':false,
+              
+              '001261':false,
+              
+              '001228':false,
+              
+              '001237':false,
+              
+              '001227':false,
+              
+              '001245':false,
+              
+              '001224':false,
+              
+              '001299':false,
+              
+              '001225':false,
+              
+              '001279':false,
+              
+              '001248':false,
+              
+              '001214':false,
+              
+              '001290':false,
+              
+              '001223':false,
+              
+              '001205':false,
+              
+              '001283':false,
+              
+              '001235':false,
+              
+              '001257':false,
+              
+              '001250':false,
+              
+              '001222':false,
+              
+              '001216':false,
+              
+            };
+
+          </script>
+          <h1>Einstufungstest</h1>
+          <img src="/images/true.gif"/> = Ja <img src="/images/false.gif"/> = Nein
+          <form id="vsptform" action="/scorevspt" method="POST">
+            <input type="hidden" name="al" value="deu_de"/>
+            <input type="hidden" name="tl" value="nor_no"/>
+            <input type="hidden" id="cheatlevel" name="cheatlevel" value="zero"/>
+            
+            <div id="vspt-table">
+              
+              <div>
+                <div>
+                  <label for="001221_correct">
+                    <input class="valid-button word correct" id="001221_correct" type="radio" name="word:001221" value="valid"/>
+                    <img id="001221_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001221_incorrect">
+                    <input class="invalid-button word incorrect" id="001221_incorrect" type="radio" name="word:001221" value="invalid"/>
+                    <img id="001221_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å hindre
+                </div>
+                <div>
+                  <label for="001266_correct">
+                    <input class="valid-button word incorrect" id="001266_correct" type="radio" name="word:001266" value="valid"/>
+                    <img id="001266_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001266_incorrect">
+                    <input class="invalid-button word correct" id="001266_incorrect" type="radio" name="word:001266" value="invalid"/>
+                    <img id="001266_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å flimse
+                </div>
+                <div>
+                  <label for="001296_correct">
+                    <input class="valid-button word correct" id="001296_correct" type="radio" name="word:001296" value="valid"/>
+                    <img id="001296_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001296_incorrect">
+                    <input class="invalid-button word incorrect" id="001296_incorrect" type="radio" name="word:001296" value="invalid"/>
+                    <img id="001296_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å knytte
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001258_correct">
+                    <input class="valid-button word correct" id="001258_correct" type="radio" name="word:001258" value="valid"/>
+                    <img id="001258_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001258_incorrect">
+                    <input class="invalid-button word incorrect" id="001258_incorrect" type="radio" name="word:001258" value="invalid"/>
+                    <img id="001258_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å somle
+                </div>
+                <div>
+                  <label for="001252_correct">
+                    <input class="valid-button word correct" id="001252_correct" type="radio" name="word:001252" value="valid"/>
+                    <img id="001252_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001252_incorrect">
+                    <input class="invalid-button word incorrect" id="001252_incorrect" type="radio" name="word:001252" value="invalid"/>
+                    <img id="001252_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å forringe
+                </div>
+                <div>
+                  <label for="001253_correct">
+                    <input class="valid-button word correct" id="001253_correct" type="radio" name="word:001253" value="valid"/>
+                    <img id="001253_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001253_incorrect">
+                    <input class="invalid-button word incorrect" id="001253_incorrect" type="radio" name="word:001253" value="invalid"/>
+                    <img id="001253_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å feile
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001270_correct">
+                    <input class="valid-button word incorrect" id="001270_correct" type="radio" name="word:001270" value="valid"/>
+                    <img id="001270_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001270_incorrect">
+                    <input class="invalid-button word correct" id="001270_incorrect" type="radio" name="word:001270" value="invalid"/>
+                    <img id="001270_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å strymse
+                </div>
+                <div>
+                  <label for="001289_correct">
+                    <input class="valid-button word incorrect" id="001289_correct" type="radio" name="word:001289" value="valid"/>
+                    <img id="001289_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001289_incorrect">
+                    <input class="invalid-button word correct" id="001289_incorrect" type="radio" name="word:001289" value="invalid"/>
+                    <img id="001289_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å lostre
+                </div>
+                <div>
+                  <label for="001236_correct">
+                    <input class="valid-button word correct" id="001236_correct" type="radio" name="word:001236" value="valid"/>
+                    <img id="001236_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001236_incorrect">
+                    <input class="invalid-button word incorrect" id="001236_incorrect" type="radio" name="word:001236" value="invalid"/>
+                    <img id="001236_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å destillere
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001275_correct">
+                    <input class="valid-button word incorrect" id="001275_correct" type="radio" name="word:001275" value="valid"/>
+                    <img id="001275_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001275_incorrect">
+                    <input class="invalid-button word correct" id="001275_incorrect" type="radio" name="word:001275" value="invalid"/>
+                    <img id="001275_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å hakre
+                </div>
+                <div>
+                  <label for="001264_correct">
+                    <input class="valid-button word correct" id="001264_correct" type="radio" name="word:001264" value="valid"/>
+                    <img id="001264_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001264_incorrect">
+                    <input class="invalid-button word incorrect" id="001264_incorrect" type="radio" name="word:001264" value="invalid"/>
+                    <img id="001264_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å samordne
+                </div>
+                <div>
+                  <label for="001265_correct">
+                    <input class="valid-button word correct" id="001265_correct" type="radio" name="word:001265" value="valid"/>
+                    <img id="001265_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001265_incorrect">
+                    <input class="invalid-button word incorrect" id="001265_incorrect" type="radio" name="word:001265" value="invalid"/>
+                    <img id="001265_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å bulke
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001231_correct">
+                    <input class="valid-button word correct" id="001231_correct" type="radio" name="word:001231" value="valid"/>
+                    <img id="001231_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001231_incorrect">
+                    <input class="invalid-button word incorrect" id="001231_incorrect" type="radio" name="word:001231" value="invalid"/>
+                    <img id="001231_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å rømme
+                </div>
+                <div>
+                  <label for="001297_correct">
+                    <input class="valid-button word incorrect" id="001297_correct" type="radio" name="word:001297" value="valid"/>
+                    <img id="001297_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001297_incorrect">
+                    <input class="invalid-button word correct" id="001297_incorrect" type="radio" name="word:001297" value="invalid"/>
+                    <img id="001297_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å skjogge
+                </div>
+                <div>
+                  <label for="001229_correct">
+                    <input class="valid-button word correct" id="001229_correct" type="radio" name="word:001229" value="valid"/>
+                    <img id="001229_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001229_incorrect">
+                    <input class="invalid-button word incorrect" id="001229_incorrect" type="radio" name="word:001229" value="invalid"/>
+                    <img id="001229_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å formilde
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001209_correct">
+                    <input class="valid-button word incorrect" id="001209_correct" type="radio" name="word:001209" value="valid"/>
+                    <img id="001209_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001209_incorrect">
+                    <input class="invalid-button word correct" id="001209_incorrect" type="radio" name="word:001209" value="invalid"/>
+                    <img id="001209_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å gondere
+                </div>
+                <div>
+                  <label for="001256_correct">
+                    <input class="valid-button word correct" id="001256_correct" type="radio" name="word:001256" value="valid"/>
+                    <img id="001256_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001256_incorrect">
+                    <input class="invalid-button word incorrect" id="001256_incorrect" type="radio" name="word:001256" value="invalid"/>
+                    <img id="001256_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å bo
+                </div>
+                <div>
+                  <label for="001259_correct">
+                    <input class="valid-button word correct" id="001259_correct" type="radio" name="word:001259" value="valid"/>
+                    <img id="001259_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001259_incorrect">
+                    <input class="invalid-button word incorrect" id="001259_incorrect" type="radio" name="word:001259" value="invalid"/>
+                    <img id="001259_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å tyte
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001234_correct">
+                    <input class="valid-button word incorrect" id="001234_correct" type="radio" name="word:001234" value="valid"/>
+                    <img id="001234_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001234_incorrect">
+                    <input class="invalid-button word correct" id="001234_incorrect" type="radio" name="word:001234" value="invalid"/>
+                    <img id="001234_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å gjæmse
+                </div>
+                <div>
+                  <label for="001282_correct">
+                    <input class="valid-button word incorrect" id="001282_correct" type="radio" name="word:001282" value="valid"/>
+                    <img id="001282_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001282_incorrect">
+                    <input class="invalid-button word correct" id="001282_incorrect" type="radio" name="word:001282" value="invalid"/>
+                    <img id="001282_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å fletre
+                </div>
+                <div>
+                  <label for="001203_correct">
+                    <input class="valid-button word correct" id="001203_correct" type="radio" name="word:001203" value="valid"/>
+                    <img id="001203_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001203_incorrect">
+                    <input class="invalid-button word incorrect" id="001203_incorrect" type="radio" name="word:001203" value="invalid"/>
+                    <img id="001203_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å vokse
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001292_correct">
+                    <input class="valid-button word correct" id="001292_correct" type="radio" name="word:001292" value="valid"/>
+                    <img id="001292_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001292_incorrect">
+                    <input class="invalid-button word incorrect" id="001292_incorrect" type="radio" name="word:001292" value="invalid"/>
+                    <img id="001292_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å slutte
+                </div>
+                <div>
+                  <label for="001269_correct">
+                    <input class="valid-button word incorrect" id="001269_correct" type="radio" name="word:001269" value="valid"/>
+                    <img id="001269_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001269_incorrect">
+                    <input class="invalid-button word correct" id="001269_incorrect" type="radio" name="word:001269" value="invalid"/>
+                    <img id="001269_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å flånde
+                </div>
+                <div>
+                  <label for="001273_correct">
+                    <input class="valid-button word correct" id="001273_correct" type="radio" name="word:001273" value="valid"/>
+                    <img id="001273_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001273_incorrect">
+                    <input class="invalid-button word incorrect" id="001273_incorrect" type="radio" name="word:001273" value="invalid"/>
+                    <img id="001273_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å fortrenge
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001233_correct">
+                    <input class="valid-button word incorrect" id="001233_correct" type="radio" name="word:001233" value="valid"/>
+                    <img id="001233_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001233_incorrect">
+                    <input class="invalid-button word correct" id="001233_incorrect" type="radio" name="word:001233" value="invalid"/>
+                    <img id="001233_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å spindre
+                </div>
+                <div>
+                  <label for="001298_correct">
+                    <input class="valid-button word correct" id="001298_correct" type="radio" name="word:001298" value="valid"/>
+                    <img id="001298_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001298_incorrect">
+                    <input class="invalid-button word incorrect" id="001298_incorrect" type="radio" name="word:001298" value="invalid"/>
+                    <img id="001298_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å skumme
+                </div>
+                <div>
+                  <label for="001240_correct">
+                    <input class="valid-button word correct" id="001240_correct" type="radio" name="word:001240" value="valid"/>
+                    <img id="001240_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001240_incorrect">
+                    <input class="invalid-button word incorrect" id="001240_incorrect" type="radio" name="word:001240" value="invalid"/>
+                    <img id="001240_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å flamme
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001277_correct">
+                    <input class="valid-button word correct" id="001277_correct" type="radio" name="word:001277" value="valid"/>
+                    <img id="001277_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001277_incorrect">
+                    <input class="invalid-button word incorrect" id="001277_incorrect" type="radio" name="word:001277" value="invalid"/>
+                    <img id="001277_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å minske
+                </div>
+                <div>
+                  <label for="001249_correct">
+                    <input class="valid-button word correct" id="001249_correct" type="radio" name="word:001249" value="valid"/>
+                    <img id="001249_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001249_incorrect">
+                    <input class="invalid-button word incorrect" id="001249_incorrect" type="radio" name="word:001249" value="invalid"/>
+                    <img id="001249_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å bevege
+                </div>
+                <div>
+                  <label for="001254_correct">
+                    <input class="valid-button word incorrect" id="001254_correct" type="radio" name="word:001254" value="valid"/>
+                    <img id="001254_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001254_incorrect">
+                    <input class="invalid-button word correct" id="001254_incorrect" type="radio" name="word:001254" value="invalid"/>
+                    <img id="001254_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å støkre
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001274_correct">
+                    <input class="valid-button word correct" id="001274_correct" type="radio" name="word:001274" value="valid"/>
+                    <img id="001274_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001274_incorrect">
+                    <input class="invalid-button word incorrect" id="001274_incorrect" type="radio" name="word:001274" value="invalid"/>
+                    <img id="001274_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å likne
+                </div>
+                <div>
+                  <label for="001278_correct">
+                    <input class="valid-button word incorrect" id="001278_correct" type="radio" name="word:001278" value="valid"/>
+                    <img id="001278_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001278_incorrect">
+                    <input class="invalid-button word correct" id="001278_incorrect" type="radio" name="word:001278" value="invalid"/>
+                    <img id="001278_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å fantere
+                </div>
+                <div>
+                  <label for="001288_correct">
+                    <input class="valid-button word correct" id="001288_correct" type="radio" name="word:001288" value="valid"/>
+                    <img id="001288_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001288_incorrect">
+                    <input class="invalid-button word incorrect" id="001288_incorrect" type="radio" name="word:001288" value="invalid"/>
+                    <img id="001288_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å repetere
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001239_correct">
+                    <input class="valid-button word incorrect" id="001239_correct" type="radio" name="word:001239" value="valid"/>
+                    <img id="001239_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001239_incorrect">
+                    <input class="invalid-button word correct" id="001239_incorrect" type="radio" name="word:001239" value="invalid"/>
+                    <img id="001239_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å bevæske
+                </div>
+                <div>
+                  <label for="001215_correct">
+                    <input class="valid-button word correct" id="001215_correct" type="radio" name="word:001215" value="valid"/>
+                    <img id="001215_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001215_incorrect">
+                    <input class="invalid-button word incorrect" id="001215_incorrect" type="radio" name="word:001215" value="invalid"/>
+                    <img id="001215_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å prate
+                </div>
+                <div>
+                  <label for="001204_correct">
+                    <input class="valid-button word correct" id="001204_correct" type="radio" name="word:001204" value="valid"/>
+                    <img id="001204_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001204_incorrect">
+                    <input class="invalid-button word incorrect" id="001204_incorrect" type="radio" name="word:001204" value="invalid"/>
+                    <img id="001204_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å forløse
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001220_correct">
+                    <input class="valid-button word correct" id="001220_correct" type="radio" name="word:001220" value="valid"/>
+                    <img id="001220_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001220_incorrect">
+                    <input class="invalid-button word incorrect" id="001220_incorrect" type="radio" name="word:001220" value="invalid"/>
+                    <img id="001220_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å utgi
+                </div>
+                <div>
+                  <label for="001287_correct">
+                    <input class="valid-button word correct" id="001287_correct" type="radio" name="word:001287" value="valid"/>
+                    <img id="001287_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001287_incorrect">
+                    <input class="invalid-button word incorrect" id="001287_incorrect" type="radio" name="word:001287" value="invalid"/>
+                    <img id="001287_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å distribuere
+                </div>
+                <div>
+                  <label for="001241_correct">
+                    <input class="valid-button word incorrect" id="001241_correct" type="radio" name="word:001241" value="valid"/>
+                    <img id="001241_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001241_incorrect">
+                    <input class="invalid-button word correct" id="001241_incorrect" type="radio" name="word:001241" value="invalid"/>
+                    <img id="001241_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å skane
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001243_correct">
+                    <input class="valid-button word correct" id="001243_correct" type="radio" name="word:001243" value="valid"/>
+                    <img id="001243_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001243_incorrect">
+                    <input class="invalid-button word incorrect" id="001243_incorrect" type="radio" name="word:001243" value="invalid"/>
+                    <img id="001243_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å buldre
+                </div>
+                <div>
+                  <label for="001267_correct">
+                    <input class="valid-button word correct" id="001267_correct" type="radio" name="word:001267" value="valid"/>
+                    <img id="001267_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001267_incorrect">
+                    <input class="invalid-button word incorrect" id="001267_incorrect" type="radio" name="word:001267" value="invalid"/>
+                    <img id="001267_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å pendle
+                </div>
+                <div>
+                  <label for="001211_correct">
+                    <input class="valid-button word correct" id="001211_correct" type="radio" name="word:001211" value="valid"/>
+                    <img id="001211_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001211_incorrect">
+                    <input class="invalid-button word incorrect" id="001211_incorrect" type="radio" name="word:001211" value="invalid"/>
+                    <img id="001211_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å rive
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001294_correct">
+                    <input class="valid-button word correct" id="001294_correct" type="radio" name="word:001294" value="valid"/>
+                    <img id="001294_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001294_incorrect">
+                    <input class="invalid-button word incorrect" id="001294_incorrect" type="radio" name="word:001294" value="invalid"/>
+                    <img id="001294_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å lade
+                </div>
+                <div>
+                  <label for="001284_correct">
+                    <input class="valid-button word incorrect" id="001284_correct" type="radio" name="word:001284" value="valid"/>
+                    <img id="001284_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001284_incorrect">
+                    <input class="invalid-button word correct" id="001284_incorrect" type="radio" name="word:001284" value="invalid"/>
+                    <img id="001284_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å smiltre
+                </div>
+                <div>
+                  <label for="001232_correct">
+                    <input class="valid-button word incorrect" id="001232_correct" type="radio" name="word:001232" value="valid"/>
+                    <img id="001232_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001232_incorrect">
+                    <input class="invalid-button word correct" id="001232_incorrect" type="radio" name="word:001232" value="invalid"/>
+                    <img id="001232_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å skåkke
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001210_correct">
+                    <input class="valid-button word correct" id="001210_correct" type="radio" name="word:001210" value="valid"/>
+                    <img id="001210_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001210_incorrect">
+                    <input class="invalid-button word incorrect" id="001210_incorrect" type="radio" name="word:001210" value="invalid"/>
+                    <img id="001210_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å dominere
+                </div>
+                <div>
+                  <label for="001218_correct">
+                    <input class="valid-button word incorrect" id="001218_correct" type="radio" name="word:001218" value="valid"/>
+                    <img id="001218_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001218_incorrect">
+                    <input class="invalid-button word correct" id="001218_incorrect" type="radio" name="word:001218" value="invalid"/>
+                    <img id="001218_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å brøsse
+                </div>
+                <div>
+                  <label for="001201_correct">
+                    <input class="valid-button word incorrect" id="001201_correct" type="radio" name="word:001201" value="valid"/>
+                    <img id="001201_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001201_incorrect">
+                    <input class="invalid-button word correct" id="001201_incorrect" type="radio" name="word:001201" value="invalid"/>
+                    <img id="001201_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å snilse
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001255_correct">
+                    <input class="valid-button word correct" id="001255_correct" type="radio" name="word:001255" value="valid"/>
+                    <img id="001255_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001255_incorrect">
+                    <input class="invalid-button word incorrect" id="001255_incorrect" type="radio" name="word:001255" value="invalid"/>
+                    <img id="001255_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å pile
+                </div>
+                <div>
+                  <label for="001276_correct">
+                    <input class="valid-button word incorrect" id="001276_correct" type="radio" name="word:001276" value="valid"/>
+                    <img id="001276_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001276_incorrect">
+                    <input class="invalid-button word correct" id="001276_incorrect" type="radio" name="word:001276" value="invalid"/>
+                    <img id="001276_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å smyrre
+                </div>
+                <div>
+                  <label for="001226_correct">
+                    <input class="valid-button word incorrect" id="001226_correct" type="radio" name="word:001226" value="valid"/>
+                    <img id="001226_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001226_incorrect">
+                    <input class="invalid-button word correct" id="001226_incorrect" type="radio" name="word:001226" value="invalid"/>
+                    <img id="001226_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å spulte
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001263_correct">
+                    <input class="valid-button word correct" id="001263_correct" type="radio" name="word:001263" value="valid"/>
+                    <img id="001263_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001263_incorrect">
+                    <input class="invalid-button word incorrect" id="001263_incorrect" type="radio" name="word:001263" value="invalid"/>
+                    <img id="001263_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å offentliggjøre
+                </div>
+                <div>
+                  <label for="001207_correct">
+                    <input class="valid-button word correct" id="001207_correct" type="radio" name="word:001207" value="valid"/>
+                    <img id="001207_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001207_incorrect">
+                    <input class="invalid-button word incorrect" id="001207_incorrect" type="radio" name="word:001207" value="invalid"/>
+                    <img id="001207_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å kamuflere
+                </div>
+                <div>
+                  <label for="001246_correct">
+                    <input class="valid-button word correct" id="001246_correct" type="radio" name="word:001246" value="valid"/>
+                    <img id="001246_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001246_incorrect">
+                    <input class="invalid-button word incorrect" id="001246_incorrect" type="radio" name="word:001246" value="invalid"/>
+                    <img id="001246_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å oppsøke
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001242_correct">
+                    <input class="valid-button word correct" id="001242_correct" type="radio" name="word:001242" value="valid"/>
+                    <img id="001242_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001242_incorrect">
+                    <input class="invalid-button word incorrect" id="001242_incorrect" type="radio" name="word:001242" value="invalid"/>
+                    <img id="001242_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å tåle
+                </div>
+                <div>
+                  <label for="001261_correct">
+                    <input class="valid-button word correct" id="001261_correct" type="radio" name="word:001261" value="valid"/>
+                    <img id="001261_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001261_incorrect">
+                    <input class="invalid-button word incorrect" id="001261_incorrect" type="radio" name="word:001261" value="invalid"/>
+                    <img id="001261_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å anslå
+                </div>
+                <div>
+                  <label for="001228_correct">
+                    <input class="valid-button word correct" id="001228_correct" type="radio" name="word:001228" value="valid"/>
+                    <img id="001228_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001228_incorrect">
+                    <input class="invalid-button word incorrect" id="001228_incorrect" type="radio" name="word:001228" value="invalid"/>
+                    <img id="001228_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å forenkle
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001237_correct">
+                    <input class="valid-button word correct" id="001237_correct" type="radio" name="word:001237" value="valid"/>
+                    <img id="001237_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001237_incorrect">
+                    <input class="invalid-button word incorrect" id="001237_incorrect" type="radio" name="word:001237" value="invalid"/>
+                    <img id="001237_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å stille
+                </div>
+                <div>
+                  <label for="001227_correct">
+                    <input class="valid-button word correct" id="001227_correct" type="radio" name="word:001227" value="valid"/>
+                    <img id="001227_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001227_incorrect">
+                    <input class="invalid-button word incorrect" id="001227_incorrect" type="radio" name="word:001227" value="invalid"/>
+                    <img id="001227_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å dumpe
+                </div>
+                <div>
+                  <label for="001245_correct">
+                    <input class="valid-button word incorrect" id="001245_correct" type="radio" name="word:001245" value="valid"/>
+                    <img id="001245_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001245_incorrect">
+                    <input class="invalid-button word correct" id="001245_incorrect" type="radio" name="word:001245" value="invalid"/>
+                    <img id="001245_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å nåkke
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001224_correct">
+                    <input class="valid-button word incorrect" id="001224_correct" type="radio" name="word:001224" value="valid"/>
+                    <img id="001224_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001224_incorrect">
+                    <input class="invalid-button word correct" id="001224_incorrect" type="radio" name="word:001224" value="invalid"/>
+                    <img id="001224_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å skjelke
+                </div>
+                <div>
+                  <label for="001299_correct">
+                    <input class="valid-button word incorrect" id="001299_correct" type="radio" name="word:001299" value="valid"/>
+                    <img id="001299_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001299_incorrect">
+                    <input class="invalid-button word correct" id="001299_incorrect" type="radio" name="word:001299" value="invalid"/>
+                    <img id="001299_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å frane
+                </div>
+                <div>
+                  <label for="001225_correct">
+                    <input class="valid-button word correct" id="001225_correct" type="radio" name="word:001225" value="valid"/>
+                    <img id="001225_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001225_incorrect">
+                    <input class="invalid-button word incorrect" id="001225_incorrect" type="radio" name="word:001225" value="invalid"/>
+                    <img id="001225_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å moralisere
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001279_correct">
+                    <input class="valid-button word correct" id="001279_correct" type="radio" name="word:001279" value="valid"/>
+                    <img id="001279_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001279_incorrect">
+                    <input class="invalid-button word incorrect" id="001279_incorrect" type="radio" name="word:001279" value="invalid"/>
+                    <img id="001279_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å dekke
+                </div>
+                <div>
+                  <label for="001248_correct">
+                    <input class="valid-button word incorrect" id="001248_correct" type="radio" name="word:001248" value="valid"/>
+                    <img id="001248_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001248_incorrect">
+                    <input class="invalid-button word correct" id="001248_incorrect" type="radio" name="word:001248" value="invalid"/>
+                    <img id="001248_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å kyne
+                </div>
+                <div>
+                  <label for="001214_correct">
+                    <input class="valid-button word correct" id="001214_correct" type="radio" name="word:001214" value="valid"/>
+                    <img id="001214_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001214_incorrect">
+                    <input class="invalid-button word incorrect" id="001214_incorrect" type="radio" name="word:001214" value="invalid"/>
+                    <img id="001214_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å lokke
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001290_correct">
+                    <input class="valid-button word correct" id="001290_correct" type="radio" name="word:001290" value="valid"/>
+                    <img id="001290_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001290_incorrect">
+                    <input class="invalid-button word incorrect" id="001290_incorrect" type="radio" name="word:001290" value="invalid"/>
+                    <img id="001290_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å subbe
+                </div>
+                <div>
+                  <label for="001223_correct">
+                    <input class="valid-button word correct" id="001223_correct" type="radio" name="word:001223" value="valid"/>
+                    <img id="001223_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001223_incorrect">
+                    <input class="invalid-button word incorrect" id="001223_incorrect" type="radio" name="word:001223" value="invalid"/>
+                    <img id="001223_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å sikle
+                </div>
+                <div>
+                  <label for="001205_correct">
+                    <input class="valid-button word correct" id="001205_correct" type="radio" name="word:001205" value="valid"/>
+                    <img id="001205_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001205_incorrect">
+                    <input class="invalid-button word incorrect" id="001205_incorrect" type="radio" name="word:001205" value="invalid"/>
+                    <img id="001205_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å lekke
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001283_correct">
+                    <input class="valid-button word incorrect" id="001283_correct" type="radio" name="word:001283" value="valid"/>
+                    <img id="001283_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001283_incorrect">
+                    <input class="invalid-button word correct" id="001283_incorrect" type="radio" name="word:001283" value="invalid"/>
+                    <img id="001283_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å fjemme
+                </div>
+                <div>
+                  <label for="001235_correct">
+                    <input class="valid-button word correct" id="001235_correct" type="radio" name="word:001235" value="valid"/>
+                    <img id="001235_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001235_incorrect">
+                    <input class="invalid-button word incorrect" id="001235_incorrect" type="radio" name="word:001235" value="invalid"/>
+                    <img id="001235_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å prikke
+                </div>
+                <div>
+                  <label for="001257_correct">
+                    <input class="valid-button word correct" id="001257_correct" type="radio" name="word:001257" value="valid"/>
+                    <img id="001257_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001257_incorrect">
+                    <input class="invalid-button word incorrect" id="001257_incorrect" type="radio" name="word:001257" value="invalid"/>
+                    <img id="001257_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å referere
+                </div>
+              </div>
+              
+              <div>
+                <div>
+                  <label for="001250_correct">
+                    <input class="valid-button word correct" id="001250_correct" type="radio" name="word:001250" value="valid"/>
+                    <img id="001250_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001250_incorrect">
+                    <input class="invalid-button word incorrect" id="001250_incorrect" type="radio" name="word:001250" value="invalid"/>
+                    <img id="001250_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å anbefale
+                </div>
+                <div>
+                  <label for="001222_correct">
+                    <input class="valid-button word correct" id="001222_correct" type="radio" name="word:001222" value="valid"/>
+                    <img id="001222_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001222_incorrect">
+                    <input class="invalid-button word incorrect" id="001222_incorrect" type="radio" name="word:001222" value="invalid"/>
+                    <img id="001222_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å melde
+                </div>
+                <div>
+                  <label for="001216_correct">
+                    <input class="valid-button word correct" id="001216_correct" type="radio" name="word:001216" value="valid"/>
+                    <img id="001216_correct_image" src="/images/true.gif" />
+                  </label>
+                  <label for="001216_incorrect">
+                    <input class="invalid-button word incorrect" id="001216_incorrect" type="radio" name="word:001216" value="invalid"/>
+                    <img id="001216_incorrect_image" src="/images/false.gif" />
+                  </label>
+                  å ramle
+                </div>
+              </div>
+              
+            </div>
+            <input id="vspt-send-button" type="button" value="Antworten abschicken" disabled/>
+          </form>
+          <div id="confirm-send-dialog" class="dialang-dialog" title="">
+            <div class="dialang-dialog-content">
+              <p>Antworten abschicken?</p>
+              <div id="confirmation-button-table">
+                <div>
+                  <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                  <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                </div>
+                <div>
+                  <div>Ja</div><div>Nein</div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+            <div class="dialang-dialog-content">
+              <p>Warnung: Wenn Sie den Einschätzungstest überspringen, könnten Sie einen Test erhalten, der zu schwer oder zu leicht für Sie ist.&lt;br/&gt;&lt;br/&gt;Sind Sie sicher, dass Sie den Einschätzungstest überspringen möchten?</p>
+              <div id="confirmation-button-table">
+                <div>
+                  <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                  <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                </div>
+                <div>
+                  <div>Ja</div><div>Nein</div>
+                </div>
+              </div>
+            </div>
+          </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1712" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3891" />
+<div id="prompt">Näet lehdessä puhelinyhtiön työpaikkailmoituksen. Päätät kirjoittaa hakemuksen, koska työ kiinnostaa sinua. Miten aloitat hakemuksen?</div>
+<div id="radios">
+    
+    <input type="radio" id="4245" name="response" value="4245" />
+    <label for="4245">Viitaten lehdessä 12.2. olleeseen ilmoitukseenne haen vapaana olevaa puhelinteknikon paikkaa.</label><br />
+    
+    <input type="radio" id="4246" name="response" value="4246" />
+    <label for="4246">Pyydän, että otatte minut työpaikkaanne, josta ilmoititte lehdessä 12.2.</label><br />
+    
+    <input type="radio" id="4247" name="response" value="4247" />
+    <label for="4247">Haluan tulla teille töihin. Näin ilmoituksen lehdessä 12.2.</label><br />
+    
+    <input type="radio" id="4248" name="response" value="4248" />
+    <label for="4248">Arvoisa toimitusjohtaja, olen työtön ja tarvitsen työtä. Näin ilmoituksenne 12.2.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

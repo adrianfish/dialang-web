@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Smelltu á hvern flipa svo að þú sjáir öll atriðin í smáprófunum. Lestu textann og veldu EINN af valmöguleikunum. Smelltu svo á hnappinn með músinni. Reyndu við ÖLL atriðin áður en þú ýtir á framflettihnappinn.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                NOVEDADES BIBLIOGRÁFICAS<p>Las exigencias de la vida moderna, tanto en el mundo laboral como personal, provocan en nosotros situaciones de estrés. Para combatirlo de forma natural acaba de salir "El libro completo de la relajación y sus técnicas". En él encontrarás <b>un montón de terapias y técnicas básicas para relajarte</b> en función de los síntomas que tengas y del tiempo de que dispongas para practicarlas.<p>EDITORIAL HISPANO EUROPEA. 3.950 ptas
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11260" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25049-tab"><a href="#tabs-930"></a></li>
+        
+        <li id="25050-tab"><a href="#tabs-931"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-930">
+        <div id="prompt">Lea el texto y marque la  opción que corresponda a la información <br />marcada en negrita.</div>
+        <div id="radios">
+            
+            <input type="radio" id="468" basketid="" name="930-response" value="468" />
+            <label for="468">muchas terapias y técnicas de relajación</label><br />
+            
+            <input type="radio" id="469" basketid="" name="930-response" value="469" />
+            <label for="469">algunas terapias y técnicas de relación</label><br />
+            
+            <input type="radio" id="470" basketid="" name="930-response" value="470" />
+            <label for="470">bastantes terapias y  técnicas de relación</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-931">
+        <div id="prompt">Lea el texto y marque la opción que corresponda a :<br /> "¿A qué ayuda el libro?"</div>
+        <div id="radios">
+            
+            <input type="radio" id="471" basketid="" name="931-response" value="471" />
+            <label for="471">a relajar los síntomas que tengas</label><br />
+            
+            <input type="radio" id="472" basketid="" name="931-response" value="472" />
+            <label for="472">a luchar contra el estrés</label><br />
+            
+            <input type="radio" id="473" basketid="" name="931-response" value="473" />
+            <label for="473">a relajarse de forma natural</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="930-position" value="1"/><br />
+
+<input type="hidden" name="931-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "930",
+        
+        "931",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

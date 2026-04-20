@@ -1,0 +1,68 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">L'exercice consiste à remplir le(s) trou(s). Cliquez sur la case pour afficher la liste des réponses, puis choisissez votre réponse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="13135" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>mittwochs, 20:00-21:30 Uhr, Raum 5
+Aktuelle Landeskunde(Konversationskurs)
+<select name="2933-response"><option></option><option value="2427">An dem Kurs können alle Interessenten teilnehmen, die bereits gute Sprachkenntnisse besitzen.</option><option value="2428">Der Kurs ist für Teilnehmer gedacht, die die Sprache schon recht gut beherrschen.</option><option value="2429">Der Kurs richtet sich an Teilnehmer, die bereits über gute Grundkenntnisse verfügen.</option><option value="2430">Kommen Sie ruhig vorbei, wenn Sie der Kurs irgendwie interessiert und Sie schon toll sprechen können.</option></select> 
+<select name="2934-response"><option></option><option value="2431">Artikel aus den Bereichen Politik und Wirtschaft werden Gegenstand unserer Diskussion sein.</option><option value="2432">Wir diskutieren über ausgewählte Artikel aus Politik und Wirtschaft.</option><option value="2433">Wir führen angeregte Gespräche, in denen wir über Themen aus Politik und Wirtschaft plaudern.</option><option value="2434">Wir lesen zusammen Zeitungsartikel zu Themen aus Politik und Wirtschaft und diskutieren darüber.</option></select> 
+Das Arbeitsmaterial wird zur Verfügung gestellt.</span>
+</div> 
+
+
+<input type="hidden" name="2933-position" value="1" />
+
+<input type="hidden" name="2934-position" value="2" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

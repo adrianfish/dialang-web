@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tekst 1<p>- Christelijke consumenten in Nederland kunnen een steentje bijdragen aan de zondagsrust van hun winkelier.<p>-  De onlangs opgerichte stichting 'Diakonia' heeft een nieuw spaarsysteem ontwikkeld. Deelnemers kopen een spaarpas waarmee ze alleen terecht kunnen bij ondernemers die op zondag dicht zijn.<p>- De kopers van zo'n pasje sparen niet voor zichzelf maar kiezen een ideële stichting uit die dan een percentage van het aankoopbedrag krijgt.  De  Stichting Diakona schat in dat ongeveer 300.000 mensen de zondagsrust zo belangrijk vinden dat zij meedoen.<p>Tekst 2<p>- Christelijke consumenten in Nederland kunnen een steentje bijdragen aan de zondagsrust van hun winkelier.<p>- De kopers van zo'n pasje sparen niet voor zichzelf maar kiezen een ideële stichting uit die dan een percentage van het aankoopbedrag krijgt.  De  Stichting Diakona schat in dat ongeveer 300.000 mensen de zondagsrust zo belangrijk vinden dat zij meedoen.<p>- De onlangs opgerichte stichting 'Diakonia' heeft een nieuw spaarsysteem ontwikkeld. Deelnemers kopen een spaarpas waarmee ze alleen terecht kunnen bij ondernemers die op zondag dicht zijn.<p>Tekst 3<p>- De kopers van zo'n pasje sparen niet voor zichzelf maar kiezen een ideële stichting uit die dan een percentage van het aankoopbedrag krijgt.  De  Stichting Diakona schat in dat ongeveer 300.000 mensen de zondagsrust zo belangrijk vinden dat zij meedoen.<p>- Christelijke consumenten in Nederland kunnen een steentje bijdragen aan de zondagsrust van hun winkelier.<p>- De onlangs opgerichte stichting 'Diakonia' heeft een nieuw spaarsysteem ontwikkeld. Deelnemers kopen een spaarpas waarmee ze alleen terecht kunnen bij ondernemers die op zondag dicht zijn.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3508" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1007" />
+<div id="prompt">In welke tekst staan de zinnen in de juiste volgorde?</div>
+<div id="radios">
+    
+    <input type="radio" id="7522" name="response" value="7522" />
+    <label for="7522">Tekst 1</label><br />
+    
+    <input type="radio" id="7523" name="response" value="7523" />
+    <label for="7523">Tekst 2</label><br />
+    
+    <input type="radio" id="7524" name="response" value="7524" />
+    <label for="7524">Tekst 3</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

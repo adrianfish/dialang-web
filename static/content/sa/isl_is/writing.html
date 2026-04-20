@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '12':false,
+                        
+                        '13':false,
+                        
+                        '14':false,
+                        
+                        '17':false,
+                        
+                        '18':false,
+                        
+                        '19':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '33':false,
+                        
+                        '35':false,
+                        
+                    };
+
+                </script>
+                <h1>Sjálfsmat - ritun</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="isl_is"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Já</td><td>Nei</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Ég get skrifað einföld stök orðasambönd og setningar.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Ég get skrifað stutt einfalt póstkort.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Ég get gefið stuttar og beinar lýsingar á atburðum og athöfnum.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="12_valid" type="radio" name="statement:12" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="12_invalid" type="radio" name="statement:12" value="no"/></td>
+                            <td>Ég get lýst fjölskyldu minni, lífsskilyrðum, menntun og núverandi eða síðasta starfi mínu.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="13_valid" type="radio" name="statement:13" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="13_invalid" type="radio" name="statement:13" value="no"/></td>
+                            <td>Ég get lýst fyrri viðfangsefnum og reynslu minni.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Ég get skrifað mjög stuttar skýrslur sem koma til skila venjubundnum staðreyndaupplýsingum og greina frá ástæðum gjörða minna.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>Ég get lýst ófyrirsjáanlegum atburðum í grundvallaratriðum, t.d. slysi.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="18_valid" type="radio" name="statement:18" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="18_invalid" type="radio" name="statement:18" value="no"/></td>
+                            <td>Ég get lýst draumum, vonum og væntingum.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="19_valid" type="radio" name="statement:19" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="19_invalid" type="radio" name="statement:19" value="no"/></td>
+                            <td>Ég get tekið við skilaboðum sem lýsa fyrirspurnum, vandamálum o.þ.h.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>Ég get í stuttu máli tilgreint ástæður og gefið skýringar á skoðunum, áformum og gjörðum.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Ég get útskýrt skoðun á málefni sem er efst á baugi og sagt kost og löst á ýmsum möguleikum.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>Ég get leitt fram rök og tilgreint ástæður sem mæla með eða móti tiltekinni skoðun.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Ég get metið mismunandi hugmyndir og lausnir á vandamáli.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Ég get velt fyrir mér orsökum, afleiðingum og upphugsuðum aðstæðum.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Ég get útfært og stutt skoðanir að nokkru marki með hliðstæðum og viðeigandi dæmum í alllöngu máli.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>Ég get gefið skýrar nákvæmar lýsingar á flóknum málum.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>Ég get búið til viðeigandi, rökréttan texta sem auðveldar lesandanum að finna mikilvæg atriði.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Ég get alltaf skrifað án þess að nota orðabók.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Skila svörum" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Viltu skila svörum?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir sleppa sjálfsmatinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

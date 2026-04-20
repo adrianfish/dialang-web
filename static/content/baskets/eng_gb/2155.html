@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Abena is 19 jaar. Ze wil wel iets op een kantoor gaan doen maar ze weet nog niet wat. Ze wil een algemene opleiding gaan doen. <p><b>Advertentie A<br></b></p><p>Administratief assistent(e)<p>De correspondentie voeren, telefoontjes afhandelen, kopiëren, de post verzorgen en licht boekhoudkundig werk doen. Daaruit bestaat in grote lijnen je werk als administratief assistent(e). Behalve de basisprincipes van het boekhouden, zul je iets moeten weten van archiveren, tekstverwerking, correspondentie en handel. Al die onderwerpen vind je terug in deze opleiding. Je kunt hem afronden met een erkend  examen, waarna je je in diverse richtingen verder kunt ontwikkelen. Vind je het prettig om met cijfers om te gaan, dan kies je een vervolgopleiding in boekhoudkundige richting. Ligt je voorkeur bij de kantoorwerkzaamheden, dan is een vervolgopleiding als receptioniste-telefoniste of junior-secretaresse een prima keuze. Je hebt geen specifieke vooropleiding nodig.<p>12 mnd x fl 75,- roosternr. A 4005<p><b>Advertentie B<br></b></p><p>Receptioniste-telefoniste, inclusief tekstverwerking<p>Natuurlijk, als receptioniste-telefoniste ontvang je bezoekers en neem je de telefoon aan. Maar daar blijft het niet bij. Afhankelijk van het bedrijf of de organisatie waar je werkt, komen daar nog diverse andere taken bij. In veel (kleinere) bedrijven verzorg je ook de post en bedien je de fax. En in elk bedrijf speel je een rol in de beveiliging. Je houdt bij wie  er aanwezig zijn, verzorgt bezoekerspasjes enz. Kortom, een afwisselende baan. En precies die afwisseling vind je terug in deze opleiding. De receptioniste wordt vaak het visitekaartje van het bedrijf genoemd. Je bent immers de eerste persoon binnen de organisatie waarmee buitenstaanders te maken krijgen.<p>In het vak presentatie en representatie wordt aan dat aspect alle aandacht besteed. Verder leer je allerlei telefonische uitdrukkingen in het Duits, Engels en Frans. Je uitspraak oefen je via cassettes. En uiteraard leer je ook omgaan met de computer. Voor dit onderdeel doe je apart examen bij de VSLM. De andere vakken kun je afronden met een erkend examen. VBO/MAVO-vooropleiding vereist.<p>13 mnd x Fl 75,- roosternr. A 4000 B
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2155" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="718" />
+<div id="prompt">Op welke advertentie kan Abena het beste reageren?</div>
+<div id="radios">
+    
+    <input type="radio" id="5243" name="response" value="5243" />
+    <label for="5243">Op advertentie A.</label><br />
+    
+    <input type="radio" id="5244" name="response" value="5244" />
+    <label for="5244">Op advertentie B.</label><br />
+    
+    <input type="radio" id="5245" name="response" value="5245" />
+    <label for="5245">Op geen van beide advertenties.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

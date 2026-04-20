@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Διαβάστε το κείμενο και επιλέξτε μία τις παρακάτω επιλογές. Έπειτα πιέστε το πλήκτρο, χρησιμοποιώντας το ποντίκι.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <p align=center>Efter 14 år som koncernchef<p align=center> fratræder<p align=center><b>Niels Jensen<br></b></p><p align=center>ved udgangen af maj måned.<p align=center>I den anledning inviterer<p align=center>vi til reception<p align=center>onsdag den 27. maj</p><p align=center>mellem kl. 13 og 15<p align=center>om bord på<p align=center>m.s. QUEEN...<p align=center><p align=center><b>Ole Lund</b>, <p align=center>salgskonsulent i vores Serviceafdeling <p align=center>kan den 18. maj fejre 60 års fødselsdag.<p align=center>Det bliver fejret med åbent hus <p align=center>for familie, venner og forretningsforbindelser, <p align=center>på dagen fra kl. 7.00 til 10.00 på privatadressen:...<p align=center><p align=center>Salgschef <b>Kurt Hansen</b> <p align=center>har ønsket at gå på efterløn, <p align=center>og derfor inviterer vi forretningsforbindelser og venner til afskedsreception<p align=center>fredag den 15. maj kl. 11.00-13.00<p align=center>på selskabets adresse:...<p align=center>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2463" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3372" />
+<div id="prompt">Hvilken medarbejder fortsætter i firmaet?</div>
+<div id="radios">
+    
+    <input type="radio" id="5876" name="response" value="5876" />
+    <label for="5876">Kurt Hansen</label><br />
+    
+    <input type="radio" id="5877" name="response" value="5877" />
+    <label for="5877">Ole Lund</label><br />
+    
+    <input type="radio" id="5878" name="response" value="5878" />
+    <label for="5878">Niels Jensen</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

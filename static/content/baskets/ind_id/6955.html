@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bacalah teks, dan pilih salah satu pilihan di bawah ini, kemudian pres tombol dengan menggunakan tetikus.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Si ce dimanche, vous vous promenez près du Cap Gris-Nez, allez faire un petit tour à Cran aux Oeufs, petit hameau tranquille mais qui vous surprendra.<p>En effet, dans ce petit village, les boîtes aux lettres et surtout les compteurs en plastique blanc de l'EDF, qui ne sont pas très esthétiques, ont été décorés par un peintre inspiré par son environnement. Ce peintre a demandé l'accord du maire ainsi que l'accord des propriétaires des boîtes aux lettres.<p>Il ne choisit pas n'importe quel sujet pour décorer ces boîtes aux lettres ou compteurs; il adapte sa peinture à la personnalité du propriétaire: des canards sur un étang pour un pêcheur, un paysage sous-marin pour un plongeur, etc. Espérons que ces mini-tableaux résisteront à la pluie et au vent.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6955" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2445" />
+<div id="prompt">Qu'est-ce qui est intéressant dans ce village?</div>
+<div id="radios">
+    
+    <input type="radio" id="10567" name="response" value="10567" />
+    <label for="10567">Il y a des étangs avec des canards sauvages.</label><br />
+    
+    <input type="radio" id="10568" name="response" value="10568" />
+    <label for="10568">Il y a un peintre très original.</label><br />
+    
+    <input type="radio" id="10569" name="response" value="10569" />
+    <label for="10569">Il y a un marché aux oeufs organisé chaque dimanche.</label><br />
+    
+    <input type="radio" id="10570" name="response" value="10570" />
+    <label for="10570">Le maire du village est peintre.</label><br />
+    
+    <input type="radio" id="10571" name="response" value="10571" />
+    <label for="10571">II y a un centre de plongée sous-marine.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

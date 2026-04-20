@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Hai avuto un litigio con un tuo caro amico. Avevi fatto una festa e avevi diramato gli inviti per telefono. A casa del tuo amico aveva risposto la sorella a cui tu avevi lasciato il messaggio, ma la ragazza ha dimenticato di riferire l'ambasciata. Poiché a parole non siete riusciti a chiarirvi, hai deciso di scrivergli un biglietto in cui spiegare le tue ragioni con un maggior numero di argomentazioni. <p>A) Caro Giorgio,<p>poiché ieri non siamo riusciti a capirci, ti scrivo per ripeterti che non avevo nessuna intenzione di escluderti dalla mia festa. Non so perché non mi vuoi credere. Spero che l'episodio possa essere dimenticato e che possiamo tornare ad  essere amici come prima.<p>Ciao<p>                          Massimo<p>B)  Caro Giorgio,<p>mi dispiace di averti involontariamente offeso. L'altro giorno eri molto irritato e non ho voluto insistere. Ma ti prego di riflettere su questo: perché avrei telefonato a casa tua se, come dici tu, avessi voluto escluderti? Anche tua sorella non ha negato di aver ricevuto la mia telefonata. E allora? Se per qualche motivo non ti avessi voluto, avrei potuto tranquillamente non farti sapere niente. Sai bene che nessuno dei partecipanti a questa festa aveva con te rapporti di intimità tali da venirti a riferire qualcosa.<p>Mi auguro che a mente fresca tu ripensi all'accaduto e possiamo tornare ad essere amici come prima.<p>Ciao<p>                           Massimo<p>C)  Caro amico,<p>mi dispiace di avere involontariamente turbato la nostra amicizia. Mi auguro che tu voglia riflettere su una questione che ti ho già esposto l'altro giorno: quale motivazione avrei avuto per telefonare a casa tua e riferire il mio messaggio a tua sorella, se non avessi gradito la tua presenza alla festa? In alcun modo saresti venuto a saperlo, perciò avrei potuto tacere. Mi auguro che la nostra amicizia possa uscire vittoriosa da questa prova.<p>I miei più cari saluti<p>                    Massimo<p>D) Gentile Giorgio,<p>sono molto dolente per quanto è capitato tra noi. Vorrei che questo malinteso non fosse mai accaduto. Ti prego di credere che mai avrei voluto darti un dispiacere e che tengo moltissimo alla tua amicizia.<p>Sperando che l'episodio possa essere dimenticato, ti prego di gradire i sensi della mia stima<p>                                                 Massimo
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5040" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1912" />
+<div id="prompt">Quale formula ritieni sia la più adatta al destinatario e all'occasione? <br /></div>
+<div id="radios">
+    
+    <input type="radio" id="8971" name="response" value="8971" />
+    <label for="8971">A) Caro Giorgio, poiché non siamo riusciti a capirci ti scrivo per ripeterti che non avevo intenzione di escluderti dalla mia festa....</label><br />
+    
+    <input type="radio" id="8972" name="response" value="8972" />
+    <label for="8972">B) Caro Giorgio, mi dispiace di averti involontariamente offeso....</label><br />
+    
+    <input type="radio" id="8973" name="response" value="8973" />
+    <label for="8973">C) Caro amico, mi dispiace di avere involontariamente turbato la nostra amicizia......</label><br />
+    
+    <input type="radio" id="8974" name="response" value="8974" />
+    <label for="8974">D) Caro Giorgio, sono molto dolente per quanto è capitato tra noi.....</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

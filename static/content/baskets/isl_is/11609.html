@@ -1,0 +1,68 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Ljúktu við verkefnið með því að fylla í eyðu(r)na(r). Smelltu á reit til þess að fá fram lista yfir valmöguleika. Veldu svarið með því að smella á það.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11609" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Sælar og blessaðar Margrét og Auður.
+Ég vona að ykkur gangi vel. Núna er <select name="4851-response"><option></option><option value="1016">myrkt</option><option value="1017">dimmt</option><option value="1018">stutt</option><option value="1019">ljóst</option></select> og kalt úti, örugglega eins og í Reykjavík. Ég er í bókmenntafræði hér í Vín. <select name="4852-response"><option></option><option value="1020">Sem betur fer</option><option value="1021">Af hverju</option><option value="1022">Því miður</option><option value="1023">Sjálfsagt</option></select> fékk ég ekki styrkinn til að halda áfram í íslensku fyrir útlendinga og veit þess vegna ekki hvenær ég kem aftur til Íslands en ég er <select name="4853-response"><option></option><option value="1024">auk þess</option><option value="1025">þar að auki</option><option value="1026">fyrst og fremst</option><option value="1027">samt</option></select> að reyna að viðhalda íslenskunni með því að lesa íslenskar skáldsögur í lestinni á leiðinni í skólann á hverjum morgni.
+Kveðjur, Karen Olsen.</span>
+</div> 
+
+
+<input type="hidden" name="4851-position" value="1" />
+
+<input type="hidden" name="4852-position" value="2" />
+
+<input type="hidden" name="4853-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

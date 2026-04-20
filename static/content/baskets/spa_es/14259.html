@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Οι μυρωδιές των τροφών μπορούν να σας βοηθήσουν να χάσετε βάρος. Τρεις χιλιάδες υπέρβαροι εθελοντές πήραν μέρος σε εξάμηνη έρευνα και όποτε πεινούσαν εισέπνεαν άρωμα πράσινου μήλου και μπανάνας, χωρίς να αλλάξουν καμιά από τις συνήθειες της καθημερινής τους ζωής στη διατροφή και στην άσκηση. Οι εθελοντές εισέπνεαν τις μυρωδιές αυτές από 18 ως 288 φορές τη μέρα και έχαναν κατά μέσο όρο 2,5 κιλά το μήνα. Οι ευχάριστες μυρωδιές ίσως μειώνουν την επιθυμία για φαγητό κάνοντάς μας να πιστέψουμε ότι δεν πεινούμε πια.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14259" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4102" />
+<div id="prompt">Ποιος τίτλος ταιριάζει στο κείμενο που διαβάσατε;</div>
+<div id="radios">
+    
+    <input type="radio" id="3043" name="response" value="3043" />
+    <label for="3043">Η μυρωδιά του πράσινου μήλου χορταίνει</label><br />
+    
+    <input type="radio" id="3044" name="response" value="3044" />
+    <label for="3044">Οι μυρωδιές που αδυνατίζουν</label><br />
+    
+    <input type="radio" id="3045" name="response" value="3045" />
+    <label for="3045">Οι ευχάριστες μυρωδιές κάνουν καλό</label><br />
+    
+    <input type="radio" id="3046" name="response" value="3046" />
+    <label for="3046">Χάνετε βάρος αναπνένοντας βαθιά</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

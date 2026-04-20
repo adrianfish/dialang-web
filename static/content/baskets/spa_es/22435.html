@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Des bouteilles d'eau en PVC deviennent peintures de sol, d'autres, en polyéthylène, des sacs poubelles. Les vieux pneus ressuscitent en poignées de guidon de vélo, semelles de chaussures, murs antibruit, revêtement de routes ou grandes poubelles noires pas chères. <p>Quant aux vieux vêtements collectés par les associations, s'ils ne peuvent resservir en l'état, ils sont effilochés pour devenir chiffons industriels ou serpillières, cartons épais, sous-couches de moquettes ou de garnitures de coffres de voiture. 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="22435" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2596" />
+<div id="prompt">Quel titre proposé NE CONVIENT PAS pour cet article?</div>
+<div id="radios">
+    
+    <input type="radio" id="5426" name="response" value="5426" />
+    <label for="5426">Le recyclage</label><br />
+    
+    <input type="radio" id="5427" name="response" value="5427" />
+    <label for="5427">Que deviennent nos déchets?</label><br />
+    
+    <input type="radio" id="5428" name="response" value="5428" />
+    <label for="5428">Collectes pour les pauvres</label><br />
+    
+    <input type="radio" id="5429" name="response" value="5429" />
+    <label for="5429">Trions nos déchets</label><br />
+    
+    <input type="radio" id="5430" name="response" value="5430" />
+    <label for="5430">Faire du neuf avec du vieux</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Valitse yksi vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7962" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3618" />
+<div id="prompt">I denne børnehave vil man tit kunne se selv helt små børn stå og male foran et staffeli ude i børnehavens kæmpestore atelier.<br /><br />Hvilken sætning passer bedst i forlængelse af ovenstående tekst-<br />uddrag?</div>
+<div id="radios">
+    
+    <input type="radio" id="11818" name="response" value="11818" />
+    <label for="11818">Her har man derfor valgt en pædagogisk retning, hvor der satses på maleriet.</label><br />
+    
+    <input type="radio" id="11819" name="response" value="11819" />
+    <label for="11819">Det er derfor, man har valgt en pædagogisk retning, hvor der satses på maleriet.</label><br />
+    
+    <input type="radio" id="11820" name="response" value="11820" />
+    <label for="11820">Her har man nemlig valgt en pædagogisk retning, hvor der statses på maleriet.</label><br />
+    
+    <input type="radio" id="11821" name="response" value="11821" />
+    <label for="11821">Der er grunden til, at man har valgt en pædagogisk retning, hvor der statses på maleriet.</label><br />
+    
+    <input type="radio" id="11822" name="response" value="11822" />
+    <label for="11822">Derfor har man nemlig valgt en pædagogisk retning, hvor der satses på maleriet.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

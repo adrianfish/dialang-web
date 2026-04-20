@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Il fumo fa male, anzi: fa malissimo. Fanno male anche i raggi del sole, dicono, e sono nocive le fabbriche, la carne, le automobili, la TV, la vita sedentaria e l'eccesso di movimento, lo stress e la demotivazione.<p>Negli anni del capitalismo rampante si diceva che la malattia del secolo fosse la nevrosi, oggi siamo tutti meglio nutriti e meglio protetti, quindi si dice che la malattia del secolo sia la depressione.<p>Fa male la lotta, fa male la resa, fanno male gli ideali che promuovono sacrifici estremi, e fa male la loro presenza. Fanno male le prepotenze ferine della natura, e fanno male le aggressioni contro la natura.<p>Fa male la fiamma della passione, ma fa male anche l'aridità dei sentimenti. Fa male il tempo, che è una delle sostanze più nocive. Quasi tutto fa malissimo, prima o poi.<p>E allora lasciateci fumare in pace, per favore.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1865" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1774" />
+<div id="prompt">Di che tipo sono le argomentazioni portate a sostegno della tesi?</div>
+<div id="radios">
+    
+    <input type="radio" id="4631" name="response" value="4631" />
+    <label for="4631">Scientifiche.</label><br />
+    
+    <input type="radio" id="4632" name="response" value="4632" />
+    <label for="4632">Emotive.</label><br />
+    
+    <input type="radio" id="4633" name="response" value="4633" />
+    <label for="4633">Neutre.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

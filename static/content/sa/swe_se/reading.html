@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '01':false,
+                        
+                        '03':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '11':false,
+                        
+                        '17':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '31':false,
+                        
+                        '32':false,
+                        
+                        '33':false,
+                        
+                        '34':false,
+                        
+                        '35':false,
+                        
+                        '36':false,
+                        
+                    };
+
+                </script>
+                <h1>Självbedömning - läsförståelse</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="swe_se"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ja </td><td>Nej</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="01_valid" type="radio" name="statement:01" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="01_invalid" type="radio" name="statement:01" value="no"/></td>
+                            <td>Jag kan förstå huvudinnehållet i enkla informativa texter och i korta enkla beskrivningar, särskilt om de innehåller bilder som bidrar till att förklara texten.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Jag kan följa korta enkla skriftliga instruktioner, särskilt om de innehåller bilder.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Jag kan förstå korta enkla meddelanden, t. ex. på vykort.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Jag kan förstå korta enkla texter som är skrivna på vanligt vardagsspråk.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="11_valid" type="radio" name="statement:11" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="11_invalid" type="radio" name="statement:11" value="no"/></td>
+                            <td>Jag kan förstå korta enkla personliga brev.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>Jag kan söka igenom en lång eller flera korta texter för att finna viss information som jag behöver för att utföra en uppgift.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>Jag kan förstå beskrivningar av händelser, känslor och önskemål i personliga brev tillräckligt bra för att kunna brevväxla med en vän eller en bekant.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Jag kan förstå klart formulerade okomplicerade bruksanvisningar.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>Jag kan läsa brev som anknyter till mina intresseområden och lätt förstå den centrala innebörden.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Jag kan snabbt ta mig igenom långa och komplicerade texter och lokalisera relevanta detaljer.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Jag kan inhämta upplysningar och ta del av idéer och åsikter ur mycket specialiserade källor inom mitt område.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>Jag kan förstå artiklar och reportage om aktuella problem i vilka författaren intar en särskild hållning eller har särskilda synpunkter.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Jag kan i detalj förstå ett vitt spektrum av långa komplexa texter förutsatt att jag har möjlighet att läsa om besvärliga passager.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="32_valid" type="radio" name="statement:32" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="32_invalid" type="radio" name="statement:32" value="no"/></td>
+                            <td>I en serie av långa och komplexa texter om samhällsliv, yrkesliv eller från den akademiska världen kan jag uppfatta fina detaljer och även utläsa attityder och åsikter som inte uttryckligen framförs.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>Jag kan förstå all korrespondens genom att vid behov använda ordbok.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="34_valid" type="radio" name="statement:34" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="34_invalid" type="radio" name="statement:34" value="no"/></td>
+                            <td>Jag kan i detalj förstå långa komplexa instruktioner för en ny maskin eller en procedur även utanför mitt specialområde, om jag har möjlighet att läsa om svåra passager.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Jag kan förstå och tolka praktiskt taget alla slag av skrivet språk, även abstrakt, med komplex struktur eller mycket talspråksmässiga litterära eller icke-litterära texter.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="36_valid" type="radio" name="statement:36" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="36_invalid" type="radio" name="statement:36" value="no"/></td>
+                            <td>Jag kan förstå ett brett spektrum av långa komplicerade texter och till fullo förstå nyanser i stil och betydelse som är direkt utsagda eller underförstådda.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Spara dina svar" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Vill du skicka dina svar?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över självbedömningsdelen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

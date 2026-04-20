@@ -1,0 +1,66 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e completa l'esercizio riempendo lo spazio vuoto/gli spazi vuoti. Fai clic sul riquadro per visualizzare tutte le opzioni. Scegli la risposta cliccandoci sopra.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tá rogha agat idir dhá rud, creideamh nó scoláireacht. Sin é a dúirt Best le Gogarty. Don scoláireacht a thug sé tús áite. Bhí tráth dá óige nuair a shíl sé gabháil le saíocht na hÉigipte. Le saíocht agus léann na hÉireann a chuaigh sé, a bhuíochas go háirithe le beirt nárbh Éireannaigh iad, Henri-Marie dArbois de Jubainville agus Kuno Meyer. <p>Casadh R.I.Best agus Kuno Meyer ar a chéile i dtosach ar chomhluadar dinnéir tigh George Coffey i 1903. Dúirt Best leis go raibh sé deacair air an tSean-Ghaeilge a fhoghlaim. San am sin, bhíodh Meyer ag teacht go Baile Átha Cliath ó uair go chéile ar chúram mar léachtóir Todd i dteangacha Ceilteacha faoi choimirce Acadamh Ríoga na hÉireann. Gheall Meyer cabhrú leis sa tSean-Ghaeilge ach seomra agus clár dubh a sholáthar agus tuilleadh beag eile lucht foghlama a bheith in éineacht leis. Dúirt Best go ndéanfadh, ach idir an dá linn, thug Meyer caint uaidh ar Oireachtas Chonradh na Gaeilge ar an riachtanas a bhí le scoil ar léann na Gaeilge a bhunú. Ábhar beag aimsire ina dhiaidh sin, réitigh sé don Ollamh Strachan teacht i leith ó Ollscoil Mhanchain chun cúrsa léachtaí a thabhairt sa tSean-Ghaeilge. Thug Strachan na léachtaí sin in Aula Maxima na hOllscoile i bhFaiche Stiabhna. D'fhreastail dá fhichead lucht foghlama a raibh ar a n-áireamh, Pádraig Mac Piarais. B'shin é tionscnamh Scoil Ard-Léinn na Gaeilge.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8202" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>
+<select name="5146-response"><option></option><option value="12227">Beatha Richard Best</option><option value="12228">Cabhair ó Kuno Meyer</option><option value="12229">Stair na Sean-Ghaeilge</option><option value="12230">Bunú Scoil Ard-Léinn na Gaeilge</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="5146-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

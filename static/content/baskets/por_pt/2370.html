@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Kan du li' at læse?</b> <p>Har du lyst til at læse mere? Har du lyst til at snakke med andre om det du læser?<p>Bibliotekets læseklub mødes en torsdag om måneden fra kl. 19-21. Vi aftaler fra gang til gang hvad vi vil læse.<p>Kontakt biblioteket (32 58 16 14), hvis du vil vide mere.<p>(<i>Arrangementer og aktiviteter, Københavns Kommunes Biblioteker)</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2370" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3364" />
+<div id="prompt">Hvem henvender annoncen sig til?</div>
+<div id="radios">
+    
+    <input type="radio" id="5666" name="response" value="5666" />
+    <label for="5666">unge der har svært ved at læse</label><br />
+    
+    <input type="radio" id="5667" name="response" value="5667" />
+    <label for="5667">børn med læseprobleme</label><br />
+    
+    <input type="radio" id="5668" name="response" value="5668" />
+    <label for="5668">alle der gerne vil mødes og snakke med andre om det de læser</label><br />
+    
+    <input type="radio" id="5669" name="response" value="5669" />
+    <label for="5669">alle der gerne vil lære at læse</label><br />
+    
+    <input type="radio" id="5670" name="response" value="5670" />
+    <label for="5670">studerende der vil lave en læseklub</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

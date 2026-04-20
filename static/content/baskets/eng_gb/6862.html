@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'shortanswer';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and type your answer(s) into the box(es) provided. Check your spelling!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Friedrich Hölderlin<p>* 20.3.1770 Lauffen am Neckar, + 7.6.1843 Tübingen. Sohn eines Klosterpflegers, der früh starb. Die Mutter Pastorentochter. Pietistische Erziehung durch Mutter, Großmutter und Tante. Bis 1784 Schulen in Nürtingen u. Denkendorf. Da zum Theologen bestimmt: Seminar Maulbronn, 1788-1793 Studium am Theol. Seminar Tübingen. Freundschaft mit Hegel und Schelling. Wachsende Abneigung gegen den Pfarrerberuf. 1793 wurde er auf Empfehlung von Schiller Hauslehrer bei Charlotte von Kalb in Waltershausen, Thüringen. 1794 Univ. Jena. 1796 Hauslehrer bei dem Frankfurter Bankier Gontard, schwärmerische Liebe zu dessen Gattin Susette, der "Diotima" seiner Dichtung, die seine Liebe erwiderte. Wegen des Krieges reiste Susette mit ihren Kindern und H. nach Kassel. Gontard erzwang die Trennung der beiden. Stark beeindruckt von der Französischen Revolution. 1797 Begegnung mit Goethe. 1800 Stuttgart und Nürtingen. 1801 Hauslehrer in der Schweiz. 1802 Hauslehrer in Bordeaux; 1802-1804 völlig zerrüttet und krank bei der Mutter. 1804 durch Vermittlung von Isaac von Sinclair, einem langjährigen Freund, Bibliothekar in Homburg. 1806 Heilanstalt Tübingen; seit 1808 in geistiger Umnachtung, seit 1807 in Pflege des Tischlerehepaares Zimmer, wo er bis zu seinem Tode hindämmerte.<p>(Autoren in Wort und Bild, Gütersloh o.J.)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6862" />
+                        <input type="hidden" name="basketType" value="shortanswer" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    
+    <span> </span>
+    <input type="text" name="2794-response" /><br />
+    <input type="hidden" name="2794-position" value="1"/><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

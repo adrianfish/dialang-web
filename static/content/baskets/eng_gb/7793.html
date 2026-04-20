@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Læða brenndist illa er hún hætti lífi sínu til að bjarga fimm mánaða gömlum kettlingum sínum, einum í einu, út úr logandi húsi í New York. Meira en þúsund manns hafa boðist til að taka hana og kettlingana að sér.<p>Slökkviliðsmaður tók eftir læðunni er hann barðist gegn eldinum á föstudag og tók hana og kettlingana með sér á stofnun fyrir flökkudýr. Kettlingarnir voru enn í nokkurri hættu vegna lungnaskaða er síðast fréttist. Feldur móðurinnar brann svo illa að ekki er hægt að greina upprunalega litinn og augu kisu eru illa bólgin.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7793" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4756" />
+<div id="prompt">Hvaða fyrirsögn passar best við þessa grein?</div>
+<div id="radios">
+    
+    <input type="radio" id="11514" name="response" value="11514" />
+    <label for="11514">Flækingskettir vandamál í New York</label><br />
+    
+    <input type="radio" id="11515" name="response" value="11515" />
+    <label for="11515">Kisa sýnir hugrekki</label><br />
+    
+    <input type="radio" id="11516" name="response" value="11516" />
+    <label for="11516">Hræddur slökkviliðsmaður í New York</label><br />
+    
+    <input type="radio" id="11517" name="response" value="11517" />
+    <label for="11517">Eldur í  New York</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

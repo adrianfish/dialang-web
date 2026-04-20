@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ágæti lesandi.<p>Nú fer að styttast í að fyrsta tölublað tímaritsins <i>Lifandi vísindi</i> komi út. Í <b>tilefni</b> þess bjóðum við þér að gerast <b>áhangandi</b> að þessu <b>vandaða</b> tímariti.<p><i>Lifandi vísindum</i> er ætlað að miðla skemmtilegum upplýsingum á skiljanlegu máli um vísindi í <b>víðustu</b> merkingu þess orðs. <p>Pantaðu áskrift strax. Hringdu núna.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="12003" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4938" />
+<div id="prompt">Hvaða orð passar EKKI í textann?</div>
+<div id="radios">
+    
+    <input type="radio" id="1691" name="response" value="1691" />
+    <label for="1691">tilefni</label><br />
+    
+    <input type="radio" id="1692" name="response" value="1692" />
+    <label for="1692">áhangandi</label><br />
+    
+    <input type="radio" id="1693" name="response" value="1693" />
+    <label for="1693">vandaða</label><br />
+    
+    <input type="radio" id="1694" name="response" value="1694" />
+    <label for="1694">víðustu</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

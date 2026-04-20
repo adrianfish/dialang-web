@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Attenzione a El Niño, il terribile e complesso fenomeno naturale, originario del Pacifico; non si può prevedere quali sciagure abbia in serbo per il prossimo futuro. L'S.O.S. è stato lanciato ieri a sorpresa da Ginevra da alcuni dei maggiori esperti mondiali di climatologia. "Ora siamo in grado di poter affermare che le conseguenze dell'episodio di El Niño in corso attualmente non si limiteranno alla zona del Pacifico, ma potranno avere effetti nefasti in tutto il mondo e provocare mutamenti climatici disastrosi" ha dichiarato il presidente dell'Istituto per l'Ambiente degli Stati Uniti.<p>L'allarme è stato lanciato nel corso di una conferenza stampa durante un convegno del Programma mondiale sul clima.<p>Non si può escludere che questa anomalia climatica, originata da correnti d'acqua calda formatasi nelle profondità del Pacifico, sia collegata alle inondazioni recenti nel Nord Europa.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1928" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1804" />
+<div id="prompt">Secondo gli esperti di climatologia quali zone saranno interessate dalle conseguenze del Niño</div>
+<div id="radios">
+    
+    <input type="radio" id="4739" name="response" value="4739" />
+    <label for="4739">La zona del Pacifico.</label><br />
+    
+    <input type="radio" id="4740" name="response" value="4740" />
+    <label for="4740">La Svizzera.</label><br />
+    
+    <input type="radio" id="4741" name="response" value="4741" />
+    <label for="4741">Tutto il mondo.</label><br />
+    
+    <input type="radio" id="4742" name="response" value="4742" />
+    <label for="4742">Il Sud America.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

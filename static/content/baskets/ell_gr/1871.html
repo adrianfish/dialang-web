@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Διαβάστε το κείμενο και επιλέξτε μία τις παρακάτω επιλογές. Έπειτα πιέστε το πλήκτρο, χρησιμοποιώντας το ποντίκι.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tutti conoscono il Louvre. Tutti conoscono la National Gallery di Londra. Ma forse non tutti conoscono il Sara Hildénin Taidmuseum di Tampere, Finlandia. Eppure vi sono conservate opere di Moore, Picasso, Morandi, De Chirico, Léger. E non solo. Sono centinaia i "musei segreti" delle città europee. A loro è dedicato un libro-guida nel quale, paese per paese, sono passate in rassegna tutte le collezioni d'arte aperte al pubblico ma raramente incluse nei tour o nelle visite guidate.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1871" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1778" />
+<div id="prompt">Quale titolo ritieni migliore per la recensione?</div>
+<div id="radios">
+    
+    <input type="radio" id="4645" name="response" value="4645" />
+    <label for="4645">La pittura moderna.</label><br />
+    
+    <input type="radio" id="4646" name="response" value="4646" />
+    <label for="4646">Una guida insolita.</label><br />
+    
+    <input type="radio" id="4647" name="response" value="4647" />
+    <label for="4647">I musei europei.</label><br />
+    
+    <input type="radio" id="4648" name="response" value="4648" />
+    <label for="4648">Un museo  particolare.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Είστε σίγουρος/η ότι θέλετε να παραλείψετε τη γλωσσική εξέταση;</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ναι</div><div>Όχι</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Η απάντησή σας:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Σωστή απάντηση:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Η απάντησή σας:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Σωστή απάντηση:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Σωστές απαντήσεις:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

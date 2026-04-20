@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Το κλιματολογικό φαινόμενο Ελ Νίνιο εμφανίζεται κατά χρονικά διαστήματα δύο ως έξι χρόνων. Πρόκειται για την ανώμαλη υπερθέρμανση των υδάτων του Ειρηνικού Ωκεανού στην τροπική ζώνη, από τις ακτές της Νότιας Αμερικής μέχρι την Ινδονησία. Συνήθως η διάρκεια του φαινομένου κυμαίνεται από 12 ως 18 μήνες και στη συνέχεια ακολουθείται από το αντίθετο φαινόμενο ψύξης των υδάτων, που ονομάζεται Λα Νίνια. Κατά τη διάρκεια  τόσο των θερμών επεισοδίων όσο και των ψυχρών τα ατμοσφαιρικά ρεύματα μεταβάλλονται και προκαλούν ανωμαλίες και σε άλλες ζώνες εκτός απο τις τροπικές. Όταν το φαινόμενο βρίσκεται σε έξαρση τα αποτελέσματά του είναι καταστροφικά εξαιτίας των καταιγίδων ή των πυρκαγιών.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14687" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4112" />
+<div id="prompt">Το άρθρο προέρχεται από ένα</div>
+<div id="radios">
+    
+    <input type="radio" id="3239" name="response" value="3239" />
+    <label for="3239">ειδικό επιστημονικό βιβλίο.</label><br />
+    
+    <input type="radio" id="3240" name="response" value="3240" />
+    <label for="3240">περιοδικό  για μικρούς εξερευνητές.</label><br />
+    
+    <input type="radio" id="3241" name="response" value="3241" />
+    <label for="3241">δελτίο καιρού σε εφημερίδα.</label><br />
+    
+    <input type="radio" id="3242" name="response" value="3242" />
+    <label for="3242">ενημερωτικό φυλλάδιο για εκδρομείς.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

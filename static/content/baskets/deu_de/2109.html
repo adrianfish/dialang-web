@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Juwelier Landsma geeft in de maand mei sfeervolle CD's cadeau. Met dit initiatief worden alle liefdevolle aankopen van sieraden van meer dan honderd gulden bij de juwelier verzekerd van een luisterrijke sfeer. De actie is geinspireerd door de prille liefdes van het voorjaar. Voor veel mensen is het geven van een sieraad, een gouden ring of een horloge de manier om dierbare momenten onvergetelijk te maken. Ook aan oude liefdes gaat het voorjaar niet ongemerkt voorbij. Op zondag is het weer zover: moederdag als gelegenheid om moeder (opnieuw) te plezieren met sieraden. Ieder jaar besluiten steeds meer mensen om van deze dag een heel speciale te maken.<p>Voor vele examenkandidaten is de maand mei een belangrijke periode in hun leven. Niet alleen beeindigen zij hun middelbare-schooltijd, ook bereiken zij de volwassenheid. Deze voor de hele familie spannende periode wordt steeds vaker symbolisch afgesloten met het geven van een sieraad van goud, zilver of diamant. <p>De CD die de geschenken van het voorjaar vergezelt, laat 14 liedjes horen die alle goud, zilver of diamant in de titel hebben. Uitvoeringen van verschillende artiesten, van Spandau Ballet en Aretha Franklin tot Mathilde Santing, zorgen voor een kwaliteits-CD die zijn titel waardig is: 'Juweeltjes van Muziek'.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2109" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="699" />
+<div id="prompt">Welke titel past het best bij deze tekst?</div>
+<div id="radios">
+    
+    <input type="radio" id="5090" name="response" value="5090" />
+    <label for="5090">&#34;Koop een CD&#34;.</label><br />
+    
+    <input type="radio" id="5091" name="response" value="5091" />
+    <label for="5091">&#34;Meimaand sieradenmaand&#34;.</label><br />
+    
+    <input type="radio" id="5092" name="response" value="5092" />
+    <label for="5092">&#34;Uitverkoop van sieraden.&#34;</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

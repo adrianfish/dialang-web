@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Seuraava teksti on mainosteksti. <p><b>VASTAAJA - Peruspalvelu, josta on varmasti hyötyä kaikille!</b><p>Vastaaja vastaa puhelimeesi silloin, kun et ehdi tai tahdo. Saamasi viestit kuuntelet kätevästi soittamalla omaan vastaajanumeroosi. Vastaajaan voit äänittää myös oman tervehdyksesi. Vastaajaa varten et tarvitse mitään erityisiä lisälaitteita ja sen käyttö on todella edullista. Maksat vain kytkentämaksun ja siinä kaikki. Et maksa siis lainkaan kuukausimaksuja! <p>Soitto Suomessa matkapuhelimesta vastaajanumeroon maksaa Sinulle alle markan minuutilta. Vastaajan käyttö on myös turvallista, sillä kukaan muu ei voi käyttää vastaajaasi ilman tunnuslukua. Kun Sinulla on Telen Vastaaja, voit kuunnella saamasi viestit rauhassa ja vastaat saamiisi soittopyyntöihin silloin kun se Sinulle sopii. Olet kuitenkin tavoitettavissa aina. <p>(Lähde: <i>Matkaviesti 3/97</i>) 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1171" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3837" />
+<div id="prompt">Mikä seuraavista väitteistä on oikein?</div>
+<div id="radios">
+    
+    <input type="radio" id="1338" name="response" value="1338" />
+    <label for="1338">Telen vastaajapalvelu maksaa alle markan.</label><br />
+    
+    <input type="radio" id="1339" name="response" value="1339" />
+    <label for="1339">Sinulle tulleita viestejä voi kuunnella kaverin puhelimella, jos tietää oikean tunnusnumeron.</label><br />
+    
+    <input type="radio" id="1340" name="response" value="1340" />
+    <label for="1340">Vastaajan viestejä voi kuunnella kuka tahansa ja milloin tahansa.</label><br />
+    
+    <input type="radio" id="1341" name="response" value="1341" />
+    <label for="1341">Sinun ei tarvitse vastata soittopyyntöihin, jos sinulla on Telen vastaaja.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

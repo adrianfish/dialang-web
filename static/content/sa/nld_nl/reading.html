@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '01':false,
+                        
+                        '03':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '11':false,
+                        
+                        '17':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '31':false,
+                        
+                        '32':false,
+                        
+                        '33':false,
+                        
+                        '34':false,
+                        
+                        '35':false,
+                        
+                        '36':false,
+                        
+                    };
+
+                </script>
+                <h1>Zelfbeoordeling - lezen</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="nld_nl"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Ja</td><td>Nee</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="01_valid" type="radio" name="statement:01" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="01_invalid" type="radio" name="statement:01" value="no"/></td>
+                            <td>Ik kan de hoofdgedachte begrijpen van een eenvoudige informatieve tekst en korte, eenvoudige beschrijvingen, met name als deze plaatjes bevatten ter toelichting.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="03_valid" type="radio" name="statement:03" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="03_invalid" type="radio" name="statement:03" value="no"/></td>
+                            <td>Ik kan korte, eenvoudige geschreven instructies begrijpen, met name als ze plaatjes bevatten.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Ik kan korte, eenvoudige berichten begrijpen, bijvoorbeeld op een briefkaart.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Ik kan korte, eenvoudige geschreven teksten begrijpen die in alledaagse taal geschreven zijn.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="11_valid" type="radio" name="statement:11" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="11_invalid" type="radio" name="statement:11" value="no"/></td>
+                            <td>Ik kan korte, eenvoudige persoonlijke brieven begrijpen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>Ik kan in één lange of  in verschillende korte teksten zoeken naar specifieke informatie die ik nodig heb om een taak uit te voeren.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>Ik kan in persoonlijke brieven de beschrijving van gebeurtenissen, gevoelens and wensen goed genoeg begrijpen om met een vriend of bekende te corresponderen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Ik kan helder gescheven, ongecompliceerde instructies bij een apparaat goed begrijpen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>Ik kan correspondentie met betrekking tot mijn interesses lezen en gemakkelijk de essentie begrijpen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Ik kan snel lange en complexe teksten doorlezen op belangrijke details.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Ik kan informatie, ideeën en meningen ophalen uit zeer gespecialiseerde bronnen binnen mijn vakgebied.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>Ik kan artikelen en rapporten begrijpen over eigentijdse problemen waarin de schrijvers een bepaalde houding of een bepaald standpunt innemen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="31_valid" type="radio" name="statement:31" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="31_invalid" type="radio" name="statement:31" value="no"/></td>
+                            <td>Ik kan een breed scala van lange, complexe teksten in detail begrijpen, als ik de mogelijkheid heb om bepaalde moeilijke passages te herlezen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="32_valid" type="radio" name="statement:32" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="32_invalid" type="radio" name="statement:32" value="no"/></td>
+                            <td>In een scala van lange, complexe teksten uit het sociale, professionele of academische leven, kan ik de subtiele details begrijpen en de houdingen en opvattingen van de schrijver begrijpen die niet expliciet in de tekst staan.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>Ik kan elke vorm van correspondentie begrijpen waarbij ik zo nu en dan het woordenboek gebruik.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="34_valid" type="radio" name="statement:34" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="34_invalid" type="radio" name="statement:34" value="no"/></td>
+                            <td>Ik kan tot in detail lange, complexe instructies begrijpen voor een nieuwe machine of een procedure, zelfs buiten mijn eigen vakgebied, wanneer ik moeilijke passages kan herlezen.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Ik kan bijna alle vormen van schriftelijk taalgebruik begrijpen en interpreteren, waaronder abstracte, qua structuur complexe of zeer informele literaire en niet-literaire teksten.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="36_valid" type="radio" name="statement:36" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="36_invalid" type="radio" name="statement:36" value="no"/></td>
+                            <td>Ik kan een breed scala van lange en complexe teksten begrijpen en daarbij de expliciete en impliciete nuances van stijl en betekenis volledig begrijpen.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Antwoorden ingeven" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Antwoorden insturen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u het onderdeel zelfbeoordeling wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

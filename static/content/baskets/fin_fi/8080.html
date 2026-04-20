@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Valitse yksi vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8080" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2483" />
+<div id="prompt">Dans le texte suivant, une phrase ne convient pas ; laquelle?<br /><br /></div>
+<div id="radios">
+    
+    <input type="radio" id="11998" name="response" value="11998" />
+    <label for="11998">Il faisait beau. Mes cousins et moi-même avions décidé d&#39;aller pique-niquer au bord de la rivière et de pêcher.</label><br />
+    
+    <input type="radio" id="11999" name="response" value="11999" />
+    <label for="11999">Nous sommes partis à bicyclette avec tout notre matériel.</label><br />
+    
+    <input type="radio" id="12000" name="response" value="12000" />
+    <label for="12000">Nous sommes heureux et nous chantons.</label><br />
+    
+    <input type="radio" id="12001" name="response" value="12001" />
+    <label for="12001">Arrivés sur place, nous nous sommes installés et la partie de pêche a commencé.</label><br />
+    
+    <input type="radio" id="12002" name="response" value="12002" />
+    <label for="12002">Qui de nous trois prendrait le plus gros poisson?</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

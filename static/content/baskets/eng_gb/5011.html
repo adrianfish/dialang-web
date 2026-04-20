@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Un'amica ti ha chiesto la ricetta dell'ottimo dolce che ha mangiato a casa tua. Gliela scrivi in fretta:<p><b>Mousse allo yogurt con fragole</b><p>Ingredienti per 4 persone:<p>250 g di yogurt bianco intero,<p>¼  di litro di panna liquida,<p>2 cucchiai colmi di zucchero a velo,<p>1 cucchiaio di zucchero semolato,<p>100 g di latte,<p>400 g di fragole<p>A) Dividete alcune fragole a spicchi e mettetele in una ciotola con lo zucchero semolato. Mettete a bollire il latte e poi lasciatelo freddare e intanto montate la panna a neve. Quando è pronta, versate lo yogurt in una ciotola, unite il latte filtrato, lo zucchero a velo e infine la panna montata. Distribuite la mousse sulle fragole a spicchi e decorate con fragole intere.<p>B) Dividi alcune fragole a spicchi e mettile insieme allo zucchero in una ciotola. Fai  bollire il latte e poi lascialo raffreddare. Monta la panna. Versa poi in una ciotola lo yogurt, il latte filtrato, lo zucchero a velo e la panna montata. Versa questo composto sulle fragole a spicchi e decora con fragole intere. Il dolce basterà per quattro persone.<p>C) Dividere alcune fragole a spicchi e metterle in una ciotola con lo zucchero semolato. Mettere a bollire il latte e poi lasciarlo freddare  piano. Nel frattempo, montare la panna a neve ferma. Quando è pronta, versare lo yogurt in una ciotola, unire il latte filtrato, lo zucchero a velo e infine la panna montata. Distribuire la mousse sulle fragole a spicchi e decorare con fragole intere.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5011" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1900" />
+<div id="prompt">Secondo te, quale delle tre proposte è la meno formale?</div>
+<div id="radios">
+    
+    <input type="radio" id="8940" name="response" value="8940" />
+    <label for="8940">A)</label><br />
+    
+    <input type="radio" id="8941" name="response" value="8941" />
+    <label for="8941">B)</label><br />
+    
+    <input type="radio" id="8942" name="response" value="8942" />
+    <label for="8942">C)</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

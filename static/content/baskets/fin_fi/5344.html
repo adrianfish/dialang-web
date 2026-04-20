@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ba mhaith leat dul chuig an scannán seo, oíche Dé Sathairn le do chara Stiofán.  <p>__________________________________<p> AMHARCLANN AN SPIDÉIL<p> AR LUAS LASRACH<p>ar siúl ag a 8:40 Luan 4ú - Satharn 9ú<p>__________________________________
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5344" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="5070" />
+<div id="prompt">Cén nóta anseo is fearr?</div>
+<div id="radios">
+    
+    <input type="radio" id="9079" name="response" value="9079" />
+    <label for="9079">A Stiofáin, Tá tú ag teacht go dtí an scannán liom oíche Dé Sathairn, ceart go leor?</label><br />
+    
+    <input type="radio" id="9080" name="response" value="9080" />
+    <label for="9080">Dia dhuit! Dé hAoine, in Amharclann an Spidéil ag a 8:40.  Bí ann!</label><br />
+    
+    <input type="radio" id="9081" name="response" value="9081" />
+    <label for="9081">A Stiofáin, ar mhaith leat teacht chuig an scannán &#39;Ar Luas Lasrach&#39; liom oíche Dé Sathairn sa Spidéal?</label><br />
+    
+    <input type="radio" id="9082" name="response" value="9082" />
+    <label for="9082">A Stiofáin, tusa, mise agus scannán oíche Dé Sathairn.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

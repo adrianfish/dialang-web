@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och besvara uppgiften genom att fylla i luckan/luckorna. Klicka i rutan och skriv in ditt svar. Kontrollera stavningen!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Estão os nossos governantes postos em sossego, da conjuntura económica colhendo o doce fruto, tratando de restaurar o orgulho nacional à custa de realizações megalómanas. Segundo o discurso oficial, estamos orgulhosamente acompanhados no "pelotão da frente", na rota certa do Caminho Marítimo para o Paraíso.<p>Não me agrada o papel de Velho do Restelo, mas parece-me que o rumo é outro. Não me entendam mal: gosto da Expo, da Ponte Vasco da Gama e do novo tabuleiro da velha ponte. São realizações importantes que este Governo teve o mérito de concluir. E o dr. Mega Ferreira merece, sem dúvida, os mais rasgados elogios. Mas há um facto que não se está a ter em conta. Para além do visionarismo do dr. Mega e da competência executiva do eng. Ferreira do Amaral, esteve o homem do leme. Goste-se ou não do espécime, as obras fizeram-se porque o professor quis. Nem mais! E, sem quaisquer intenções de desmerecer quem seja, os dois Ferreiras - Amaral e Mega - não foram mais do que os Duartes Pachecos e Antónios Ferros de Cavaco Silva.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5065" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>O professor chama-se <input type="text" name="4455-response" /> .</span>
+</div> 
+
+
+<input type="hidden" name="4455-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

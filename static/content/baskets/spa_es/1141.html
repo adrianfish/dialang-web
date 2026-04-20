@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä ilmoitus on sanomalehdestä.<p align=center>Helsingin kaupunginteatteri<p align=center>TÄNÄÄN<p align=center>Suuri näyttämö<p align=center>19 (-21.55) musiikkinäytelmä<p align=center>KUUHULLUT<p align=center>Enää viisi kertaa!<p align=center>Saman päivän lippu 50 mk<p align=center><p align=center>MACBETH<p align=center>palaa ohjelmistoon 15.10. klo 19<p align=center><p align=center>Liput 394 022
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1141" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3811" />
+<div id="prompt">Mikä on oikein?</div>
+<div id="radios">
+    
+    <input type="radio" id="653" name="response" value="653" />
+    <label for="653">Näytelmä &#34;Kuuhullut&#34; loppuu kymmenen jälkeen.</label><br />
+    
+    <input type="radio" id="654" name="response" value="654" />
+    <label for="654">Huomenna lippu maksaa 50 markkaa.</label><br />
+    
+    <input type="radio" id="655" name="response" value="655" />
+    <label for="655">Voit mennä tänään katsomaan &#34;Macbethiä&#34;.</label><br />
+    
+    <input type="radio" id="656" name="response" value="656" />
+    <label for="656">Voit ostaa/varata lippuja puhelimitse.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

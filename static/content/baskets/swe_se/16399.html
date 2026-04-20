@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klicka på varje flik för att se de olika delarna i uppgiften. Läs texten och välj ETT av svarsalternativen. Klicka sedan på knappen. Försök lösa ALLA deluppgifter innan Du trycker på Gå vidare.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                 Une graine de champion.<p>Connaissez- vous le jeune Simon Dufour ?<p>Il a 19 ans et depuis son enfance, il est à l'aise dans l'eau car ses parents l'emmenaient aux "Bébés nageurs" régulièrement. C'était un enfant plein d'énergie et il fallait lui trouver une activité pour qu'il se dépense. <p>Jusqu'à présent, il a eu de la chance, tout lui a réussi et pourtant il n'a pas eu les meilleures conditions d'entraînement ; souvent c'était après l'école, le soir. <p>En 1996 il remporte son premier titre de champion de France de natation sur 200 m dos à Montpellier.<p>En 1997 il renouvelle l'exploit en défendant admirablement son titre en 2'03''62.Cette même année il participe aux championnats d'Europe Juniors. Il décroche une médaille en terminant troisième du 200 m dos.<p>Cette année, il se trouve en classe terminale scientifique au lycée de Montpellier où il bénéficie d'aménagements d'horaires afin de s'entraîner 2 fois par jour ; non seulement  il s'entraîne en natation mais il fait aussi de la musculation pour progresser.<p>Simon désire participer aux J.O. de Sydney en l'an 2000. Il semble bien l'un des espoirs de la natation française. Mais cela ne lui fait pas perdre la tête. Il continue de prendre la vie du bon côté, tranquillement.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16399" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25101-tab"><a href="#tabs-2651"></a></li>
+        
+        <li id="25102-tab"><a href="#tabs-2652"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2651">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3954" basketid="" name="2651-response" value="3954" />
+            <label for="3954">Il a eu peu d&#39;entraînement.</label><br />
+            
+            <input type="radio" id="3955" basketid="" name="2651-response" value="3955" />
+            <label for="3955">Il a eu de bonnes conditions d&#39;entraînement.</label><br />
+            
+            <input type="radio" id="3956" basketid="" name="2651-response" value="3956" />
+            <label for="3956">Il n&#39;a pas eu de bonnes conditions d&#39;entraînement.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2652">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3957" basketid="" name="2652-response" value="3957" />
+            <label for="3957">Simon participera aux J.O. de Sydney.</label><br />
+            
+            <input type="radio" id="3958" basketid="" name="2652-response" value="3958" />
+            <label for="3958">Simon ne participera pas aux J.O. de Sydney.</label><br />
+            
+            <input type="radio" id="3959" basketid="" name="2652-response" value="3959" />
+            <label for="3959">Simon participera peut-être aux J.O. de Sydney.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2651-position" value="1"/><br />
+
+<input type="hidden" name="2652-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2651",
+        
+        "2652",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

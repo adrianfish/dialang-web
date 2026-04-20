@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Léigh an téacs. Roghnaigh ceann amháin acu thíos agus ansin brúigh ar an gcnaipe leis an luch.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                FAX                                                          Fecha:  18-08-2001  <p>  Hora :10:40<p>  Número de páginas: 1<p>Destinatario: Teresa Sánchez        Remitente: Ana Palacios<p>Teléfono: 96-456-63-67<p>Número de fax: 96-456-63-67<p>Texto:<p>¡Hola Teresa!  <p>   Sentimos mucho no haber ido a tu fiesta de cumpleaños. Tuvimos un problema en casa. Resulta que Antonio, cuando llegó del trabajo, se encontraba fatal y tuvimos que llamar al médico urgentemente.   <p>  Espero que os lo pasarais muy bien y te enviamos<p>    ___________________ .     <p>                                                                             Ana y Antonio
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2338" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="778" />
+<div id="prompt">Marque la opción correcta para completar este texto en el espacio en blanco.</div>
+<div id="radios">
+    
+    <input type="radio" id="5602" name="response" value="5602" />
+    <label for="5602">nuestro más cordial pésame</label><br />
+    
+    <input type="radio" id="5603" name="response" value="5603" />
+    <label for="5603">nuestra más cordial simpatía</label><br />
+    
+    <input type="radio" id="5604" name="response" value="5604" />
+    <label for="5604">nuestra más cordial felicitación</label><br />
+    
+    <input type="radio" id="5605" name="response" value="5605" />
+    <label for="5605">nuestro más cordial deseo</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

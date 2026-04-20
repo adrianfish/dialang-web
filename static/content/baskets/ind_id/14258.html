@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Bacalah teks, dan pilih salah satu pilihan di bawah ini, kemudian pres tombol dengan menggunakan tetikus.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Η αιώνια νεότητα, το βελούδινο δέρμα, το αψεγάδιαστο πρόσωπο ήταν, είναι και θα είναι πάντα το ζητούμενο σε κάθε εποχή και από κάθε άνθρωπο, ιδιαίτερα από τις γυναίκες. Ο χρόνος αφήνει αναπόφευκτα σημάδια, καθώς περνά σηματοδοτώντας το πέρασμά μας στην ωριμότητα. Σε μια ωριμότητα που μας γεμίζει αυτοπεποίθηση, αλλά δε θέλουμε να το δείχνουμε και προσπαθούμε να διατηρηθούμε νέοι με διάφορους τρόπους, όπως προσέχοντας τη διατροφή μας.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14258" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4101" />
+<div id="prompt">Επιλέξτε τον τίτλο που ταιριάζει στο κείμενο που μόλις διαβάσατε.<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="3039" name="response" value="3039" />
+    <label for="3039">Η νεότητα και ωριμότητα ο επιδιωκόμενος συνδυασμός</label><br />
+    
+    <input type="radio" id="3040" name="response" value="3040" />
+    <label for="3040">Πώς ν&#39; αποφύγουμε την ωριμότητα των χρόνων</label><br />
+    
+    <input type="radio" id="3041" name="response" value="3041" />
+    <label for="3041">Ο χρόνος στο πέρασμά του αφήνει τα ίχνη του</label><br />
+    
+    <input type="radio" id="3042" name="response" value="3042" />
+    <label for="3042">Η αυτοπεποίθηση είναι προνόμιο των νέων</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

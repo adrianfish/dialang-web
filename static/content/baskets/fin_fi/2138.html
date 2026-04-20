@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lue teksti ja valitse yksi alla olevista vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Ricco wil een computer kopen. In de krant staat het volgende bericht.<p>Computerdag. Op zaterdag 21 januari houdt computervereniging "Disk" een computerdag in het wijkcentrum. Vanaf 10 uur zullen aan de leden van de vereniging enkele nieuwe computerprogramma's worden gedemonstreerd. 's Middags is er een tweedehands markt. De markt is vrij toegankelijk voor het publiek. De markt gaat open om 14.00 uur, en sluit rond 16.00 uur.<p>Ricco is geen lid van de computervereniging.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2138" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="708" />
+<div id="prompt">Kan Ricco de computerdag bezoeken?</div>
+<div id="radios">
+    
+    <input type="radio" id="5178" name="response" value="5178" />
+    <label for="5178">Ja, &#39;s morgens en &#39;s middags.</label><br />
+    
+    <input type="radio" id="5179" name="response" value="5179" />
+    <label for="5179">Nee, de dag is alleen voor leden.</label><br />
+    
+    <input type="radio" id="5180" name="response" value="5180" />
+    <label for="5180">&#39;s Morgens niet, &#39;s middags wel.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

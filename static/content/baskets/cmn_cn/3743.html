@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Per rispondere alla lettera del 26 ottobre sulla fantascientifica tassazione sul fumo, la proposta avrebbe un senso reale se il lettore avesse fatto alcuni conti.<p>Il malato 50-60enne, affetto da neoplasia polmonare da fumo, costa alla Sanità: tre ricoveri di circa dieci giorni (800.000 al giorno), due cicli di chemioterapia (6 milioni), un eventuale intervento (circa 20 milioni). In totale, 50 milioni, a carico della Sanità. Si consideri che dalla diagnosi al decesso trascorrono dai 9 ai 24 mesi.<p>La medesima persona che invece intelligentemente avesse optato di privarsi del fumo potrebbe superare gli 85 anni di vita e ricevere dall'Inps circa 10 milioni l'anno, per 35 anni, pari a 350 milioni. E' evidente che il costo sociale del fumatore è sette volte inferiore.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3743" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1870" />
+<div id="prompt">Il testo è una lettera a un quotidiano. Qual è l'argomento di fondo?</div>
+<div id="radios">
+    
+    <input type="radio" id="7675" name="response" value="7675" />
+    <label for="7675">Fumare è dannoso alla salute e al portafoglio ed ha un alto costo sociale.</label><br />
+    
+    <input type="radio" id="7676" name="response" value="7676" />
+    <label for="7676">Il costo sociale del fumatore è di circa 50 milioni.</label><br />
+    
+    <input type="radio" id="7677" name="response" value="7677" />
+    <label for="7677">Il costo sociale del fumatore è più basso di quello di un pensionato ottantenne.</label><br />
+    
+    <input type="radio" id="7678" name="response" value="7678" />
+    <label for="7678">Chi fuma è destinato più di altri ad ammalarsi di cancro al polmone.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,119 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klikk på hver boks for å se oppgavene i minitesten. Lytt til innspillingen, og velg ETT av svaralternativene. Klikk så på knappen med musen. Svar på ALLE oppgavene før du klikker på Send-knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/000620.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/000620.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11839" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25070-tab"><a href="#tabs-1670"></a></li>
+        
+        <li id="25071-tab"><a href="#tabs-1671"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-1670">
+        <div id="prompt">Che cosa fa l'utente?</div>
+        <div id="radios">
+            
+            <input type="radio" id="1547" basketid="" name="1670-response" value="1547" />
+            <label for="1547">Chiede informazioni.</label><br />
+            
+            <input type="radio" id="1548" basketid="" name="1670-response" value="1548" />
+            <label for="1548">Richiede dei certificati.</label><br />
+            
+            <input type="radio" id="1549" basketid="" name="1670-response" value="1549" />
+            <label for="1549">Presenta un modulo.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1671">
+        <div id="prompt">Quanti certificati richiede l'utente?</div>
+        <div id="radios">
+            
+            <input type="radio" id="1550" basketid="" name="1671-response" value="1550" />
+            <label for="1550">Uno.</label><br />
+            
+            <input type="radio" id="1551" basketid="" name="1671-response" value="1551" />
+            <label for="1551">Due.</label><br />
+            
+            <input type="radio" id="1552" basketid="" name="1671-response" value="1552" />
+            <label for="1552">Quattro.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="1670-position" value="1"/><br />
+
+<input type="hidden" name="1671-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "1670",
+        
+        "1671",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

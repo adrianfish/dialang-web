@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y escoja una de las opciones abajo indicadas; luego haga clic en el botón con el ratón.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                FIRENZE. Via i jeans. Via i sandaloni. Via anche le cannottiere unte di sudore. Oplà. E via anche le mutande. "Nein, ragazzi no. Le mutande è meglio che ce le teniamo addosso". Grazie, molto gentili. Fate come se foste a casa vostra. Avete caldo e volete fare un bel bagno? Prego, la vasca è qui. In fondo questo è solo Boboli, uno dei giardini e musei più famosi del mondo, una robetta. E anche questa fontana è appena del Seicento. E allora via, tutti in acqua. In mutande, a sguazzare in mezzo ai pesci rossi nell'antica residenza dei Medici. E meno male che il custode li ha beccati! Sei ragazzi austriaci, diciotto anni, a mollo nella Vasca dell'Isola a Boboli. Alle tre del pomeriggio, due giorni fa. Neanche fossero sulla spiaggia di Rimini! E hanno pure investito di insulti il custode: "Che sistema è questo? Ci stavamo solo rinfrescando".
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1959" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1813" />
+<div id="prompt">Per quale motivo nell'articolo il giornalista critica il comportamento di alcuni turisti?</div>
+<div id="radios">
+    
+    <input type="radio" id="4844" name="response" value="4844" />
+    <label for="4844">Per la mancanza di rispetto nei confronti di luoghi e monumenti di grande valore storico.</label><br />
+    
+    <input type="radio" id="4845" name="response" value="4845" />
+    <label for="4845">Per la mancanza di rispetto nei confronti dei pesci rossi delle fontane.</label><br />
+    
+    <input type="radio" id="4846" name="response" value="4846" />
+    <label for="4846">Per aver danneggiato le piante del giardino di Boboli.</label><br />
+    
+    <input type="radio" id="4847" name="response" value="4847" />
+    <label for="4847">Per aver insultato il custode del giardino.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

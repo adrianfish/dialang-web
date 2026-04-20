@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Brúigh ar gach lipéad le míreanna an teistín a fheiceáil. Léigh an téacs agus roghnaigh ceann amháin acu thíos. Ansin brúigh ar an gcnaipe leis an luch. Déan iarracht gach mír a dhéanamh sula mbrúnn tú ar Aghaidh.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Sabrina de Vos<p>Statenlaan 86<p>1000 AA  AMSTERDAM<p>Amsterdam, 17 juli 1996<p>Offo Postorderbedrijf<p>Postbus 13<p>3805 AJ  AMERSFOORT<p>Geachte heer, mevrouw,<p>Twee maanden geleden heb ik een zomerjurk besteld met code 145 CA 09, aat 42, kleur rood, ter waarde van Fl 89,95.<p>Aangezien er in deze jurk een grote scheur zat, heb ik gelijk contact met u opgenomen om dit te melden. U vertelde mij dat u geen andere jurk meer voorradig had. Vervolgens heb ik deze jurk aangetekend teruggestuurd. Bij deze brief vindt u een kopie van het verzendbewijs.<p>Deze week heb ik toch een rekening van u ontvangen om deze jurk te betalen.<p>. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . <p>Met vriendelijke groeten,<p>Sabrina de Vos
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="9161" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25175-tab"><a href="#tabs-686"></a></li>
+        
+        <li id="25176-tab"><a href="#tabs-687"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-686">
+        <div id="prompt">Wat voor soort brief is dit?</div>
+        <div id="radios">
+            
+            <input type="radio" id="12849" basketid="" name="686-response" value="12849" />
+            <label for="12849">Een brief met een speciale aanbieding.</label><br />
+            
+            <input type="radio" id="12850" basketid="" name="686-response" value="12850" />
+            <label for="12850">Een brief om iets te bestellen.</label><br />
+            
+            <input type="radio" id="12851" basketid="" name="686-response" value="12851" />
+            <label for="12851">Een klachtenbrief.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-687">
+        <div id="prompt">De laatste zin in de brief is weggelaten. Daar ziet u stippels (..........).<br />Welke zin moet op de plaats van de stippels staan?<br /></div>
+        <div id="radios">
+            
+            <input type="radio" id="12852" basketid="" name="687-response" value="12852" />
+            <label for="12852">&#34;Ik verzoek u spoedig het openstaande bedrag te betalen.&#34;</label><br />
+            
+            <input type="radio" id="12853" basketid="" name="687-response" value="12853" />
+            <label for="12853">&#34;Ik zal het bedrag van Fl 89,95 spoedig aan u overmaken.&#34;</label><br />
+            
+            <input type="radio" id="12854" basketid="" name="687-response" value="12854" />
+            <label for="12854">&#34;U begrijpt dat ik deze rekening niet zal betalen.&#34;</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="686-position" value="1"/><br />
+
+<input type="hidden" name="687-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "686",
+        
+        "687",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

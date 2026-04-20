@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä uutinen on sanomalehdestä. <p><b>Sydänlasten auttamiseksi pinssikampanja</b><p>Sydänlasten auttamiseksi alkaa sunnuntaina pinssikampanja. Kampanjan järjestää Sydänlapset ry, joka tukee pinssien myyntituotolla synnynnäistä sydänvikaa sairastavien lasten tutkimusta, jakaa stipendejä sekä kouluttaa tukihenkilöitä. Suomessa syntyy vuodessa noin 550 sydänvikaista lasta, joista kolmisen sataa tarvitsee leikkaushoitoa. Sydänlapset ry tekee työtä sydänlasten perheiden tukemiseksi. 20 markan hintaisia pinssejä myyvät mm. tuhannet koululaiset.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1046" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3779" />
+<div id="prompt">Pinssejä myydään, koska</div>
+<div id="radios">
+    
+    <input type="radio" id="165" name="response" value="165" />
+    <label for="165">tuhannet suomalaiset koululaiset tarvitsevat työtä.</label><br />
+    
+    <input type="radio" id="166" name="response" value="166" />
+    <label for="166">Suomessa syntyy vuosittain niin paljon sydänvikaisia lapsia.</label><br />
+    
+    <input type="radio" id="167" name="response" value="167" />
+    <label for="167">Sydänlapset ry kärsii taloudellisista ongelmista.</label><br />
+    
+    <input type="radio" id="168" name="response" value="168" />
+    <label for="168">sydänvikaisten lasten tutkimusta ja hoitoa halutaan tukea.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Barna utvikler sanser og kunnskap om seg selv og om den verden de er født inn i når de leker med seg selv, med foreldrene, med søsken og med leketøy.<p>Hendene er viktige "leker" for barnet. Sørg derfor for at de ligger fritt slik at babyen finner dem og kan suge på dem. Babyen trenger noe å holde i og se på, gjerne en gjenstand som gir lyd fra seg når barnet veiver med armene. Det kan være rangler av forskjellige slag, tøyballer og kosedyr. Ved å se og berøre lærer babyen å "finne" hendene sine. 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7796" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3056" />
+<div id="prompt">Velg den overskriften som passer best.</div>
+<div id="radios">
+    
+    <input type="radio" id="11522" name="response" value="11522" />
+    <label for="11522">Barn liker å leke.</label><br />
+    
+    <input type="radio" id="11523" name="response" value="11523" />
+    <label for="11523">Barn synes det er morsomt med lyder.</label><br />
+    
+    <input type="radio" id="11524" name="response" value="11524" />
+    <label for="11524">Bevegelse skaper interesse.</label><br />
+    
+    <input type="radio" id="11525" name="response" value="11525" />
+    <label for="11525">Lek gir lærdom.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

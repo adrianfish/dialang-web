@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lea el texto y complete la tarea rellenando la(s) casilla(s) vacía(s). Haga clic en la casilla para que aparezca una lista de opciones. Escoja su respuesta haciendo clic en ella.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Storbyens syredrøm<br></b></p><p>af Monna Dithmer<p>Omsider fandt de frem til et nyt stof på det Kgl. Blandt alle de mere eller mindre skæve blindforsøg med ny dansk dramatik står "Nero" frem som ægte dramatisk hallucinerende. Sort som natten, en morfinrus med hårdtoptrukne typer, kulret komik og stilarter på kollisionskurs. Og midt i bløddyrenes mørke: en bundløs sårbarhed.<p>Nero, en stinkende invalidepensionist med bijob som halvrådden hættemåge, syrer rundt med Melodrama Carmen og Skipper Skræk Johnny i et karruseltrip af et trekantsdrama, så tilskuerne må grunde inderligt over, hvem der spiller med i hvis drøm?<p>Det hele udspiller sig i et skummelt biografmørke ved navn Københavneren, ladet med en hørm af lortebrun Berliner Volksbühne og trividansk lokalpatriotisme. Synerne får lov til at brede sig fra den socialsurrealistiske hjemmehjælper i Heimdalsgade, over 40'r divaen til samtidssatiriske pletskud af Foreningen Danmark. <p>Forestillingen rammer som et eksende triple-shot. Både hvad angår holdet bag scenen og folkene i syrehullet I forhold til teaterlivets almene sløvsind blot en tilskueradvarsel: stærkt vanedannende!<p align=right>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2624" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Stykkets hovedperson er <select name="3403-response"><option></option><option value="6550">invalidepensionist.</option><option value="6551">hjemmehjælper</option><option value="6552">narkoman.</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="3403-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>¿Está seguro de que desea prescindir de la prueba de lengua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sí</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Su respuesta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Respuesta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Su respuesta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Respuesta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respuestas correctas :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

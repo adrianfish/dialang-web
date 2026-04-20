@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Valitse yksi vaihtoehdoista ja klikkaa sitä hiirellä.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1711" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3890" />
+<div id="prompt">Liisa on kadottanut arvokkaan kultakellonsa. Hän kirjoittaa lehteen ilmoituksen, että hän saa kellonsa takaisin. Mikä vaihtoehto on sopivin?</div>
+<div id="radios">
+    
+    <input type="radio" id="4241" name="response" value="4241" />
+    <label for="4241">Voi kun joku löytäisi kultaisen kelloni. Olisi kiva saada se takaisin. Se putosi 24. päivä tätä kuuta johonkin Karhulan ja Piimälän väliselle alueelle. Rahaa löytäjälle luvassa.</label><br />
+    
+    <input type="radio" id="4242" name="response" value="4242" />
+    <label for="4242">Hei kaikki, jotka liikuitte 24.11. Karhulan ja Piimälän seutuvilla. Mä oon nimittäin kadottanu mun kultakelloni. Ja tietty mä haluaisin saada sen takasi. Jos ja kun se osuu sun tielle, ole ystävällinen ja soittele mulle. Lupaan antaa sulle jotakin palkkioksi. Ai niin, kellon takana on kaiverrettuna mun nimi eli Liisa -93.</label><br />
+    
+    <input type="radio" id="4243" name="response" value="4243" />
+    <label for="4243">Surun päivänä 24.11. kadotin Karhula-Piimälä -alueella kultaisen, naisten rannekellon, johon on kaiverrettu Liisa -93. Soita mulle, jos näät sen.</label><br />
+    
+    <input type="radio" id="4244" name="response" value="4244" />
+    <label for="4244">Kadonnut naisten kultainen rannekello 24.11. Karhula-Piimälä alueella. Kellossa on kaiverrus Liisa - 93. Löytöpalkkio!</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Oletko varma, että haluat ohittaa kielitestin?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Kyllä</div><div>Ei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Vastauksesi:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Oikea vastaus:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Vastauksesi:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Oikea vastaus:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Oikeat vastaukset:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

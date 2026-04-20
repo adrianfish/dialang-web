@@ -1,0 +1,125 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">点击页签，查看相应题目。听录音，从备选项中选出一个正确选项，并用鼠标点击对应的按钮。请完成全部题目后再点击“前进”按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/006800.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/006800.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16391" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25093-tab"><a href="#tabs-2643"></a></li>
+        
+        <li id="25094-tab"><a href="#tabs-2644"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2643">
+        <div id="prompt">Où sont les personnes qui parlent ?</div>
+        <div id="radios">
+            
+            <input type="radio" id="3927" basketid="" name="2643-response" value="3927" />
+            <label for="3927">à un mariage</label><br />
+            
+            <input type="radio" id="3928" basketid="" name="2643-response" value="3928" />
+            <label for="3928">à la maison</label><br />
+            
+            <input type="radio" id="3929" basketid="" name="2643-response" value="3929" />
+            <label for="3929">dans un magasin de vêtements</label><br />
+            
+            <input type="radio" id="3930" basketid="" name="2643-response" value="3930" />
+            <label for="3930">dans un magasin de bricolage</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2644">
+        <div id="prompt">De quoi parlent-ils?</div>
+        <div id="radios">
+            
+            <input type="radio" id="3931" basketid="" name="2644-response" value="3931" />
+            <label for="3931">d&#39;un pyjama</label><br />
+            
+            <input type="radio" id="3932" basketid="" name="2644-response" value="3932" />
+            <label for="3932">d&#39;un costume</label><br />
+            
+            <input type="radio" id="3933" basketid="" name="2644-response" value="3933" />
+            <label for="3933">d&#39;un déguisement</label><br />
+            
+            <input type="radio" id="3934" basketid="" name="2644-response" value="3934" />
+            <label for="3934">d&#39;un cadeau pour Sophie et Alain</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2643-position" value="1"/><br />
+
+<input type="hidden" name="2644-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2643",
+        
+        "2644",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

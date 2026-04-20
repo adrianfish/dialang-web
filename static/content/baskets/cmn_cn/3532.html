@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，完成填空。用鼠标点击文本框并输入答案。注意检查拼写！</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                En man och en kvinna som greps under helgen av polisen i Malmö misstänkta för databedrägerier har nu begärts häktade. Paret misstänks ha kommit över cirka 70 000 kronor efter att ha stulit ett checkhäfte och bankkoder vid ett inbrott på ett företag i början av året. Polisen kunde gripa paret efter larm från bankpersonal på den bank där transaktionerna ägde rum.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3532" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="5" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>SAMMANFATTNING
+Ett par har genom <input type="text" name="2139-response" /> lurat till sig  ca 70 000 kronor från andras konton. Innan dess hade de gjort <input type="text" name="2140-response" /> på en firma och kommit över checkar och koder. Tack vare <input type="text" name="2141-response" /> från den berörda banken kunde polisen <input type="text" name="2142-response" /> både mannen och kvinnan. De har nu begärts <input type="text" name="2143-response" /> .</span>
+</div> 
+
+
+<input type="hidden" name="2139-position" value="1" />
+
+<input type="hidden" name="2140-position" value="2" />
+
+<input type="hidden" name="2141-position" value="3" />
+
+<input type="hidden" name="2142-position" value="4" />
+
+<input type="hidden" name="2143-position" value="5" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

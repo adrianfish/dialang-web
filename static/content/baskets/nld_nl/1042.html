@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on aikakauslehdestä. <p><b>Ahkerimmin kirjoittavat nuoret tytöt </b><p>Suomalaiset kotitaloudet lähettävät yhteensä 85 miljoonaa kirjettä ja korttia vuodessa, se on keskimäärin 38 kappaletta kotitaloutta kohti. Vuosien varrella määrä on jatkuvasti kasvanut!<p>Nuoret tytöt ja naiset ovat kautta aikojen olleet ylivoimaisesti ahkerimpia kirjeiden ja korttien kirjoittajia. Nyt jo keski-ikäinen nainen muistelee, että saattoi nuorena kirjoittaa jopa 11 kirjettä päivässä! <p>Kansainvälinen kirjeen päivä on yhdeksäs lokakuuta. Silloin voit ottaa esille kynän ja paperia ja kirjoittaa hänelle. Tai ottaa esiin vanhat kirjeet ja kutsua luoksesi kenet heistä haluat.<p>Puhelimen yleistyminen 1970-luvulla lamasi kirjeiden kirjoittamista joksikin aikaa. Enää puhelimen vaikutus ei näy. Vasta vuosien päästä nähdään, miten sähköposti vaikuttaa perinteiseen kirjeeseen.<p><i>Me-lehti 10/97</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1042" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3776" />
+<div id="prompt">Valitse se vaihtoehto, joka on oikein.</div>
+<div id="radios">
+    
+    <input type="radio" id="145" name="response" value="145" />
+    <label for="145">Suomalaiset kirjoittavat nykyisin enemmän kirjeitä kuin ennen.</label><br />
+    
+    <input type="radio" id="146" name="response" value="146" />
+    <label for="146">Kansainvälisenä kirjeen päivänä kutsutaan ystäviä kylään.</label><br />
+    
+    <input type="radio" id="147" name="response" value="147" />
+    <label for="147">Kirjeiden lähettäminen on vähentynyt viime aikoina.</label><br />
+    
+    <input type="radio" id="148" name="response" value="148" />
+    <label for="148">Suomalaiset käyttävät sähköpostia enemmän kuin kirjoittavat kirjeitä.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

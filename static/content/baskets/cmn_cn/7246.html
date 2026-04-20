@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7246" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2456" />
+<div id="prompt"><br />Une phrase n'appartient pas à ce texte ; laquelle?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="10818" name="response" value="10818" />
+    <label for="10818">Les cyclones naissent dans les eaux tropicales qui sont à 36° C à la surface.</label><br />
+    
+    <input type="radio" id="10819" name="response" value="10819" />
+    <label for="10819">De l&#39;air humide et chaud s&#39;élève, puis se refroidit peu à peu en montant dans le ciel, formant ainsi de gros nuages.</label><br />
+    
+    <input type="radio" id="10820" name="response" value="10820" />
+    <label for="10820">Sous l&#39;effet de certaines forces, les nuages commencent à tourner pour former l&#39;oeil du cyclone.</label><br />
+    
+    <input type="radio" id="10821" name="response" value="10821" />
+    <label for="10821">Ces tempêtes de sable naissent le plus souvent dans des régions désertiques.</label><br />
+    
+    <input type="radio" id="10822" name="response" value="10822" />
+    <label for="10822">Les vents d&#39;un cyclone peuvent souffler jusqu&#39;à 350 km/h et détruisent tout sur leur passage.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Read the text, and choose one of the options below, then click on the button using the mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                STRUKTUREN I EN TEKST<p>Enhver sammensatt helhet har en struktur. Strukturen angir hvordan delene bygger opp helheten. Strukturen i en lærebok er hierarkisk oppbygd. Øverst har vi emnet lærebokforfatteren tar for seg. Kapittelinndelingen forteller hvordan lærebokforfatteren har spaltet opp emnet. Hvert kapittel er delt inn i avsnitt, som ofte er delt inn i underavsnitt. Denne strukturen kan vi lese oss til ut fra innholdsfortegnelsen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7969" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3068" />
+<div id="prompt">Hva kan leseren lære av denne teksten?</div>
+<div id="radios">
+    
+    <input type="radio" id="11829" name="response" value="11829" />
+    <label for="11829">Å bli mer strukturert</label><br />
+    
+    <input type="radio" id="11830" name="response" value="11830" />
+    <label for="11830">Å forstå fagbøker bedre</label><br />
+    
+    <input type="radio" id="11831" name="response" value="11831" />
+    <label for="11831">Å selge flere bøker</label><br />
+    
+    <input type="radio" id="11832" name="response" value="11832" />
+    <label for="11832">Å få suksess i næringslivet</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Are you sure you want to skip the language test?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Yes</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Your answer:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Correct answer:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Your answer:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Correct answer:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Correct answers:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

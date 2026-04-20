@@ -1,0 +1,190 @@
+                <script type="text/javascript">
+
+                    var answered = {
+                        
+                        '04':false,
+                        
+                        '05':false,
+                        
+                        '07':false,
+                        
+                        '12':false,
+                        
+                        '13':false,
+                        
+                        '14':false,
+                        
+                        '17':false,
+                        
+                        '18':false,
+                        
+                        '19':false,
+                        
+                        '21':false,
+                        
+                        '22':false,
+                        
+                        '23':false,
+                        
+                        '24':false,
+                        
+                        '27':false,
+                        
+                        '28':false,
+                        
+                        '30':false,
+                        
+                        '33':false,
+                        
+                        '35':false,
+                        
+                    };
+
+                </script>
+                <h1>Auto-évaluation - expression écrite</h1>
+                <form id="saform" action="/scoresa" method="POST">
+                    <input type="hidden" name="al" value="fra_fr"/>
+                    <table id="sa-table" cols="3">
+                    <tbody>
+                        <tr><td>Oui</td><td>Non</td><td></td></tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="04_valid" type="radio" name="statement:04" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="04_invalid" type="radio" name="statement:04" value="no"/></td>
+                            <td>Je peux écrire des expressions et des phrases simples et isolées.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="05_valid" type="radio" name="statement:05" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="05_invalid" type="radio" name="statement:05" value="no"/></td>
+                            <td>Je peux écrire une carte postale courte et simple.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="07_valid" type="radio" name="statement:07" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="07_invalid" type="radio" name="statement:07" value="no"/></td>
+                            <td>Je peux donner une description simple et brève de différents événements et activités.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="12_valid" type="radio" name="statement:12" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="12_invalid" type="radio" name="statement:12" value="no"/></td>
+                            <td>Je peux décrire ma famille, mon environnement, mon passé scolaire, mon travail actuel ou précédent.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="13_valid" type="radio" name="statement:13" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="13_invalid" type="radio" name="statement:13" value="no"/></td>
+                            <td>Je peux décrire mes activités passées et mes expériences personnelles.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="14_valid" type="radio" name="statement:14" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="14_invalid" type="radio" name="statement:14" value="no"/></td>
+                            <td>Je peux écrire des rapports courts dans lesquels on fait circuler les informations habituelles et on donne des raisons pour faire telle ou telle chose.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="17_valid" type="radio" name="statement:17" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="17_invalid" type="radio" name="statement:17" value="no"/></td>
+                            <td>Je peux donner des détails de base sur des événements non prévisibles, comme un accident par exemple.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="18_valid" type="radio" name="statement:18" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="18_invalid" type="radio" name="statement:18" value="no"/></td>
+                            <td>Je peux décrire mes rêves, mes désirs et mes ambitions.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="19_valid" type="radio" name="statement:19" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="19_invalid" type="radio" name="statement:19" value="no"/></td>
+                            <td>Je peux comprendre des messages exprimant des demandes ou exposant des problèmes etc.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="21_valid" type="radio" name="statement:21" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="21_invalid" type="radio" name="statement:21" value="no"/></td>
+                            <td>Je peux brièvement donner les raisons ou explications pour mes opinions, mes projets, ou mes actes.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="22_valid" type="radio" name="statement:22" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="22_invalid" type="radio" name="statement:22" value="no"/></td>
+                            <td>Je peux expliquer un  point de vue sur un sujet et en donner les avantages ou inconvénients.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="23_valid" type="radio" name="statement:23" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="23_invalid" type="radio" name="statement:23" value="no"/></td>
+                            <td>Je peux développer une argumentation en donnant les raisons pour ou contre un point de vue particulier.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="24_valid" type="radio" name="statement:24" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="24_invalid" type="radio" name="statement:24" value="no"/></td>
+                            <td>Je peux juger différentes idées ou solutions liées à un problème.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="27_valid" type="radio" name="statement:27" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="27_invalid" type="radio" name="statement:27" value="no"/></td>
+                            <td>Je peux peser les causes et les conséquences d’un événement et argumenter sur des situations hypothétiques.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="28_valid" type="radio" name="statement:28" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="28_invalid" type="radio" name="statement:28" value="no"/></td>
+                            <td>Je peux développer et défendre mes points de vue en donnant d’autres arguments, raisons ou exemples appropriés.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="30_valid" type="radio" name="statement:30" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="30_invalid" type="radio" name="statement:30" value="no"/></td>
+                            <td>Je peux donner une information claire et détaillée sur des sujets complexes.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="33_valid" type="radio" name="statement:33" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="33_invalid" type="radio" name="statement:33" value="no"/></td>
+                            <td>Je peux structurer ce que j’écris de manière adéquate afin d’aider le lecteur à trouver les points significatifs.</td>
+                        </tr>
+                        
+                        <tr>
+                            <td><input class="valid-button statement" id="35_valid" type="radio" name="statement:35" value="yes"/></td>
+                            <td><input class="invalid-button statement" id="35_invalid" type="radio" name="statement:35" value="no"/></td>
+                            <td>Je peux toujours écrire sans l’aide d’un dictionnaire.</td>
+                        </tr>
+                        
+                    </tbody>
+                    </table>
+                    <input id="sa-send-button" type="button" value="Envoyer les réponses" disabled/>
+                </form>
+                <div id="confirm-send-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Envoyer les réponses ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-send-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-send-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Êtes-vous sûr(e) de vouloir sauter l&#39;auto-évaluation ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 

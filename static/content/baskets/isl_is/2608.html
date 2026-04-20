@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og ljúktu við verkefnið með því að fylla í eyðu(r)na(r). Smelltu á reit til þess að fá fram lista yfir valmöguleika. Veldu svarið með því að smella á það.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Para conseguir los benéficos efectos de la meditación hay que dedicarle al menos 20 minutos diarios, antes o después de la jornada laboral.<p>- Medita en un lugar silencioso y con una temperatura templada.<p>- Ponte una ropa cómoda y holgada.<p>- No practiques nunca con el estómago lleno.<p>- Elige una postura cómoda: sentado en el suelo con la espalda<p>  recta y relajada, o en una silla.<p>- Cierra los ojos o concéntrate en un punto fijo del suelo.<p>- Concéntrate en tu propia respiración sin preocuparte si la<p>  realizas bien o mal, sólo intenta seguir su ritmo mecánicamente.<p>- No opongas resistencia a los pensamientos que lleguen. Poco a <p>  poco verás como la mente aprenderá a quedarse en blanco.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2608" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Hay que practicar la meditación <select name="869-response"><option></option><option value="6525">después de comer</option><option value="6526">en el lugar más cálido de la casa</option><option value="6527">vestido cómodamente</option><option value="6528">durante la jornada laboral</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="869-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

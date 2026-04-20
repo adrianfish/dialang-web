@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on aikakauslehdestä. <p><b>Aitoa vaniljaa</b>  <p>Vanilja on muotimakuja. Viime aikoina vaniljaa on saatu maistella tuttujen vaniljajäätelön ja vaniljakastikkeen lisäksi myös mm. teessä, tuorejuustossa ja jogurtissa. Tarjolla on jopa vaniljan tuoksuista huuhteluainettakin!<p>Moni on oppinut pitämään vaniljan makuna vanilliinia, joka on vaniljaa vahvempi ja terävämpi maku. Aito vanilja sen sijaan maistuu yllättävän miedolta ja pehmeältä, siksi sitä vahvistetaan usein vanilliinilla. Meiran uutuudessa, aidossa vaniljasokerissa on sokerin joukossa mustina pisteinä erottuvaa aitoa vaniljaa. Lisänä on makua vahvistavana aineena luontaista vaniljasta uutettua aromia (vaniljauutetta), mutta ei vanilliinia. Vaniljasokeri ei tuotteena korvaa vanilliinisokeria, vaan on edullisempaa ja voimakkaamman makuisena hyvä vaihtoehto sen rinnalle.  <p>EKA/Euromarketit ja Max-tavaratalot<p>(<i>Me-lehti 10/97</i>)
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1158" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3824" />
+<div id="prompt">Tekstissä kerrotaan,</div>
+<div id="radios">
+    
+    <input type="radio" id="916" name="response" value="916" />
+    <label for="916">että vanilja ja vanilliini on sama asia.</label><br />
+    
+    <input type="radio" id="917" name="response" value="917" />
+    <label for="917">että vanilliinia ei käytetä enää.</label><br />
+    
+    <input type="radio" id="918" name="response" value="918" />
+    <label for="918">että vanilliinisokeri on edullisempaa kuin vaniljasokeri.</label><br />
+    
+    <input type="radio" id="919" name="response" value="919" />
+    <label for="919">että markkinoilla on uusi vaniljasokeri.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

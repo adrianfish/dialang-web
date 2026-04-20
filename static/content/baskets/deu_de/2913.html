@@ -1,0 +1,69 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, bearbeiten Sie dann die Aufgabe und füllen Sie dazu die Lücke(n). Klicken Sie mit der Maus auf das Feld und geben Sie Ihre Antwort ein. Achten Sie auf eine korrekte Schreibweise!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>Hvað er ABC hjálparstarf?</b><p>ABC hjálparstarf er íslenskt, samkirkjulegt hjálparstarf, sem var stofnað árið 1988 af nokkrum kristnum einstaklingum. Markmið þess er að veita hjálp sem kemur að varanlegu gagni, aðallega með því að gefa fátækum börnum kost á skólagöngu og heimilislausum börnum heimili.<p><b>Hverju hefur starfið áorkað?</b><p>Starfið hefur vaxið ört og fyrir hjálp íslenskra stuðningsforeldra eru nú á þriðja þúsund börn sem fá hjálp í formi skólagöngu, læknishjálpar, fæðis og í mörgum tilfellum heimilis.<p><b>Hvernig er starfið rekið?</b><p>Starfið er allt unnið í sjálfboðavinnu. Skrifstofa starfsins, sem er í fríu húsnæði að Sóltúni 3, er opin frá kl. 9-17 alla virka daga. Öll framlög fara óskert til hjálpar nauðstöddum börnum. Framlög eru símsend mánaðarlega til samstarfsaðila ABC hjálparstarfs erlendis sem sjá um börnin.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2913" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>ABC hjálparstarf var stofnað í þeim tilgangi að rétta <input type="text" name="4651-response" /> hjálparhönd. Fyrir hjálp <input type="text" name="4652-response" /> hefur félaginu tekist að aðstoða rúmlega tvö þúsund börn. Allt starf sem er unnið í félaginu er í <input type="text" name="4653-response" /> .</span>
+</div> 
+
+
+<input type="hidden" name="4651-position" value="1" />
+
+<input type="hidden" name="4652-position" value="2" />
+
+<input type="hidden" name="4653-position" value="3" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

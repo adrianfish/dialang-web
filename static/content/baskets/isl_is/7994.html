@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                SPRÅKSKOLEN<p>På Friundervisningens kurs er det deltakerne som er de aktive. Gruppearbeid og samtaler gjør at det ikke tar lang tid før kommunikasjonen på engelsk, tysk, spansk eller fransk går helt naturlig. Språkopplæring blir ikke pugg - de grammatiske ferdighetene forklares og læres inn gjennom å bruke språket. Vi bruker nye, moderne lærebøker, men legger også stor vekt på å trekke inn autentisk materiale, som aviser, radio, lydkassetter, film, osv. Slik får en øvd seg på å forstå og bruke språket i realistiske situasjoner utenfor klasserommet.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7994" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3079" />
+<div id="prompt">Hvilket språklæringsprinsipp er det viktigste grunnlaget for språkkursene?</div>
+<div id="radios">
+    
+    <input type="radio" id="11877" name="response" value="11877" />
+    <label for="11877">Oversettelse til morsmålet</label><br />
+    
+    <input type="radio" id="11878" name="response" value="11878" />
+    <label for="11878">Læring av grammatiske ferdigheter</label><br />
+    
+    <input type="radio" id="11879" name="response" value="11879" />
+    <label for="11879">Pugging av autentisk materiale</label><br />
+    
+    <input type="radio" id="11880" name="response" value="11880" />
+    <label for="11880">Naturlig kommunikasjon</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

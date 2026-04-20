@@ -1,0 +1,76 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Selesaikan tugas dengan mengisi bagian-bagian yang kosong. Klik pada kotak untuk menampilkan daftar pilihan. Klik jawaban yang Anda pilih.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="11350" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="5" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Sehr geehrte Damen und Herren,
+hiermit bewerbe ich mich bei Ihnen für die im Internet <select name="2847-response"><option></option><option value="578">aufgeführte</option><option value="579">aufgeschriebene</option><option value="580">ausgeschriebene</option><option value="581">gezeigte</option></select> Stelle.
+Im Herbst vorigen Jahres habe ich in meinem Heimatland das 3. Studienjahr in Informatik beendet. Zur Zeit bin ich für ein Jahr als Erasmus-Student an der Universität Münster, wo ich auch einen Deutschkurs <select name="2848-response"><option></option><option value="582">besuche</option><option value="583">gehe</option><option value="584">lerne</option><option value="585">studiere</option></select> . Dann möchte ich zunächst mein Studium im Heimatland abschließen. Danach würde ich gerne in Ihrem Hause ein Praktikum <select name="2849-response"><option></option><option value="586">abhalten</option><option value="587">exekutieren</option><option value="588">machen</option><option value="589">tun</option></select> . 
+Ich <select name="2850-response"><option></option><option value="590">beherrsche</option><option value="591">bin</option><option value="592">mache</option><option value="593">verfüge über</option></select> Praxiserfahrung, da ich in den Semesterferien schon bei IBM und Microsoft gearbeitet habe. Auch füge ich mich schnell in ein Team ein und stelle mich gerne neuen fachlichen Herausforderungen. Englisch und Französisch spreche ich fließend. Meine Deutschkenntnisse werden bis zum Antritt der Stelle ein fortgeschrittenes Niveau erreicht haben.
+Es würde mich freuen, wenn ich mich bei Ihnen <select name="2851-response"><option></option><option value="594">besuchen</option><option value="595">präsentieren</option><option value="596">vorsprechen</option><option value="597">vorstellen</option></select> könnte. Bis zum 15.7.99 bin ich noch unter obiger Anschrift in Münster zu erreichen.
+Mit freundlichen Grüßen
+...</span>
+</div> 
+
+
+<input type="hidden" name="2847-position" value="1" />
+
+<input type="hidden" name="2848-position" value="2" />
+
+<input type="hidden" name="2849-position" value="3" />
+
+<input type="hidden" name="2850-position" value="4" />
+
+<input type="hidden" name="2851-position" value="5" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

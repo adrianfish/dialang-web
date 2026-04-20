@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">读短文，从下面的备选项中选出一个正确选项，用鼠标点击对应的按钮。</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                <b>A</b><p>Hej Peter. Tak fordi du vil tage dig lidt af Bimmer! Jeg håber han opfører sig ordentligt. Han er lidt af en plageånd, men det skal du ikke tage dig af. Husk at lukke vinduerne, når du går! Der står dåser med kattemad i køkkenet, og kattesandet står ude på bagtrappen. Jeg plejer at skifte sand hveranden dag, og Bimmer må helst kun få én portion (=to spiseskefulde) om dagen.<p><b>B</b><p>Hej Peter. Tak fordi du vil passe Bimmer! Der står kattemad på køkkenbordet, og han må helst kun få én portion (= to spiseskefulde) om dagen. Kattesandet står ude på bagtrappen, og jeg plejer at skifte sand hveranden dag. Husk at lukke vinduerne, når du går! Jeg håber, han opfører sig ordentligt.<p><b>C</b><p>Hej Peter, Jeg håber, han opfører sig ordentligt! Han er lidt af en plageånd, men det skal du ikke tage dig af. Husk at lukke vinduerne, når du går! Jeg plejer at skifte sand hveranden dag, og kattesandet står ude på bagtrappen. Der står kattemad på køkkenbordet, og han må helst kun få én portion (= to spiseskefulde) om dagen. Tak fordi du vil passe Bimmer!
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7954" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3609" />
+<div id="prompt">En af dine danske venner har lovet at passe din kat, mens du er bortrejst en uge. Du lægger en besked med oplysninger om det praktiske. Hvilken besked er klarest?</div>
+<div id="radios">
+    
+    <input type="radio" id="11799" name="response" value="11799" />
+    <label for="11799">Tekst A</label><br />
+    
+    <input type="radio" id="11800" name="response" value="11800" />
+    <label for="11800">Tekst B</label><br />
+    
+    <input type="radio" id="11801" name="response" value="11801" />
+    <label for="11801">Tekst C</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>你确定要跳过语言测试吗?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>是</div><div>否</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>你的作答情况：</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>正确答案：</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="你的作答情况："/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="正确答案："/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="正确答案："/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,113 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Para visualizar os itens deste pequeno teste, clique sobre cada um dos números ou etiquetas que identificam os painéis.Leia o texto, escolha UMA das opções e clique com o rato no botão correspondente. Tente resolver TODOS os itens antes de carregar no botão Continuar.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Quand j'étais étudiante, j'avais deux amies avec qui je passais de bons moments. A vrai dire, nous ne nous quittions pas ; nous suivions les cours ensemble, nous partagions le même appartement et nous partions souvent en vacances ensemble. Nous nous entendions donc très bien et pourtant nous étions très différentes de caractère.<p>Françoise était très calme, lisait beaucoup et adorait faire la cuisine.<p>Hélène était à la fois la plus passionnée et celle qui avait le plus d'humour ; elle savait arrêter nos disputes - quand il y en avait - par un mot drôle.<p>Quant à moi, j'étais la plus optimiste et j'organisais toujours nos sorties et nos fêtes.<p>Nous arrivions à bien travailler ensemble, et il y en avait toujours une pour soutenir l'autre dans les moments difficiles. Aux yeux des autres, nous étions un groupe uni.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="16403" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="2" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25108-tab"><a href="#tabs-2660"></a></li>
+        
+        <li id="25109-tab"><a href="#tabs-2661"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-2660">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3975" basketid="" name="2660-response" value="3975" />
+            <label for="3975">Les trois jeunes filles s&#39;entendaient bien car elles se ressemblaient.</label><br />
+            
+            <input type="radio" id="3976" basketid="" name="2660-response" value="3976" />
+            <label for="3976">Les trois jeunes filles s&#39;entendaient bien mais étaient différentes.</label><br />
+            
+            <input type="radio" id="3977" basketid="" name="2660-response" value="3977" />
+            <label for="3977">Le groupe était dominé par Hélène.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-2661">
+        <div id="prompt">Choisissez la phrase qui vous paraît correcte par rapport au<br />texte.</div>
+        <div id="radios">
+            
+            <input type="radio" id="3978" basketid="" name="2661-response" value="3978" />
+            <label for="3978">Les autres ont toujours considéré le groupe uni.</label><br />
+            
+            <input type="radio" id="3979" basketid="" name="2661-response" value="3979" />
+            <label for="3979">Le groupe s&#39;est séparé et s&#39;est reformé grâce à Hélène.</label><br />
+            
+            <input type="radio" id="3980" basketid="" name="2661-response" value="3980" />
+            <label for="3980">Le groupe était dirigé par celle qui écrit.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="2660-position" value="1"/><br />
+
+<input type="hidden" name="2661-position" value="2"/><br />
+
+<script>
+    var itemIds = [
+        
+        "2660",
+        
+        "2661",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

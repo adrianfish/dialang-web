@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Les teksten, og velg ett av svaralternativene under. Klikk så på knappen med musen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Het volgende fragment komt uit een tijdschrift over toerisme, vakantie en reizen. <p>Volgens het nationaal instituut voor budgetvoorlichting (Nibud) begint een financieel verantwoorde vakantie met het opstellen van een solide begroting. De meeste mensen maken evenwel geen begroting, heeft directeur T.Schmitz van het ANVR gemerkt. Er wordt volgens hem van te voren überhaupt te weinig nagedacht over de financiële gevolgen van een vakantie. "Er is heel wat geld te besparen als je voor je vakantie goed probeert na te gaan waar je eigenlijk naar toe gaat en hoe de omstandigheden daar zijn. Daarmee kun je voorkomen dat je ter plekke een peperdure zonnebrandolie moet aanschaffen, die je veel goedkoper gewoon vanuit Nederland had kunnen meenemen. De mensen zouden wat meer de tijd moeten nemen om de vakantie vooraf goed te plannen."
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3817" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1070" />
+<div id="prompt">Wat wordt er in dit fragment gezegd?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="7739" name="response" value="7739" />
+    <label for="7739">Het maken van een goede vakantieplanning is voor veel mensen te moeilijk.</label><br />
+    
+    <input type="radio" id="7740" name="response" value="7740" />
+    <label for="7740">Met een goede vakantieplanning kan je vakantie veel goedkoper worden.</label><br />
+    
+    <input type="radio" id="7741" name="response" value="7741" />
+    <label for="7741">Zonder een goede vakantieplanning worden verre reizen bijna onbetaalbaar.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Er du sikker på at du vil hoppe over språktesten?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Svaret ditt:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Korrekt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Svaret ditt:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Korrekt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Korrekte svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

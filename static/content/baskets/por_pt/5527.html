@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leia o texto e escolha uma das opções abaixo apresentadas. Clique com o rato no botão correspondente.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                MANUAL DE INSTRUÇÕES<p>O seu aparelho dispõe de diversos comandos opcionais, mas há alguns que são obrigatórios. <p>1. Botão "Ligar / Desligar" - Liga e desliga o aparelho da corrente eléctrica.<p>2. Botão "Modo TV" - Mantém o aparelho ligado, mas sem funcionar.<p>3. Botão de mudança de canal - Selecciona os canais desejados.<p>4. Botão regulador do volume de som.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="5527" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4479" />
+<div id="prompt">Escolha a afirmação correcta.</div>
+<div id="radios">
+    
+    <input type="radio" id="9436" name="response" value="9436" />
+    <label for="9436">Em caso de ausência prolongada, o cliente deve desligar o botão 4.</label><br />
+    
+    <input type="radio" id="9437" name="response" value="9437" />
+    <label for="9437">O botão 3 só permite ver os programas de futebol.</label><br />
+    
+    <input type="radio" id="9438" name="response" value="9438" />
+    <label for="9438">O botão 2 permite ouvir melhor as notícias.</label><br />
+    
+    <input type="radio" id="9439" name="response" value="9439" />
+    <label for="9439">Em caso de ausência prolongada, deve desligar-se o botão 1.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Tem a certeza de que não quer realizar o teste linguístico?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sim</div><div>Não</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>A sua resposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Resposta correcta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="A sua resposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Resposta correcta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Respostas correctas:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

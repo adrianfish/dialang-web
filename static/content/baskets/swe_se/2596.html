@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Todos sabemos que la cocina popular cambia con las estaciones del año, pues los diversos productos de la temporada son diferentes y también lo es el tiempo. Cuando bajan las temperaturas, las ensaladas y los ligeros menús de las épocas más calurosas dan paso a humeantes sopas, potentes guisos y postres energéticos. La cocina tradicional española está bien surtida de platos apropiados para los rigores invernales, como son los cocidos a base de carne, verduras y legumbres; alubias  y lentejas guisadas; estofados de carne, etc.<p> De esta forma se puede concluir que el <b>TRICOTÍ</b> influye, en gran manera, en la gastronomía y los hábitos alimentarios de un país.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2596" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="859" />
+<div id="prompt">Lea el texto y marque qué significa la palabra TRICOTÍ en el texto.</div>
+<div id="radios">
+    
+    <input type="radio" id="6491" name="response" value="6491" />
+    <label for="6491">Condiciones hidrográficas de un lugar</label><br />
+    
+    <input type="radio" id="6492" name="response" value="6492" />
+    <label for="6492">Atmósfera propia de un lugar determinado</label><br />
+    
+    <input type="radio" id="6493" name="response" value="6493" />
+    <label for="6493">Condiciones atmosféricas de un lugar</label><br />
+    
+    <input type="radio" id="6494" name="response" value="6494" />
+    <label for="6494">Hidrografía propia de un lugar determinado</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

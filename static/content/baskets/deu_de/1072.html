@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lesen Sie den Text, wählen Sie eine der untenstehenden Auswahlmöglichkeiten und klicken Sie dann mit der Maus auf die Schaltfläche.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on sanomalehdestä.<p>Kun naapuri aloittaa päätävihlovan metelöinnin, soitto poliisille tuo ensiavun. Komisario Teemu Heiskanen Pasilan poliisipiiristä toteaa, että yleensä jo poliisin tulo saa tilanteen rauhoittumaan. Mukaan korjataan pääasiassa päihtyneet ja väkivaltaiset.<p>Pysyvimminkin häiriköstä on mahdollista päästä eroon, asuupa ongelma omassa tai vuokra-asunnossa.<p>Omistusasunnossa majailevasta kiusanhengestä pääsee eroon asunnon hallintaanoton avulla. Jos asukas on yhteistyöhaluton, keino on hidas: yhtiökokouksen päätöksestä voi kulua kolme kuukautta, ennen kuin asukkaan on pakko muuttaa.<p>Hallintaanotto aloitetaan asunto-osakeyhtiön hallituksen kokouksella, jossa asiakkaalle päätetään antaa varoitus. Ellei se auta, hallitus kutsuu ylimääräisen yhtiökokouksen koolle päättämään hallintaanotosta.<p>Kun asukas on saanut tiedon päätöksestä, hänellä on 30 päivää aikaa valittaa käräjäoikeuteen. Jos asukas ei valita, mutta ei myöskään muuta, asunto-osakeyhtiö voi hakea häätöä.<p>Saatuaan asunnon hallintaansa yhtiö vuokraa sen. Huoneiston hallinta palautuu osakkaalle, kun hallintaanottoaika on päättynyt. Aika päätetään yhtiökokouksessa. Yleensä se on kolme vuotta, mikä on myös lainmukainen enimmäisaika.<p>Häiriköivästä vuokralaisesta pääsee eroon ketterämmin. Häiritsevä elämä kelpaa perusteeksi vuokrasopimuksen purkamiseen. Ensin on kuitenkin annettava varoitus. Jos vuokralainen senkin jälkeen häiriköi, vuokranantajalla on oikeus purkaa vuokrasopimus heti annettuaan purkamisilmoituksen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1072" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3794" />
+<div id="prompt">Valitse vaihtoehdoista sopiva otsikko</div>
+<div id="radios">
+    
+    <input type="radio" id="264" name="response" value="264" />
+    <label for="264">Häiriköivästä asukkaasta pääsee eroon</label><br />
+    
+    <input type="radio" id="265" name="response" value="265" />
+    <label for="265">Poliisi poistaa häiriköivän naapurin</label><br />
+    
+    <input type="radio" id="266" name="response" value="266" />
+    <label for="266">Asuntoyhtiö vuokraa häirikön asunnon</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

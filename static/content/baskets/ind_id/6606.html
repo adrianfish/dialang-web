@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Selesaikan tugas dengan mengisi bagian-bagian yang kosong. Klik pada kotak untuk menampilkan daftar pilihan. Klik jawaban yang Anda pilih.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6606" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="4" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Olá, <select name="4573-response"><option></option><option value="10224">minha grande parva</option><option value="10225">sua cabeça no ar</option><option value="10226">minha querida</option></select> !
+O tempo passa depressa quando nos estamos a divertir. Já quase passou uma semana e ainda há tantas coisas que gostaríamos de fazer. Aqui, <select name="4574-response"><option></option><option value="10227">as praias</option><option value="10228">os monumentos</option><option value="10229">as pessoas</option></select> são paradisíacas e já estamos bronzeadíssimos. O pai diz que gostaria de ficar aqui para sempre. Passamos os dias de forma tão agradável que não temos tempo para sentir <select name="4575-response"><option></option><option value="10230">desgosto</option><option value="10231">raiva</option><option value="10232">saudades</option></select> , mas, mesmo assim, pensamos em ti. O pai manda-te um <select name="4576-response"><option></option><option value="10233">beijo</option><option value="10234">estalo</option><option value="10235">safanão</option></select> , eu um grande abraço.
+Até breve.
+    Mãe.</span>
+</div> 
+
+
+<input type="hidden" name="4573-position" value="1" />
+
+<input type="hidden" name="4574-position" value="2" />
+
+<input type="hidden" name="4575-position" value="3" />
+
+<input type="hidden" name="4576-position" value="4" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Apakah Anda yakin akan meninggalkan tes bahasa ini?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ya</div><div>Tidak</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Jawaban Anda:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Jawaban yang benar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Jawaban Anda:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Jawaban yang benar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Jawaban yang benar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Veldu einn af valmöguleikunum hér fyrir neðan og smelltu á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="6338" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="2746" />
+<div id="prompt">Sie gehen einkaufen und suchen Shampoo.<br /><br />Welches Produkt können Sie kaufen?</div>
+<div id="radios">
+    
+    <input type="radio" id="9970" name="response" value="9970" />
+    <label for="9970">Express-Gel. pH-neutral. Für jede Handwäsche.</label><br />
+    
+    <input type="radio" id="9971" name="response" value="9971" />
+    <label for="9971">Kräuter-Tabletten. Zur Steigerung der Abwehrkräfte. Vorbeugend gegen Infektionen.</label><br />
+    
+    <input type="radio" id="9972" name="response" value="9972" />
+    <label for="9972">Perwoll mit Pflege-Balsam. Schonung und Pflege für Wolle und alles Feine.</label><br />
+    
+    <input type="radio" id="9973" name="response" value="9973" />
+    <label for="9973">Schauma mit Aufbau-Vitamin und 7 Kräutern. Volumen für normales und schnell fettendes Haar.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,77 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och välj ett av alternativen nedan. Klicka sedan på knappen.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                As a card member you probably already know and like the services that we offer.  So, it's natural that, on occasion, you'll tell your friends and acquaintances about them.  Well, if your friends apply and then enjoy the card's many benefits, we feel you should enjoy a reward too, in the form of a gift.  It's a thank you for your recommendation.  And, obviously, the more people you introduce the better your gifts become.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="4033" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1141" />
+<div id="prompt">What is the main point that a company is making in the text?<br />Choose the sentence that gives the main idea.</div>
+<div id="radios">
+    
+    <input type="radio" id="8058" name="response" value="8058" />
+    <label for="8058">As a card member you probably already know and like the services that we offer.</label><br />
+    
+    <input type="radio" id="8059" name="response" value="8059" />
+    <label for="8059">So, it&#39;s natural that, on occasion, you&#39;ll tell your friends and acquaintances about them.</label><br />
+    
+    <input type="radio" id="8060" name="response" value="8060" />
+    <label for="8060">Well, if your friends apply and then enjoy the card&#39;s many benefits, we feel you should enjoy a reward too, in the form of a gift.</label><br />
+    
+    <input type="radio" id="8061" name="response" value="8061" />
+    <label for="8061">It&#39;s a thank you for your recommendation.</label><br />
+    
+    <input type="radio" id="8062" name="response" value="8062" />
+    <label for="8062">And, obviously, the more people you introduce the better your gifts become.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

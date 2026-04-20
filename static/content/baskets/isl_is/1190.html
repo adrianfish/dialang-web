@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lestu textann og veldu einn af valmöguleikunum hér fyrir neðan. Smelltu svo á hnappinn með músinni.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tämä teksti on Pirkko Mäkelän kirjoittama kirje kuluttaja-asiamiehelle.<p>      <i>Arvoisa kuluttaja-asiamies</i>, <p>Ostin viime viikolla paikallisesta Korko-nimisestä kenkäliikkeestä naisten mustat kiiltonahkaiset avokkaat, joista maksoin normaalihinnan eli 525 markkaa. Käytin avokkaita ensimmäisen kerran viime viikonloppuna ainoastaan sisätiloissa. Toisen avokkaan kanta lähti kuitenkin irti jo noin ensimmäisen tunnin jälkeen, kun nousin istualtani seisomaan. Ihmetykseni oli suuri, sillä en todellakaan tehnyt muuta kuin nousin seisomaan.<p>Palautin avokkaat Korko-nimiseen kenkäliikkeeseen takaisin heti seuraavana arkipäivänä eli maanantaina 13.10.  Liike ei suostunut ottamaan kenkiä takaisin; liikkeessä väitettiin, että korko ei voi lähteä moisesta irti, vaan se on vaatinut paljon rajumpia liikkeitä, esimerkiksi tanssimista tms. Perusteluistani ja vaatimuksistani huolimatta liike ei suostunut maksamaan kengistä rahoja takaisin eikä myöskään vaihtamaan niitä uusiin.<p>Näin ollen käännyn puoleenne tämän kirjeen ja oheisen täytetyn lomakkeen kanssa. Toivon, että saan oikeutta asiassa, jossa en ole sitä vielä saanut. Mielestäni 525 markkaa on liian paljon rahaa hukkaan heitettäväksi puhumattakaan periaatteista.<p>Kunnioittavasti,<p><i>Pirkko Mäkelä</i>
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1190" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="3856" />
+<div id="prompt">Mikä väite on oikein?</div>
+<div id="radios">
+    
+    <input type="radio" id="1590" name="response" value="1590" />
+    <label for="1590">Pirkko Mäkelä oli kävellyt kengillä ulkona.</label><br />
+    
+    <input type="radio" id="1591" name="response" value="1591" />
+    <label for="1591">Kenkäliikkeessä ei uskottu, että Pirkko puhuu totta.</label><br />
+    
+    <input type="radio" id="1592" name="response" value="1592" />
+    <label for="1592">Pirkko lähettää kuluttaja-asiamiehelle vain kirjeen.</label><br />
+    
+    <input type="radio" id="1593" name="response" value="1593" />
+    <label for="1593">Pirkon ostamat kengät olivat tarjouksessa.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Ertu viss um að þú viljir hætta í prófinu?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Já</div><div>Nei</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Þitt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Rétt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Þitt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Rétt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Rétt svör:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

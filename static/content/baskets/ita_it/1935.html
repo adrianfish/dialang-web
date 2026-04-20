@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Leggi il testo e scegli una delle opzioni qui sotto, poi fai clic sul pulsante usando il mouse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                L'America dice basta ai grotteschi abusi del "politicamente corretto". L'inequivocabile segno viene da una giuria popolare di Milwaukee, che ha accordato la cifra record di 26 milioni di dollari a un dirigente licenziato dal colosso americano della birra "Miller" per una battuta giudicata "molestia sessuale" da una collega. Lo storico verdetto è ora nelle mani del giudice, che proprio oggi dovrebbe confermare la condanna iniziale contro la multinazionale. 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="1935" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1808" />
+<div id="prompt">Per che cosa il dirigente americano è stato licenziato dalla "Miller"?</div>
+<div id="radios">
+    
+    <input type="radio" id="4746" name="response" value="4746" />
+    <label for="4746">Aggressione nei confronti di una collega.</label><br />
+    
+    <input type="radio" id="4747" name="response" value="4747" />
+    <label for="4747">Furto di 26 milioni di dollari.</label><br />
+    
+    <input type="radio" id="4748" name="response" value="4748" />
+    <label for="4748">Una battuta rivolta a una collega.</label><br />
+    
+    <input type="radio" id="4749" name="response" value="4749" />
+    <label for="4749">Una violenza sessuale nei confronti di una collega.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

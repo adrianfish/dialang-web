@@ -1,0 +1,163 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Fai clic su ogni casella numerata per visualizzare ciascun quesito dell'esercizio. Ascolta il sonoro e scegli UNA delle opzioni, poi fai clic sul pulsante usando il mouse. Rispondi a TUTTI i quesiti prima di premere 'Avanti'.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/000551.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/000551.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24476" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="4" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25145-tab"><a href="#tabs-1651"></a></li>
+        
+        <li id="25146-tab"><a href="#tabs-1652"></a></li>
+        
+        <li id="25147-tab"><a href="#tabs-1653"></a></li>
+        
+        <li id="25148-tab"><a href="#tabs-1654"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-1651">
+        <div id="prompt">Quale parola hai ascoltato nel brano?</div>
+        <div id="radios">
+            
+            <input type="radio" id="5843" basketid="" name="1651-response" value="5843" />
+            <label for="5843">lavorato</label><br />
+            
+            <input type="radio" id="5844" basketid="" name="1651-response" value="5844" />
+            <label for="5844">recitato</label><br />
+            
+            <input type="radio" id="5845" basketid="" name="1651-response" value="5845" />
+            <label for="5845">cantato</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1652">
+        <div id="prompt">Che cosa deve comunicare il Sig. Luigi Ferri?</div>
+        <div id="radios">
+            
+            <input type="radio" id="5846" basketid="" name="1652-response" value="5846" />
+            <label for="5846">L&#39;indirizzo.</label><br />
+            
+            <input type="radio" id="5847" basketid="" name="1652-response" value="5847" />
+            <label for="5847">Il numero di passaporto.</label><br />
+            
+            <input type="radio" id="5848" basketid="" name="1652-response" value="5848" />
+            <label for="5848">Il numero di telefono.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1653">
+        <div id="prompt">Che attività può svolgere il Sig. Ferri?</div>
+        <div id="radios">
+            
+            <input type="radio" id="5849" basketid="" name="1653-response" value="5849" />
+            <label for="5849">Insegnare a scuola.</label><br />
+            
+            <input type="radio" id="5850" basketid="" name="1653-response" value="5850" />
+            <label for="5850">Dirigere il traffico.</label><br />
+            
+            <input type="radio" id="5851" basketid="" name="1653-response" value="5851" />
+            <label for="5851">Interpretare la parte di un personaggio.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1654">
+        <div id="prompt">Che cosa indica l'espressione: "AVANTI IL PROSSIMO"? </div>
+        <div id="radios">
+            
+            <input type="radio" id="5852" basketid="" name="1654-response" value="5852" />
+            <label for="5852">Il Sig. Ferri deve andar via.</label><br />
+            
+            <input type="radio" id="5853" basketid="" name="1654-response" value="5853" />
+            <label for="5853">È il turno del Sig. Ferri.</label><br />
+            
+            <input type="radio" id="5854" basketid="" name="1654-response" value="5854" />
+            <label for="5854">Il Sig. Ferri è il primo candidato.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="1651-position" value="1"/><br />
+
+<input type="hidden" name="1652-position" value="2"/><br />
+
+<input type="hidden" name="1653-position" value="3"/><br />
+
+<input type="hidden" name="1654-position" value="4"/><br />
+
+<script>
+    var itemIds = [
+        
+        "1651",
+        
+        "1652",
+        
+        "1653",
+        
+        "1654",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sei sicuro di voler saltare la prova di lingua?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Sì</div><div>No</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Risposta:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Risposta corretta:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Risposta:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Risposta corretta:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Risposte corrette:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

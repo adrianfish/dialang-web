@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                  Madrid, 13 de mayo de 1999<p>Manuel Campillo<p>C/ Soleras, 45<p>VALENCIA<p>Estimado Sr. Campillo:<p>Tengo el gusto de dirigirme a usted para comunicarle que debido a la expansión que ha conocido nuestra empresa en los últimos tiempos, hemos decidido  ampliar nuestras instalaciones. A partir del día 2 de junio, la sede de nuestra empresa estará ubicada en el Polígono industrial de La Moraleja, Avda. de las Mimosas, 24.<p>__________________________________________________________ <p>Atentamente,<p>Andrés Casquero<p>Director
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="2328" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="770" />
+<div id="prompt">Marque la opción correcta para finalizar la circular que envía <br />una empresa a sus clientes.</div>
+<div id="radios">
+    
+    <input type="radio" id="5567" name="response" value="5567" />
+    <label for="5567">Esperamos sus órdenes,como siempre, donde usted ya sabe.</label><br />
+    
+    <input type="radio" id="5568" name="response" value="5568" />
+    <label for="5568">Le esperamos, como siempre, por si necesita algo.</label><br />
+    
+    <input type="radio" id="5569" name="response" value="5569" />
+    <label for="5569">Si necesita algo, ya sabe dónde encontrarnos.</label><br />
+    
+    <input type="radio" id="5570" name="response" value="5570" />
+    <label for="5570">Quedamos a sus órdenes para lo que pueda necesitar.</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

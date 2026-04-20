@@ -1,0 +1,74 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst, kies één antwoord uit de onderstaande mogelijkheden en klik op de knop door de muis te gebruiken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                - Υπάρχει κάτι που νιώθετε ότι κερδίζετε καθώς μεγαλώνετε και κάτι που νιώθετε ότι χάνετε;<p>- Κερδίζω γνώση. Μαθαίνω καθημερινά τι σημαίνει αλληλεγγύη, μαθαίνω ότι κανείς δεν είναι μόνος  του, ότι δεν έχουμε να νοιαζόμαστε μόνο για τον εαυτό μας, ότι όλοι είμαστε μέλη μιας μεγάλης κοινότητας και όχι μόνο μιας πόλης, μιας χώρας  ή μιας ηπείρου. Οι άνθρωποι είμαστε πολύ τυχεροί που ζούμε πάνω σ' αυτόν τον πλανήτη και ενώ ο καθένας μας έχει την ιδιωτική του ζωή έχει συγχρόνως και εκατομμύρια φίλους σε όλον τον κόσμο. Το μόνο κακό όμως είναι ότι καθώς μεγαλώνουμε παύουμε να έχουμε τις αγνές προθέσεις και την αφέλεια των παιδιών.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="14266" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="4105" />
+<div id="prompt">Ποια από τις προτάσεις δεν περιγράφει τα συναισθήματα αυτού που δίνει τη συνέντευξη.;<br />Αυτός που δίνει συνέντευξη<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="3055" name="response" value="3055" />
+    <label for="3055">είναι απογοητευμένος από τη ζωή του και τους ανθρώπους.</label><br />
+    
+    <input type="radio" id="3056" name="response" value="3056" />
+    <label for="3056">θα ήθελε να διατηρεί ο καθένας λίγο από την παιδική του αθωότητα.</label><br />
+    
+    <input type="radio" id="3057" name="response" value="3057" />
+    <label for="3057">είναι ευχαριστημένος από τη ζωή και τους ανθρώπους.</label><br />
+    
+    <input type="radio" id="3058" name="response" value="3058" />
+    <label for="3058">το πέρασμα του χρόνου σημαίνει γι&#39; αυτόν περισσοτερες γνώσεις .</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

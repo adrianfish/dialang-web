@@ -1,0 +1,141 @@
+                <script>
+                    dialang.session.currentBasketType = 'tabbedpane';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Klicken Sie auf jeden einzelnen 'Karteireiter', um die Aufgaben zu sehen. Hören Sie den Text, wählen Sie EINE Option und klicken Sie dann mit der Maus auf die Schaltfläche. Bearbeiten Sie ALLE Aufgaben, bevor Sie auf 'Weiter' klicken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+<audio id="audio" preload="auto">
+    <source src="/dialang-content/media/audio/000555.mp3" type="audio/mpeg">
+    <source src="/dialang-content/media/audio/000555.ogg" type="audio/ogg">
+    <p>Your browser does not support the <code>audio</code> element.</p>
+</audio>
+<button id="playaudio" disabled><img src="/images/SpkNotPressed.gif" /></button>
+<script type="text/javascript" src="/js/audiomedia.js"></script>
+</div> 
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="24475" />
+                        <input type="hidden" name="basketType" value="tabbedpane" />
+                        <input type="hidden" id="number-of-items" value="3" />
+                        <div id="tabbedpane-tabs">
+    <ul>
+        
+        <li id="25142-tab"><a href="#tabs-1655"></a></li>
+        
+        <li id="25143-tab"><a href="#tabs-1656"></a></li>
+        
+        <li id="25144-tab"><a href="#tabs-1657"></a></li>
+        
+    </ul>
+    
+    <div id="tabs-1655">
+        <div id="prompt">La partenza dell'aereo è</div>
+        <div id="radios">
+            
+            <input type="radio" id="5834" basketid="" name="1655-response" value="5834" />
+            <label for="5834">anticipata.</label><br />
+            
+            <input type="radio" id="5835" basketid="" name="1655-response" value="5835" />
+            <label for="5835">in orario.</label><br />
+            
+            <input type="radio" id="5836" basketid="" name="1655-response" value="5836" />
+            <label for="5836">posticipata.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1656">
+        <div id="prompt">Completa la frase seguente:<br /><br />L'aereo partirà</div>
+        <div id="radios">
+            
+            <input type="radio" id="5837" basketid="" name="1656-response" value="5837" />
+            <label for="5837">di giorno.</label><br />
+            
+            <input type="radio" id="5838" basketid="" name="1656-response" value="5838" />
+            <label for="5838">di sera.</label><br />
+            
+            <input type="radio" id="5839" basketid="" name="1656-response" value="5839" />
+            <label for="5839">di pomeriggio.</label><br />
+            
+        </div>
+    </div>
+    
+    <div id="tabs-1657">
+        <div id="prompt">A che cosa si riferisce la sigla AZ580?</div>
+        <div id="radios">
+            
+            <input type="radio" id="5840" basketid="" name="1657-response" value="5840" />
+            <label for="5840">Al numero di matricola dell&#39;assistente di volo.</label><br />
+            
+            <input type="radio" id="5841" basketid="" name="1657-response" value="5841" />
+            <label for="5841">All&#39;uscita per l&#39;imbarco sull&#39;aereo.</label><br />
+            
+            <input type="radio" id="5842" basketid="" name="1657-response" value="5842" />
+            <label for="5842">Al codice del volo per Ginevra.</label><br />
+            
+        </div>
+    </div>
+    
+</div> 
+
+<input type="hidden" name="1655-position" value="1"/><br />
+
+<input type="hidden" name="1656-position" value="2"/><br />
+
+<input type="hidden" name="1657-position" value="3"/><br />
+
+<script>
+    var itemIds = [
+        
+        "1655",
+        
+        "1656",
+        
+        "1657",
+        
+    ];
+</script>
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Sind Sie sicher, dass Sie den Sprachtest überspringen wollen?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nein</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ihre Antwort:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Richtige Antwort:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ihre Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Richtige Antwort:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Richtige Antworten:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Läs texten och besvara uppgiften genom att fylla i luckan/luckorna. Klicka i rutan för att se svarsalternativen. Välj svar genom att klicka på det alternativ Du tror är det rätta.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Til kennara.<p>Þann 15. október næstkomandi er fyrir hugað að Handritadeild Landsbókasafnsins og Þjóðháttadeild Þjóðminjasafnsins haldi dag dagbókarinnar. Ætlunin er að þann dag verði Íslendingar beðnir um að skrifa dagbók og senda Þjóðminjasafninu. Jafnframt verði þeir sem hafa gamlar (eða nýlegar) dagbækur undir höndum hvattir til að afhenda þær handritadeild Landsbókasafnsins.<p>Átak af þessu tagi hefur bæði verið gert í Svíþjóð og Danmörku og gefist vel. Í Danmörku þar sem söfnunin var á vegum danska ríkisútvarpsins og Þjóðminjasafnsins sendu 50.000 Danir inn dagbók sem þeir höfðu skrifað þennan dag og gefin var út lítil bók "Dagbogen 2. september" þar sem úrval úr þessum dagbókum var birt. Þar eru m.a. frásagnir barna, aldraðra, sjúkra, fatlaðra, atvinnulausra, fanga og fólks úr ýmsum starfsstéttum af lífi sínu þennan tiltekna dag. Þessi bók komst á metsölulista í Danmörku.<p>Við biðjum um aðstoð móðurmálskennara við þetta átak en hjálp þeirra yrði ómetanleg til þess að ná sem bestum árangri. Við yrðum mjög þakklát ef kennarar sæju sér fært að hvetja nemendur sína til að halda dagbók þennan dag og senda Þjóðminjasafninu, gjarnan ásamt dagbókum fleiri úr fjölskyldu sinni. Ef til vill gætu kennarar nýtt þetta tilefni til þess að leggja áherslu á skapandi skriftir um þetta leyti.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7906" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Þetta átak er athyglisvert og það er nokkuð víst að margir Íslendingar, jafnt ungir sem aldnir, eiga eftir að taka þátt. Þessi dagbókarbrot eiga áreiðanlega eftir að hafa sögulegt gildi í framtíðinni. Eftir eina öld getur fólk lesið dagbók fjölda Íslendinga og fengið <select name="4781-response"><option></option><option value="11706">sjónarhorn</option><option value="11707">markmið</option><option value="11708">áskorun</option><option value="11709">tilgang</option></select> þessa fólks á lífið í landinu þann 15. október 1998.</span>
+</div> 
+
+
+<input type="hidden" name="4781-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Är du säker på att du vill hoppa över språktestet?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja </div><div>Nej</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Ditt svar:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Riktigt svar:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Ditt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Riktigt svar:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Riktiga svar:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

@@ -1,0 +1,73 @@
+                <script>
+                    dialang.session.currentBasketType = 'gaptext';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Léigh an téacs agus líon an bearna/na bearnaí. Brúigh ar an mbosca leis an luch agus ansin clóscríobh an freagra. Bí cúramach go litríonn tú ceart iad!</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                INFORMASJON OM BARNEHAGEN<p>Barnehagen er i hovedsak åpen for barn med heldagsplass fra 07.30 til 16.30 og for barn med halvdagsplass fra 08.30 til 15.00. Dette er maksimaltider. Når ditt barn begynner i barnehagen, er det viktig at barnet kommer regelmessig for å kunne dra nytte av barnehagens tilbud og styrke barnets følelse av tilhørighet.<p>Barna skal som regel bringes og hentes av foreldrene, alle unntak må avtales med personalet. Barnehagen forutsetter at foreldrene vanligvis tar hånd om av- og påkledning i garderoben.<p>Husk å gi beskjed til barnehagen når ditt barn ikke kommer på grunn av sykdom eller av andre årsaker. Barn som blir syke, skal ikke være i barnehagen av hensyn til barnet selv og de andre barna.  Dersom barnet blir sykt i barnehagetiden, blir foreldrene kontaktet, og barna må hentes hjem. Det er viktig at personalet alltid har korrekte opplysninger om hvor foreldrene kan nås på dagtid. 
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="8778" />
+                        <input type="hidden" name="basketType" value="gaptext" />
+                        <input type="hidden" id="number-of-items" value="5" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Barnet som har begynt i barnehagen, bør komme <input type="text" name="3232-response" /> slik at de tilpasser seg. Det er <input type="text" name="3233-response" /> sin oppgave å levere og hente barna, hvis ikke noe annet <input type="text" name="3234-response" /> . Det er også <input type="text" name="3235-response" /> som må kle på barnet når de henter det. <input type="text" name="3236-response" /> barn må ikke sendes i barnehagen.</span>
+</div> 
+
+
+<input type="hidden" name="3232-position" value="1" />
+
+<input type="hidden" name="3233-position" value="2" />
+
+<input type="hidden" name="3234-position" value="3" />
+
+<input type="hidden" name="3235-position" value="4" />
+
+<input type="hidden" name="3236-position" value="5" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>An bhfuil tú cinnte gur mhaith leat an teist teanga a scaoileadh tharat?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Is ea </div><div>Ní hea </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>D&#39;fhreagra:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Freagra ceart:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="D&#39;fhreagra:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Freagra ceart:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Freagraí cearta:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

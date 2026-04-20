@@ -1,0 +1,65 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lees de tekst en vul de tekst in op de opengelaten plaats(en). Klik op het hokje, waarna u een lijst met mogelijkheden ziet verschijnen. Kies uw antwoord door erop te klikken.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Það er ekki hægt að segja að "Gamla gengið" sé góð mynd, því mikið vantar upp á að handrit og leikstjórn standi fyrir sínu. En myndin leynir á sér. Hún er stoppfull af vísunum í gamlar myndir og tekur sjálfa sig bara mátulega alvarlega. Árekstur gömlu klíkunnar og hinnar nýju er jafnframt margslunginn, því hann vísar í raunveruleg samfélagsátök um leið og hann felur í sér átök milli nýrra kvikmyndategunda og gamalla. Í stuttu máli er myndin þokkaleg skemmtun, sérstaklega fyrir þá sem þekkja gömlu myndirnar.<p align=right>Guðmundur Ásgeirsson.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="7762" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Guðmundi Ásgeirssyni finnst myndin <select name="4748-response"><option></option><option value="11458">mjög léleg</option><option value="11459">frekar þunn</option><option value="11460">alveg ágæt</option><option value="11461">frábær</option></select> .</span>
+</div> 
+
+
+<input type="hidden" name="4748-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Weet u zeker dat u de taaltoets wilt overslaan?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Ja</div><div>Nee</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Uw antwoord:</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Het juiste antwoord:</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Uw antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Het juiste antwoord:"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Juiste antwoorden:"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

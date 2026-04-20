@@ -1,0 +1,63 @@
+                <script>
+                    dialang.session.currentBasketType = 'gapdrop';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">L'exercice consiste à remplir le(s) trou(s). Cliquez sur la case pour afficher la liste des réponses, puis choisissez votre réponse.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3936" />
+                        <input type="hidden" name="basketType" value="gapdrop" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <div id="prompt"></div>
+<div id="radios">
+    <span>Anche se l'invenzione del violino è attribuita a Gasparo da Salò e ai suoi conterranei va il merito di aver dato allo strumento la forma moderna, la migliore scuola di liuteria rimane quella fiorita a Cremona. Il fondatore fu Andrea Amati, la cui eredità venne raccolta da Andrea Guarneri e Antonio Stradivari.
+ <select name="1877-response"><option></option><option value="7929">Quest'ultimo produsse nella sua lunga carriera centinaia di strumenti di straordinaria qualità.</option><option value="7930">Nel palazzo del Comune di Cremona sono conservati quattro violini di Stradivari.</option><option value="7931">I violini della raccolta vengono regolarmente usati per i concerti.</option><option value="7932">Infatti i violini vengono periodicamente sottoposti a manutenzione.</option></select> </span>
+</div> 
+
+
+<input type="hidden" name="1877-position" value="1" />
+
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 

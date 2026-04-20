@@ -1,0 +1,71 @@
+                <script>
+                    dialang.session.currentBasketType = 'mcq';
+                </script>
+                <div id="basket">
+                    <div id="rubric">
+                        <div id="rubric-image"><img src="..//images/Inform.gif"/></div>
+                        <div id="rubric-text">Lisez attentivement le texte, puis choisissez à l'aide de la souris, une réponse parmi celles proposées ci-dessous.</div>
+                        <div style="clear: both;"></div>
+                    </div> 
+                    <div id="media">
+                Tekst 1<p>- Er kan n.l. makkelijk een stuk met achtergrondinformatie aan gehangen worden, zodat iedereen zich naar behoefte op de hoogte kan stellen en reageren, zonder dat er papier verspild wordt. <p>- Het is ook een medium waarmee je snel informatie kunt verspreiden of verzoeken doen.<p>- Bij nieuwe projecten zou iedere medewerker moeten kunnen aangeven dat hij/zij daar belangstelling voor heeft. Hiervoor lijkt e-mail een geschikt medium. <p>Tekst 2<p>- Er kan n.l. makkelijk een stuk met achtergrondinformatie aan gehangen worden, zodat iedereen zich naar behoefte op de hoogte kan stellen en reageren, zonder dat er papier verspild wordt. <p>- Bij nieuwe projecten zou iedere medewerker moeten kunnen aangeven dat hij/zij daar belangstelling voor heeft. Hiervoor lijkt e-mail een geschikt medium. <p>- Het is ook een medium waarmee je snel informatie kunt verspreiden of verzoeken doen.<p>Tekst 3<p>- Bij nieuwe projecten zou iedere medewerker moeten kunnen aangeven dat hij/zij daar belangstelling voor heeft. Hiervoor lijkt e-mail een geschikt medium.<p>- Er kan n.l. makkelijk een stuk met achtergrondinformatie aan gehangen worden, zodat iedereen zich naar behoefte op de hoogte kan stellen en reageren, zonder dat er papier verspild wordt. <p>- Het is ook een medium waarmee je snel informatie kunt verspreiden of verzoeken doen.
+                </div>
+
+                    <div id="response">
+                    <form id="basketform" action="/api/submitbasket" method="POST">
+                        <input type="hidden" name="basketId" value="3507" />
+                        <input type="hidden" name="basketType" value="mcq" />
+                        <input type="hidden" id="number-of-items" value="1" />
+                        <input type="hidden" name="itemId" value="1006" />
+<div id="prompt">In welke tekst staan de zinnen in de goede volgorde?<br /></div>
+<div id="radios">
+    
+    <input type="radio" id="7519" name="response" value="7519" />
+    <label for="7519">Tekst 1</label><br />
+    
+    <input type="radio" id="7520" name="response" value="7520" />
+    <label for="7520">Tekst 2</label><br />
+    
+    <input type="radio" id="7521" name="response" value="7521" />
+    <label for="7521">Tekst 3</label><br />
+    
+</div> 
+
+                    </form>
+                    </div> 
+                </div> 
+                <div id="confirm-skip-dialog" class="dialang-dialog" title="">
+                    <div class="dialang-dialog-content">
+                        <p>Etes-vous sûr(e) de vouloir sauter le test de langue ?</p>
+                        <div id="confirmation-button-table">
+                            <div>
+                                <div><button id="confirm-skip-yes"><img src="/images/yes.gif"/></button></div>
+                                <div><button id="confirm-skip-no"><img src="/images/no.gif" width="58" height="58"/></button></div>
+                            </div>
+                            <div>
+                                <div>Oui</div><div>Non</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div id="mcq-review-dialog" class="review-dialog">
+                    <div class="review-smiley">
+                        <img src="/images/smiley.gif"/>
+                    </div>
+                    <div class="review-answer-box">
+                        <div class="review-given-answer">
+                            <h3>Votre réponse :</h3>
+                            <p></p>
+                        </div>
+                        <div class="review-correct-answer">
+                            <h3>Bonne réponse :</h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div> 
+                
+                <input type="hidden" id="review-dialog-youranswer-title" value="Votre réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswer-title" value="Bonne réponse :"/>
+                <input type="hidden" id="review-dialog-correctanswers-title" value="Bonnes réponses :"/>
+                <div id="tp-review-dialog" class="review-dialog">
+                </div> 
