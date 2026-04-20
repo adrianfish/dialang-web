@@ -1,0 +1,5 @@
+./static/content/*
+./static/lib/*
+./data-files/*
+./docs/*
+./bin/*
