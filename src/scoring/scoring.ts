@@ -7,6 +7,7 @@ export const CEFR_LEVELS: Record<number, string> = { 1: "A1", 2: "A2", 3: "B1", 
  * Returns the sum of the weights of the questions answered 'true'
  */
 async function getSaRawScore(skill: string, responses: Record<string, boolean>, storage: Storage): Promise<number> {
+
 	const wordMap: Record<string, number> = await storage.getSAWeights(skill);
   return Object.entries(responses).reduce((acc, curr) => curr[1] ? acc + wordMap[curr[0]] : acc, 0);
 }
@@ -30,11 +31,13 @@ export async function getScoredIdResponseItem(itemId: number, responseId: number
 
 	const item: Item = await storage.getItem(itemId);
 	if (!item) {
+    console.log("asdfasdfsadf");
 		return [ null, `Failed to get item for itemId: ${itemId}` ];
 	}
 
 	const answer = await storage.getAnswer(responseId)
 	if (!answer) {
+    console.log("ttttasdfasdfsadf");
 		return [ null, `Failed to get answer for responseId: ${responseId}` ];
 	}
 
