@@ -1,13 +1,22 @@
 import { parse } from "@std/csv";
 import type { PreestAssignment } from "./src/types/types.ts";
 
+const bytes = await Deno.readFile("./data-files/vspt-words.csv");
+const blob = new Blob([ bytes ], { type: "text/csv" });
+const form = new FormData();
+form.append("file", blob, "vspt-words.csv");
+form.append("type", "vspt-words");
+fetch("http://localhost:3001/api/loaddata", { method: "POST", body: form });
+
+
+/*
 const kv = await Deno.openKv();
 
 const keys = kv.list({ prefix: [] }); // If you want to list all keys without a specific prefix
 for await (const entry of keys) {
+  console.log(entry);
   await kv.delete(entry.key);
 }
-
 // VSP WORDS
 const allWords = {};
 parse(await Deno.readTextFile("./data-files/vspt-words.csv"), { skipFirstRow: true }).forEach(w => {
@@ -112,3 +121,4 @@ Object.entries(itemGrades).forEach(([compoundKey, gradeMap]) => {
     kv.set([ "item_grades", compoundKey, parseInt(rawScore) ], grades);
   });
 });
+*/

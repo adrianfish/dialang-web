@@ -20,7 +20,8 @@ export class KVStorage implements Storage {
 
   saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
     session.lastModified = Date.now();
-    this.#kv.set(["sessions", sessionId], session);
+    const expireIn = 8 * 60 * 60 * 1000;
+    this.#kv.set(["sessions", sessionId], session, { expireIn });
   }
 
   async getSession(sessionId: string): Promise<DialangSession> {

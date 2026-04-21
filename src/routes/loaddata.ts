@@ -6,13 +6,10 @@ export async function loadData(
   c: Context,
   kv: Deno.Kv,
 ): Promise<Response> {
-
-  console.log("HERE");
-  console.log(kv);
   const body = await c.req.parseBody();
   const type = body["type"];
+  console.log(type);
   const file = body["file"];
-  //console.log(parse(await file.text(), { skipFirstRow: true }));
 
   switch (type) {
     case "vspt-words":

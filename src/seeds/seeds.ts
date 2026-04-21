@@ -1,12 +1,10 @@
 import { parse } from "@std/csv";
 
-  //console.log(parse(await file.text(), { skipFirstRow: true }));
 export async function seedVsptWords(file, kv) {
 
   // VSP WORDS
   const allWords = {};
-  console.log("BALLS");
-  console.log((await kv.get(["vsp_bands", "dan_dk"])));
+  console.log(await file.text());
   parse((await file.text()), { skipFirstRow: true }).forEach(w => {
     const converted = { ...w, valid: parseInt(w.valid), weight: parseInt(w.weight) };
     const tlWords = allWords[w.test_language];
@@ -16,7 +14,7 @@ export async function seedVsptWords(file, kv) {
       allWords[w.test_language] = [ converted ];
     }
   });
-  console.log(Object.entries(allWords));
+  console.log(allWords);
   await Object.entries(allWords).forEach(async ([tl, words]) => await kv.set(["vsp_words", tl], words));
 }
 /*
