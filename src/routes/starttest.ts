@@ -19,7 +19,6 @@ export async function startTest(
 		return c.html("");
 	}
 
-
 	if (session.scoredItems?.length > 0) {
 		console.error("The scored item list should be empty at this point. Returning 500 ...")
 		c.status(500);
@@ -73,8 +72,8 @@ async function calculateBookletId(session: DialangSession, storage: Storage): nu
 		// if either test is done, then we need to get the grade
 		// associated with that test:
 
-		let vsptZScore: number;
-    let saPPE: number;
+		let vsptZScore: number = 0;
+    let saPPE: number = 0;
 		if (session.vsptSubmitted) {
 			vsptZScore = session.vsptZScore
 			console.log(`VSPT SUBMITTED. vsptZScore: ${vsptZScore}`);
