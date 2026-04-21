@@ -9,6 +9,7 @@ import { scoreSA } from "./src/routes/scoresa.ts";
 import { startTest } from "./src/routes/starttest.ts";
 import { submitBasket } from "./src/routes/submitbasket.ts";
 import { deleteSession } from "./src/routes/deletesession.ts";
+import { loadData } from "./src/routes/loaddata.ts";
 
 const app: Hono = new Hono();
 
@@ -20,6 +21,7 @@ app.post("/api/scoresa", (c) => scoreSA(c, storage));
 app.post("/api/starttest", (c) => startTest(c, storage));
 app.post("/api/submitbasket", (c) => submitBasket(c, storage));
 app.get("/api/deletesession", (c) => deleteSession(c, storage));
+app.post("/api/loaddata", (c) => loadData(c, storage.getKv()));
 app.use("/*", serveStatic({ root: "./static/" }));
 
 Deno.serve({ port: 3001, hostname: "127.0.0.1" }, app.fetch);

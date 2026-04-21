@@ -14,6 +14,10 @@ export class KVStorage implements Storage {
     return new KVStorage(await Deno.openKv());
   }
 
+  getKv() {
+    return this.#kv;
+  }
+
   saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
     session.lastModified = Date.now();
     this.#kv.set(["sessions", sessionId], session);
