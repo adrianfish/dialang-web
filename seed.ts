@@ -1,9 +1,10 @@
+const url = "https://dialang.adrianfish.deno.net"
 const postIt = async (filepath, name, type)   => {
   const blob = new Blob([ await Deno.readFile(filepath) ]);
   const form = new FormData();
   form.append("file", blob, name);
   form.append("type", type);
-  fetch("http://localhost:3001/api/loaddata", { method: "POST", body: form });
+  fetch(`${url}/api/loaddata`, { method: "POST", body: form });
 };
 
 postIt("./data-files/vspt-words.csv", "vspt-words.csv", "vspt_words");
