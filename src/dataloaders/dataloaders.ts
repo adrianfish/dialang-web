@@ -1,6 +1,6 @@
 import { parse } from "@std/csv";
 
-export async function seedVsptWords(file, kv) {
+export async function loadVsptWords(file, kv) {
   const allWords = {};
   parse((await file.text()), { skipFirstRow: true }).forEach(w => {
     const converted = { ...w, valid: parseInt(w.valid), weight: parseInt(w.weight) };
@@ -11,10 +11,10 @@ export async function seedVsptWords(file, kv) {
       allWords[w.test_language] = [ converted ];
     }
   });
-  Object.entries(allWords).forEach(([tl, words]) => kv.set(["vsp_words", tl], words));
+  Object.entries(allWords).forEach(([tl, words]) => kv.set([ "data", "vspt-words", tl ], words));
 }
 
-export async function seedVsptBands(file, kv) {
+export async function loadVsptBands(file, kv) {
   const allBands = {};
   parse((await file.text()), { skipFirstRow: true }).forEach(b => {
 
@@ -26,20 +26,20 @@ export async function seedVsptBands(file, kv) {
       allBands[b.test_language] = [ converted ];
     }
   });
-  Object.entries(allBands).forEach(([tl, bands]) => kv.set(["vsp_bands", tl], bands));
+  Object.entries(allBands).forEach(([tl, bands]) => kv.set([ "data", "vspt-bands", tl ], bands));
 }
 
-export async function seedSaGrades(file, kv) {
+export async function loadSaGrades(file, kv) {
   const saGrades = [];
   parse((await file.text()), { skipFirstRow: true }).forEach(g => {
 
     const converted = { skill: g.skill, rsc: parseInt(g.rsc), ppe: parseFloat(g.ppe).toFixed(2), se: parseFloat(g.se).toFixed(), grade: parseInt(g.grade) };
     saGrades.push(converted);
   });
-  saGrades.forEach(g  => kv.set(["sa_grades", g.skill, g.rsc], g));
+  saGrades.forEach(g  => kv.set([ "data", "sa-grades", g.skill, g.rsc ], g));
 }
 
-export async function seedSaWeights(file, kv) {
+export async function loadSaWeights(file, kv) {
   const allSaWeights = {};
   parse((await file.text()), { skipFirstRow: true }).forEach(w => {
 
@@ -49,10 +49,10 @@ export async function seedSaWeights(file, kv) {
       allSaWeights[w.skill] = { [w.wid]: parseInt(w.weight) };
     }
   });
-  Object.entries(allSaWeights).forEach(([skill, weights])  => kv.set(["sa_weights", skill], weights));
+  Object.entries(allSaWeights).forEach(([skill, weights])  => kv.set([ "data", "sa-weights", skill ], weights));
 }
 
-export async function seedPreestAssignments(file, kv) {
+export async function loadPreestAssignments(file, kv) {
   const allAssignments: Record<string, Array<PreestAssignment>> = {};
   parse((await file.text()), { skipFirstRow: true }).forEach(a => {
 
@@ -65,55 +65,55 @@ export async function seedPreestAssignments(file, kv) {
       allAssignments[a.key] = [ converted ];
     }
   });
-  Object.entries(allAssignments).forEach(([key, assignments])  => kv.set(["preest_assignments", key], assignments));
+  Object.entries(allAssignments).forEach(([key, assignments])  => kv.set([ "data", "preest-assignments", key ], assignments));
 }
 
-export async function seedPreestWeights(file, kv) {
+export async function loadPreestWeights(file, kv) {
   parse((await file.text()), { skipFirstRow: true }).forEach(w => {
     const weight = { sa: parseFloat(w.sa), vspt: parseFloat(w.vspt), coe: parseFloat(w.coe) };
-    kv.set(["preest_weights", w.key], weight);
+    kv.set([ "data", "preest-weights", w.key ], weight);
   });
 }
 
-export async function seedBookletLengths(file, kv) {
+export async function loadBookletLengths(file, kv) {
   parse((await file.text()), { skipFirstRow: true }).forEach(l => {
-    kv.set(["booklet_lengths", parseInt(l.booklet_id)], parseInt(l.length));
+    kv.set([ "data", "booklet-lengths", parseInt(l.booklet_id) ], parseInt(l.length));
   });
 }
 
-export async function seedBookletBaskets(file, kv) {
+export async function loadBookletBaskets(file, kv) {
   parse((await file.text()), { skipFirstRow: true }).forEach(bb => {
     const bookletId = parseInt(bb.booklet_id);
     const basketIds: Array<number> = bb.basket_ids.split(",").map(id => parseInt(id));
-    kv.set([ "booklet_baskets", bookletId ], basketIds);
+    kv.set([ "data", "booklet-baskets", bookletId ], basketIds);
   });
 } 
 
-export async function seedItems(file, kv) {
+export async function loadItems(file, kv) {
   const items = JSON.parse(await file.text());
-  Object.entries(items).forEach(([id, item]) => kv.set([ "items", parseInt(id) ], item));
+  Object.entries(items).forEach(([id, item]) => kv.set([ "data", "items", parseInt(id) ], item));
 }
 
-export async function seedAnswers(file, kv) {
+export async function loadAnswers(file, kv) {
   const answers = JSON.parse(await file.text());
-  Object.entries(answers).forEach(([id, answer]) => kv.set([ "answers", parseInt(id) ], answer));
+  Object.entries(answers).forEach(([id, answer]) => kv.set([ "data", "answers", parseInt(id) ], answer));
 }
 
-export async function seedItemAnswers(file, kv) {
+export async function loadItemAnswers(file, kv) {
   const itemAnswers = JSON.parse(await file.text());
-  Object.entries(itemAnswers).forEach(([itemId, answers]) => kv.set([ "item_answers", parseInt(itemId) ], answers));
+  Object.entries(itemAnswers).forEach(([itemId, answers]) => kv.set([ "data", "item-answers", parseInt(itemId) ], answers));
 }
 
-export async function seedPunctuation(file, kv) {
+export async function loadPunctuation(file, kv) {
   const punctuation = JSON.parse(await file.text());
-  kv.set([ "punctuation" ], punctuation);
+  kv.set([ "data", "punctuation" ], punctuation);
 }
 
-export async function seedItemGrades(file, kv) {
+export async function loadItemGrades(file, kv) {
   const itemGrades = JSON.parse(await file.text());
   Object.entries(itemGrades).forEach(([compoundKey, gradeMap]) => {
     Object.entries(gradeMap).forEach(([rawScore, grades]) => {
-      kv.set([ "item_grades", compoundKey, parseInt(rawScore) ], grades);
+      kv.set([ "data", "item-grades", compoundKey, parseInt(rawScore) ], grades);
     });
   });
 }

@@ -41,55 +41,55 @@ export class KVStorage implements Storage {
   }
 
   async getVSPWords(tl: string): Promise<Array<VSPWord>> {
-    return (await this.#kv.get([ "vsp_words", tl])).value;
+    return (await this.#kv.get([ "data", "vspt-words", tl])).value;
   }
 
   async getVSPBands(tl: string): Promise<Array<VSPBand>> {
-    return (await this.#kv.get([ "vsp_bands", tl])).value;
+    return (await this.#kv.get([ "data", "vspt-bands", tl])).value;
   }
 
   async getSAGrade(skill: string, rsc: number): Promise<SAGrade> {
-    return (await this.#kv.get([ "sa_grades", skill, rsc ])).value;
+    return (await this.#kv.get([ "data", "sa-grades", skill, rsc ])).value;
   }
 
   async getSAWeights(skill: string): Promise<Record<string, number>> {
-    return (await this.#kv.get([ "sa_weights", skill ])).value;
+    return (await this.#kv.get([ "data", "sa-weights", skill ])).value;
   }
 
   async getPreestWeight(key: string): Promise<PreestWeight> {
-    return (await this.#kv.get([ "preest_weights", key ])).value;
+    return (await this.#kv.get([ "data", "preest-weights", key ])).value;
   }
 
   async getPreestAssignments(key: string): Promise<Array<PreestAssignment>> {
-    return (await this.#kv.get([ "preest_assignments", key ])).value;
+    return (await this.#kv.get([ "data", "preest-assignments", key ])).value;
   }
 
   async getBookletLength(bookletId: number): Promise<number> {
-    return (await this.#kv.get([ "booklet_lengths", bookletId ])).value;
+    return (await this.#kv.get([ "data", "booklet-lengths", bookletId ])).value;
   }
 
   async getBaskets(bookletId: number): Promise<Array<number>> {
-    return (await this.#kv.get([ "booklet_baskets", bookletId ])).value;
+    return (await this.#kv.get([ "data", "booklet-baskets", bookletId ])).value;
   }
 
   async getItem(id: number): Promise<Item> {
-    return (await this.#kv.get([ "items", id ])).value;
+    return (await this.#kv.get([ "data", "items", id ])).value;
   }
 
   async getAnswer(id: number): Promise<Answer> {
-    return (await this.#kv.get([ "answers", id ])).value;
+    return (await this.#kv.get([ "data", "answers", id ])).value;
   }
 
   async getItemAnswers(itemId: number): Promise<Array<Answer>> {
-    return (await this.#kv.get([ "item_answers", itemId ])).value;
+    return (await this.#kv.get([ "data", "item-answers", itemId ])).value;
   }
 
   async getItemGrade(key: string, rawScore: number): Promise<Record<string, any>> {
     console.debug(`Retrieving item grade for key ${key} and raw score ${rawScore} ...`);
-    return (await this.#kv.get([ "item_grades", key, rawScore ])).value;
+    return (await this.#kv.get([ "data", "item-grades", key, rawScore ])).value;
   }
 
   async getPunctuationList(): Promise<Array<string>> {
-    return (await this.#kv.get([ "punctuation" ])).value;
+    return (await this.#kv.get([ "data", "punctuation" ])).value;
   }
 }

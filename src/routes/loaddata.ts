@@ -1,5 +1,5 @@
 import type { Context } from "@hono";
-import * as seeds from "../seeds/seeds.ts";
+import * as loaders from "../dataloaders/dataloaders.ts";
 import { parse } from "@std/csv";
 import { createHash } from "../utils/utils.ts";
 
@@ -14,65 +14,72 @@ export async function loadData(
     return c.html("");
   }
 
-  console.log(loadSecret);
-
   const body = await c.req.parseBody();
   const hash = body["hash"];
-  console.log(hash);
   const testHash = await createHash(loadSecret);
-  console.log(testHash);
   if (hash !== testHash) {
     c.status(403);
     return c.html("");
   }
-  return c.html("");
 
-  /*
   const type = body["type"];
   const file = body["file"];
+  const clear = body["clear"];
+
+  if ("true" === clear) {
+    const prefix = [];
+    //const prefix = [ "data" ];
+    (type !== "all") && prefix.push(type);
+    const iter = kv.list({ prefix });
+    const promises = [];
+    for await (const entry of iter) {
+      promises.push(kv.delete(entry.key));
+    }
+    await Promise.all(promises);
+    return c.html("");
+  }
 
   switch (type) {
-    case "vspt_words":
-      await seeds.seedVsptWords(file, kv);
+    case "vspt-words":
+      await loaders.loadVsptWords(file, kv);
       break;
-    case "vspt_bands":
-      await seeds.seedVsptBands(file, kv);
+    case "vspt-bands":
+      await loaders.loadVsptBands(file, kv);
       break;
-    case "sa_grades":
-      await seeds.seedSaGrades(file, kv);
+    case "sa-grades":
+      await loaders.loadSaGrades(file, kv);
       break;
-    case "sa_weights":
-      await seeds.seedSaWeights(file, kv);
+    case "sa-weights":
+      await loaders.loadSaWeights(file, kv);
       break;
-    case "preest_assignments":
-      await seeds.seedPreestAssignments(file, kv);
+    case "preest-assignments":
+      await loaders.loadPreestAssignments(file, kv);
       break;
-    case "preest_weights":
-      await seeds.seedPreestWeights(file, kv);
+    case "preest-weights":
+      await loaders.loadPreestWeights(file, kv);
       break;
-    case "booklet_lengths":
-      await seeds.seedBookletLengths(file, kv);
+    case "booklet-lengths":
+      await loaders.loadBookletLengths(file, kv);
       break;
-    case "booklet_baskets":
-      await seeds.seedBookletBaskets(file, kv);
+    case "booklet-baskets":
+      await loaders.loadBookletBaskets(file, kv);
       break;
     case "items":
-      await seeds.seedItems(file, kv);
+      await loaders.loadItems(file, kv);
       break;
     case "answers":
-      await seeds.seedAnswers(file, kv);
+      await loaders.loadAnswers(file, kv);
       break;
-    case "item_answers":
-      await seeds.seedItemAnswers(file, kv);
+    case "item-answers":
+      await loaders.loadItemAnswers(file, kv);
       break;
     case "punctuation":
-      await seeds.seedPunctuation(file, kv);
+      await loaders.loadPunctuation(file, kv);
       break;
-    case "item_grades":
-      await seeds.seedItemGrades(file, kv);
+    case "item-grades":
+      await loaders.loadItemGrades(file, kv);
       break;
     default:
   }
   return c.html("");
-  */
 }
