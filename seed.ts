@@ -9,6 +9,8 @@ if (!loadSecret) {
 
 const hash = await createHash(loadSecret);
 
+console.log(hash);
+
 const url = "https://dialang.net"
 //const url = "http://localhost:3001"
 const loadOne = async (filepath, name, type)   => {
