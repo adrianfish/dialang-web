@@ -9,8 +9,8 @@ if (!loadSecret) {
 
 const hash = await createHash(loadSecret);
 
-//const url = "https://dialang.net"
-const url = "http://localhost:3001"
+const url = "https://dialang.net"
+//const url = "http://localhost:3001"
 const loadOne = async (filepath, name, type)   => {
   const blob = new Blob([ await Deno.readFile(filepath) ]);
   const form = new FormData();

@@ -27,8 +27,7 @@ export async function loadData(
   const clear = body["clear"];
 
   if ("true" === clear) {
-    const prefix = [];
-    //const prefix = [ "data" ];
+    const prefix = [ "data" ];
     (type !== "all") && prefix.push(type);
     const iter = kv.list({ prefix });
     const promises = [];
