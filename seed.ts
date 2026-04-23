@@ -15,7 +15,10 @@ const postIt = async (filepath, name, type)   => {
   form.append("file", blob, name);
   form.append("type", type);
   form.append("hash", hash);
-  fetch(`${url}/api/loaddata`, { method: "POST", body: form });
+  fetch(`${url}/api/loaddata`, { method: "POST", body: form })
+  .then(r => {
+    console.log(r.status);
+  });
 };
 
 postIt("./data-files/vspt-words.csv", "vspt-words.csv", "vspt_words");

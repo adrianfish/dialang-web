@@ -14,9 +14,13 @@ export async function loadData(
     return c.html("");
   }
 
+  console.log(loadSecret);
+
   const body = await c.req.parseBody();
   const hash = body["hash"];
-  const testHash = createHash(loadSecret);
+  console.log(hash);
+  const testHash = await createHash(loadSecret);
+  console.log(testHash);
   if (hash !== testHash) {
     c.status(403);
     return c.html("");
