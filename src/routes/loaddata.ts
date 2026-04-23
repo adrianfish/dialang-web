@@ -1,7 +1,7 @@
 import type { Context } from "@hono";
 import * as seeds from "../seeds/seeds.ts";
 import { parse } from "@std/csv";
-import { createHash } from "./src/utils/utils.ts";
+import { createHash } from "../utils/utils.ts";
 
 export async function loadData(
   c: Context,
