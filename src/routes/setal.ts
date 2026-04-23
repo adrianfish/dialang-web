@@ -1,6 +1,5 @@
-import { setCookie } from "@hono/cookie";
 import { getConnInfo } from '@hono/deno'
-import { v5 } from "@std/uuid";
+import { setSessionId } from "../utils/utils.ts";
 
 import type { Context } from "@hono";
 import type { Storage } from "../storage/storage.ts";
@@ -16,19 +15,15 @@ export async function setAl(
     c.status(400);
     return c.html("No admin language supplied");
   }
-  const sessionId = crypto.randomUUID();
 
-  setCookie(c, "dialang", sessionId)
+  const sessionId = setSessionId(c);
 
-  const info = getConnInfo(c)
-
-  const started = Date.now();
   storage.saveSession(sessionId, {
     id: sessionId,
     al,
     referrer: c.req.header("Referer"),
-    ipAddress: info.remote.address,
-    started,
+    ipAddress: getConnInfo(c).remote.address,
+    started: Date.now(),
   });
 
   return c.json({ al, sessionId });

@@ -1,5 +1,5 @@
 import { Context } from "@hono/hono";
-import { getCookie } from "@hono/cookie";
+import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
 import type { DialangSession, PreestWeight } from "../types/types.ts";
 
@@ -10,8 +10,8 @@ export async function startTest(
   storage: Storage,
 ): Promise<Response> {
 
-  const sessionId: string = getCookie(c, "dialang");
-  const session: DialangSession = await storage.getSession(sessionId);
+  const sessionId: string = getSessionId(c);
+  const session = await storage.getSession(sessionId);
 
 	if (!session.tl || !session.skill) {
 		console.error("Neither the test language or skill were set in the session. Returning 500 ...")

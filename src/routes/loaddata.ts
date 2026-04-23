@@ -1,15 +1,30 @@
 import type { Context } from "@hono";
-//import { seedVsptWords, seedVsptBands, seedSaGrades, seedSaWeights, seedPreestAssignments, seedPreestWeights } from "../seeds/seeds.ts";
 import * as seeds from "../seeds/seeds.ts";
 import { parse } from "@std/csv";
+import { createHash } from "./src/utils/utils.ts";
 
 export async function loadData(
   c: Context,
   kv: Deno.Kv,
 ): Promise<Response> {
+
+  const loadSecret = Deno.env.get("LOAD_SECRET");
+  if (!loadSecret) {
+    c.status(500);
+    return c.html("");
+  }
+
   const body = await c.req.parseBody();
+  const hash = body["hash"];
+  const testHash = createHash(loadSecret);
+  if (hash !== testHash) {
+    c.status(403);
+    return c.html("");
+  }
+  return c.html("");
+
+  /*
   const type = body["type"];
-  console.log(type);
   const file = body["file"];
 
   switch (type) {
@@ -55,4 +70,5 @@ export async function loadData(
     default:
   }
   return c.html("");
+  */
 }

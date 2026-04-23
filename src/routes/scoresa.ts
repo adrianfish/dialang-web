@@ -1,12 +1,12 @@
-import { getCookie } from "@hono/cookie";
+import { getSessionId } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
 
 export async function scoreSA(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
-  const sessionId = getCookie(c, "dialang");
-  const session: DialangSession = await storage.getSession(sessionId);
+  const sessionId = getSessionId(c);
+  const session = await storage.getSession(sessionId);
 
 	if (!session.tl || !session.skill) {
 		c.status(500);

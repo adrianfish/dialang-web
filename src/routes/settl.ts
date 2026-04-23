@@ -1,8 +1,5 @@
-import { getCookie, setCookie } from "@hono/cookie";
-import { getConnInfo } from '@hono/deno'
-import { v5 } from "@std/uuid";
+import { getSessionId } from "../utils/utils.ts";
 import type { Context } from "@hono";
-import type { DialangSession, TES } from "../types/types.ts";
 import { Storage } from "../storage/storage.ts";
 
 export async function setTl(
@@ -16,7 +13,7 @@ export async function setTl(
     return c.html("No test language or skill supplied");
   }
 
-  const sessionId: string = getCookie(c, "dialang");
+  const sessionId: string = getSessionId(c);
 
   const session = await storage.getSession(sessionId);
 

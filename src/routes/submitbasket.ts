@@ -1,5 +1,5 @@
 import { Context } from "@hono/hono";
-import { getCookie } from "@hono/cookie";
+import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
 import type { DialangSession, ScoredBasket, ScoredItem, TES } from "../types/types.ts";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
@@ -8,7 +8,7 @@ export async function submitBasket(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
-  const sessionId: string = getCookie(c, "dialang");
+  const sessionId: string = getSessionId(c);
   const session: DialangSession = await storage.getSession(sessionId);
 
 	if (!session.tl || !session.skill || !session.currentBasketId) {

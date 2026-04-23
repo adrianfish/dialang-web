@@ -1,9 +1,20 @@
-const url = "https://dialang.adrianfish.deno.net"
+import { createHash } from "./src/utils/utils.ts";
+
+const loadSecret = Deno.env.get("LOAD_SECRET");
+if (!loadSecret) {
+  console.error("LOAD_SECRET environment variable not set");
+  Deno.exit();
+}
+
+const hash = await createHash(loadSecret);
+
+const url = "https://dialang.net"
 const postIt = async (filepath, name, type)   => {
   const blob = new Blob([ await Deno.readFile(filepath) ]);
   const form = new FormData();
   form.append("file", blob, name);
   form.append("type", type);
+  form.append("hash", hash);
   fetch(`${url}/api/loaddata`, { method: "POST", body: form });
 };
 

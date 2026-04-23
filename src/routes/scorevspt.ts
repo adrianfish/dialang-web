@@ -1,6 +1,6 @@
-import { getCookie } from "@hono/cookie";
+import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
-import type { DialangSession } from "../types/types.ts";
+import type { Context } from "@hono";
 
 export async function scoreVspt(
   c: Context,
@@ -14,8 +14,8 @@ export async function scoreVspt(
     .map(([k, v]) => [ k.split(":")[1], v === "valid"])
   );
 
-  const sessionId = getCookie(c, "dialang");
-  const session: DialangSession = await storage.getSession(sessionId);
+  const sessionId = getSessionId(c);
+  const session = await storage.getSession(sessionId);
 
   const [ zScore, mearaScore, level, error ] = await getBand(storage, session.tl, responses);
   if (error) {
