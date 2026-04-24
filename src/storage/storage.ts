@@ -47,4 +47,12 @@ export interface Storage {
   getItemGrade(key: string, rawScore: number): Promise<Record<string, any>>;
 
   getPunctuationList(): Promise<Array<string>>;
+
+  logTestStart(session: DialangSession): Promise<boolean>;
+
+  logVsptScores(session: DialangSession): Promise<boolean>;
+
+  logSaScores(session: DialangSession): Promise<boolean>;
+
+  logTestResult(session: DialangSession): Promise<boolean>;
 }

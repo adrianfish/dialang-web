@@ -248,6 +248,7 @@ export async function submitBasket(
 
     //datacapture.LogTestResult(session)
     //datacapture.LogTestFinish(session.passId)
+    storage.logTestResult(session);
 
     if (session.resultUrl) {
       const parts = session.resultUrl.split("?");

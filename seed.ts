@@ -9,8 +9,6 @@ if (!loadSecret) {
 
 const hash = await createHash(loadSecret);
 
-console.log(hash);
-
 const url = "https://dialang.net"
 //const url = "http://localhost:3001"
 const loadOne = async (filepath, name, type)   => {
@@ -21,7 +19,12 @@ const loadOne = async (filepath, name, type)   => {
   form.append("hash", hash);
   return fetch(`${url}/api/loaddata`, { method: "POST", body: form })
   .then(r => {
-    console.log(r.status);
+    
+    if (r.ok) {
+      console.debug(`Successfully uploaded ${name}`);
+    } else {
+      console.debug(`Failed to upload ${name}: ${r.status}`);
+    }
   });
 };
 

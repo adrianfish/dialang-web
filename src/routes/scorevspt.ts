@@ -31,10 +31,7 @@ export async function scoreVspt(
 
   storage.saveSession(sessionId, session);
 
-  /*
-  datacapture.LogVSPTResponses(&dialangSession, responses)
-  datacapture.LogVSPTScores(&dialangSession)
-  */
+  storage.logVsptScores(session);
 
   return c.json({ zScore, mearaScore, level });
 }

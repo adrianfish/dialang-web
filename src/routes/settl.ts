@@ -40,5 +40,7 @@ export async function setTl(
   session.skill = body.skill;
   storage.saveSession(sessionId, session);
 
+  storage.logTestStart(session);
+
   return c.json({ tl: body.tl, skill: body.skill });
 }

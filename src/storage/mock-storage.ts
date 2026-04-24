@@ -71,4 +71,20 @@ export class MockStorage implements Storage {
   async getPunctuationList(): Promise<Array<string>> {
     return null;
   }
+
+  logTestStart(session: DialangSession): Promise<boolean> {
+    return false;
+  }
+
+  logVsptScores(session: DialangSession): Promise<boolean> {
+    return false;
+  }
+
+  logSaScores(session: DialangSession): Promise<boolean> {
+    return false;
+  }
+
+  logTestResult(session: DialangSession): Promise<boolean> {
+    return false;
+  }
 }

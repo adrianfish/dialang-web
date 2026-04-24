@@ -18,10 +18,10 @@ export class KVStorage implements Storage {
     return this.#kv;
   }
 
-  saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
+  async saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
     session.lastModified = Date.now();
     const expireIn = 8 * 60 * 60 * 1000;
-    this.#kv.set(["sessions", sessionId], session, { expireIn });
+    return (await this.#kv.set(["sessions", sessionId], session, { expireIn })).ok;
   }
 
   async getSession(sessionId: string): Promise<DialangSession> {
@@ -91,5 +91,54 @@ export class KVStorage implements Storage {
 
   async getPunctuationList(): Promise<Array<string>> {
     return (await this.#kv.get([ "data", "punctuation" ])).value;
+  }
+
+  async logTestStart(session: DialangSession): Promise<boolean> {
+
+    const data = {
+      sessionId: session.id,
+      ipAddress: session.ipAddress,
+      referrer: session.referrer,
+      al: session.al,
+      tl: session.tl,
+      skill: session.skill,
+      started: session.lastModified,
+    };
+
+    return this.setTestSession(data);
+  }
+
+  async logVsptScores(session: DialangSession): Promise<boolean> {
+
+    const testSession = await this.getTestSession(session.id);
+    testSession.vsptZScore = session.vsptZScore;
+    testSession.vsptMearaScore = session.vsptMearaScore;
+    testSession.vsptLevel = session.vsptLevel;
+    return this.setTestSession(testSession);
+  }
+
+  async logSaScores(session: DialangSession): Promise<boolean> {
+
+    const testSession = await this.getTestSession(session.id);
+	  testSession.saPPE = session.saPPE;
+	  testSession.saLevel = session.saLevel;
+    return this.setTestSession(testSession);
+  }
+
+  async logTestResult(session: DialangSession): Promise<boolean> {
+
+    const testSession = await this.getTestSession(session.id);
+    testSession.itemRawScore = session.itemRawScore;
+    testSession.itemGrade = session.itemGrade;
+    testSession.itemLevel = session.itemLevel;
+    return this.setTestSession(testSession);
+  }
+
+  async getTestSession(id): Promise<any> {
+    return (await this.#kv.get([ "datacapture", "tests-taken", id ])).value;
+  }
+
+  async setTestSession(testSession): Promise<boolean> {
+    return (await this.#kv.set([ "datacapture", "tests-taken", testSession.sessionId ], testSession)).ok;
   }
 }

@@ -26,13 +26,13 @@ export async function startTest(
 	}
 
 	session.bookletId = await calculateBookletId(session, storage);
-	console.log(`BOOKLET ID: ${session.bookletId}`);
+	console.debug(`BOOKLET ID: ${session.bookletId}`);
 
 	const bookletLength: number = await storage.getBookletLength(session.bookletId);
-	console.log(`BOOKLET LENGTH: ${bookletLength}`);
+	console.debug(`BOOKLET LENGTH: ${bookletLength}`);
 
 	session.currentBasketId = (await storage.getBaskets(session.bookletId))[0];
-	console.log(`First Basket Id: ${session.currentBasketId}`);
+	console.debug(`First Basket Id: ${session.currentBasketId}`);
   session.currentBasketNumber = 0;
 
 	if (session.sessionId == "") {
@@ -64,11 +64,11 @@ async function calculateBookletId(session: DialangSession, storage: Storage): nu
 	const key: string = `${session.tl}#${session.skill}`;
 
 	if (!session.vsptSubmitted && !session.saSubmitted) {
-		console.log("No vsp or sa submitted");
+		console.debug("No vsp or sa submitted. Returning the default booklet ...");
 		// No sa or vspt, request the default assignment.
 		return (await storage.getPreestAssignments(key))[1].bookletId;
 	} else {
-		console.log("vsp or sa submitted");
+		console.debug("vsp or sa submitted");
 		// if either test is done, then we need to get the grade
 		// associated with that test:
 
@@ -76,26 +76,22 @@ async function calculateBookletId(session: DialangSession, storage: Storage): nu
     let saPPE: number = 0;
 		if (session.vsptSubmitted) {
 			vsptZScore = session.vsptZScore
-			console.log(`VSPT SUBMITTED. vsptZScore: ${vsptZScore}`);
+			console.debug(`VSPT SUBMITTED. vsptZScore: ${vsptZScore}`);
 		}
 		if (session.saSubmitted) {
 			saPPE = session.saPPE
-			console.log(`SA SUBMITTED. saPPE: ${saPPE}`);
+			console.debug(`SA SUBMITTED. saPPE: ${saPPE}`);
 		}
 		const weightKey: string = `${key}#${session.vsptSubmitted ? 1 : 0}#${session.saSubmitted ? 1 : 0}`;
 		const weight: PreestWeight = await storage.getPreestWeight(weightKey);
 		const pe: number = (saPPE * weight.sa) + (vsptZScore * weight.vspt) + weight.coe;
-
-		console.log(`PE: ${pe}`);
-
-		console.log(key);
+		console.debug(`PE: ${pe}`);
 
 		const assignments: Array<PreestAssignment> = await storage.getPreestAssignments(key);
 
 		let bookletId: number;
     for (let i = 0; i < assignments.length; i++) {
       const ass: PreestAssignment = assignments[i];
-			console.log(ass.pe);
 			if (pe <= ass.pe) {
 				bookletId = ass.bookletId;
 				break

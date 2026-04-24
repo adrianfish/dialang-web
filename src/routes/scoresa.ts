@@ -39,5 +39,7 @@ export async function scoreSA(
 	datacapture.LogSAScores(&dialangSession)
   */
 
+	storage.logSaScores(session);
+
 	return c.json({ ppe, level });
 }
