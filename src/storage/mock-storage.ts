@@ -72,6 +72,10 @@ export class MockStorage implements Storage {
     return null;
   }
 
+  async getTestResults(): Promise<any> {
+    return {};
+  }
+
   logTestStart(session: DialangSession): Promise<boolean> {
     return false;
   }

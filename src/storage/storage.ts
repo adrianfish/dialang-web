@@ -48,6 +48,8 @@ export interface Storage {
 
   getPunctuationList(): Promise<Array<string>>;
 
+  getTestResults(): Promise<any>;
+
   logTestStart(session: DialangSession): Promise<boolean>;
 
   logVsptScores(session: DialangSession): Promise<boolean>;

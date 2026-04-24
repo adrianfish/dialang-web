@@ -1,5 +1,7 @@
 import { getCookie } from "@hono/cookie";
 import type { Context } from "@hono";
+import { reports as reportsTemplate } from "../templates/reports.ts";
+import { alDistributionTemplate } from "../templates/al-distribution-template.ts";
 
 export async function reports(c: Context): Promise<Response> {
 
@@ -9,5 +11,10 @@ export async function reports(c: Context): Promise<Response> {
     return c.redirect("/reportslogin");
   }
 
-  return c.html("<html><h1>REPORTS</h1></html>");
+  switch (c.req.param("report")) {
+    case "al-distribution":
+      return c.html(alDistributionTemplate);
+    default:
+      return c.html(reportsTemplate);
+  }
 }
