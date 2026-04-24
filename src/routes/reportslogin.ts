@@ -17,9 +17,9 @@ export async function reportsLogin(c: Context): Promise<Response> {
 
     const body = await c.req.parseBody();
     const hash = body.password;
+    const testHash = await createHash(loadSecret);
     console.log(hash);
     console.log(testHash);
-    const testHash = await createHash(loadSecret);
     if (hash !== testHash) {
       c.status(403);
       return c.html("");
