@@ -10,6 +10,8 @@ import { startTest } from "./src/routes/starttest.ts";
 import { submitBasket } from "./src/routes/submitbasket.ts";
 import { deleteSession } from "./src/routes/deletesession.ts";
 import { loadData } from "./src/routes/loaddata.ts";
+import { reports } from "./src/routes/reports.ts";
+import { reportsLogin } from "./src/routes/reportslogin.ts";
 
 const app: Hono = new Hono();
 
@@ -21,6 +23,8 @@ app.post("/api/scoresa", (c) => scoreSA(c, storage));
 app.post("/api/starttest", (c) => startTest(c, storage));
 app.post("/api/submitbasket", (c) => submitBasket(c, storage));
 app.get("/api/deletesession", (c) => deleteSession(c, storage));
+app.get("/reports", (c) => reports(c, storage));
+app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, storage));
 app.post("/api/loaddata", (c) => loadData(c, storage.getKv()));
 app.use("/*", serveStatic({ root: "./static/" }));
 

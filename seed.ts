@@ -1,9 +1,9 @@
 import { createHash } from "./src/utils/utils.ts";
 import { parseArgs } from "@std/cli/parse-args";
 
-const loadSecret = Deno.env.get("LOAD_SECRET");
+const loadSecret = Deno.env.get("DATA_SECRET");
 if (!loadSecret) {
-  console.error("LOAD_SECRET environment variable not set");
+  console.error("DATA_SECRET environment variable not set");
   Deno.exit();
 }
 

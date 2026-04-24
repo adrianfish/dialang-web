@@ -1,6 +1,6 @@
 export class DialangSession {
   id: string = "";
-  iPAddress: string = "";
+  ipAddress: string = "";
   browserLocale: string = "";
   referrer: string = "";
   passId: string = "";

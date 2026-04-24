@@ -8,7 +8,7 @@ export async function loadData(
   kv: Deno.Kv,
 ): Promise<Response> {
 
-  const loadSecret = Deno.env.get("LOAD_SECRET");
+  const loadSecret = Deno.env.get("DATA_SECRET");
   if (!loadSecret) {
     c.status(500);
     return c.html("");
