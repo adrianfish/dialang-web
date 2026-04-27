@@ -1,4 +1,4 @@
-export const alDistributionTemplate = `
+export const alDistributionReportTemplate = `
 <html>
   <head>
     <script src="/lib/chart.umd.min.js"></script>
@@ -6,7 +6,7 @@ export const alDistributionTemplate = `
   <body>
     <h1>Distribution by Administration Language</h1>
     <div style="width: 800px;"><canvas id="distribution"></canvas></div>
-    <script src="/js/al-distribution.js"></script>
+    <script src="/js/al-distribution-report.js"></script>
   </body>
 </html>
 `;

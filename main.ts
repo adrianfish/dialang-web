@@ -13,6 +13,7 @@ import { loadData } from "./src/routes/loaddata.ts";
 import { reports } from "./src/routes/reports.ts";
 import { reportsLogin } from "./src/routes/reportslogin.ts";
 import { alDistribution } from "./src/routes/al-distribution.ts";
+import { sessions } from "./src/routes/sessions.ts";
 
 const app: Hono = new Hono();
 
@@ -25,6 +26,7 @@ app.post("/api/starttest", (c) => startTest(c, storage));
 app.post("/api/submitbasket", (c) => submitBasket(c, storage));
 app.get("/api/deletesession", (c) => deleteSession(c, storage));
 app.get("/api/al-distribution", (c) => alDistribution(c, storage));
+app.post("/api/sessions", (c) => sessions(c, storage));
 app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, storage));
 app.get("/reports/:report?", (c) => reports(c, storage));
 app.post("/api/loaddata", (c) => loadData(c, storage.getKv()));
