@@ -144,6 +144,18 @@ export class KVStorage implements Storage {
     return this.setTestSession(testSession);
   }
 
+  async storeQuestionnaire(sessionId: string, body: any): Promise<boolean> {
+
+    const data = {
+      ...body, 
+      gender: body.gender === "-1" ? "n/a" : body.gender === "other" ? body.othergender : body.gender,
+    };
+
+    console.log(data);
+
+    return (await this.#kv.set([ "questionnaires", sessionId ], data)).ok;
+  }
+
   async getTestSession(id): Promise<any> {
     return (await this.#kv.get([ "datacapture", "tests-taken", id ])).value;
   }

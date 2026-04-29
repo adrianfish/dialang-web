@@ -1,10 +1,8 @@
 import { getSessionId } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
 
-export async function scoreSA(
-  c: Context,
-  storage: Storage,
-): Promise<Response> {
+export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
+
   const sessionId = getSessionId(c);
   const session = await storage.getSession(sessionId);
 

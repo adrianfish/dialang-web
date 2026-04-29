@@ -57,4 +57,6 @@ export interface Storage {
   logSaScores(session: DialangSession): Promise<boolean>;
 
   logTestResult(session: DialangSession): Promise<boolean>;
+
+  storeQuestionnaire(sessionId: string, body: any);
 }

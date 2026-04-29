@@ -91,4 +91,6 @@ export class MockStorage implements Storage {
   logTestResult(session: DialangSession): Promise<boolean> {
     return false;
   }
+
+  storeQuestionnaire(sessionId: string, body: any) { }
 }

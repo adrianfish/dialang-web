@@ -1,16 +1,10 @@
-package handlers
+import { getSessionId } from "../utils/utils.ts";
 
-import (
-	"github.com/adrianfish/dialang/api/datacapture"
-	"github.com/adrianfish/dialang/api/models"
-	"github.com/adrianfish/dialang/api/session"
-	"net/http"
-)
+export async function submitQuestionnaire(c: Context, storage: Storage): Promise<Response> {
 
-func SubmitQuestionnaire(w http.ResponseWriter, r *http.Request) {
+  const body = await c.req.parseBody();
 
-	dialangSession := session.SessionManager.Get(r.Context(), "session").(models.DialangSession)
-	datacapture.StoreQuestionnaire(dialangSession.SessionId, r)
+	await storage.storeQuestionnaire(getSessionId(c), body);
 
-	w.WriteHeader(http.StatusOK)
+  return c.html("");
 }
