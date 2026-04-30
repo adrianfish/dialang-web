@@ -4,7 +4,7 @@ import { render } from 'https://esm.run/lit-html@1';
 
 document.getElementById("display-sessions-button").addEventListener("click", e => {
 
-  const url = "/api/sessions";
+  const url = "/api/reports/sessions";
   const body = new FormData(document.getElementById("sessions-form"));
   fetch(url, { method: "POST", body })
   .then(r => {

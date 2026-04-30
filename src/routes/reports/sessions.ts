@@ -1,7 +1,12 @@
+import { loggedIntoReports } from "../../utils/utils.ts";
+import type { Context } from "@hono";
+
 export async function sessions(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
+  if (!loggedIntoReports(c)) return c.redirect("/reportslogin");
+
   const body = await c.req.parseBody();
   const from = body.from;
   const to = body.to;

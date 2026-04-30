@@ -1,4 +1,4 @@
-const url = "/api/reports/al-distribution";
+const url = "/api/reports/tl-distribution";
 fetch(url)
 .then(r => {
   if (r.ok) {
@@ -17,7 +17,7 @@ fetch(url)
         labels: Object.keys(data),
         datasets: [
           {
-            label: 'Distribution by Admin Language',
+            label: 'Distribution by Test Language',
             data: Object.values(data),
           }
         ]

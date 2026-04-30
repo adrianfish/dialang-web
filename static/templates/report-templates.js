@@ -30,6 +30,7 @@ export const sessionTableTemplate = data => html`
 
 export const sessionTemplate = session => html`
   <h2>Session ${session.sessionId}<h2>
+  <h3>Test<h3>
   <table border="1" cellpadding="4">
     <tr>
       <td>ID:</td><td>${session.sessionId}</td>
@@ -62,4 +63,36 @@ export const sessionTemplate = session => html`
     </tr>
     ` : nothing}
   </table>
+  ${session.questionnaire ? html`
+  <h3>Questionnaire</h3>
+  <table border="1" cellpadding="4">
+    <tr>
+      <td>Age Group:</td><td>${session.questionnaire.agegroup}</td>
+    </tr>
+    <tr>
+      <td>Gender:</td><td>${session.questionnaire.gender}</td>
+    </tr>
+    <tr>
+      <td>First Language:</td><td>${session.questionnaire.firstlanguage}</td>
+    </tr>
+    <tr>
+      <td>Nationality:</td><td>${session.questionnaire.nationality}</td>
+    </tr>
+    <tr>
+      <td>Institution:</td><td>${session.questionnaire.institution}</td>
+    </tr>
+    <tr>
+      <td>Reason:</td><td>${session.questionnaire.reason}</td>
+    </tr>
+    <tr>
+      <td>Accuracy:</td><td>${session.questionnaire.accuracy}</td>
+    </tr>
+    <tr>
+      <td>Comments:</td><td>${session.questionnaire.comments}</td>
+    </tr>
+    <tr>
+      <td>Email:</td><td>${session.questionnaire.email}</td>
+    </tr>
+  </table>
+  ` : nothing}
 `;

@@ -1,6 +1,6 @@
 import { setCookie } from "@hono/cookie";
-import { login } from "../templates/login.ts";
-import { createHash } from "../utils/utils.ts";
+import { login } from "../../templates/login.ts";
+import { createHash } from "../../utils/utils.ts";
 import { timingSafeEqual } from "@std/crypto/timing-safe-equal";
 
 import type { Context } from "@hono";
