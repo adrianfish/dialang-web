@@ -73,7 +73,6 @@
                     answersMarkup += answer.text + '<br />';
                 });
                 item.correctAnswer = answersMarkup;
-                console.log(item);
             }
 
             var subskill = item.subskill;

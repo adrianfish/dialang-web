@@ -106,6 +106,7 @@ export async function submitBasket(
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "tabbedpane", skill: basketItems[0].skill, items: basketItems };
       returnMap["scoredBasket"] = scoredBasket;
       //datacapture.LogMultipleIdResponses(session.passId, itemsToLog)
+      break;
     }
 
     case "shortanswer": {
@@ -141,11 +142,11 @@ export async function submitBasket(
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "shortanswer", skill: basketItems[0].skill, items: basketItems };
       returnMap["scoredBasket"] = scoredBasket;
       //datacapture.LogMultipleTextualResponses(session.passId, itemsToLog)
+      break;
     }
 
     case "gaptext": {
       const responses = getMultipleTextualResponses(body);
-      console.log(responses);
       const basketItems: Array<ScoredItem> = [];
       const itemsToLog: Array<ScoredItem> = [];
 
@@ -207,7 +208,6 @@ export async function submitBasket(
 
           item.positionInTest = numScoredItems + item.positionInBasket;
           item.answers = await storage.getItemAnswers(item.id);
-          console.log(item);
           itemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
@@ -298,7 +298,7 @@ function getMultipleIdResponses(body): Record<number, number> {
     if (!k.endsWith?.("-response")) return;
 
     const itemId: number = parseInt(k.split("-")[0]);
-    const answerId: number = parseInt(v[0]);
+    const answerId: number = parseInt(v);
     responses[itemId] = answerId;
   });
   return responses;
