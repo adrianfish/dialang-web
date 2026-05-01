@@ -1,4 +1,15 @@
-import type { Answer, DialangSession, Item, PreestAssignment, PreestWeight, SAGrade, SAWeight, Storage, TES, VSPBand, VSPWord } from "../types/types.ts";
+import type {
+  Answer,
+  DialangSession,
+  Item,
+  PreestAssignment,
+  PreestWeight,
+  SAGrade,
+  SAWeight,
+  Storage,
+  TES,
+  VSPBand,
+  VSPWord } from "../types/types.ts";
 
 import type { Storage } from "./storage.ts";
 
@@ -20,6 +31,7 @@ export class KVStorage implements Storage {
 
   async saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
     session.lastModified = Date.now();
+    //  8 hours from now
     const expireIn = 8 * 60 * 60 * 1000;
     return (await this.#kv.set(["sessions", sessionId], session, { expireIn })).ok;
   }

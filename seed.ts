@@ -9,8 +9,8 @@ if (!loadSecret) {
 
 const hash = await createHash(loadSecret);
 
-const url = "https://dialang.net"
-//const url = "http://localhost:3001"
+//const url = "https://dialang.net"
+const url = "http://localhost:3001"
 const loadOne = async (filepath, name, type)   => {
   const blob = new Blob([ await Deno.readFile(filepath) ]);
   const form = new FormData();
@@ -30,6 +30,7 @@ const loadOne = async (filepath, name, type)   => {
 
 const flags = parseArgs(Deno.args, {
   string: [ "type" ],
+  string: [ "suffix" ],
   boolean: [ "clear" ],
   default: { clear: false },
 });
@@ -39,7 +40,6 @@ if (!flags.type) {
   Deno.exit();
 }
 
-console.log(flags.clear);
 
 if (flags.clear) {
   const form = new FormData();
@@ -54,7 +54,7 @@ if (flags.clear) {
 }
 
 if (flags.type !== "all") {
-  await loadOne(`./data-files/${flags.type}.csv`, `${flags.type}.csv`, flags.type);
+  await loadOne(`./data-files/${flags.type}.${flags.suffix}`, `${flags.type}.${flags.suffix}`, flags.type);
 } else {
   await Promise.all([
     loadOne("./data-files/vspt-words.csv", "vspt-words.csv", "vspt-words"),

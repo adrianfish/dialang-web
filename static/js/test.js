@@ -192,6 +192,7 @@ if (!dialang.session.reviewMode) {
 
                     if (dialang.session.instantFeedbackOn) {
                         if (scoredBasket.type === 'mcq') {
+                          console.log(scoredBasket);
                             // MCQ baskets only ever have one item.
                             var mcqItem = scoredBasket.items[0];
                             $('#mcq-review-dialog').dialog('open');

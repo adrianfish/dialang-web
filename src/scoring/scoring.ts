@@ -31,13 +31,11 @@ export async function getScoredIdResponseItem(itemId: number, responseId: number
 
 	const item: Item = await storage.getItem(itemId);
 	if (!item) {
-    console.log("asdfasdfsadf");
 		return [ null, `Failed to get item for itemId: ${itemId}` ];
 	}
 
 	const answer = await storage.getAnswer(responseId)
 	if (!answer) {
-    console.log("ttttasdfasdfsadf");
 		return [ null, `Failed to get answer for responseId: ${responseId}` ];
 	}
 
@@ -63,7 +61,11 @@ export async function getScoredTextResponseItem(itemId: number, answerText: stri
 
 	const scoredItem: ScoredItem = { ...item, responseText: answerText, score: 0, correct: false };
 
+  console.log("SCORED ITEM");
+
 	const answers: Array<Answer> = await storage.getItemAnswers(itemId);
+  scoredItem.answers = answers;
+  console.log(scoredItem);
   const punctuationList: Array<string> = await storage.getPunctuationList();
 	for (let i = 0; i < answers.length; i++ ) {
     const correctAnswer = answers[i];

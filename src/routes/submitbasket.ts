@@ -145,6 +145,7 @@ export async function submitBasket(
 
     case "gaptext": {
       const responses = getMultipleTextualResponses(body);
+      console.log(responses);
       const basketItems: Array<ScoredItem> = [];
       const itemsToLog: Array<ScoredItem> = [];
 
@@ -206,6 +207,7 @@ export async function submitBasket(
 
           item.positionInTest = numScoredItems + item.positionInBasket;
           item.answers = await storage.getItemAnswers(item.id);
+          console.log(item);
           itemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
@@ -314,7 +316,7 @@ function getMultipleTextualResponses(body): Record<number, string> {
     if (!k.endsWith("-response")) return;
 
     const itemId: number = parseInt(k.split("-")[0]);
-    responses[itemId] = v[0];
+    responses[itemId] = v;
   });
 
   return responses;
