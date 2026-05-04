@@ -246,31 +246,6 @@ if (dialang.state !== "als") {
   dialang.switchState(dialang.state);
 }
 
-$.get('/content/help/' + dialang.session.al + '.html', function (helpDialogMarkup) {
-
-    $('#help-dialog').html(helpDialogMarkup);
-    $('#help-tabs').tabs();
-    $('#help-dialog').dialog({
-        modal: true,
-        width: 'auto',
-        height: 600,
-        autoOpen: false,
-        resizable: false
-    });
-});
-
-$.get('/content/save/' + dialang.session.al + '.html', function (saveDialogMarkup) {
-
-    $('#save-dialog').html(saveDialogMarkup);
-    $('#save-dialog').dialog({
-        modal: true,
-        width: 'auto',
-        height: 300,
-        autoOpen: false,
-        resizable: false
-    });
-});
-
 /*
 $(document).ready(function () {  
           

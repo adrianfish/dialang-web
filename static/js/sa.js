@@ -72,7 +72,6 @@ $.get(`/content/sa/${dialang.session.al}/${dialang.session.skill}.html`, functio
         dialang.session.saPPE = scores.ppe;
         dialang.session.saLevel = scores.level;
         dialang.session.saDone = true;
-		console.log(dialang.session);
         $('#save-button').prop('disabled', false);
         $('#confirm-send-dialog').dialog('destroy');
         dialang.navigation.nextRules.sa();

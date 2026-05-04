@@ -12,8 +12,6 @@ $('#next').prop('disabled', false).click(function (e) {
   })
   .then(testData => {
 
-    console.log(testData);
-
     dialang.session.totalItems = testData.totalItems;
     dialang.session.currentBasketId = testData.startBasket;
     dialang.session.currentBasketNumber = 0;

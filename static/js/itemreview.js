@@ -6,6 +6,10 @@ $('#back').prop('disabled', false).click(function () {
     return dialang.switchState('feedbackmenu');
 });
 
+function capitalizeFirstLetter(val) {
+  return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
 $.get('/content/itemreview/' + dialang.session.al + '.html', function (data) {
 
     $('#content').html(data);
@@ -15,7 +19,7 @@ $.get('/content/itemreview/' + dialang.session.al + '.html', function (data) {
         var fullSubskill = dialang.session.skill + '.' + subskillKey;
         var subskill = dialang.session.subskills[subskillKey];
         rows.push({
-                'description': subskillLookup[fullSubskill], // The translated subskill name
+                'description': subskillLookup[capitalizeFirstLetter(fullSubskill)], // The translated subskill name
                 'correct': subskill.correct, // The list of correct items for this subskill
                 'incorrect': subskill.incorrect // The list of incorrect items for this subskil
                 });
