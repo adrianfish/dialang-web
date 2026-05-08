@@ -156,916 +156,1171 @@
 
           </script>
           <h1>Prova di livello</h1>
-          <img src="/images/true.gif"/> = Sì <img src="/images/false.gif"/> = No
+          <div id="vspt-legend">
+            <div><img src="/images/true.gif" /></div>
+            <div>Sì</div>
+            <div><img src="/images/false.gif" /></div>
+            <div>No</div>
+          </div>
           <form id="vsptform" action="/scorevspt" method="POST">
             <input type="hidden" name="al" value="ita_it"/>
             <input type="hidden" name="tl" value="eng_gb"/>
             <input type="hidden" id="cheatlevel" name="cheatlevel" value="zero"/>
             
-            <div id="vspt-table">
+            <div id="vspt-grid">
               
-              <div>
-                <div class="word-container">
-                  <label for="000053_correct">
-                    <input class="valid-button word correct" id="000053_correct" type="radio" name="word:000053" value="valid"/>
-                    <img id="000053_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000053_incorrect">
-                    <input class="invalid-button word incorrect" id="000053_incorrect" type="radio" name="word:000053" value="invalid"/>
-                    <img id="000053_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to campaign
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000053_correct">
+                      <input class="valid-button word correct" id="000053_correct" type="radio" name="word:000053" value="valid"/>
+                      <img id="000053_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000053_incorrect">
+                      <input class="invalid-button word incorrect" id="000053_incorrect" type="radio" name="word:000053" value="invalid"/>
+                      <img id="000053_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to campaign</div>
                 </div>
-                <div>
-                  <label for="000006_correct">
-                    <input class="valid-button word incorrect" id="000006_correct" type="radio" name="word:000006" value="valid"/>
-                    <img id="000006_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000006_incorrect">
-                    <input class="invalid-button word correct" id="000006_incorrect" type="radio" name="word:000006" value="invalid"/>
-                    <img id="000006_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to decite
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000006_correct">
+                      <input class="valid-button word incorrect" id="000006_correct" type="radio" name="word:000006" value="valid"/>
+                      <img id="000006_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000006_incorrect">
+                      <input class="invalid-button word correct" id="000006_incorrect" type="radio" name="word:000006" value="invalid"/>
+                      <img id="000006_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to decite</div>
                 </div>
-                <div>
-                  <label for="000064_correct">
-                    <input class="valid-button word correct" id="000064_correct" type="radio" name="word:000064" value="valid"/>
-                    <img id="000064_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000064_incorrect">
-                    <input class="invalid-button word incorrect" id="000064_incorrect" type="radio" name="word:000064" value="invalid"/>
-                    <img id="000064_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to review
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000064_correct">
+                      <input class="valid-button word correct" id="000064_correct" type="radio" name="word:000064" value="valid"/>
+                      <img id="000064_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000064_incorrect">
+                      <input class="invalid-button word incorrect" id="000064_incorrect" type="radio" name="word:000064" value="invalid"/>
+                      <img id="000064_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to review</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000036_correct">
-                    <input class="valid-button word incorrect" id="000036_correct" type="radio" name="word:000036" value="valid"/>
-                    <img id="000036_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000036_incorrect">
-                    <input class="invalid-button word correct" id="000036_incorrect" type="radio" name="word:000036" value="invalid"/>
-                    <img id="000036_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to futt
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000036_correct">
+                      <input class="valid-button word incorrect" id="000036_correct" type="radio" name="word:000036" value="valid"/>
+                      <img id="000036_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000036_incorrect">
+                      <input class="invalid-button word correct" id="000036_incorrect" type="radio" name="word:000036" value="invalid"/>
+                      <img id="000036_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to futt</div>
                 </div>
-                <div>
-                  <label for="000039_correct">
-                    <input class="valid-button word incorrect" id="000039_correct" type="radio" name="word:000039" value="valid"/>
-                    <img id="000039_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000039_incorrect">
-                    <input class="invalid-button word correct" id="000039_incorrect" type="radio" name="word:000039" value="invalid"/>
-                    <img id="000039_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to megalize
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000039_correct">
+                      <input class="valid-button word incorrect" id="000039_correct" type="radio" name="word:000039" value="valid"/>
+                      <img id="000039_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000039_incorrect">
+                      <input class="invalid-button word correct" id="000039_incorrect" type="radio" name="word:000039" value="invalid"/>
+                      <img id="000039_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to megalize</div>
                 </div>
-                <div>
-                  <label for="000100_correct">
-                    <input class="valid-button word correct" id="000100_correct" type="radio" name="word:000100" value="valid"/>
-                    <img id="000100_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000100_incorrect">
-                    <input class="invalid-button word incorrect" id="000100_incorrect" type="radio" name="word:000100" value="invalid"/>
-                    <img id="000100_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to celebrate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000100_correct">
+                      <input class="valid-button word correct" id="000100_correct" type="radio" name="word:000100" value="valid"/>
+                      <img id="000100_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000100_incorrect">
+                      <input class="invalid-button word incorrect" id="000100_incorrect" type="radio" name="word:000100" value="invalid"/>
+                      <img id="000100_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to celebrate</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000027_correct">
-                    <input class="valid-button word incorrect" id="000027_correct" type="radio" name="word:000027" value="valid"/>
-                    <img id="000027_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000027_incorrect">
-                    <input class="invalid-button word correct" id="000027_incorrect" type="radio" name="word:000027" value="invalid"/>
-                    <img id="000027_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to bourble
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000027_correct">
+                      <input class="valid-button word incorrect" id="000027_correct" type="radio" name="word:000027" value="valid"/>
+                      <img id="000027_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000027_incorrect">
+                      <input class="invalid-button word correct" id="000027_incorrect" type="radio" name="word:000027" value="invalid"/>
+                      <img id="000027_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to bourble</div>
                 </div>
-                <div>
-                  <label for="000038_correct">
-                    <input class="valid-button word incorrect" id="000038_correct" type="radio" name="word:000038" value="valid"/>
-                    <img id="000038_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000038_incorrect">
-                    <input class="invalid-button word correct" id="000038_incorrect" type="radio" name="word:000038" value="invalid"/>
-                    <img id="000038_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to markle
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000038_correct">
+                      <input class="valid-button word incorrect" id="000038_correct" type="radio" name="word:000038" value="valid"/>
+                      <img id="000038_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000038_incorrect">
+                      <input class="invalid-button word correct" id="000038_incorrect" type="radio" name="word:000038" value="invalid"/>
+                      <img id="000038_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to markle</div>
                 </div>
-                <div>
-                  <label for="000067_correct">
-                    <input class="valid-button word correct" id="000067_correct" type="radio" name="word:000067" value="valid"/>
-                    <img id="000067_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000067_incorrect">
-                    <input class="invalid-button word incorrect" id="000067_incorrect" type="radio" name="word:000067" value="invalid"/>
-                    <img id="000067_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to demolish
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000067_correct">
+                      <input class="valid-button word correct" id="000067_correct" type="radio" name="word:000067" value="valid"/>
+                      <img id="000067_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000067_incorrect">
+                      <input class="invalid-button word incorrect" id="000067_incorrect" type="radio" name="word:000067" value="invalid"/>
+                      <img id="000067_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to demolish</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000059_correct">
-                    <input class="valid-button word correct" id="000059_correct" type="radio" name="word:000059" value="valid"/>
-                    <img id="000059_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000059_incorrect">
-                    <input class="invalid-button word incorrect" id="000059_incorrect" type="radio" name="word:000059" value="invalid"/>
-                    <img id="000059_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to fear
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000059_correct">
+                      <input class="valid-button word correct" id="000059_correct" type="radio" name="word:000059" value="valid"/>
+                      <img id="000059_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000059_incorrect">
+                      <input class="invalid-button word incorrect" id="000059_incorrect" type="radio" name="word:000059" value="invalid"/>
+                      <img id="000059_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to fear</div>
                 </div>
-                <div>
-                  <label for="000142_correct">
-                    <input class="valid-button word correct" id="000142_correct" type="radio" name="word:000142" value="valid"/>
-                    <img id="000142_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000142_incorrect">
-                    <input class="invalid-button word incorrect" id="000142_incorrect" type="radio" name="word:000142" value="invalid"/>
-                    <img id="000142_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to abolish
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000142_correct">
+                      <input class="valid-button word correct" id="000142_correct" type="radio" name="word:000142" value="valid"/>
+                      <img id="000142_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000142_incorrect">
+                      <input class="invalid-button word incorrect" id="000142_incorrect" type="radio" name="word:000142" value="invalid"/>
+                      <img id="000142_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to abolish</div>
                 </div>
-                <div>
-                  <label for="000134_correct">
-                    <input class="valid-button word correct" id="000134_correct" type="radio" name="word:000134" value="valid"/>
-                    <img id="000134_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000134_incorrect">
-                    <input class="invalid-button word incorrect" id="000134_incorrect" type="radio" name="word:000134" value="invalid"/>
-                    <img id="000134_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to administer
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000134_correct">
+                      <input class="valid-button word correct" id="000134_correct" type="radio" name="word:000134" value="valid"/>
+                      <img id="000134_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000134_incorrect">
+                      <input class="invalid-button word incorrect" id="000134_incorrect" type="radio" name="word:000134" value="invalid"/>
+                      <img id="000134_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to administer</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000047_correct">
-                    <input class="valid-button word incorrect" id="000047_correct" type="radio" name="word:000047" value="valid"/>
-                    <img id="000047_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000047_incorrect">
-                    <input class="invalid-button word correct" id="000047_incorrect" type="radio" name="word:000047" value="invalid"/>
-                    <img id="000047_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to preyout
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000047_correct">
+                      <input class="valid-button word incorrect" id="000047_correct" type="radio" name="word:000047" value="valid"/>
+                      <img id="000047_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000047_incorrect">
+                      <input class="invalid-button word correct" id="000047_incorrect" type="radio" name="word:000047" value="invalid"/>
+                      <img id="000047_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to preyout</div>
                 </div>
-                <div>
-                  <label for="000088_correct">
-                    <input class="valid-button word correct" id="000088_correct" type="radio" name="word:000088" value="valid"/>
-                    <img id="000088_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000088_incorrect">
-                    <input class="invalid-button word incorrect" id="000088_incorrect" type="radio" name="word:000088" value="invalid"/>
-                    <img id="000088_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to root
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000088_correct">
+                      <input class="valid-button word correct" id="000088_correct" type="radio" name="word:000088" value="valid"/>
+                      <img id="000088_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000088_incorrect">
+                      <input class="invalid-button word incorrect" id="000088_incorrect" type="radio" name="word:000088" value="invalid"/>
+                      <img id="000088_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to root</div>
                 </div>
-                <div>
-                  <label for="000140_correct">
-                    <input class="valid-button word correct" id="000140_correct" type="radio" name="word:000140" value="valid"/>
-                    <img id="000140_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000140_incorrect">
-                    <input class="invalid-button word incorrect" id="000140_incorrect" type="radio" name="word:000140" value="invalid"/>
-                    <img id="000140_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to erode
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000140_correct">
+                      <input class="valid-button word correct" id="000140_correct" type="radio" name="word:000140" value="valid"/>
+                      <img id="000140_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000140_incorrect">
+                      <input class="invalid-button word incorrect" id="000140_incorrect" type="radio" name="word:000140" value="invalid"/>
+                      <img id="000140_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to erode</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000144_correct">
-                    <input class="valid-button word correct" id="000144_correct" type="radio" name="word:000144" value="valid"/>
-                    <img id="000144_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000144_incorrect">
-                    <input class="invalid-button word incorrect" id="000144_incorrect" type="radio" name="word:000144" value="invalid"/>
-                    <img id="000144_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to study
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000144_correct">
+                      <input class="valid-button word correct" id="000144_correct" type="radio" name="word:000144" value="valid"/>
+                      <img id="000144_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000144_incorrect">
+                      <input class="invalid-button word incorrect" id="000144_incorrect" type="radio" name="word:000144" value="invalid"/>
+                      <img id="000144_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to study</div>
                 </div>
-                <div>
-                  <label for="000130_correct">
-                    <input class="valid-button word correct" id="000130_correct" type="radio" name="word:000130" value="valid"/>
-                    <img id="000130_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000130_incorrect">
-                    <input class="invalid-button word incorrect" id="000130_incorrect" type="radio" name="word:000130" value="invalid"/>
-                    <img id="000130_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to distinguish
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000130_correct">
+                      <input class="valid-button word correct" id="000130_correct" type="radio" name="word:000130" value="valid"/>
+                      <img id="000130_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000130_incorrect">
+                      <input class="invalid-button word incorrect" id="000130_incorrect" type="radio" name="word:000130" value="invalid"/>
+                      <img id="000130_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to distinguish</div>
                 </div>
-                <div>
-                  <label for="000017_correct">
-                    <input class="valid-button word incorrect" id="000017_correct" type="radio" name="word:000017" value="valid"/>
-                    <img id="000017_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000017_incorrect">
-                    <input class="invalid-button word correct" id="000017_incorrect" type="radio" name="word:000017" value="invalid"/>
-                    <img id="000017_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to fabulation
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000017_correct">
+                      <input class="valid-button word incorrect" id="000017_correct" type="radio" name="word:000017" value="valid"/>
+                      <img id="000017_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000017_incorrect">
+                      <input class="invalid-button word correct" id="000017_incorrect" type="radio" name="word:000017" value="invalid"/>
+                      <img id="000017_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to fabulation</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000049_correct">
-                    <input class="valid-button word incorrect" id="000049_correct" type="radio" name="word:000049" value="valid"/>
-                    <img id="000049_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000049_incorrect">
-                    <input class="invalid-button word correct" id="000049_incorrect" type="radio" name="word:000049" value="invalid"/>
-                    <img id="000049_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to savedown
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000049_correct">
+                      <input class="valid-button word incorrect" id="000049_correct" type="radio" name="word:000049" value="valid"/>
+                      <img id="000049_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000049_incorrect">
+                      <input class="invalid-button word correct" id="000049_incorrect" type="radio" name="word:000049" value="invalid"/>
+                      <img id="000049_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to savedown</div>
                 </div>
-                <div>
-                  <label for="000005_correct">
-                    <input class="valid-button word incorrect" id="000005_correct" type="radio" name="word:000005" value="valid"/>
-                    <img id="000005_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000005_incorrect">
-                    <input class="invalid-button word correct" id="000005_incorrect" type="radio" name="word:000005" value="invalid"/>
-                    <img id="000005_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to outlate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000005_correct">
+                      <input class="valid-button word incorrect" id="000005_correct" type="radio" name="word:000005" value="valid"/>
+                      <img id="000005_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000005_incorrect">
+                      <input class="invalid-button word correct" id="000005_incorrect" type="radio" name="word:000005" value="invalid"/>
+                      <img id="000005_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to outlate</div>
                 </div>
-                <div>
-                  <label for="000124_correct">
-                    <input class="valid-button word correct" id="000124_correct" type="radio" name="word:000124" value="valid"/>
-                    <img id="000124_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000124_incorrect">
-                    <input class="invalid-button word incorrect" id="000124_incorrect" type="radio" name="word:000124" value="invalid"/>
-                    <img id="000124_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to join
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000124_correct">
+                      <input class="valid-button word correct" id="000124_correct" type="radio" name="word:000124" value="valid"/>
+                      <img id="000124_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000124_incorrect">
+                      <input class="invalid-button word incorrect" id="000124_incorrect" type="radio" name="word:000124" value="invalid"/>
+                      <img id="000124_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to join</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000133_correct">
-                    <input class="valid-button word correct" id="000133_correct" type="radio" name="word:000133" value="valid"/>
-                    <img id="000133_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000133_incorrect">
-                    <input class="invalid-button word incorrect" id="000133_incorrect" type="radio" name="word:000133" value="invalid"/>
-                    <img id="000133_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to compile
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000133_correct">
+                      <input class="valid-button word correct" id="000133_correct" type="radio" name="word:000133" value="valid"/>
+                      <img id="000133_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000133_incorrect">
+                      <input class="invalid-button word incorrect" id="000133_incorrect" type="radio" name="word:000133" value="invalid"/>
+                      <img id="000133_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to compile</div>
                 </div>
-                <div>
-                  <label for="000071_correct">
-                    <input class="valid-button word correct" id="000071_correct" type="radio" name="word:000071" value="valid"/>
-                    <img id="000071_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000071_incorrect">
-                    <input class="invalid-button word incorrect" id="000071_incorrect" type="radio" name="word:000071" value="invalid"/>
-                    <img id="000071_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to sink
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000071_correct">
+                      <input class="valid-button word correct" id="000071_correct" type="radio" name="word:000071" value="valid"/>
+                      <img id="000071_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000071_incorrect">
+                      <input class="invalid-button word incorrect" id="000071_incorrect" type="radio" name="word:000071" value="invalid"/>
+                      <img id="000071_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to sink</div>
                 </div>
-                <div>
-                  <label for="000103_correct">
-                    <input class="valid-button word correct" id="000103_correct" type="radio" name="word:000103" value="valid"/>
-                    <img id="000103_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000103_incorrect">
-                    <input class="invalid-button word incorrect" id="000103_incorrect" type="radio" name="word:000103" value="invalid"/>
-                    <img id="000103_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to settle
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000103_correct">
+                      <input class="valid-button word correct" id="000103_correct" type="radio" name="word:000103" value="valid"/>
+                      <img id="000103_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000103_incorrect">
+                      <input class="invalid-button word incorrect" id="000103_incorrect" type="radio" name="word:000103" value="invalid"/>
+                      <img id="000103_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to settle</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000122_correct">
-                    <input class="valid-button word correct" id="000122_correct" type="radio" name="word:000122" value="valid"/>
-                    <img id="000122_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000122_incorrect">
-                    <input class="invalid-button word incorrect" id="000122_incorrect" type="radio" name="word:000122" value="invalid"/>
-                    <img id="000122_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to motivate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000122_correct">
+                      <input class="valid-button word correct" id="000122_correct" type="radio" name="word:000122" value="valid"/>
+                      <img id="000122_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000122_incorrect">
+                      <input class="invalid-button word incorrect" id="000122_incorrect" type="radio" name="word:000122" value="invalid"/>
+                      <img id="000122_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to motivate</div>
                 </div>
-                <div>
-                  <label for="000086_correct">
-                    <input class="valid-button word correct" id="000086_correct" type="radio" name="word:000086" value="valid"/>
-                    <img id="000086_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000086_incorrect">
-                    <input class="invalid-button word incorrect" id="000086_incorrect" type="radio" name="word:000086" value="invalid"/>
-                    <img id="000086_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to encompass
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000086_correct">
+                      <input class="valid-button word correct" id="000086_correct" type="radio" name="word:000086" value="valid"/>
+                      <img id="000086_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000086_incorrect">
+                      <input class="invalid-button word incorrect" id="000086_incorrect" type="radio" name="word:000086" value="invalid"/>
+                      <img id="000086_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to encompass</div>
                 </div>
-                <div>
-                  <label for="000008_correct">
-                    <input class="valid-button word incorrect" id="000008_correct" type="radio" name="word:000008" value="valid"/>
-                    <img id="000008_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000008_incorrect">
-                    <input class="invalid-button word correct" id="000008_incorrect" type="radio" name="word:000008" value="invalid"/>
-                    <img id="000008_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to driggle
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000008_correct">
+                      <input class="valid-button word incorrect" id="000008_correct" type="radio" name="word:000008" value="valid"/>
+                      <img id="000008_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000008_incorrect">
+                      <input class="invalid-button word correct" id="000008_incorrect" type="radio" name="word:000008" value="invalid"/>
+                      <img id="000008_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to driggle</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000108_correct">
-                    <input class="valid-button word correct" id="000108_correct" type="radio" name="word:000108" value="valid"/>
-                    <img id="000108_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000108_incorrect">
-                    <input class="invalid-button word incorrect" id="000108_incorrect" type="radio" name="word:000108" value="invalid"/>
-                    <img id="000108_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to witness
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000108_correct">
+                      <input class="valid-button word correct" id="000108_correct" type="radio" name="word:000108" value="valid"/>
+                      <img id="000108_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000108_incorrect">
+                      <input class="invalid-button word incorrect" id="000108_incorrect" type="radio" name="word:000108" value="invalid"/>
+                      <img id="000108_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to witness</div>
                 </div>
-                <div>
-                  <label for="000020_correct">
-                    <input class="valid-button word incorrect" id="000020_correct" type="radio" name="word:000020" value="valid"/>
-                    <img id="000020_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000020_incorrect">
-                    <input class="invalid-button word correct" id="000020_incorrect" type="radio" name="word:000020" value="invalid"/>
-                    <img id="000020_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to chariover
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000020_correct">
+                      <input class="valid-button word incorrect" id="000020_correct" type="radio" name="word:000020" value="valid"/>
+                      <img id="000020_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000020_incorrect">
+                      <input class="invalid-button word correct" id="000020_incorrect" type="radio" name="word:000020" value="invalid"/>
+                      <img id="000020_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to chariover</div>
                 </div>
-                <div>
-                  <label for="000132_correct">
-                    <input class="valid-button word correct" id="000132_correct" type="radio" name="word:000132" value="valid"/>
-                    <img id="000132_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000132_incorrect">
-                    <input class="invalid-button word incorrect" id="000132_incorrect" type="radio" name="word:000132" value="invalid"/>
-                    <img id="000132_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to mention
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000132_correct">
+                      <input class="valid-button word correct" id="000132_correct" type="radio" name="word:000132" value="valid"/>
+                      <img id="000132_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000132_incorrect">
+                      <input class="invalid-button word incorrect" id="000132_incorrect" type="radio" name="word:000132" value="invalid"/>
+                      <img id="000132_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to mention</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000136_correct">
-                    <input class="valid-button word correct" id="000136_correct" type="radio" name="word:000136" value="valid"/>
-                    <img id="000136_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000136_incorrect">
-                    <input class="invalid-button word incorrect" id="000136_incorrect" type="radio" name="word:000136" value="invalid"/>
-                    <img id="000136_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to emerge
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000136_correct">
+                      <input class="valid-button word correct" id="000136_correct" type="radio" name="word:000136" value="valid"/>
+                      <img id="000136_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000136_incorrect">
+                      <input class="invalid-button word incorrect" id="000136_incorrect" type="radio" name="word:000136" value="invalid"/>
+                      <img id="000136_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to emerge</div>
                 </div>
-                <div>
-                  <label for="000042_correct">
-                    <input class="valid-button word incorrect" id="000042_correct" type="radio" name="word:000042" value="valid"/>
-                    <img id="000042_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000042_incorrect">
-                    <input class="invalid-button word correct" id="000042_incorrect" type="radio" name="word:000042" value="invalid"/>
-                    <img id="000042_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to strang
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000042_correct">
+                      <input class="valid-button word incorrect" id="000042_correct" type="radio" name="word:000042" value="valid"/>
+                      <img id="000042_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000042_incorrect">
+                      <input class="invalid-button word correct" id="000042_incorrect" type="radio" name="word:000042" value="invalid"/>
+                      <img id="000042_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to strang</div>
                 </div>
-                <div>
-                  <label for="000114_correct">
-                    <input class="valid-button word correct" id="000114_correct" type="radio" name="word:000114" value="valid"/>
-                    <img id="000114_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000114_incorrect">
-                    <input class="invalid-button word incorrect" id="000114_incorrect" type="radio" name="word:000114" value="invalid"/>
-                    <img id="000114_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to struggle
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000114_correct">
+                      <input class="valid-button word correct" id="000114_correct" type="radio" name="word:000114" value="valid"/>
+                      <img id="000114_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000114_incorrect">
+                      <input class="invalid-button word incorrect" id="000114_incorrect" type="radio" name="word:000114" value="invalid"/>
+                      <img id="000114_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to struggle</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000025_correct">
-                    <input class="valid-button word incorrect" id="000025_correct" type="radio" name="word:000025" value="valid"/>
-                    <img id="000025_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000025_incorrect">
-                    <input class="invalid-button word correct" id="000025_incorrect" type="radio" name="word:000025" value="invalid"/>
-                    <img id="000025_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to prinkle
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000025_correct">
+                      <input class="valid-button word incorrect" id="000025_correct" type="radio" name="word:000025" value="valid"/>
+                      <img id="000025_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000025_incorrect">
+                      <input class="invalid-button word correct" id="000025_incorrect" type="radio" name="word:000025" value="invalid"/>
+                      <img id="000025_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to prinkle</div>
                 </div>
-                <div>
-                  <label for="000111_correct">
-                    <input class="valid-button word correct" id="000111_correct" type="radio" name="word:000111" value="valid"/>
-                    <img id="000111_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000111_incorrect">
-                    <input class="invalid-button word incorrect" id="000111_incorrect" type="radio" name="word:000111" value="invalid"/>
-                    <img id="000111_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to permit
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000111_correct">
+                      <input class="valid-button word correct" id="000111_correct" type="radio" name="word:000111" value="valid"/>
+                      <img id="000111_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000111_incorrect">
+                      <input class="invalid-button word incorrect" id="000111_incorrect" type="radio" name="word:000111" value="invalid"/>
+                      <img id="000111_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to permit</div>
                 </div>
-                <div>
-                  <label for="000138_correct">
-                    <input class="valid-button word correct" id="000138_correct" type="radio" name="word:000138" value="valid"/>
-                    <img id="000138_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000138_incorrect">
-                    <input class="invalid-button word incorrect" id="000138_incorrect" type="radio" name="word:000138" value="invalid"/>
-                    <img id="000138_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to yell
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000138_correct">
+                      <input class="valid-button word correct" id="000138_correct" type="radio" name="word:000138" value="valid"/>
+                      <img id="000138_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000138_incorrect">
+                      <input class="invalid-button word incorrect" id="000138_incorrect" type="radio" name="word:000138" value="invalid"/>
+                      <img id="000138_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to yell</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000030_correct">
-                    <input class="valid-button word incorrect" id="000030_correct" type="radio" name="word:000030" value="valid"/>
-                    <img id="000030_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000030_incorrect">
-                    <input class="invalid-button word correct" id="000030_incorrect" type="radio" name="word:000030" value="invalid"/>
-                    <img id="000030_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to oldenate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000030_correct">
+                      <input class="valid-button word incorrect" id="000030_correct" type="radio" name="word:000030" value="valid"/>
+                      <img id="000030_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000030_incorrect">
+                      <input class="invalid-button word correct" id="000030_incorrect" type="radio" name="word:000030" value="invalid"/>
+                      <img id="000030_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to oldenate</div>
                 </div>
-                <div>
-                  <label for="000149_correct">
-                    <input class="valid-button word correct" id="000149_correct" type="radio" name="word:000149" value="valid"/>
-                    <img id="000149_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000149_incorrect">
-                    <input class="invalid-button word incorrect" id="000149_incorrect" type="radio" name="word:000149" value="invalid"/>
-                    <img id="000149_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to promise
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000149_correct">
+                      <input class="valid-button word correct" id="000149_correct" type="radio" name="word:000149" value="valid"/>
+                      <img id="000149_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000149_incorrect">
+                      <input class="invalid-button word incorrect" id="000149_incorrect" type="radio" name="word:000149" value="invalid"/>
+                      <img id="000149_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to promise</div>
                 </div>
-                <div>
-                  <label for="000126_correct">
-                    <input class="valid-button word correct" id="000126_correct" type="radio" name="word:000126" value="valid"/>
-                    <img id="000126_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000126_incorrect">
-                    <input class="invalid-button word incorrect" id="000126_incorrect" type="radio" name="word:000126" value="invalid"/>
-                    <img id="000126_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to complicate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000126_correct">
+                      <input class="valid-button word correct" id="000126_correct" type="radio" name="word:000126" value="valid"/>
+                      <img id="000126_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000126_incorrect">
+                      <input class="invalid-button word incorrect" id="000126_incorrect" type="radio" name="word:000126" value="invalid"/>
+                      <img id="000126_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to complicate</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000022_correct">
-                    <input class="valid-button word incorrect" id="000022_correct" type="radio" name="word:000022" value="valid"/>
-                    <img id="000022_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000022_incorrect">
-                    <input class="invalid-button word correct" id="000022_incorrect" type="radio" name="word:000022" value="invalid"/>
-                    <img id="000022_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to skey
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000022_correct">
+                      <input class="valid-button word incorrect" id="000022_correct" type="radio" name="word:000022" value="valid"/>
+                      <img id="000022_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000022_incorrect">
+                      <input class="invalid-button word correct" id="000022_incorrect" type="radio" name="word:000022" value="invalid"/>
+                      <img id="000022_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to skey</div>
                 </div>
-                <div>
-                  <label for="000089_correct">
-                    <input class="valid-button word correct" id="000089_correct" type="radio" name="word:000089" value="valid"/>
-                    <img id="000089_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000089_incorrect">
-                    <input class="invalid-button word incorrect" id="000089_incorrect" type="radio" name="word:000089" value="invalid"/>
-                    <img id="000089_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to violate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000089_correct">
+                      <input class="valid-button word correct" id="000089_correct" type="radio" name="word:000089" value="valid"/>
+                      <img id="000089_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000089_incorrect">
+                      <input class="invalid-button word incorrect" id="000089_incorrect" type="radio" name="word:000089" value="invalid"/>
+                      <img id="000089_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to violate</div>
                 </div>
-                <div>
-                  <label for="000135_correct">
-                    <input class="valid-button word correct" id="000135_correct" type="radio" name="word:000135" value="valid"/>
-                    <img id="000135_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000135_incorrect">
-                    <input class="invalid-button word incorrect" id="000135_incorrect" type="radio" name="word:000135" value="invalid"/>
-                    <img id="000135_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to squeeze
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000135_correct">
+                      <input class="valid-button word correct" id="000135_correct" type="radio" name="word:000135" value="valid"/>
+                      <img id="000135_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000135_incorrect">
+                      <input class="invalid-button word incorrect" id="000135_incorrect" type="radio" name="word:000135" value="invalid"/>
+                      <img id="000135_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to squeeze</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000115_correct">
-                    <input class="valid-button word correct" id="000115_correct" type="radio" name="word:000115" value="valid"/>
-                    <img id="000115_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000115_incorrect">
-                    <input class="invalid-button word incorrect" id="000115_incorrect" type="radio" name="word:000115" value="invalid"/>
-                    <img id="000115_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to unleash
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000115_correct">
+                      <input class="valid-button word correct" id="000115_correct" type="radio" name="word:000115" value="valid"/>
+                      <img id="000115_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000115_incorrect">
+                      <input class="invalid-button word incorrect" id="000115_incorrect" type="radio" name="word:000115" value="invalid"/>
+                      <img id="000115_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to unleash</div>
                 </div>
-                <div>
-                  <label for="000015_correct">
-                    <input class="valid-button word incorrect" id="000015_correct" type="radio" name="word:000015" value="valid"/>
-                    <img id="000015_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000015_incorrect">
-                    <input class="invalid-button word correct" id="000015_incorrect" type="radio" name="word:000015" value="invalid"/>
-                    <img id="000015_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to digame
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000015_correct">
+                      <input class="valid-button word incorrect" id="000015_correct" type="radio" name="word:000015" value="valid"/>
+                      <img id="000015_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000015_incorrect">
+                      <input class="invalid-button word correct" id="000015_incorrect" type="radio" name="word:000015" value="invalid"/>
+                      <img id="000015_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to digame</div>
                 </div>
-                <div>
-                  <label for="000099_correct">
-                    <input class="valid-button word correct" id="000099_correct" type="radio" name="word:000099" value="valid"/>
-                    <img id="000099_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000099_incorrect">
-                    <input class="invalid-button word incorrect" id="000099_incorrect" type="radio" name="word:000099" value="invalid"/>
-                    <img id="000099_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to congratulate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000099_correct">
+                      <input class="valid-button word correct" id="000099_correct" type="radio" name="word:000099" value="valid"/>
+                      <img id="000099_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000099_incorrect">
+                      <input class="invalid-button word incorrect" id="000099_incorrect" type="radio" name="word:000099" value="invalid"/>
+                      <img id="000099_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to congratulate</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000048_correct">
-                    <input class="valid-button word incorrect" id="000048_correct" type="radio" name="word:000048" value="valid"/>
-                    <img id="000048_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000048_incorrect">
-                    <input class="invalid-button word correct" id="000048_incorrect" type="radio" name="word:000048" value="invalid"/>
-                    <img id="000048_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to honch
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000048_correct">
+                      <input class="valid-button word incorrect" id="000048_correct" type="radio" name="word:000048" value="valid"/>
+                      <img id="000048_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000048_incorrect">
+                      <input class="invalid-button word correct" id="000048_incorrect" type="radio" name="word:000048" value="invalid"/>
+                      <img id="000048_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to honch</div>
                 </div>
-                <div>
-                  <label for="000011_correct">
-                    <input class="valid-button word incorrect" id="000011_correct" type="radio" name="word:000011" value="valid"/>
-                    <img id="000011_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000011_incorrect">
-                    <input class="invalid-button word correct" id="000011_incorrect" type="radio" name="word:000011" value="invalid"/>
-                    <img id="000011_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to numbelate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000011_correct">
+                      <input class="valid-button word incorrect" id="000011_correct" type="radio" name="word:000011" value="valid"/>
+                      <img id="000011_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000011_incorrect">
+                      <input class="invalid-button word correct" id="000011_incorrect" type="radio" name="word:000011" value="invalid"/>
+                      <img id="000011_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to numbelate</div>
                 </div>
-                <div>
-                  <label for="000001_correct">
-                    <input class="valid-button word incorrect" id="000001_correct" type="radio" name="word:000001" value="valid"/>
-                    <img id="000001_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000001_incorrect">
-                    <input class="invalid-button word correct" id="000001_incorrect" type="radio" name="word:000001" value="invalid"/>
-                    <img id="000001_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to keepsick
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000001_correct">
+                      <input class="valid-button word incorrect" id="000001_correct" type="radio" name="word:000001" value="valid"/>
+                      <img id="000001_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000001_incorrect">
+                      <input class="invalid-button word correct" id="000001_incorrect" type="radio" name="word:000001" value="invalid"/>
+                      <img id="000001_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to keepsick</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000129_correct">
-                    <input class="valid-button word correct" id="000129_correct" type="radio" name="word:000129" value="valid"/>
-                    <img id="000129_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000129_incorrect">
-                    <input class="invalid-button word incorrect" id="000129_incorrect" type="radio" name="word:000129" value="invalid"/>
-                    <img id="000129_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to name
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000129_correct">
+                      <input class="valid-button word correct" id="000129_correct" type="radio" name="word:000129" value="valid"/>
+                      <img id="000129_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000129_incorrect">
+                      <input class="invalid-button word incorrect" id="000129_incorrect" type="radio" name="word:000129" value="invalid"/>
+                      <img id="000129_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to name</div>
                 </div>
-                <div>
-                  <label for="000110_correct">
-                    <input class="valid-button word correct" id="000110_correct" type="radio" name="word:000110" value="valid"/>
-                    <img id="000110_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000110_incorrect">
-                    <input class="invalid-button word incorrect" id="000110_incorrect" type="radio" name="word:000110" value="invalid"/>
-                    <img id="000110_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to colour
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000110_correct">
+                      <input class="valid-button word correct" id="000110_correct" type="radio" name="word:000110" value="valid"/>
+                      <img id="000110_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000110_incorrect">
+                      <input class="invalid-button word incorrect" id="000110_incorrect" type="radio" name="word:000110" value="invalid"/>
+                      <img id="000110_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to colour</div>
                 </div>
-                <div>
-                  <label for="000093_correct">
-                    <input class="valid-button word correct" id="000093_correct" type="radio" name="word:000093" value="valid"/>
-                    <img id="000093_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000093_incorrect">
-                    <input class="invalid-button word incorrect" id="000093_incorrect" type="radio" name="word:000093" value="invalid"/>
-                    <img id="000093_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to hesitate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000093_correct">
+                      <input class="valid-button word correct" id="000093_correct" type="radio" name="word:000093" value="valid"/>
+                      <img id="000093_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000093_incorrect">
+                      <input class="invalid-button word incorrect" id="000093_incorrect" type="radio" name="word:000093" value="invalid"/>
+                      <img id="000093_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to hesitate</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000080_correct">
-                    <input class="valid-button word correct" id="000080_correct" type="radio" name="word:000080" value="valid"/>
-                    <img id="000080_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000080_incorrect">
-                    <input class="invalid-button word incorrect" id="000080_incorrect" type="radio" name="word:000080" value="invalid"/>
-                    <img id="000080_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to organize
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000080_correct">
+                      <input class="valid-button word correct" id="000080_correct" type="radio" name="word:000080" value="valid"/>
+                      <img id="000080_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000080_incorrect">
+                      <input class="invalid-button word incorrect" id="000080_incorrect" type="radio" name="word:000080" value="invalid"/>
+                      <img id="000080_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to organize</div>
                 </div>
-                <div>
-                  <label for="000013_correct">
-                    <input class="valid-button word incorrect" id="000013_correct" type="radio" name="word:000013" value="valid"/>
-                    <img id="000013_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000013_incorrect">
-                    <input class="invalid-button word correct" id="000013_incorrect" type="radio" name="word:000013" value="invalid"/>
-                    <img id="000013_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to wordle
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000013_correct">
+                      <input class="valid-button word incorrect" id="000013_correct" type="radio" name="word:000013" value="valid"/>
+                      <img id="000013_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000013_incorrect">
+                      <input class="invalid-button word correct" id="000013_incorrect" type="radio" name="word:000013" value="invalid"/>
+                      <img id="000013_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to wordle</div>
                 </div>
-                <div>
-                  <label for="000150_correct">
-                    <input class="valid-button word correct" id="000150_correct" type="radio" name="word:000150" value="valid"/>
-                    <img id="000150_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000150_incorrect">
-                    <input class="invalid-button word incorrect" id="000150_incorrect" type="radio" name="word:000150" value="invalid"/>
-                    <img id="000150_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to complement
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000150_correct">
+                      <input class="valid-button word correct" id="000150_correct" type="radio" name="word:000150" value="valid"/>
+                      <img id="000150_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000150_incorrect">
+                      <input class="invalid-button word incorrect" id="000150_incorrect" type="radio" name="word:000150" value="invalid"/>
+                      <img id="000150_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to complement</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000041_correct">
-                    <input class="valid-button word incorrect" id="000041_correct" type="radio" name="word:000041" value="valid"/>
-                    <img id="000041_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000041_incorrect">
-                    <input class="invalid-button word correct" id="000041_incorrect" type="radio" name="word:000041" value="invalid"/>
-                    <img id="000041_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to mayto
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000041_correct">
+                      <input class="valid-button word incorrect" id="000041_correct" type="radio" name="word:000041" value="valid"/>
+                      <img id="000041_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000041_incorrect">
+                      <input class="invalid-button word correct" id="000041_incorrect" type="radio" name="word:000041" value="invalid"/>
+                      <img id="000041_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to mayto</div>
                 </div>
-                <div>
-                  <label for="000107_correct">
-                    <input class="valid-button word correct" id="000107_correct" type="radio" name="word:000107" value="valid"/>
-                    <img id="000107_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000107_incorrect">
-                    <input class="invalid-button word incorrect" id="000107_incorrect" type="radio" name="word:000107" value="invalid"/>
-                    <img id="000107_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to box
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000107_correct">
+                      <input class="valid-button word correct" id="000107_correct" type="radio" name="word:000107" value="valid"/>
+                      <img id="000107_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000107_incorrect">
+                      <input class="invalid-button word incorrect" id="000107_incorrect" type="radio" name="word:000107" value="invalid"/>
+                      <img id="000107_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to box</div>
                 </div>
-                <div>
-                  <label for="000072_correct">
-                    <input class="valid-button word correct" id="000072_correct" type="radio" name="word:000072" value="valid"/>
-                    <img id="000072_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000072_incorrect">
-                    <input class="invalid-button word incorrect" id="000072_incorrect" type="radio" name="word:000072" value="invalid"/>
-                    <img id="000072_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to repair
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000072_correct">
+                      <input class="valid-button word correct" id="000072_correct" type="radio" name="word:000072" value="valid"/>
+                      <img id="000072_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000072_incorrect">
+                      <input class="invalid-button word incorrect" id="000072_incorrect" type="radio" name="word:000072" value="invalid"/>
+                      <img id="000072_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to repair</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000112_correct">
-                    <input class="valid-button word correct" id="000112_correct" type="radio" name="word:000112" value="valid"/>
-                    <img id="000112_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000112_incorrect">
-                    <input class="invalid-button word incorrect" id="000112_incorrect" type="radio" name="word:000112" value="invalid"/>
-                    <img id="000112_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to type
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000112_correct">
+                      <input class="valid-button word correct" id="000112_correct" type="radio" name="word:000112" value="valid"/>
+                      <img id="000112_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000112_incorrect">
+                      <input class="invalid-button word incorrect" id="000112_incorrect" type="radio" name="word:000112" value="invalid"/>
+                      <img id="000112_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to type</div>
                 </div>
-                <div>
-                  <label for="000102_correct">
-                    <input class="valid-button word correct" id="000102_correct" type="radio" name="word:000102" value="valid"/>
-                    <img id="000102_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000102_incorrect">
-                    <input class="invalid-button word incorrect" id="000102_incorrect" type="radio" name="word:000102" value="invalid"/>
-                    <img id="000102_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to authorise
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000102_correct">
+                      <input class="valid-button word correct" id="000102_correct" type="radio" name="word:000102" value="valid"/>
+                      <img id="000102_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000102_incorrect">
+                      <input class="invalid-button word incorrect" id="000102_incorrect" type="radio" name="word:000102" value="invalid"/>
+                      <img id="000102_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to authorise</div>
                 </div>
-                <div>
-                  <label for="000106_correct">
-                    <input class="valid-button word correct" id="000106_correct" type="radio" name="word:000106" value="valid"/>
-                    <img id="000106_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000106_incorrect">
-                    <input class="invalid-button word incorrect" id="000106_incorrect" type="radio" name="word:000106" value="invalid"/>
-                    <img id="000106_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to reform
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000106_correct">
+                      <input class="valid-button word correct" id="000106_correct" type="radio" name="word:000106" value="valid"/>
+                      <img id="000106_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000106_incorrect">
+                      <input class="invalid-button word incorrect" id="000106_incorrect" type="radio" name="word:000106" value="invalid"/>
+                      <img id="000106_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to reform</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000104_correct">
-                    <input class="valid-button word correct" id="000104_correct" type="radio" name="word:000104" value="valid"/>
-                    <img id="000104_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000104_incorrect">
-                    <input class="invalid-button word incorrect" id="000104_incorrect" type="radio" name="word:000104" value="invalid"/>
-                    <img id="000104_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to wait
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000104_correct">
+                      <input class="valid-button word correct" id="000104_correct" type="radio" name="word:000104" value="valid"/>
+                      <img id="000104_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000104_incorrect">
+                      <input class="invalid-button word incorrect" id="000104_incorrect" type="radio" name="word:000104" value="invalid"/>
+                      <img id="000104_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to wait</div>
                 </div>
-                <div>
-                  <label for="000063_correct">
-                    <input class="valid-button word correct" id="000063_correct" type="radio" name="word:000063" value="valid"/>
-                    <img id="000063_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000063_incorrect">
-                    <input class="invalid-button word incorrect" id="000063_incorrect" type="radio" name="word:000063" value="invalid"/>
-                    <img id="000063_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to commission
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000063_correct">
+                      <input class="valid-button word correct" id="000063_correct" type="radio" name="word:000063" value="valid"/>
+                      <img id="000063_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000063_incorrect">
+                      <input class="invalid-button word incorrect" id="000063_incorrect" type="radio" name="word:000063" value="invalid"/>
+                      <img id="000063_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to commission</div>
                 </div>
-                <div>
-                  <label for="000057_correct">
-                    <input class="valid-button word correct" id="000057_correct" type="radio" name="word:000057" value="valid"/>
-                    <img id="000057_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000057_incorrect">
-                    <input class="invalid-button word incorrect" id="000057_incorrect" type="radio" name="word:000057" value="invalid"/>
-                    <img id="000057_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to quote
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000057_correct">
+                      <input class="valid-button word correct" id="000057_correct" type="radio" name="word:000057" value="valid"/>
+                      <img id="000057_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000057_incorrect">
+                      <input class="invalid-button word incorrect" id="000057_incorrect" type="radio" name="word:000057" value="invalid"/>
+                      <img id="000057_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to quote</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000012_correct">
-                    <input class="valid-button word incorrect" id="000012_correct" type="radio" name="word:000012" value="valid"/>
-                    <img id="000012_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000012_incorrect">
-                    <input class="invalid-button word correct" id="000012_incorrect" type="radio" name="word:000012" value="invalid"/>
-                    <img id="000012_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to eaude
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000012_correct">
+                      <input class="valid-button word incorrect" id="000012_correct" type="radio" name="word:000012" value="valid"/>
+                      <img id="000012_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000012_incorrect">
+                      <input class="invalid-button word correct" id="000012_incorrect" type="radio" name="word:000012" value="invalid"/>
+                      <img id="000012_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to eaude</div>
                 </div>
-                <div>
-                  <label for="000092_correct">
-                    <input class="valid-button word correct" id="000092_correct" type="radio" name="word:000092" value="valid"/>
-                    <img id="000092_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000092_incorrect">
-                    <input class="invalid-button word incorrect" id="000092_incorrect" type="radio" name="word:000092" value="invalid"/>
-                    <img id="000092_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to trace
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000092_correct">
+                      <input class="valid-button word correct" id="000092_correct" type="radio" name="word:000092" value="valid"/>
+                      <img id="000092_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000092_incorrect">
+                      <input class="invalid-button word incorrect" id="000092_incorrect" type="radio" name="word:000092" value="invalid"/>
+                      <img id="000092_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to trace</div>
                 </div>
-                <div>
-                  <label for="000096_correct">
-                    <input class="valid-button word correct" id="000096_correct" type="radio" name="word:000096" value="valid"/>
-                    <img id="000096_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000096_incorrect">
-                    <input class="invalid-button word incorrect" id="000096_incorrect" type="radio" name="word:000096" value="invalid"/>
-                    <img id="000096_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to address
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000096_correct">
+                      <input class="valid-button word correct" id="000096_correct" type="radio" name="word:000096" value="valid"/>
+                      <img id="000096_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000096_incorrect">
+                      <input class="invalid-button word incorrect" id="000096_incorrect" type="radio" name="word:000096" value="invalid"/>
+                      <img id="000096_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to address</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000035_correct">
-                    <input class="valid-button word incorrect" id="000035_correct" type="radio" name="word:000035" value="valid"/>
-                    <img id="000035_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000035_incorrect">
-                    <input class="invalid-button word correct" id="000035_incorrect" type="radio" name="word:000035" value="invalid"/>
-                    <img id="000035_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to kinnear
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000035_correct">
+                      <input class="valid-button word incorrect" id="000035_correct" type="radio" name="word:000035" value="valid"/>
+                      <img id="000035_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000035_incorrect">
+                      <input class="invalid-button word correct" id="000035_incorrect" type="radio" name="word:000035" value="invalid"/>
+                      <img id="000035_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to kinnear</div>
                 </div>
-                <div>
-                  <label for="000070_correct">
-                    <input class="valid-button word correct" id="000070_correct" type="radio" name="word:000070" value="valid"/>
-                    <img id="000070_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000070_incorrect">
-                    <input class="invalid-button word incorrect" id="000070_incorrect" type="radio" name="word:000070" value="invalid"/>
-                    <img id="000070_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to judge
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000070_correct">
+                      <input class="valid-button word correct" id="000070_correct" type="radio" name="word:000070" value="valid"/>
+                      <img id="000070_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000070_incorrect">
+                      <input class="invalid-button word incorrect" id="000070_incorrect" type="radio" name="word:000070" value="invalid"/>
+                      <img id="000070_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to judge</div>
                 </div>
-                <div>
-                  <label for="000075_correct">
-                    <input class="valid-button word correct" id="000075_correct" type="radio" name="word:000075" value="valid"/>
-                    <img id="000075_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000075_incorrect">
-                    <input class="invalid-button word incorrect" id="000075_incorrect" type="radio" name="word:000075" value="invalid"/>
-                    <img id="000075_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to waste
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000075_correct">
+                      <input class="valid-button word correct" id="000075_correct" type="radio" name="word:000075" value="valid"/>
+                      <img id="000075_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000075_incorrect">
+                      <input class="invalid-button word incorrect" id="000075_incorrect" type="radio" name="word:000075" value="invalid"/>
+                      <img id="000075_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to waste</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000082_correct">
-                    <input class="valid-button word correct" id="000082_correct" type="radio" name="word:000082" value="valid"/>
-                    <img id="000082_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000082_incorrect">
-                    <input class="invalid-button word incorrect" id="000082_incorrect" type="radio" name="word:000082" value="invalid"/>
-                    <img id="000082_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to stay
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000082_correct">
+                      <input class="valid-button word correct" id="000082_correct" type="radio" name="word:000082" value="valid"/>
+                      <img id="000082_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000082_incorrect">
+                      <input class="invalid-button word incorrect" id="000082_incorrect" type="radio" name="word:000082" value="invalid"/>
+                      <img id="000082_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to stay</div>
                 </div>
-                <div>
-                  <label for="000125_correct">
-                    <input class="valid-button word correct" id="000125_correct" type="radio" name="word:000125" value="valid"/>
-                    <img id="000125_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000125_incorrect">
-                    <input class="invalid-button word incorrect" id="000125_incorrect" type="radio" name="word:000125" value="invalid"/>
-                    <img id="000125_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to conceive
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000125_correct">
+                      <input class="valid-button word correct" id="000125_correct" type="radio" name="word:000125" value="valid"/>
+                      <img id="000125_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000125_incorrect">
+                      <input class="invalid-button word incorrect" id="000125_incorrect" type="radio" name="word:000125" value="invalid"/>
+                      <img id="000125_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to conceive</div>
                 </div>
-                <div>
-                  <label for="000131_correct">
-                    <input class="valid-button word correct" id="000131_correct" type="radio" name="word:000131" value="valid"/>
-                    <img id="000131_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000131_incorrect">
-                    <input class="invalid-button word incorrect" id="000131_incorrect" type="radio" name="word:000131" value="invalid"/>
-                    <img id="000131_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to announce
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000131_correct">
+                      <input class="valid-button word correct" id="000131_correct" type="radio" name="word:000131" value="valid"/>
+                      <img id="000131_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000131_incorrect">
+                      <input class="invalid-button word incorrect" id="000131_incorrect" type="radio" name="word:000131" value="invalid"/>
+                      <img id="000131_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to announce</div>
                 </div>
-              </div>
               
-              <div>
-                <div class="word-container">
-                  <label for="000016_correct">
-                    <input class="valid-button word incorrect" id="000016_correct" type="radio" name="word:000016" value="valid"/>
-                    <img id="000016_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000016_incorrect">
-                    <input class="invalid-button word correct" id="000016_incorrect" type="radio" name="word:000016" value="invalid"/>
-                    <img id="000016_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to monadate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000016_correct">
+                      <input class="valid-button word incorrect" id="000016_correct" type="radio" name="word:000016" value="valid"/>
+                      <img id="000016_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000016_incorrect">
+                      <input class="invalid-button word correct" id="000016_incorrect" type="radio" name="word:000016" value="invalid"/>
+                      <img id="000016_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to monadate</div>
                 </div>
-                <div>
-                  <label for="000056_correct">
-                    <input class="valid-button word correct" id="000056_correct" type="radio" name="word:000056" value="valid"/>
-                    <img id="000056_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000056_incorrect">
-                    <input class="invalid-button word incorrect" id="000056_incorrect" type="radio" name="word:000056" value="invalid"/>
-                    <img id="000056_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to inherit
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000056_correct">
+                      <input class="valid-button word correct" id="000056_correct" type="radio" name="word:000056" value="valid"/>
+                      <img id="000056_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000056_incorrect">
+                      <input class="invalid-button word incorrect" id="000056_incorrect" type="radio" name="word:000056" value="invalid"/>
+                      <img id="000056_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to inherit</div>
                 </div>
-                <div>
-                  <label for="000018_correct">
-                    <input class="valid-button word incorrect" id="000018_correct" type="radio" name="word:000018" value="valid"/>
-                    <img id="000018_correct_image" src="/images/true.gif" />
-                  </label>
-                  <label for="000018_incorrect">
-                    <input class="invalid-button word correct" id="000018_incorrect" type="radio" name="word:000018" value="invalid"/>
-                    <img id="000018_incorrect_image" src="/images/false.gif" />
-                  </label>
-                  to pronate
+                <div class="vspt-button-block">
+                  <div>
+                    <label for="000018_correct">
+                      <input class="valid-button word incorrect" id="000018_correct" type="radio" name="word:000018" value="valid"/>
+                      <img id="000018_correct_image" src="/images/true.gif" />
+                    </label>
+                  </div>
+                  <div>
+                    <label for="000018_incorrect">
+                      <input class="invalid-button word correct" id="000018_incorrect" type="radio" name="word:000018" value="invalid"/>
+                      <img id="000018_incorrect_image" src="/images/false.gif" />
+                    </label>
+                  </div>
+                  <div>to pronate</div>
                 </div>
-              </div>
               
             </div>
-            <input id="vspt-send-button" type="button" value="Consegna le risposte" disabled/>
+            <input id="vspt-send-button" type="button" value="Consegna le risposte" disabled />
           </form>
           <div id="confirm-send-dialog" class="dialang-dialog" title="">
             <div class="dialang-dialog-content">

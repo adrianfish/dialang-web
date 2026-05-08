@@ -39,18 +39,19 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
         }
 
         // This will change the colour of the word. The css class is called 'done'.
-        $(this).parent().parent().addClass('done');
+        this.closest(".vspt-button-block").classList.add("done");
+        //$(this).parent().parent().addClass('done');
     });
 
     $(document).keydown(function (e) {
 
         if(e.keyCode == '72' && e.ctrlKey) {
             $('#vspt-send-button,#next').prop('disabled', false);
-            $('#vspt-table input.correct').prop('checked', true).trigger('click');
+            $('#vspt-grid input.correct').prop('checked', true).trigger('click');
             return false;
         } else if(e.keyCode == '76' && e.ctrlKey) {
             $('#vspt-send-button,#next').prop('disabled', false);
-            $('#vspt-table input.incorrect').prop('checked', true).trigger('click');
+            $('#vspt-grid input.incorrect').prop('checked', true).trigger('click');
             return false;
         }
     });

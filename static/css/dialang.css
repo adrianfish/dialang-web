@@ -46,6 +46,12 @@ img {
     float: left;
     width: 420px;
     padding-left: 8px;
+    margin-bottom: 4px;
+}
+
+#skipback > img {
+  width: 27px;
+  height: 23px;
 }
 
 #navbar button {
@@ -54,6 +60,10 @@ img {
 
 #instantfeedback {
     display: none;
+}
+
+#feedback-button {
+  margin-bottom: 6px;
 }
 
 #save-button {
@@ -179,6 +189,11 @@ button[disabled] {
     text-align: center;
 }
 
+#confirmation-button-table button {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
 .dialang-dialog > table{
     margin-left: auto;
     margin-right: auto;
@@ -274,24 +289,6 @@ button[disabled] {
     margin-right: auto;
 }
 
-#vspt-table  {
-    display: table;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#vspt-table > div {
-    display: table-row;
-    width: 100%;
-}
-
-#vspt-table > div > div{
-    display: table-cell;
-    width: 33%;
-    text-align: left;
-}
-
 @media screen and (max-width: 800px),(max-device-width: 800px) {
 
     #container {
@@ -314,7 +311,7 @@ button[disabled] {
         width: 340px;
     }
 
-    #vspt-table {
+    #vspt-grid {
         display: block;
     }
 
@@ -374,8 +371,74 @@ button[disabled] {
     color: #ffffff;
 }
 
-#vspt-table input {
+#vspt-legend, #tls-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#tls-legend {
+  margin-top: 12px;
+}
+
+#vspt-legend div:nth-child(2) {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#vspt-legend div:nth-child(4) {
+  margin-left: 4px;
+}
+
+#tls-legend div:nth-child(2) {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#tls-legend div:nth-child(4) {
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+#tls-legend div:nth-child(5) {
+  margin-left: 4px;
+}
+
+#tls-legend div:nth-child(6) {
+  margin-left: 4px;
+}
+
+#vspt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#vspt-grid input {
     display: none;
+}
+
+.vspt-button-block {
+  display: flex;
+  align-items: center;
+}
+
+.vspt-button-block div:nth-child(3) {
+  margin-left: 6px;
+}
+
+.vspt-button-block div:nth-child(2) {
+  margin-left: 4px;
+}
+
+#vspt-send-button, #sa-send-button {
+  margin-top: 12px;
+  margin-bottom: 8px;
 }
 
 #sa-table  {
@@ -643,11 +706,11 @@ button[disabled] {
 }
 
 /* START VSPT HACKS FOR IE11 */
-#vspt-table label {
+#vspt-grid label {
     display: inline-block;
 }
 
-#vspt-table label img {
+#vspt-grid label img {
     pointer-events: none;
 }
 /* END HACKS FOR IE11 */
