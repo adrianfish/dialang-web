@@ -5,7 +5,7 @@ export function setSessionId(c: Context): string {
 
   const sessionId = crypto.randomUUID();
   const maxAge = 8 * 60 * 60 * 1000;
-  setCookie(c, "dialang", sessionId, { maxAge } );
+  setCookie(c, "dialang", sessionId, { maxAge, sameSite: "None", secure: true, httpOnly: true } );
   return sessionId;
 }
 

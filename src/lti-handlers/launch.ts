@@ -6,7 +6,7 @@ import type { StoredContextToken } from "@adrianfish/deno-lti";
 
 export const createLTILaunchHandler = (storage: Storage) => {
 
-  return (c: Context, ltiContext: any): Response | Promise<Response> => {
+  return async (c: Context, ltiContext: any): Response | Promise<Response> => {
 
     const { al, tl, skill } = ltiContext.context.custom;
 
@@ -29,7 +29,7 @@ export const createLTILaunchHandler = (storage: Storage) => {
       session.skill = body.skill;
     }
 
-    storage.saveSession(sessionId, session);
+    await storage.saveSession(sessionId, session);
 
     return c.redirect("/content/launch.html");
   };

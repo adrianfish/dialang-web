@@ -37,6 +37,7 @@ export class KVStorage implements Storage {
   }
 
   async getSession(sessionId: string): Promise<DialangSession> {
+    console.log(sessionId);
     return (await this.#kv.get(["sessions", sessionId])).value;
   }
 
