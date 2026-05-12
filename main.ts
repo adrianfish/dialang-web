@@ -17,7 +17,6 @@ import { alDistribution } from "./src/routes/reports/al-distribution.ts";
 import { tlDistribution } from "./src/routes/reports/tl-distribution.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
-//import { ltiLaunchHandler } from "./src/lti-handlers/launch.ts";
 import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
 import { DenoLTI } from "@adrianfish/deno-lti";
 
@@ -41,7 +40,9 @@ app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, storage));
 app.get("/reports/:report?", (c) => reports(c, storage));
 
 const lti = new DenoLTI();
-await lti.onConnect(createLTILaunchHandler(storage)).setup("adrian-dialang-lti.ngrok.app", "dialang-key", storage.getKv(), { ltiRoute: "/lti", debug: false });
+await lti
+  .onConnect(createLTILaunchHandler(storage))
+  .setup("adrian-dialang-lti.ngrok.app", "dialang-key", storage.getKv(), { ltiRoute: "/lti" });
 app.route("/lti", lti.handler());
 
 app.use("/*", serveStatic({ root: "./static/" }));

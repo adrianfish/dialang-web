@@ -98,7 +98,7 @@ function removeWhiteSpaceAndPunctuation(inString: string, punctuationList: Array
   if (!inString) return "";
 
 	if (punctuationList.length <= 0) {
-		console.log("No punctuation list found. Returning input unchanged ...")
+		console.warn("No punctuation list found. Returning input unchanged ...")
 		return inString;
 	}
 

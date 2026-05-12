@@ -7,11 +7,19 @@ fetch("/api/session")
 })
 .then(session => {
 
-  //var dialang = dialang || {};
-  //dialang.session ??= {};
-  dialang.session.al = session.al;
   dialang.session.id = session.id;
+  dialang.session.al = session.al;
+  dialang.session.tl = session.tl;
+  dialang.session.skill = session.skill;
 
-  dialang.switchState("legend");
+  dialang.flags.hideVSPT = session.hideVSPT;
+  dialang.flags.hideSA = session.hideSA;
+
+  if (!dialang.session.tl) {
+    dialang.switchState("legend");
+    return;
+  } else {
+    dialang.navigation.nextRules.tls();
+  }
 });
 
