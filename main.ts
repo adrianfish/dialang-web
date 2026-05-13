@@ -19,10 +19,13 @@ import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
 import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
 import { DenoLTI } from "@adrianfish/deno-lti";
+import { deepLinkMenu } from "./src/templates/deep-link-menu.ts";
+import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
 const app: Hono = new Hono();
 
 const storage: Storage = await KVStorage.open();
+
 app.post("/api/setal", (c) => setAl(c, storage));
 app.post("/api/settl", (c) => setTl(c, storage));
 app.post("/api/scorevspt", (c) => scoreVspt(c, storage));
@@ -38,11 +41,19 @@ app.post("/api/loaddata", (c) => loadData(c, storage.getKv()));
 app.post("/api/submitquestionnaire", (c) => submitQuestionnaire(c, storage));
 app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, storage));
 app.get("/reports/:report?", (c) => reports(c, storage));
+app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
 
 const lti = new DenoLTI();
 await lti
   .onConnect(createLTILaunchHandler(storage))
-  .setup("adrian-dialang-lti.ngrok.app", "dialang-key", storage.getKv(), { ltiRoute: "/lti" });
+  .onDeepLinking((c: Context, { token }) => {
+    const { user } = c.get("token");
+    const { contextId } = c.get("context");
+    const platformCode = c.get("platformCode");
+    const data = { token, contextId, platformCode, user, links: [ { id: "1", title: "Item 1" } ] };
+    return c.html(deepLinkMenu(data));
+  })
+  .setup("adrian-dialang-lti.ngrok.app", "dialang-key", { ltiRoute: "/lti", debug: true });
 app.route("/lti", lti.handler());
 
 app.use("/*", serveStatic({ root: "./static/" }));
