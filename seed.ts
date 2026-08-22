@@ -10,7 +10,8 @@ if (!loadSecret) {
 const hash = await createHash(loadSecret);
 
 //const url = "https://dialang.net"
-const url = "http://localhost:3001"
+const url = "https://adrian-dialang.ngrok.app"
+//const url = "http://localhost:3001"
 const loadOne = async (filepath, name, type)   => {
   const blob = new Blob([ await Deno.readFile(filepath) ]);
   const form = new FormData();
@@ -39,7 +40,6 @@ if (!flags.type) {
   console.error("No type specified");
   Deno.exit();
 }
-
 
 if (flags.clear) {
   const form = new FormData();

@@ -2,13 +2,15 @@ import { getConnInfo } from '@hono/deno'
 import { setSessionId } from "../utils/utils.ts";
 
 import type { Context } from "@hono";
-import type { StoredContextToken } from "@adrianfish/deno-lti";
+import type { LTIContext, StoredContextToken } from "@adrianfish/deno-lti";
 
 export const createLTILaunchHandler = (storage: Storage) => {
 
-  return async (c: Context, ltiContext: any): Response | Promise<Response> => {
+  return async (c: Context, ltiContext: LTIContext): Response | Promise<Response> => {
 
-    const { al, tl, skill, hidevspt, hidesa, hidevsptresult, hidefeedbackmenu } = ltiContext.context.custom;
+    const token: LTIToken = ltiContext.token;
+
+    const { al, tl, skill, hidevspt, hidesa, hidevsptresult, hidefeedbackmenu } = token.platformContext.custom;
 
     if (!al) {
       return c.redirect("/content/als.html");
@@ -19,14 +21,16 @@ export const createLTILaunchHandler = (storage: Storage) => {
     const session = {
       id: sessionId,
       al,
-      user: ltiContext.context.user,
-      contextId: ltiContext.context.contextId,
+      user: token.user,
+      contextId: token.contextId,
       referrer: c.req.header("Referer"),
       ipAddress: getConnInfo(c).remote.address,
       started: Date.now(),
     };
 
     if (tl) {
+      console.log(tl);
+      console.log(skill);
       session.tl = tl;
       session.skill = skill;
     }

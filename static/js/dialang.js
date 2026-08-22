@@ -12,12 +12,12 @@ if (typeof dialang === 'undefined') {
 }
 
 dialang.keyboardMappings = {
-    "dan_dk": "danish-qwerty",
-    "deu_de": "german-qwertz-1",
-    "spa_es": "spanish-qwerty",
-    "fra_fr": "french-azerty-1",
-    "por_pt": "portuguese-qwerty",
-    "swe_se": "swedish-qwerty"
+    "da-DK": "danish-qwerty",
+    "de-DE": "german-qwertz-1",
+    "es-ES": "spanish-qwerty",
+    "fr-FR": "french-azerty-1",
+    "pt-PT": "portuguese-qwerty",
+    "sv-SE": "swedish-qwerty"
 };
 
 $('#help').click(function (e) {
@@ -199,6 +199,8 @@ dialang.switchState = function (state) {
     return false;
   }
 
+  console.log(dialang.session.al);
+
   if ('test' !== state) {
     $.get('/content/' + state + '/' + dialang.session.al + '-toolbarTooltips.json', function (tips) {
 
@@ -234,8 +236,8 @@ dialang.getScript = path => {
 /*
 // TEST MODE ONLY !!!!!!!
 dialang.state = 'questionnaire';
-dialang.session.al = 'eng_gb';
-dialang.session.tl = 'dan_da';
+dialang.session.al = 'en-GB';
+dialang.session.tl = 'da-DK';
 //dialang.session.itemLevel = 'A2';
 //dialang.session.testDone = 'true';
 dialang.session.skill = 'writing';

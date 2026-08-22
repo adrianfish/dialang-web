@@ -38,7 +38,7 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="al" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">eng_gb</stringProp>
+                <stringProp name="Argument.value">en-GB</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
                 <boolProp name="HTTPArgument.use_equals">true</boolProp>
                 <stringProp name="Argument.name">al</stringProp>

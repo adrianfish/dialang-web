@@ -66,6 +66,7 @@ async function getScore(storage: Storage, tl: string, responses: Record<string, 
 
 async function getZScore(storage: Storage, tl: string, responses: Record<string, boolean>): number {
 
+  console.log(tl);
   const words = await storage.getVSPWords(tl);
   if (!words) {
   c.status(500);

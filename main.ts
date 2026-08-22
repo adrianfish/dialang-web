@@ -17,8 +17,9 @@ import { alDistribution } from "./src/routes/reports/al-distribution.ts";
 import { tlDistribution } from "./src/routes/reports/tl-distribution.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
+import { createDeepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
 import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
-import { DenoLTI } from "@adrianfish/deno-lti";
+import { DenoLTI, DEEPLINKING } from "@adrianfish/deno-lti";
 import { deepLinkMenu } from "./src/templates/deep-link-menu.ts";
 import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
@@ -43,19 +44,28 @@ app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, storage));
 app.get("/reports/:report?", (c) => reports(c, storage));
 app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
 
+const hostname: string = Deno.env.get("HOSTNAME") || "adrian-dialang.ngrok.app";
+const port: number = parseInt(Deno.env.get("PORT") || 3001);
+const ltiSecret: string = Deno.env.get("LTI-SECRET") || "my-encryption-key";
+
+const description: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
+const logoUri: string = `https://${hostname}/static/images/large_logo.png`;
+
+const options = {
+  ltiRoute: "/lti",
+  debug: false,
+  services: [ DEEPLINKING ],
+};
+
 const lti = new DenoLTI();
+
 await lti
-  .onConnect(createLTILaunchHandler(storage))
-  .onDeepLinking((c: Context, { token }) => {
-    const { user } = c.get("token");
-    const { contextId } = c.get("context");
-    const platformCode = c.get("platformCode");
-    const data = { token, contextId, platformCode, user, links: [ { id: "1", title: "Item 1" } ] };
-    return c.html(deepLinkMenu(data));
-  })
-  .setup("adrian-dialang-lti.ngrok.app", "dialang-key", { ltiRoute: "/lti", debug: true });
-app.route("/lti", lti.handler());
+  .onLaunch(createLTILaunchHandler(storage))
+  .onDeepLinking(createDeepLinkingHandler(storage))
+  .setup(hostname, ltiSecret, "Dialang", description, logoUri, options);
+
+app.route(options.ltiRoute, lti.handler());
 
 app.use("/*", serveStatic({ root: "./static/" }));
 
-Deno.serve({ port: 3001, hostname: "127.0.0.1" }, app.fetch);
+Deno.serve({ port, hostname: "127.0.0.1" }, app.fetch);
