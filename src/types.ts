@@ -22,6 +22,7 @@ export class DialangSession {
   itemGrade: number = 0;
   itemLevel: string = "";
   resultUrl: string = "";
+  lastModified: number = 0;
 
   reset() {
     this.vsptSubmitted = false;
@@ -149,4 +150,23 @@ export interface SAGrade {
   ppe: number;
   se: number;
   grade: number;
+}
+
+export interface TestSession {
+  sessionId: string;
+  ipAddress: string;
+  referrer: string;
+  al: string;
+  tl: string;
+  skill: string;
+  started: number;
+  vsptZScore?: number;
+  vsptMearaScore?: number;
+  vsptLevel?: string;
+  saPPE?: number;
+  saLevel?: string;
+  itemRawScore?: number;
+  itemGrade?: number;
+  itemLevel?: string;
+  questionnaire?: Object;
 }

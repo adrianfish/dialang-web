@@ -117,3 +117,17 @@ export async function loadItemGrades(file, kv) {
     });
   });
 }
+
+export async function loadLanguageNames(file, kv) {
+  const languageNames = JSON.parse(await file.text());
+  Object.entries(languageNames).forEach(([locale, languages]) => {
+    kv.set([ "data", "language-names", locale ], languages);
+  });
+}
+
+export async function loadSkillNames(file, kv) {
+  const skillNames = JSON.parse(await file.text());
+  Object.entries(skillNames).forEach(([locale, skills]) => {
+    kv.set([ "data", "skill-names", locale ], skills);
+  });
+}

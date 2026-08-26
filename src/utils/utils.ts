@@ -9,11 +9,11 @@ export function setSessionId(c: Context): string {
   return sessionId;
 }
 
-export function getSessionId(c: Context): string {
+export function getSessionId(c: Context): string | undefined {
   return getCookie(c, "dialang");
 }
 
-export async function createHash(message: string): string {
+export async function createHash(message: string): Promise<string> {
 
   const encoder = new TextEncoder();
   const data = encoder.encode(message);

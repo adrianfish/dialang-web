@@ -1,7 +1,7 @@
 import { Context } from "@hono/hono";
 import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
-import type { DialangSession, PreestWeight } from "../types/types.ts";
+import type { DialangSession, PreestWeight } from "../types.ts";
 
 import type { Context } from "@hono";
 

@@ -70,5 +70,7 @@ if (flags.type !== "all") {
     loadOne("./data-files/item-answers.json", "item-answers.json", "item-answers"),
     loadOne("./data-files/punctuation.json", "punctuation.json", "punctuation"),
     loadOne("./data-files/item-grades.json", "item-grades.json", "item-grades"),
+    loadOne("./data-files/language-names.json", "language-names.json", "language-names"),
+    loadOne("./data-files/skill-names.json", "skill-names.json", "skill-names"),
   ]);
 }

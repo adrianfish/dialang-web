@@ -55,6 +55,7 @@ if (!dialang.session.reviewMode) {
 
     $('#next').click(function (e) {
 
+        $('#basketform input[name="ltik"]').val(dialang.session.ltik);
         $('#basketform').submit();
         return false;
     });
@@ -99,15 +100,15 @@ if (!dialang.session.reviewMode) {
     });
 
     // We're not in review mode, so show the progress bar
-    if (dialang.session.items.length == 0 || dialang.session.loading) {
+    if (!dialang.session.items?.length || dialang.session.loading) {
         $('#progressbar').css('display', 'inline-block').progressbar({max: parseInt(dialang.session.totalItems, 10), value: 0}).height(26);
         $('#keyboard-button').show();
 
         if (dialang.session.loading) {
-            $('#progressbar').progressbar('option', 'value', parseInt(dialang.session.items.length, 10));
+            $('#progressbar').progressbar('option', 'value', parseInt(dialang.session.items?.length || 0, 10));
         }
     } else {
-        $('#progressbar').progressbar('option', 'value', parseInt(dialang.session.items.length, 10));
+        $('#progressbar').progressbar('option', 'value', parseInt(dialang.session.items?.length || 0, 10));
     }
 
     $.get('/content/baskets/' + dialang.session.al + "/" + dialang.session.currentBasketId + '.html', function (data) {

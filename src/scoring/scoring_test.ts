@@ -1,7 +1,7 @@
 import { expect } from "@std/expect";
 import { stub } from "jsr:@std/testing/mock";
 import { CEFR_LEVELS, getItemGrade }  from "./scoring.ts";
-import type { ScoredItem }  from "../types/types.ts";
+import type { ScoredItem }  from "../types.ts";
 import type { Storage }  from "../storage/storage.ts";
 import { MockStorage }  from "../storage/mock-storage.ts";
 

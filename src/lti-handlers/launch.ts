@@ -29,12 +29,11 @@ export const createLTILaunchHandler = (storage: Storage) => {
     };
 
     if (tl) {
-      console.log(tl);
-      console.log(skill);
       session.tl = tl;
       session.skill = skill;
     }
 
+    session.isLTI = true;
     session.hideVSPT = hidevspt;
     session.hideVSPTResult = hidevsptresult;
     session.hideSA = hidesa;
@@ -43,6 +42,6 @@ export const createLTILaunchHandler = (storage: Storage) => {
     await storage.saveSession(sessionId, session);
     await storage.logTestStart(session);
 
-    return c.redirect("/content/launch.html");
+    return c.redirect(`/content/launch.html?ltik=${c.get("ltik")}`);
   };
 };

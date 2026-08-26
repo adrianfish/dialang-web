@@ -1,5 +1,3 @@
-import { deepLinkMenu } from "../templates/deep-link-menu.ts";
-
 import type { Context } from "@hono";
 import type { LTIContext } from "@adrianfish/deno-lti";
 

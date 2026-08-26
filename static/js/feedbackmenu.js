@@ -1,17 +1,19 @@
 dialang.session.feedbackMode = true;
 
-if (dialang.questionnaireShown) {
-    if (!dialang.flags.hideTLS) {
-        $('#skipforward').prop('disabled', false).click(function () {
+if (!dialang.flags.skipQuestionnaire) {
+  if (dialang.questionnaireShown) {
+      if (!dialang.flags.hideTLS) {
+          $('#skipforward').prop('disabled', false).click(function () {
 
-            $('#confirm-restart-dialog').dialog('open');
-            return false;
-        });
-    }
-} else {
-    $('#next').prop('disabled', false).click(function () {
-        dialang.switchState('questionnaire');
-    });
+              $('#confirm-restart-dialog').dialog('open');
+              return false;
+          });
+      }
+  } else {
+      $('#next').prop('disabled', false).click(function () {
+          dialang.switchState('questionnaire');
+      });
+  }
 }
 
 // This is used to indicate whether explfb has been reached from

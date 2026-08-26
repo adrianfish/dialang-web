@@ -78,6 +78,12 @@ export async function loadData(
     case "item-grades":
       await loaders.loadItemGrades(file, kv);
       break;
+    case "language-names":
+      await loaders.loadLanguageNames(file, kv);
+      break;
+    case "skill-names":
+      await loaders.loadSkillNames(file, kv);
+      break;
     default:
   }
   return c.html("");

@@ -8,45 +8,45 @@ import type {
   SAWeight,
   TES,
   VSPBand,
-  VSPWord } from "../types/types.ts";
+  VSPWord } from "../types.ts";
 
 export interface Storage {
 
   saveSession(sessionId: string, session: DialangSession): Promise<boolean>;
 
-  getSession(sessionId: string): Promise<DialangSession>;
+  getSession(sessionId: string): Promise<DialangSession | null>;
 
   deleteSession(sessionId: string): Promise<void>;
 
-  getTES(sessionId: string): Promise<TES>;
+  getTES(sessionId: string): Promise<TES | null>;
 
   saveTES(sessionId: string, tes: TES): Promise<boolean>;
 
-  getVSPWords(tl: string): Promise<Array<VSPWord>>;
+  getVSPWords(tl: string): Promise<Array<VSPWord> | null>;
 
-  getVSPBands(tl: string): Promise<Array<VSPBand>>;
+  getVSPBands(tl: string): Promise<Array<VSPBand> | null>;
 
-  getSAGrade(skill: string, rsc: number): Promise<SAGrade>;
+  getSAGrade(skill: string, rsc: number): Promise<SAGrade | null>;
 
-  getSAWeights(skill: string): Promise<Record<string, number>>;
+  getSAWeights(skill: string): Promise<Record<string, number> | null>;
 
-  getPreestWeight(key: string): Promise<PreestWeight>;
+  getPreestWeight(key: string): Promise<PreestWeight | null>;
 
-  getPreestAssignments(key: string): Promise<Array<PreestAssignment>>;
+  getPreestAssignments(key: string): Promise<Array<PreestAssignment> | null>;
 
-  getBookletLength(bookletId: number): Promise<number>;
+  getBookletLength(bookletId: number): Promise<number | null>;
 
-  getBaskets(bookletId: number): Promise<Array<number>>;
+  getBaskets(bookletId: number): Promise<Array<number> | null>;
 
-  getItem(id: number): Promise<Item>;
+  getItem(id: number): Promise<Item | null>;
 
-  getAnswer(id: number): Promise<Answer>;
+  getAnswer(id: number): Promise<Answer | null>;
 
-  getItemAnswers(itemId: number): Promise<Array<Answer>>;
+  getItemAnswers(itemId: number): Promise<Array<Answer> | null>;
 
-  getItemGrade(key: string, rawScore: number): Promise<Record<string, any>>;
+  getItemGrade(key: string, rawScore: number): Promise<Record<string, any> | null>;
 
-  getPunctuationList(): Promise<Array<string>>;
+  getPunctuationList(): Promise<Array<string> | null>;
 
   getTestResults(): Promise<any>;
 
@@ -58,5 +58,5 @@ export interface Storage {
 
   logTestResult(session: DialangSession): Promise<boolean>;
 
-  storeQuestionnaire(sessionId: string, body: any);
+  storeQuestionnaire(sessionId: string, body: any): Promise<boolean>;
 }

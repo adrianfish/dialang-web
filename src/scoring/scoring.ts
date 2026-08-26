@@ -1,5 +1,5 @@
 import { Storage } from "../storage/storage.ts";
-import type { Answer, Item, ScoredItem } from "../types/types.ts";
+import type { Answer, Item, ScoredItem } from "../types.ts";
 
 export const CEFR_LEVELS: Record<number, string> = { 1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2" };
 

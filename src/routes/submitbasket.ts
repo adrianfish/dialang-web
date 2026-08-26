@@ -1,12 +1,14 @@
 import { Context } from "@hono/hono";
 import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
-import type { DialangSession, ScoredBasket, ScoredItem, TES } from "../types/types.ts";
+import { DenoLTI } from "@adrianfish/deno-lti";
+import type { DialangSession, ScoredBasket, ScoredItem, TES } from "../types.ts";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
 
 export async function submitBasket(
   c: Context,
   storage: Storage,
+  lti: DenoLTI,
 ): Promise<Response> {
   const sessionId: string = getSessionId(c);
   const session: DialangSession = await storage.getSession(sessionId);
@@ -242,13 +244,31 @@ export async function submitBasket(
     const [ rawScore, itemGrade, itemLevel ]
       = await getItemGrade(session.tl, session.skill, session.bookletId, itemList, storage);
 
+    // If we're in an LTI session, post the score.
+    if (session.isLTI) {
+      const ltik = body["ltik"];
+      const userId = session.user;
+
+      if (ltik && userId) {
+        const score: Score = {
+          userId,
+          scoreGiven: rawScore,
+          scoreMaximum: 1000,
+          activityProgress: "Completed",
+        };
+        // Use the null lineItemUrl version so the single line item is picked up by the lti lib.
+        lti.postScore(ltik, null, score);
+      } else {
+        console.warn("We're in an LTI session, but the ltik or userId were not supplied. Score not posted");
+      }
+    }
+
     session.itemRawScore = rawScore;
     session.itemGrade = itemGrade;
     session.itemLevel = itemLevel;
 
     storage.saveSession(sessionId, session);
 
-    //datacapture.LogTestResult(session)
     //datacapture.LogTestFinish(session.passId)
     storage.logTestResult(session);
 
