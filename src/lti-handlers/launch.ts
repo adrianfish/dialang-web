@@ -2,11 +2,13 @@ import { getConnInfo } from '@hono/deno'
 import { setSessionId } from "../utils/utils.ts";
 
 import type { Context } from "@hono";
-import type { LTIContext, StoredContextToken } from "@adrianfish/deno-lti";
+import type { LTIContext, LTIToken, StoredContextToken } from "@adrianfish/deno-lti";
+import type { DialangSession } from "../types.ts";
+import type { Storage } from "../storage/storage.ts";
 
 export const createLTILaunchHandler = (storage: Storage) => {
 
-  return async (c: Context, ltiContext: LTIContext): Response | Promise<Response> => {
+  return async (c: Context, ltiContext: LTIContext): Promise<Response> => {
 
     const token: LTIToken = ltiContext.token;
 
@@ -18,26 +20,26 @@ export const createLTILaunchHandler = (storage: Storage) => {
 
     const sessionId = setSessionId(c);
 
-    const session = {
+    const session: DialangSession = {
       id: sessionId,
-      al,
+      al: al as string,
       user: token.user,
-      contextId: token.contextId,
-      referrer: c.req.header("Referer"),
-      ipAddress: getConnInfo(c).remote.address,
+      contextId: token.platformContext.contextId,
+      referrer: c.req.header("Referer") || "",
+      ipAddress: getConnInfo(c).remote.address || "",
       started: Date.now(),
     };
 
     if (tl) {
-      session.tl = tl;
-      session.skill = skill;
+      session.tl = tl as string;
+      session.skill = skill as string;
     }
 
     session.isLTI = true;
-    session.hideVSPT = hidevspt;
-    session.hideVSPTResult = hidevsptresult;
-    session.hideSA = hidesa;
-    session.hideFeedbackMenu = hidefeedbackmenu;
+    session.hideVSPT = hidevspt as boolean;
+    session.hideVSPTResult = hidevsptresult as boolean;
+    session.hideSA = hidesa as boolean;
+    session.hideFeedbackMenu = hidefeedbackmenu as boolean;
 
     await storage.saveSession(sessionId, session);
     await storage.logTestStart(session);

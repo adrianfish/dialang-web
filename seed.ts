@@ -12,7 +12,7 @@ const hash = await createHash(loadSecret);
 //const url = "https://dialang.net"
 const url = "https://adrian-dialang.ngrok.app"
 //const url = "http://localhost:3001"
-const loadOne = async (filepath, name, type)   => {
+const loadOne = async (filepath: string, name: string, type: string)   => {
   const blob = new Blob([ await Deno.readFile(filepath) ]);
   const form = new FormData();
   form.append("file", blob, name);
@@ -30,8 +30,7 @@ const loadOne = async (filepath, name, type)   => {
 };
 
 const flags = parseArgs(Deno.args, {
-  string: [ "type" ],
-  string: [ "suffix" ],
+  string: [ "type", "suffix" ],
   boolean: [ "clear" ],
   default: { clear: false },
 });
@@ -44,7 +43,7 @@ if (!flags.type) {
 if (flags.clear) {
   const form = new FormData();
   form.append("clear", "true");
-  form.append("type", flags.type);
+  form.append("type", flags.type as string);
   form.append("hash", hash);
   await fetch(`${url}/api/loaddata`, { method: "POST", body: form })
   .then(r => {

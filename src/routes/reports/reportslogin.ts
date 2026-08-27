@@ -18,8 +18,8 @@ export async function reportsLogin(c: Context): Promise<Response> {
 
     const body = await c.req.parseBody();
 
-    const hash = body.password;
-    const testHash = await createHash(dataSecret);
+    const hash: string = body.password as string;
+    const testHash: string = await createHash(dataSecret);
     const a = new TextEncoder().encode(hash)
     const b = new TextEncoder().encode(testHash)
     const match = a.length === b.length && timingSafeEqual(a, b)

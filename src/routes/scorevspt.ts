@@ -1,11 +1,13 @@
 import { getSessionId } from "../utils/utils.ts";
-import { Storage } from "../storage/storage.ts";
+import type { Storage } from "../storage/storage.ts";
+import type { DialangSession, VSPWord } from "../types.ts";
 import type { Context } from "@hono";
 
 export async function scoreVspt(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
+
   const body = await c.req.json();
 
   const responses = Object.fromEntries(
@@ -15,18 +17,34 @@ export async function scoreVspt(
   );
 
   const sessionId = getSessionId(c);
-  const session = await storage.getSession(sessionId);
+  if (!sessionId) {
+    console.error("Failed to get session id");
+		c.status(500);
+		return c.html("");
+  }
+
+  const session: DialangSession | null = await storage.getSession(sessionId);
+  if (!session) {
+		console.error(`No session for id ${sessionId}. Returning 500 ...`)
+		c.status(500);
+		return c.html("");
+  }
+
+  if (!session.tl) {
+		console.error("Test language not set. Returning 500 ...")
+		c.status(500);
+		return c.html("");
+  }
 
   const [ zScore, mearaScore, level, error ] = await getBand(storage, session.tl, responses);
   if (error) {
-  c.status(500);
-  return c.text(error);
+    c.status(500);
+    return c.text(error as string);
   }
 
-
-  session.vsptZScore = zScore
-  session.vsptMearaScore = mearaScore
-  session.vsptLevel = level
+  session.vsptZScore = zScore as number;
+  session.vsptMearaScore = mearaScore as number;
+  session.vsptLevel = level as string
   session.vsptSubmitted = true
 
   storage.saveSession(sessionId, session);
@@ -36,7 +54,7 @@ export async function scoreVspt(
   return c.json({ zScore, mearaScore, level });
 }
 
-async function getBand(storage: Storage, tl: string, responses: Record<string, boolean>): Array {
+async function getBand(storage: Storage, tl: string, responses: Record<string, boolean>): Promise<Array<number | string | null>> {
 
   const [zScore, mearaScore] = await getScore(storage, tl, responses);
 
@@ -53,7 +71,7 @@ async function getBand(storage: Storage, tl: string, responses: Record<string, b
   return [ 0, 0, "", `No level for test language '${tl}' and meara score: ${mearaScore}.` ];
 }
 
-async function getScore(storage: Storage, tl: string, responses: Record<string, boolean>): Array {
+async function getScore(storage: Storage, tl: string, responses: Record<string, boolean>): Promise<Array<number>> {
 
   const Z = await getZScore(storage, tl, responses);
 
@@ -64,20 +82,20 @@ async function getScore(storage: Storage, tl: string, responses: Record<string, 
   return [Z, Z * 1000 ];
 }
 
-async function getZScore(storage: Storage, tl: string, responses: Record<string, boolean>): number {
+async function getZScore(storage: Storage, tl: string, responses: Record<string, boolean>): Promise<number> {
 
-  console.log(tl);
-  const words = await storage.getVSPWords(tl);
+  const words: Array<VSPWord> | null = await storage.getVSPWords(tl);
   if (!words) {
-  c.status(500);
-    return c.text(`No vspt words for language ${tl}`);
+    console.error(`No vspt words for test language ${tl}`);
+    return -1;
   }
 
   const yesResponses = [0, 0];
   const noResponses = [0, 0];
 
   words.forEach(word => {
-  const wordType = word.valid == 1 ? 1 : 0;
+
+    const wordType = word.valid == 1 ? 1 : 0;
 
     if (responses[word.word_id]) {
       yesResponses[wordType] += 1;

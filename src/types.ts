@@ -1,48 +1,37 @@
-export class DialangSession {
-  id: string = "";
-  ipAddress: string = "";
-  browserLocale: string = "";
-  referrer: string = "";
-  passId: string = "";
-  vsptSubmitted: boolean = false;
-  vsptMearaScore: number = 0;
-  vsptZScore: number = 0;
-  vsptLevel: string = "";
-  saSubmitted: boolean = false;
-  saPPE: number = 0;
-  saLevel: string = "";
-  saDone: boolean = false;
-  bookletId: number = 0;
-  bookletLength: number = 0;
-  currentBasketId: number = 0;
-  currentBasketNumber: number = 0;
-  scoredItems?: Array<ScoredItem> = [];
-  scoredBaskets?: Array<ScoredBasket> = [];
-  itemRawScore: number = 0;
-  itemGrade: number = 0;
-  itemLevel: string = "";
-  resultUrl: string = "";
-  lastModified: number = 0;
-
-  reset() {
-    this.vsptSubmitted = false;
-    this.vsptMearaScore = 0;
-    this.vsptZScore = 0;
-    this.vsptLevel = "";
-    this.saSubmitted = false;
-    this.saPPE = 0;
-    this.saLevel = "";
-    this.saDone = false;
-    this.bookletId = 0;
-    this.bookletLength = 0;
-    this.currentBasketId = 0;
-    this.currentBasketNumber = 0;
-    this.scoredItems = [];
-    this.scoredBaskets = [];
-    this.itemRawScore = 0;
-    this.itemGrade = 0;
-    this.itemLevel = "";
-  }
+export interface DialangSession {
+  id: string;
+  al: string;
+  tl?: string;
+  skill?: string;
+  ipAddress: string;
+  referrer: string;
+  vsptSubmitted?: boolean;
+  vsptMearaScore?: number;
+  vsptZScore?: number;
+  vsptLevel?: string;
+  saSubmitted?: boolean;
+  saPPE?: number;
+  saLevel?: string;
+  saDone?: boolean;
+  bookletId?: number;
+  bookletLength?: number;
+  currentBasketId?: number;
+  currentBasketNumber?: number;
+  scoredItems?: Array<ScoredItem>;
+  scoredBaskets?: Array<ScoredBasket>;
+  itemRawScore?: number;
+  itemGrade?: number;
+  itemLevel?: string;
+  resultUrl?: string;
+  started: number;
+  lastModified?: number;
+  isLTI?: boolean;
+  user?: string;
+  contextId?: string;
+  hideSA?: boolean;
+  hideVSPT?: boolean;
+  hideVSPTResult?: boolean;
+  hideFeedbackMenu?: boolean;
 }
 
 /**
@@ -63,11 +52,11 @@ export interface TES {
 
 export interface ScoredItem extends Item {
   basketId?: number;
-  positionInBasket?: number;
+  positionInBasket: number;
   positionnumberest?: number;
   responseId?: number;
   responseText?: string;
-  correct: boolean;
+  correct?: boolean;
   score: number;
   answers?: Array<Answer>;
 };
@@ -138,7 +127,7 @@ export interface SAStatement {
 }
 
 export interface VSPWord {
-  wordId: string;
+  word_id: string;
   word: string;
   valid: number;
   weight: number;
@@ -157,8 +146,8 @@ export interface TestSession {
   ipAddress: string;
   referrer: string;
   al: string;
-  tl: string;
-  skill: string;
+  tl?: string;
+  skill?: string;
   started: number;
   vsptZScore?: number;
   vsptMearaScore?: number;

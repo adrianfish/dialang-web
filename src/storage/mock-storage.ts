@@ -99,4 +99,12 @@ export class MockStorage implements Storage {
   async storeQuestionnaire(sessionId: string, body: any): Promise<boolean> {
     return false;
   }
+
+  async getLanguageName(al: string, skill: string): Promise<string | null> {
+    return null;
+  }
+
+  async getSkillName(al: string, skill: string): Promise<string | null> {
+    return null;
+  }
 }

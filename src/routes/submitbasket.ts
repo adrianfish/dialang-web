@@ -1,7 +1,7 @@
 import { Context } from "@hono/hono";
 import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
-import { DenoLTI } from "@adrianfish/deno-lti";
+import { DenoLTI, Score } from "@adrianfish/deno-lti";
 import type { DialangSession, ScoredBasket, ScoredItem, TES } from "../types.ts";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
 
@@ -10,25 +10,38 @@ export async function submitBasket(
   storage: Storage,
   lti: DenoLTI,
 ): Promise<Response> {
-  const sessionId: string = getSessionId(c);
-  const session: DialangSession = await storage.getSession(sessionId);
 
-	if (!session.tl || !session.skill || !session.currentBasketId) {
-		console.error("None of the test language, skill or current basket id were set in the session. Returning 500 ...")
+  const sessionId: string | undefined = getSessionId(c);
+  if (!sessionId) {
+		console.error("Failed to get session id");
+		c.status(500);
+		return c.html("");
+  }
+
+  const session: DialangSession | null = await storage.getSession(sessionId);
+
+  if (!session) {
+		console.error(`No session for id ${sessionId}`);
+		c.status(500);
+		return c.html("");
+  }
+
+	if (!session.tl || !session.skill || !session.currentBasketId || !session.bookletId || session.currentBasketNumber === undefined) {
+		console.error("None of the test language, skill, current basket id, booklet id or current basket number were set in the session. Returning 500 ...");
 		c.status(500);
 		return c.html("");
 	}
 
   const body = await c.req.parseBody();
 
-  const basketType = body["basketType"];
+  const basketType: string = body["basketType"] as string;
   if (!basketType) {
     console.warn("No basketType supplied. Returning 400 (Bad Request) ...")
     c.status(400);
     return c.html("");
   }
 
-  const positionInBasketSorter = (a, b) => a.positionInBasket - b.positionInBasket;
+  const positionInBasketSorter = (a: ScoredItem, b: ScoredItem) => a.positionInBasket - b.positionInBasket;
 
   const numScoredItems: number = session.scoredItems?.length || 0;
   const currentBasketId: number = session.currentBasketId;
@@ -44,13 +57,13 @@ export async function submitBasket(
 
   switch (basketType) {
     case "mcq": {
-      const itemId: number = parseInt(body["itemId"]);
+      const itemId: number = parseInt(body["itemId"] as string);
       if (!itemId) {
         console.error("Invalid or missing item id. Returning 400 (Bad Request) ...")
         c.status(400);
         return c.html("");
       }
-      const answerId: number = parseInt(body["response"]);
+      const answerId: number = parseInt(body["response"] as string);
       if (!answerId) {
         console.warn("No response supplied. Returning 400 (Bad Request) ...")
         c.status(400);
@@ -79,14 +92,14 @@ export async function submitBasket(
 
     case "tabbedpane": {
       const itemsToLog: Array<ScoredItem> = [];
-      const responses = getMultipleIdResponses(body);
+      const responses: Record<number, number> = getMultipleIdResponses(body);
       const basketItems: Array<ScoredItem> = [];
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, answerId ] = entries[i];
-        const [ item, error ] = await getScoredIdResponseItem(parseInt(itemId), parseInt(answerId), storage);
+        const [ item, error ] = await getScoredIdResponseItem(parseInt(itemId), answerId, storage);
         item.responseId = answerId;
-        const position = body[item.id + "-position"];
+        const position: string = body[item.id + "-position"] as string;
         if (position) {
           item.positionInBasket = parseInt(position);
         } else {
@@ -122,7 +135,7 @@ export async function submitBasket(
         if (item) {
           item.basketId = currentBasketId;
           item.responseText = responseText;
-          const position: string = body[item.id + "-position"];
+          const position: string = body[item.id + "-position"] as string;
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
@@ -160,7 +173,7 @@ export async function submitBasket(
         if (item) {
           item.basketId = currentBasketId;
           item.responseText = responseText;
-          const position: string = body[item.id + "-position"];
+          const position: string = body[item.id + "-position"] as string;
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
@@ -186,20 +199,20 @@ export async function submitBasket(
     }
 
     case "gapdrop": {
-      const responses = getMultipleIdResponses(body);
+      const responses: Record<number, number> = getMultipleIdResponses(body);
       const basketItems: Array<ScoredItem> = [];
       const itemsToLog: Array<ScoredItem> = [];
 
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseId ] = entries[i];
-        const [ item, error ] = await getScoredIdResponseItem(parseInt(itemId), parseInt(responseId), storage);
+        const [ item, error ] = await getScoredIdResponseItem(parseInt(itemId), responseId, storage);
 
         if (item) {
           item.basketId = currentBasketId;
           item.responseId = responseId;
 
-          const position: string = body[item.id + "-position"];
+          const position: string = body[item.id + "-position"] as string;
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
@@ -237,7 +250,13 @@ export async function submitBasket(
   const nextBasketNumber = session.currentBasketNumber + 1;
   console.debug(`nextBasketNumber: ${nextBasketNumber}`);
 
-  const basketIds = await storage.getBaskets(session.bookletId);
+  const basketIds: Array<number> | null = await storage.getBaskets(session.bookletId);
+
+  if (!basketIds) {
+    console.error(`No basket ids for booklet ${session.bookletId}`);
+    c.status(500);
+    return c.html("");
+  }
 
   if (nextBasketNumber >= basketIds.length) {
     // The test has finished. Grade it.
@@ -246,7 +265,7 @@ export async function submitBasket(
 
     // If we're in an LTI session, post the score.
     if (session.isLTI) {
-      const ltik = body["ltik"];
+      const ltik: string = body["ltik"] as string;
       const userId = session.user;
 
       if (ltik && userId) {
@@ -255,6 +274,7 @@ export async function submitBasket(
           scoreGiven: rawScore,
           scoreMaximum: 1000,
           activityProgress: "Completed",
+          gradingProgress: "NotReady",
         };
         // Use the null lineItemUrl version so the single line item is picked up by the lti lib.
         lti.postScore(ltik, null, score);
@@ -309,7 +329,7 @@ export async function submitBasket(
   }
 }
 
-function getMultipleIdResponses(body): Record<number, number> {
+function getMultipleIdResponses(body: object): Record<number, number> {
 
   const responses: Record<number, number> = [];
 
@@ -318,7 +338,7 @@ function getMultipleIdResponses(body): Record<number, number> {
     if (!k.endsWith?.("-response")) return;
 
     const itemId: number = parseInt(k.split("-")[0]);
-    const answerId: number = parseInt(v);
+    const answerId: number = parseInt(v as string);
     responses[itemId] = answerId;
   });
   return responses;
@@ -327,16 +347,16 @@ function getMultipleIdResponses(body): Record<number, number> {
 /**
  * Returns a map of response text on to itemId
  */
-function getMultipleTextualResponses(body): Record<number, string> {
+function getMultipleTextualResponses(body: object): Record<number, string> {
 
   const responses: Record<number, string> = {};
 
-  Object.entries(body).forEach(([k ,v]) => {
+  Object.entries(body).forEach(([k, v]) => {
 
     if (!k.endsWith("-response")) return;
 
     const itemId: number = parseInt(k.split("-")[0]);
-    responses[itemId] = v;
+    responses[itemId] = v as string;
   });
 
   return responses;

@@ -8,8 +8,10 @@ export async function setAl(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
+
   const body = await c.req.parseBody();
-  const al = body.al;
+
+  const al = body.al as string;
 
   if (!al) {
     c.status(400);
@@ -21,8 +23,8 @@ export async function setAl(
   storage.saveSession(sessionId, {
     id: sessionId,
     al,
-    referrer: c.req.header("Referer"),
-    ipAddress: getConnInfo(c).remote.address,
+    referrer: c.req.header("Referer") || "",
+    ipAddress: getConnInfo(c).remote.address || "",
     started: Date.now(),
   });
 

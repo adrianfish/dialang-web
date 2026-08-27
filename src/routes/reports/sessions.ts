@@ -1,5 +1,7 @@
 import { loggedIntoReports } from "../../utils/utils.ts";
 import type { Context } from "@hono";
+import type { TestSession } from "../../types.ts";
+import type { Storage } from "../../storage/storage.ts";
 
 export async function sessions(
   c: Context,
@@ -8,10 +10,10 @@ export async function sessions(
   if (!loggedIntoReports(c)) return c.redirect("/reportslogin");
 
   const body = await c.req.parseBody();
-  const from = body.from;
-  const to = body.to;
+  const from: string = body.from as string;
+  const to: string = body.to as string;
 
-  const results = await storage.getTestResults();
+  const results: Array<TestSession> = await storage.getTestResults();
 
   if (!from && !to) {
     // Just today's sessions up to now.

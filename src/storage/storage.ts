@@ -59,4 +59,8 @@ export interface Storage {
   logTestResult(session: DialangSession): Promise<boolean>;
 
   storeQuestionnaire(sessionId: string, body: any): Promise<boolean>;
+
+  getLanguageName(al: string, skill: string): Promise<string | null>;
+
+  getSkillName(al: string, skill: string): Promise<string | null>;
 }

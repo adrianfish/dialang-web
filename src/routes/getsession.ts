@@ -6,6 +6,12 @@ export async function getSession(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
-  const sessionId: string = getSessionId(c);
+
+  const sessionId: string | undefined = getSessionId(c);
+  if (!sessionId) {
+    console.error("Failed to get session id");
+		c.status(500);
+		return c.json("");
+  }
   return c.json(await storage.getSession(sessionId));
 }

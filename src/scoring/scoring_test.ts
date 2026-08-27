@@ -14,7 +14,7 @@ Deno.test("getItemGrade returns defaults when no grade bands present", async () 
   const storage: Storage = new MockStorage();
 
   // Test the error condition
-  stub(storage, "getItemGrades", () => Promise.resolve([null, "No grades"]));
+  stub(storage, "getItemGrade", () => Promise.resolve(null));
   const [ rawScore, grade, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
   expect(grade).toEqual(0);
   expect(level).toEqual(CEFR_LEVELS[1]);
@@ -40,6 +40,8 @@ Deno.test("Grades a set of scored items correctly", async () => {
       position: 0,
       weight: 1,
       score: 1,
+      text: "a",
+      positionInBasket: 1,
     },
     {
       id: 2,
@@ -49,6 +51,8 @@ Deno.test("Grades a set of scored items correctly", async () => {
       position: 1,
       weight: 1,
       score: 1,
+      text: "b",
+      positionInBasket: 2,
     },
   ];
 

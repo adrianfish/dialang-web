@@ -6,7 +6,6 @@ import type {
   PreestWeight,
   SAGrade,
   SAWeight,
-  Storage,
   TES,
   TestSession,
   VSPBand,
@@ -26,9 +25,11 @@ export class KVStorage implements Storage {
     return new KVStorage(await Deno.openKv());
   }
 
-  getKv() {
+  /*
+  getKv(): Deno.Kv {
     return this.#kv;
   }
+  */
 
   async saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
     session.lastModified = Date.now();
@@ -38,7 +39,7 @@ export class KVStorage implements Storage {
   }
 
   async getSession(sessionId: string): Promise<DialangSession | null> {
-    return (await this.#kv.get(["sessions", sessionId])).value;
+    return (await this.#kv.get<DialangSession>(["sessions", sessionId])).value;
   }
 
   deleteSession(sessionId: string): Promise<void> {
@@ -46,7 +47,7 @@ export class KVStorage implements Storage {
   }
 
   async getTES(sessionId: string): Promise<TES | null> {
-    return (await this.#kv.get(["sessions", sessionId, "tes"])).value;
+    return (await this.#kv.get<TES>(["sessions", sessionId, "tes"])).value;
   }
 
   async saveTES(sessionId: string, tes: TES): Promise<boolean> {
@@ -54,72 +55,81 @@ export class KVStorage implements Storage {
   }
 
   async getVSPWords(tl: string): Promise<Array<VSPWord> | null> {
-    return (await this.#kv.get([ "data", "vspt-words", tl])).value;
+    return (await this.#kv.get<Array<VSPWord>>([ "data", "vspt-words", tl])).value;
   }
 
   async getVSPBands(tl: string): Promise<Array<VSPBand> | null> {
-    return (await this.#kv.get([ "data", "vspt-bands", tl])).value;
+    return (await this.#kv.get<Array<VSPBand>>([ "data", "vspt-bands", tl])).value;
   }
 
   async getSAGrade(skill: string, rsc: number): Promise<SAGrade | null> {
-    return (await this.#kv.get([ "data", "sa-grades", skill, rsc ])).value;
+    return (await this.#kv.get<SAGrade>([ "data", "sa-grades", skill, rsc ])).value;
   }
 
   async getSAWeights(skill: string): Promise<Record<string, number> | null> {
-    return (await this.#kv.get([ "data", "sa-weights", skill ])).value;
+    return (await this.#kv.get<Record<string, number>>([ "data", "sa-weights", skill ])).value;
   }
 
   async getPreestWeight(key: string): Promise<PreestWeight | null> {
-    return (await this.#kv.get([ "data", "preest-weights", key ])).value;
+    return (await this.#kv.get<PreestWeight>([ "data", "preest-weights", key ])).value;
   }
 
   async getPreestAssignments(key: string): Promise<Array<PreestAssignment> | null> {
-    return (await this.#kv.get([ "data", "preest-assignments", key ])).value;
+    return (await this.#kv.get<Array<PreestAssignment>>([ "data", "preest-assignments", key ])).value;
   }
 
   async getBookletLength(bookletId: number): Promise<number | null> {
-    return (await this.#kv.get([ "data", "booklet-lengths", bookletId ])).value;
+    return (await this.#kv.get<number>([ "data", "booklet-lengths", bookletId ])).value;
   }
 
   async getBaskets(bookletId: number): Promise<Array<number> | null> {
-    return (await this.#kv.get([ "data", "booklet-baskets", bookletId ])).value;
+    return (await this.#kv.get<Array<number>>([ "data", "booklet-baskets", bookletId ])).value;
   }
 
   async getItem(id: number): Promise<Item | null> {
-    return (await this.#kv.get([ "data", "items", id ])).value;
+    return (await this.#kv.get<Item>([ "data", "items", id ])).value;
   }
 
   async getAnswer(id: number): Promise<Answer | null> {
-    return (await this.#kv.get([ "data", "answers", id ])).value;
+    return (await this.#kv.get<Answer>([ "data", "answers", id ])).value;
   }
 
   async getItemAnswers(itemId: number): Promise<Array<Answer> | null> {
-    return (await this.#kv.get([ "data", "item-answers", itemId ])).value;
+    return (await this.#kv.get<Array<Answer>>([ "data", "item-answers", itemId ])).value;
   }
 
-  async getItemGrade(key: string, rawScore: number): Promise<Record<string, any> | null> {
+  async getItemGrade(key: string, rawScore: number): Promise<Record<string, string | number> | null> {
     console.debug(`Retrieving item grade for key ${key} and raw score ${rawScore} ...`);
-    return (await this.#kv.get([ "data", "item-grades", key, rawScore ])).value;
+    return (await this.#kv.get<Record<string, any>>([ "data", "item-grades", key, rawScore ])).value;
   }
 
   async getLanguageName(al: string, tl: string): Promise<string | null> {
-    const names = (await this.#kv.get([ "data", "language-names", al ])).value;
+
+    const names: Record<string, string> | null = (await this.#kv.get<Record<string, string>>([ "data", "language-names", al ])).value;
+    if (!names) {
+      console.warn(`No language names found for admin language ${al}`);
+      return null;
+    }
     return names[tl];
   }
 
   async getSkillName(al: string, skill: string): Promise<string | null> {
-    const names = (await this.#kv.get([ "data", "skill-names", al ])).value;
+    const names: Record<string, string> | null = (await this.#kv.get<Record<string, string>>([ "data", "skill-names", al ])).value;
+    if (!names) {
+      console.warn(`No skill names found for admin language ${al}`);
+      return null;
+    }
     return names[skill];
   }
 
   async getPunctuationList(): Promise<Array<string> | null> {
-    return (await this.#kv.get([ "data", "punctuation" ])).value;
+    return (await this.#kv.get<Array<string>>([ "data", "punctuation" ])).value;
   }
 
-  async getTestResults(): Promise<Array<any>> {
+  async getTestResults(): Promise<Array<TestSession>> {
 
-    const data = [];
-    const iter = this.#kv.list({ prefix: [ "datacapture", "tests-taken" ] });
+    const data: Array<TestSession> = [];
+    const iter = this.#kv.list<TestSession>({ prefix: [ "datacapture", "tests-taken" ] });
     for await (const entry of iter) {
       data.push(entry.value);
     }
@@ -135,7 +145,7 @@ export class KVStorage implements Storage {
       al: session.al,
       tl: session.tl,
       skill: session.skill,
-      started: session.lastModified,
+      started: session.started,
     };
 
     return this.setTestSession(data);

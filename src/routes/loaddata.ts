@@ -3,10 +3,9 @@ import * as loaders from "../dataloaders/dataloaders.ts";
 import { parse } from "@std/csv";
 import { createHash } from "../utils/utils.ts";
 
-export async function loadData(
-  c: Context,
-  kv: Deno.Kv,
-): Promise<Response> {
+export async function loadData(c: Context): Promise<Response> {
+
+  const kv = await Deno.openKv();
 
   const loadSecret = Deno.env.get("DATA_SECRET");
   if (!loadSecret) {
@@ -22,9 +21,9 @@ export async function loadData(
     return c.html("");
   }
 
-  const type = body["type"];
-  const file = body["file"];
-  const clear = body["clear"];
+  const type: string = body["type"] as string;
+  const file: File = body["file"] as File;
+  const clear: string = body["clear"] as string;
 
   if ("true" === clear) {
     const prefix = [ "data" ];
