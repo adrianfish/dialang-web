@@ -24,7 +24,6 @@ export const createLTILaunchHandler = (storage: Storage) => {
       id: sessionId,
       al: al as string,
       user: token.user,
-      contextId: token.platformContext.contextId,
       referrer: c.req.header("Referer") || "",
       ipAddress: getConnInfo(c).remote.address || "",
       started: Date.now(),

@@ -27,7 +27,6 @@ export interface DialangSession {
   lastModified?: number;
   isLTI?: boolean;
   user?: string;
-  contextId?: string;
   hideSA?: boolean;
   hideVSPT?: boolean;
   hideVSPTResult?: boolean;
