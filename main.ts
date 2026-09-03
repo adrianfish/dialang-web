@@ -30,7 +30,11 @@ const storage: Storage = await KVStorage.open();
 const hostname: string = Deno.env.get("HOSTNAME") || "adrian-dialang.ngrok.app";
 const port: number = parseInt(Deno.env.get("PORT") || "3001");
 
-const ltiSecret: string = Deno.env.get("LTI-SECRET") || "my-encryption-key";
+const ltiSecret: string | undefined = Deno.env.get("LTI_SECRET");
+if (!ltiSecret) {
+  console.error("No LTI_SECRET defined as an environment variable. Exiting ...");
+  Deno.exit(1);
+}
 const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
 const ltiLogoUri: string = `https://${hostname}/static/images/large_logo.png`;
 

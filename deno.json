@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run --unstable-kv -R -N -E --watch main.ts"
+    "start": "deno run --env-file --unstable-kv -R -N -E --watch main.ts"
   },
   "imports": {
     "@hono": "jsr:@hono/hono@^4",
