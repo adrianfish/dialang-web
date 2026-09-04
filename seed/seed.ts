@@ -1,5 +1,5 @@
 import * as loaders from "./dataloaders.ts";
-
+Deno.exit(0);
 
 async function writeInChunks<T>(
   items: T[],
@@ -75,4 +75,3 @@ if (Deno.env.get("DENO_TIMELINE") === "production") {
   kv.close();
 }
 
-Deno.exit(0);
