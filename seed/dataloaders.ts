@@ -147,23 +147,25 @@ export async function loadItems(text: string, kv: Deno.Kv) {
   const items = JSON.parse(text);
   await writeInChunks(
     Object.entries(items),
-    25,
+    100,
     async ([id, item]) => await kv.set([ "data", "items", parseInt(id) ], item),
   );
 }
 
 export async function loadAnswers(text: string, kv: Deno.Kv) {
   const answers = JSON.parse(text);
-  for (const [id, answer] of Object.entries(answers)) {
-    await kv.set([ "data", "answers", parseInt(id) ], answer);
-  }
+  await writeInChunks(
+    Object.entries(answers),
+    100,
+    async ([id, answer]) => await kv.set([ "data", "answers", parseInt(id) ], answer),
+  );
 }
 
 export async function loadItemAnswers(text: string, kv: Deno.Kv) {
   const itemAnswers = JSON.parse(text);
   await writeInChunks(
     Object.entries(itemAnswers),
-    25,
+    100,
     async ([itemId, answers]) => await kv.set([ "data", "item-answers", parseInt(itemId) ], answers),
   );
 }
