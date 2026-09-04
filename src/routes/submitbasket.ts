@@ -1,14 +1,14 @@
 import { Context } from "@hono/hono";
 import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
-import { DenoLTI, Score } from "@adrianfish/deno-lti";
+import { LTIKit, Score } from "@adrianfish/lti-kit";
 import type { DialangSession, ScoredBasket, ScoredItem, TES } from "../types.ts";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
 
 export async function submitBasket(
   c: Context,
   storage: Storage,
-  lti: DenoLTI,
+  lti: LTIKit,
 ): Promise<Response> {
 
   const sessionId: string | undefined = getSessionId(c);

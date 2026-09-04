@@ -1,12 +1,12 @@
-import { DenoLTI } from "@adrianfish/deno-lti";
+import { LTIKit } from "@adrianfish/lti-kit";
 
 import type { Context } from "@hono/hono";
-import type { ContentItem } from "@adrianfish/deno-lti";
+import type { ContentItem } from "@adrianfish/lti-kit";
 import type { Storage } from "../storage/storage.ts";
 
 export async function handleBuildDeepLinks(
   c: Context,
-  lti: DenoLTI,
+  lti: LTIKit,
   storage: Storage,
 ): Promise<Response> {
 

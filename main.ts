@@ -18,7 +18,7 @@ import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
 import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
 import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
-import { DenoLTI, DEEPLINKING } from "@adrianfish/deno-lti";
+import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
 import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
 import type { Storage } from "./src/storage/storage.ts";
@@ -44,7 +44,7 @@ const ltiOptions = {
   services: [ DEEPLINKING ],
 };
 
-const lti = new DenoLTI();
+const lti = new LTIKit();
 
 await lti
   .onLaunch(createLTILaunchHandler(storage))
