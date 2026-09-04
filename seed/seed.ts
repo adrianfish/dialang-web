@@ -1,5 +1,16 @@
 import * as loaders from "./dataloaders.ts";
 
+async function writeInChunks<T>(
+  items: T[],
+  chunkSize: number,
+  writeFn: (item: T) => Promise<void>,
+) {
+  for (let i = 0; i < items.length; i += chunkSize) {
+    const chunk = items.slice(i, i + chunkSize);
+    await Promise.all(chunk.map(writeFn));
+  }
+}
+
 const kv: Deno.Kv = await Deno.openKv();
 
 for await (const entry of kv.list({ prefix: [ "data" ] })) {
@@ -51,11 +62,9 @@ await loaders.loadLanguageNames(text, kv);
 text = (await Deno.readTextFile("../data-files/skill-names.json"));
 await loaders.loadSkillNames(text, kv);
 
-/*
 const memory = Deno.memoryUsage();
 console.log(`Heap Used: ${Math.round(memory.heapUsed / 1024 / 1024)} MB`);
 console.log(`Heap Total: ${Math.round(memory.heapTotal / 1024 / 1024)} MB`);
 console.log(`External: ${Math.round(memory.external / 1024 / 1024)} MB`);
-*/
 
 kv.close();
