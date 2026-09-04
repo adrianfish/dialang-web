@@ -1,0 +1,135 @@
+{
+  "da-DK": {
+    "listening": "Lytteforståelse",
+    "writing": "Skrivefærdighed",
+    "reading": "Læseforståelse",
+    "structures": "Grammatik",
+    "vocabulary": "Ordforråd"
+  },
+  "de-DE": {
+    "listening": "Hörverstehen",
+    "writing": "Schreiben",
+    "reading": "Leseverstehen",
+    "structures": "Grammatik",
+    "vocabulary": "Wortschatz"
+  },
+  "el-GR": {
+    "listening": "Κατανόηση προφορικού λόγου",
+    "writing": "Παραγωγή γραπτού λόγου",
+    "reading": "Κατανόηση γραπτού λόγου",
+    "structures": "Δομές",
+    "vocabulary": "Λεξιλόγιο"
+  },
+  "en-GB": {
+    "listening": "listening",
+    "reading": "reading",
+    "writing": "writing",
+    "structures": "structures",
+    "vocabulary": "vocabulary"
+  },
+  "es-ES": {
+    "listening": "Comprensión oral",
+    "writing": "Expresión escrita",
+    "reading": "Comprensión escrita",
+    "structures": "Gramática",
+    "vocabulary": "Vocabulario"
+  },
+  "fi-FI": {
+    "listening": "Kuunteleminen",
+    "writing": "Kirjoittaminen",
+    "reading": "Lukeminen",
+    "structures": "Rakenteet",
+    "vocabulary": "Sanasto"
+  },
+  "fr-FR": {
+    "listening": "Compréhension orale",
+    "writing": "Expression écrite",
+    "reading": "Compréhension écrite",
+    "structures": "structures grammaticales",
+    "vocabulary": "Vocabulaire"
+  },
+  "ga-IE": {
+    "listening": "Éisteacht",
+    "writing": "Scríobh",
+    "reading": "Léamh",
+    "structures": "Struchtúir",
+    "vocabulary": "Stór Focal"
+  },
+  "id-ID": {
+    "listening": "Mendengarkan",
+    "writing": "Menulis",
+    "reading": "Membaca",
+    "structures": "Struktur",
+    "vocabulary": "Kosakata"
+  },
+  "is-IS": {
+    "listening": "Hlustun",
+    "writing": "Ritun",
+    "reading": "Lestur",
+    "structures": "Málfræði",
+    "vocabulary": "Orðaforði"
+  },
+  "it-IT": {
+    "listening": "Ascolto",
+    "writing": "Scrittura",
+    "reading": "Lettura",
+    "structures": "Grammatica",
+    "vocabulary": "Lessico"
+  },
+  "ja-JP": {
+    "listening": "リスニング",
+    "writing": "ライティング",
+    "reading": "リーディング",
+    "structures": "構成",
+    "vocabulary": "語い"
+  },
+  "ko-KR": {
+    "listening": "듣기",
+    "writing": "쓰기",
+    "reading": "읽기",
+    "structures": "구조",
+    "vocabulary": "어휘"
+  },
+  "nl-NL": {
+    "listening": "Luisteren",
+    "writing": "Schrijven",
+    "reading": "Lezen",
+    "structures": "Taalstructuren",
+    "vocabulary": "Woordenschat"
+  },
+  "no-NO": {
+    "listening": "Lytteforståelse",
+    "writing": "Skriftlig språkbruk",
+    "reading": "Leseforståelse",
+    "structures": "Grammatikk",
+    "vocabulary": "Vokabular"
+  },
+  "pt-PT": {
+    "listening": "Compreensão oral",
+    "writing": "Expressão escrita",
+    "reading": "Compreensão escrita",
+    "structures": "Estruturas gramaticais",
+    "vocabulary": "Vocabulário"
+  },
+  "sv-SE": {
+    "listening": "Hörförståelse",
+    "writing": "Skriftlig del",
+    "reading": "Läsförståelse",
+    "structures": "Strukturer",
+    "vocabulary": "Ordkunskap"
+  },
+  "tr-TR": {
+    "vocabulary": "Kelime dağarcığı",
+    "listening": "Dinleme",
+    "reading": "Okuma",
+    "structures": "Yapılar",
+    "writing": "Yazma"
+  },
+  "zh-CN": {
+    "listening": "听力",
+    "writing": "写作",
+    "reading": "阅读",
+    "structures": "语法",
+    "vocabulary": "词汇"
+  }
+}
