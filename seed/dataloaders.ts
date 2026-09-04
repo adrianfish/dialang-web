@@ -27,7 +27,7 @@ export async function loadVsptWords(text: string, kv: Deno.Kv) {
 
   await writeInChunks(
     Object.entries(allWords),
-    25,
+    200,
     async ([tl, words]) => await kv.set(["data", "vspt-words", tl], words),
   );
 }
@@ -47,7 +47,7 @@ export async function loadVsptBands(text: string, kv: Deno.Kv) {
 
   await writeInChunks(
     Object.entries(allBands),
-    25,
+    200,
     async ([tl, bands]) => await kv.set(["data", "vspt-bands", tl], bands),
   );
 }
@@ -65,7 +65,7 @@ export async function loadSaGrades(text: string, kv: Deno.Kv) {
   }
   await writeInChunks(
     saGrades,
-    25,
+    200,
     async g => await kv.set([ "data", "sa-grades", g.skill, g.rsc ], g),
   );
 }
@@ -83,7 +83,7 @@ export async function loadSaWeights(text: string, kv: Deno.Kv) {
 
   await writeInChunks(
     Object.entries(allSaWeights),
-    25,
+    200,
     async ([skill, weights]) => await kv.set([ "data", "sa-weights", skill ], weights),
   );
 }
@@ -104,7 +104,7 @@ export async function loadPreestAssignments(text: string, kv: Deno.Kv) {
 
   await writeInChunks(
     Object.entries(allAssignments),
-    25,
+    200,
     async ([key, assignments]) => await kv.set([ "data", "preest-assignments", key ], assignments),
   );
 }
@@ -113,7 +113,7 @@ export async function loadPreestWeights(text: string, kv: Deno.Kv) {
   const records: Array<object> = parse(text, { skipFirstRow: true });
   await writeInChunks(
     records,
-    25,
+    200,
     async w => {
       const weight = { sa: parseFloat(w.sa), vspt: parseFloat(w.vspt), coe: parseFloat(w.coe) };
       await kv.set([ "data", "preest-weights", w.key ], weight);
@@ -125,7 +125,7 @@ export async function loadBookletLengths(text: string, kv: Deno.Kv) {
   const records: Array<object> = parse(text, { skipFirstRow: true });
   await writeInChunks(
     records,
-    25,
+    200,
     async l => await kv.set([ "data", "booklet-lengths", parseInt(l.booklet_id) ], parseInt(l.length)),
   );
 }
@@ -134,7 +134,7 @@ export async function loadBookletBaskets(text: string, kv: Deno.Kv) {
   const records: Array<object> = parse(text, { skipFirstRow: true });
   await writeInChunks(
     records,
-    25,
+    200,
     async bb => {
       const bookletId = parseInt(bb.booklet_id);
       const basketIds: Array<number> = bb.basket_ids.split(",").map(id => parseInt(id));
@@ -147,7 +147,7 @@ export async function loadItems(text: string, kv: Deno.Kv) {
   const items = JSON.parse(text);
   await writeInChunks(
     Object.entries(items),
-    100,
+    200,
     async ([id, item]) => await kv.set([ "data", "items", parseInt(id) ], item),
   );
 }
@@ -156,7 +156,7 @@ export async function loadAnswers(text: string, kv: Deno.Kv) {
   const answers = JSON.parse(text);
   await writeInChunks(
     Object.entries(answers),
-    100,
+    200,
     async ([id, answer]) => await kv.set([ "data", "answers", parseInt(id) ], answer),
   );
 }
@@ -165,7 +165,7 @@ export async function loadItemAnswers(text: string, kv: Deno.Kv) {
   const itemAnswers = JSON.parse(text);
   await writeInChunks(
     Object.entries(itemAnswers),
-    100,
+    200,
     async ([itemId, answers]) => await kv.set([ "data", "item-answers", parseInt(itemId) ], answers),
   );
 }
@@ -180,7 +180,7 @@ export async function loadItemGrades(text: string, kv: Deno.Kv) {
   for (const [compoundKey, gradeMap] of Object.entries(itemGrades)) {
     await writeInChunks(
       Object.entries(gradeMap as object),
-      25,
+      200,
       async ([rawScore, grades]) => await kv.set([ "data", "item-grades", compoundKey, parseInt(rawScore) ], grades),
     );
   }
