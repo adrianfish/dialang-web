@@ -11,6 +11,8 @@ async function writeInChunks<T>(
   }
 }
 
+Deno.exit();
+
 const kv: Deno.Kv = await Deno.openKv();
 
 for await (const entry of kv.list({ prefix: [ "data" ] })) {
