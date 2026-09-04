@@ -65,10 +65,12 @@ if (Deno.env.get("DENO_TIMELINE") === "production") {
   text = (await Deno.readTextFile("../data-files/skill-names.json"));
   await loaders.loadSkillNames(text, kv);
 
+  /*
   const memory = Deno.memoryUsage();
   console.log(`Heap Used: ${Math.round(memory.heapUsed / 1024 / 1024)} MB`);
   console.log(`Heap Total: ${Math.round(memory.heapTotal / 1024 / 1024)} MB`);
   console.log(`External: ${Math.round(memory.external / 1024 / 1024)} MB`);
+  */
 
   kv.close();
 }
