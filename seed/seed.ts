@@ -2,6 +2,10 @@ import * as loaders from "./dataloaders.ts";
 
 const kv: Deno.Kv = await Deno.openKv();
 
+for await (const entry of kv.list({ prefix: [ "data" ] })) {
+  await kv.delete(entry.key);
+}
+
 let text: string = (await Deno.readTextFile("../data-files/vspt-words.csv"));
 await loaders.loadVsptWords(text, kv);
 
@@ -46,5 +50,3 @@ await loaders.loadLanguageNames(text, kv);
 
 text = (await Deno.readTextFile("../data-files/skill-names.json"));
 await loaders.loadSkillNames(text, kv);
-
-//kv.close();
