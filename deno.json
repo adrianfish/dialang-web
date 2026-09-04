@@ -1,5 +1,6 @@
 {
   "tasks": {
+    "seed": "cd seed && deno run --unstable-kv -A seed.ts",
     "start": "deno run --env-file --unstable-kv -R -N -E --watch main.ts"
   },
   "imports": {

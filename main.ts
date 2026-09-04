@@ -9,7 +9,6 @@ import { startTest } from "./src/routes/starttest.ts";
 import { submitBasket } from "./src/routes/submitbasket.ts";
 import { getSession } from "./src/routes/getsession.ts";
 import { deleteSession } from "./src/routes/deletesession.ts";
-import { loadData } from "./src/routes/loaddata.ts";
 import { reports } from "./src/routes/reports/reports.ts";
 import { reportsLogin } from "./src/routes/reports/reportslogin.ts";
 import { alDistribution } from "./src/routes/reports/al-distribution.ts";
