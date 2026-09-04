@@ -13,7 +13,7 @@ export async function loadVsptWords(text: string, kv: Deno.Kv) {
       allWords[w.test_language] = [ converted ];
     }
   });
-  Object.entries(allWords).forEach(([tl, words]) => kv.set([ "data", "vspt-words", tl ], words));
+  Object.entries(allWords).forEach(async ([tl, words]) => await kv.set([ "data", "vspt-words", tl ], words));
 }
 
 export async function loadVsptBands(text: string, kv: Deno.Kv) {
@@ -28,7 +28,7 @@ export async function loadVsptBands(text: string, kv: Deno.Kv) {
       allBands[b.test_language] = [ converted ];
     }
   });
-  Object.entries(allBands).forEach(([tl, bands]) => kv.set([ "data", "vspt-bands", tl ], bands));
+  Object.entries(allBands).forEach(async ([tl, bands]) => await kv.set([ "data", "vspt-bands", tl ], bands));
 }
 
 export async function loadSaGrades(text: string, kv: Deno.Kv) {
@@ -39,7 +39,7 @@ export async function loadSaGrades(text: string, kv: Deno.Kv) {
     const converted: SAGrade = { skill: g.skill, rsc: parseInt(g.rsc), ppe: parseFloat(g.ppe), se: parseFloat(g.se), grade: parseInt(g.grade) };
     saGrades.push(converted);
   });
-  saGrades.forEach(g  => kv.set([ "data", "sa-grades", g.skill, g.rsc ], g));
+  saGrades.forEach(async g  => await kv.set([ "data", "sa-grades", g.skill, g.rsc ], g));
 }
 
 export async function loadSaWeights(text: string, kv: Deno.Kv) {
@@ -52,7 +52,7 @@ export async function loadSaWeights(text: string, kv: Deno.Kv) {
       allSaWeights[w.skill] = { [w.wid]: parseInt(w.weight) };
     }
   });
-  Object.entries(allSaWeights).forEach(([skill, weights])  => kv.set([ "data", "sa-weights", skill ], weights));
+  Object.entries(allSaWeights).forEach(async ([skill, weights])  => await kv.set([ "data", "sa-weights", skill ], weights));
 }
 
 export async function loadPreestAssignments(text: string, kv: Deno.Kv) {
@@ -68,69 +68,69 @@ export async function loadPreestAssignments(text: string, kv: Deno.Kv) {
       allAssignments[a.key] = [ converted ];
     }
   });
-  Object.entries(allAssignments).forEach(([key, assignments])  => kv.set([ "data", "preest-assignments", key ], assignments));
+  Object.entries(allAssignments).forEach(async ([key, assignments])  => await kv.set([ "data", "preest-assignments", key ], assignments));
 }
 
 export async function loadPreestWeights(text: string, kv: Deno.Kv) {
-  parse(text, { skipFirstRow: true }).forEach(w => {
+  parse(text, { skipFirstRow: true }).forEach(async w => {
     const weight = { sa: parseFloat(w.sa), vspt: parseFloat(w.vspt), coe: parseFloat(w.coe) };
-    kv.set([ "data", "preest-weights", w.key ], weight);
+    await kv.set([ "data", "preest-weights", w.key ], weight);
   });
 }
 
 export async function loadBookletLengths(text: string, kv: Deno.Kv) {
-  parse(text, { skipFirstRow: true }).forEach(l => {
-    kv.set([ "data", "booklet-lengths", parseInt(l.booklet_id) ], parseInt(l.length));
+  parse(text, { skipFirstRow: true }).forEach(async l => {
+    await kv.set([ "data", "booklet-lengths", parseInt(l.booklet_id) ], parseInt(l.length));
   });
 }
 
 export async function loadBookletBaskets(text: string, kv: Deno.Kv) {
-  parse(text, { skipFirstRow: true }).forEach(bb => {
+  parse(text, { skipFirstRow: true }).forEach(async bb => {
     const bookletId = parseInt(bb.booklet_id);
     const basketIds: Array<number> = bb.basket_ids.split(",").map(id => parseInt(id));
-    kv.set([ "data", "booklet-baskets", bookletId ], basketIds);
+    await kv.set([ "data", "booklet-baskets", bookletId ], basketIds);
   });
 } 
 
 export async function loadItems(text: string, kv: Deno.Kv) {
   const items = JSON.parse(text);
-  Object.entries(items).forEach(([id, item]) => kv.set([ "data", "items", parseInt(id) ], item));
+  Object.entries(items).forEach(async ([id, item]) => await kv.set([ "data", "items", parseInt(id) ], item));
 }
 
 export async function loadAnswers(text: string, kv: Deno.Kv) {
   const answers = JSON.parse(text);
-  Object.entries(answers).forEach(([id, answer]) => kv.set([ "data", "answers", parseInt(id) ], answer));
+  Object.entries(answers).forEach(async ([id, answer]) => await kv.set([ "data", "answers", parseInt(id) ], answer));
 }
 
 export async function loadItemAnswers(text: string, kv: Deno.Kv) {
   const itemAnswers = JSON.parse(text);
-  Object.entries(itemAnswers).forEach(([itemId, answers]) => kv.set([ "data", "item-answers", parseInt(itemId) ], answers));
+  Object.entries(itemAnswers).forEach(async ([itemId, answers]) => await kv.set([ "data", "item-answers", parseInt(itemId) ], answers));
 }
 
 export async function loadPunctuation(text: string, kv: Deno.Kv) {
   const punctuation = JSON.parse(text);
-  kv.set([ "data", "punctuation" ], punctuation);
+  await kv.set([ "data", "punctuation" ], punctuation);
 }
 
 export async function loadItemGrades(text: string, kv: Deno.Kv) {
   const itemGrades = JSON.parse(text);
   Object.entries(itemGrades).forEach(([compoundKey, gradeMap]) => {
-    Object.entries(gradeMap as object).forEach(([rawScore, grades]) => {
-      kv.set([ "data", "item-grades", compoundKey, parseInt(rawScore) ], grades);
+    Object.entries(gradeMap as object).forEach(async ([rawScore, grades]) => {
+      await kv.set([ "data", "item-grades", compoundKey, parseInt(rawScore) ], grades);
     });
   });
 }
 
 export async function loadLanguageNames(text: string, kv: Deno.Kv) {
   const languageNames = JSON.parse(text);
-  Object.entries(languageNames).forEach(([locale, languages]) => {
-    kv.set([ "data", "language-names", locale ], languages);
+  Object.entries(languageNames).forEach(async ([locale, languages]) => {
+    await kv.set([ "data", "language-names", locale ], languages);
   });
 }
 
 export async function loadSkillNames(text: string, kv: Deno.Kv) {
   const skillNames = JSON.parse(text);
-  Object.entries(skillNames).forEach(([locale, skills]) => {
-    kv.set([ "data", "skill-names", locale ], skills);
+  Object.entries(skillNames).forEach(async ([locale, skills]) => {
+    await kv.set([ "data", "skill-names", locale ], skills);
   });
 }
