@@ -1,14 +1,18 @@
 import { parse } from "@std/csv";
 import { PreestAssignment, SAGrade, VSPBand, VSPWord } from "../src/types.ts";
 
-async function writeInChunks<T>(
+async function writeInBatches<T>(
   items: T[],
-  chunkSize: number,
-  writeFn: (item: T) => Promise<void>,
+  kv: Deno.Kv,
+  writeFn: (op: Deno.AtomicOperation, item: T) => Deno.AtomicOperation,
 ) {
-  for (let i = 0; i < items.length; i += chunkSize) {
-    const chunk = items.slice(i, i + chunkSize);
-    await Promise.all(chunk.map(writeFn));
+
+  const BATCH_SIZE = 200;
+  for (let i = 0; i < items.length; i += BATCH_SIZE) {
+    const batch = items.slice(i, i + BATCH_SIZE);
+    let op = kv.atomic();
+    for (const item of batch) op = writeFn(op, item);
+    await op.commit();
   }
 }
 
@@ -25,10 +29,10 @@ export async function loadVsptWords(text: string, kv: Deno.Kv) {
     }
   });
 
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(allWords),
-    200,
-    async ([tl, words]) => await kv.set(["data", "vspt-words", tl], words),
+    kv,
+    (op, [tl, words]) => op.set(["data", "vspt-words", tl], words),
   );
 }
 
@@ -45,10 +49,10 @@ export async function loadVsptBands(text: string, kv: Deno.Kv) {
     }
   });
 
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(allBands),
-    200,
-    async ([tl, bands]) => await kv.set(["data", "vspt-bands", tl], bands),
+    kv,
+    (op, [tl, bands]) => op.set(["data", "vspt-bands", tl], bands),
   );
 }
 
@@ -60,13 +64,10 @@ export async function loadSaGrades(text: string, kv: Deno.Kv) {
     const converted: SAGrade = { skill: g.skill, rsc: parseInt(g.rsc), ppe: parseFloat(g.ppe), se: parseFloat(g.se), grade: parseInt(g.grade) };
     saGrades.push(converted);
   });
-  for (const g of saGrades) {
-    await kv.set([ "data", "sa-grades", g.skill, g.rsc ], g);
-  }
-  await writeInChunks(
+  await writeInBatches(
     saGrades,
-    200,
-    async g => await kv.set([ "data", "sa-grades", g.skill, g.rsc ], g),
+    kv,
+    (op, g) => op.set([ "data", "sa-grades", g.skill, g.rsc ], g),
   );
 }
 
@@ -81,10 +82,10 @@ export async function loadSaWeights(text: string, kv: Deno.Kv) {
     }
   });
 
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(allSaWeights),
-    200,
-    async ([skill, weights]) => await kv.set([ "data", "sa-weights", skill ], weights),
+    kv,
+    (op, [skill, weights]) => op.set([ "data", "sa-weights", skill ], weights),
   );
 }
 
@@ -102,71 +103,71 @@ export async function loadPreestAssignments(text: string, kv: Deno.Kv) {
     }
   });
 
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(allAssignments),
-    200,
-    async ([key, assignments]) => await kv.set([ "data", "preest-assignments", key ], assignments),
+    kv,
+    (op, [key, assignments]) => op.set([ "data", "preest-assignments", key ], assignments),
   );
 }
 
 export async function loadPreestWeights(text: string, kv: Deno.Kv) {
   const records: Array<object> = parse(text, { skipFirstRow: true });
-  await writeInChunks(
+  await writeInBatches(
     records,
-    200,
-    async w => {
+    kv,
+    (op, w) => {
       const weight = { sa: parseFloat(w.sa), vspt: parseFloat(w.vspt), coe: parseFloat(w.coe) };
-      await kv.set([ "data", "preest-weights", w.key ], weight);
+      return op.set([ "data", "preest-weights", w.key ], weight);
     },
   );
 }
 
 export async function loadBookletLengths(text: string, kv: Deno.Kv) {
   const records: Array<object> = parse(text, { skipFirstRow: true });
-  await writeInChunks(
+  await writeInBatches(
     records,
-    200,
-    async l => await kv.set([ "data", "booklet-lengths", parseInt(l.booklet_id) ], parseInt(l.length)),
+    kv,
+    (op, l) => op.set([ "data", "booklet-lengths", parseInt(l.booklet_id) ], parseInt(l.length)),
   );
 }
 
 export async function loadBookletBaskets(text: string, kv: Deno.Kv) {
   const records: Array<object> = parse(text, { skipFirstRow: true });
-  await writeInChunks(
+  await writeInBatches(
     records,
-    200,
-    async bb => {
+    kv,
+    (op, bb) => {
       const bookletId = parseInt(bb.booklet_id);
       const basketIds: Array<number> = bb.basket_ids.split(",").map(id => parseInt(id));
-      await kv.set([ "data", "booklet-baskets", bookletId ], basketIds);
+      return op.set([ "data", "booklet-baskets", bookletId ], basketIds);
     },
   );
 } 
 
 export async function loadItems(text: string, kv: Deno.Kv) {
   const items = JSON.parse(text);
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(items),
-    200,
-    async ([id, item]) => await kv.set([ "data", "items", parseInt(id) ], item),
+    kv,
+    (op, [id, item]) => op.set([ "data", "items", parseInt(id) ], item),
   );
 }
 
 export async function loadAnswers(text: string, kv: Deno.Kv) {
   const answers = JSON.parse(text);
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(answers),
-    200,
-    async ([id, answer]) => await kv.set([ "data", "answers", parseInt(id) ], answer),
+    kv,
+    (op, [id, answer]) => op.set([ "data", "answers", parseInt(id) ], answer),
   );
 }
 
 export async function loadItemAnswers(text: string, kv: Deno.Kv) {
   const itemAnswers = JSON.parse(text);
-  await writeInChunks(
+  await writeInBatches(
     Object.entries(itemAnswers),
-    200,
-    async ([itemId, answers]) => await kv.set([ "data", "item-answers", parseInt(itemId) ], answers),
+    kv,
+    (op, [itemId, answers]) => op.set([ "data", "item-answers", parseInt(itemId) ], answers),
   );
 }
 
@@ -178,10 +179,10 @@ export async function loadPunctuation(text: string, kv: Deno.Kv) {
 export async function loadItemGrades(text: string, kv: Deno.Kv) {
   const itemGrades = JSON.parse(text);
   for (const [compoundKey, gradeMap] of Object.entries(itemGrades)) {
-    await writeInChunks(
+    await writeInBatches(
       Object.entries(gradeMap as object),
-      200,
-      async ([rawScore, grades]) => await kv.set([ "data", "item-grades", compoundKey, parseInt(rawScore) ], grades),
+      kv,
+      (op, [rawScore, grades]) => op.set([ "data", "item-grades", compoundKey, parseInt(rawScore) ], grades),
     );
   }
 }
