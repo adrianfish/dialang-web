@@ -9,8 +9,8 @@ async function writeInBatches<T>(
 
   const BATCH_SIZE = 200;
   for (let i = 0; i < items.length; i += BATCH_SIZE) {
-    const batch = items.slice(i, i + BATCH_SIZE);
-    let op = kv.atomic();
+    const batch: T[] = items.slice(i, i + BATCH_SIZE);
+    let op: Deno.AtomicOperation = kv.atomic();
     for (const item of batch) op = writeFn(op, item);
     await op.commit();
   }
@@ -189,14 +189,18 @@ export async function loadItemGrades(text: string, kv: Deno.Kv) {
 
 export async function loadLanguageNames(text: string, kv: Deno.Kv) {
   const languageNames = JSON.parse(text);
+  let op: Deno.AtomicOperation = kv.atomic();
   for (const [locale, languages] of Object.entries(languageNames)) {
-    await kv.set([ "data", "language-names", locale ], languages);
+    op = op.set([ "data", "language-names", locale ], languages);
   }
+  await op.commit();
 }
 
 export async function loadSkillNames(text: string, kv: Deno.Kv) {
   const skillNames = JSON.parse(text);
+  let op: Deno.AtomicOperation = kv.atomic();
   for (const [locale, skills] of Object.entries(skillNames)) {
-    await kv.set([ "data", "skill-names", locale ], skills);
+    op = op.set([ "data", "skill-names", locale ], skills);
   }
+  await op.commit();
 }

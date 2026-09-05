@@ -1,0 +1,149 @@
+<form action="/api/builddeeplinks" method="POST">
+  <h1 id="tls-title">Veldu þér próf</h1>
+  <table id="tls-table" cols="6">
+    <thead>
+      <tr>
+        <th></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/listening.gif" title="Hlustun"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/writing.gif" title="Ritun"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/reading.gif" title="Lestur"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/hammer.gif" title="Málfræði"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/book.gif" title="Orðaforði"/></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="language-column">ÍSLENSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#listening" title="ÍSLENSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#writing" title="ÍSLENSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#reading" title="ÍSLENSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#structures" title="ÍSLENSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#vocabulary" title="ÍSLENSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ÍRSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#listening" title="ÍRSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#writing" title="ÍRSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#reading" title="ÍRSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#structures" title="ÍRSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#vocabulary" title="ÍRSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">DANSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#listening" title="DANSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#writing" title="DANSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#reading" title="DANSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#structures" title="DANSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#vocabulary" title="DANSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">GRÍSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#listening" title="GRÍSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#writing" title="GRÍSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#reading" title="GRÍSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#structures" title="GRÍSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#vocabulary" title="GRÍSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">HOLLENSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#listening" title="HOLLENSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#writing" title="HOLLENSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#reading" title="HOLLENSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#structures" title="HOLLENSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#vocabulary" title="HOLLENSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">FRANSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#listening" title="FRANSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#writing" title="FRANSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#reading" title="FRANSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#structures" title="FRANSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#vocabulary" title="FRANSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">PORTÚGALSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#listening" title="PORTÚGALSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#writing" title="PORTÚGALSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#reading" title="PORTÚGALSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#structures" title="PORTÚGALSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#vocabulary" title="PORTÚGALSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">SÆNSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#listening" title="SÆNSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#writing" title="SÆNSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#reading" title="SÆNSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#structures" title="SÆNSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#vocabulary" title="SÆNSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">NORSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#listening" title="NORSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#writing" title="NORSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#reading" title="NORSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#structures" title="NORSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#vocabulary" title="NORSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ÍTALSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#listening" title="ÍTALSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#writing" title="ÍTALSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#reading" title="ÍTALSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#structures" title="ÍTALSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#vocabulary" title="ÍTALSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ENSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#listening" title="ENSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#writing" title="ENSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#reading" title="ENSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#structures" title="ENSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#vocabulary" title="ENSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ÞÝSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#listening" title="ÞÝSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#writing" title="ÞÝSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#reading" title="ÞÝSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#structures" title="ÞÝSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#vocabulary" title="ÞÝSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">SPÆNSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#listening" title="SPÆNSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#writing" title="SPÆNSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#reading" title="SPÆNSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#structures" title="SPÆNSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#vocabulary" title="SPÆNSKA, Orðaforði" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">FINNSKA</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#listening" title="FINNSKA, Hlustun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#writing" title="FINNSKA, Ritun" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#reading" title="FINNSKA, Lestur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#structures" title="FINNSKA, Málfræði" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#vocabulary" title="FINNSKA, Orðaforði" /></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <input type="hidden" name="platformCode" value="${platformCode}" />
+  <input type="hidden" name="contextId" value="${contextId}" />
+  <input type="hidden" name="userId" value="${user}" />
+  <input type="hidden" name="al" value="is-IS" />
+  <button>Select</button>
+</form>

@@ -1,0 +1,149 @@
+<form action="/api/builddeeplinks" method="POST">
+  <h1 id="tls-title">Pilih tes</h1>
+  <table id="tls-table" cols="6">
+    <thead>
+      <tr>
+        <th></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/listening.gif" title="Mendengarkan"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/writing.gif" title="Menulis"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/reading.gif" title="Membaca"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/hammer.gif" title="Struktur"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/book.gif" title="Kosakata"/></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="language-column">Jerman</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#listening" title="Jerman, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#writing" title="Jerman, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#reading" title="Jerman, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#structures" title="Jerman, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#vocabulary" title="Jerman, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Inggris</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#listening" title="Inggris, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#writing" title="Inggris, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#reading" title="Inggris, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#structures" title="Inggris, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#vocabulary" title="Inggris, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Finlandia</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#listening" title="Finlandia, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#writing" title="Finlandia, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#reading" title="Finlandia, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#structures" title="Finlandia, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#vocabulary" title="Finlandia, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Swedia</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#listening" title="Swedia, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#writing" title="Swedia, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#reading" title="Swedia, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#structures" title="Swedia, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#vocabulary" title="Swedia, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Spanyol</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#listening" title="Bahasa Spanyol, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#writing" title="Bahasa Spanyol, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#reading" title="Bahasa Spanyol, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#structures" title="Bahasa Spanyol, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#vocabulary" title="Bahasa Spanyol, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Yunani</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#listening" title="Yunani, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#writing" title="Yunani, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#reading" title="Yunani, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#structures" title="Yunani, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#vocabulary" title="Yunani, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Islandia</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#listening" title="Bahasa Islandia, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#writing" title="Bahasa Islandia, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#reading" title="Bahasa Islandia, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#structures" title="Bahasa Islandia, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#vocabulary" title="Bahasa Islandia, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Irlandia</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#listening" title="Irlandia, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#writing" title="Irlandia, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#reading" title="Irlandia, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#structures" title="Irlandia, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#vocabulary" title="Irlandia, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Itali</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#listening" title="Bahasa Itali, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#writing" title="Bahasa Itali, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#reading" title="Bahasa Itali, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#structures" title="Bahasa Itali, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#vocabulary" title="Bahasa Itali, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Belanda</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#listening" title="Bahasa Belanda, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#writing" title="Bahasa Belanda, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#reading" title="Bahasa Belanda, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#structures" title="Bahasa Belanda, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#vocabulary" title="Bahasa Belanda, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Perancis</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#listening" title="Perancis, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#writing" title="Perancis, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#reading" title="Perancis, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#structures" title="Perancis, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#vocabulary" title="Perancis, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Denmark</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#listening" title="Bahasa Denmark, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#writing" title="Bahasa Denmark, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#reading" title="Bahasa Denmark, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#structures" title="Bahasa Denmark, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#vocabulary" title="Bahasa Denmark, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Norwegia</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#listening" title="Bahasa Norwegia, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#writing" title="Bahasa Norwegia, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#reading" title="Bahasa Norwegia, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#structures" title="Bahasa Norwegia, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#vocabulary" title="Bahasa Norwegia, Kosakata" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">Bahasa Portugis</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#listening" title="Bahasa Portugis, Mendengarkan" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#writing" title="Bahasa Portugis, Menulis" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#reading" title="Bahasa Portugis, Membaca" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#structures" title="Bahasa Portugis, Struktur" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#vocabulary" title="Bahasa Portugis, Kosakata" /></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <input type="hidden" name="platformCode" value="${platformCode}" />
+  <input type="hidden" name="contextId" value="${contextId}" />
+  <input type="hidden" name="userId" value="${user}" />
+  <input type="hidden" name="al" value="id-ID" />
+  <button>Select</button>
+</form>

@@ -1,0 +1,149 @@
+<form action="/api/builddeeplinks" method="POST">
+  <h1 id="tls-title">Wählen Sie einen Test</h1>
+  <table id="tls-table" cols="6">
+    <thead>
+      <tr>
+        <th></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/listening.gif" title="Hörverstehen"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/writing.gif" title="Schreiben"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/reading.gif" title="Leseverstehen"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/hammer.gif" title="Grammatik"/></th>
+        <th><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/book.gif" title="Wortschatz"/></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <td class="language-column">SPANISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#listening" title="SPANISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#writing" title="SPANISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#reading" title="SPANISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#structures" title="SPANISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="es-ES#vocabulary" title="SPANISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">FINNISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#listening" title="FINNISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#writing" title="FINNISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#reading" title="FINNISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#structures" title="FINNISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fi-FI#vocabulary" title="FINNISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">DÄNISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#listening" title="DÄNISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#writing" title="DÄNISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#reading" title="DÄNISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#structures" title="DÄNISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="da-DK#vocabulary" title="DÄNISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">GRIECHISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#listening" title="GRIECHISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#writing" title="GRIECHISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#reading" title="GRIECHISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#structures" title="GRIECHISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="el-GR#vocabulary" title="GRIECHISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">FRANZÖSISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#listening" title="FRANZÖSISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#writing" title="FRANZÖSISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#reading" title="FRANZÖSISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#structures" title="FRANZÖSISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="fr-FR#vocabulary" title="FRANZÖSISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ENGLISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#listening" title="ENGLISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#writing" title="ENGLISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#reading" title="ENGLISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#structures" title="ENGLISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="en-GB#vocabulary" title="ENGLISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ISLÄNDISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#listening" title="ISLÄNDISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#writing" title="ISLÄNDISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#reading" title="ISLÄNDISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#structures" title="ISLÄNDISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="is-IS#vocabulary" title="ISLÄNDISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">DEUTSCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#listening" title="DEUTSCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#writing" title="DEUTSCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#reading" title="DEUTSCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#structures" title="DEUTSCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="de-DE#vocabulary" title="DEUTSCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">NORWEGISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#listening" title="NORWEGISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#writing" title="NORWEGISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#reading" title="NORWEGISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#structures" title="NORWEGISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="no-NO#vocabulary" title="NORWEGISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">NIEDERLÄNDISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#listening" title="NIEDERLÄNDISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#writing" title="NIEDERLÄNDISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#reading" title="NIEDERLÄNDISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#structures" title="NIEDERLÄNDISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="nl-NL#vocabulary" title="NIEDERLÄNDISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">IRISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#listening" title="IRISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#writing" title="IRISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#reading" title="IRISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#structures" title="IRISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="ga-IE#vocabulary" title="IRISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">SCHWEDISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#listening" title="SCHWEDISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#writing" title="SCHWEDISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#reading" title="SCHWEDISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#structures" title="SCHWEDISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="sv-SE#vocabulary" title="SCHWEDISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">ITALIENISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#listening" title="ITALIENISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#writing" title="ITALIENISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#reading" title="ITALIENISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#structures" title="ITALIENISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="it-IT#vocabulary" title="ITALIENISCH, Wortschatz" /></td>
+      </tr>
+      
+      <tr>
+        <td class="language-column">PORTUGIESISCH</td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#listening" title="PORTUGIESISCH, Hörverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#writing" title="PORTUGIESISCH, Schreiben" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#reading" title="PORTUGIESISCH, Leseverstehen" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#structures" title="PORTUGIESISCH, Grammatik" /></td>
+        <td class="language-skill-column"><input type="radio" name="tls" value="pt-PT#vocabulary" title="PORTUGIESISCH, Wortschatz" /></td>
+      </tr>
+      
+    </tbody>
+  </table>
+  <input type="hidden" name="platformCode" value="${platformCode}" />
+  <input type="hidden" name="contextId" value="${contextId}" />
+  <input type="hidden" name="userId" value="${user}" />
+  <input type="hidden" name="al" value="de-DE" />
+  <button>Select</button>
+</form>
