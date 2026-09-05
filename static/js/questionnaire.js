@@ -27,7 +27,7 @@ if (!dialang.flags.hideTLS) {
     });
 }
 
-$.get('/content/questionnaire/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/questionnaire/${dialang.session.al}.html`, function (data) {
     $('#content').html(data);
 
     $(document).ready(function () {

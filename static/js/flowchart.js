@@ -11,7 +11,7 @@ if (!dialang.flags.hideTLS) {
 
 $('#skipforward').prop('disabled', true);
 
-$.get('/content/flowchart/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/flowchart/${dialang.session.al}.html`, function (data) {
 
     $('#content').html(data);
     $('.flowchart-dialog').dialog({

@@ -21,7 +21,7 @@ if (!dialang.flags.skipQuestionnaire) {
 // aboutsa.js
 dialang.session.saFeedbackMode = false;
 
-$.get('/content/feedbackmenu/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/feedbackmenu/${dialang.session.al}.html`, function (data) {
 
     $('#content').html(data);
 

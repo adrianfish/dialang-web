@@ -7,7 +7,6 @@ fetch(url)
   throw new Error(`Failed to get al distribution data from ${url}: ${r.status}`);
 })
 .then(data => {
-  console.log(data);
 
   new Chart(
     document.getElementById("distribution"),

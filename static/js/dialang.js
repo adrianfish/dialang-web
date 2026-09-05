@@ -39,7 +39,7 @@ $('#save-button').click(function (e) {
     });
 });
 
-$.get('/content/iso_lang_mappings.json', function (mappings) {
+$.get(`/content/iso_lang_mappings.json`, function (mappings) {
     dialang.isoLangMappings = mappings;
 });
 
@@ -82,8 +82,6 @@ dialang.setupKeyboardButton = function () {
 
 dialang.skipVSPT = function () {
 
-    $.get('/skipvspt');
-
     $('#confirm-skip-dialog').dialog('destroy');
     if (!dialang.flags.hideSA) {
         if (dialang.session.skill === 'structures' || dialang.session.skill === 'vocabulary') {
@@ -117,16 +115,16 @@ dialang.launchMultiItemReviewDialog = function (basket, initialIndex, selectCall
     $.get('/templates/multiitemreview.mustache', function (template) {
 
         // Render the dialog markup
-        var output = Mustache.render(template, {'items': basket.items, 'yourAnswerTitle': yourAnswerTitle, 'correctAnswerTitle': correctAnswerTitle});
+        var output = Mustache.render(template, {'baseAssetsUrl': dialang.baseAssetsUrl, 'items': basket.items, 'yourAnswerTitle': yourAnswerTitle, 'correctAnswerTitle': correctAnswerTitle});
         $('#tp-review-dialog').html(output);
 
         // Set up the image for each item
         basket.items.forEach(function (item) {
 
             if (!item.correct) {
-                $('#reviewtab-' + item.id + ' > div > img').attr('src','/images/frowney.gif');
+                $('#reviewtab-' + item.id + ' > div > img').attr('src',`${dialang.baseAssetsUrl}/images/frowney.gif`);
             } else {
-                $('#reviewtab-' + item.id + ' > div > img').attr('src','/images/smiley.gif');
+                $('#reviewtab-' + item.id + ' > div > img').attr('src',`${dialang.baseAssetsUrl}/images/smiley.gif`);
             }
         });
 
@@ -199,10 +197,8 @@ dialang.switchState = function (state) {
     return false;
   }
 
-  console.log(dialang.session.al);
-
   if ('test' !== state) {
-    $.get('/content/' + state + '/' + dialang.session.al + '-toolbarTooltips.json', function (tips) {
+    $.get(`/content/${state}/${dialang.session.al}-toolbarTooltips.json`, function (tips) {
 
       dialang.currentToolbarTooltips = tips;
 

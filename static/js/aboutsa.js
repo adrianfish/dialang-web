@@ -12,17 +12,17 @@ dialang.setExplfbBackHandler = function () {
 };
 dialang.setExplfbBackHandler();
 
-$.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell) {
+$.get(`/content/aboutsa/${dialang.session.al}/index.html`, function (shell) {
 
     $('#content').html(shell);
-    $.get('/content/aboutsa/' + dialang.session.al + '/main.html', function (main) {
+    $.get(`/content/aboutsa/${dialang.session.al}/main.html`, function (main) {
         $('#explfb-content').html(main);
     });
 
     $('#howoften').click(function (e) {
 
         dialang.setExplfbBackHandler();
-        $.get('/content/aboutsa/' + dialang.session.al + '/howoften.html', function (howoften) {
+        $.get(`/content/aboutsa/${dialang.session.al}/howoften.html`, function (howoften) {
 
             $('#explfb-content').html(howoften);
             $('#infrequently').click(function (e) {
@@ -32,7 +32,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#howoften').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/infrequently.html', function (infrequently) {
+                $.get(`/content/aboutsa/${dialang.session.al}/infrequently.html`, function (infrequently) {
                     $('#explfb-content').html(infrequently);
                 });
                 return false;
@@ -44,7 +44,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#howoften').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/longtime.html', function (longtime) {
+                $.get(`/content/aboutsa/${dialang.session.al}/longtime.html`, function (longtime) {
                     $('#explfb-content').html(longtime);
                 });
                 return false;
@@ -56,7 +56,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
     $('#how').click(function (e) {
 
         dialang.setExplfbBackHandler();
-        $.get('/content/aboutsa/' + dialang.session.al + '/how.html', function (how) {
+        $.get(`/content/aboutsa/${dialang.session.al}/how.html`, function (how) {
 
             $('#explfb-content').html(how);
 
@@ -67,7 +67,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#how').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/overestimate.html', function (overestimate) {
+                $.get(`/content/aboutsa/${dialang.session.al}/overestimate.html`, function (overestimate) {
                     $('#explfb-content').html(overestimate);
                 });
                 return false;
@@ -80,7 +80,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#how').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/underestimate.html', function (underestimate) {
+                $.get(`/content/aboutsa/${dialang.session.al}/underestimate.html`, function (underestimate) {
                     $('#explfb-content').html(underestimate);
                 });
                 return false;
@@ -90,14 +90,14 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
 
     $('#situations').click(function (e) {
 
-        $.get('/content/aboutsa/' + dialang.session.al + '/situations.html', function (situations) {
+        $.get(`/content/aboutsa/${dialang.session.al}/situations.html`, function (situations) {
             $('#explfb-content').html(situations);
         });
         return false;
     });
 
     $('#otherlearners').click(function (e) {
-        $.get('/content/aboutsa/' + dialang.session.al + '/otherlearners.html', function (otherlearners) {
+        $.get(`/content/aboutsa/${dialang.session.al}/otherlearners.html`, function (otherlearners) {
             $('#explfb-content').html(otherlearners);
         });
         return false;
@@ -106,7 +106,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
     $('#othertests').click(function (e) {
 
         dialang.setExplfbBackHandler();
-        $.get('/content/aboutsa/' + dialang.session.al + '/othertests.html', function (othertests) {
+        $.get(`/content/aboutsa/${dialang.session.al}/othertests.html`, function (othertests) {
 
             $('#explfb-content').html(othertests);
             $('#differenttests').click(function (e) {
@@ -116,7 +116,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#othertests').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/differenttests.html', function (differenttests) {
+                $.get(`/content/aboutsa/${dialang.session.al}/differenttests.html`, function (differenttests) {
                     $('#explfb-content').html(differenttests);
                 });
                 return false;
@@ -128,7 +128,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#othertests').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/schooltests.html', function (schooltests) {
+                $.get(`/content/aboutsa/${dialang.session.al}/schooltests.html`, function (schooltests) {
                     $('#explfb-content').html(schooltests);
                 });
                 return false;
@@ -140,7 +140,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#othertests').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/worktests.html', function (worktests) {
+                $.get(`/content/aboutsa/${dialang.session.al}/worktests.html`, function (worktests) {
                     $('#explfb-content').html(worktests);
                 });
                 return false;
@@ -152,7 +152,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#othertests').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/internationaltests.html', function (internationaltests) {
+                $.get(`/content/aboutsa/${dialang.session.al}/internationaltests.html`, function (internationaltests) {
                     $('#explfb-content').html(internationaltests);
                 });
                 return false;
@@ -163,7 +163,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
 
     $('#yourtargets').click(function (e) {
 
-        $.get('/content/aboutsa/' + dialang.session.al + '/yourtargets.html', function (yourtargets) {
+        $.get(`/content/aboutsa/${dialang.session.al}/yourtargets.html`, function (yourtargets) {
             $('#explfb-content').html(yourtargets);
         });
         return false;
@@ -172,7 +172,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
     $('#reallife').click(function (e) {
 
         dialang.setExplfbBackHandler();
-        $.get('/content/aboutsa/' + dialang.session.al + '/reallife.html', function (reallife) {
+        $.get(`/content/aboutsa/${dialang.session.al}/reallife.html`, function (reallife) {
 
             $('#explfb-content').html(reallife);
             $('#anxiety').click(function (e) {
@@ -182,7 +182,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#reallife').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/anxiety.html', function (anxiety) {
+                $.get(`/content/aboutsa/${dialang.session.al}/anxiety.html`, function (anxiety) {
                     $('#explfb-content').html(anxiety);
                 });
                 return false;
@@ -194,7 +194,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#reallife').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/timeallowed.html', function (timeallowed) {
+                $.get(`/content/aboutsa/${dialang.session.al}/timeallowed.html`, function (timeallowed) {
                     $('#explfb-content').html(timeallowed);
                 });
                 return false;
@@ -206,7 +206,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#reallife').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/support.html', function (support) {
+                $.get(`/content/aboutsa/${dialang.session.al}/support.html`, function (support) {
                     $('#explfb-content').html(support);
                 });
                 return false;
@@ -218,7 +218,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#reallife').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/number.html', function (number) {
+                $.get(`/content/aboutsa/${dialang.session.al}/number.html`, function (number) {
                     $('#explfb-content').html(number);
                 });
                 return false;
@@ -230,7 +230,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#reallife').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/familiarity.html', function (familiarity) {
+                $.get(`/content/aboutsa/${dialang.session.al}/familiarity.html`, function (familiarity) {
                     $('#explfb-content').html(familiarity);
                 });
                 return false;
@@ -242,7 +242,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
                     $('#reallife').trigger('click');
                     return false;
                 });
-                $.get('/content/aboutsa/' + dialang.session.al + '/medium.html', function (medium) {
+                $.get(`/content/aboutsa/${dialang.session.al}/medium.html`, function (medium) {
                     $('#explfb-content').html(medium);
                 });
                 return false;
@@ -253,7 +253,7 @@ $.get('/content/aboutsa/' + dialang.session.al + '/index.html', function (shell)
 
     $('#otherreasons').click(function (e) {
 
-        $.get('/content/aboutsa/' + dialang.session.al + '/otherreasons.html', function (otherreasons) {
+        $.get(`/content/aboutsa/${dialang.session.al}/otherreasons.html`, function (otherreasons) {
             $('#explfb-content').html(otherreasons);
         });
         return false;

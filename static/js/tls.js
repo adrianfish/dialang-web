@@ -16,7 +16,7 @@ $('#back').prop('disabled', false).click(function (e) {
   return dialang.navigation.backRules.tls();
 });
 
-$.get('/content/tls/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/tls/${dialang.session.al}.html`, function (data) {
 
   $('#content').html(data);
 
@@ -107,7 +107,7 @@ $.get('/content/tls/' + dialang.session.al + '.html', function (data) {
         .off('click')
         .attr('href','')
         .children('img')
-        .attr('src','/images/done.gif');
+        .attr('src',`/images/done.gif`);
     });
   }
 });

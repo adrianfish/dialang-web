@@ -16,7 +16,7 @@ $('#progressbar').hide();
 
 $('.review-dialog').remove();
 
-$.get('/content/endoftest/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/endoftest/${dialang.session.al}.html`, function (data) {
     $('#content').html(data);
 });
 

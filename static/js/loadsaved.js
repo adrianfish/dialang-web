@@ -6,7 +6,7 @@ $('#next').prop('disabled', false).click(function (e) {
     dialang.navigation.nextRules.loadsaved();
 });
 
-$.get('/content/loadsaved/' + dialang.session.al + '.html', function (shell) {
+$.get(`/content/loadsaved/${dialang.session.al}.html`, function (shell) {
 
     $('#content').html(shell);
 
@@ -20,7 +20,7 @@ $.get('/content/loadsaved/' + dialang.session.al + '.html', function (shell) {
                 url: '/load?token=' + token,
                 success: function (data, textStatus, jqXHR) {
                     if (data.error) {
-                        console.log('error:' + data.error);
+                        console.error('error:' + data.error);
                     } else {
                         dialang.session.tl = data.tl;
                         dialang.session.skill = data.skill;
@@ -57,7 +57,6 @@ $.get('/content/loadsaved/' + dialang.session.al + '.html', function (shell) {
                             if (!data.saSubmitted && !data.saSkipped && !dialang.flags.hideSA) {
                                 dialang.switchState('saintro');
                             } else {
-                                //console.log('load could not determine saved state. Defaulting to tls ...');
                                 dialang.switchState('testintro');
                                 //dialang.switchState('tls');
                             }

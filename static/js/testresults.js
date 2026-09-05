@@ -10,7 +10,7 @@ dialang.launchTestLevelDialog = function (number) {
     $('#testlevel-dialog' + number).dialog('open');
 };
 
-$.get('/content/testresults/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.itemLevel + '.html', function (data) {
+$.get(`/content/testresults/${dialang.session.al}/${dialang.session.skill}/${dialang.session.itemLevel}.html`, function (data) {
 
     $('#content').html(data);
 

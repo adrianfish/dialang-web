@@ -1,6 +1,6 @@
 $('#help').prop('disabled', true);
 $('#save-button').prop('disabled', true);
-$.get('/content/instructormenu/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/instructormenu/${dialang.session.al}.html`, function (data) {
     $('#content').html(data);
     $(document).ready(function () {
 

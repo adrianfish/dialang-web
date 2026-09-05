@@ -3,7 +3,7 @@ $('#back').prop('disabled', false).click(function (e) {
     return dialang.navigation.backRules.userreport();
 });
 
-$.get('/content/userreport/' + dialang.session.al + '.html', function (data) {
+$.get(`/content/userreport/${dialang.session.al}.html`, function (data) {
 
     $('#content').html(data);
     $(document).ready(function () {

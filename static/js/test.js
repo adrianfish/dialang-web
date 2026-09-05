@@ -65,7 +65,7 @@ if (!dialang.session.reviewMode) {
     }
 
     if (!dialang.nextBasketTooltip || !dialang.quitTestTooltip || !dialang.instantFeedbackOnTooltip || !dialang.instantFeedbackOffTooltip) {
-        $.get('/content/baskets/' + dialang.session.al + '-toolbarTooltips.json', function (tips) {
+        $.get(`/content/baskets/${dialang.session.al}-toolbarTooltips.json`, function (tips) {
 
             dialang.nextBasketTooltip = tips.next;
             dialang.quitTestTooltip = tips.skipforward;
@@ -76,9 +76,9 @@ if (!dialang.session.reviewMode) {
 
             if (!dialang.flags.disallowInstantFeedback) {
                 if (dialang.session.instantFeedbackOn) {
-                    $('#instantfeedback').show().attr('title', dialang.instantFeedbackOffTooltip).find('img').attr('src', '/images/instantFeedbackOn.gif');
+                    $('#instantfeedback').show().attr('title', dialang.instantFeedbackOffTooltip).find('img').attr('src', `${dialang.baseAssetsUrl}/images/instantFeedbackOn.gif`);
                 } else {
-                    $('#instantfeedback').show().attr('title', dialang.instantFeedbackOnTooltip).find('img').attr('src', '/images/instantFeedbackOff.gif');
+                    $('#instantfeedback').show().attr('title', dialang.instantFeedbackOnTooltip).find('img').attr('src', `${dialang.baseAssetsUrl}/images/instantFeedbackOff.gif`);
                 }
             }
         });
@@ -89,12 +89,12 @@ if (!dialang.session.reviewMode) {
         if (dialang.session.instantFeedbackOn) {
             dialang.session.instantFeedbackOn = false;
             $(this).attr('title', dialang.instantFeedbackOnTooltip)
-                .find('img').attr('src', "/images/instantFeedbackOff.gif");
+                .find('img').attr('src', `${dialang.baseAssetsUrl}/images/instantFeedbackOff.gif`);
         } else {
             dialang.session.instantFeedbackOn = true;
             dialang.initialiseReviewDialog(true);
             $(this).attr('title', dialang.instantFeedbackOffTooltip)
-                .find('img').attr('src', "/images/instantFeedbackOn.gif");
+                .find('img').attr('src', `${dialang.baseAssetsUrl}/images/instantFeedbackOn.gif`);
         }
         return false;
     });
@@ -111,7 +111,7 @@ if (!dialang.session.reviewMode) {
         $('#progressbar').progressbar('option', 'value', parseInt(dialang.session.items?.length || 0, 10));
     }
 
-    $.get('/content/baskets/' + dialang.session.al + "/" + dialang.session.currentBasketId + '.html', function (data) {
+    $.get(`/content/baskets/${dialang.session.al}/${dialang.session.currentBasketId}.html`, function (data) {
 
         $('#content').html(data);
 
@@ -198,9 +198,9 @@ if (!dialang.session.reviewMode) {
                             $('#mcq-review-dialog').dialog('open');
                             $('.ui-dialog-titlebar-close span').removeClass('ui-icon-closethick').addClass('ui-icon-nextButton');
                             if (!mcqItem.correct) {
-                                $('.review-smiley > img').attr('src','/images/frowney.gif');
+                                $('.review-smiley > img').attr('src',`${dialang.baseAssetsUrl}/images/frowney.gif`);
                             } else {
-                                $('.review-smiley > img').attr('src','/images/smiley.gif');
+                                $('.review-smiley > img').attr('src',`${dialang.baseAssetsUrl}/images/smiley.gif`);
                             }
                             $('.review-given-answer p').html(mcqItem.responseText);
                             mcqItem.answers.forEach(function (answer) {
@@ -273,7 +273,7 @@ if (!dialang.session.reviewMode) {
 
     var positionInBasket = dialang.session.reviewItemPosition;
 
-    $.get('/content/baskets/' + dialang.session.al + "/" + reviewBasket.id + '.html', function (data) {
+    $.get(`/content/baskets/${dialang.session.al}/${reviewBasket.id}.html`, function (data) {
 
         $('#content').html(data);
 
@@ -287,9 +287,9 @@ if (!dialang.session.reviewMode) {
             var item = reviewBasket.items[0];
             $('#mcq-review-dialog').dialog('open');
             if (!item.correct) {
-                $('.review-smiley > img').attr('src', '/images/frowney.gif');
+                $('.review-smiley > img').attr('src', `${dialang.baseAssetsUrl}/images/frowney.gif`);
             } else {
-                $('.review-smiley > img').attr('src', '/images/smiley.gif');
+                $('.review-smiley > img').attr('src', `${dialang.baseAssetsUrl}/images/smiley.gif`);
             }
             $('.review-given-answer p').html(item.responseText);
 

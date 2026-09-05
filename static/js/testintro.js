@@ -39,11 +39,11 @@ $.get(`/content/testintro/${dialang.session.al}.html`, function (data) {
       if (dialang.session.instantFeedbackOn) {
         dialang.session.instantFeedbackOn = false;
         $(this).attr('title', dialang.currentToolbarTooltips.instantfeedbackontooltip)
-          .find('img').attr('src',"/images/instantFeedbackOff.gif");
+          .find('img').attr('src',`${dialang.baseAssetsUrl}/images/instantFeedbackOff.gif`);
       } else {
         dialang.session.instantFeedbackOn = true;
         $(this).attr('title', dialang.currentToolbarTooltips.instantfeedbackofftooltip)
-          .find('img').attr('src',"/images/instantFeedbackOn.gif");
+          .find('img').attr('src',`${dialang.baseAssetsUrl}/images/instantFeedbackOn.gif`);
       }
       return false;
     });

@@ -4,7 +4,7 @@
 
     dialang.utils.setupKeyboard = function () {
 
-        $.get('/content/keyboards/' + dialang.session.tl + '.html', function (data) {
+        $.get(`/content/keyboards/${dialang.session.tl}.html`, function (data) {
 
             $('#keyboard').html(data);
 

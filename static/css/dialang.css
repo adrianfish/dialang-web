@@ -234,19 +234,19 @@ button[disabled] {
 }
 
 .ui-icon-closethick {
-    background-image: url(/images/cross.png) !important;
+    background-image: url(https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/cross.png) !important;
     background-position: left top !important;
     margin: 0 !important;
 }
 
 .ui-icon-prevButton {
-    background-image: url(/images/prev.gif) !important;
+    background-image: url(https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/prev.gif) !important;
     background-position: left top !important;
     margin: 0 !important;
 }
 
 .ui-icon-nextButton {
-    background-image: url(/images/next.gif) !important;
+    background-image: url(https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/next.gif) !important;
     background-position: left top !important;
     margin: 0 !important;
 }

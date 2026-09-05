@@ -5,7 +5,7 @@ $('#back').prop('disabled', false).click(function (e) {
 });
 
 
-$.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
+$.get(`/content/advfb/${dialang.session.al}/index.html`, function(shell) {
 
     $('#content').html(shell);
 
@@ -29,12 +29,12 @@ $.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
         $('#advfb-buttonbar > button').removeClass('selected');
         $(this).addClass('selected');
         if (dialang.session.adviceMode) {
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.tl + '/A1.html', function(advice) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/${dialang.session.tl}/A1.html`, function(advice) {
                 $('#advfb-content').html(advice);
             });
         } else {
             $('#advfb-next-level-button').html('A1 > A2');
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/A1.html', function(description) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/A1.html`, function(description) {
                 $('#advfb-content').html(description);
             });
         }
@@ -47,12 +47,12 @@ $.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
         $('#advfb-buttonbar > button').removeClass('selected');
         $(this).addClass('selected');
         if (dialang.session.adviceMode) {
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.tl + '/A2.html', function(advice) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/${dialang.session.tl}/A2.html`, function(advice) {
                 $('#advfb-content').html(advice);
             });
         } else {
             $('#advfb-next-level-button').html('A2 > B1');
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/A2.html', function(description) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/A2.html`, function(description) {
                 $('#advfb-content').html(description);
             });
         }
@@ -65,12 +65,12 @@ $.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
         $('#advfb-buttonbar > button').removeClass('selected');
         $(this).addClass('selected');
         if (dialang.session.adviceMode) {
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.tl + '/B1.html', function(advice) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/${dialang.session.tl}/B1.html`, function(advice) {
                 $('#advfb-content').html(advice);
             });
         } else {
             $('#advfb-next-level-button').html('B1 > B2');
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/B1.html', function(description) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/B1.html`, function(description) {
                 $('#advfb-content').html(description);
             });
         }
@@ -83,12 +83,12 @@ $.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
         $('#advfb-buttonbar > button').removeClass('selected');
         $(this).addClass('selected');
         if (dialang.session.adviceMode) {
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.tl + '/B2.html', function(advice) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/${dialang.session.tl}/B2.html`, function(advice) {
                 $('#advfb-content').html(advice);
             });
         } else {
             $('#advfb-next-level-button').html('B2 > C1');
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/B2.html', function(description) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/B2.html`, function(description) {
                 $('#advfb-content').html(description);
             });
         }
@@ -101,12 +101,12 @@ $.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
         $('#advfb-buttonbar > button').removeClass('selected');
         $(this).addClass('selected');
         if (dialang.session.adviceMode) {
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.tl + '/C1.html', function(advice) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/${dialang.session.tl}/C1.html`, function(advice) {
                 $('#advfb-content').html(advice);
             });
         } else {
             $('#advfb-next-level-button').html('C1 > C2');
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/C1.html', function(description) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/C1.html`, function(description) {
                 $('#advfb-content').html(description);
             });
         }
@@ -119,12 +119,12 @@ $.get('/content/advfb/' + dialang.session.al + '/index.html', function(shell) {
         $('#advfb-buttonbar > button').removeClass('selected');
         $(this).addClass('selected');
         if (dialang.session.adviceMode) {
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/' + dialang.session.tl + '/C1.html', function(advice) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/${dialang.session.tl}/C1.html`, function(advice) {
                 $('#advfb-content').html(advice);
             });
         } else {
             $('#advfb-next-level-button').html('C1 > C2');
-            $.get('/content/advfb/' + dialang.session.al + '/' + dialang.session.skill + '/C2.html', function(description) {
+            $.get(`/content/advfb/${dialang.session.al}/${dialang.session.skill}/C2.html`, function(description) {
                 $('#advfb-content').html(description);
             });
         }
