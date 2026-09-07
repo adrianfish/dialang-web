@@ -31,6 +31,6 @@ jobs:
 
       - run: deno ci
 
-      - run: deno check -A
-      - run: deno lint -A
-      - run: deno test -A
+      - run: deno check -I
+      - run: deno lint
+      - run: deno test
