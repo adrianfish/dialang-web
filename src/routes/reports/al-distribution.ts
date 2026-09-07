@@ -8,6 +8,7 @@ export async function alDistribution(
   c: Context,
   storage: Storage,
 ): Promise<Response> {
+
   if (!loggedIntoReports(c)) return c.redirect("/reportslogin");
   const results: Array<TestSession> = await storage.getTestResults();
   const counts: Record<string, number> = {};

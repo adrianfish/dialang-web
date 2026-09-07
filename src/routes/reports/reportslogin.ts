@@ -5,21 +5,16 @@ import { timingSafeEqual } from "@std/crypto/timing-safe-equal";
 
 import type { Context } from "@hono";
 
-export async function reportsLogin(c: Context): Promise<Response> {
+export async function reportsLogin(c: Context, secret: string): Promise<Response> {
 
   if (c.req.method === "GET") {
     return c.html(login());
   } else {
-    const dataSecret = Deno.env.get("DATA_SECRET");
-    if (!dataSecret) {
-      c.status(500);
-      return c.html("<html><h1>ERROR</h1></html>");
-    }
 
     const body = await c.req.parseBody();
 
     const hash: string = body.password as string;
-    const testHash: string = await createHash(dataSecret);
+    const testHash: string = await createHash(secret);
     const a = new TextEncoder().encode(hash)
     const b = new TextEncoder().encode(testHash)
     const match = a.length === b.length && timingSafeEqual(a, b)
