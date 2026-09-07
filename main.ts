@@ -61,7 +61,6 @@ app.get("/api/session", (c) => getSession(c, storage));
 app.get("/api/reports/al-distribution", (c) => alDistribution(c, storage));
 app.get("/api/reports/tl-distribution", (c) => tlDistribution(c, storage));
 app.post("/api/reports/sessions", (c) => sessions(c, storage));
-app.post("/api/loaddata", (c) => loadData(c));
 app.post("/api/submitquestionnaire", (c) => submitQuestionnaire(c, storage));
 app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, ltiSecret));
 app.get("/reports/:report?", (c) => reports(c));

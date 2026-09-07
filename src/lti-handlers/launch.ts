@@ -2,7 +2,7 @@ import { getConnInfo } from '@hono/deno'
 import { setSessionId } from "../utils/utils.ts";
 
 import type { Context } from "@hono";
-import type { LTIContext, LTIToken, StoredContextToken } from "@adrianfish/lti-kit";
+import type { LTIContext, LTIToken } from "@adrianfish/lti-kit";
 import type { DialangSession } from "../types.ts";
 import type { Storage } from "../storage/storage.ts";
 
