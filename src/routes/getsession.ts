@@ -1,5 +1,5 @@
 import { getSessionId } from "../utils/utils.ts";
-import type { Context } from "@hono";
+import type { Contex } from "@hono";
 import { Storage } from "../storage/storage.ts";
 
 export async function getSession(
