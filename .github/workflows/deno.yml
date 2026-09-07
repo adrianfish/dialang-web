@@ -34,3 +34,15 @@ jobs:
       - run: deno check -I
       - run: deno lint
       - run: deno test
+  deploy:
+    needs: test   # won't run if test job fails
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v5
+      - uses: denoland/deployctl@v1
+        with:
+          project: dialang
+          entrypoint: main.ts
