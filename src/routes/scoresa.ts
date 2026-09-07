@@ -29,7 +29,7 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
 
   const responses: Record<string, boolean> = Object.fromEntries(
       Object.entries(body)
-        .filter(([k, v]) => k.startsWith("statement:"))
+        .filter(([k, _]) => k.startsWith("statement:"))
         .map(([k, v]) => [ k.split(":")[1], v === "yes"])
     );
 

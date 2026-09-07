@@ -2,7 +2,7 @@ import { Context } from "@hono/hono";
 import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
 import { LTIKit, Score } from "@adrianfish/lti-kit";
-import type { DialangSession, ScoredBasket, ScoredItem, TES } from "../types.ts";
+import type { DialangSession, ItemResult, ItemScore, ScoredBasket, ScoredItem } from "../types.ts";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
 
 export async function submitBasket(
@@ -51,9 +51,9 @@ export async function submitBasket(
   console.debug(`currentBasketNumber: ${session.currentBasketNumber}`);
   console.debug(`scored item list length: ${numScoredItems}`);
 
-  const returnMap: Record<string, any> = {};
+  const returnMap: Record<string, string | number | ScoredBasket> = {};
 
-  const itemList = session.scoredItems || [];
+  const itemList: Array<ScoredItem> = session.scoredItems || [];
 
   switch (basketType) {
     case "mcq": {
@@ -70,12 +70,9 @@ export async function submitBasket(
         return c.html("");
       }
 
-      const [ scoredItem, err ] = await getScoredIdResponseItem(itemId, answerId, storage);
-      if (err) {
-        console.error(`Failed to get scored item for itemId ${itemId} and responseId ${answerId}`);
-        c.status(500);
-        return c.html("");
-      } else {
+      const itemResult: ItemResult = await getScoredIdResponseItem(itemId, answerId, storage);
+      if (itemResult.item) {
+        const scoredItem: ScoredItem = itemResult.item;
         scoredItem.basketId = session.currentBasketId;
         scoredItem.positionInBasket = 1;
         scoredItem.responseId = answerId;
@@ -86,6 +83,10 @@ export async function submitBasket(
         const scoredBasket: ScoredBasket = { id: currentBasketId, type: "mcq", skill: scoredItem.skill, items: [scoredItem] };
         returnMap["scoredBasket"] = scoredBasket
         //datacapture.LogSingleIdResponse(session.passId, scoredItem)
+      } else {
+        console.error(`Failed to get scored item for itemId ${itemId} and responseId ${answerId}`);
+        c.status(500);
+        return c.html("");
       }
       break;
     }
@@ -97,25 +98,30 @@ export async function submitBasket(
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, answerId ] = entries[i];
-        const [ item, error ] = await getScoredIdResponseItem(parseInt(itemId), answerId, storage);
-        item.responseId = answerId;
-        const position: string = body[item.id + "-position"] as string;
-        if (position) {
-          item.positionInBasket = parseInt(position);
-        } else {
-          console.warn(`No position supplied for item ${item.id}. Returning 400 (Bad Request) ...`);
-          c.status(400);
-          return c.html("");
-        }
+        const itemResult: ItemResult = await getScoredIdResponseItem(parseInt(itemId), answerId, storage);
+        if (itemResult.item) {
+          const item: ScoredItem = itemResult.item;
+          item.responseId = answerId;
+          const position: string = body[item.id + "-position"] as string;
+          if (position) {
+            item.positionInBasket = parseInt(position);
+          } else {
+            console.warn(`No position supplied for item ${item.id}. Returning 400 (Bad Request) ...`);
+            c.status(400);
+            return c.html("");
+          }
 
-        item.BasketId = currentBasketId;
-        item.positionInTest = numScoredItems + item.positionInBasket;
-        console.debug(`Item position in basket: ${item.positionInBasket}`);
-        console.debug(`Item position in test: ${item.PositionInTest}`);
-        item.answers = await storage.getItemAnswers(item.id);
-        itemsToLog.push(item);
-        itemList.push(item);
-        basketItems.push(item);
+          item.basketId = currentBasketId;
+          item.positionInTest = numScoredItems + item.positionInBasket;
+          console.debug(`Item position in basket: ${item.positionInBasket}`);
+          console.debug(`Item position in test: ${item.positionInTest}`);
+          item.answers = await storage.getItemAnswers(item.id);
+          itemsToLog.push(item);
+          itemList.push(item);
+          basketItems.push(item);
+        } else {
+          console.error(itemResult.error);
+        }
       }
       basketItems.sort(positionInBasketSorter);
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "tabbedpane", skill: basketItems[0].skill, items: basketItems };
@@ -131,8 +137,11 @@ export async function submitBasket(
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseText ] = entries[i];
-        const [ item, error ] = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
-        if (item) {
+        //type balls = {[ ScoredItem | null, string | null];
+        //const [ item, error, ...rest ]: [ item?: ScoredItem | null, error?: string | null, ...rest: Array<any> ] = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
+        const itemResult: ItemResult = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
+        if (itemResult.item) {
+          const item: ScoredItem = itemResult.item;
           item.basketId = currentBasketId;
           item.responseText = responseText;
           const position: string = body[item.id + "-position"] as string;
@@ -150,7 +159,7 @@ export async function submitBasket(
           itemsToLog.push(item);
           basketItems.push(item);
         } else {
-          console.error("No item returned from scoring");
+          console.error(itemResult.error);
         }
       }
       basketItems.sort(positionInBasketSorter);
@@ -169,8 +178,9 @@ export async function submitBasket(
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseText ] = entries[i];
 
-        const [ item, error ] = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
-        if (item) {
+        const itemResult: ItemResult = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
+        if (itemResult.item) {
+          const item: ScoredItem = itemResult.item;
           item.basketId = currentBasketId;
           item.responseText = responseText;
           const position: string = body[item.id + "-position"] as string;
@@ -183,12 +193,12 @@ export async function submitBasket(
           }
           item.positionInTest = numScoredItems + item.positionInBasket;
           console.debug(`Item position in test: ${item.positionInTest}`);
-          item.answers = await storage.getItemAnswers(item.id);
+          item.answers = await storage.getItemAnswers(itemResult.item.id);
           itemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
         } else {
-          console.error("No item returned from scoring");
+          console.error(itemResult.error);
         }
       }
       basketItems.sort(positionInBasketSorter);
@@ -206,9 +216,10 @@ export async function submitBasket(
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseId ] = entries[i];
-        const [ item, error ] = await getScoredIdResponseItem(parseInt(itemId), responseId, storage);
+        const itemResult: ItemResult = await getScoredIdResponseItem(parseInt(itemId), responseId, storage);
 
-        if (item) {
+        if (itemResult.item) {
+          const item: ScoredItem = itemResult.item;
           item.basketId = currentBasketId;
           item.responseId = responseId;
 
@@ -227,7 +238,7 @@ export async function submitBasket(
           itemsToLog.push(item);
           basketItems.push(item);
         } else {
-          console.error("No item returned from scoring");
+          console.error(itemResult.error);
         }
       }
 
@@ -245,7 +256,7 @@ export async function submitBasket(
     }
   }
 
-  session.scoredItems = sparsifyItems(itemList);
+  session.itemScores = sparsifyItems(itemList);
 
   const nextBasketNumber = session.currentBasketNumber + 1;
   console.debug(`nextBasketNumber: ${nextBasketNumber}`);
@@ -271,7 +282,7 @@ export async function submitBasket(
       if (ltik && userId) {
         const score: Score = {
           userId,
-          scoreGiven: rawScore,
+          scoreGiven: rawScore as number,
           scoreMaximum: 1000,
           activityProgress: "Completed",
           gradingProgress: "NotReady",
@@ -283,9 +294,9 @@ export async function submitBasket(
       }
     }
 
-    session.itemRawScore = rawScore;
-    session.itemGrade = itemGrade;
-    session.itemLevel = itemLevel;
+    session.itemRawScore = rawScore as number;
+    session.itemGrade = itemGrade as number;
+    session.itemLevel = itemLevel as string;
 
     storage.saveSession(sessionId, session);
 
@@ -362,6 +373,6 @@ function getMultipleTextualResponses(body: object): Record<number, string> {
   return responses;
 }
 
-function sparsifyItems(items: Array<ScoredItem>): Array<any> {
+function sparsifyItems(items: Array<ScoredItem>): Array<ItemScore> {
   return items.map(item => ({ id: item.id, score: item.score }));
 }

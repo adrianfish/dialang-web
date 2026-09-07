@@ -12,7 +12,7 @@ export async function scoreVspt(
 
   const responses = Object.fromEntries(
     Object.entries(body)
-    .filter(([k, v]) => k.startsWith("word:"))
+    .filter(([k, _]) => k.startsWith("word:"))
     .map(([k, v]) => [ k.split(":")[1], v === "valid"])
   );
 

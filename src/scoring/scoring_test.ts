@@ -1,5 +1,5 @@
 import { expect } from "@std/expect";
-import { stub } from "jsr:@std/testing/mock";
+import { stub } from "@std/testing/mock";
 import { CEFR_LEVELS, getItemGrade }  from "./scoring.ts";
 import type { ScoredItem }  from "../types.ts";
 import type { Storage }  from "../storage/storage.ts";
@@ -15,7 +15,7 @@ Deno.test("getItemGrade returns defaults when no grade bands present", async () 
 
   // Test the error condition
   stub(storage, "getItemGrade", () => Promise.resolve(null));
-  const [ rawScore, grade, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
+  const [ grade, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
   expect(grade).toEqual(0);
   expect(level).toEqual(CEFR_LEVELS[1]);
 });

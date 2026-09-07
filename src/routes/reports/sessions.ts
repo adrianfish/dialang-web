@@ -26,5 +26,4 @@ export async function sessions(
     const toMillis = new Date(to).getTime();
     return c.json({ label: `Sessions between ${from} and ${to}`, sessions: results.filter(s => s.started >= fromMillis && s.started <= toMillis) });
   }
-  return c.json({});
 }

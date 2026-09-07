@@ -4,8 +4,8 @@ import type {
   Item,
   PreestAssignment,
   PreestWeight,
+  Questionnaire,
   SAGrade,
-  SAWeight,
   TES,
   TestSession,
   VSPBand,
@@ -21,15 +21,9 @@ export class KVStorage implements Storage {
     this.#kv = kv;
   }
   
-  static async open(path?: string): Promise<Storage> {
+  static async open(): Promise<Storage> {
     return new KVStorage(await Deno.openKv());
   }
-
-  /*
-  getKv(): Deno.Kv {
-    return this.#kv;
-  }
-  */
 
   async saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
     session.lastModified = Date.now();
@@ -100,7 +94,7 @@ export class KVStorage implements Storage {
 
   async getItemGrade(key: string, rawScore: number): Promise<Record<string, string | number> | null> {
     console.debug(`Retrieving item grade for key ${key} and raw score ${rawScore} ...`);
-    return (await this.#kv.get<Record<string, any>>([ "data", "item-grades", key, rawScore ])).value;
+    return (await this.#kv.get<Record<string, string | number>>([ "data", "item-grades", key, rawScore ])).value;
   }
 
   async getLanguageName(al: string, tl: string): Promise<string | null> {
@@ -136,7 +130,7 @@ export class KVStorage implements Storage {
     return data;
   }
 
-  async logTestStart(session: DialangSession): Promise<boolean> {
+  logTestStart(session: DialangSession): Promise<boolean> {
 
     const data: TestSession = {
       sessionId: session.id,
@@ -195,7 +189,7 @@ export class KVStorage implements Storage {
     return this.setTestSession(testSession);
   }
 
-  async storeQuestionnaire(sessionId: string, body: any): Promise<boolean> {
+  async storeQuestionnaire(sessionId: string, body: Questionnaire): Promise<boolean> {
 
     const testSession: TestSession | null = await this.getTestSession(sessionId);
 
@@ -204,12 +198,12 @@ export class KVStorage implements Storage {
       return false;
     }
 
-    testSession.questionnaire = {
+    const questionnaire = {
       ...body, 
       gender: body.gender === "-1" ? "n/a" : body.gender === "other" ? body.othergender : body.gender,
     };
 
-    return this.setTestSession(testSession);
+    return (await this.#kv.set([ "datacapture", "questionnaires", testSession.sessionId ], questionnaire)).ok;
   }
 
   async getTestSession(id: string): Promise<TestSession | null> {

@@ -1,4 +1,7 @@
 {
+  "lint": {
+    "include": ["src/"]
+  },
   "tasks": {
     "seed": "deno run -A --unstable-kv --env-file seed/seed.ts",
     "start": "deno run --env-file --unstable-kv -R -N -E --watch main.ts"
@@ -15,6 +18,7 @@
     "@std/crypto": "jsr:@std/crypto@^1.1.0",
     "@std/csv": "jsr:@std/csv@^1.0.6",
     "@std/expect": "jsr:@std/expect@^1.0.18",
-    "@std/uuid": "jsr:@std/uuid@^1.1.0"
+    "@std/uuid": "jsr:@std/uuid@^1.1.0",
+    "@std/testing/mock": "jsr:@std/testing/mock"
   }
 }

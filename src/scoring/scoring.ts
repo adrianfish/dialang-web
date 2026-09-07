@@ -1,5 +1,5 @@
 import { Storage } from "../storage/storage.ts";
-import type { Answer, Item, ScoredItem } from "../types.ts";
+import type { Answer, Item, ItemResult, ItemScore, ScoredItem } from "../types.ts";
 
 export const CEFR_LEVELS: Record<number, string> = { 1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2" };
 
@@ -34,16 +34,16 @@ export async function getSaPPEAndLevel(skill: string, responses: Record<string, 
 /**
  * Used for mcq and gap drop
  */
-export async function getScoredIdResponseItem(itemId: number, responseId: number, storage: Storage): Promise<Array<any>> {
+export async function getScoredIdResponseItem(itemId: number, responseId: number, storage: Storage): Promise<ItemResult> {
 
 	const item: Item | null = await storage.getItem(itemId);
 	if (!item) {
-		return [ null, `Failed to get item for itemId: ${itemId}` ];
+		return { error: `Failed to get item for itemId: ${itemId}` };
 	}
 
 	const answer: Answer | null = await storage.getAnswer(responseId)
 	if (!answer) {
-		return [ null, `Failed to get answer for responseId: ${responseId}` ];
+		return { error: `Failed to get answer for responseId: ${responseId}` };
 	}
 
 	const scoredItem: ScoredItem = { ...item, positionInBasket: 0, responseId, score: 0, correct: false };
@@ -56,14 +56,15 @@ export async function getScoredIdResponseItem(itemId: number, responseId: number
 		scoredItem.correct = false
 	}
 
-	return [ scoredItem, null ];
+	return { item: scoredItem };
 }
 
-export async function getScoredTextResponseItem(itemId: number, answerText: string, storage: Storage): Promise<Array<any>> {
+//export async function getScoredTextResponseItem(itemId: number, answerText: string, storage: Storage): Promise<Array<ScoredItem | string | null>> {
+export async function getScoredTextResponseItem(itemId: number, answerText: string, storage: Storage): Promise<ItemResult> {
 
 	const item: Item | null = await storage.getItem(itemId)
 	if (!item) {
-		return [ null, `Failed to get item for itemId: ${itemId}` ];
+		return { error: `Failed to get item for itemId: ${itemId}` };
 	}
 
 	const scoredItem: ScoredItem = { ...item, positionInBasket: 0, responseText: answerText, score: 0, correct: false };
@@ -71,7 +72,7 @@ export async function getScoredTextResponseItem(itemId: number, answerText: stri
 	const answers: Array<Answer> | null = await storage.getItemAnswers(itemId);
 
   if (!answers) {
-		return [ null, `Failed to get answers for itemId: ${itemId}` ];
+		return { error: `Failed to get answers for itemId: ${itemId}` };
   }
 
   scoredItem.answers = answers;
@@ -85,10 +86,10 @@ export async function getScoredTextResponseItem(itemId: number, answerText: stri
 			break;
 		}
 	}
-	return [ scoredItem, null ];
+	return { item: scoredItem };
 }
 
-export async function getItemGrade(tl: string, skill: string, bookletId: number, scoredItems: Array<ScoredItem>, storage: Storage): Promise<Array<any>> {
+export async function getItemGrade(tl: string, skill: string, bookletId: number, scoredItems: Array<ItemScore>, storage: Storage): Promise<Array<number | string>> {
 
 	const rawScore: number = scoredItems.reduce((acc, curr) => acc + curr.score, 0);
 

@@ -5,7 +5,7 @@ import type {
   PreestAssignment,
   PreestWeight,
   SAGrade,
-  SAWeight,
+  TestSession,
   TES,
   VSPBand,
   VSPWord } from "../types.ts";
@@ -44,11 +44,11 @@ export interface Storage {
 
   getItemAnswers(itemId: number): Promise<Array<Answer> | null>;
 
-  getItemGrade(key: string, rawScore: number): Promise<Record<string, any> | null>;
+  getItemGrade(key: string, rawScore: number): Promise<Record<string, string | number> | null>;
 
   getPunctuationList(): Promise<Array<string> | null>;
 
-  getTestResults(): Promise<any>;
+  getTestResults(): Promise<Array<TestSession>>;
 
   logTestStart(session: DialangSession): Promise<boolean>;
 
@@ -58,7 +58,7 @@ export interface Storage {
 
   logTestResult(session: DialangSession): Promise<boolean>;
 
-  storeQuestionnaire(sessionId: string, body: any): Promise<boolean>;
+  storeQuestionnaire(sessionId: string, body: object): Promise<boolean>;
 
   getLanguageName(al: string, skill: string): Promise<string | null>;
 

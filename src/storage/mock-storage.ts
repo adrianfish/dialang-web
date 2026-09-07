@@ -1,110 +1,110 @@
-import type { Answer, DialangSession, Item, PreestAssignment, PreestWeight, SAGrade, SAWeight, TES, VSPBand, VSPWord } from "../types.ts";
+import type { Answer, DialangSession, Item, PreestAssignment, PreestWeight, SAGrade, TestSession, TES, VSPBand, VSPWord } from "../types.ts";
 
 import type { Storage } from "./storage.ts";
 
 export class MockStorage implements Storage {
 
-  async saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
+  saveSession(_sessionId: string, _session: DialangSession): Promise<boolean> {
     return false;
   }
 
-  async getSession(sessionId: string): Promise<DialangSession | null> {
+  getSession(_sessionId: string): Promise<DialangSession | null> {
     return null;
   }
 
-  async deleteSession(sessionId: string): Promise<void> {
+  deleteSession(_sessionId: string): Promise<void> {
     return;
   }
 
-  async getTES(sessionId: string): Promise<TES | null> {
+  getTES(_sessionId: string): Promise<TES | null> {
     return null;
   }
 
-  async saveTES(sessionId: string, tes: TES): Promise<boolean> {
+  saveTES(_sessionId: string, _tes: TES): Promise<boolean> {
     return false;
   }
 
-  async getVSPWords(tl: string): Promise<Array<VSPWord> | null> {
+  getVSPWords(_tl: string): Promise<Array<VSPWord> | null> {
     return null;
   }
 
-  async getVSPBands(tl: string): Promise<Array<VSPBand> | null> {
+  getVSPBands(_tl: string): Promise<Array<VSPBand> | null> {
     return null;
   }
 
-  async getSAGrade(skill: string, rsc: number): Promise<SAGrade | null> {
+  getSAGrade(_skill: string, _rsc: number): Promise<SAGrade | null> {
     return null;
   }
 
-  async getSAWeights(skill: string): Promise<Record<string, number> | null> {
+  getSAWeights(_skill: string): Promise<Record<string, number> | null> {
     return null;
   }
 
-  async getPreestWeight(key: string): Promise<PreestWeight | null> {
+  getPreestWeight(_key: string): Promise<PreestWeight | null> {
     return null;
   }
 
-  async getPreestAssignments(key: string): Promise<Array<PreestAssignment> | null> {
+  getPreestAssignments(_key: string): Promise<Array<PreestAssignment> | null> {
     return null;
   }
 
-  async getBookletLength(bookletId: number): Promise<number | null> {
+  getBookletLength(_bookletId: number): Promise<number | null> {
     return null;
   }
 
-  async getBaskets(bookletId: number): Promise<Array<number> | null> {
+  getBaskets(_bookletId: number): Promise<Array<number> | null> {
     return null;
   }
 
-  async getItem(id: number): Promise<Item | null> {
+  getItem(_id: number): Promise<Item | null> {
     return null;
   }
 
-  async getAnswer(id: number): Promise<Answer | null> {
+  getAnswer(_id: number): Promise<Answer | null> {
     return null;
   }
 
-  async getItemAnswers(itemId: number): Promise<Array<Answer> | null> {
+  getItemAnswers(_itemId: number): Promise<Array<Answer> | null> {
     return null
   }
 
-  async getItemGrade(key: string, rawScore: number): Promise<Record<string, any>> {
+  getItemGrade(_key: string, _rawScore: number): Promise<Record<string, string | number> | null> {
     return {};
   }
 
-  async getPunctuationList(): Promise<Array<string> | null> {
+  getPunctuationList(): Promise<Array<string> | null> {
     return [];
   }
 
-  async getTestResults(): Promise<any> {
-    return {};
+  getTestResults(): Promise<Array<TestSession>> {
+    return [];
   }
 
-  async logTestStart(session: DialangSession): Promise<boolean> {
+  logTestStart(_session: DialangSession): Promise<boolean> {
     return false;
   }
 
-  async logVsptScores(session: DialangSession): Promise<boolean> {
+  logVsptScores(_session: DialangSession): Promise<boolean> {
     return false;
   }
 
-  async logSaScores(session: DialangSession): Promise<boolean> {
+  logSaScores(_session: DialangSession): Promise<boolean> {
     return false;
   }
 
-  async logTestResult(session: DialangSession): Promise<boolean> {
+  logTestResult(_session: DialangSession): Promise<boolean> {
     return false;
   }
 
-  async storeQuestionnaire(sessionId: string, body: any): Promise<boolean> {
+  storeQuestionnaire(_sessionId: string, _body: object): Promise<boolean> {
     return false;
   }
 
-  async getLanguageName(al: string, skill: string): Promise<string | null> {
+  getLanguageName(_al: string, _skill: string): Promise<string | null> {
     return null;
   }
 
-  async getSkillName(al: string, skill: string): Promise<string | null> {
+  getSkillName(_al: string, _skill: string): Promise<string | null> {
     return null;
   }
 }

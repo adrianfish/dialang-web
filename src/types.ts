@@ -18,6 +18,7 @@ export interface DialangSession {
   currentBasketId?: number;
   currentBasketNumber?: number;
   scoredItems?: Array<ScoredItem>;
+  itemScores?: Array<ItemScore>;
   scoredBaskets?: Array<ScoredBasket>;
   itemRawScore?: number;
   itemGrade?: number;
@@ -49,16 +50,27 @@ export interface TES {
   testCompleteUrl: string;
 }
 
+export interface ItemResult {
+  item?: ScoredItem;
+  error?: string;
+}
+
 export interface ScoredItem extends Item {
   basketId?: number;
   positionInBasket: number;
   positionnumberest?: number;
+  positionInTest?: number;
   responseId?: number;
   responseText?: string;
   correct?: boolean;
   score: number;
-  answers?: Array<Answer>;
+  answers?: Array<Answer> | null;
 };
+
+export interface ItemScore {
+  id: number;
+  score: number;
+}
 
 export interface ScoredBasket {
   id: number;
@@ -156,5 +168,18 @@ export interface TestSession {
   itemRawScore?: number;
   itemGrade?: number;
   itemLevel?: string;
-  questionnaire?: Object;
+  questionnaire?: Questionnaire;
+}
+
+export interface Questionnaire {
+  agegroup?: string;
+  gender?: string;
+  othergender?: string;
+  firstlanguage?: string;
+  nationality?: string;
+  institution?: string;
+  reason?: string;
+  accuracy?: string;
+  comments?: string;
+  email?: string;
 }
