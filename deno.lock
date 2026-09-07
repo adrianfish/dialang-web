@@ -123,6 +123,12 @@
       ]
     }
   },
+  "redirects": {
+    "https://esm.run/lit-html@1": "https://cdn.jsdelivr.net/npm/lit-html@1/+esm"
+  },
+  "remote": {
+    "https://cdn.jsdelivr.net/npm/lit-html@1/+esm": "f2a8e1bf4db816b7d4e1d2b9d6edc6f3235f721468b463335f24539738d9576b"
+  },
   "workspace": {
     "dependencies": [
       "jsr:@adrianfish/lti-kit@0.1.0",

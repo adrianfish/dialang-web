@@ -15,7 +15,7 @@ Deno.test("getItemGrade returns defaults when no grade bands present", async () 
 
   // Test the error condition
   stub(storage, "getItemGrade", () => Promise.resolve(null));
-  const [ rawScore, grade, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
+  const [ rawScore, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
   expect(rawScore).toEqual(0);
   expect(level).toEqual(CEFR_LEVELS[1]);
 });
