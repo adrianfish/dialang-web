@@ -2,6 +2,9 @@
   "lint": {
     "include": ["src/"]
   },
+  "test": {
+    "include": ["src/"]
+  },
   "tasks": {
     "seed": "deno run -A --unstable-kv --env-file seed/seed.ts",
     "start": "deno run --env-file --unstable-kv -R -N -E --watch main.ts"
