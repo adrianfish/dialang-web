@@ -23,7 +23,8 @@
     "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/streams@^1.0.9": "1.1.2",
     "jsr:@std/testing@*": "1.0.17",
-    "jsr:@std/uuid@^1.1.0": "1.1.1"
+    "jsr:@std/uuid@^1.1.0": "1.1.1",
+    "npm:create-playwright@latest": "1.17.139"
   },
   "jsr": {
     "@adrianfish/lti-kit@0.1.0": {
@@ -123,6 +124,12 @@
       ]
     }
   },
+  "npm": {
+    "create-playwright@1.17.139": {
+      "integrity": "sha512-be59wywAD7GxnTqCCc2T0Ujps9t4MYpVWxbP9hT2tOBRrRKBwMcU1HhLzhT70FiaLPqxuImqQQFp5s5yO9Qp3A==",
+      "bin": true
+    }
+  },
   "redirects": {
     "https://esm.run/lit-html@1": "https://cdn.jsdelivr.net/npm/lit-html@1/+esm"
   },
@@ -142,6 +149,12 @@
       "jsr:@std/expect@^1.0.18",
       "jsr:@std/testing@*",
       "jsr:@std/uuid@^1.1.0"
-    ]
+    ],
+    "packageJson": {
+      "dependencies": [
+        "npm:@playwright/test@^1.63.0",
+        "npm:@types/node@^26.5.0"
+      ]
+    }
   }
 }

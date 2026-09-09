@@ -59,7 +59,6 @@ export async function getScoredIdResponseItem(itemId: number, responseId: number
 	return { item: scoredItem };
 }
 
-//export async function getScoredTextResponseItem(itemId: number, answerText: string, storage: Storage): Promise<Array<ScoredItem | string | null>> {
 export async function getScoredTextResponseItem(itemId: number, answerText: string, storage: Storage): Promise<ItemResult> {
 
 	const item: Item | null = await storage.getItem(itemId)
