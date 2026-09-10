@@ -10,7 +10,7 @@ export async function alDistribution(
 ): Promise<Response> {
 
   if (!loggedIntoReports(c)) return c.redirect("/reportslogin");
-  const results: Array<TestSession> = await storage.getTestResults();
+  const results: Array<TestSession> = await storage.getTestSessions();
   const counts: Record<string, number> = {};
   results.forEach((r: TestSession) => {
 

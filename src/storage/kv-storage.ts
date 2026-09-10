@@ -120,7 +120,7 @@ export class KVStorage implements Storage {
     return (await this.#kv.get<Array<string>>([ "data", "punctuation" ])).value;
   }
 
-  async getTestSessions(completed: boolean): Promise<Array<TestSession>> {
+  async getTestSessions(completed?: boolean): Promise<Array<TestSession>> {
 
     const data: Array<TestSession> = [];
     const iter = this.#kv.list<TestSession>({ prefix: [ "datacapture", "tests-taken" ] });

@@ -48,7 +48,7 @@ export interface Storage {
 
   getPunctuationList(): Promise<Array<string> | null>;
 
-  getTestSessions(): Promise<Array<TestSession>>;
+  getTestSessions(completed?: boolean): Promise<Array<TestSession>>;
 
   logTestStart(session: DialangSession): Promise<boolean>;
 

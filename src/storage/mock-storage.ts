@@ -76,7 +76,7 @@ export class MockStorage implements Storage {
     return Promise.resolve([]);
   }
 
-  getTestSessions(): Promise<Array<TestSession>> {
+  getTestSessions(_completed: boolean): Promise<Array<TestSession>> {
     return Promise.resolve([]);
   }
 
