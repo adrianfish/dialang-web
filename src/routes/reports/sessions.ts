@@ -1,4 +1,5 @@
 import { loggedIntoReports } from "../../utils/utils.ts";
+
 import type { Context } from "@hono";
 import type { TestSession } from "../../types.ts";
 import type { Storage } from "../../storage/storage.ts";
@@ -12,8 +13,9 @@ export async function sessions(
   const body = await c.req.parseBody();
   const from: string = body.from as string;
   const to: string = body.to as string;
+  const completed: boolean = !!body.completed;
 
-  const results: Array<TestSession> = await storage.getTestResults();
+  const results: Array<TestSession> = await storage.getTestSessions(completed);
 
   if (!from && !to) {
     // Just today's sessions up to now.

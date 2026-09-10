@@ -14,6 +14,10 @@ export const sessionReportTemplate = `
         <td>To:</td>
         <td><input id="to" name="to" type="datetime-local" /></td>
       </tr>
+      <tr>
+        <td>Completed Only:</td>
+        <td><input name="completed" type="checkbox" /></td>
+      </tr>
     </table>
     </form>
     <button type="button" id="display-sessions-button">Display Sessions</button>
