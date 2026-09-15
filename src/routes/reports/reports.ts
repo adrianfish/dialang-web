@@ -1,6 +1,7 @@
 import { reports as reportsTemplate } from "../../templates/reports.ts";
 import { alDistributionReportTemplate } from "../../templates/al-distribution-report.ts";
 import { tlDistributionReportTemplate } from "../../templates/tl-distribution-report.ts";
+import { skillDistributionReportTemplate } from "../../templates/skill-distribution-report.ts";
 import { sessionReportTemplate } from "../../templates/session-report.ts";
 import { loggedIntoReports } from "../../utils/utils.ts";
 import type { Context } from "@hono";
@@ -14,6 +15,8 @@ export function reports(c: Context): Response {
       return c.html(alDistributionReportTemplate);
     case "tl-distribution":
       return c.html(tlDistributionReportTemplate);
+    case "skill-distribution":
+      return c.html(skillDistributionReportTemplate);
     case "sessions":
       return c.html(sessionReportTemplate);
     default:
