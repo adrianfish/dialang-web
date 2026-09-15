@@ -21,7 +21,6 @@ $.get(`/content/saintro/${dialang.session.al}/${dialang.session.skill}.html`, fu
 
     $('#confirm-skip-yes').click(function (e) {
 
-        $.get('/skipsa');
         $('#confirm-skip-dialog').dialog('destroy');
 
         // We're skipping the sa, so go from the sa page

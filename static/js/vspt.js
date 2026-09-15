@@ -95,7 +95,7 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
 
           dialang.session.vsptDone[dialang.session.tl] = true;
 
-          $('#save-button').prop('disabled', false);
+          //$('#save-button').prop('disabled', false);
 
           dialang.navigation.nextRules.vspt();
         }

@@ -72,7 +72,7 @@ $.get(`/content/sa/${dialang.session.al}/${dialang.session.skill}.html`, functio
         dialang.session.saPPE = scores.ppe;
         dialang.session.saLevel = scores.level;
         dialang.session.saDone = true;
-        $('#save-button').prop('disabled', false);
+        //$('#save-button').prop('disabled', false);
         $('#confirm-send-dialog').dialog('destroy');
         dialang.navigation.nextRules.sa();
       }
@@ -101,7 +101,6 @@ $.get(`/content/sa/${dialang.session.al}/${dialang.session.skill}.html`, functio
 
   $('#confirm-skip-yes').click(function (e) {
 
-    $.get('/skipsa');
     $('#confirm-skip-dialog').dialog('destroy');
     return dialang.navigation.nextRules.sa();
   });

@@ -24,6 +24,7 @@ $('#help').click(function (e) {
     $('#help-dialog').dialog('open');
 });
 
+/*
 $('#save-button').click(function (e) {
 
     $.ajax({
@@ -38,6 +39,7 @@ $('#save-button').click(function (e) {
         }
     });
 });
+*/
 
 $.get(`/content/iso_lang_mappings.json`, function (mappings) {
     dialang.isoLangMappings = mappings;
@@ -206,7 +208,7 @@ dialang.switchState = function (state) {
       $('#back').attr('title', tips.back);
       $('#next').attr('title', tips.next);
       $('#skipforward').attr('title', tips.skipforward);
-      $('#save-button').attr('title', tips.save);
+      //$('#save-button').attr('title', tips.save);
     });
   }
 

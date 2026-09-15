@@ -4,7 +4,7 @@ if (!dialang.flags.hideFeedbackMenu) {
     });
 }
 
-$('#save-button').prop('disabled', true).hide();
+//$('#save-button').prop('disabled', true).hide();
 
 $('#instantfeedback').hide();
 dialang.session.instantFeedback = false;
