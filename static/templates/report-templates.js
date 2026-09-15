@@ -9,6 +9,7 @@ export const sessionTableTemplate = data => html`
           <th>ID</th>
           <th>AL</th>
           <th>TL</th>
+          <th>Skill</th>
           <th>Started</th>
         </tr>
       </thead>
@@ -23,6 +24,7 @@ export const sessionTableTemplate = data => html`
         </td>
         <td>${s.al}</td>
         <td>${s.tl}</td>
+        <td>${s.skill}</td>
         <td>${(new Date(s.started)).toLocaleString()}</td>
       </tr>
       `)}
@@ -42,6 +44,9 @@ export const sessionTemplate = session => html`
     </tr>
     <tr>
       <td>TL:</td><td>${session.tl}</td>
+    </tr>
+    <tr>
+      <td>Skill:</td><td>${session.skill}</td>
     </tr>
     <tr>
       <td>IP:</td><td>${session.ipAddress}</td>
