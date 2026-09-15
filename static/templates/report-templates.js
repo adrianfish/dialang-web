@@ -9,6 +9,7 @@ export const sessionTableTemplate = data => html`
           <th>ID</th>
           <th>AL</th>
           <th>TL</th>
+          <th>Started</th>
         </tr>
       </thead>
       ${data.sessions.map(s => html`
@@ -22,6 +23,7 @@ export const sessionTableTemplate = data => html`
         </td>
         <td>${s.al}</td>
         <td>${s.tl}</td>
+        <td>${(new Date(s.started)).toLocaleString()}</td>
       </tr>
       `)}
     </table>
