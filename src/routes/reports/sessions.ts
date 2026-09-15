@@ -22,10 +22,12 @@ export async function sessions(
     const nowDate = new Date();
     nowDate.setHours(0, 0 ,0);
     const dayStartMillis = nowDate.getTime();
-    return c.json({ label: "Todays's Sessions", sessions: results.filter(s => s.started > dayStartMillis) });
+    const sessions: Array<TestSession> = results.filter(s => s.started > dayStartMillis).sort((a, b) => a.started - b.started);
+    return c.json({ label: "Today's Sessions", sessions });
   } else {
     const fromMillis = new Date(from).getTime();
     const toMillis = new Date(to).getTime();
-    return c.json({ label: `Sessions between ${from} and ${to}`, sessions: results.filter(s => s.started >= fromMillis && s.started <= toMillis) });
+    const sessions: Array<TestSession> = results.filter(s => s.started >= fromMillis && s.started <= toMillis).sort((a, b) => a.started - b.started);
+    return c.json({ label: `Sessions between ${from} and ${to}`, sessions });
   }
 }
