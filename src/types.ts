@@ -181,5 +181,4 @@ export interface Questionnaire {
   reason?: string;
   accuracy?: string;
   comments?: string;
-  email?: string;
 }

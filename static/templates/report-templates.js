@@ -45,6 +45,9 @@ export const sessionTemplate = session => html`
       <td>IP:</td><td>${session.ipAddress}</td>
     </tr>
     <tr>
+      <td>Started:</td><td>${(new Date(session.started)).toLocaleString()}</td>
+    </tr>
+    <tr>
       <td>Referrrer:</td><td>${session.referrer}</td>
     </tr>
     ${session.vsptLevel ? html`
@@ -89,9 +92,6 @@ export const sessionTemplate = session => html`
     </tr>
     <tr>
       <td>Comments:</td><td>${session.questionnaire.comments}</td>
-    </tr>
-    <tr>
-      <td>Email:</td><td>${session.questionnaire.email}</td>
     </tr>
   </table>
   ` : nothing}

@@ -19,12 +19,13 @@ export async function setAl(
   }
 
   const sessionId = setSessionId(c);
+  const ipAddress = (getConnInfo(c).remote.address || "").replace("::ffff:", "");
 
   storage.saveSession(sessionId, {
     id: sessionId,
     al,
     referrer: c.req.header("Referer") || "",
-    ipAddress: getConnInfo(c).remote.address || "",
+    ipAddress,
     started: Date.now(),
   });
 
