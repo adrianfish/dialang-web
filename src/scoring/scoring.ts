@@ -110,22 +110,21 @@ function removeWhiteSpaceAndPunctuation(inString: string, punctuationList: Array
 
   if (!inString) return "";
 
-	if (!punctuationList?.length) {
-		console.warn("No punctuation list found. Returning input unchanged ...")
-		return inString;
-	}
-
 	// Trim the white space, tokenize and join around space
 	let firstPass = inString.match(/\S+/g)?.join(" ");
 
   if (!firstPass) return inString;
 
-  [...firstPass].forEach(testChar => {
-    const hex = testChar.charCodeAt(0).toString(16).padStart(4);
-		if (punctuationList.includes(hex)) {
-      firstPass && (firstPass = firstPass.replace(testChar, ""));
-		}
-	});
+  if (punctuationList?.length) {
+    [...firstPass].forEach(testChar => {
+      const hex = testChar.charCodeAt(0).toString(16).padStart(4);
+      if (punctuationList.includes(hex)) {
+        firstPass && (firstPass = firstPass.replace(testChar, ""));
+      }
+    });
+  } else {
+		console.warn("No punctuation list supplied.")
+  }
 
 	return firstPass.toLowerCase();
 }

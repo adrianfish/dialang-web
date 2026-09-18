@@ -6,7 +6,6 @@ import type {
   PreestWeight,
   SAGrade,
   TestSession,
-  TES,
   VSPBand,
   VSPWord } from "../types.ts";
 
@@ -17,10 +16,6 @@ export interface Storage {
   getSession(sessionId: string): Promise<DialangSession | null>;
 
   deleteSession(sessionId: string): Promise<void>;
-
-  getTES(sessionId: string): Promise<TES | null>;
-
-  saveTES(sessionId: string, tes: TES): Promise<boolean>;
 
   getVSPWords(tl: string): Promise<Array<VSPWord> | null>;
 

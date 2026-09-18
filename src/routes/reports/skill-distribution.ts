@@ -15,8 +15,8 @@ export async function skillDistribution(
   results.forEach((r: TestSession) => {
 
     if (r.al) {
-      if (counts[r.skill]) counts[r.skill]++;
-      else counts[r.skill] = 1;
+      if (counts[r.skill as string]) counts[r.skill as string]++;
+      else counts[r.skill as string] = 1;
     }
   });
   return c.json(counts);

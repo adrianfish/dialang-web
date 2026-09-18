@@ -34,20 +34,23 @@ export interface DialangSession {
   hideFeedbackMenu?: boolean;
 }
 
-/**
- * Test Execution Script
- */
-export interface TES {
+export interface TestSession {
+  sessionId: string;
+  ipAddress: string;
+  referrer: string;
   al: string;
-  tl: string;
-  skill: string;
-  hideVSPT: boolean;
-  hideVSPTResult: boolean;
-  hideSA: boolean;
-  hideTest: boolean;
-  hideFeedbackMenu: boolean;
-  disallowInstantFeedback: boolean;
-  testCompleteUrl: string;
+  tl?: string;
+  skill?: string;
+  started: number;
+  vsptZScore?: number;
+  vsptMearaScore?: number;
+  vsptLevel?: string;
+  saPPE?: number;
+  saLevel?: string;
+  itemRawScore?: number;
+  itemGrade?: number;
+  itemLevel?: string;
+  questionnaire?: Questionnaire;
 }
 
 export interface ItemResult {

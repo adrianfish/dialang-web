@@ -6,7 +6,6 @@ import type {
   PreestWeight,
   Questionnaire,
   SAGrade,
-  TES,
   TestSession,
   VSPBand,
   VSPWord } from "../types.ts";
@@ -38,14 +37,6 @@ export class KVStorage implements Storage {
 
   deleteSession(sessionId: string): Promise<void> {
     return this.#kv.delete(["sessions", sessionId]);
-  }
-
-  async getTES(sessionId: string): Promise<TES | null> {
-    return (await this.#kv.get<TES>(["sessions", sessionId, "tes"])).value;
-  }
-
-  async saveTES(sessionId: string, tes: TES): Promise<boolean> {
-    return (await this.#kv.set(["sessions", sessionId, "tes"], tes)).ok;
   }
 
   async getVSPWords(tl: string): Promise<Array<VSPWord> | null> {
