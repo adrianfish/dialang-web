@@ -167,6 +167,13 @@ Deno.test("Gets SA, PPE and Level successfully", async () => {
     "11": false,
     "17": true,
   };
+
+  let result: Array<number | string | null> = await getSaPPEAndLevel(skill, responses, storage);
+  expect(result.length).toEqual(3);
+  expect(result[0]).toEqual(0);
+  expect(result[1]).toEqual("");
+  expect(result[2]).toEqual("Failed to get raw score");
+
   const weights: Record<string, number> = {
     "11": 5,
     "17": 3,
@@ -181,10 +188,18 @@ Deno.test("Gets SA, PPE and Level successfully", async () => {
     "grade": 1,
   };
   stub(storage, "getSAWeights", () => Promise.resolve(weights));
+
+  result = await getSaPPEAndLevel(skill, responses, storage);
+  expect(result.length).toEqual(3);
+  expect(result[0]).toEqual(0);
+  expect(result[1]).toEqual("");
+	expect(result[2]).toEqual("Failed to match skill and raw score to an sa grade");
+
   stub(storage, "getSAGrade", () => Promise.resolve(grade));
 
-  const result: Array<number | string | null> = await getSaPPEAndLevel(skill, responses, storage);
+  result = await getSaPPEAndLevel(skill, responses, storage);
+  expect(result.length).toEqual(3);
   expect(result[0]).toEqual(ppe);
   expect(result[1]).toEqual(CEFR_LEVELS[grade.grade]);
+  expect(result[2]).toEqual(null);
 });
-
