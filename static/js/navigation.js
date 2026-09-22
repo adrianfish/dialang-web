@@ -5,14 +5,8 @@ dialang.navigation = {};
 dialang.navigation.nextRules = {
 
     legend: function () {
-        //return dialang.switchState('loadsaved');
         return dialang.switchState('flowchart');
     },
-    /*
-    loadsaved: function () {
-        return dialang.switchState('flowchart');
-    },
-    */
     flowchart: function () {
 
         if (!dialang.flags.hideTLS) {

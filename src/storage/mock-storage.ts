@@ -1,4 +1,4 @@
-import type { Answer, DialangSession, Item, PreestAssignment, PreestWeight, SAGrade, TestSession, VSPBand, VSPWord } from "../types.ts";
+import type { Answer, DialangSession, Item, PreestAssignment, PreestWeight, SAGrade, SavedDialangSession, TestSession, VSPBand, VSPWord } from "../types.ts";
 
 import type { Storage } from "./storage.ts";
 
@@ -12,7 +12,19 @@ export class MockStorage implements Storage {
     return Promise.resolve(null);
   }
 
+  saveSavedSession(_session: SavedDialangSession): Promise<boolean> {
+    return Promise.resolve(false);
+  }
+
+  getSavedSession(_saveToken: string): Promise<SavedDialangSession | null> {
+    return Promise.resolve(null);
+  }
+
   deleteSession(_sessionId: string): Promise<void> {
+    return Promise.resolve();
+  }
+
+  deleteSavedSession(_sessionId: string): Promise<void> {
     return Promise.resolve();
   }
 

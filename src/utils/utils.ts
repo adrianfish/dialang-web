@@ -13,6 +13,13 @@ export function getSessionId(c: Context): string | undefined {
   return getCookie(c, "dialang");
 }
 
+export function forceSessionId(c: Context, sessionId: string): string {
+
+  const maxAge = 8 * 60 * 60 * 1000;
+  setCookie(c, "dialang", sessionId, { maxAge, sameSite: "None", secure: true, httpOnly: true } );
+  return sessionId;
+}
+
 export async function createHash(message: string): Promise<string> {
 
   const encoder = new TextEncoder();

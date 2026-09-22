@@ -34,6 +34,11 @@ export interface DialangSession {
   hideFeedbackMenu?: boolean;
 }
 
+export interface SavedDialangSession extends DialangSession {
+  saveToken: string,
+  savedAt?: number;
+}
+
 export interface TestSession {
   sessionId: string;
   ipAddress: string;

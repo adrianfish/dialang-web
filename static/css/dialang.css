@@ -70,6 +70,11 @@ img {
     display: none;
 }
 
+#resume-test-instruction {
+  margin-bottom: 8px;
+  margin-left: 0px;
+}
+
 #progressbar {
     position: relative;
     display: none;
@@ -705,18 +710,10 @@ button[disabled] {
     width: 460px;
 }
 
-/* START VSPT HACKS FOR IE11 */
-#vspt-grid label {
-    display: inline-block;
-}
-
-#vspt-grid label img {
-    pointer-events: none;
-}
-/* END HACKS FOR IE11 */
-
 #dialang-loadsaved-instruction {
     margin-bottom: 10px;
+    font-size: 10px;
+    font-style: italic;
 }
 
 #dialang-loadsaved-input {
@@ -726,11 +723,19 @@ button[disabled] {
 
 #dialang-token-instruction {
     width: 400px;
+    font-style: italic;
+}
+
+#dialang-token-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #dialang-token {
     white-space: nowrap;
-    margin-top: 10px;
+    font-weight: bold;
+    margin: auto;
 }
 
 .dialang-date-label {

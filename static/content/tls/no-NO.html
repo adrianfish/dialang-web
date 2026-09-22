@@ -1,4 +1,18 @@
+				<script>
+					var saveDialogTitle = "Test Saved";
+				</script>
                 <h1 id="tls-title">Velg en test</h1>
+
+                <div id="resume-test-block">
+                  <div id="resume-test-instruction">
+                    If you have a save token from a partially completed test, you can enter it here
+                    and resume your test. Otherwise, just select a test language and skill from
+                    the grid below
+                  </div>
+                  <input type="text" id="save-token-field" placeholder="Enter your save token"/>
+                  <button type="button" id="resume-test-button">Resume Test</button>
+                </div>
+
                 <table id="tls-table" cols="6">
                     <thead>
                         <tr>
@@ -13,33 +27,6 @@
                     <tbody>
                         
                         <tr>
-                            <td class="language-column">TYSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Lytteforståelse" tl="de-DE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Skriftlig språkbruk" tl="de-DE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Leseforståelse" tl="de-DE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Grammatikk" tl="de-DE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Vokabular" tl="de-DE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">ITALIENSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Lytteforståelse" tl="it-IT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Skriftlig språkbruk" tl="it-IT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Leseforståelse" tl="it-IT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Grammatikk" tl="it-IT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Vokabular" tl="it-IT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">ENGELSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Lytteforståelse" tl="en-GB" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Skriftlig språkbruk" tl="en-GB" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Leseforståelse" tl="en-GB" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Grammatikk" tl="en-GB" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Vokabular" tl="en-GB" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
                             <td class="language-column">DANSK</td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="DANSK, Lytteforståelse" tl="da-DK" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="DANSK, Skriftlig språkbruk" tl="da-DK" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
@@ -49,12 +36,30 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">SVENSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Lytteforståelse" tl="sv-SE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Skriftlig språkbruk" tl="sv-SE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Leseforståelse" tl="sv-SE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Grammatikk" tl="sv-SE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Vokabular" tl="sv-SE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">PORTUGISISK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Lytteforståelse" tl="pt-PT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Skriftlig språkbruk" tl="pt-PT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Leseforståelse" tl="pt-PT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Grammatikk" tl="pt-PT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Vokabular" tl="pt-PT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">IRSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Lytteforståelse" tl="ga-IE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Skriftlig språkbruk" tl="ga-IE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Leseforståelse" tl="ga-IE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Grammatikk" tl="ga-IE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Vokabular" tl="ga-IE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">TYSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Lytteforståelse" tl="de-DE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Skriftlig språkbruk" tl="de-DE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Leseforståelse" tl="de-DE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Grammatikk" tl="de-DE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="TYSK, Vokabular" tl="de-DE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -67,21 +72,30 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">FINSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Lytteforståelse" tl="fi-FI" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Skriftlig språkbruk" tl="fi-FI" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Leseforståelse" tl="fi-FI" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Grammatikk" tl="fi-FI" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Vokabular" tl="fi-FI" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">FRANSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Lytteforståelse" tl="fr-FR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Skriftlig språkbruk" tl="fr-FR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Leseforståelse" tl="fr-FR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Grammatikk" tl="fr-FR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Vokabular" tl="fr-FR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
-                            <td class="language-column">IRSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Lytteforståelse" tl="ga-IE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Skriftlig språkbruk" tl="ga-IE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Leseforståelse" tl="ga-IE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Grammatikk" tl="ga-IE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IRSK, Vokabular" tl="ga-IE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">ENGELSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Lytteforståelse" tl="en-GB" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Skriftlig språkbruk" tl="en-GB" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Leseforståelse" tl="en-GB" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Grammatikk" tl="en-GB" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ENGELSK, Vokabular" tl="en-GB" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">SVENSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Lytteforståelse" tl="sv-SE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Skriftlig språkbruk" tl="sv-SE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Leseforståelse" tl="sv-SE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Grammatikk" tl="sv-SE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SVENSK, Vokabular" tl="sv-SE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -103,21 +117,12 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">NEDERLANDSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Lytteforståelse" tl="nl-NL" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Skriftlig språkbruk" tl="nl-NL" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Leseforståelse" tl="nl-NL" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Grammatikk" tl="nl-NL" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Vokabular" tl="nl-NL" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">FRANSK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Lytteforståelse" tl="fr-FR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Skriftlig språkbruk" tl="fr-FR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Leseforståelse" tl="fr-FR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Grammatikk" tl="fr-FR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRANSK, Vokabular" tl="fr-FR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">FINSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Lytteforståelse" tl="fi-FI" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Skriftlig språkbruk" tl="fi-FI" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Leseforståelse" tl="fi-FI" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Grammatikk" tl="fi-FI" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FINSK, Vokabular" tl="fi-FI" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -130,12 +135,21 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">PORTUGISISK</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Lytteforståelse" tl="pt-PT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Skriftlig språkbruk" tl="pt-PT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Leseforståelse" tl="pt-PT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Grammatikk" tl="pt-PT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="PORTUGISISK, Vokabular" tl="pt-PT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">ITALIENSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Lytteforståelse" tl="it-IT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Skriftlig språkbruk" tl="it-IT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Leseforståelse" tl="it-IT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Grammatikk" tl="it-IT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ITALIENSK, Vokabular" tl="it-IT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">NEDERLANDSK</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Lytteforståelse" tl="nl-NL" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Skriftlig språkbruk" tl="nl-NL" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Leseforståelse" tl="nl-NL" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Grammatikk" tl="nl-NL" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="NEDERLANDSK, Vokabular" tl="nl-NL" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                     </tbody>
