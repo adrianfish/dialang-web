@@ -6,6 +6,7 @@ import type {
   PreestWeight,
   Questionnaire,
   SAGrade,
+  SavedDialangSession,
   TestSession,
   VSPBand,
   VSPWord } from "../types.ts";
@@ -35,8 +36,23 @@ export class KVStorage implements Storage {
     return (await this.#kv.get<DialangSession>(["sessions", sessionId])).value;
   }
 
+  async saveSavedSession(session: SavedDialangSession): Promise<boolean> {
+    session.savedAt = Date.now();
+    //  48 hours from now
+    const expireIn = 48 * 60 * 60 * 1000;
+    return (await this.#kv.set(["saved-sessions", session.saveToken], session, { expireIn })).ok;
+  }
+
+  async getSavedSession(saveToken: string): Promise<SavedDialangSession | null> {
+    return (await this.#kv.get<SavedDialangSession>(["saved-sessions", saveToken])).value;
+  }
+
   deleteSession(sessionId: string): Promise<void> {
     return this.#kv.delete(["sessions", sessionId]);
+  }
+
+  deleteSavedSession(sessionId: string): Promise<void> {
+    return this.#kv.delete(["saved-sessions", sessionId]);
   }
 
   async getVSPWords(tl: string): Promise<Array<VSPWord> | null> {

@@ -1,4 +1,18 @@
+				<script>
+					var saveDialogTitle = "Test Saved";
+				</script>
                 <h1 id="tls-title">Pilih tes</h1>
+
+                <div id="resume-test-block">
+                  <div id="resume-test-instruction">
+                    If you have a save token from a partially completed test, you can enter it here
+                    and resume your test. Otherwise, just select a test language and skill from
+                    the grid below
+                  </div>
+                  <input type="text" id="save-token-field" placeholder="Enter your save token"/>
+                  <button type="button" id="resume-test-button">Resume Test</button>
+                </div>
+
                 <table id="tls-table" cols="6">
                     <thead>
                         <tr>
@@ -13,39 +27,12 @@
                     <tbody>
                         
                         <tr>
-                            <td class="language-column">Bahasa Portugis</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Mendengarkan" tl="pt-PT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Menulis" tl="pt-PT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Membaca" tl="pt-PT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Struktur" tl="pt-PT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Kosakata" tl="pt-PT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">Irlandia</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Mendengarkan" tl="ga-IE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Menulis" tl="ga-IE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Membaca" tl="ga-IE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Struktur" tl="ga-IE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Kosakata" tl="ga-IE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">Jerman</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Mendengarkan" tl="de-DE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Menulis" tl="de-DE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Membaca" tl="de-DE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Struktur" tl="de-DE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Kosakata" tl="de-DE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">Bahasa Itali</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Mendengarkan" tl="it-IT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Menulis" tl="it-IT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Membaca" tl="it-IT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Struktur" tl="it-IT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Kosakata" tl="it-IT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">Bahasa Spanyol</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Mendengarkan" tl="es-ES" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Menulis" tl="es-ES" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Membaca" tl="es-ES" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Struktur" tl="es-ES" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Kosakata" tl="es-ES" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -58,30 +45,12 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">Swedia</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Mendengarkan" tl="sv-SE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Menulis" tl="sv-SE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Membaca" tl="sv-SE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Struktur" tl="sv-SE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Kosakata" tl="sv-SE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">Bahasa Belanda</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Mendengarkan" tl="nl-NL" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Menulis" tl="nl-NL" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Membaca" tl="nl-NL" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Struktur" tl="nl-NL" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Kosakata" tl="nl-NL" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">Bahasa Spanyol</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Mendengarkan" tl="es-ES" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Menulis" tl="es-ES" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Membaca" tl="es-ES" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Struktur" tl="es-ES" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Spanyol, Kosakata" tl="es-ES" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">Irlandia</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Mendengarkan" tl="ga-IE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Menulis" tl="ga-IE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Membaca" tl="ga-IE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Struktur" tl="ga-IE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Irlandia, Kosakata" tl="ga-IE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -94,21 +63,21 @@
                         </tr>
                         
                         <tr>
+                            <td class="language-column">Yunani</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Mendengarkan" tl="el-GR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Menulis" tl="el-GR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Membaca" tl="el-GR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Struktur" tl="el-GR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Kosakata" tl="el-GR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
                             <td class="language-column">Perancis</td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Perancis, Mendengarkan" tl="fr-FR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Perancis, Menulis" tl="fr-FR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Perancis, Membaca" tl="fr-FR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Perancis, Struktur" tl="fr-FR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Perancis, Kosakata" tl="fr-FR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">Finlandia</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Mendengarkan" tl="fi-FI" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Menulis" tl="fi-FI" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Membaca" tl="fi-FI" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Struktur" tl="fi-FI" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Kosakata" tl="fi-FI" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -121,12 +90,48 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">Yunani</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Mendengarkan" tl="el-GR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Menulis" tl="el-GR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Membaca" tl="el-GR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Struktur" tl="el-GR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Yunani, Kosakata" tl="el-GR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">Swedia</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Mendengarkan" tl="sv-SE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Menulis" tl="sv-SE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Membaca" tl="sv-SE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Struktur" tl="sv-SE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Swedia, Kosakata" tl="sv-SE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">Jerman</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Mendengarkan" tl="de-DE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Menulis" tl="de-DE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Membaca" tl="de-DE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Struktur" tl="de-DE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Jerman, Kosakata" tl="de-DE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">Bahasa Belanda</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Mendengarkan" tl="nl-NL" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Menulis" tl="nl-NL" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Membaca" tl="nl-NL" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Struktur" tl="nl-NL" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Belanda, Kosakata" tl="nl-NL" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">Finlandia</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Mendengarkan" tl="fi-FI" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Menulis" tl="fi-FI" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Membaca" tl="fi-FI" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Struktur" tl="fi-FI" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Finlandia, Kosakata" tl="fi-FI" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">Bahasa Itali</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Mendengarkan" tl="it-IT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Menulis" tl="it-IT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Membaca" tl="it-IT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Struktur" tl="it-IT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Itali, Kosakata" tl="it-IT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -136,6 +141,15 @@
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Islandia, Membaca" tl="is-IS" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Islandia, Struktur" tl="is-IS" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Islandia, Kosakata" tl="is-IS" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">Bahasa Portugis</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Mendengarkan" tl="pt-PT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Menulis" tl="pt-PT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Membaca" tl="pt-PT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Struktur" tl="pt-PT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="Bahasa Portugis, Kosakata" tl="pt-PT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                     </tbody>

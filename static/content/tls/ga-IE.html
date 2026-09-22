@@ -1,4 +1,18 @@
+				<script>
+					var saveDialogTitle = "Test Saved";
+				</script>
                 <h1 id="tls-title">Roghnaigh teist</h1>
+
+                <div id="resume-test-block">
+                  <div id="resume-test-instruction">
+                    If you have a save token from a partially completed test, you can enter it here
+                    and resume your test. Otherwise, just select a test language and skill from
+                    the grid below
+                  </div>
+                  <input type="text" id="save-token-field" placeholder="Enter your save token"/>
+                  <button type="button" id="resume-test-button">Resume Test</button>
+                </div>
+
                 <table id="tls-table" cols="6">
                     <thead>
                         <tr>
@@ -13,24 +27,6 @@
                     <tbody>
                         
                         <tr>
-                            <td class="language-column">BÉARLA</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Éisteacht" tl="en-GB" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Scríobh" tl="en-GB" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Léamh" tl="en-GB" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Struchtúir" tl="en-GB" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Stór Focal" tl="en-GB" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">IODÁILIS</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Éisteacht" tl="it-IT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Scríobh" tl="it-IT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Léamh" tl="it-IT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Struchtúir" tl="it-IT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Stór Focal" tl="it-IT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
                             <td class="language-column">GRÉIGIS</td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="GRÉIGIS, Éisteacht" tl="el-GR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="GRÉIGIS, Scríobh" tl="el-GR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
@@ -40,12 +36,12 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">FRAINCIS</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Éisteacht" tl="fr-FR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Scríobh" tl="fr-FR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Léamh" tl="fr-FR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Struchtúir" tl="fr-FR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Stór Focal" tl="fr-FR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">OLLAINIS</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Éisteacht" tl="nl-NL" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Scríobh" tl="nl-NL" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Léamh" tl="nl-NL" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Struchtúir" tl="nl-NL" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Stór Focal" tl="nl-NL" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -58,21 +54,12 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">ÍOSLAINNIS</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Éisteacht" tl="is-IS" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Scríobh" tl="is-IS" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Léamh" tl="is-IS" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Struchtúir" tl="is-IS" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Stór Focal" tl="is-IS" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
-                            <td class="language-column">SUALAINNIS</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Éisteacht" tl="sv-SE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Scríobh" tl="sv-SE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Léamh" tl="sv-SE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Struchtúir" tl="sv-SE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Stór Focal" tl="sv-SE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-column">SPÁINNIS</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Éisteacht" tl="es-ES" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Scríobh" tl="es-ES" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Léamh" tl="es-ES" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Struchtúir" tl="es-ES" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Stór Focal" tl="es-ES" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -82,6 +69,42 @@
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="DANMHAIRGIS, Léamh" tl="da-DK" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="DANMHAIRGIS, Struchtúir" tl="da-DK" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="DANMHAIRGIS, Stór Focal" tl="da-DK" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">ÍOSLAINNIS</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Éisteacht" tl="is-IS" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Scríobh" tl="is-IS" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Léamh" tl="is-IS" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Struchtúir" tl="is-IS" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="ÍOSLAINNIS, Stór Focal" tl="is-IS" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">IODÁILIS</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Éisteacht" tl="it-IT" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Scríobh" tl="it-IT" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Léamh" tl="it-IT" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Struchtúir" tl="it-IT" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IODÁILIS, Stór Focal" tl="it-IT" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">FRAINCIS</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Éisteacht" tl="fr-FR" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Scríobh" tl="fr-FR" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Léamh" tl="fr-FR" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Struchtúir" tl="fr-FR" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="FRAINCIS, Stór Focal" tl="fr-FR" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">BÉARLA</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Éisteacht" tl="en-GB" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Scríobh" tl="en-GB" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Léamh" tl="en-GB" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Struchtúir" tl="en-GB" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="BÉARLA, Stór Focal" tl="en-GB" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                         <tr>
@@ -103,15 +126,6 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">OLLAINIS</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Éisteacht" tl="nl-NL" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Scríobh" tl="nl-NL" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Léamh" tl="nl-NL" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Struchtúir" tl="nl-NL" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="OLLAINIS, Stór Focal" tl="nl-NL" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
                             <td class="language-column">GEARMÁINIS</td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="GEARMÁINIS, Éisteacht" tl="de-DE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="GEARMÁINIS, Scríobh" tl="de-DE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
@@ -121,21 +135,21 @@
                         </tr>
                         
                         <tr>
-                            <td class="language-column">SPÁINNIS</td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Éisteacht" tl="es-ES" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Scríobh" tl="es-ES" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Léamh" tl="es-ES" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Struchtúir" tl="es-ES" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SPÁINNIS, Stór Focal" tl="es-ES" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
-                        </tr>
-                        
-                        <tr>
                             <td class="language-column">IORUAIS</td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IORUAIS, Éisteacht" tl="no-NO" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IORUAIS, Scríobh" tl="no-NO" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IORUAIS, Léamh" tl="no-NO" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IORUAIS, Struchtúir" tl="no-NO" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                             <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="IORUAIS, Stór Focal" tl="no-NO" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                        </tr>
+                        
+                        <tr>
+                            <td class="language-column">SUALAINNIS</td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Éisteacht" tl="sv-SE" skill="listening" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Scríobh" tl="sv-SE" skill="writing" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Léamh" tl="sv-SE" skill="reading" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Struchtúir" tl="sv-SE" skill="structures" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
+                            <td class="language-skill-column"><a href="javascript:;" class="tls-link" title="SUALAINNIS, Stór Focal" tl="sv-SE" skill="vocabulary" calibrated=""><img src="https://pub-c5c4a068a24045f68b85a172153bd668.r2.dev/images/available.gif"/></a></td>
                         </tr>
                         
                     </tbody>

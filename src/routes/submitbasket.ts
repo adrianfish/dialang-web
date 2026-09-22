@@ -26,6 +26,7 @@ export async function submitBasket(
 		return c.html("");
   }
 
+
 	if (!session.tl || !session.skill || !session.currentBasketId || !session.bookletId || session.currentBasketNumber === undefined) {
 		console.error("None of the test language, skill, current basket id, booklet id or current basket number were set in the session. Returning 500 ...");
 		c.status(500);
@@ -51,7 +52,7 @@ export async function submitBasket(
   console.debug(`currentBasketNumber: ${session.currentBasketNumber}`);
   console.debug(`scored item list length: ${numScoredItems}`);
 
-  const returnMap: Record<string, string | number | ScoredBasket> = {};
+  const returnMap: Record<string, string | number | ScoredBasket | boolean> = {};
 
   const itemList: Array<ScoredItem> = session.scoredItems || [];
 
@@ -256,7 +257,11 @@ export async function submitBasket(
     }
   }
 
-  session.itemScores = sparsifyItems(itemList);
+  session.scoredBaskets ??= [];
+  session.scoredBaskets.push(returnMap["scoredBasket"]);
+
+  session.itemScores ??= [];
+  session.itemScores = [ ...session.itemScores, ...sparsifyItems(itemList) ];
 
   const nextBasketNumber = session.currentBasketNumber + 1;
   console.debug(`nextBasketNumber: ${nextBasketNumber}`);
@@ -321,7 +326,7 @@ export async function submitBasket(
     } else {
       // We set testDone to true so the client js knows to enable the sa feedback and advice buttons
       returnMap["itemLevel"] = itemLevel;
-      returnMap["testDone"] = "true";
+      returnMap["testDone"] = true;
       return c.json(returnMap);
     }
   } else {

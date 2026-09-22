@@ -16,9 +16,44 @@ $('#back').prop('disabled', false).click(function (e) {
   return dialang.navigation.backRules.tls();
 });
 
+
 $.get(`/content/tls/${dialang.session.al}.html`, function (data) {
 
   $('#content').html(data);
+
+  document.getElementById("resume-test-button").addEventListener("click", e => {
+
+    const token = document.getElementById("save-token-field").value;
+    const formData = new FormData();
+    formData.append("token", token);
+    fetch("/api/resumesession", {
+      method: "POST",
+      body: formData,
+    })
+    .then(r => {
+
+      if (r.ok) {
+        return r.json();
+      }
+
+      throw new Error("Network error while resuming session");
+    })
+    .then(session => {
+
+      dialang.session.al = session.al;
+      dialang.session.tl = session.tl;
+      dialang.session.skill = session.skill;
+      dialang.session.vsptDone ??= {};
+      dialang.session.vsptDone[session.tl] = !!session.vsptSubmitted;
+      dialang.session.vsptLevel = session.vsptLevel;
+      dialang.session.vsptMearaScore = session.vsptMearaScore;
+      dialang.session.saDone = session.saSubmitted;
+      session.scoredBaskets.forEach(sb => dialang.utils.configureScoredBasket(sb));
+      dialang.session.loading = true;
+      dialang.session.currentBasketId = session.currentBasketId;
+      dialang.switchState('test');
+    });
+  });
 
   $('#disclaimer-dialog').dialog({
     modal: true,
@@ -43,6 +78,19 @@ $.get(`/content/tls/${dialang.session.al}.html`, function (data) {
 
     $('#confirm-dialog').dialog('close');
     return false;
+  });
+
+  $.get(`/content/save/${dialang.session.al}.html`, function (saveDialogMarkup) {
+
+    $('#save-dialog').html(saveDialogMarkup);
+    $('#save-dialog').dialog({
+        modal: true,
+        title: saveDialogTitle,
+        width: 'auto',
+        height: 300,
+        autoOpen: false,
+        resizable: false
+    });
   });
 
   $('.tls-link').click(function () {

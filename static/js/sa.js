@@ -68,8 +68,6 @@ $.get(`/content/sa/${dialang.session.al}/${dialang.session.skill}.html`, functio
       if (scores.redirect) {
           window.location = scores.redirect;
       } else {
-        dialang.session.saSubmitted = 1;
-        dialang.session.saPPE = scores.ppe;
         dialang.session.saLevel = scores.level;
         dialang.session.saDone = true;
         //$('#save-button').prop('disabled', false);

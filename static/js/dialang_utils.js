@@ -44,6 +44,11 @@
         });
     };
 
+    dialang.session.subskills ??= {};
+    dialang.session.baskets ??= {};
+    dialang.session.items ??= [];
+    dialang.session.itemToBasketMap ??= {};
+
     dialang.utils.configureScoredBasket = function (basket) {
 
         // Map the basket onto the basket id for lookup later.

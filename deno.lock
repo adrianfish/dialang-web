@@ -149,12 +149,6 @@
       "jsr:@std/expect@^1.0.18",
       "jsr:@std/testing@*",
       "jsr:@std/uuid@^1.1.0"
-    ],
-    "packageJson": {
-      "dependencies": [
-        "npm:@playwright/test@^1.63.0",
-        "npm:@types/node@^26.5.0"
-      ]
-    }
+    ]
   }
 }

@@ -172,13 +172,14 @@ if (!dialang.session.reviewMode) {
                 if (nextBasketData.redirect) {
                     window.location = nextBasketData.redirect;
                 } else {
-                    //$('#save-button').show().prop('disabled', false);
+                    $('#save-button').show().prop('disabled', false);
 
                     var scoredBasket = nextBasketData.scoredBasket;
 
                     dialang.utils.configureScoredBasket(scoredBasket);
 
                     if (nextBasketData.testDone) {
+                        $('#save-button').hide().prop('disabled', true);
                         dialang.session.testDone = true;
                         dialang.session.itemLevel = nextBasketData.itemLevel;
                         if (!dialang.session.instantFeedbackOn) {

@@ -24,11 +24,10 @@ $('#help').click(function (e) {
     $('#help-dialog').dialog('open');
 });
 
-/*
 $('#save-button').click(function (e) {
 
     $.ajax({
-        url: '/save',
+        url: '/api/savesession',
         success: function (data, textStatus, jqXHR) {
 
             $('#save-dialog').dialog('open');
@@ -39,7 +38,6 @@ $('#save-button').click(function (e) {
         }
     });
 });
-*/
 
 $.get(`/content/iso_lang_mappings.json`, function (mappings) {
     dialang.isoLangMappings = mappings;
@@ -247,9 +245,9 @@ if (dialang.state !== "als") {
 }
 
 /*
-$(document).ready(function () {  
-          
+$(document).ready(function () {
+
     //this one line will disable the right mouse click menu  
-     $(document)[0].oncontextmenu = function () {return false;}  
+     //$(document)[0].oncontextmenu = function () {return false;}  
 });
 */

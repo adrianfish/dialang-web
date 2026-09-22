@@ -31,20 +31,6 @@ document.getElementById('al-dropdown').addEventListener("change", e => {
       });
     });
 
-    /*
-    $.get(`/content/save/${dialang.session.al}.html`, function (saveDialogMarkup) {
-
-      $('#save-dialog').html(saveDialogMarkup);
-      $('#save-dialog').dialog({
-          modal: true,
-          width: 'auto',
-          height: 300,
-          autoOpen: false,
-          resizable: false
-      });
-    });
-    */
-
     dialang.switchState("legend");
   })
   .catch(error => console.error(error.message));
