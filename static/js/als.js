@@ -1,4 +1,4 @@
-document.getElementById('al-dropdown').addEventListener("change", e => {
+document.getElementById('al-button').addEventListener("click", e => {
 
   const url = "/api/setal";
   fetch(url, {
