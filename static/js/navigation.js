@@ -92,12 +92,8 @@ dialang.navigation.backRules = {
     legend: function () {
         location.href = `/content/als.html`;
     },
-    loadsaved: function () {
-        return dialang.switchState('legend');
-    },
     flowchart: function () {
-        return dialang.switchState('loadsaved');
-        //return dialang.switchState('legend');
+        return dialang.switchState('legend');
     },
     tls: function () {
         return dialang.switchState('flowchart');

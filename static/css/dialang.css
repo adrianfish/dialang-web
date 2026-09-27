@@ -710,17 +710,6 @@ button[disabled] {
     width: 460px;
 }
 
-#dialang-loadsaved-instruction {
-    margin-bottom: 10px;
-    font-size: 10px;
-    font-style: italic;
-}
-
-#dialang-loadsaved-input {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-}
-
 #dialang-token-instruction {
     width: 400px;
     font-style: italic;
