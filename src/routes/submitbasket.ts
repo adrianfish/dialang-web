@@ -277,7 +277,7 @@ export async function submitBasket(
   if (nextBasketNumber >= basketIds.length) {
     // The test has finished. Grade it.
     const [ rawScore, itemGrade, itemLevel ]
-      = await getItemGrade(session.tl, session.skill, session.bookletId, itemList, storage);
+      = await getItemGrade(session.tl, session.skill, session.bookletId, session.itemScores, storage);
 
     // If we're in an LTI session, post the score.
     if (session.isLTI) {
