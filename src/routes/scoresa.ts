@@ -35,7 +35,7 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
 
   const [ppe, level, err ] = await getSaPPEAndLevel(session.skill, responses, storage);
 	if (err) {
-		console.error(`Failed to score self assessment for skill ${session.skill}`);
+		console.error(err);
     c.status(500);
 		return c.html("");
 	}

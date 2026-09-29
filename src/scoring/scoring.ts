@@ -18,7 +18,7 @@ async function getSaRawScore(skill: string, responses: Record<string, boolean>, 
 export async function getSaPPEAndLevel(skill: string, responses: Record<string, boolean>, storage: Storage): Promise<Array<number | string | null>> {
 
 	const rsc: number | null = await getSaRawScore(skill, responses, storage);
-  if (!rsc) {
+  if (rsc === null) {
 	  return [ 0, "", "Failed to get raw score" ];
   }
 
