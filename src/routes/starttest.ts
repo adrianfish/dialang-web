@@ -115,7 +115,7 @@ async function calculateBookletId(session: DialangSession, storage: Storage): Pr
 			saPPE = session.saPPE
 			console.debug(`SA SUBMITTED. saPPE: ${saPPE}`);
 		}
-		const weightKey: string = `${key}#${session.vsptSubmitted ? 1 : 0}#${session.saSubmitted ? 1 : 0}`;
+		const weightKey: string = `${key}#${session.saSubmitted ? 1 : 0}#${session.vsptSubmitted ? 1 : 0}`;
 		const weight: PreestWeight | null = await storage.getPreestWeight(weightKey);
     if (!weight) {
       console.error(`No preest weight for key ${weightKey}`);
