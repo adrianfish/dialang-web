@@ -1,3 +1,5 @@
+document.getElementById("content").classList.remove("in-test");
+
 if (!dialang.flags.hideFeedbackMenu) {
     $('#next').prop('disabled', false).click(function () {
         return dialang.navigation.nextRules.endoftest();

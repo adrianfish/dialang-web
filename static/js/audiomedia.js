@@ -6,7 +6,11 @@ $(document).ready(function () {
     audio.paused = true;
     var playButton = $('#playaudio');
 
+    dialang.startSpinner();
+
     audio.addEventListener('canplaythrough', function () {
+
+        dialang.stopSpinner();
         playButton.prop('disabled', false);
     }, false);
 

@@ -1,5 +1,7 @@
 document.getElementById('al-button').addEventListener("click", e => {
 
+  dialang.startSpinner();
+
   const url = "/api/setal";
   fetch(url, {
     method: "POST",
@@ -33,5 +35,6 @@ document.getElementById('al-button').addEventListener("click", e => {
 
     dialang.switchState("legend");
   })
-  .catch(error => console.error(error.message));
+  .catch(error => console.error(error.message))
+  .finally(() => dialang.stopSpinner());
 });

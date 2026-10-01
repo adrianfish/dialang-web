@@ -244,10 +244,16 @@ if (dialang.state !== "als") {
   dialang.switchState(dialang.state);
 }
 
-/*
+dialang.startSpinner = () => dialang.spinner.spin(document.getElementById("spinner"));
+
+dialang.stopSpinner = () => dialang.spinner.stop();
+
 $(document).ready(function () {
+
+  const spinnerEl = document.getElementById("spinner");
+  dialang.spinner = new Spin.Spinner({}).spin(spinnerEl);
+  dialang.spinner.stop();
 
     //this one line will disable the right mouse click menu  
      //$(document)[0].oncontextmenu = function () {return false;}  
 });
-*/

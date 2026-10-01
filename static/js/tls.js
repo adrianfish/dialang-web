@@ -107,6 +107,8 @@ $.get(`/content/tls/${dialang.session.al}.html`, function (data) {
       formData.append("tl", tl);
       formData.append("skill", skill);
 
+      dialang.startSpinner();
+
       const url = "/api/settl";
       fetch(url, {
         method: "POST",
@@ -138,7 +140,8 @@ $.get(`/content/tls/${dialang.session.al}.html`, function (data) {
 
         alert(`Failed to set test language and skill. Reason: ${error}`);
         $('#confirm-dialog').dialog('destroy');
-      });
+      })
+      .finally(() => dialang.stopSpinner());
 
       return false;
     });

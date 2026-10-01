@@ -1,3 +1,5 @@
+document.getElementById("content").classList.add("in-test");
+
 dialang.initialiseReviewDialog = function (modal) {
 
     $('.review-dialog').dialog({modal: modal || false,
@@ -47,18 +49,20 @@ dialang.responseComplete = function (complete) {
 
 if (!dialang.session.reviewMode) {
 
-    $('#skipforward').prop('disabled', false).click(function (e) {
+  $('#skipforward').prop('disabled', false).click(function (e) {
 
-        $('#confirm-skip-dialog').dialog('open');
-        return false;
-    });
+      $('#confirm-skip-dialog').dialog('open');
+      return false;
+  });
 
-    $('#next').click(function (e) {
+  $('#next').click(function (e) {
 
-        $('#basketform input[name="ltik"]').val(dialang.session.ltik);
-        $('#basketform').submit();
-        return false;
-    });
+    dialang.startSpinner();
+
+    $('#basketform input[name="ltik"]').val(dialang.session.ltik);
+    $('#basketform').submit();
+    return false;
+  });
 
     if (dialang.flags.disallowInstantFeedback) {
         $('#instantfeedback').hide();
@@ -169,6 +173,8 @@ if (!dialang.session.reviewMode) {
             timeout: dialang.uploadTimeout,
             success: function (nextBasketData, textStatus, jqXHR, jqFormElement) {
 
+                dialang.stopSpinner();
+
                 if (nextBasketData.redirect) {
                     window.location = nextBasketData.redirect;
                 } else {
@@ -237,6 +243,7 @@ if (!dialang.session.reviewMode) {
                 } // if (nextBasketData.redirect)
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                dialang.stopSpinner();
                 alert('Failed to submit basket. Reason: ' + textStatus);
             }
         }); // ajaxForm

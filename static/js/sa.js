@@ -50,6 +50,8 @@ $.get(`/content/sa/${dialang.session.al}/${dialang.session.skill}.html`, functio
     formData.append("skill", dialang.session.skill);
     formData.append("sessionId", dialang.session.id);
 
+    dialang.startSpinner();
+
     const url = "/api/scoresa";
     fetch(url, {
       method: "POST",
@@ -75,9 +77,8 @@ $.get(`/content/sa/${dialang.session.al}/${dialang.session.skill}.html`, functio
         dialang.navigation.nextRules.sa();
       }
     })
-    .catch(error => {
-      alert('Failed to submit sa. Reason: ' + error);
-    });
+    .catch(error => alert('Failed to submit sa. Reason: ' + error))
+    .finally(() => dialang.stopSpinner());
   });
   $('#confirm-send-no').click(function (e) {
 

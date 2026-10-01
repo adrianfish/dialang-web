@@ -69,6 +69,8 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
       formData.append("tl", dialang.session.tl);
       formData.append("sessionId", dialang.session.id);
 
+      dialang.startSpinner();
+
       const url = "/api/scorevspt";
       fetch(url, {
         method: "POST",
@@ -100,9 +102,8 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
           dialang.navigation.nextRules.vspt();
         }
       })
-      .catch(error => {
-        alert(`Failed to submit vspt. Reason: ${error}`);
-      });
+      .catch(error => alert(`Failed to submit vspt. Reason: ${error}`))
+      .finally(() => dialang.stopSpinner());
 
       return false;
     });
