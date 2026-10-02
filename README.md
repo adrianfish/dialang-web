@@ -33,8 +33,3 @@ will start Dialang up under a local port, ideal for testing.
 ```shell
 deno task start
 ```
-
-## Deploying to Deno Deploy
-
-Dlalang is deployed directly from https://github.com/adrianfish/dialang-web. As soon as PRs are
-merged, Deno Deploy will redeploy the updated code.
