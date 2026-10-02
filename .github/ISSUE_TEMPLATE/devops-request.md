@@ -1,6 +1,6 @@
 ---
-name: Dev ops template
-about: This template is for dev ops issues, not user facing.
+name: DevOps request
+about: This template is for devops issues, not user facing.
 title: DEVOPS
 labels: ''
 assignees: adrianfish
