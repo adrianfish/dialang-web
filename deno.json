@@ -7,7 +7,8 @@
   },
   "tasks": {
     "seed": "deno run -A --unstable-kv --env-file seed/seed.ts",
-    "start": "deno run --env-file --unstable-kv -R -N -E --watch main.ts"
+    "start": "deno run --env-file --unstable-kv -R -N -E --watch main.ts",
+    "e2e": "deno run -A npm:playwright test"
   },
   "imports": {
     "@adrianfish/lti-kit": "jsr:@adrianfish/lti-kit@0.1.0",
@@ -22,6 +23,7 @@
     "@std/csv": "jsr:@std/csv@^1.0.6",
     "@std/expect": "jsr:@std/expect@^1.0.18",
     "@std/uuid": "jsr:@std/uuid@^1.1.0",
-    "@std/testing/mock": "jsr:@std/testing/mock"
+    "@std/testing/mock": "jsr:@std/testing/mock",
+    "playwright": "npm:playwright@^1.63.0"
   }
 }

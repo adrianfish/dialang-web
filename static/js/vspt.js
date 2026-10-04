@@ -8,6 +8,13 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
 
     $('#content').html(data);
 
+    $('#confirm-send-dialog').dialog({
+        modal: true,
+        width: 'auto',
+        autoOpen: false,
+        resizable: false
+    });
+
     $('.word').click(function (e) {
         
         var wordId = this.id.substring(0,this.id.indexOf('_'));
@@ -63,6 +70,12 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
         resizable: false
     });
 
+    $('#vspt-send-button,#next').click(function (e) {
+
+        $('#confirm-send-dialog').dialog('open');
+        return false;
+    });
+
     $('#confirm-send-yes').click(function (e) {
 
       const formData = new FormData(document.getElementById('vsptform'));
@@ -114,18 +127,13 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
         return false;
     });
 
-    $('#vspt-send-button,#next').click(function (e) {
-
-        $('#confirm-send-dialog').dialog('open');
-        return false;
-    });
-
     $('#confirm-skip-dialog').dialog({
         modal: true,
         width: 'auto',
         autoOpen: false,
         resizable: false
     });
+
     $('#confirm-skip-yes').click(dialang.skipVSPT);
     $('#confirm-skip-no').click(function (e) {
         $('#confirm-skip-dialog').dialog('close');

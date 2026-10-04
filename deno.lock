@@ -2,6 +2,8 @@
   "version": "5",
   "specifiers": {
     "jsr:@adrianfish/lti-kit@0.1.0": "0.1.0",
+    "jsr:@deno-library/progress@^1.5.1": "1.5.1",
+    "jsr:@deno/cache-dir@0.22.2": "0.22.2",
     "jsr:@hono/hono@4": "4.13.5",
     "jsr:@hono/hono@^4.12.8": "4.13.5",
     "jsr:@hugoalh/http-header-link@1.0.3": "1.0.3",
@@ -10,21 +12,35 @@
     "jsr:@std/assert@1": "1.0.19",
     "jsr:@std/assert@^1.0.17": "1.0.19",
     "jsr:@std/assert@^1.0.19": "1.0.19",
+    "jsr:@std/async@1": "1.5.0",
     "jsr:@std/async@^1.5.0": "1.5.0",
+    "jsr:@std/bytes@^1.0.2": "1.0.6",
     "jsr:@std/bytes@^1.0.6": "1.0.6",
     "jsr:@std/cli@^1.0.29": "1.0.32",
     "jsr:@std/crypto@^1.1.0": "1.1.0",
     "jsr:@std/csv@^1.0.6": "1.0.6",
     "jsr:@std/data-structures@^1.1.1": "1.1.2",
+    "jsr:@std/encoding@1": "1.0.11",
     "jsr:@std/expect@^1.0.18": "1.0.20",
+    "jsr:@std/fmt@1.0.3": "1.0.3",
     "jsr:@std/fmt@^1.0.10": "1.0.10",
+    "jsr:@std/fmt@^1.0.3": "1.0.10",
+    "jsr:@std/fs@1": "1.0.23",
+    "jsr:@std/fs@^1.0.6": "1.0.23",
     "jsr:@std/internal@^1.0.12": "1.0.14",
     "jsr:@std/internal@^1.0.14": "1.0.14",
+    "jsr:@std/io@0.225": "0.225.0",
+    "jsr:@std/io@0.225.0": "0.225.0",
+    "jsr:@std/path@1": "1.1.6",
+    "jsr:@std/path@^1.0.8": "1.1.6",
     "jsr:@std/path@^1.1.6": "1.1.6",
     "jsr:@std/streams@^1.0.9": "1.1.2",
     "jsr:@std/testing@*": "1.0.17",
     "jsr:@std/uuid@^1.1.0": "1.1.1",
-    "npm:create-playwright@latest": "1.17.139"
+    "jsr:@zip-js/zip-js@^2.7.52": "2.8.26",
+    "npm:create-playwright@latest": "1.17.139",
+    "npm:playwright@*": "1.63.0",
+    "npm:playwright@^1.63.0": "1.63.0"
   },
   "jsr": {
     "@adrianfish/lti-kit@0.1.0": {
@@ -33,6 +49,22 @@
         "jsr:@hono/hono@4",
         "jsr:@hugoalh/http-header-link",
         "jsr:@panva/jose"
+      ]
+    },
+    "@deno-library/progress@1.5.1": {
+      "integrity": "966611826b8bb27baae73ab1c4fa4317cd4edd2abb99750cd6f8488d22d5b121",
+      "dependencies": [
+        "jsr:@std/fmt@1.0.3",
+        "jsr:@std/io@0.225.0"
+      ]
+    },
+    "@deno/cache-dir@0.22.2": {
+      "integrity": "0c84b8db6175618cc2e25ed7d7648d83b38e298c14c1aae1e4b4e1b2219b840c",
+      "dependencies": [
+        "jsr:@std/fmt@^1.0.3",
+        "jsr:@std/fs@^1.0.6",
+        "jsr:@std/io@0.225",
+        "jsr:@std/path@^1.0.8"
       ]
     },
     "@hono/hono@4.13.5": {
@@ -68,7 +100,7 @@
     "@std/cli@1.0.32": {
       "integrity": "188b3a100d6202d64e3f5bd3d799c7fa4f6d77f92cc65eb7f641c1fa0aa92a66",
       "dependencies": [
-        "jsr:@std/fmt",
+        "jsr:@std/fmt@^1.0.10",
         "jsr:@std/internal@^1.0.14"
       ]
     },
@@ -84,19 +116,34 @@
     "@std/data-structures@1.1.2": {
       "integrity": "2471377c9e0051f9ec34e57d0ebd0ad133a5a889677446ec6ba9938e4e102918"
     },
+    "@std/encoding@1.0.11": {
+      "integrity": "e7cef2f0b3153bccc17431e7c864a1de03a4b6d9647389c43e08aaa775d37385"
+    },
     "@std/expect@1.0.20": {
       "integrity": "ffc4f3c33f732417e3e9acf3d995818c89984313c37d933b9ebbb4571d2887e9",
       "dependencies": [
         "jsr:@std/assert@^1.0.19",
         "jsr:@std/internal@^1.0.14",
-        "jsr:@std/path"
+        "jsr:@std/path@^1.1.6"
       ]
+    },
+    "@std/fmt@1.0.3": {
+      "integrity": "97765c16aa32245ff4e2204ecf7d8562496a3cb8592340a80e7e554e0bb9149f"
     },
     "@std/fmt@1.0.10": {
       "integrity": "90dfba288802ac6de82fb31d0917eb9e4450b9925b954d5e51fc29ac07419db5"
     },
+    "@std/fs@1.0.23": {
+      "integrity": "3ecbae4ce4fee03b180fa710caff36bb5adb66631c46a6460aaad49515565a37"
+    },
     "@std/internal@1.0.14": {
       "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
+    },
+    "@std/io@0.225.0": {
+      "integrity": "c1db7c5e5a231629b32d64b9a53139445b2ca640d828c26bf23e1c55f8c079b3",
+      "dependencies": [
+        "jsr:@std/bytes@^1.0.2"
+      ]
     },
     "@std/path@1.1.6": {
       "integrity": "c68485c2a4dfbb5ae3cc74fae4e8c4e5d874cf8a8ed12927917235c758b46cbe",
@@ -107,7 +154,7 @@
     "@std/streams@1.1.2": {
       "integrity": "0249bf9b78a999f57032ca4d8e7ccaa57579090242640b35ddc948fbb745d3af",
       "dependencies": [
-        "jsr:@std/bytes"
+        "jsr:@std/bytes@^1.0.6"
       ]
     },
     "@std/testing@1.0.17": {
@@ -119,14 +166,28 @@
     "@std/uuid@1.1.1": {
       "integrity": "7b49060282d90f72fec64952f8c7a2914cbe6fdba3eca665f8cedc90830154a7",
       "dependencies": [
-        "jsr:@std/bytes",
+        "jsr:@std/bytes@^1.0.6",
         "jsr:@std/crypto"
       ]
+    },
+    "@zip-js/zip-js@2.8.26": {
+      "integrity": "2b78bfa2c5d43766c9a487fc0274981d45732de41bb5b82433d29d235be67191"
     }
   },
   "npm": {
     "create-playwright@1.17.139": {
       "integrity": "sha512-be59wywAD7GxnTqCCc2T0Ujps9t4MYpVWxbP9hT2tOBRrRKBwMcU1HhLzhT70FiaLPqxuImqQQFp5s5yO9Qp3A==",
+      "bin": true
+    },
+    "playwright-core@1.63.0": {
+      "integrity": "sha512-rYCsBF/M5HjUch52bbtVONEFjv6Xu8sm8h72dNlR5bzIE1fvC/bxgspzkjSfU+MweEMmPM8KJebG6nnyxo5mCg==",
+      "bin": true
+    },
+    "playwright@1.63.0": {
+      "integrity": "sha512-+7ziBLidS4NaNCdt57SUDT+wYmmd5fmiQejUic/kb+YsYSCPyOOE9sebzMjNmQrsnNpDJqd4WHvV/8lfKfUDUg==",
+      "dependencies": [
+        "playwright-core"
+      ],
       "bin": true
     }
   },
@@ -148,7 +209,8 @@
       "jsr:@std/csv@^1.0.6",
       "jsr:@std/expect@^1.0.18",
       "jsr:@std/testing@*",
-      "jsr:@std/uuid@^1.1.0"
+      "jsr:@std/uuid@^1.1.0",
+      "npm:playwright@^1.63.0"
     ]
   }
 }
