@@ -44,7 +44,7 @@ export async function submitBasket(
 
   const positionInBasketSorter = (a: ScoredItem, b: ScoredItem) => a.positionInBasket - b.positionInBasket;
 
-  const numScoredItems: number = session.scoredItems?.length || 0;
+  const numScoredItems: number = session.itemScores?.length || 0;
   const currentBasketId: number = session.currentBasketId;
 
   console.debug(`basketType: ${basketType}`);
