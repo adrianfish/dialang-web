@@ -31,6 +31,9 @@ jobs:
 
       - run: deno ci
 
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
       - run: deno check -I
       - run: deno lint
       - run: deno test
