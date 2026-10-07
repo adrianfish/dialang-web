@@ -30,11 +30,10 @@ jobs:
           cache: true
 
       - run: deno ci
-
-      - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
-
       - run: deno check -I
       - run: deno lint
       - run: deno test
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - run: deno task start
       - run: deno run -A npm:playwright test
