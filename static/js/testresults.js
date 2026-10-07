@@ -1,3 +1,5 @@
+document.getElementById("content").classList.add("in-test");
+
 $('#back').prop('disabled', false).click(function () {
 
     dialang.switchState('feedbackmenu');

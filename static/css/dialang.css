@@ -535,10 +535,15 @@ button[disabled] {
 
 #thermometer-image {
     float:left;
+    margin-right: 20px;
 }
 
-#results-content > p {
-    text-align:left;
+#results-content {
+    padding-top: 14px;
+    
+    p {
+      text-align:left;
+    }
 }
 
 #itemreview-table {

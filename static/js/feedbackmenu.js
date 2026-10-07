@@ -1,3 +1,5 @@
+document.getElementById("content").classList.remove("in-test");
+
 dialang.session.feedbackMode = true;
 
 if (!dialang.flags.skipQuestionnaire) {
