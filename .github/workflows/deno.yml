@@ -8,6 +8,9 @@
 
 name: Deno
 
+env:
+  LTI_SECRET: "chips"
+
 on:
   push:
     branches: ["main"]
