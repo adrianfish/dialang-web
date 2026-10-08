@@ -7,7 +7,7 @@
   },
   "tasks": {
     "seed": "deno run -A --unstable-kv --env-file seed/seed.ts",
-    "start": "deno run --env-file --unstable-kv -R -N -E main.ts",
+    "start": "deno run --env-file --unstable-kv -R -N -E main.ts &",
     "start-dev": "deno run --env-file --unstable-kv -R -N -E --watch main.ts",
     "e2e": "deno run -A npm:playwright test",
     "doc": "deno doc --html src/**/*.ts"
