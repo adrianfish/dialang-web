@@ -1,3 +1,5 @@
+import { env } from "cloudflare:workers";
+
 import type {
   Answer,
   DialangSession,
@@ -13,100 +15,117 @@ import type {
 
 import type { Storage } from "./storage.ts";
 
+// Workers KV keys are flat strings, so the hierarchical key parts are joined with ":".
+function kvKey(...parts: Array<string | number>): string {
+  return parts.join(":");
+}
+
 export class KVStorage implements Storage {
 
-  #kv: Deno.Kv;
+  #kv: KVNamespace;
 
-  private constructor(kv: Deno.Kv) {
+  private constructor(kv: KVNamespace) {
     this.#kv = kv;
   }
-  
+
   static async open(): Promise<Storage> {
-    return new KVStorage(await Deno.openKv());
+    return new KVStorage(env.DIALANG_KV);
   }
 
   async saveSession(sessionId: string, session: DialangSession): Promise<boolean> {
-    session.lastModified = Date.now();
-    //  8 hours from now
-    const expireIn = 8 * 60 * 60 * 1000;
-    return (await this.#kv.set(["sessions", sessionId], session, { expireIn })).ok;
+    try {
+      session.lastModified = Date.now();
+      //  8 hours from now
+      const expirationTtl = 8 * 60 * 60;
+      await this.#kv.put(kvKey("sessions", sessionId), JSON.stringify(session), { expirationTtl });
+      return true;
+    } catch (error) {
+      console.error(`Failed to save session ${sessionId}`, error);
+      return false;
+    }
   }
 
   async getSession(sessionId: string): Promise<DialangSession | null> {
-    return (await this.#kv.get<DialangSession>(["sessions", sessionId])).value;
+    return this.#kv.get<DialangSession>(kvKey("sessions", sessionId), "json");
   }
 
   async saveSavedSession(session: SavedDialangSession): Promise<boolean> {
-    session.savedAt = Date.now();
-    //  48 hours from now
-    const expireIn = 48 * 60 * 60 * 1000;
-    return (await this.#kv.set(["saved-sessions", session.saveToken], session, { expireIn })).ok;
+    try {
+      session.savedAt = Date.now();
+      //  48 hours from now
+      const expirationTtl = 48 * 60 * 60;
+      await this.#kv.put(kvKey("saved-sessions", session.saveToken), JSON.stringify(session), { expirationTtl });
+      return true;
+    } catch (error) {
+      console.error(`Failed to save saved-session ${session.saveToken}`, error);
+      return false;
+    }
   }
 
   async getSavedSession(saveToken: string): Promise<SavedDialangSession | null> {
-    return (await this.#kv.get<SavedDialangSession>(["saved-sessions", saveToken])).value;
+    return this.#kv.get<SavedDialangSession>(kvKey("saved-sessions", saveToken), "json");
   }
 
   deleteSession(sessionId: string): Promise<void> {
-    return this.#kv.delete(["sessions", sessionId]);
+    return this.#kv.delete(kvKey("sessions", sessionId));
   }
 
   deleteSavedSession(sessionId: string): Promise<void> {
-    return this.#kv.delete(["saved-sessions", sessionId]);
+    return this.#kv.delete(kvKey("saved-sessions", sessionId));
   }
 
   async getVSPWords(tl: string): Promise<Array<VSPWord> | null> {
-    return (await this.#kv.get<Array<VSPWord>>([ "data", "vspt-words", tl])).value;
+    return this.#kv.get<Array<VSPWord>>(kvKey("data", "vspt-words", tl), "json");
   }
 
   async getVSPBands(tl: string): Promise<Array<VSPBand> | null> {
-    return (await this.#kv.get<Array<VSPBand>>([ "data", "vspt-bands", tl])).value;
+    return this.#kv.get<Array<VSPBand>>(kvKey("data", "vspt-bands", tl), "json");
   }
 
   async getSAGrade(skill: string, rsc: number): Promise<SAGrade | null> {
-    return (await this.#kv.get<SAGrade>([ "data", "sa-grades", skill, rsc ])).value;
+    return this.#kv.get<SAGrade>(kvKey("data", "sa-grades", skill, rsc), "json");
   }
 
   async getSAWeights(skill: string): Promise<Record<string, number> | null> {
-    return (await this.#kv.get<Record<string, number>>([ "data", "sa-weights", skill ])).value;
+    return this.#kv.get<Record<string, number>>(kvKey("data", "sa-weights", skill), "json");
   }
 
   async getPreestWeight(key: string): Promise<PreestWeight | null> {
-    return (await this.#kv.get<PreestWeight>([ "data", "preest-weights", key ])).value;
+    return this.#kv.get<PreestWeight>(kvKey("data", "preest-weights", key), "json");
   }
 
   async getPreestAssignments(key: string): Promise<Array<PreestAssignment> | null> {
-    return (await this.#kv.get<Array<PreestAssignment>>([ "data", "preest-assignments", key ])).value;
+    return this.#kv.get<Array<PreestAssignment>>(kvKey("data", "preest-assignments", key), "json");
   }
 
   async getBookletLength(bookletId: number): Promise<number | null> {
-    return (await this.#kv.get<number>([ "data", "booklet-lengths", bookletId ])).value;
+    return this.#kv.get<number>(kvKey("data", "booklet-lengths", bookletId), "json");
   }
 
   async getBaskets(bookletId: number): Promise<Array<number> | null> {
-    return (await this.#kv.get<Array<number>>([ "data", "booklet-baskets", bookletId ])).value;
+    return this.#kv.get<Array<number>>(kvKey("data", "booklet-baskets", bookletId), "json");
   }
 
   async getItem(id: number): Promise<Item | null> {
-    return (await this.#kv.get<Item>([ "data", "items", id ])).value;
+    return this.#kv.get<Item>(kvKey("data", "items", id), "json");
   }
 
   async getAnswer(id: number): Promise<Answer | null> {
-    return (await this.#kv.get<Answer>([ "data", "answers", id ])).value;
+    return this.#kv.get<Answer>(kvKey("data", "answers", id), "json");
   }
 
   async getItemAnswers(itemId: number): Promise<Array<Answer> | null> {
-    return (await this.#kv.get<Array<Answer>>([ "data", "item-answers", itemId ])).value;
+    return this.#kv.get<Array<Answer>>(kvKey("data", "item-answers", itemId), "json");
   }
 
   async getItemGrade(key: string, rawScore: number): Promise<Record<string, string | number> | null> {
     console.debug(`Retrieving item grade for key ${key} and raw score ${rawScore} ...`);
-    return (await this.#kv.get<Record<string, string | number>>([ "data", "item-grades", key, rawScore ])).value;
+    return this.#kv.get<Record<string, string | number>>(kvKey("data", "item-grades", key, rawScore), "json");
   }
 
   async getLanguageName(al: string, tl: string): Promise<string | null> {
 
-    const names: Record<string, string> | null = (await this.#kv.get<Record<string, string>>([ "data", "language-names", al ])).value;
+    const names: Record<string, string> | null = await this.#kv.get<Record<string, string>>(kvKey("data", "language-names", al), "json");
     if (!names) {
       console.warn(`No language names found for admin language ${al}`);
       return null;
@@ -115,7 +134,7 @@ export class KVStorage implements Storage {
   }
 
   async getSkillName(al: string, skill: string): Promise<string | null> {
-    const names: Record<string, string> | null = (await this.#kv.get<Record<string, string>>([ "data", "skill-names", al ])).value;
+    const names: Record<string, string> | null = await this.#kv.get<Record<string, string>>(kvKey("data", "skill-names", al), "json");
     if (!names) {
       console.warn(`No skill names found for admin language ${al}`);
       return null;
@@ -124,104 +143,143 @@ export class KVStorage implements Storage {
   }
 
   async getPunctuationList(): Promise<Array<string> | null> {
-    return (await this.#kv.get<Array<string>>([ "data", "punctuation" ])).value;
+    return this.#kv.get<Array<string>>(kvKey("data", "punctuation"), "json");
   }
 
   async getTestSessions(completed?: boolean): Promise<Array<TestSession>> {
 
     const data: Array<TestSession> = [];
-    const iter = this.#kv.list<TestSession>({ prefix: [ "datacapture", "tests-taken" ] });
-    for await (const entry of iter) {
-      if (completed) {
-        entry.value.itemLevel && data.push(entry.value);
-      } else {
-        data.push(entry.value);
+    const prefix: string = kvKey("datacapture", "tests-taken");
+    let cursor: string | undefined = undefined;
+    let listComplete = false;
+
+    // list() returns keys only, so each page is followed by a get() per key.
+    do {
+      const page = await this.#kv.list({ prefix, cursor });
+      const sessions = await Promise.all(page.keys.map((key) => this.#kv.get<TestSession>(key.name, "json")));
+      for (const session of sessions) {
+        if (!session) continue;
+        if (completed) {
+          session.itemLevel && data.push(session);
+        } else {
+          data.push(session);
+        }
       }
-    }
+      cursor = page.cursor;
+      listComplete = page.list_complete;
+    } while (!listComplete);
+
     return data;
   }
 
-  logTestStart(session: DialangSession): Promise<boolean> {
+  async logTestStart(session: DialangSession): Promise<boolean> {
+    try {
+      const data: TestSession = {
+        sessionId: session.id,
+        ipAddress: session.ipAddress,
+        referrer: session.referrer,
+        al: session.al,
+        tl: session.tl,
+        skill: session.skill,
+        started: session.started,
+      };
 
-    const data: TestSession = {
-      sessionId: session.id,
-      ipAddress: session.ipAddress,
-      referrer: session.referrer,
-      al: session.al,
-      tl: session.tl,
-      skill: session.skill,
-      started: session.started,
-    };
-
-    return this.setTestSession(data);
+      return await this.setTestSession(data);
+    } catch (error) {
+      console.error(`Failed to log test start for session ${session.id}`, error);
+      return false;
+    }
   }
 
   async logVsptScores(session: DialangSession): Promise<boolean> {
+    try {
+      const testSession: TestSession | null = await this.getTestSession(session.id);
 
-    const testSession: TestSession | null = await this.getTestSession(session.id);
+      if (!testSession) {
+        console.warn(`No test session for sessionId ${session.id}`);
+        return false;
+      }
 
-    if (!testSession) {
-      console.warn(`No test session for sessionId ${session.id}`);
+      testSession.vsptZScore = session.vsptZScore;
+      testSession.vsptMearaScore = session.vsptMearaScore;
+      testSession.vsptLevel = session.vsptLevel;
+      return await this.setTestSession(testSession);
+    } catch (error) {
+      console.error(`Failed to log VSPT scores for session ${session.id}`, error);
       return false;
     }
-
-    testSession.vsptZScore = session.vsptZScore;
-    testSession.vsptMearaScore = session.vsptMearaScore;
-    testSession.vsptLevel = session.vsptLevel;
-    return this.setTestSession(testSession);
   }
 
   async logSaScores(session: DialangSession): Promise<boolean> {
+    try {
+      const testSession: TestSession | null = await this.getTestSession(session.id);
 
-    const testSession: TestSession | null = await this.getTestSession(session.id);
+      if (!testSession) {
+        console.warn(`No test session for sessionId ${session.id}`);
+        return false;
+      }
 
-    if (!testSession) {
-      console.warn(`No test session for sessionId ${session.id}`);
+  	  testSession.saPPE = session.saPPE;
+  	  testSession.saLevel = session.saLevel;
+      return await this.setTestSession(testSession);
+    } catch (error) {
+      console.error(`Failed to log SA scores for session ${session.id}`, error);
       return false;
     }
-
-	  testSession.saPPE = session.saPPE;
-	  testSession.saLevel = session.saLevel;
-    return this.setTestSession(testSession);
   }
 
   async logTestResult(session: DialangSession): Promise<boolean> {
+    try {
+      const testSession: TestSession | null = await this.getTestSession(session.id);
 
-    const testSession: TestSession | null = await this.getTestSession(session.id);
+      if (!testSession) {
+        console.warn(`No test session for sessionId ${session.id}`);
+        return false;
+      }
 
-    if (!testSession) {
-      console.warn(`No test session for sessionId ${session.id}`);
+      testSession.itemRawScore = session.itemRawScore;
+      testSession.itemGrade = session.itemGrade;
+      testSession.itemLevel = session.itemLevel;
+      return await this.setTestSession(testSession);
+    } catch (error) {
+      console.error(`Failed to log test result for session ${session.id}`, error);
       return false;
     }
-
-    testSession.itemRawScore = session.itemRawScore;
-    testSession.itemGrade = session.itemGrade;
-    testSession.itemLevel = session.itemLevel;
-    return this.setTestSession(testSession);
   }
 
   async storeQuestionnaire(sessionId: string, body: Questionnaire): Promise<boolean> {
+    try {
+      const testSession: TestSession | null = await this.getTestSession(sessionId);
 
-    const testSession: TestSession | null = await this.getTestSession(sessionId);
+      if (!testSession) {
+        console.warn(`No test session for sessionId ${sessionId}`);
+        return false;
+      }
 
-    if (!testSession) {
-      console.warn(`No test session for sessionId ${sessionId}`);
+      const questionnaire = {
+        ...body,
+        gender: body.gender === "-1" ? "n/a" : body.gender === "other" ? body.othergender : body.gender,
+      };
+
+      await this.#kv.put(kvKey("datacapture", "questionnaires", testSession.sessionId), JSON.stringify(questionnaire));
+      return true;
+    } catch (error) {
+      console.error(`Failed to store questionnaire for session ${sessionId}`, error);
       return false;
     }
-
-    const questionnaire = {
-      ...body, 
-      gender: body.gender === "-1" ? "n/a" : body.gender === "other" ? body.othergender : body.gender,
-    };
-
-    return (await this.#kv.set([ "datacapture", "questionnaires", testSession.sessionId ], questionnaire)).ok;
   }
 
   async getTestSession(id: string): Promise<TestSession | null> {
-    return (await this.#kv.get<TestSession>([ "datacapture", "tests-taken", id ])).value;
+    return this.#kv.get<TestSession>(kvKey("datacapture", "tests-taken", id), "json");
   }
 
   async setTestSession(testSession: TestSession): Promise<boolean> {
-    return (await this.#kv.set([ "datacapture", "tests-taken", testSession.sessionId ], testSession)).ok;
+    try {
+      await this.#kv.put(kvKey("datacapture", "tests-taken", testSession.sessionId), JSON.stringify(testSession));
+      return true;
+    } catch (error) {
+      console.error(`Failed to set test session ${testSession.sessionId}`, error);
+      return false;
+    }
   }
 }

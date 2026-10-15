@@ -1,5 +1,6 @@
-import { Hono } from "@hono/hono";
-import { serveStatic } from "@hono/deno";
+import { Hono } from "hono";
+import { env } from "cloudflare:workers";
+//import { serveStatic } from "@hono/deno";
 import { KVStorage } from "./src/storage/kv-storage.ts";
 import { setAl } from "./src/routes/setal.ts";
 import { setTl } from "./src/routes/settl.ts";
@@ -18,10 +19,10 @@ import { tlDistribution } from "./src/routes/reports/tl-distribution.ts";
 import { skillDistribution } from "./src/routes/reports/skill-distribution.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
-import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
-import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
-import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
-import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
+//import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
+//import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
+//import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
+//import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
 import type { Storage } from "./src/storage/storage.ts";
 
@@ -29,14 +30,16 @@ const app: Hono = new Hono();
 
 const storage: Storage = await KVStorage.open();
 
-const hostname: string = Deno.env.get("HOSTNAME") || "adrian-dialang.ngrok.app";
-const port: number = parseInt(Deno.env.get("PORT") || "3001");
+const hostname: string = env.HOSTNAME || "adrian-dialang.ngrok.app";
+const port: number = parseInt(env.PORT || "3001");
 
-const ltiSecret: string | undefined = Deno.env.get("LTI_SECRET");
+/*
+const ltiSecret: string | undefined = env.LTI_SECRET;
 if (!ltiSecret) {
   console.error("No LTI_SECRET defined as an environment variable. Exiting ...");
   Deno.exit(1);
 }
+
 const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
 const ltiLogoUri: string = `https://${hostname}/static/images/large_logo.png`;
 
@@ -52,6 +55,7 @@ await lti
   .onLaunch(createLTILaunchHandler(storage))
   .onDeepLinking(deepLinkingHandler)
   .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiOptions);
+*/
 
 app.post("/api/setal", (c) => setAl(c, storage));
 app.post("/api/settl", (c) => setTl(c, storage));
@@ -72,8 +76,8 @@ app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, ltiSecret));
 app.get("/reports/:report?", (c) => reports(c));
 app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
 
-app.route(ltiOptions.ltiRoute, lti.handler());
+//app.route(ltiOptions.ltiRoute, lti.handler());
 
-app.use("/*", serveStatic({ root: "./static/" }));
+//app.use("/*", serveStatic({ root: "./static/" }));
 
-Deno.serve({ port, hostname: "127.0.0.1" }, app.fetch);
+export default app;

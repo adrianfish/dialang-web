@@ -2,3 +2,5 @@ data-files
 docs
 tags
 .env
+.wrangler
+node_modules
