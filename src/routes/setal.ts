@@ -1,4 +1,4 @@
-import { getConnInfo } from '@hono/deno'
+//import { getConnInfo } from '@hono/deno'
 import { setSessionId } from "../utils/utils.ts";
 
 import type { Context } from "@hono";
@@ -19,7 +19,8 @@ export async function setAl(
   }
 
   const sessionId = setSessionId(c);
-  const ipAddress = (getConnInfo(c).remote.address || "").replace(/^::ffff:/, "");
+  //const ipAddress = (getConnInfo(c).remote.address || "").replace(/^::ffff:/, "");
+  const ipAddress = "";
 
   storage.saveSession(sessionId, {
     id: sessionId,

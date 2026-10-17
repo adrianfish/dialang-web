@@ -1,5 +1,8 @@
-data-files
 docs
+data-files
+!data-files/language-names.json
+!data-files/skill-names.json
+content
 tags
 .env
 .wrangler

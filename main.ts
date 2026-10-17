@@ -2,6 +2,7 @@ import { Hono } from "hono";
 import { env } from "cloudflare:workers";
 //import { serveStatic } from "@hono/deno";
 import { KVStorage } from "./src/storage/kv-storage.ts";
+import { content } from "./src/routes/content.ts";
 import { setAl } from "./src/routes/setal.ts";
 import { setTl } from "./src/routes/settl.ts";
 import { scoreVspt } from "./src/routes/scorevspt.ts";
@@ -64,6 +65,7 @@ app.post("/api/scoresa", (c) => scoreSA(c, storage));
 app.post("/api/starttest", (c) => startTest(c, storage));
 app.post("/api/submitbasket", (c) => submitBasket(c, storage, lti));
 app.post("/api/resumesession", (c) => resumeSession(c, storage));
+app.get("/content/*", content);
 app.get("/api/savesession", (c) => saveSession(c, storage));
 app.get("/api/deletesession", (c) => deleteSession(c, storage));
 app.get("/api/session", (c) => getSession(c, storage));
@@ -78,6 +80,7 @@ app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
 
 //app.route(ltiOptions.ltiRoute, lti.handler());
 
-//app.use("/*", serveStatic({ root: "./static/" }));
+app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));
 
 export default app;
+//export default { fetch() { return new Response("ok") } }

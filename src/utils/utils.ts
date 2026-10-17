@@ -1,5 +1,5 @@
-import { getCookie, setCookie } from "@hono/cookie";
-import type { Context } from "@hono";
+import { getCookie, setCookie } from "hono/cookie";
+import type { Context } from "hono";
 
 export function setSessionId(c: Context): string {
 

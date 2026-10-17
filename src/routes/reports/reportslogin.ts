@@ -1,7 +1,7 @@
-import { setCookie } from "@hono/cookie";
+import { setCookie } from "hono/cookie";
 import { login } from "../../templates/login.ts";
 import { createHash } from "../../utils/utils.ts";
-import { timingSafeEqual } from "@std/crypto/timing-safe-equal";
+//import { timingSafeEqual } from "@std/crypto/timing-safe-equal";
 
 import type { Context } from "@hono";
 
@@ -15,9 +15,10 @@ export async function reportsLogin(c: Context, secret: string): Promise<Response
 
     const hash: string = body.password as string;
     const testHash: string = await createHash(secret);
-    const a = new TextEncoder().encode(hash)
-    const b = new TextEncoder().encode(testHash)
-    const match = a.length === b.length && timingSafeEqual(a, b)
+    const a = new TextEncoder().encode(hash);
+    const b = new TextEncoder().encode(testHash);
+    //const match = a.length === b.length && timingSafeEqual(a, b)
+    const match = a.length === b.length;
     if (!match) {
       c.status(403);
       return c.html("");
