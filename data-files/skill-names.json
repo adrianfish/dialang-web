@@ -1,0 +1,78 @@
+[
+  {
+		"key": "da-DK",
+		"value": "{\"listening\": \"Lytteforståelse\", \"writing\": \"Skrivefærdighed\", \"reading\": \"Læseforståelse\", \"structures\": \"Grammatik\", \"vocabulary\": \"Ordforråd\"}"
+  },
+  {
+		"key": "de-DE",
+		"value": "{\"listening\": \"Hörverstehen\", \"writing\": \"Schreiben\", \"reading\": \"Leseverstehen\", \"structures\": \"Grammatik\", \"vocabulary\": \"Wortschatz\"}"
+  },
+  {
+		"key": "el-GR",
+		"value": "{\"listening\": \"Κατανόηση προφορικού λόγου\", \"writing\": \"Παραγωγή γραπτού λόγου\", \"reading\": \"Κατανόηση γραπτού λόγου\", \"structures\": \"Δομές\", \"vocabulary\": \"Λεξιλόγιο\"}"
+  },
+  {
+		"key": "en-GB",
+		"value": "{\"listening\": \"listening\", \"reading\": \"reading\", \"writing\": \"writing\", \"structures\": \"structures\", \"vocabulary\": \"vocabulary\"}"
+  },
+  {
+		"key": "es-ES",
+		"value": "{\"listening\": \"Comprensión oral\", \"writing\": \"Expresión escrita\", \"reading\": \"Comprensión escrita\", \"structures\": \"Gramática\", \"vocabulary\": \"Vocabulario\"}"
+  },
+  {
+		"key": "fi-FI",
+		"value": "{\"listening\": \"Kuunteleminen\", \"writing\": \"Kirjoittaminen\", \"reading\": \"Lukeminen\", \"structures\": \"Rakenteet\", \"vocabulary\": \"Sanasto\"}"
+  },
+  {
+		"key": "fr-FR",
+		"value": "{\"listening\": \"Compréhension orale\", \"writing\": \"Expression écrite\", \"reading\": \"Compréhension écrite\", \"structures\": \"structures grammaticales\", \"vocabulary\": \"Vocabulaire\"}"
+  },
+  {
+		"key": "ga-IE",
+		"value": "{\"listening\": \"Éisteacht\", \"writing\": \"Scríobh\", \"reading\": \"Léamh\", \"structures\": \"Struchtúir\", \"vocabulary\": \"Stór Focal\"}"
+  },
+  {
+		"key": "id-ID",
+		"value": "{ \"listening\": \"Mendengarkan\", \"writing\": \"Menulis\", \"reading\": \"Membaca\", \"structures\": \"Struktur\", \"vocabulary\": \"Kosakata\"}"
+  },
+  {
+		"key": "is-IS",
+		"value": "{ \"listening\": \"Hlustun\", \"writing\": \"Ritun\", \"reading\": \"Lestur\", \"structures\": \"Málfræði\", \"vocabulary\": \"Orðaforði\"}"
+  },
+  {
+		"key": "it-IT",
+		"value": "{ \"listening\": \"Ascolto\", \"writing\": \"Scrittura\", \"reading\": \"Lettura\", \"structures\": \"Grammatica\", \"vocabulary\": \"Lessico\"}"
+  },
+  {
+		"key": "ja-JP",
+		"value": "{ \"listening\": \"リスニング\", \"writing\": \"ライティング\", \"reading\": \"リーディング\", \"structures\": \"構成\", \"vocabulary\": \"語い\"}"
+  },
+  {
+		"key": "ko-KR",
+		"value": "{ \"listening\": \"듣기\", \"writing\": \"쓰기\", \"reading\": \"읽기\", \"structures\": \"구조\", \"vocabulary\": \"어휘\"}"
+  },
+  {
+		"key": "nl-NL",
+		"value": "{ \"listening\": \"Luisteren\", \"writing\": \"Schrijven\", \"reading\": \"Lezen\", \"structures\": \"Taalstructuren\", \"vocabulary\": \"Woordenschat\"}"
+  },
+  {
+		"key": "no-NO",
+		"value": "{ \"listening\": \"Lytteforståelse\", \"writing\": \"Skriftlig språkbruk\", \"reading\": \"Leseforståelse\", \"structures\": \"Grammatikk\", \"vocabulary\": \"Vokabular\"}"
+  },
+  {
+		"key": "pt-PT",
+		"value": "{ \"listening\": \"Compreensão oral\", \"writing\": \"Expressão escrita\", \"reading\": \"Compreensão escrita\", \"structures\": \"Estruturas gramaticais\", \"vocabulary\": \"Vocabulário\"}"
+  },
+  {
+		"key": "sv-SE",
+		"value": "{ \"listening\": \"Hörförståelse\", \"writing\": \"Skriftlig del\", \"reading\": \"Läsförståelse\", \"structures\": \"Strukturer\", \"vocabulary\": \"Ordkunskap\"}"
+  },
+  {
+		"key": "tr-TR",
+		"value": "{ \"vocabulary\": \"Kelime dağarcığı\", \"listening\": \"Dinleme\", \"reading\": \"Okuma\", \"structures\": \"Yapılar\", \"writing\": \"Yazma\"}"
+  },
+  {
+		"key": "zh-CN",
+		"value": "{ \"listening\": \"听力\", \"writing\": \"写作\", \"reading\": \"阅读\", \"structures\": \"语法\", \"vocabulary\": \"词汇\"}"
+  }
+]
