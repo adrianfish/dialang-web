@@ -10,7 +10,6 @@ export async function content(c: Context): Promise<Response> {
 
   // Key is the pathname minus the leading slash, e.g. "content/foo/bar.json".
   // Decode so %20 etc. match the keys rclone wrote.
-  console.error(c.req.url);
   let key: string;
   try {
     key = decodeURIComponent(new URL(c.req.url).pathname.slice(1));
@@ -19,11 +18,10 @@ export async function content(c: Context): Promise<Response> {
   }
 
   // Reject path traversal and empty keys
-  if (key.split("/").includes("..") || key === "content/") {
+  if (key.split("/").includes("..") || key === "content/" || key === "images/") {
     return c.text("Not found", 404);
   }
 
-  console.error(key);
   const object = await c.env.BUCKET.get(key, {
     onlyIf: c.req.raw.headers, // handles If-None-Match / If-Modified-Since
     range: c.req.raw.headers,  // handles Range requests

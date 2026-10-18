@@ -8,7 +8,7 @@ import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from
 export async function submitBasket(
   c: Context,
   storage: Storage,
-  lti: LTIKit,
+  //lti: LTIKit,
 ): Promise<Response> {
 
   const sessionId: string | undefined = getSessionId(c);
@@ -25,7 +25,6 @@ export async function submitBasket(
 		c.status(500);
 		return c.html("");
   }
-
 
 	if (!session.tl || !session.skill || !session.currentBasketId || !session.bookletId || session.currentBasketNumber === undefined) {
 		console.error("None of the test language, skill, current basket id, booklet id or current basket number were set in the session. Returning 500 ...");
@@ -79,7 +78,15 @@ export async function submitBasket(
         scoredItem.responseId = answerId;
         scoredItem.positionInTest = numScoredItems + 1;
         console.debug(`Item position in test: ${scoredItem.positionInTest}`);
+
         scoredItem.answers = await storage.getItemAnswers(itemId);
+
+        if (!scoredItem.answers?.length) {
+          console.warn(`No answers for item ${itemId}. Returning 400 (Bad Request) ...`);
+          c.status(400);
+          return c.html("");
+        }
+
         itemList.push(scoredItem);
         const scoredBasket: ScoredBasket = { id: currentBasketId, type: "mcq", skill: scoredItem.skill, items: [scoredItem] };
         returnMap["scoredBasket"] = scoredBasket
@@ -116,7 +123,15 @@ export async function submitBasket(
           item.positionInTest = numScoredItems + item.positionInBasket;
           console.debug(`Item position in basket: ${item.positionInBasket}`);
           console.debug(`Item position in test: ${item.positionInTest}`);
+
           item.answers = await storage.getItemAnswers(item.id);
+
+          if (!item.answers?.length) {
+            console.warn(`No answers for item ${item.id}. Returning 400 (Bad Request) ...`);
+            c.status(400);
+            return c.html("");
+          }
+
           itemsToLog.push(item);
           itemList.push(item);
           basketItems.push(item);
@@ -280,6 +295,7 @@ export async function submitBasket(
       = await getItemGrade(session.tl, session.skill, session.bookletId, session.itemScores, storage);
 
     // If we're in an LTI session, post the score.
+    /*
     if (session.isLTI) {
       const ltik: string = body["ltik"] as string;
       const userId = session.user;
@@ -298,12 +314,17 @@ export async function submitBasket(
         console.warn("We're in an LTI session, but the ltik or userId were not supplied. Score not posted");
       }
     }
+    */
 
     session.itemRawScore = rawScore as number;
     session.itemGrade = itemGrade as number;
     session.itemLevel = itemLevel as string;
 
-    storage.saveSession(sessionId, session);
+    if (!(await storage.saveSession(sessionId, session))) {
+      console.error("Failed to save session");
+      c.status(500);
+      return c.html("");
+    }
 
     //datacapture.LogTestFinish(session.passId)
     storage.logTestResult(session);
@@ -336,7 +357,7 @@ export async function submitBasket(
 
     session.currentBasketNumber = nextBasketNumber;
     session.currentBasketId = nextBasketId;
-    storage.saveSession(sessionId, session);
+    await storage.saveSession(sessionId, session);
 
     returnMap["nextBasketId"] = nextBasketId;
     returnMap["itemsCompleted"] = itemList.length;

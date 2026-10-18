@@ -47,9 +47,9 @@ export async function scoreVspt(
   session.vsptLevel = level as string
   session.vsptSubmitted = true
 
-  storage.saveSession(sessionId, session);
+  await storage.saveSession(sessionId, session);
 
-  storage.logVsptScores(session);
+  await storage.logVsptScores(session);
 
   return c.json({ zScore, mearaScore, level });
 }

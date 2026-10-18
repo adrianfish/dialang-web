@@ -1,7 +1,7 @@
-//import { getConnInfo } from '@hono/deno'
+import { getConnInfo } from 'hono/cloudflare-workers'
 import { setSessionId } from "../utils/utils.ts";
 
-import type { Context } from "@hono";
+import type { Context } from "hono";
 import type { Storage } from "../storage/storage.ts";
 
 export async function setAl(
@@ -22,7 +22,7 @@ export async function setAl(
   //const ipAddress = (getConnInfo(c).remote.address || "").replace(/^::ffff:/, "");
   const ipAddress = "";
 
-  storage.saveSession(sessionId, {
+  await storage.saveSession(sessionId, {
     id: sessionId,
     al,
     referrer: c.req.header("Referer") || "",

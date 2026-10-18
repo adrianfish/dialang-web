@@ -44,14 +44,14 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
 	session.saSubmitted = true;
 	session.saLevel = level as string;
 
-  storage.saveSession(sessionId, session);
+  await storage.saveSession(sessionId, session);
 
   /*
 	datacapture.LogSAResponses(&dialangSession, responses)
 	datacapture.LogSAScores(&dialangSession)
   */
 
-	storage.logSaScores(session);
+	await storage.logSaScores(session);
 
 	return c.json({ ppe, level });
 }

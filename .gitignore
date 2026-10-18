@@ -1,8 +1,7 @@
 docs
-#data-files
-#!data-files/language-names.json
-#!data-files/skill-names.json
-content
+db-seed-data-files
+!db-seed-data-files/language-names.json
+!db-seed-data-files/skill-names.json
 tags
 .env
 .wrangler

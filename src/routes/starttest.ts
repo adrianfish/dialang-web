@@ -68,7 +68,7 @@ export async function startTest(
 		session.id = crypto.randomUUID();
 	}
 
-  storage.saveSession(sessionId, session);
+  await storage.saveSession(sessionId, session);
 
 	//datacapture.LogTestStart(&dialangSession.PassId, &dialangSession.BookletId, &dialangSession.BookletLength)
 	//
