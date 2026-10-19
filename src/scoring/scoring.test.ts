@@ -1,11 +1,10 @@
-import { expect } from "@std/expect";
-import { stub } from "@std/testing/mock";
+import { vi, expect, test } from 'vitest'
 import { CEFR_LEVELS, getItemGrade, getSaPPEAndLevel, getScoredIdResponseItem, getScoredTextResponseItem }  from "./scoring.ts";
 import type { Answer, Item, ItemResult, SAGrade, ScoredItem }  from "../types.ts";
 import type { Storage }  from "../storage/storage.ts";
 import { MockStorage }  from "../storage/mock-storage.ts";
 
-Deno.test("getItemGrade returns defaults when no grade bands present", async () => {
+test("getItemGrade returns defaults when no grade bands present", async () => {
 
   const tl = "spa_es";
   const skill = "reading";
@@ -14,13 +13,14 @@ Deno.test("getItemGrade returns defaults when no grade bands present", async () 
   const storage: Storage = new MockStorage();
 
   // Test the error condition
-  stub(storage, "getItemGrade", () => Promise.resolve(null));
+  vi.spyOn(storage, "getItemGrade").mockImplementation(() => Promise.resolve(null));
+  //stub(storage, "getItemGrade", () => Promise.resolve(null));
   const [ rawScore, _, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
   expect(rawScore).toEqual(0);
   expect(level).toEqual(CEFR_LEVELS[1]);
 });
 
-Deno.test("Grades a set of scored items correctly", async () => {
+test("Grades a set of scored items correctly", async () => {
 
   const tl = "spa_es";
   const skill = "reading";
@@ -29,7 +29,8 @@ Deno.test("Grades a set of scored items correctly", async () => {
   const itemGrade = { tl, skill, bookletId, rsc: 2, ppe: 0, se: 0, grade: 3 };
 
   const storage: Storage = new MockStorage();
-  stub(storage, "getItemGrade", () => Promise.resolve(itemGrade));
+  //stub(storage, "getItemGrade", () => Promise.resolve(itemGrade));
+  vi.spyOn(storage, "getItemGrade").mockImplementation(() => Promise.resolve(itemGrade));
 
   const scoredItems: Array<ScoredItem> = [
     {
@@ -62,7 +63,7 @@ Deno.test("Grades a set of scored items correctly", async () => {
   expect(level).toEqual(CEFR_LEVELS[grade as number]);
 });
 
-Deno.test("Gets a scored id response item successfully", async () => {
+test("Gets a scored id response item successfully", async () => {
 
   const storage: Storage = new MockStorage();
 
@@ -83,7 +84,8 @@ Deno.test("Gets a scored id response item successfully", async () => {
     weight,
   };
 
-  stub(storage, "getItem", () => Promise.resolve(item));
+  //stub(storage, "getItem", () => Promise.resolve(item));
+  vi.spyOn(storage, "getItem").mockImplementation(() => Promise.resolve(item));
 
   itemResult = await getScoredIdResponseItem(itemId, responseId, storage);
   expect(itemResult.error).toEqual(`Failed to get answer for responseId: ${responseId}`);
@@ -95,7 +97,8 @@ Deno.test("Gets a scored id response item successfully", async () => {
     correct: 1,
   };
 
-  stub(storage, "getAnswer", () => Promise.resolve(answer));
+  //stub(storage, "getAnswer", () => Promise.resolve(answer));
+  vi.spyOn(storage, "getAnswer").mockImplementation(() => Promise.resolve(answer));
   itemResult = await getScoredIdResponseItem(itemId, responseId, storage);
   expect(itemResult.error).toBeUndefined();
 
@@ -104,7 +107,7 @@ Deno.test("Gets a scored id response item successfully", async () => {
   expect(itemResult?.item?.score).toEqual(weight);
 });
 
-Deno.test("Gets a scored text response item successfully", async () => {
+test("Gets a scored text response item successfully", async () => {
 
   const storage: Storage = new MockStorage();
 
@@ -125,7 +128,8 @@ Deno.test("Gets a scored text response item successfully", async () => {
     weight,
   };
 
-  stub(storage, "getItem", () => Promise.resolve(item));
+  //stub(storage, "getItem", () => Promise.resolve(item));
+  vi.spyOn(storage, "getItem").mockImplementation(() => Promise.resolve(item));
   itemResult = await getScoredTextResponseItem(itemId, answerText, storage);
   expect(itemResult.error).toEqual(`Failed to get answers for itemId: ${itemId}`);
 
@@ -137,7 +141,8 @@ Deno.test("Gets a scored text response item successfully", async () => {
       correct: 1,
     },
   ];
-  stub(storage, "getItemAnswers", () => Promise.resolve(answers));
+  //stub(storage, "getItemAnswers", () => Promise.resolve(answers));
+  vi.spyOn(storage, "getItemAnswers").mockImplementation(() => Promise.resolve(answers));
   itemResult = await getScoredTextResponseItem(itemId, answerText, storage);
   expect(itemResult.error).toBeUndefined();
   expect(itemResult.item?.score).toEqual(weight);
@@ -158,7 +163,7 @@ Deno.test("Gets a scored text response item successfully", async () => {
   expect(itemResult.item?.correct).toEqual(true);
 });
 
-Deno.test("Gets SA, PPE and Level successfully", async () => {
+test("Gets SA, PPE and Level successfully", async () => {
 
   const skill = "reading";
   const storage: Storage = new MockStorage();
@@ -187,7 +192,8 @@ Deno.test("Gets SA, PPE and Level successfully", async () => {
     "se": 0.364,
     "grade": 1,
   };
-  stub(storage, "getSAWeights", () => Promise.resolve(weights));
+  //stub(storage, "getSAWeights", () => Promise.resolve(weights));
+  vi.spyOn(storage, "getSAWeights").mockImplementation(() => Promise.resolve(weights));
 
   result = await getSaPPEAndLevel(skill, responses, storage);
   expect(result.length).toEqual(3);
@@ -195,7 +201,8 @@ Deno.test("Gets SA, PPE and Level successfully", async () => {
   expect(result[1]).toEqual("");
 	expect(result[2]).toEqual("Failed to match skill and raw score to an sa grade");
 
-  stub(storage, "getSAGrade", () => Promise.resolve(grade));
+  //stub(storage, "getSAGrade", () => Promise.resolve(grade));
+  vi.spyOn(storage, "getSAGrade").mockImplementation(() => Promise.resolve(grade));
 
   result = await getSaPPEAndLevel(skill, responses, storage);
   expect(result.length).toEqual(3);

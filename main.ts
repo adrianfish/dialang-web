@@ -38,7 +38,7 @@ const port: number = parseInt(env.PORT || "3001");
 const ltiSecret: string | undefined = env.LTI_SECRET;
 if (!ltiSecret) {
   console.error("No LTI_SECRET defined as an environment variable. Exiting ...");
-  Deno.exit(1);
+  exit(1);
 }
 
 const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
