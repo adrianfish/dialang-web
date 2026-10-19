@@ -28,7 +28,7 @@ npm run dev
 ├── src/lti-handlers      # Hono LTI launch handlers
 ├── src/routes/           # Provided app route handlers
 ├── src/scoring/          # Provides the Dialang scoring algorithms
-├── src/storage/          # A class based API which uses Deno KV for persistence
+├── src/storage/          # A class based API which uses Cloudflare Workers KV for storage
 ├── src/templates/        # HTMl templates, rendered in the routes
 ├── src/utils/            # Some utility methods
 ├── package.json          # Node config
