@@ -115,16 +115,16 @@ dialang.launchMultiItemReviewDialog = function (basket, initialIndex, selectCall
     $.get('/templates/multiitemreview.mustache', function (template) {
 
         // Render the dialog markup
-        var output = Mustache.render(template, {'baseAssetsUrl': dialang.baseAssetsUrl, 'items': basket.items, 'yourAnswerTitle': yourAnswerTitle, 'correctAnswerTitle': correctAnswerTitle});
+        var output = Mustache.render(template, {'items': basket.items, 'yourAnswerTitle': yourAnswerTitle, 'correctAnswerTitle': correctAnswerTitle});
         $('#tp-review-dialog').html(output);
 
         // Set up the image for each item
         basket.items.forEach(function (item) {
 
             if (!item.correct) {
-                $('#reviewtab-' + item.id + ' > div > img').attr('src',`${dialang.baseAssetsUrl}/images/frowney.gif`);
+                $('#reviewtab-' + item.id + ' > div > img').attr('src',`/images/frowney.gif`);
             } else {
-                $('#reviewtab-' + item.id + ' > div > img').attr('src',`${dialang.baseAssetsUrl}/images/smiley.gif`);
+                $('#reviewtab-' + item.id + ' > div > img').attr('src',`/images/smiley.gif`);
             }
         });
 

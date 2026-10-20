@@ -24,11 +24,11 @@ $.get(`/content/vspt/${dialang.session.al}/${dialang.session.tl}.html`, function
 
         // Switch the button image appropriately.
         if ($(this).hasClass('valid-button')) {
-            $('#' + this.id + '_image').attr('src', `${dialang.baseAssetsUrl}/images/trueselected.gif`);
-            $('#' + wordId + '_incorrect_image').attr('src', `${dialang.baseAssetsUrl}/images/false.gif`);
+            $('#' + this.id + '_image').attr('src', `/images/trueselected.gif`);
+            $('#' + wordId + '_incorrect_image').attr('src', `/images/false.gif`);
         } else {
-            $('#' + this.id + '_image').attr('src', `${dialang.baseAssetsUrl}/images/falseselected.gif`);
-            $('#' + wordId + '_correct_image').attr('src', `${dialang.baseAssetsUrl}/images/true.gif`);
+            $('#' + this.id + '_image').attr('src', `/images/falseselected.gif`);
+            $('#' + wordId + '_correct_image').attr('src', `/images/true.gif`);
         }
 
         // Have we answered all the words?

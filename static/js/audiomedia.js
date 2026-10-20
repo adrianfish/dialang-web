@@ -15,7 +15,7 @@ $(document).ready(function () {
     }, false);
 
     audio.addEventListener('playing', function () {
-        playButton.find('img').attr('src',`${dialang.baseAssetsUrl}/images/SpkPressedAnimated.gif`);
+        playButton.find('img').attr('src',"/images/SpkPressedAnimated.gif");
     }, false);
 
     audio.addEventListener('ended', function () {
@@ -24,7 +24,7 @@ $(document).ready(function () {
             $('#basketform *').filter(':input').prop('disabled', false);
         }
 
-        playButton.prop('disabled', true).find('img').attr('src',`${dialang.baseAssetsUrl}/images/SpkDisabled.gif`);
+        playButton.prop('disabled', true).find('img').attr('src',"/images/SpkDisabled.gif");
     }, false);
 
     playButton.click(function (e) {

@@ -28,7 +28,7 @@ $.get(`/content/itemreview/${dialang.session.al}.html`, function (data) {
     // Build the table using mustache
     $.get('/templates/itemreviewtable.mustache', function (template) {
 
-        var output = Mustache.render(template, { "baseAssetsUrl": dialang.baseAssetsUrl, 'rows': rows});
+        var output = Mustache.render(template, { 'rows': rows});
         $('#item-table').html(output);
         $('.itemreview-button').click(function (e) {
 

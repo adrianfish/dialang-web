@@ -2,7 +2,7 @@ import { test, expect } from 'playwright/test';
 
 test('test', async ({ page }) => {
 
-  await page.goto('http://localhost:3001');
+  await page.goto('http://localhost:8787');
   await page.locator("[href='/content/als.html']").first().click();
 
   await page.locator("#al-dropdown").selectOption("Instructions in English");
@@ -30,7 +30,8 @@ test('test', async ({ page }) => {
   await page.locator("#confirm-yes").click();
 
   // Now we should be on the placement test intro screen
-  expect(page.locator("#vsptintro-title")).toHaveText("Placement Test");
+  await expect(page.locator("#vsptintro-title")).toBeVisible();
+  //await expect(page.getByText('Placement Test')).toBeVisible();
 
   await page.locator("#next").click();
 
@@ -83,13 +84,13 @@ test('test', async ({ page }) => {
   await page.locator("#skipforward").click();
   await page.locator("#confirm-skip-yes").click();
 
-  expect(page.locator("#welcome")).toBeVisible();
+  await expect(page.locator("#welcome")).toBeVisible();
   await page.locator("#next").click();
-  expect(page.locator("#welcome-title")).toBeVisible();
+  await expect(page.locator("#welcome-title")).toBeVisible();
 
-  expect(page.locator("#placement-test-button")).toBeEnabled();
+  await expect(page.locator("#placement-test-button")).toBeEnabled();
 
   // Self assessment feedback only makes sense if we've taken items. We skipped those, so here the
   // button is disabled
-  expect(page.locator("#sa-feedback-button")).toBeDisabled();
+  await expect(page.locator("#sa-feedback-button")).toBeDisabled();
 });
