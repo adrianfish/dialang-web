@@ -5,7 +5,11 @@ import { createHash } from "../../utils/utils.ts";
 
 import type { Context } from "@hono";
 
-export async function reportsLogin(c: Context, secret: string): Promise<Response> {
+export async function reportsLogin(c: Context, secret?: string): Promise<Response> {
+
+  if (!secret) {
+    return c.status(400, "No secret defined");
+  }
 
   if (c.req.method === "GET") {
     return c.html(login());

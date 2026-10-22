@@ -76,7 +76,8 @@ app.get("/api/reports/tl-distribution", (c) => tlDistribution(c, storage));
 app.get("/api/reports/skill-distribution", (c) => skillDistribution(c, storage));
 app.post("/api/reports/sessions", (c) => sessions(c, storage));
 app.post("/api/submitquestionnaire", (c) => submitQuestionnaire(c, storage));
-app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, ltiSecret));
+const reportsSecret: string | undefined = env.REPORTS_SECRET;
+app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, reportsSecret));
 app.get("/reports/:report?", (c) => reports(c));
 app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
 
