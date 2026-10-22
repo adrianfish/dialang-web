@@ -32,7 +32,7 @@ const app: Hono = new Hono();
 const storage: Storage = await KVStorage.open();
 
 const hostname: string = env.HOSTNAME || "adrian-dialang.ngrok.app";
-const port: number = parseInt(env.PORT || "3001");
+const port: number = parseInt(env.PORT || "8787");
 
 /*
 const ltiSecret: string | undefined = env.LTI_SECRET;
@@ -85,4 +85,3 @@ app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
 app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));
 
 export default app;
-//export default { fetch() { return new Response("ok") } }
