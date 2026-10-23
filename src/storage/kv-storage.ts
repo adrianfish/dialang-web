@@ -153,9 +153,7 @@ export class KVStorage implements Storage {
     let cursor: string | undefined = undefined;
     let listComplete = false;
 
-    // list() returns keys only, so each page is followed by a get() per key.
     do {
-
       const page = await this.#kv.list({ prefix, cursor });
       const names = page.keys.map((k) => k.name);
 
@@ -176,20 +174,6 @@ export class KVStorage implements Storage {
 
       cursor = page.cursor;
       listComplete = page.list_complete;
-      /*
-      const page = await this.#kv.list({ prefix, cursor });
-      const sessions = await Promise.all(page.keys.map((key) => this.#kv.get<TestSession>(key.name, "json")));
-      for (const session of sessions) {
-        if (!session) continue;
-        if (completed) {
-          session.itemLevel && data.push(session);
-        } else {
-          data.push(session);
-        }
-      }
-      cursor = page.cursor;
-      listComplete = page.list_complete;
-      */
     } while (!listComplete);
 
     return data;
