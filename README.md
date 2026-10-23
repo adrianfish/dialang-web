@@ -27,9 +27,9 @@ without that data and the data currently isn't publicly available.
 
 ## Running it locally
 
-You can run Dialang locally by installing the Deno runtime and just running the start task. This
-will start Dialang up under a local port, ideal for testing.
+You can run Dialang locally by installing the Cloudflare CLI, Wrangler and just running the dev
+task. This will start Dialang up under a local port, ideal for testing.
 
 ```shell
-deno task start
+npm run dev
 ```
