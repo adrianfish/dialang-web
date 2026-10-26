@@ -1,9 +1,10 @@
-import { Context } from "@hono/hono";
 import { getSession, getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
-import { LTIKit, Score } from "@adrianfish/lti-kit";
-import type { DialangSession, ItemResult, ItemScore, ScoredBasket, ScoredItem } from "../types.ts";
+//import { LTIKit, Score } from "@adrianfish/lti-kit";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
+
+import type { Context } from "hono";
+import type { CurrentBasketData, ItemResult, ItemScore, ScoredBasket, ScoredItem, SubmitBasketRequirements } from "../types.ts";
 
 export async function submitBasket(
   c: Context,

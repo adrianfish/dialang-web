@@ -3,7 +3,7 @@ import { login } from "../../templates/login.ts";
 import { createHash } from "../../utils/utils.ts";
 //import { timingSafeEqual } from "@std/crypto/timing-safe-equal";
 
-import type { Context } from "@hono";
+import type { Context } from "hono";
 
 export async function reportsLogin(c: Context, secret?: string): Promise<Response> {
 

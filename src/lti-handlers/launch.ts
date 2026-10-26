@@ -1,7 +1,7 @@
-import { getConnInfo } from '@hono/deno'
+import { getConnInfo } from 'hono/cloudflare-workers'
 import { setSessionId } from "../utils/utils.ts";
 
-import type { Context } from "@hono";
+import type { Context } from "hono";
 import type { LTIContext, LTIToken } from "@adrianfish/lti-kit";
 import type { DialangSession } from "../types.ts";
 import type { Storage } from "../storage/storage.ts";

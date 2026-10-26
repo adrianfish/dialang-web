@@ -1,6 +1,7 @@
-import { Context } from "@hono/hono";
 import { getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
+
+import type { Context } from "hono";
 import type { DialangSession, SavedDialangSession } from "../types.ts";
 
 export async function saveSession(

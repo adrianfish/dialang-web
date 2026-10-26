@@ -1,4 +1,4 @@
-import { Context } from "@hono/hono";
+import { Context } from "hono";
 import { Storage } from "../storage/storage.ts";
 import { forceSessionId } from "../utils/utils.ts";
 

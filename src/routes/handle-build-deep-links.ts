@@ -1,6 +1,6 @@
 import { LTIKit } from "@adrianfish/lti-kit";
 
-import type { Context } from "@hono/hono";
+import type { Context } from "hono";
 import type { ContentItem } from "@adrianfish/lti-kit";
 import type { Storage } from "../storage/storage.ts";
 

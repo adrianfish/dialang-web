@@ -4,7 +4,8 @@ import { tlDistributionReportTemplate } from "../../templates/tl-distribution-re
 import { skillDistributionReportTemplate } from "../../templates/skill-distribution-report.ts";
 import { sessionReportTemplate } from "../../templates/session-report.ts";
 import { loggedIntoReports } from "../../utils/utils.ts";
-import type { Context } from "@hono";
+
+import type { Context } from "hono";
 
 export function reports(c: Context): Response {
 

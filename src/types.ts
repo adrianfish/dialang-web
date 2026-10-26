@@ -48,10 +48,10 @@ export interface ALData {
 }
 
 export interface VSPTData {
-  zScore: number;
-  mearaScore: number;
-  level: string;
-  submitted: boolean;
+  vsptZScore: number;
+  vsptMearaScore: number;
+  vsptLevel: string;
+  vsptSubmitted: boolean;
 }
 
 export interface SAData {

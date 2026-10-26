@@ -1,13 +1,9 @@
-import { getSession, getSessionId } from "../utils/utils.ts";
+import { getSession } from "../utils/utils.ts";
 
-import type { Storage } from "../storage/storage.ts";
-import type { Context } from "@hono";
-import type { DialangSession } from "../types.ts";
+import type { Context } from "hono";
 
-export async function setTl(
-  c: Context,
-  storage: Storage,
-): Promise<Response> {
+export async function setTl(c: Context): Promise<Response> {
+
   const body = await c.req.parseBody();
 
   if (!body.tl || !body.skill) {
@@ -15,9 +11,7 @@ export async function setTl(
     return c.html("No test language or skill supplied");
   }
 
-  const sessionId = getSessionId(c);
-  const session: SessionDO = getSession(c);
-  await session.setTestLanguageAndSkill(body.tl, body.skill);
+  await getSession(c).setTestLanguageAndSkill(body.tl, body.skill);
 
   return c.json({ tl: body.tl, skill: body.skill });
 }

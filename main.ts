@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { env } from "cloudflare:workers";
-//import { serveStatic } from "@hono/deno";
 import { KVStorage } from "./src/storage/kv-storage.ts";
 import { content } from "./src/routes/content.ts";
 import { setAl } from "./src/routes/setal.ts";

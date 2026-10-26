@@ -1,6 +1,7 @@
 import { getSessionId } from "../utils/utils.ts";
-import type { Context } from "@hono";
 import { Storage } from "../storage/storage.ts";
+
+import type { Context } from "hono";
 
 export async function getSession(
   c: Context,

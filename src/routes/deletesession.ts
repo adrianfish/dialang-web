@@ -1,5 +1,6 @@
 import { getSessionId } from "../utils/utils.ts";
-import type { Context } from "@hono";
+
+import type { Context } from "hono";
 import { Storage } from "../storage/storage.ts";
 
 export function deleteSession(c: Context, storage: Storage): Response {

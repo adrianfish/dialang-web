@@ -1,15 +1,10 @@
 import { getConnInfo } from 'hono/cloudflare-workers'
 import { getSession, getSessionFromId, setSessionId } from "../utils/utils.ts";
-import { SessionDO } from "../session-do.ts";
 
 import type { Context } from "hono";
-import type { Storage } from "../storage/storage.ts";
 import type { ALData } from "../types.ts";
 
-export async function setAl(
-  c: Context,
-  storage: Storage,
-): Promise<Response> {
+export async function setAl(c: Context): Promise<Response> {
 
   const body = await c.req.parseBody();
 
@@ -20,10 +15,9 @@ export async function setAl(
     return c.html("No admin language supplied");
   }
 
-  const sessionId = setSessionId(c);
   const ipAddress = (getConnInfo(c).remote.address || "").replace(/^::ffff:/, "");
 
-  const session: SessionDO = getSessionFromId(c, sessionId);
+  const sessionId = setSessionId(c);
 
   const alData: ALData = {
     sessionId,
@@ -33,7 +27,7 @@ export async function setAl(
     started: Date.now(),
   };
 
-  session.setAdminLanguage(alData);
+  await getSessionFromId(c, sessionId).setAdminLanguage(alData);
 
   return c.json({ al, sessionId });
 }

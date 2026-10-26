@@ -1,25 +1,29 @@
 import { Storage } from "@cloudflare/actors/storage";
 import { DurableObject } from "cloudflare:workers";
 
+import type {
+  ALData,
+  CurrentBasketData,
+  StartTestRequirements,
+  SubmitBasketRequirements,
+  TestData,
+  TestResult,
+  VSPTData,
+  SAData
+} from "../types.ts";
+
 export interface Env {
   SESSION: DurableObjectNamespace<SessionDO>;
 }
 
 export class SessionDO extends DurableObject<Env> {
 
-  async setAdminLanguage(alData: ALData) {
-
-    this.ctx.storage.put("sessionId", alData.sessionId);
-    this.ctx.storage.put("al", alData.al);
-    this.ctx.storage.put("started", alData.started);
-    this.ctx.storage.put("ipAddress", alData.ipAddress);
-    this.ctx.storage.put("referrer", alData.referrer);
+  async setAdminLanguage(alData: ALData): Promise {
+    return this.ctx.storage.put(alData);
   }
 
-  async setTestLanguageAndSkill(tl: string, skill: string): Promise<boolean> {
-
-    this.ctx.storage.put("tl", tl);
-    this.ctx.storage.put("skill", skill);
+  async setTestLanguageAndSkill(tl: string, skill: string): Promise {
+    return this.ctx.storage.put({ tl, skill });
   }
 
   async getTL(): Promise<string> {
@@ -28,19 +32,6 @@ export class SessionDO extends DurableObject<Env> {
 
   async getSkill(): Promise<string> {
     return this.ctx.storage.get("skill");
-  }
-
-  async getVsptSubmitted(): Promise<boolean> {
-    return this.ctx.storage.get("vsptSubmitted");
-  }
-
-  async getScoredItems(): Promise<Array<ScoredItem> | null> {
-
-    const scoredItemsJson: string | null = this.ctx.storage.get("scoredItems");
-    if (!scoredItemsJson) {
-      return null;
-    }
-    return JSON.parse(scoredItemsJson);
   }
 
   async getStartTestRequirements(): Promise<StartTestRequirements> {
@@ -88,40 +79,23 @@ export class SessionDO extends DurableObject<Env> {
     };
   }
 
-  async saveVSPT(vsptData: VSPTData) {
-
-    this.ctx.storage.put("vsptZScore", vsptData.zScore);
-    this.ctx.storage.put("vsptMearaScore", vsptData.mearaScore);
-    this.ctx.storage.put("vsptLevel", vsptData.level);
-    this.ctx.storage.put("vsptSubmitted", vsptData.submitted);
+  async saveVSPT(vsptData: VSPTData): Promise {
+    return this.ctx.storage.put(vsptData);
   }
 
-  async saveSA(saData: SAData) {
-
-    this.ctx.storage.put("saPPE", saData.ppe);
-    this.ctx.storage.put("saLevel", saData.level);
-    this.ctx.storage.put("saSubmitted", saData.submitted);
+  async saveSA(saData: SAData): Promise {
+    return this.ctx.storage.put(saData);
   }
 
-  async saveStartTestData(testData: TestData) {
-
-    this.ctx.storage.put("bookletId", testData.bookletId);
-    this.ctx.storage.put("currentBasketId", testData.currentBasketId);
-    this.ctx.storage.put("currentBasketNumber", testData.currentBasketNumber);
+  async saveStartTestData(testData: TestData): Promise {
+    return this.ctx.storage.put(testData);
   }
 
-  async saveCurrentBasketData(currentBasketData: CurrentBasketData) {
-
-    this.ctx.storage.put("currentBasketId", currentBasketData.currentBasketId);
-    this.ctx.storage.put("currentBasketNumber", currentBasketData.currentBasketNumber);
-    this.ctx.storage.put("itemScores", currentBasketData.itemScores);
+  async saveCurrentBasketData(currentBasketData: CurrentBasketData): Promise {
+    return this.ctx.storage.put(currentBasketData);
   }
 
-  async saveTestResult(testResult: TestResult) {
-
-    this.ctx.storage.put("itemRawScore", testResult.itemRawScore);
-    this.ctx.storage.put("itemGrade", testResult.itemGrade);
-    this.ctx.storage.put("itemLevel", testResult.itemLevel);
-    this.ctx.storage.put("scoredBaskets", testResult.scoredBaskets);
+  async saveTestResult(testResult: TestResult): Promise {
+    return this.ctx.storage.put(testResult);
   }
 }

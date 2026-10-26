@@ -1,9 +1,9 @@
-import { Context }  from "@hono";
-import { getSession, getSessionId } from "../utils/utils.ts";
+import { getSession } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
 import { SessionDO } from "../session-do.ts";
 
-import type { DialangSession } from "../types.ts";
+import type { Context }  from "hono";
+import type { SAData } from "../types.ts";
 import type { Storage } from "../storage/storage.ts";
 
 export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
@@ -23,21 +23,17 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
         .map(([k, v]) => [ k.split(":")[1], v === "yes"])
     );
 
-  const [ppe, level, err ] = await getSaPPEAndLevel(await session.getSkill(), responses, storage);
+  const [saPPE, saLevel, err ] = await getSaPPEAndLevel(await session.getSkill(), responses, storage);
 	if (err) {
 		console.error(err);
     c.status(500);
 		return c.html("");
 	}
 
-	session.saPPE = ppe as number;
-	session.saSubmitted = true;
-	session.saLevel = level as string;
-
   const saData: SAData = {
-    ppe,
-    level,
-    submitted: true,
+    saPPE,
+    saLevel,
+    saSubmitted: true,
   };
 
   await session.saveSA(saData);
@@ -47,5 +43,5 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
 	datacapture.LogSAScores(&dialangSession)
   */
 
-	return c.json({ ppe, level });
+	return c.json({ ppe: saPPE, level: saLevel });
 }

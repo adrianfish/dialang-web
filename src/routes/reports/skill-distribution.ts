@@ -1,6 +1,6 @@
 import { loggedIntoReports } from "../../utils/utils.ts";
 
-import type { Context }  from "@hono";
+import type { Context }  from "hono";
 import type { Storage }  from "../../storage/storage.ts";
 import type { TestSession }  from  "../../types.ts";
 

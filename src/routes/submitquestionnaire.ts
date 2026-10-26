@@ -1,6 +1,6 @@
 import { getSessionId } from "../utils/utils.ts";
 
-import type { Context } from "@hono";
+import type { Context } from "hono";
 import type { Storage } from "../storage/storage.ts";
 
 export async function submitQuestionnaire(c: Context, storage: Storage): Promise<Response> {

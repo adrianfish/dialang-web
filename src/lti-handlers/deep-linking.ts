@@ -1,4 +1,4 @@
-import type { Context } from "@hono";
+import type { Context } from "hono";
 import type { LTIContext } from "@adrianfish/lti-kit";
 
 export const deepLinkingHandler = async (c: Context, ltiContext: LTIContext): Promise<Response> => {

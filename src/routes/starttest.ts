@@ -1,9 +1,9 @@
-import { Context } from "@hono/hono";
-import { getSession, getSessionId } from "../utils/utils.ts";
+import { getSession } from "../utils/utils.ts";
 import { SessionDO } from "../session-do.ts";
 
+import type { Context } from "hono";
 import type { Storage } from "../storage/storage.ts";
-import type { DialangSession, PreestAssignment, PreestWeight } from "../types.ts";
+import type { PreestAssignment, PreestWeight, StartTestRequirements, StartTestData } from "../types/types.ts";
 
 export async function startTest(
   c: Context,

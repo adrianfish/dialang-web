@@ -1,7 +1,9 @@
-import { getSession, getSessionId } from "../utils/utils.ts";
+import { getSession } from "../utils/utils.ts";
+import { SessionDO } from "../storage/session.ts";
+
 import type { Storage } from "../storage/storage.ts";
-import type { DialangSession, VSPWord } from "../types.ts";
-import type { Context } from "@hono";
+import type { VSPTData, VSPWord } from "../types.ts";
+import type { Context } from "hono";
 
 export async function scoreVspt(
   c: Context,
@@ -30,10 +32,10 @@ export async function scoreVspt(
   }
 
   const vsptData: VSPTData = {
-    zScore: zScore as number,
-    mearaScore: mearaScore as number,
-    level: level as string,
-    submitted: true,
+    vsptZScore: zScore as number,
+    vsptMearaScore: mearaScore as number,
+    vsptLevel: level as string,
+    vsptSubmitted: true,
   };
 
   await session.saveVSPT(vsptData);
