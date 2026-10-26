@@ -1,4 +1,4 @@
-import { getSessionId } from "../utils/utils.ts";
+import { getSession, getSessionId } from "../utils/utils.ts";
 import type { Storage } from "../storage/storage.ts";
 import type { DialangSession, VSPWord } from "../types.ts";
 import type { Context } from "@hono";
@@ -16,40 +16,27 @@ export async function scoreVspt(
     .map(([k, v]) => [ k.split(":")[1], v === "valid"])
   );
 
-  const sessionId = getSessionId(c);
-  if (!sessionId) {
+  const session: SessionDO | null = await getSession(c);
+  if (!session) {
     console.error("Failed to get session id");
 		c.status(500);
 		return c.html("");
   }
 
-  const session: DialangSession | null = await storage.getSession(sessionId);
-  if (!session) {
-		console.error(`No session for id ${sessionId}. Returning 500 ...`)
-		c.status(500);
-		return c.html("");
-  }
-
-  if (!session.tl) {
-		console.error("Test language not set. Returning 500 ...")
-		c.status(500);
-		return c.html("");
-  }
-
-  const [ zScore, mearaScore, level, error ] = await getBand(storage, session.tl, responses);
+  const [ zScore, mearaScore, level, error ] = await getBand(storage, await session.getTL(), responses);
   if (error) {
     c.status(500);
     return c.text(error as string);
   }
 
-  session.vsptZScore = zScore as number;
-  session.vsptMearaScore = mearaScore as number;
-  session.vsptLevel = level as string
-  session.vsptSubmitted = true
+  const vsptData: VSPTData = {
+    zScore: zScore as number,
+    mearaScore: mearaScore as number,
+    level: level as string,
+    submitted: true,
+  };
 
-  await storage.saveSession(sessionId, session);
-
-  await storage.logVsptScores(session);
+  await session.saveVSPT(vsptData);
 
   return c.json({ zScore, mearaScore, level });
 }

@@ -1,5 +1,5 @@
 import { Context } from "@hono/hono";
-import { getSessionId } from "../utils/utils.ts";
+import { getSession, getSessionId } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
 import { LTIKit, Score } from "@adrianfish/lti-kit";
 import type { DialangSession, ItemResult, ItemScore, ScoredBasket, ScoredItem } from "../types.ts";
@@ -11,22 +11,16 @@ export async function submitBasket(
   //lti: LTIKit,
 ): Promise<Response> {
 
-  const sessionId: string | undefined = getSessionId(c);
-  if (!sessionId) {
+  const session: SessionDO | null = getSession(c);
+  if (!session) {
 		console.error("Failed to get session id");
 		c.status(500);
 		return c.html("");
   }
 
-  const session: DialangSession | null = await storage.getSession(sessionId);
+  const submitBasketRequirements: SubmitBasketRequirements = await session.getSubmitBasketRequirements();
 
-  if (!session) {
-		console.error(`No session for id ${sessionId}`);
-		c.status(500);
-		return c.html("");
-  }
-
-	if (!session.tl || !session.skill || !session.currentBasketId || !session.bookletId || session.currentBasketNumber === undefined) {
+	if (!submitBasketRequirements.tl || !submitBasketRequirements.skill || !submitBasketRequirements.currentBasketId || !submitBasketRequirements.bookletId || submitBasketRequirements.currentBasketNumber === undefined) {
 		console.error("None of the test language, skill, current basket id, booklet id or current basket number were set in the session. Returning 500 ...");
 		c.status(500);
 		return c.html("");
@@ -43,17 +37,17 @@ export async function submitBasket(
 
   const positionInBasketSorter = (a: ScoredItem, b: ScoredItem) => a.positionInBasket - b.positionInBasket;
 
-  const numScoredItems: number = session.itemScores?.length || 0;
-  const currentBasketId: number = session.currentBasketId;
+  const numScoredItems: number = submitBasketRequirements.itemScores?.length || 0;
+  const currentBasketId: number = submitBasketRequirements.currentBasketId;
 
   console.debug(`basketType: ${basketType}`);
   console.debug(`currentBasketId: ${currentBasketId}`);
-  console.debug(`currentBasketNumber: ${session.currentBasketNumber}`);
+  console.debug(`currentBasketNumber: ${submitBasketRequirements.currentBasketNumber}`);
   console.debug(`scored item list length: ${numScoredItems}`);
 
   const returnMap: Record<string, string | number | ScoredBasket | boolean> = {};
 
-  const itemList: Array<ScoredItem> = session.scoredItems || [];
+  const scoredItemList: Array<ScoredItem> = submitBasketRequirements.scoredItems || [];
 
   switch (basketType) {
     case "mcq": {
@@ -73,7 +67,7 @@ export async function submitBasket(
       const itemResult: ItemResult = await getScoredIdResponseItem(itemId, answerId, storage);
       if (itemResult.item) {
         const scoredItem: ScoredItem = itemResult.item;
-        scoredItem.basketId = session.currentBasketId;
+        scoredItem.basketId = submitBasketRequirements.currentBasketId;
         scoredItem.positionInBasket = 1;
         scoredItem.responseId = answerId;
         scoredItem.positionInTest = numScoredItems + 1;
@@ -87,7 +81,7 @@ export async function submitBasket(
           return c.html("");
         }
 
-        itemList.push(scoredItem);
+        scoredItemList.push(scoredItem);
         const scoredBasket: ScoredBasket = { id: currentBasketId, type: "mcq", skill: scoredItem.skill, items: [scoredItem] };
         returnMap["scoredBasket"] = scoredBasket
         //datacapture.LogSingleIdResponse(session.passId, scoredItem)
@@ -133,7 +127,7 @@ export async function submitBasket(
           }
 
           itemsToLog.push(item);
-          itemList.push(item);
+          scoredItemList.push(item);
           basketItems.push(item);
         } else {
           console.error(itemResult.error);
@@ -171,7 +165,7 @@ export async function submitBasket(
           item.positionInTest = numScoredItems + item.positionInBasket;
           console.debug(`Item position in test: ${item.positionInTest}`);
           item.answers = await storage.getItemAnswers(item.id);
-          itemList.push(item);
+          scoredItemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
         } else {
@@ -210,7 +204,7 @@ export async function submitBasket(
           item.positionInTest = numScoredItems + item.positionInBasket;
           console.debug(`Item position in test: ${item.positionInTest}`);
           item.answers = await storage.getItemAnswers(itemResult.item.id);
-          itemList.push(item);
+          scoredItemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
         } else {
@@ -250,7 +244,7 @@ export async function submitBasket(
 
           item.positionInTest = numScoredItems + item.positionInBasket;
           item.answers = await storage.getItemAnswers(item.id);
-          itemList.push(item);
+          scoredItemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
         } else {
@@ -272,19 +266,19 @@ export async function submitBasket(
     }
   }
 
-  session.scoredBaskets ??= [];
-  session.scoredBaskets.push(returnMap["scoredBasket"]);
+  const scoredBaskets: Array<ScoredBasket> = submitBasketRequirements.scoredBaskets || [];
+  scoredBaskets.push(returnMap["scoredBasket"]);
 
-  session.itemScores ??= [];
-  session.itemScores = [ ...session.itemScores, ...sparsifyItems(itemList) ];
+  let itemScores: Array<ItemScore> = submitBasketRequirements.itemScores || []
+  itemScores = [ ...itemScores, ...sparsifyItems(scoredItemList) ];
 
-  const nextBasketNumber = session.currentBasketNumber + 1;
+  const nextBasketNumber = submitBasketRequirements.currentBasketNumber + 1;
   console.debug(`nextBasketNumber: ${nextBasketNumber}`);
 
-  const basketIds: Array<number> | null = await storage.getBaskets(session.bookletId);
+  const basketIds: Array<number> | null = await storage.getBaskets(submitBasketRequirements.bookletId);
 
   if (!basketIds) {
-    console.error(`No basket ids for booklet ${session.bookletId}`);
+    console.error(`No basket ids for booklet ${submitBasketRequirements.bookletId}`);
     c.status(500);
     return c.html("");
   }
@@ -292,7 +286,7 @@ export async function submitBasket(
   if (nextBasketNumber >= basketIds.length) {
     // The test has finished. Grade it.
     const [ rawScore, itemGrade, itemLevel ]
-      = await getItemGrade(session.tl, session.skill, session.bookletId, session.itemScores, storage);
+      = await getItemGrade(submitBasketRequirements.tl, submitBasketRequirements.skill, submitBasketRequirements.bookletId, itemScores, storage);
 
     // If we're in an LTI session, post the score.
     /*
@@ -316,20 +310,16 @@ export async function submitBasket(
     }
     */
 
-    session.itemRawScore = rawScore as number;
-    session.itemGrade = itemGrade as number;
-    session.itemLevel = itemLevel as string;
+    const testResult: TestResult = {
+      itemRawScore: rawScore as number,
+      itemGrade: itemGrade as number,
+      itemLevel: itemLevel as string,
+      scoredBaskets: scoredBaskets,
+    };
 
-    if (!(await storage.saveSession(sessionId, session))) {
-      console.error("Failed to save session");
-      c.status(500);
-      return c.html("");
-    }
+    await session.saveTestResult(testResult);
 
-    //datacapture.LogTestFinish(session.passId)
-    storage.logTestResult(session);
-
-    if (session.resultUrl) {
+    if (submitBasketRequirements.resultUrl) {
       const parts = session.resultUrl.split("?");
       let url = `${parts[0]}?`;
       if (parts.length == 2) {
@@ -355,12 +345,16 @@ export async function submitBasket(
 
     const nextBasketId = basketIds[nextBasketNumber];
 
-    session.currentBasketNumber = nextBasketNumber;
-    session.currentBasketId = nextBasketId;
-    await storage.saveSession(sessionId, session);
+    const currentBasketData: CurrentBasketData = {
+      currentBasketId: nextBasketId,
+      currentBasketNumber: nextBasketNumber,
+      itemScores,
+    };
+
+    await session.saveCurrentBasketData(currentBasketData);
 
     returnMap["nextBasketId"] = nextBasketId;
-    returnMap["itemsCompleted"] = itemList.length;
+    returnMap["itemsCompleted"] = scoredItemList.length;
 
     return c.json(returnMap);
   }

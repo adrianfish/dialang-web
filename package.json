@@ -10,6 +10,7 @@
     "tail": "wrangler tail dialang --format=pretty"
   },
   "dependencies": {
+    "@cloudflare/actors": "^0.0.1-beta.6",
     "hono": "^4.13.13"
   },
   "devDependencies": {

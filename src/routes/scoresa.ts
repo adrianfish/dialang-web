@@ -1,29 +1,19 @@
 import { Context }  from "@hono";
-import { getSessionId } from "../utils/utils.ts";
+import { getSession, getSessionId } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
+import { SessionDO } from "../session-do.ts";
+
 import type { DialangSession } from "../types.ts";
 import type { Storage } from "../storage/storage.ts";
 
 export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
 
-  const sessionId = getSessionId(c);
-  if (!sessionId) {
-    console.error("Failed to get session id");
-		c.status(500);
-		return c.html("");
-  }
-
-  const session: DialangSession | null = await storage.getSession(sessionId);
+  const session: SessionDO | null = getSession(c);
   if (!session) {
-		console.error(`No session for id ${sessionId}. Returning 500 ...`)
+    console.error("Failed to get session");
 		c.status(500);
 		return c.html("");
   }
-
-	if (!session.tl || !session.skill) {
-		c.status(500);
-		return c.html("");
-	}
 
   const body = await c.req.json();
 
@@ -33,7 +23,7 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
         .map(([k, v]) => [ k.split(":")[1], v === "yes"])
     );
 
-  const [ppe, level, err ] = await getSaPPEAndLevel(session.skill, responses, storage);
+  const [ppe, level, err ] = await getSaPPEAndLevel(await session.getSkill(), responses, storage);
 	if (err) {
 		console.error(err);
     c.status(500);
@@ -44,14 +34,18 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
 	session.saSubmitted = true;
 	session.saLevel = level as string;
 
-  await storage.saveSession(sessionId, session);
+  const saData: SAData = {
+    ppe,
+    level,
+    submitted: true,
+  };
+
+  await session.saveSA(saData);
 
   /*
 	datacapture.LogSAResponses(&dialangSession, responses)
 	datacapture.LogSAScores(&dialangSession)
   */
-
-	await storage.logSaScores(session);
 
 	return c.json({ ppe, level });
 }

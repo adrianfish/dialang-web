@@ -39,6 +39,60 @@ export interface SavedDialangSession extends DialangSession {
   savedAt?: number;
 }
 
+export interface ALData {
+  sessionId: string;
+  al: string;
+  started: number;
+  ipAddress: string;
+  referrer: string;
+}
+
+export interface VSPTData {
+  zScore: number;
+  mearaScore: number;
+  level: string;
+  submitted: boolean;
+}
+
+export interface SAData {
+  ppe: number;
+  level: string;
+  submitted: boolean;
+}
+
+export interface StartTestData {
+  bookletId: number;
+  currentBasketId: number;
+  currentBasketNumber: number;
+}
+
+export interface SubmitBasketRequirements {
+  tl: string;
+  skill: string;
+  currentBasketId: number;
+  bookletId: number;
+  currentBasketNumber: number;
+  scoredItems: Array<ScoredItem>;
+  itemScores: Array<ItemScore>;
+  scoredBaskets: Array<ScoredBasket>;
+  itemRawScore: number;
+  itemGrade: number;
+  itemLevel: string;
+  resultUrl: string;
+}
+
+export interface CurrentBasketData {
+  currentBasketId: number;
+  currentBasketNumber: number;
+}
+
+export interface TestResult {
+  itemRawScore: number;
+  itemGrade: number;
+  itemLevel: string;
+  scoredBaskets: Array<ScoredBasket>;
+}
+
 export interface TestSession {
   sessionId: string;
   ipAddress: string;

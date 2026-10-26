@@ -7,6 +7,15 @@
 	"name": "dialang",
 	"main": "main.ts",
 	"compatibility_date": "2026-10-06",
+  // One Durable Object per test session (SQLite-backed storage).
+  "durable_objects": {
+    "bindings": [{ "name": "SESSION", "class_name": "SessionDO" }]
+  },
+  "migrations": [
+    // SQLite-backed classes must be declared with new_sqlite_classes.
+    // When you rename/delete the class later, add a new tag; never edit v1.
+    { "tag": "v1", "new_sqlite_classes": ["SessionDO"] }
+  ],
 	"assets": {
 		"binding": "ASSETS",
 		"directory": "./static"

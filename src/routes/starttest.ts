@@ -1,5 +1,6 @@
 import { Context } from "@hono/hono";
-import { getSessionId } from "../utils/utils.ts";
+import { getSession, getSessionId } from "../utils/utils.ts";
+import { SessionDO } from "../session-do.ts";
 
 import type { Storage } from "../storage/storage.ts";
 import type { DialangSession, PreestAssignment, PreestWeight } from "../types.ts";
@@ -9,70 +10,65 @@ export async function startTest(
   storage: Storage,
 ): Promise<Response> {
 
-  const sessionId: string | undefined = getSessionId(c);
-  if (!sessionId) {
-    console.error("Failed to get session id");
-		c.status(500);
-		return c.html("");
-  }
-
-  const session: DialangSession | null = await storage.getSession(sessionId);
+  const session: SessionDO | null = getSession(c);
   if (!session) {
-		console.error(`No session for id ${sessionId}. Returning 500 ...`)
+    console.error("Failed to get session");
 		c.status(500);
 		return c.html("");
   }
 
-	if (!session.tl || !session.skill) {
-		console.error("Neither the test language or skill were set in the session. Returning 500 ...")
-		c.status(500);
-		return c.html("");
-	}
+  const startTestRequirements: StartTestRequirements = await session.getStartTestRequirements();
 
-	if (session.scoredItems?.length) {
+	if (startTestRequirements.scoredItems?.length) {
 		console.error("The scored item list should be empty at this point. Returning 500 ...")
 		c.status(500);
 		return c.html("");
 	}
 
-	session.bookletId = await calculateBookletId(session, storage);
+	const bookletId = await calculateBookletId(startTestRequirements, storage);
 
-  if (!session.bookletId) {
+  if (!bookletId) {
 		console.error("Failed to calculate booklet id. Returning 500 ...");
 		c.status(500);
 		return c.html("");
   }
 
-	console.debug(`BOOKLET ID: ${session.bookletId}`);
+	console.debug(`BOOKLET ID: ${bookletId}`);
 
-	const bookletLength: number | null = await storage.getBookletLength(session.bookletId);
+	const bookletLength: number | null = await storage.getBookletLength(bookletId);
   if (!bookletLength) {
-		console.error(`Failed to get booklet length for id ${session.bookletId}. Returning 500 ...`);
+		console.error(`Failed to get booklet length for id ${bookletId}. Returning 500 ...`);
 		c.status(500);
 		return c.html("");
   }
 	console.debug(`BOOKLET LENGTH: ${bookletLength}`);
 
-	const baskets: Array<number> | null = await storage.getBaskets(session.bookletId);
+	const baskets: Array<number> | null = await storage.getBaskets(bookletId);
   if (!baskets) {
-		console.error(`No baskets for booklet id ${session.bookletId}. Returning 500 ...`);
+		console.error(`No baskets for booklet id ${bookletId}. Returning 500 ...`);
 		c.status(500);
 		return c.html("");
   }
-	session.currentBasketId = baskets[0];
-	console.debug(`First Basket Id: ${session.currentBasketId}`);
-  session.currentBasketNumber = 0;
+	const currentBasketId = baskets[0];
+	console.debug(`First Basket Id: ${currentBasketId}`);
+  const currentBasketNumber = 0;
 
+  /*
 	if (!session.id) {
 		// No session yet. This could happen in an LTI launch
 		session.id = crypto.randomUUID();
 	}
+  */
 
-  await storage.saveSession(sessionId, session);
+  const startTestData: StartTestData = {
+    bookletId,
+    currentBasketId,
+    currentBasketNumber,
+  };
 
-	//datacapture.LogTestStart(&dialangSession.PassId, &dialangSession.BookletId, &dialangSession.BookletLength)
-	//
-  return c.json({ startBasket: session.currentBasketId, totalItems: bookletLength });
+  await session.saveStartTestData(startTestData);
+
+  return c.json({ startBasket: currentBasketId, totalItems: bookletLength });
 }
 
 /**
@@ -87,11 +83,16 @@ export async function startTest(
  * calculate a theta estimate (ppe). Passes the TLS, SKILL and coefficient
  * in the PreestAssign.
  */
-async function calculateBookletId(session: DialangSession, storage: Storage): Promise<number> {
+async function calculateBookletId(startTestRequirements: StartTestRequirements, storage: Storage): Promise<number> {
 
-	const key: string = `${session.tl}#${session.skill}`;
+  const tl: string = startTestRequirements.tl;
+  const skill: string = startTestRequirements.skill;
+	const key: string = `${tl}#${skill}`;
 
-	if (!session.vsptSubmitted && !session.saSubmitted) {
+  const vsptSubmitted: boolean = startTestRequirements.vsptSubmitted;
+  const saSubmitted: boolean = startTestRequirements.saSubmitted;
+
+	if (!vsptSubmitted && !saSubmitted) {
 		console.debug("No vsp or sa submitted. Returning the default booklet ...");
 		// No sa or vspt, request the default assignment.
 		const assignments: Array<PreestAssignment> | null = await storage.getPreestAssignments(key);
@@ -105,17 +106,19 @@ async function calculateBookletId(session: DialangSession, storage: Storage): Pr
 		// if either test is done, then we need to get the grade
 		// associated with that test:
 
+		const sessionVsptZScore: number = startTestRequirements.vsptZScore;
 		let vsptZScore: number = 0;
-    let saPPE: number = 0;
-		if (session.vsptSubmitted && session.vsptZScore) {
-			vsptZScore = session.vsptZScore
+		if (vsptSubmitted && sessionVsptZScore) {
+			vsptZScore = sessionVsptZScore;
 			console.debug(`VSPT SUBMITTED. vsptZScore: ${vsptZScore}`);
 		}
-		if (session.saSubmitted && session.saPPE) {
-			saPPE = session.saPPE
+		const sessionSaPPE: number = startTestRequirements.saPPE;
+    let saPPE: number = 0;
+		if (saSubmitted && sessionSaPPE) {
+			saPPE = sessionSaPPE
 			console.debug(`SA SUBMITTED. saPPE: ${saPPE}`);
 		}
-		const weightKey: string = `${key}#${session.saSubmitted ? 1 : 0}#${session.vsptSubmitted ? 1 : 0}`;
+		const weightKey: string = `${key}#${saSubmitted ? 1 : 0}#${vsptSubmitted ? 1 : 0}`;
 		const weight: PreestWeight | null = await storage.getPreestWeight(weightKey);
     if (!weight) {
       console.error(`No preest weight for key ${weightKey}`);

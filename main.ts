@@ -20,14 +20,16 @@ import { tlDistribution } from "./src/routes/reports/tl-distribution.ts";
 import { skillDistribution } from "./src/routes/reports/skill-distribution.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
+import { SessionDO } from "./src/session-do.ts";
 //import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
 //import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
 //import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
 //import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
+import type { ENV } from "./src/session-do.ts";
 import type { Storage } from "./src/storage/storage.ts";
 
-const app: Hono = new Hono();
+const app: Hono = new Hono<{ Bindings: ENV }>();
 
 const storage: Storage = await KVStorage.open();
 
@@ -58,7 +60,7 @@ await lti
   .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiOptions);
 */
 
-app.post("/api/setal", (c) => setAl(c, storage));
+app.post("/api/setal", c => setAl(c, storage));
 app.post("/api/settl", (c) => setTl(c, storage));
 app.post("/api/scorevspt", (c) => scoreVspt(c, storage));
 app.post("/api/scoresa", (c) => scoreSA(c, storage));
@@ -85,4 +87,5 @@ app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
 
 app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));
 
+export { SessionDO };
 export default app;

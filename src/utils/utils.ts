@@ -1,4 +1,5 @@
 import { getCookie, setCookie } from "hono/cookie";
+import { SessionDO } from "../session-do.ts";
 import type { Context } from "hono";
 
 export function setSessionId(c: Context): string {
@@ -11,6 +12,17 @@ export function setSessionId(c: Context): string {
 
 export function getSessionId(c: Context): string | undefined {
   return getCookie(c, "dialang");
+}
+
+export function getSession(c: Context): SessionDO | null {
+
+  const sessionId: string | undefined = getSessionId(c);
+  if (!sessionId) return null;
+  return getSessionFromId(c, sessionId);
+}
+
+export function getSessionFromId(c: Context, sessionId: string): SessionDO | null {
+  return c.env.SESSION.get(c.env.SESSION.idFromName(sessionId));
 }
 
 export function forceSessionId(c: Context, sessionId: string): string {
