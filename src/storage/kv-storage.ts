@@ -198,62 +198,6 @@ export class KVStorage implements Storage {
     }
   }
 
-  async logVsptScores(session: DialangSession): Promise<boolean> {
-    try {
-      const testSession: TestSession | null = await this.getTestSession(session.id);
-
-      if (!testSession) {
-        console.warn(`No test session for sessionId ${session.id}`);
-        return false;
-      }
-
-      testSession.vsptZScore = session.vsptZScore;
-      testSession.vsptMearaScore = session.vsptMearaScore;
-      testSession.vsptLevel = session.vsptLevel;
-      return await this.setTestSession(testSession);
-    } catch (error) {
-      console.error(`Failed to log VSPT scores for session ${session.id}`, error);
-      return false;
-    }
-  }
-
-  async logSaScores(session: DialangSession): Promise<boolean> {
-    try {
-      const testSession: TestSession | null = await this.getTestSession(session.id);
-
-      if (!testSession) {
-        console.warn(`No test session for sessionId ${session.id}`);
-        return false;
-      }
-
-  	  testSession.saPPE = session.saPPE;
-  	  testSession.saLevel = session.saLevel;
-      return await this.setTestSession(testSession);
-    } catch (error) {
-      console.error(`Failed to log SA scores for session ${session.id}`, error);
-      return false;
-    }
-  }
-
-  async logTestResult(session: DialangSession): Promise<boolean> {
-    try {
-      const testSession: TestSession | null = await this.getTestSession(session.id);
-
-      if (!testSession) {
-        console.warn(`No test session for sessionId ${session.id}`);
-        return false;
-      }
-
-      testSession.itemRawScore = session.itemRawScore;
-      testSession.itemGrade = session.itemGrade;
-      testSession.itemLevel = session.itemLevel;
-      return await this.setTestSession(testSession);
-    } catch (error) {
-      console.error(`Failed to log test result for session ${session.id}`, error);
-      return false;
-    }
-  }
-
   async storeQuestionnaire(sessionId: string, body: Questionnaire): Promise<boolean> {
     try {
       const testSession: TestSession | null = await this.getTestSession(sessionId);

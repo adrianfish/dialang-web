@@ -11,11 +11,6 @@
   "durable_objects": {
     "bindings": [{ "name": "SESSION", "class_name": "SessionDO" }]
   },
-  "migrations": [
-    // SQLite-backed classes must be declared with new_sqlite_classes.
-    // When you rename/delete the class later, add a new tag; never edit v1.
-    { "tag": "v1", "new_sqlite_classes": ["SessionDO"] }
-  ],
 	"assets": {
 		"binding": "ASSETS",
 		"directory": "./static"
@@ -26,6 +21,12 @@
       "binding": "DIALANG_KV",
       "id": "0ca6c8e775f140c781d9568472526b47"
     }
+  ],
+  "d1_databases": [
+  {
+    "binding": "DIALANG_DATA_CAPTURE",
+    "database_name": "dialang-data-capture",
+    "migrations_dir": "migrations" }
   ],
 	"observability": {
 		"enabled": true

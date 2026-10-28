@@ -1,5 +1,6 @@
 import { getSession } from "../utils/utils.ts";
 import { SessionDO } from "../storage/session.ts";
+import { storeVSPTResult } from "../data-capture/data-capture.ts";
 
 import type { Storage } from "../storage/storage.ts";
 import type { VSPTData, VSPWord } from "../types.ts";
@@ -39,6 +40,8 @@ export async function scoreVspt(
   };
 
   await session.saveVSPT(vsptData);
+
+  await storeVSPTResult(await session.getPassId(), vsptData);
 
   return c.json({ zScore, mearaScore, level });
 }

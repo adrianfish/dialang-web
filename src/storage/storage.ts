@@ -8,7 +8,8 @@ import type {
   SavedDialangSession,
   TestSession,
   VSPBand,
-  VSPWord } from "../types.ts";
+  VSPWord
+} from "../types.ts";
 
 export interface Storage {
 
@@ -53,12 +54,6 @@ export interface Storage {
   getTestSessions(completed?: boolean): Promise<Array<TestSession>>;
 
   logTestStart(session: DialangSession): Promise<boolean>;
-
-  logVsptScores(session: DialangSession): Promise<boolean>;
-
-  logSaScores(session: DialangSession): Promise<boolean>;
-
-  logTestResult(session: DialangSession): Promise<boolean>;
 
   storeQuestionnaire(sessionId: string, body: object): Promise<boolean>;
 

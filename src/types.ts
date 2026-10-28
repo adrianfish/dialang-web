@@ -42,7 +42,6 @@ export interface SavedDialangSession extends DialangSession {
 export interface ALData {
   sessionId: string;
   al: string;
-  started: number;
   ipAddress: string;
   referrer: string;
 }
@@ -55,9 +54,9 @@ export interface VSPTData {
 }
 
 export interface SAData {
-  ppe: number;
-  level: string;
-  submitted: boolean;
+  saPPE: number;
+  saLevel: string;
+  saSubmitted: boolean;
 }
 
 export interface StartTestData {
@@ -230,7 +229,7 @@ export interface TestSession {
   itemRawScore?: number;
   itemGrade?: number;
   itemLevel?: string;
-  questionnaire?: Questionnaire;
+  //questionnaire?: Questionnaire;
 }
 
 export interface Questionnaire {

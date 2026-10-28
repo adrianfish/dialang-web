@@ -1,5 +1,6 @@
 import { getConnInfo } from 'hono/cloudflare-workers'
 import { getSession, getSessionFromId, setSessionId } from "../utils/utils.ts";
+import { storeAdminLanguage } from "../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
 import type { ALData } from "../types.ts";
@@ -24,10 +25,10 @@ export async function setAl(c: Context): Promise<Response> {
     al,
     referrer: c.req.header("Referer") || "",
     ipAddress,
-    started: Date.now(),
   };
 
   await getSessionFromId(c, sessionId).setAdminLanguage(alData);
+  await storeAdminLanguage(sessionId, alData);
 
   return c.json({ al, sessionId });
 }

@@ -1,4 +1,5 @@
-import { getSession } from "../utils/utils.ts";
+import { getSession, getSessionId } from "../utils/utils.ts";
+import { storeTestLanguageAndSkill } from "../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
 
@@ -11,7 +12,14 @@ export async function setTl(c: Context): Promise<Response> {
     return c.html("No test language or skill supplied");
   }
 
-  await getSession(c).setTestLanguageAndSkill(body.tl, body.skill);
+
+  const session: SessionDO = getSession(c);
+
+  await session.clearTestData();
+
+  const passId = crypto.randomUUID();
+  await session.setTestLanguageAndSkill(passId, body.tl, body.skill);
+  await storeTestLanguageAndSkill(passId, getSessionId(c), body.tl, body.skill);
 
   return c.json({ tl: body.tl, skill: body.skill });
 }

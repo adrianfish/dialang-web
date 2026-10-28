@@ -1,6 +1,7 @@
-import { getSession } from "../utils/utils.ts";
+import { getSession, getSessionId } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
 import { SessionDO } from "../session-do.ts";
+import { storeSAResult } from "../data-capture/data-capture.ts";
 
 import type { Context }  from "hono";
 import type { SAData } from "../types.ts";
@@ -37,6 +38,7 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
   };
 
   await session.saveSA(saData);
+  await storeSAResult(await session.getPassId(), saData);
 
   /*
 	datacapture.LogSAResponses(&dialangSession, responses)

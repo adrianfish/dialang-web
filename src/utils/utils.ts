@@ -1,3 +1,4 @@
+import { env } from "cloudflare:workers";
 import { getCookie, setCookie } from "hono/cookie";
 import { SessionDO } from "../session-do.ts";
 
@@ -43,4 +44,3 @@ export async function createHash(message: string): Promise<string> {
 export function loggedIntoReports(c: Context): boolean {
   return !!getCookie(c, "dialang-reports");
 }
-

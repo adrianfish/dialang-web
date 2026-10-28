@@ -88,18 +88,6 @@ export class MockStorage implements Storage {
     return Promise.resolve(false);
   }
 
-  logVsptScores(_session: DialangSession): Promise<boolean> {
-    return Promise.resolve(false);
-  }
-
-  logSaScores(_session: DialangSession): Promise<boolean> {
-    return Promise.resolve(false);
-  }
-
-  logTestResult(_session: DialangSession): Promise<boolean> {
-    return Promise.resolve(false);
-  }
-
   storeQuestionnaire(_sessionId: string, _body: object): Promise<boolean> {
     return Promise.resolve(false);
   }

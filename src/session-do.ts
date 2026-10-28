@@ -22,8 +22,12 @@ export class SessionDO extends DurableObject<Env> {
     return this.ctx.storage.put(alData);
   }
 
-  async setTestLanguageAndSkill(tl: string, skill: string): Promise {
-    return this.ctx.storage.put({ tl, skill });
+  async setTestLanguageAndSkill(passId: string, tl: string, skill: string): Promise {
+    return this.ctx.storage.put({ passId, tl, skill });
+  }
+
+  async getPassId(): Promise<string> {
+    return this.ctx.storage.get("passId");
   }
 
   async getTL(): Promise<string> {
@@ -97,5 +101,53 @@ export class SessionDO extends DurableObject<Env> {
 
   async saveTestResult(testResult: TestResult): Promise {
     return this.ctx.storage.put(testResult);
+  }
+
+  async getTestSession(): Promise<TestSession> {
+
+    const keys: Array<string> = [
+      "sessionId",
+      "ipAddress",
+      "referrer",
+      "al",
+      "tl",
+      "skill",
+      "started",
+      "vsptZScore",
+      "vsptMearaScore",
+      "vsptLevel",
+      "saPPE",
+      "saLevel",
+      "itemRawScore",
+      "itemGrade",
+      "itemLevel",
+    ];
+
+    return Object.fromEntries(await this.ctx.storage.get(keys));
+  }
+
+  async clearTestData(): Promise<void> {
+
+    const keys: Array<string> = [
+      "passId",
+      "bookletId",
+      "currentBasketId",
+      "currentBasketNumber",
+      "itemScores",
+      "saSubmitted",
+      "vsptSubmitted",
+      "tl",
+      "skill",
+      "vsptZScore",
+      "vsptMearaScore",
+      "vsptLevel",
+      "saPPE",
+      "saLevel",
+      "itemRawScore",
+      "itemGrade",
+      "itemLevel",
+    ];
+
+    await this.ctx.storage.delete(keys);
   }
 }
