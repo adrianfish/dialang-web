@@ -13,18 +13,6 @@ import type {
 
 export interface Storage {
 
-  saveSession(sessionId: string, session: DialangSession): Promise<boolean>;
-
-  getSession(sessionId: string): Promise<DialangSession | null>;
-
-  saveSavedSession(session: SavedDialangSession): Promise<boolean>;
-
-  getSavedSession(saveToken: string): Promise<SavedDialangSession | null>;
-
-  deleteSession(sessionId: string): Promise<void>;
-
-  deleteSavedSession(sessionId: string): Promise<void>;
-
   getVSPWords(tl: string): Promise<Array<VSPWord> | null>;
 
   getVSPBands(tl: string): Promise<Array<VSPBand> | null>;
@@ -50,12 +38,6 @@ export interface Storage {
   getItemGrade(key: string, rawScore: number): Promise<Record<string, string | number> | null>;
 
   getPunctuationList(): Promise<Array<string> | null>;
-
-  getTestSessions(completed?: boolean): Promise<Array<TestSession>>;
-
-  logTestStart(session: DialangSession): Promise<boolean>;
-
-  storeQuestionnaire(sessionId: string, body: object): Promise<boolean>;
 
   getLanguageName(al: string, skill: string): Promise<string | null>;
 

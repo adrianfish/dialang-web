@@ -1,33 +1,25 @@
-import { getSessionId } from "../utils/utils.ts";
-import { Storage } from "../storage/storage.ts";
+import { getSession } from "../utils/utils.ts";
+import { storeSavedSession } from "../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
 import type { DialangSession, SavedDialangSession } from "../types.ts";
 
 export async function saveSession(
   c: Context,
-  storage: Storage,
 ): Promise<Response> {
 
-  const sessionId: string | undefined = getSessionId(c);
-  if (!sessionId) {
+  const session: SessionDO = getSession(c);
+  if (!session) {
 		console.error("Failed to get session id");
 		c.status(500);
 		return c.html("");
   }
 
-  const session: DialangSession | null = await storage.getSession(sessionId);
-
-  if (!session) {
-		console.error(`No session for id ${sessionId}`);
-		c.status(500);
-		return c.json({});
-  }
-
+  const sessionData: DialangSession = await session.getSessionData();
   const token: string = crypto.randomUUID();
-  const savedSession: SavedDialangSession = { "saveToken": token, ...session };
+  const savedSession: SavedDialangSession = { "saveToken": token, ...sessionData };
 
-  if (await storage.saveSavedSession(savedSession)) {
+  if (await storeSavedSession(savedSession)) {
     return c.json({ token });
   } else  {
 		console.error("Failed to save session");

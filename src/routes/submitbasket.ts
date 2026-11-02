@@ -352,6 +352,7 @@ export async function submitBasket(
       currentBasketId: nextBasketId,
       currentBasketNumber: nextBasketNumber,
       itemScores,
+      scoredBaskets,
     };
 
     await session.saveCurrentBasketData(currentBasketData);

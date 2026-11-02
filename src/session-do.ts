@@ -16,13 +16,31 @@ export interface Env {
   SESSION: DurableObjectNamespace<SessionDO>;
 }
 
+//const ttl = 1000 * 60 * 2;
+const ttl = 1000 * 60 * 60 * 4;
+
 export class SessionDO extends DurableObject<Env> {
 
+  async start() {
+
+    // Only arm the alarm if one isn't already pending, so calling start() twice
+    // doesn't push the deadline out.
+    if ((await this.ctx.storage.getAlarm()) === null) {
+      await this.ctx.storage.setAlarm(Date.now() + ttl);
+    }
+  }
+
   async setAdminLanguage(alData: ALData): Promise {
+
+    await this.start();
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(alData);
   }
 
   async setTestLanguageAndSkill(passId: string, tl: string, skill: string): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put({ passId, tl, skill });
   }
 
@@ -84,29 +102,40 @@ export class SessionDO extends DurableObject<Env> {
   }
 
   async saveVSPT(vsptData: VSPTData): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(vsptData);
   }
 
   async saveSA(saData: SAData): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(saData);
   }
 
   async saveStartTestData(testData: TestData): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(testData);
   }
 
   async saveCurrentBasketData(currentBasketData: CurrentBasketData): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(currentBasketData);
   }
 
   async saveTestResult(testResult: TestResult): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(testResult);
   }
 
-  async getTestSession(): Promise<TestSession> {
+  async getSessionData(): Promise<DialangSession> {
 
     const keys: Array<string> = [
       "sessionId",
+      "passId",
       "ipAddress",
       "referrer",
       "al",
@@ -118,15 +147,24 @@ export class SessionDO extends DurableObject<Env> {
       "vsptLevel",
       "saPPE",
       "saLevel",
-      "itemRawScore",
-      "itemGrade",
-      "itemLevel",
+      "bookletId",
+      "itemScores",
+      "scoredBaskets",
+      "currentBasketId",
     ];
 
     return Object.fromEntries(await this.ctx.storage.get(keys));
   }
 
+  async saveSession(sessionData: DialangSession): Promise {
+
+    await this.ctx.storage.put("lastModified", Date.now());
+    await this.ctx.storage.put(sessionData);
+  }
+
   async clearTestData(): Promise<void> {
+
+    await this.ctx.storage.put("lastModified", Date.now());
 
     const keys: Array<string> = [
       "passId",
@@ -149,5 +187,23 @@ export class SessionDO extends DurableObject<Env> {
     ];
 
     await this.ctx.storage.delete(keys);
+  }
+
+  async delete(): Promise {
+    await this.ctx.storage.deleteAll();
+  }
+  
+  async alarm() {
+
+    const lastModified = await this.ctx.storage.get("lastModified");
+    if (lastModified < (Date.now() - ttl)) {
+      // Session was modifed more than ttl milliseconds ago. Clear out the DO.
+      console.debug("Session expired. Clearing out DO ...");
+      await this.ctx.storage.deleteAll();
+    } else {
+      // Re set the alarm to ttl millis after the last modified stamp.
+      console.debug("Session not expired. Resetting alarm  ...");
+      await this.ctx.storage.setAlarm(lastModified + ttl);
+    }
   }
 }

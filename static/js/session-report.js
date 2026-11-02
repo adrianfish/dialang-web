@@ -15,6 +15,8 @@ document.getElementById("display-sessions-button").addEventListener("click", e =
   })
   .then(sessionsData => {
 
+    console.log(sessionsData);
+
     render(sessionTableTemplate(sessionsData), document.getElementById("output"));
     document.querySelectorAll(".session-button").forEach(b => {
 

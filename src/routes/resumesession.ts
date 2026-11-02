@@ -1,52 +1,59 @@
 import { Context } from "hono";
-import { Storage } from "../storage/storage.ts";
-import { forceSessionId } from "../utils/utils.ts";
+import { forceSessionId, getSession, getSessionFromId } from "../utils/utils.ts";
+import { getSavedSession, deleteSavedSession } from "../data-capture/data-capture.ts";
+import { SessionDO } from "../session-do.ts";
 
 import type { SavedDialangSession } from "../types.ts";
 
 export async function resumeSession(
   c: Context,
-  storage: Storage,
 ): Promise<Response> {
 
   const { token } = await c.req.parseBody();
 
-  const session: SavedDialangSession | null = await storage.getSavedSession(token as string);
+  const savedSession: SavedDialangSession | null = await getSavedSession(token as string);
 
-  if (!session) {
+  if (!savedSession) {
 		console.error(`No session for token ${token}`);
 		c.status(500);
 		return c.json({});
   }
 
-  if (!session.currentBasketId || !session.bookletId) {
+  console.log(savedSession);
+
+  if (!savedSession.currentBasketId || !savedSession.bookletId) {
 		console.error(`currentBasketId and bookletId must be set on session for token ${token}`);
 		c.status(500);
 		return c.json({});
   }
 
+  // Get the current session. The user will have created one to get this far and we need to clear
+  // out the durable object's data.
+  const currentSession: SessionDO = getSession(c);
+
   // Save the saved session as a "current" session
-  await storage.saveSession(session.id, session);
+  await getSessionFromId(c, savedSession.sessionId).saveSession(savedSession);
 
   // Set the saved session id in the session cookie so the client picks it up.
-  forceSessionId(c, session.id);
+  forceSessionId(c, savedSession.sessionId);
 
   const clientSession = {
-    id: session.id,
-    al: session.al,
-    tl: session.tl,
-    skill: session.skill,
-    vsptSubmitted: session.vsptSubmitted,
-    saSubmitted: session.saSubmitted,
-    saLevel: session.saLevel,
-    vsptLevel: session.vsptLevel,
-    vsptMearaScore: session.vsptMearaScore,
-    scoredBaskets: session.scoredBaskets,
-    currentBasketId: session.currentBasketId,
+    id: savedSession.sessionId,
+    al: savedSession.al,
+    tl: savedSession.tl,
+    skill: savedSession.skill,
+    vsptSubmitted: savedSession.vsptSubmitted,
+    saSubmitted: savedSession.saSubmitted,
+    saLevel: savedSession.saLevel,
+    vsptLevel: savedSession.vsptLevel,
+    vsptMearaScore: savedSession.vsptMearaScore,
+    scoredBaskets: savedSession.scoredBaskets,
+    currentBasketId: savedSession.currentBasketId,
   };
 
   // Delete the saved session. It has been resumed.
-  await storage.deleteSavedSession(token as string);
+  await deleteSavedSession(token as string);
+  await currentSession.delete();
 
   return c.json(clientSession);
 }

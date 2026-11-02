@@ -12,7 +12,6 @@ export async function setTl(c: Context): Promise<Response> {
     return c.html("No test language or skill supplied");
   }
 
-
   const session: SessionDO = getSession(c);
 
   await session.clearTestData();

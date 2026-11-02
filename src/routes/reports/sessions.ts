@@ -1,12 +1,11 @@
 import { loggedIntoReports } from "../../utils/utils.ts";
+import { getTestSessions } from "../../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
 import type { TestSession } from "../../types.ts";
-import type { Storage } from "../../storage/storage.ts";
 
 export async function sessions(
   c: Context,
-  storage: Storage,
 ): Promise<Response> {
   if (!loggedIntoReports(c)) return c.redirect("/reportslogin");
 
@@ -14,20 +13,19 @@ export async function sessions(
   const from: string = body.from as string;
   const to: string = body.to as string;
   const completed: boolean = !!body.completed;
+  const today: boolean = !!body.today;
 
-  const results: Array<TestSession> = await storage.getTestSessions(completed);
-
-  if (!from && !to) {
+  let fromMillis, toMillis;
+  if (today) {
     // Just today's sessions up to now.
-    const nowDate = new Date();
-    nowDate.setHours(0, 0 ,0);
-    const dayStartMillis = nowDate.getTime();
-    const sessions: Array<TestSession> = results.filter(s => s.started > dayStartMillis).sort((a, b) => a.started - b.started);
-    return c.json({ label: "Today's Sessions", sessions });
+    fromMillis = new Date().setHours(0, 0 ,0);
+    toMillis = Date.now();
   } else {
-    const fromMillis = new Date(from).getTime();
-    const toMillis = new Date(to).getTime();
-    const sessions: Array<TestSession> = results.filter(s => s.started >= fromMillis && s.started <= toMillis).sort((a, b) => a.started - b.started);
-    return c.json({ label: `Sessions between ${from} and ${to}`, sessions });
+    fromMillis = from ? new Date(from).getTime() : 0;
+    toMillis = to ? new Date(to).getTime() : Date.now();
   }
+
+  const sessions: Array<TestSession> = await getTestSessions(fromMillis, toMillis, completed);
+  console.log(sessions);
+  return c.json({ label: `Sessions from ${from ? from : "the start of time"} to ${to ? to : "now"}`, sessions });
 }

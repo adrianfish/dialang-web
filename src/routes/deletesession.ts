@@ -1,16 +1,17 @@
-import { getSessionId } from "../utils/utils.ts";
+import { getSession } from "../utils/utils.ts";
+import { SessionDO} from "../session-do.ts";
 
 import type { Context } from "hono";
-import { Storage } from "../storage/storage.ts";
 
-export function deleteSession(c: Context, storage: Storage): Response {
+export async function deleteSession(c: Context): Response {
 
-  const sessionId: string | undefined = getSessionId(c);
-  if (!sessionId) {
+  const session: SessionDO = getSession(c);
+  if (!session) {
     console.error("Failed to get session id");
 		c.status(500);
 		return c.html("");
   }
-  storage.deleteSession(sessionId);
+
+  await session.delete();
   return c.html("");
 }

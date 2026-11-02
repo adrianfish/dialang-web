@@ -21,7 +21,7 @@ import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
 import { SessionDO } from "./src/session-do.ts";
 //import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
-//import { createLTILaunchHandler } from "./src/lti-handlers/launch.ts";
+//import { launchHandler } from "./src/lti-handlers/launch.ts";
 //import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
 //import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
@@ -54,33 +54,33 @@ const ltiOptions = {
 const lti = new LTIKit();
 
 await lti
-  .onLaunch(createLTILaunchHandler(storage))
+  .onLaunch(launchHandler)
   .onDeepLinking(deepLinkingHandler)
   .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiOptions);
 */
 
-app.post("/api/setal", c => setAl(c, storage));
-app.post("/api/settl", (c) => setTl(c, storage));
+app.post("/api/setal", setAl);
+app.post("/api/settl", setTl);
 app.post("/api/scorevspt", (c) => scoreVspt(c, storage));
 app.post("/api/scoresa", (c) => scoreSA(c, storage));
 app.post("/api/starttest", (c) => startTest(c, storage));
 //app.post("/api/submitbasket", (c) => submitBasket(c, storage, lti));
 app.post("/api/submitbasket", (c) => submitBasket(c, storage));
-app.post("/api/resumesession", (c) => resumeSession(c, storage));
+app.post("/api/resumesession", resumeSession);
 app.get("/content/*", content);
 app.get("/images/*", content);
-app.get("/api/savesession", (c) => saveSession(c, storage));
-app.get("/api/deletesession", (c) => deleteSession(c, storage));
+app.get("/api/savesession", saveSession);
+app.get("/api/deletesession", deleteSession);
 app.get("/api/session", (c) => getSession(c, storage));
-app.get("/api/reports/al-distribution", (c) => alDistribution(c, storage));
-app.get("/api/reports/tl-distribution", (c) => tlDistribution(c, storage));
-app.get("/api/reports/skill-distribution", (c) => skillDistribution(c, storage));
-app.post("/api/reports/sessions", (c) => sessions(c, storage));
-app.post("/api/submitquestionnaire", (c) => submitQuestionnaire(c, storage));
+app.get("/api/reports/al-distribution", alDistribution);
+app.get("/api/reports/tl-distribution", tlDistribution);
+app.get("/api/reports/skill-distribution", skillDistribution);
+app.post("/api/reports/sessions", sessions);
+app.post("/api/submitquestionnaire", submitQuestionnaire);
 const reportsSecret: string | undefined = env.REPORTS_SECRET;
 app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, reportsSecret));
-app.get("/reports/:report?", (c) => reports(c));
-app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
+app.get("/reports/:report?", reports);
+//app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
 
 //app.route(ltiOptions.ltiRoute, lti.handler());
 

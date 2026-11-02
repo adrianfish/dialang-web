@@ -1,4 +1,4 @@
-import { getSessionId } from "../utils/utils.ts";
+import { getSession } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
 
 import type { Context } from "hono";
@@ -8,9 +8,9 @@ export async function getSession(
   storage: Storage,
 ): Promise<Response> {
 
-  const sessionId: string | undefined = getSessionId(c);
-  if (!sessionId) {
-    console.error("Failed to get session id");
+  const session: SessionDO = getSession(c);
+  if (!session) {
+    console.error("Failed to get session");
 		c.status(500);
 		return c.json("");
   }

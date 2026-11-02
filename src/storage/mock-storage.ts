@@ -8,23 +8,7 @@ export class MockStorage implements Storage {
     return Promise.resolve(false);
   }
 
-  getSession(_sessionId: string): Promise<DialangSession | null> {
-    return Promise.resolve(null);
-  }
-
-  saveSavedSession(_session: SavedDialangSession): Promise<boolean> {
-    return Promise.resolve(false);
-  }
-
-  getSavedSession(_saveToken: string): Promise<SavedDialangSession | null> {
-    return Promise.resolve(null);
-  }
-
   deleteSession(_sessionId: string): Promise<void> {
-    return Promise.resolve();
-  }
-
-  deleteSavedSession(_sessionId: string): Promise<void> {
     return Promise.resolve();
   }
 
@@ -78,18 +62,6 @@ export class MockStorage implements Storage {
 
   getPunctuationList(): Promise<Array<string> | null> {
     return Promise.resolve([]);
-  }
-
-  getTestSessions(_completed: boolean): Promise<Array<TestSession>> {
-    return Promise.resolve([]);
-  }
-
-  logTestStart(_session: DialangSession): Promise<boolean> {
-    return Promise.resolve(false);
-  }
-
-  storeQuestionnaire(_sessionId: string, _body: object): Promise<boolean> {
-    return Promise.resolve(false);
   }
 
   getLanguageName(_al: string, _skill: string): Promise<string | null> {

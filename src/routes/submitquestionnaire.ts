@@ -1,4 +1,5 @@
 import { getSessionId } from "../utils/utils.ts";
+import { storeQuestionnaire } from "../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
 import type { Storage } from "../storage/storage.ts";
@@ -14,7 +15,7 @@ export async function submitQuestionnaire(c: Context, storage: Storage): Promise
     return c.html("");
   }
 
-	await storage.storeQuestionnaire(sessionId, body);
+	await storeQuestionnaire(sessionId, body);
 
   return c.html("");
 }

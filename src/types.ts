@@ -83,6 +83,8 @@ export interface SubmitBasketRequirements {
 export interface CurrentBasketData {
   currentBasketId: number;
   currentBasketNumber: number;
+  itemScores?: Array<ItemScore>;
+  scoredBaskets?: Array<ScoredBasket>;
 }
 
 export interface TestResult {

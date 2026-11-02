@@ -24,3 +24,8 @@ CREATE TABLE IF NOT EXISTS passes (
   item_level TEXT,
   ended INTEGER
 );
+
+CREATE TABLE IF NOT EXISTS saved_sessions (
+  token TEXT PRIMARY KEY,
+  saved_json TEXT NOT NULL
+);
