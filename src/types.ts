@@ -1,5 +1,5 @@
-export interface DialangSession {
-  id: string;
+export interface DialangSession extends Record<string, unknown> {
+  sessionId: string;
   al: string;
   tl?: string;
   skill?: string;
@@ -39,30 +39,40 @@ export interface SavedDialangSession extends DialangSession {
   savedAt?: number;
 }
 
-export interface ALData {
+export interface ALData extends Record<string, unknown> {
   sessionId: string;
   al: string;
   ipAddress: string;
   referrer: string;
 }
 
-export interface VSPTData {
+export interface VSPTData extends Record<string, unknown> {
   vsptZScore: number;
   vsptMearaScore: number;
   vsptLevel: string;
   vsptSubmitted: boolean;
 }
 
-export interface SAData {
+export interface SAData extends Record<string, unknown> {
   saPPE: number;
   saLevel: string;
   saSubmitted: boolean;
 }
 
-export interface StartTestData {
+export interface StartTestData extends Record<string, unknown> {
   bookletId: number;
   currentBasketId: number;
   currentBasketNumber: number;
+}
+
+export interface StartTestRequirements {
+  tl: string;
+  skill: string;
+  vsptSubmitted: boolean;
+  saSubmitted: boolean,
+  vsptZScore: number;
+  saPPE: number;
+  scoredItems: Array<ScoredItem>;
 }
 
 export interface SubmitBasketRequirements {
@@ -80,14 +90,14 @@ export interface SubmitBasketRequirements {
   resultUrl: string;
 }
 
-export interface CurrentBasketData {
+export interface CurrentBasketData extends Record<string, unknown> {
   currentBasketId: number;
   currentBasketNumber: number;
   itemScores?: Array<ItemScore>;
   scoredBaskets?: Array<ScoredBasket>;
 }
 
-export interface TestResult {
+export interface TestResult extends Record<string, unknown>{
   itemRawScore: number;
   itemGrade: number;
   itemLevel: string;
@@ -142,7 +152,7 @@ export interface ScoredBasket {
   items: Array<ScoredItem>;
 }
 
-export interface VSPBand {
+export interface VSPBand extends Record<string, unknown> {
   locale: string;
   level: string;
   low: number;

@@ -1,16 +1,20 @@
 import { Storage } from "@cloudflare/actors/storage";
 import { DurableObject } from "cloudflare:workers";
+import { DialangSession } from "./types.ts";
 
 import type {
   ALData,
   CurrentBasketData,
+  ItemScore,
+  ScoredBasket,
+  ScoredItem,
+  StartTestData,
   StartTestRequirements,
   SubmitBasketRequirements,
-  TestData,
   TestResult,
   VSPTData,
   SAData
-} from "../types.ts";
+} from "./types.ts";
 
 export interface Env {
   SESSION: DurableObjectNamespace<SessionDO>;
@@ -30,7 +34,7 @@ export class SessionDO extends DurableObject<Env> {
     }
   }
 
-  async setAdminLanguage(alData: ALData): Promise {
+  async setAdminLanguage(alData: ALData): Promise<void> {
 
     await this.start();
 
@@ -38,21 +42,21 @@ export class SessionDO extends DurableObject<Env> {
     return this.ctx.storage.put(alData);
   }
 
-  async setTestLanguageAndSkill(passId: string, tl: string, skill: string): Promise {
+  async setTestLanguageAndSkill(passId: string, tl: string, skill: string): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put({ passId, tl, skill });
   }
 
-  async getPassId(): Promise<string> {
+  async getPassId(): Promise<string | undefined> {
     return this.ctx.storage.get("passId");
   }
 
-  async getTL(): Promise<string> {
+  async getTL(): Promise<string | undefined> {
     return this.ctx.storage.get("tl");
   }
 
-  async getSkill(): Promise<string> {
+  async getSkill(): Promise<string | undefined> {
     return this.ctx.storage.get("skill");
   }
 
@@ -61,13 +65,13 @@ export class SessionDO extends DurableObject<Env> {
     const keys: Array<string> = ["tl", "skill", "vsptSubmitted", "saSubmitted", "vsptZScore", "saPPE", "scoredItems"];
     const data = await this.ctx.storage.get(keys);
     return {
-      tl: data.get("tl"),
-      skill: data.get("skill"),
-      vsptSubmitted: data.get("vsptSubmitted"),
-      saSubmitted: data.get("saSubmitted"),
-      vsptZScore: data.get("vsptZScore"),
-      saPPE: data.get("saPPE"),
-      scoredItems: data.get("scoredItems"),
+      tl: data.get("tl") as string,
+      skill: data.get("skill") as string,
+      vsptSubmitted: data.get("vsptSubmitted") as boolean,
+      saSubmitted: data.get("saSubmitted") as boolean,
+      vsptZScore: data.get("vsptZScore") as number,
+      saPPE: data.get("saPPE") as number,
+      scoredItems: data.get("scoredItems") as Array<ScoredItem>,
     };
   }
 
@@ -86,46 +90,54 @@ export class SessionDO extends DurableObject<Env> {
     ];
     const data = await this.ctx.storage.get(keys);
     return {
-      tl: data.get("tl"),
-      skill: data.get("skill"),
-      currentBasketId: data.get("currentBasketId"),
-      bookletId: data.get("bookletId"),
-      currentBasketNumber: data.get("currentBasketNumber"),
-      scoredItems: data.get("scoredItems"),
-      itemScores: data.get("itemScores"),
-      scoredBaskets: data.get("scoredBaskets"),
-      itemRawScore: data.get("itemRawScore"),
-      itemGrade: data.get("itemGrade"),
-      itemLevel: data.get("itemLevel"),
-      resultUrl: data.get("resultUrl"),
+      tl: data.get("tl") as string,
+      skill: data.get("skill") as string,
+      currentBasketId: data.get("currentBasketId") as number,
+      bookletId: data.get("bookletId") as number,
+      currentBasketNumber: data.get("currentBasketNumber") as number,
+      scoredItems: data.get("scoredItems") as Array<ScoredItem>,
+      itemScores: data.get("itemScores") as Array<ItemScore>,
+      scoredBaskets: data.get("scoredBaskets") as Array<ScoredBasket>,
+      itemRawScore: data.get("itemRawScore") as number,
+      itemGrade: data.get("itemGrade") as number,
+      itemLevel: data.get("itemLevel") as string,
+      resultUrl: data.get("resultUrl") as string,
     };
   }
 
-  async saveVSPT(vsptData: VSPTData): Promise {
+  async saveVSPT(vsptData: VSPTData): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(vsptData);
   }
 
-  async saveSA(saData: SAData): Promise {
+  async getVSPTLevel(): Promise<string | undefined> {
+    return this.ctx.storage.get("vsptLevel");
+  }
+
+  async saveSA(saData: SAData): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(saData);
   }
 
-  async saveStartTestData(testData: TestData): Promise {
+  async getSALevel(): Promise<string | undefined> {
+    return this.ctx.storage.get("saLevel");
+  }
+
+  async saveStartTestData(testData: StartTestData): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(testData);
   }
 
-  async saveCurrentBasketData(currentBasketData: CurrentBasketData): Promise {
+  async saveCurrentBasketData(currentBasketData: CurrentBasketData): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
-    return this.ctx.storage.put(currentBasketData);
+    return this.ctx.storage.put(currentBasketData as unknown as Record<string, unknown>);
   }
 
-  async saveTestResult(testResult: TestResult): Promise {
+  async saveTestResult(testResult: TestResult): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
     return this.ctx.storage.put(testResult);
@@ -153,10 +165,11 @@ export class SessionDO extends DurableObject<Env> {
       "currentBasketId",
     ];
 
+    /* @ts-ignore */
     return Object.fromEntries(await this.ctx.storage.get(keys));
   }
 
-  async saveSession(sessionData: DialangSession): Promise {
+  async saveSession(sessionData: DialangSession): Promise<void> {
 
     await this.ctx.storage.put("lastModified", Date.now());
     await this.ctx.storage.put(sessionData);
@@ -189,21 +202,21 @@ export class SessionDO extends DurableObject<Env> {
     await this.ctx.storage.delete(keys);
   }
 
-  async delete(): Promise {
+  async delete(): Promise<void> {
     await this.ctx.storage.deleteAll();
   }
   
   async alarm() {
 
-    const lastModified = await this.ctx.storage.get("lastModified");
-    if (lastModified < (Date.now() - ttl)) {
+    const lastModified: number | undefined  = await this.ctx.storage.get("lastModified");
+    if (lastModified && lastModified < (Date.now() - ttl)) {
       // Session was modifed more than ttl milliseconds ago. Clear out the DO.
       console.debug("Session expired. Clearing out DO ...");
       await this.ctx.storage.deleteAll();
     } else {
       // Re set the alarm to ttl millis after the last modified stamp.
       console.debug("Session not expired. Resetting alarm  ...");
-      await this.ctx.storage.setAlarm(lastModified + ttl);
+      await this.ctx.storage.setAlarm((lastModified || Date.now())+ ttl);
     }
   }
 }

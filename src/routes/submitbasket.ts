@@ -1,11 +1,12 @@
 import { getSession } from "../utils/utils.ts";
 import { Storage } from "../storage/storage.ts";
+import { SessionDO } from "../session-do.ts";
 //import { LTIKit, Score } from "@adrianfish/lti-kit";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
-import { storeTestResult } from "../data-capture/data-capture.ts";
+import { storeMultipleIdResponses, storeMultipleTextualResponses, storeSingleIdResponse, storeTestResult } from "../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
-import type { CurrentBasketData, ItemResult, ItemScore, ScoredBasket, ScoredItem, SubmitBasketRequirements } from "../types.ts";
+import type { CurrentBasketData, ItemResult, ItemScore, ScoredBasket, ScoredItem, SubmitBasketRequirements, TestResult } from "../types.ts";
 
 export async function submitBasket(
   c: Context,
@@ -86,7 +87,8 @@ export async function submitBasket(
         scoredItemList.push(scoredItem);
         const scoredBasket: ScoredBasket = { id: currentBasketId, type: "mcq", skill: scoredItem.skill, items: [scoredItem] };
         returnMap["scoredBasket"] = scoredBasket
-        //datacapture.LogSingleIdResponse(session.passId, scoredItem)
+        /* @ts-ignore */
+        await storeSingleIdResponse((await session.getPassId()) as string, scoredItem);
       } else {
         console.error(`Failed to get scored item for itemId ${itemId} and responseId ${answerId}`);
         c.status(500);
@@ -138,7 +140,8 @@ export async function submitBasket(
       basketItems.sort(positionInBasketSorter);
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "tabbedpane", skill: basketItems[0].skill, items: basketItems };
       returnMap["scoredBasket"] = scoredBasket;
-      //datacapture.LogMultipleIdResponses(session.passId, itemsToLog)
+      /* @ts-ignore */
+      await storeMultipleIdResponses((await session.getPassId()) as string,  itemsToLog);
       break;
     }
 
@@ -177,7 +180,8 @@ export async function submitBasket(
       basketItems.sort(positionInBasketSorter);
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "shortanswer", skill: basketItems[0].skill, items: basketItems };
       returnMap["scoredBasket"] = scoredBasket;
-      //datacapture.LogMultipleTextualResponses(session.passId, itemsToLog)
+      /* @ts-ignore */
+      await storeMultipleTextualResponses((await session.getPassId()) as string,  itemsToLog);
       break;
     }
 
@@ -217,7 +221,8 @@ export async function submitBasket(
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "gaptext", skill: basketItems[0].skill, items: basketItems };
       returnMap["scoredBasket"] = scoredBasket;
       break;
-      //datacapture.LogMultipleTextualResponses(session.passId, itemsToLog)
+      /* @ts-ignore */
+      await storeMultipleTextualResponses((await session.getPassId()) as string,  itemsToLog);
     }
 
     case "gapdrop": {
@@ -258,7 +263,8 @@ export async function submitBasket(
       const scoredBasket: ScoredBasket = { id: currentBasketId, type: "gapdrop", skill: basketItems[0].skill, items: basketItems };
       returnMap["scoredBasket"] = scoredBasket;
       break;
-      //datacapture.LogMultipleIdResponses(session.passId, itemsToLog)
+      /* @ts-ignore */
+      await storeMultipleIdResponses((await session.getPassId()) as string,  itemsToLog);
     }
 
     default: {
@@ -320,20 +326,23 @@ export async function submitBasket(
     };
 
     await session.saveTestResult(testResult);
-    await storeTestResult(await session.getPassId(), testResult);
+    /* @ts-ignore */
+    await storeTestResult((await session.getPassId()) as string, testResult);
 
     if (submitBasketRequirements.resultUrl) {
-      const parts = session.resultUrl.split("?");
+      const parts = submitBasketRequirements.resultUrl.split("?");
       let url = `${parts[0]}?`;
       if (parts.length == 2) {
         url += `${parts[1]}&`;
       }
       url += `itemGrade=${itemGrade}`;
-      if (session.saLevel) {
-        url += `&saLevel=${session.saLevel}`;
+      const saLevel: string | undefined = await session.getSALevel();
+      if (saLevel) {
+        url += `&saLevel=${saLevel}`;
       }
-      if (session.vsptLevel) {
-        url += `&vsptLevel=${session.vsptLevel}`;
+      const vsptLevel: string | undefined = await session.getVSPTLevel();
+      if (vsptLevel) {
+        url += `&vsptLevel=${vsptLevel}`;
       }
       returnMap["redirect"] = url;
       return c.json(returnMap);

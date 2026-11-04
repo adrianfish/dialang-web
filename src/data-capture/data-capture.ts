@@ -1,6 +1,13 @@
 import { env } from "cloudflare:workers";
 
-import type { ALData, VSPTData } from "../types.ts";
+import type { ALData,
+  Questionnaire,
+  SAData,
+  SavedDialangSession,
+  ScoredItem,
+  TestResult,
+  TestSession,
+  VSPTData } from "../types.ts";
 
 export async function storeAdminLanguage(sessionId: string, alData: ALData): Promise<boolean> {
 
@@ -35,6 +42,17 @@ export async function storeVSPTResult(passId: string, vsptData: VSPTData): Promi
     .run()).success;
 }
 
+export async function storeVSPTResponses(passId: string, responses: Record<string, boolean>): Promise<void> {
+
+  const statement = env.DIALANG_DATA_CAPTURE.prepare("INSERT INTO vspt_responses VALUES(?, ?, ?)");
+
+  const statements = Object.entries(responses).map(([ wordId, response ]) => {
+    return statement.bind(passId, wordId, response);
+  });
+
+  await env.DIALANG_DATA_CAPTURE.batch(statements);
+}
+
 export async function storeSAResult(passId: string, saData: SAData): Promise<boolean> {
 
   return (await env.DIALANG_DATA_CAPTURE.prepare(
@@ -45,6 +63,78 @@ export async function storeSAResult(passId: string, saData: SAData): Promise<boo
   )
     .bind(saData.saPPE, saData.saLevel, passId)
     .run()).success;
+}
+
+export async function storeSAResponses(passId: string, responses: Record<string, boolean>): Promise<void> {
+
+  const statement = env.DIALANG_DATA_CAPTURE.prepare("INSERT INTO sa_responses VALUES(?, ?, ?)");
+
+  const statements = Object.entries(responses).map(([ statementId, response ]) => {
+    return statement.bind(passId, statementId, response);
+  });
+
+  await env.DIALANG_DATA_CAPTURE.batch(statements);
+}
+
+export async function storeSingleIdResponse(passId: string, item: ScoredItem): Promise<void> {
+
+  await env.DIALANG_DATA_CAPTURE.prepare(`
+    INSERT INTO item_responses 
+      (pass_id, basket_id, item_id, answer_id, score, correct, pass_order)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+  `)
+  .bind(passId,
+    item.basketId,
+    item.id,
+    item.responseId,
+    item.score,
+    item.correct,
+    item.positionInTest)
+  .run();
+}
+
+export async function storeMultipleIdResponses(passId: string, items: Array<ScoredItem>): Promise<void> {
+
+  const statement = env.DIALANG_DATA_CAPTURE.prepare(`
+    INSERT INTO item_responses 
+      (pass_id, basket_id, item_id, answer_id, score, correct, pass_order)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  const statements = items.map(item => {
+
+    return statement.bind(passId,
+                          item.basketId,
+                          item.id,
+                          item.responseId,
+                          item.score,
+                          item.correct,
+                          item.positionInTest);
+  });
+
+  await env.DIALANG_DATA_CAPTURE.batch(statements);
+}
+
+export async function storeMultipleTextualResponses(passId: string, items: Array<ScoredItem>): Promise<void> {
+
+  const statement = env.DIALANG_DATA_CAPTURE.prepare(`
+    INSERT INTO item_responses 
+      (pass_id, basket_id, item_id, answer_text, score, correct, pass_order)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  const statements = items.map(item => {
+
+    return statement.bind(passId,
+                          item.basketId,
+                          item.id,
+                          item.responseText,
+                          item.score,
+                          item.correct,
+                          item.positionInTest);
+  });
+
+  await env.DIALANG_DATA_CAPTURE.batch(statements);
 }
 
 export async function storeTestResult(passId: string, testResult: TestResult): Promise<boolean> {
@@ -76,12 +166,14 @@ export async function getSavedSession(token: string): Promise<SavedDialangSessio
         WHERE token = ?`)
     .bind(token).run();
 
+    console.log(result);
+
   if (result.meta.rows_read !== 1) {
     console.warn(`No saved session for token ${token}`);
     return null;
   }
 
-  return JSON.parse(result.results[0].saved_json);
+  return JSON.parse(result.results[0].saved_json as string);
 }
 
 export async function deleteSavedSession(token: string): Promise<boolean> {
@@ -89,6 +181,7 @@ export async function deleteSavedSession(token: string): Promise<boolean> {
   return (await env.DIALANG_DATA_CAPTURE.prepare("DELETE FROM saved_sessions WHERE token = ?")
     .bind(token).run()).success;
 }
+
 export async function getAllTestSessions(): Promise<Array<TestSession>> {
   return await getTestSessions(0, Date.now(), false);
 }
@@ -110,7 +203,7 @@ export async function getTestSession(sessionId: string): Promise<TestSession | n
   .bind(pass.session_id)
   .run();
 
-  if (sessions.results.lenth !== 1) {
+  if (sessions.results.length !== 1) {
     return null;
   }
 
@@ -130,22 +223,25 @@ export async function getTestSessions(fromMillis: number, toMillis: number, comp
     return [];
   }
 
-  return Promise.all(passes.results.map(async pass => {
+  const testSessions: Array<TestSession> = [];
 
+  for (const pass of passes.results) {
     const sessions = await env.DIALANG_DATA_CAPTURE.prepare("SELECT * FROM sessions WHERE session_id = ?")
     .bind(pass.session_id)
     .run();
 
     if (!sessions.success || !sessions.results.length) {
       console.warn(`No session for pass.session_id = ${pass.session_id}. Skipping this pass ...`);
-      return null;
+      continue;
     }
 
-    return buildTestSession(sessions.results[0], pass);
-  }));
+    testSessions.push(buildTestSession(sessions.results[0], pass));
+  }
+
+  return testSessions;
 }
 
-function buildTestSession(session: object, pass: object): TestSession {
+function buildTestSession(session: any, pass: any): TestSession {
 
   return {
     sessionId: pass.session_id,

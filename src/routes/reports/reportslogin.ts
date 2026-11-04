@@ -8,7 +8,8 @@ import type { Context } from "hono";
 export async function reportsLogin(c: Context, secret?: string): Promise<Response> {
 
   if (!secret) {
-    return c.status(400, "No secret defined");
+    c.status(400);
+    return c.html("No secret defined");
   }
 
   if (c.req.method === "GET") {

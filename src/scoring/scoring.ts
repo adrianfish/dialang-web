@@ -1,5 +1,5 @@
 import { Storage } from "../storage/storage.ts";
-import type { Answer, Item, ItemResult, ItemScore, ScoredItem } from "../types.ts";
+import type { Answer, Item, ItemResult, ItemScore, SAGrade, ScoredItem } from "../types.ts";
 
 export const CEFR_LEVELS: Record<number, string> = { 1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2" };
 
@@ -22,7 +22,7 @@ export async function getSaPPEAndLevel(skill: string, responses: Record<string, 
 	  return [ 0, "", "Failed to get raw score" ];
   }
 
-	const saGrade = await storage.getSAGrade(skill, rsc);
+	const saGrade: SAGrade | null = await storage.getSAGrade(skill, rsc);
 
   if (saGrade) {
     return [ saGrade.ppe, CEFR_LEVELS[saGrade.grade], null ];

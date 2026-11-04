@@ -25,14 +25,17 @@ import { SessionDO } from "./src/session-do.ts";
 //import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
 //import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
-import type { ENV } from "./src/session-do.ts";
+import type { Env } from "./src/session-do.ts";
 import type { Storage } from "./src/storage/storage.ts";
 
-const app: Hono = new Hono<{ Bindings: ENV }>();
+/* @ts-ignore */
+const app: Hono = new Hono<{ Bindings: Env }>();
 
 const storage: Storage = await KVStorage.open();
 
+/* @ts-ignore */
 const hostname: string = env.HOSTNAME || "adrian-dialang.ngrok.app";
+/* @ts-ignore */
 const port: number = parseInt(env.PORT || "8787");
 
 /*
@@ -71,7 +74,7 @@ app.get("/content/*", content);
 app.get("/images/*", content);
 app.get("/api/savesession", saveSession);
 app.get("/api/deletesession", deleteSession);
-app.get("/api/session", (c) => getSession(c, storage));
+app.get("/api/session", getSession);
 app.get("/api/reports/al-distribution", alDistribution);
 app.get("/api/reports/tl-distribution", tlDistribution);
 app.get("/api/reports/skill-distribution", skillDistribution);
@@ -84,6 +87,7 @@ app.get("/reports/:report?", reports);
 
 //app.route(ltiOptions.ltiRoute, lti.handler());
 
+/* @ts-ignore */
 app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));
 
 export { SessionDO };

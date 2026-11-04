@@ -3,9 +3,9 @@ import { SessionDO} from "../session-do.ts";
 
 import type { Context } from "hono";
 
-export async function deleteSession(c: Context): Response {
+export async function deleteSession(c: Context): Promise<Response> {
 
-  const session: SessionDO = getSession(c);
+  const session: SessionDO | null = getSession(c);
   if (!session) {
     console.error("Failed to get session id");
 		c.status(500);

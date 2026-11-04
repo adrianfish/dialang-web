@@ -29,7 +29,7 @@ export async function resumeSession(
 
   // Get the current session. The user will have created one to get this far and we need to clear
   // out the durable object's data.
-  const currentSession: SessionDO = getSession(c);
+  const currentSession: SessionDO = getSession(c) as SessionDO;
 
   // Save the saved session as a "current" session
   await getSessionFromId(c, savedSession.sessionId).saveSession(savedSession);
@@ -53,6 +53,7 @@ export async function resumeSession(
 
   // Delete the saved session. It has been resumed.
   await deleteSavedSession(token as string);
+
   await currentSession.delete();
 
   return c.json(clientSession);

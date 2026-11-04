@@ -1,5 +1,6 @@
 import { getSession } from "../utils/utils.ts";
 import { storeSavedSession } from "../data-capture/data-capture.ts";
+import { SessionDO } from "../session-do.ts";
 
 import type { Context } from "hono";
 import type { DialangSession, SavedDialangSession } from "../types.ts";
@@ -8,7 +9,7 @@ export async function saveSession(
   c: Context,
 ): Promise<Response> {
 
-  const session: SessionDO = getSession(c);
+  const session: SessionDO | null = getSession(c);
   if (!session) {
 		console.error("Failed to get session id");
 		c.status(500);

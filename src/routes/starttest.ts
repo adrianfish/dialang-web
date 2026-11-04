@@ -3,7 +3,7 @@ import { SessionDO } from "../session-do.ts";
 
 import type { Context } from "hono";
 import type { Storage } from "../storage/storage.ts";
-import type { PreestAssignment, PreestWeight, StartTestRequirements, StartTestData } from "../types/types.ts";
+import type { PreestAssignment, PreestWeight, StartTestRequirements, StartTestData } from "../types.ts";
 
 export async function startTest(
   c: Context,

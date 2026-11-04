@@ -23,7 +23,7 @@ export function getSession(c: Context): SessionDO | null {
   return getSessionFromId(c, sessionId);
 }
 
-export function getSessionFromId(c: Context, sessionId: string): SessionDO | null {
+export function getSessionFromId(c: Context, sessionId: string): SessionDO {
   return c.env.SESSION.get(c.env.SESSION.idFromName(sessionId));
 }
 

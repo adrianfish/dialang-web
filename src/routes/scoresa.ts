@@ -2,6 +2,7 @@ import { getSession, getSessionId } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
 import { SessionDO } from "../session-do.ts";
 import { storeSAResult } from "../data-capture/data-capture.ts";
+import { storeSAResponses } from "../data-capture/data-capture.ts";
 
 import type { Context }  from "hono";
 import type { SAData } from "../types.ts";
@@ -24,21 +25,20 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
         .map(([k, v]) => [ k.split(":")[1], v === "yes"])
     );
 
-  const [saPPE, saLevel, err ] = await getSaPPEAndLevel(await session.getSkill(), responses, storage);
+  const [saPPE, saLevel, err] = await getSaPPEAndLevel((await session.getSkill()) as string, responses, storage);
+
 	if (err) {
 		console.error(err);
     c.status(500);
 		return c.html("");
 	}
 
-  const saData: SAData = {
-    saPPE,
-    saLevel,
-    saSubmitted: true,
-  };
+  /* @ts-ignore */
+  const saData: SAData = { saPPE, saLevel, saSubmitted: true };
 
   await session.saveSA(saData);
-  await storeSAResult(await session.getPassId(), saData);
+  await storeSAResult((await session.getPassId()) as string, saData);
+  await storeSAResponses((await session.getPassId()) as string, responses);
 
   /*
 	datacapture.LogSAResponses(&dialangSession, responses)

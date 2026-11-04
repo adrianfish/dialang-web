@@ -1,6 +1,7 @@
 import { getSession } from "../utils/utils.ts";
-import { SessionDO } from "../storage/session.ts";
+import { SessionDO } from "../session-do.ts";
 import { storeVSPTResult } from "../data-capture/data-capture.ts";
+import { storeVSPTResponses } from "../data-capture/data-capture.ts";
 
 import type { Storage } from "../storage/storage.ts";
 import type { VSPTData, VSPWord } from "../types.ts";
@@ -13,7 +14,7 @@ export async function scoreVspt(
 
   const body = await c.req.json();
 
-  const responses = Object.fromEntries(
+  const responses: Record<string, boolean> = Object.fromEntries(
     Object.entries(body)
     .filter(([k, _]) => k.startsWith("word:"))
     .map(([k, v]) => [ k.split(":")[1], v === "valid"])
@@ -26,7 +27,7 @@ export async function scoreVspt(
 		return c.html("");
   }
 
-  const [ zScore, mearaScore, level, error ] = await getBand(storage, await session.getTL(), responses);
+  const [ zScore, mearaScore, level, error ] = await getBand(storage, (await session.getTL()) as string, responses);
   if (error) {
     c.status(500);
     return c.text(error as string);
@@ -41,7 +42,8 @@ export async function scoreVspt(
 
   await session.saveVSPT(vsptData);
 
-  await storeVSPTResult(await session.getPassId(), vsptData);
+  await storeVSPTResult((await session.getPassId()) as string, vsptData);
+  await storeVSPTResponses((await session.getPassId()) as string, responses);
 
   return c.json({ zScore, mearaScore, level });
 }

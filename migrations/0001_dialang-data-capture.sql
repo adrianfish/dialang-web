@@ -29,3 +29,39 @@ CREATE TABLE IF NOT EXISTS saved_sessions (
   token TEXT PRIMARY KEY,
   saved_json TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS questionnaire (
+  session_id TEXT PRIMARY KEY,
+  age_group TEXT,
+  gender TEXT,
+  other_gender TEXT,
+  first_language TEXT,
+  nationality TEXT,
+  institution TEXT,
+  reason TEXT,
+  accuracy TEXT,
+  comments TEXT
+);
+
+CREATE TABLE IF NOT EXISTS vspt_responses (
+  pass_id TEXT NOT NULL,
+  word_id TEXT NOT NULL,
+  response INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS sa_responses (
+  pass_id TEXT NOT NULL,
+  statement_id TEXT NOT NULL,
+  response INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS item_responses (
+  pass_id TEXT NOT NULL,
+  basket_id INTEGER NOT NUll,
+  item_id INTEGER NOT NULL,
+  answer_id INTEGER,
+  answer_text TEXT,
+  score INTEGER NOT NULL,
+  correct INTEGER NOT NULL,
+  pass_order INTEGER NOT NULL
+);

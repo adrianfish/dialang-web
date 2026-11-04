@@ -1,10 +1,11 @@
 import { getConnInfo } from 'hono/cloudflare-workers'
-import { setSessionId } from "../utils/utils.ts";
+import { getSessionFromId, setSessionId } from "../utils/utils.ts";
 import { storeAdminLanguage, storeTestLanguageAndSkill } from "../data-capture/data-capture.ts";
+import { SessionDO } from "../session-do.ts";
 
 import type { Context } from "hono";
 import type { LTIContext, LTIToken } from "@adrianfish/lti-kit";
-import type { DialangSession } from "../types.ts";
+import type { ALData, DialangSession } from "../types.ts";
 
 export async function launchHandler(c: Context, ltiContext: LTIContext): Promise<Response> {
 
@@ -20,7 +21,7 @@ export async function launchHandler(c: Context, ltiContext: LTIContext): Promise
   const session: SessionDO = getSessionFromId(c, sessionId);
 
   const dialangSession: DialangSession = {
-    id: sessionId,
+    sessionId,
     al: al as string,
     user: token.user,
     referrer: c.req.header("Referer") || "",
@@ -48,7 +49,7 @@ export async function launchHandler(c: Context, ltiContext: LTIContext): Promise
     ipAddress: dialangSession.ipAddress,
   };
   await storeAdminLanguage(sessionId, alData);
-  await storeTestLanguageAndSkill(crypto.randomUUID(), sessionId, dialangSession.tl, dialangSession.skill);
+  await storeTestLanguageAndSkill(crypto.randomUUID(), sessionId, dialangSession.tl as string, dialangSession.skill as string);
 
   return c.redirect(`/content/launch.html?ltik=${c.get("ltik")}`);
 }
