@@ -1,21 +1,36 @@
 ## Project Overview
 
-A Cloudflare Worker with Hono implementation of a language testing web application, DIALANG. All the backend code is
+A Cloudflare Worker implementation of a language testing web application, DIALANG. All the backend code is
 hosted under `src` and the client side code is hosted under `static`. All backend code is written
-in TypeScript and client side JS is written in JavaScript.
+in TypeScript and client side JS is written in JavaScript using jQuery.
+
+## Technical Approach
+
+The backend code is designed to run in a serverless, edge delivered environment, in particular
+Cloudflare's workerd environment. Read only data is hosted in Cloudflare Worker KV, test session
+data is held in a Durable Object for each user and data capture (results, testee reponses, etc) is
+sent to Cloudflare D1.
 
 ## Tech Stack
 
-- **Runtime:** Cloudflare Workers Runtime
-- **Database:** Cloudflare Workers KV
-- **Framework:** Hono, JQuery
-- **Languages:** TypeScript and JavaScript
+### Backend
+- **Runtime:** Cloudflare workerd
+- **Database:** Cloudflare Workers KV, Cloudflare D1, Durable Object Storage
+- **Framework:** Hono
+- **Languages:** TypeScript
+
+### Frontend
+- **Languages:** HTML, CSS, Javascript
+- **Framework:** jQuery
 
 ## Commands
 
 ```bash
 # Run locally
 npm run dev
+
+# Run tests
+npm run test
 ```
 
 ## Project Structure
@@ -28,7 +43,7 @@ npm run dev
 ├── src/lti-handlers      # Hono LTI launch handlers
 ├── src/routes/           # Provided app route handlers
 ├── src/scoring/          # Provides the Dialang scoring algorithms
-├── src/storage/          # A class based API which uses Cloudflare Workers KV for storage
+├── src/data/data.ts      # A module which exports the ro data access functions, which use KV.
 ├── src/templates/        # HTMl templates, rendered in the routes
 ├── src/utils/            # Some utility methods
 ├── package.json          # Node config
@@ -39,7 +54,7 @@ npm run dev
 
 - Use Hono's built-in validators (e.g. `@hono/zod-validator`) for request validation rather than hand-rolled checks.
 - Group routes with `Hono` sub-app instances (`app.route('/users', usersRoute)`) instead of one giant file.
-- Add any KV access to `src/storage/kv-storage.ts`. Don't sprinkle KV calls throughout the codebase.
+- Add any KV access to `src/data/data.ts`. Don't sprinkle KV calls throughout the codebase.
 - Use explicit types for request/response shapes; avoid `any`.
 
 ## Notes for Agents
