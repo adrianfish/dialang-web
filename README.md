@@ -16,8 +16,7 @@ throughout the European Union. Dialang is explained in the Appendix C, pages 226
 official document.
 
 This repo contains the delivery code for the Dialang online language ability diagnostic system. The
-code is written in TypeScript and designed to run in an edge optimised runtime such as Deno Deploy
-or Cloudflare.
+code is written in TypeScript and designed to run as a serverless application on Cloudflare.
 
 ## Data
 
