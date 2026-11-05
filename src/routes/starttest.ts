@@ -1,13 +1,12 @@
 import { getSession } from "../utils/utils.ts";
 import { SessionDO } from "../session-do.ts";
+import { getBaskets, getBookletLength, getPreestAssignments, getPreestWeight } from "../data/data.ts";
 
 import type { Context } from "hono";
-import type { Storage } from "../storage/storage.ts";
 import type { PreestAssignment, PreestWeight, StartTestRequirements, StartTestData } from "../types.ts";
 
 export async function startTest(
   c: Context,
-  storage: Storage,
 ): Promise<Response> {
 
   const session: SessionDO | null = getSession(c);
@@ -25,7 +24,7 @@ export async function startTest(
 		return c.html("");
 	}
 
-	const bookletId = await calculateBookletId(startTestRequirements, storage);
+	const bookletId = await calculateBookletId(startTestRequirements);
 
   if (!bookletId) {
 		console.error("Failed to calculate booklet id. Returning 500 ...");
@@ -35,7 +34,7 @@ export async function startTest(
 
 	console.debug(`BOOKLET ID: ${bookletId}`);
 
-	const bookletLength: number | null = await storage.getBookletLength(bookletId);
+	const bookletLength: number | null = await getBookletLength(bookletId);
   if (!bookletLength) {
 		console.error(`Failed to get booklet length for id ${bookletId}. Returning 500 ...`);
 		c.status(500);
@@ -43,7 +42,7 @@ export async function startTest(
   }
 	console.debug(`BOOKLET LENGTH: ${bookletLength}`);
 
-	const baskets: Array<number> | null = await storage.getBaskets(bookletId);
+	const baskets: Array<number> | null = await getBaskets(bookletId);
   if (!baskets) {
 		console.error(`No baskets for booklet id ${bookletId}. Returning 500 ...`);
 		c.status(500);
@@ -83,7 +82,7 @@ export async function startTest(
  * calculate a theta estimate (ppe). Passes the TLS, SKILL and coefficient
  * in the PreestAssign.
  */
-async function calculateBookletId(startTestRequirements: StartTestRequirements, storage: Storage): Promise<number> {
+async function calculateBookletId(startTestRequirements: StartTestRequirements): Promise<number> {
 
   const tl: string = startTestRequirements.tl;
   const skill: string = startTestRequirements.skill;
@@ -95,7 +94,7 @@ async function calculateBookletId(startTestRequirements: StartTestRequirements, 
 	if (!vsptSubmitted && !saSubmitted) {
 		console.debug("No vsp or sa submitted. Returning the default booklet ...");
 		// No sa or vspt, request the default assignment.
-		const assignments: Array<PreestAssignment> | null = await storage.getPreestAssignments(key);
+		const assignments: Array<PreestAssignment> | null = await getPreestAssignments(key);
     if (!assignments) {
       console.error(`No preest assignment for key ${key}`);
       return -1;
@@ -119,7 +118,7 @@ async function calculateBookletId(startTestRequirements: StartTestRequirements, 
 			console.debug(`SA SUBMITTED. saPPE: ${saPPE}`);
 		}
 		const weightKey: string = `${key}#${saSubmitted ? 1 : 0}#${vsptSubmitted ? 1 : 0}`;
-		const weight: PreestWeight | null = await storage.getPreestWeight(weightKey);
+		const weight: PreestWeight | null = await getPreestWeight(weightKey);
     if (!weight) {
       console.error(`No preest weight for key ${weightKey}`);
       return -1;
@@ -127,7 +126,7 @@ async function calculateBookletId(startTestRequirements: StartTestRequirements, 
 		const pe: number = (saPPE * weight.sa) + (vsptZScore * weight.vspt) + weight.coe;
 		console.debug(`PE: ${pe}`);
 
-		const assignments: Array<PreestAssignment> | null = await storage.getPreestAssignments(key);
+		const assignments: Array<PreestAssignment> | null = await getPreestAssignments(key);
 
     if (!assignments) {
       console.error(`No preest assignments for key ${key}`);

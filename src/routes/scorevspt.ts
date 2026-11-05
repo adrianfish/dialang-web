@@ -2,14 +2,13 @@ import { getSession } from "../utils/utils.ts";
 import { SessionDO } from "../session-do.ts";
 import { storeVSPTResult } from "../data-capture/data-capture.ts";
 import { storeVSPTResponses } from "../data-capture/data-capture.ts";
+import { getVSPBands, getVSPWords } from "../data/data.ts";
 
-import type { Storage } from "../storage/storage.ts";
 import type { VSPTData, VSPWord } from "../types.ts";
 import type { Context } from "hono";
 
 export async function scoreVspt(
   c: Context,
-  storage: Storage,
 ): Promise<Response> {
 
   const body = await c.req.json();
@@ -27,7 +26,7 @@ export async function scoreVspt(
 		return c.html("");
   }
 
-  const [ zScore, mearaScore, level, error ] = await getBand(storage, (await session.getTL()) as string, responses);
+  const [ zScore, mearaScore, level, error ] = await getBand((await session.getTL()) as string, responses);
   if (error) {
     c.status(500);
     return c.text(error as string);
@@ -48,11 +47,11 @@ export async function scoreVspt(
   return c.json({ zScore, mearaScore, level });
 }
 
-async function getBand(storage: Storage, tl: string, responses: Record<string, boolean>): Promise<Array<number | string | null>> {
+async function getBand(tl: string, responses: Record<string, boolean>): Promise<Array<number | string | null>> {
 
-  const [zScore, mearaScore] = await getScore(storage, tl, responses);
+  const [zScore, mearaScore] = await getScore(tl, responses);
 
-  const bands = await storage.getVSPBands(tl);
+  const bands = await getVSPBands(tl);
   if (!bands) {
     return [ 0, 0, "", `No bands for test language '${tl}` ];
   }
@@ -65,9 +64,9 @@ async function getBand(storage: Storage, tl: string, responses: Record<string, b
   return [ 0, 0, "", `No level for test language '${tl}' and meara score: ${mearaScore}.` ];
 }
 
-async function getScore(storage: Storage, tl: string, responses: Record<string, boolean>): Promise<Array<number>> {
+async function getScore(tl: string, responses: Record<string, boolean>): Promise<Array<number>> {
 
-  const Z = await getZScore(storage, tl, responses);
+  const Z = await getZScore(tl, responses);
 
   if (Z <= 0) {
     return [ Z, 0 ];
@@ -76,9 +75,9 @@ async function getScore(storage: Storage, tl: string, responses: Record<string, 
   return [Z, Z * 1000 ];
 }
 
-async function getZScore(storage: Storage, tl: string, responses: Record<string, boolean>): Promise<number> {
+async function getZScore(tl: string, responses: Record<string, boolean>): Promise<number> {
 
-  const words: Array<VSPWord> | null = await storage.getVSPWords(tl);
+  const words: Array<VSPWord> | null = await getVSPWords(tl);
   if (!words) {
     console.error(`No vspt words for test language ${tl}`);
     return -1;

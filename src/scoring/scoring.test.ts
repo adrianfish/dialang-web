@@ -1,21 +1,22 @@
-import { vi, expect, test } from 'vitest'
+import { beforeEach, expect, test, vi } from 'vitest'
 import { CEFR_LEVELS, getItemGrade, getSaPPEAndLevel, getScoredIdResponseItem, getScoredTextResponseItem }  from "./scoring.ts";
+import * as data from "../data/data.ts";
 import type { Answer, Item, ItemResult, SAGrade, ScoredItem }  from "../types.ts";
-import type { Storage }  from "../storage/storage.ts";
-import { MockStorage }  from "../storage/mock-storage.ts";
+
+beforeEach(() => {
+  vi.resetAllMocks();
+});
 
 test("getItemGrade returns defaults when no grade bands present", async () => {
+
+  vi.spyOn(data, "getItemGrade").mockResolvedValue(null);
 
   const tl = "spa_es";
   const skill = "reading";
   const bookletId = 1;
 
-  const storage: Storage = new MockStorage();
-
-  // Test the error condition
-  vi.spyOn(storage, "getItemGrade").mockImplementation(() => Promise.resolve(null));
-  //stub(storage, "getItemGrade", () => Promise.resolve(null));
-  const [ rawScore, _, level ] = await getItemGrade(tl, skill, bookletId, [], storage);
+  const [ rawScore, _, level ] = await getItemGrade(tl, skill, bookletId, []);
+  expect(data.getItemGrade).toHaveBeenCalled();
   expect(rawScore).toEqual(0);
   expect(level).toEqual(CEFR_LEVELS[1]);
 });
@@ -28,9 +29,7 @@ test("Grades a set of scored items correctly", async () => {
 
   const itemGrade = { tl, skill, bookletId, rsc: 2, ppe: 0, se: 0, grade: 3 };
 
-  const storage: Storage = new MockStorage();
-  //stub(storage, "getItemGrade", () => Promise.resolve(itemGrade));
-  vi.spyOn(storage, "getItemGrade").mockImplementation(() => Promise.resolve(itemGrade));
+  vi.spyOn(data, "getItemGrade").mockResolvedValue(itemGrade);
 
   const scoredItems: Array<ScoredItem> = [
     {
@@ -57,7 +56,7 @@ test("Grades a set of scored items correctly", async () => {
     },
   ];
 
-  const [ rawScore, grade, level ] = await getItemGrade(tl, skill, bookletId, scoredItems, storage);
+  const [ rawScore, grade, level ] = await getItemGrade(tl, skill, bookletId, scoredItems);
   expect(rawScore).toEqual(scoredItems.reduce((acc, curr) => acc + curr.score, 0));
   expect(grade).toEqual(itemGrade.grade);
   expect(level).toEqual(CEFR_LEVELS[grade as number]);
@@ -65,12 +64,10 @@ test("Grades a set of scored items correctly", async () => {
 
 test("Gets a scored id response item successfully", async () => {
 
-  const storage: Storage = new MockStorage();
-
   const itemId = 1;
   const responseId = 1;
 
-  let itemResult: ItemResult = await getScoredIdResponseItem(itemId, responseId, storage);
+  let itemResult: ItemResult = await getScoredIdResponseItem(itemId, responseId);
   expect(itemResult.error).toEqual(`Failed to get item for itemId: ${itemId}`);
 
   const weight = 3;
@@ -84,10 +81,9 @@ test("Gets a scored id response item successfully", async () => {
     weight,
   };
 
-  //stub(storage, "getItem", () => Promise.resolve(item));
-  vi.spyOn(storage, "getItem").mockImplementation(() => Promise.resolve(item));
+  vi.spyOn(data, "getItem").mockResolvedValue(item);
 
-  itemResult = await getScoredIdResponseItem(itemId, responseId, storage);
+  itemResult = await getScoredIdResponseItem(itemId, responseId);
   expect(itemResult.error).toEqual(`Failed to get answer for responseId: ${responseId}`);
 
   const answer: Answer = {
@@ -97,9 +93,8 @@ test("Gets a scored id response item successfully", async () => {
     correct: 1,
   };
 
-  //stub(storage, "getAnswer", () => Promise.resolve(answer));
-  vi.spyOn(storage, "getAnswer").mockImplementation(() => Promise.resolve(answer));
-  itemResult = await getScoredIdResponseItem(itemId, responseId, storage);
+  vi.spyOn(data, "getAnswer").mockResolvedValue(answer);
+  itemResult = await getScoredIdResponseItem(itemId, responseId);
   expect(itemResult.error).toBeUndefined();
 
   expect(itemResult.item).toBeDefined();
@@ -109,12 +104,10 @@ test("Gets a scored id response item successfully", async () => {
 
 test("Gets a scored text response item successfully", async () => {
 
-  const storage: Storage = new MockStorage();
-
   const itemId = 1;
   const answerText = "omelette";
 
-  let itemResult: ItemResult = await getScoredTextResponseItem(itemId, answerText, storage);
+  let itemResult: ItemResult = await getScoredTextResponseItem(itemId, answerText);
   expect(itemResult.error).toEqual(`Failed to get item for itemId: ${itemId}`);
 
   const weight = 3;
@@ -128,9 +121,8 @@ test("Gets a scored text response item successfully", async () => {
     weight,
   };
 
-  //stub(storage, "getItem", () => Promise.resolve(item));
-  vi.spyOn(storage, "getItem").mockImplementation(() => Promise.resolve(item));
-  itemResult = await getScoredTextResponseItem(itemId, answerText, storage);
+  vi.spyOn(data, "getItem").mockResolvedValue(item);
+  itemResult = await getScoredTextResponseItem(itemId, answerText);
   expect(itemResult.error).toEqual(`Failed to get answers for itemId: ${itemId}`);
 
 	let answers: Array<Answer> = [
@@ -141,9 +133,8 @@ test("Gets a scored text response item successfully", async () => {
       correct: 1,
     },
   ];
-  //stub(storage, "getItemAnswers", () => Promise.resolve(answers));
-  vi.spyOn(storage, "getItemAnswers").mockImplementation(() => Promise.resolve(answers));
-  itemResult = await getScoredTextResponseItem(itemId, answerText, storage);
+  vi.spyOn(data, "getItemAnswers").mockResolvedValue(answers);
+  itemResult = await getScoredTextResponseItem(itemId, answerText);
   expect(itemResult.error).toBeUndefined();
   expect(itemResult.item?.score).toEqual(weight);
   expect(itemResult.item?.correct).toEqual(true);
@@ -157,7 +148,7 @@ test("Gets a scored text response item successfully", async () => {
     }
   ];
 
-  itemResult = await getScoredTextResponseItem(itemId, answerText, storage);
+  itemResult = await getScoredTextResponseItem(itemId, answerText);
   expect(itemResult.error).toBeUndefined();
   expect(itemResult.item?.score).toEqual(weight);
   expect(itemResult.item?.correct).toEqual(true);
@@ -166,14 +157,13 @@ test("Gets a scored text response item successfully", async () => {
 test("Gets SA, PPE and Level successfully", async () => {
 
   const skill = "reading";
-  const storage: Storage = new MockStorage();
 
   const responses: Record<string, boolean> = {
     "11": false,
     "17": true,
   };
 
-  let result: Array<number | string | null> = await getSaPPEAndLevel(skill, responses, storage);
+  let result: Array<number | string | null> = await getSaPPEAndLevel(skill, responses);
   expect(result.length).toEqual(3);
   expect(result[0]).toEqual(0);
   expect(result[1]).toEqual("");
@@ -193,18 +183,18 @@ test("Gets SA, PPE and Level successfully", async () => {
     "grade": 1,
   };
   //stub(storage, "getSAWeights", () => Promise.resolve(weights));
-  vi.spyOn(storage, "getSAWeights").mockImplementation(() => Promise.resolve(weights));
+  vi.spyOn(data, "getSAWeights").mockResolvedValue(weights);
 
-  result = await getSaPPEAndLevel(skill, responses, storage);
+  result = await getSaPPEAndLevel(skill, responses);
   expect(result.length).toEqual(3);
   expect(result[0]).toEqual(0);
   expect(result[1]).toEqual("");
 	expect(result[2]).toEqual("Failed to match skill and raw score to an sa grade");
 
   //stub(storage, "getSAGrade", () => Promise.resolve(grade));
-  vi.spyOn(storage, "getSAGrade").mockImplementation(() => Promise.resolve(grade));
+  vi.spyOn(data, "getSAGrade").mockResolvedValue(grade);
 
-  result = await getSaPPEAndLevel(skill, responses, storage);
+  result = await getSaPPEAndLevel(skill, responses);
   expect(result.length).toEqual(3);
   expect(result[0]).toEqual(ppe);
   expect(result[1]).toEqual(CEFR_LEVELS[grade.grade]);

@@ -1,6 +1,5 @@
 import { Hono } from "hono";
 import { env } from "cloudflare:workers";
-import { KVStorage } from "./src/storage/kv-storage.ts";
 import { content } from "./src/routes/content.ts";
 import { setAl } from "./src/routes/setal.ts";
 import { setTl } from "./src/routes/settl.ts";
@@ -26,12 +25,9 @@ import { SessionDO } from "./src/session-do.ts";
 //import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
 import type { Env } from "./src/session-do.ts";
-import type { Storage } from "./src/storage/storage.ts";
 
 /* @ts-ignore */
 const app: Hono = new Hono<{ Bindings: Env }>();
-
-const storage: Storage = await KVStorage.open();
 
 /* @ts-ignore */
 const hostname: string = env.HOSTNAME || "adrian-dialang.ngrok.app";
@@ -64,11 +60,11 @@ await lti
 
 app.post("/api/setal", setAl);
 app.post("/api/settl", setTl);
-app.post("/api/scorevspt", (c) => scoreVspt(c, storage));
-app.post("/api/scoresa", (c) => scoreSA(c, storage));
-app.post("/api/starttest", (c) => startTest(c, storage));
-//app.post("/api/submitbasket", (c) => submitBasket(c, storage, lti));
-app.post("/api/submitbasket", (c) => submitBasket(c, storage));
+app.post("/api/scorevspt", scoreVspt);
+app.post("/api/scoresa", scoreSA);
+app.post("/api/starttest", startTest);
+//app.post("/api/submitbasket", (c) => submitBasket(c, lti));
+app.post("/api/submitbasket", submitBasket);
 app.post("/api/resumesession", resumeSession);
 app.get("/content/*", content);
 app.get("/images/*", content);
@@ -83,7 +79,7 @@ app.post("/api/submitquestionnaire", submitQuestionnaire);
 const reportsSecret: string | undefined = env.REPORTS_SECRET;
 app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, reportsSecret));
 app.get("/reports/:report?", reports);
-//app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti, storage));
+//app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
 
 //app.route(ltiOptions.ltiRoute, lti.handler());
 

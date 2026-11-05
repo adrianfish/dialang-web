@@ -1,5 +1,4 @@
 import type { Context } from "hono";
-import { Storage } from "../storage/storage.ts";
 
 const CONTENT_TYPES: Record<string, string> = {
   json: "application/json",

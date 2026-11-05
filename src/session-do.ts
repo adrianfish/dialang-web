@@ -1,4 +1,3 @@
-import { Storage } from "@cloudflare/actors/storage";
 import { DurableObject } from "cloudflare:workers";
 import { DialangSession } from "./types.ts";
 

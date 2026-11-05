@@ -1,4 +1,4 @@
-import { Storage } from "../storage/storage.ts";
+import { getAnswer, getItem, getItemAnswers, getItemGrade as getItemGradeData, getPunctuationList, getSAGrade, getSAWeights } from "../data/data.ts";
 import type { Answer, Item, ItemResult, ItemScore, SAGrade, ScoredItem } from "../types.ts";
 
 export const CEFR_LEVELS: Record<number, string> = { 1: "A1", 2: "A2", 3: "B1", 4: "B2", 5: "C1", 6: "C2" };
@@ -6,23 +6,23 @@ export const CEFR_LEVELS: Record<number, string> = { 1: "A1", 2: "A2", 3: "B1", 
 /**
  * Returns the sum of the weights of the questions answered 'true'
  */
-async function getSaRawScore(skill: string, responses: Record<string, boolean>, storage: Storage): Promise<number | null> {
+async function getSaRawScore(skill: string, responses: Record<string, boolean>): Promise<number | null> {
 
-	const wordMap: Record<string, number> | null = await storage.getSAWeights(skill);
+	const wordMap: Record<string, number> | null = await getSAWeights(skill);
   if (!wordMap) {
     return null;
   }
   return Object.entries(responses).reduce((acc, curr) => curr[1] ? acc + wordMap[curr[0]] : acc, 0);
 }
 
-export async function getSaPPEAndLevel(skill: string, responses: Record<string, boolean>, storage: Storage): Promise<Array<number | string | null>> {
+export async function getSaPPEAndLevel(skill: string, responses: Record<string, boolean>): Promise<Array<number | string | null>> {
 
-	const rsc: number | null = await getSaRawScore(skill, responses, storage);
+	const rsc: number | null = await getSaRawScore(skill, responses);
   if (rsc === null) {
 	  return [ 0, "", "Failed to get raw score" ];
   }
 
-	const saGrade: SAGrade | null = await storage.getSAGrade(skill, rsc);
+	const saGrade: SAGrade | null = await getSAGrade(skill, rsc);
 
   if (saGrade) {
     return [ saGrade.ppe, CEFR_LEVELS[saGrade.grade], null ];
@@ -34,14 +34,14 @@ export async function getSaPPEAndLevel(skill: string, responses: Record<string, 
 /**
  * Used for mcq and gap drop
  */
-export async function getScoredIdResponseItem(itemId: number, responseId: number, storage: Storage): Promise<ItemResult> {
+export async function getScoredIdResponseItem(itemId: number, responseId: number): Promise<ItemResult> {
 
-	const item: Item | null = await storage.getItem(itemId);
+	const item: Item | null = await getItem(itemId);
 	if (!item) {
 		return { error: `Failed to get item for itemId: ${itemId}` };
 	}
 
-	const answer: Answer | null = await storage.getAnswer(responseId)
+	const answer: Answer | null = await getAnswer(responseId)
 	if (!answer) {
 		return { error: `Failed to get answer for responseId: ${responseId}` };
 	}
@@ -59,23 +59,23 @@ export async function getScoredIdResponseItem(itemId: number, responseId: number
 	return { item: scoredItem };
 }
 
-export async function getScoredTextResponseItem(itemId: number, answerText: string, storage: Storage): Promise<ItemResult> {
+export async function getScoredTextResponseItem(itemId: number, answerText: string): Promise<ItemResult> {
 
-	const item: Item | null = await storage.getItem(itemId)
+	const item: Item | null = await getItem(itemId)
 	if (!item) {
 		return { error: `Failed to get item for itemId: ${itemId}` };
 	}
 
 	const scoredItem: ScoredItem = { ...item, positionInBasket: 0, responseText: answerText, score: 0, correct: false };
 
-	const answers: Array<Answer> | null = await storage.getItemAnswers(itemId);
+	const answers: Array<Answer> | null = await getItemAnswers(itemId);
 
   if (!answers) {
 		return { error: `Failed to get answers for itemId: ${itemId}` };
   }
 
   scoredItem.answers = answers;
-  const punctuationList: Array<string> | null = await storage.getPunctuationList();
+  const punctuationList: Array<string> | null = await getPunctuationList();
 
 	for (let i = 0; i < answers.length; i++ ) {
     const correctAnswer = answers[i];
@@ -88,12 +88,12 @@ export async function getScoredTextResponseItem(itemId: number, answerText: stri
 	return { item: scoredItem };
 }
 
-export async function getItemGrade(tl: string, skill: string, bookletId: number, scoredItems: Array<ItemScore>, storage: Storage): Promise<Array<number | string>> {
+export async function getItemGrade(tl: string, skill: string, bookletId: number, scoredItems: Array<ItemScore>): Promise<Array<number | string>> {
 
 	const rawScore: number = scoredItems.reduce((acc, curr) => acc + curr.score, 0);
 
 	const key = `${tl}#${skill}#${bookletId}`;
-	const itemGrade: Record<string, string | number> | null = await storage.getItemGrade(key, rawScore);
+	const itemGrade: Record<string, string | number> | null = await getItemGradeData(key, rawScore);
 	if (!itemGrade) {
 		console.error(`Failed to get item grade for key ${key} and raw score ${rawScore}`);
 		return [ rawScore, 0, CEFR_LEVELS[1] ];

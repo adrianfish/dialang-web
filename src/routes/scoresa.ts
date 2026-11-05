@@ -6,9 +6,8 @@ import { storeSAResponses } from "../data-capture/data-capture.ts";
 
 import type { Context }  from "hono";
 import type { SAData } from "../types.ts";
-import type { Storage } from "../storage/storage.ts";
 
-export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
+export async function scoreSA(c: Context): Promise<Response> {
 
   const session: SessionDO | null = getSession(c);
   if (!session) {
@@ -25,7 +24,7 @@ export async function scoreSA(c: Context, storage: Storage): Promise<Response> {
         .map(([k, v]) => [ k.split(":")[1], v === "yes"])
     );
 
-  const [saPPE, saLevel, err] = await getSaPPEAndLevel((await session.getSkill()) as string, responses, storage);
+  const [saPPE, saLevel, err] = await getSaPPEAndLevel((await session.getSkill()) as string, responses);
 
 	if (err) {
 		console.error(err);

@@ -1,5 +1,5 @@
 import { getSession } from "../utils/utils.ts";
-import { Storage } from "../storage/storage.ts";
+import { getBaskets, getItemAnswers } from "../data/data.ts";
 import { SessionDO } from "../session-do.ts";
 //import { LTIKit, Score } from "@adrianfish/lti-kit";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
@@ -10,7 +10,6 @@ import type { CurrentBasketData, ItemResult, ItemScore, ScoredBasket, ScoredItem
 
 export async function submitBasket(
   c: Context,
-  storage: Storage,
   //lti: LTIKit,
 ): Promise<Response> {
 
@@ -67,7 +66,7 @@ export async function submitBasket(
         return c.html("");
       }
 
-      const itemResult: ItemResult = await getScoredIdResponseItem(itemId, answerId, storage);
+      const itemResult: ItemResult = await getScoredIdResponseItem(itemId, answerId);
       if (itemResult.item) {
         const scoredItem: ScoredItem = itemResult.item;
         scoredItem.basketId = submitBasketRequirements.currentBasketId;
@@ -76,7 +75,7 @@ export async function submitBasket(
         scoredItem.positionInTest = numScoredItems + 1;
         console.debug(`Item position in test: ${scoredItem.positionInTest}`);
 
-        scoredItem.answers = await storage.getItemAnswers(itemId);
+        scoredItem.answers = await getItemAnswers(itemId);
 
         if (!scoredItem.answers?.length) {
           console.warn(`No answers for item ${itemId}. Returning 400 (Bad Request) ...`);
@@ -104,7 +103,7 @@ export async function submitBasket(
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, answerId ] = entries[i];
-        const itemResult: ItemResult = await getScoredIdResponseItem(parseInt(itemId), answerId, storage);
+        const itemResult: ItemResult = await getScoredIdResponseItem(parseInt(itemId), answerId);
         if (itemResult.item) {
           const item: ScoredItem = itemResult.item;
           item.responseId = answerId;
@@ -122,7 +121,7 @@ export async function submitBasket(
           console.debug(`Item position in basket: ${item.positionInBasket}`);
           console.debug(`Item position in test: ${item.positionInTest}`);
 
-          item.answers = await storage.getItemAnswers(item.id);
+          item.answers = await getItemAnswers(item.id);
 
           if (!item.answers?.length) {
             console.warn(`No answers for item ${item.id}. Returning 400 (Bad Request) ...`);
@@ -152,9 +151,7 @@ export async function submitBasket(
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseText ] = entries[i];
-        //type balls = {[ ScoredItem | null, string | null];
-        //const [ item, error, ...rest ]: [ item?: ScoredItem | null, error?: string | null, ...rest: Array<any> ] = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
-        const itemResult: ItemResult = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
+        const itemResult: ItemResult = await getScoredTextResponseItem(parseInt(itemId), responseText);
         if (itemResult.item) {
           const item: ScoredItem = itemResult.item;
           item.basketId = currentBasketId;
@@ -169,7 +166,7 @@ export async function submitBasket(
           }
           item.positionInTest = numScoredItems + item.positionInBasket;
           console.debug(`Item position in test: ${item.positionInTest}`);
-          item.answers = await storage.getItemAnswers(item.id);
+          item.answers = await getItemAnswers(item.id);
           scoredItemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
@@ -194,7 +191,7 @@ export async function submitBasket(
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseText ] = entries[i];
 
-        const itemResult: ItemResult = await getScoredTextResponseItem(parseInt(itemId), responseText, storage);
+        const itemResult: ItemResult = await getScoredTextResponseItem(parseInt(itemId), responseText);
         if (itemResult.item) {
           const item: ScoredItem = itemResult.item;
           item.basketId = currentBasketId;
@@ -209,7 +206,7 @@ export async function submitBasket(
           }
           item.positionInTest = numScoredItems + item.positionInBasket;
           console.debug(`Item position in test: ${item.positionInTest}`);
-          item.answers = await storage.getItemAnswers(itemResult.item.id);
+          item.answers = await getItemAnswers(itemResult.item.id);
           scoredItemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
@@ -233,7 +230,7 @@ export async function submitBasket(
       const entries = Object.entries(responses);
       for (let i = 0; i < entries.length; i++) {
         const [ itemId, responseId ] = entries[i];
-        const itemResult: ItemResult = await getScoredIdResponseItem(parseInt(itemId), responseId, storage);
+        const itemResult: ItemResult = await getScoredIdResponseItem(parseInt(itemId), responseId);
 
         if (itemResult.item) {
           const item: ScoredItem = itemResult.item;
@@ -250,7 +247,7 @@ export async function submitBasket(
           }
 
           item.positionInTest = numScoredItems + item.positionInBasket;
-          item.answers = await storage.getItemAnswers(item.id);
+          item.answers = await getItemAnswers(item.id);
           scoredItemList.push(item);
           itemsToLog.push(item);
           basketItems.push(item);
@@ -283,7 +280,7 @@ export async function submitBasket(
   const nextBasketNumber = submitBasketRequirements.currentBasketNumber + 1;
   console.debug(`nextBasketNumber: ${nextBasketNumber}`);
 
-  const basketIds: Array<number> | null = await storage.getBaskets(submitBasketRequirements.bookletId);
+  const basketIds: Array<number> | null = await getBaskets(submitBasketRequirements.bookletId);
 
   if (!basketIds) {
     console.error(`No basket ids for booklet ${submitBasketRequirements.bookletId}`);
@@ -294,7 +291,7 @@ export async function submitBasket(
   if (nextBasketNumber >= basketIds.length) {
     // The test has finished. Grade it.
     const [ rawScore, itemGrade, itemLevel ]
-      = await getItemGrade(submitBasketRequirements.tl, submitBasketRequirements.skill, submitBasketRequirements.bookletId, itemScores, storage);
+      = await getItemGrade(submitBasketRequirements.tl, submitBasketRequirements.skill, submitBasketRequirements.bookletId, itemScores);
 
     // If we're in an LTI session, post the score.
     /*
