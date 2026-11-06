@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getConnInfo } from 'hono/cloudflare-workers'
 import { getSession, getSessionFromId, setSessionId } from "../utils/utils.ts";
 import { storeAdminLanguage } from "../data-capture/data-capture.ts";
@@ -12,8 +13,7 @@ export async function setAl(c: Context): Promise<Response> {
   const al = body.al as string;
 
   if (!al) {
-    c.status(400);
-    return c.html("No admin language supplied");
+    throw new HTTPException(400, { message: "No admin language supplied" });
   }
 
   const ipAddress = (getConnInfo(c).remote.address || "").replace(/^::ffff:/, "");

@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+import { HTTPException } from "hono/http-exception";
 import { env } from "cloudflare:workers";
 import { content } from "./src/routes/content.ts";
 import { setAl } from "./src/routes/setal.ts";
@@ -19,6 +20,7 @@ import { skillDistribution } from "./src/routes/reports/skill-distribution.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { sessions } from "./src/routes/reports/sessions.ts";
 import { SessionDO } from "./src/session-do.ts";
+import { errorHandler, notFoundHandler } from "./src/error-handlers.ts";
 //import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
 //import { launchHandler } from "./src/lti-handlers/launch.ts";
 //import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
@@ -79,6 +81,8 @@ app.post("/api/submitquestionnaire", submitQuestionnaire);
 const reportsSecret: string | undefined = env.REPORTS_SECRET;
 app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, reportsSecret));
 app.get("/reports/:report?", reports);
+app.onError(errorHandler);
+app.notFound(notFoundHandler);
 //app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
 
 //app.route(ltiOptions.ltiRoute, lti.handler());
