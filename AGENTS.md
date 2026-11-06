@@ -42,6 +42,7 @@ npm run test
 ├── src/types.ts          # Shared types
 ├── src/lti-handlers      # Hono LTI launch handlers
 ├── src/routes/           # Provided app route handlers
+├── src/routes/reports    # A Hono router which mounts the individual report routes
 ├── src/scoring/          # Provides the Dialang scoring algorithms
 ├── src/data/data.ts      # A module which exports the ro data access functions, which use KV.
 ├── src/templates/        # HTMl templates, rendered in the routes
@@ -61,3 +62,4 @@ npm run test
 
 - Never scan anything under static/content unless I specifically ask you to. That directory contains
 statically generated content and is not part of the codebase.
+- Never scan anything under node\_modules unless I specifically ask you to.
