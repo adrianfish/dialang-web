@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS passes (
   vspt_level TEXT,
   sa_ppe REAL,
   sa_level TEXT,
+  booklet_id INTEGER,
   item_raw_score INTEGER,
   item_grade INTEGER,
   item_level TEXT,

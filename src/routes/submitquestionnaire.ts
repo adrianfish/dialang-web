@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getSessionId } from "../utils/utils.ts";
 import { storeQuestionnaire } from "../data-capture/data-capture.ts";
 
@@ -10,8 +11,7 @@ export async function submitQuestionnaire(c: Context): Promise<Response> {
 	const sessionId: string | undefined = getSessionId(c);
 
   if (!sessionId) {
-    console.warn("Failed to get sessionId");
-    return c.html("");
+    throw new HTTPException(500, { message: "Failed to get sessionId" });
   }
 
 	await storeQuestionnaire(sessionId, body);

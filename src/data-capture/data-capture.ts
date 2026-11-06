@@ -65,6 +65,13 @@ export async function storeSAResult(passId: string, saData: SAData): Promise<boo
   .run()).success;
 }
 
+export async function storeBookletId(passId: string, bookletId: number): Promise<boolean> {
+
+  return (await env.DIALANG_DATA_CAPTURE.prepare("UPDATE passes SET booklet_id = ? WHERE pass_id = ?")
+  .bind(bookletId, passId)
+  .run()).success;
+}
+
 export async function storeSAResponses(passId: string, responses: Record<string, boolean>): Promise<void> {
 
   const statement = env.DIALANG_DATA_CAPTURE.prepare("INSERT INTO sa_responses VALUES(?, ?, ?)");

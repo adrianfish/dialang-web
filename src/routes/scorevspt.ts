@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getSession } from "../utils/utils.ts";
 import { SessionDO } from "../session-do.ts";
 import { storeVSPTResult } from "../data-capture/data-capture.ts";
@@ -21,15 +22,12 @@ export async function scoreVspt(
 
   const session: SessionDO | null = await getSession(c);
   if (!session) {
-    console.error("Failed to get session id");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "Failed to get session" });
   }
 
   const [ zScore, mearaScore, level, error ] = await getBand((await session.getTL()) as string, responses);
   if (error) {
-    c.status(500);
-    return c.text(error as string);
+    throw new HTTPException(500, { message: error as string });
   }
 
   const vsptData: VSPTData = {
@@ -79,8 +77,7 @@ async function getZScore(tl: string, responses: Record<string, boolean>): Promis
 
   const words: Array<VSPWord> | null = await getVSPWords(tl);
   if (!words) {
-    console.error(`No vspt words for test language ${tl}`);
-    return -1;
+    throw new HTTPException(500, { message: `No vspt words for test language ${tl}` });
   }
 
   const yesResponses = [0, 0];

@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getSession, getSessionId } from "../utils/utils.ts";
 import { storeTestLanguageAndSkill } from "../data-capture/data-capture.ts";
 import { SessionDO } from "../session-do.ts";
@@ -9,14 +10,12 @@ export async function setTl(c: Context): Promise<Response> {
   const body = await c.req.parseBody();
 
   if (!body.tl || !body.skill) {
-    c.status(400);
-    return c.html("No test language or skill supplied");
+    throw new HTTPException(400, { message: "No test language or skill supplied" });
   }
 
   const session: SessionDO | null = getSession(c);
   if (!session) {
-    c.status(500);
-    return c.html("No current session");
+    throw new HTTPException(500, { message: "No current session" });
   }
 
   await session.clearTestData();

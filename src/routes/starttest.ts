@@ -1,6 +1,8 @@
+import { HTTPException } from "hono/http-exception";
 import { getSession } from "../utils/utils.ts";
 import { SessionDO } from "../session-do.ts";
 import { getBaskets, getBookletLength, getPreestAssignments, getPreestWeight } from "../data/data.ts";
+import { storeBookletId } from "../data-capture/data-capture.ts";
 
 import type { Context } from "hono";
 import type { PreestAssignment, PreestWeight, StartTestRequirements, StartTestData } from "../types.ts";
@@ -11,45 +13,29 @@ export async function startTest(
 
   const session: SessionDO | null = getSession(c);
   if (!session) {
-    console.error("Failed to get session");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "Failed to get session" });
   }
 
   const startTestRequirements: StartTestRequirements = await session.getStartTestRequirements();
 
 	if (startTestRequirements.scoredItems?.length) {
-		console.error("The scored item list should be empty at this point. Returning 500 ...")
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "The scored item list should be empty at this point." });
 	}
 
 	const bookletId = await calculateBookletId(startTestRequirements);
 
-  if (!bookletId) {
-		console.error("Failed to calculate booklet id. Returning 500 ...");
-		c.status(500);
-		return c.html("");
-  }
-
-	console.debug(`BOOKLET ID: ${bookletId}`);
+  await storeBookletId(await session.getPassId(), bookletId);
 
 	const bookletLength: number | null = await getBookletLength(bookletId);
   if (!bookletLength) {
-		console.error(`Failed to get booklet length for id ${bookletId}. Returning 500 ...`);
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: `Failed to get booklet length for id ${bookletId}.` });
   }
-	console.debug(`BOOKLET LENGTH: ${bookletLength}`);
 
 	const baskets: Array<number> | null = await getBaskets(bookletId);
   if (!baskets) {
-		console.error(`No baskets for booklet id ${bookletId}. Returning 500 ...`);
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: `No baskets for booklet id ${bookletId}.` });
   }
 	const currentBasketId = baskets[0];
-	console.debug(`First Basket Id: ${currentBasketId}`);
   const currentBasketNumber = 0;
 
   /*
@@ -91,17 +77,16 @@ async function calculateBookletId(startTestRequirements: StartTestRequirements):
   const vsptSubmitted: boolean = startTestRequirements.vsptSubmitted;
   const saSubmitted: boolean = startTestRequirements.saSubmitted;
 
+  let bookletId: number = -1;
+
 	if (!vsptSubmitted && !saSubmitted) {
-		console.debug("No vsp or sa submitted. Returning the default booklet ...");
 		// No sa or vspt, request the default assignment.
 		const assignments: Array<PreestAssignment> | null = await getPreestAssignments(key);
     if (!assignments) {
-      console.error(`No preest assignment for key ${key}`);
-      return -1;
+      throw new HTTPException(500, { message: `No preest assignment for key ${key}` });
     }
-		return assignments[1].bookletId;
+		bookletId = assignments[1].bookletId;
 	} else {
-		console.debug("vsp or sa submitted");
 		// if either test is done, then we need to get the grade
 		// associated with that test:
 
@@ -109,31 +94,25 @@ async function calculateBookletId(startTestRequirements: StartTestRequirements):
 		let vsptZScore: number = 0;
 		if (vsptSubmitted && sessionVsptZScore) {
 			vsptZScore = sessionVsptZScore;
-			console.debug(`VSPT SUBMITTED. vsptZScore: ${vsptZScore}`);
 		}
 		const sessionSaPPE: number = startTestRequirements.saPPE;
     let saPPE: number = 0;
 		if (saSubmitted && sessionSaPPE) {
 			saPPE = sessionSaPPE
-			console.debug(`SA SUBMITTED. saPPE: ${saPPE}`);
 		}
 		const weightKey: string = `${key}#${saSubmitted ? 1 : 0}#${vsptSubmitted ? 1 : 0}`;
 		const weight: PreestWeight | null = await getPreestWeight(weightKey);
     if (!weight) {
-      console.error(`No preest weight for key ${weightKey}`);
-      return -1;
+      throw new HTTPException(500, { message: `No preest weight for key ${weightKey}` });
     }
 		const pe: number = (saPPE * weight.sa) + (vsptZScore * weight.vspt) + weight.coe;
-		console.debug(`PE: ${pe}`);
 
 		const assignments: Array<PreestAssignment> | null = await getPreestAssignments(key);
 
     if (!assignments) {
-      console.error(`No preest assignments for key ${key}`);
-      return -1;
+      throw new HTTPException(500, { message: `No preest assignments for key ${key}` });
     }
 
-		let bookletId: number = -1;
     for (let i = 0; i < assignments.length; i++) {
       const ass: PreestAssignment = assignments[i];
 			if (pe <= ass.pe) {
@@ -141,6 +120,15 @@ async function calculateBookletId(startTestRequirements: StartTestRequirements):
 				break
 			}
 		}
-		return bookletId;
+
+    if (bookletId === -1) {
+      throw new HTTPException(500, { message: `Failed to select booklet for pe  ${pe}` });
+    }
 	}
+
+  if (bookletId === -1) {
+    throw new HTTPException(500, { message: "Failed to select booklet" });
+  }
+
+  return bookletId;
 }

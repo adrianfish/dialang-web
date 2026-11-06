@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { Context } from "hono";
 import { forceSessionId, getSession, getSessionFromId } from "../utils/utils.ts";
 import { getSavedSession, deleteSavedSession } from "../data-capture/data-capture.ts";
@@ -14,17 +15,11 @@ export async function resumeSession(
   const savedSession: SavedDialangSession | null = await getSavedSession(token as string);
 
   if (!savedSession) {
-		console.error(`No session for token ${token}`);
-		c.status(500);
-		return c.json({});
+    throw new HTTPException(500, { message: `No session for token ${token}` });
   }
 
-  console.log(savedSession);
-
   if (!savedSession.currentBasketId || !savedSession.bookletId) {
-		console.error(`currentBasketId and bookletId must be set on session for token ${token}`);
-		c.status(500);
-		return c.json({});
+    throw new HTTPException(500, { message: `currentBasketId and bookletId must be set on session for token ${token}` });
   }
 
   // Get the current session. The user will have created one to get this far and we need to clear

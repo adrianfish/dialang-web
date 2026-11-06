@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getSession } from "../utils/utils.ts";
 import { storeSavedSession } from "../data-capture/data-capture.ts";
 import { SessionDO } from "../session-do.ts";
@@ -11,9 +12,7 @@ export async function saveSession(
 
   const session: SessionDO | null = getSession(c);
   if (!session) {
-		console.error("Failed to get session id");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "Failed to get session" });
   }
 
   const sessionData: DialangSession = await session.getSessionData();
@@ -23,8 +22,6 @@ export async function saveSession(
   if (await storeSavedSession(savedSession)) {
     return c.json({ token });
   } else  {
-		console.error("Failed to save session");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "Failed to save session" });
   }
 }

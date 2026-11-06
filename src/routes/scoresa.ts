@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getSession, getSessionId } from "../utils/utils.ts";
 import { getSaPPEAndLevel } from "../scoring/scoring.ts";
 import { SessionDO } from "../session-do.ts";
@@ -11,9 +12,7 @@ export async function scoreSA(c: Context): Promise<Response> {
 
   const session: SessionDO | null = getSession(c);
   if (!session) {
-    console.error("Failed to get session");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "Failed to get session" });
   }
 
   const body = await c.req.json();
@@ -27,9 +26,7 @@ export async function scoreSA(c: Context): Promise<Response> {
   const [saPPE, saLevel, err] = await getSaPPEAndLevel((await session.getSkill()) as string, responses);
 
 	if (err) {
-		console.error(err);
-    c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: err as string});
 	}
 
   /* @ts-ignore */

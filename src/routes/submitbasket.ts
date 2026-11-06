@@ -1,3 +1,4 @@
+import { HTTPException } from "hono/http-exception";
 import { getSession } from "../utils/utils.ts";
 import { getBaskets, getItemAnswers } from "../data/data.ts";
 import { SessionDO } from "../session-do.ts";
@@ -15,37 +16,26 @@ export async function submitBasket(
 
   const session: SessionDO | null = getSession(c);
   if (!session) {
-		console.error("Failed to get session id");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "Failed to get session" });
   }
 
   const submitBasketRequirements: SubmitBasketRequirements = await session.getSubmitBasketRequirements();
 
 	if (!submitBasketRequirements.tl || !submitBasketRequirements.skill || !submitBasketRequirements.currentBasketId || !submitBasketRequirements.bookletId || submitBasketRequirements.currentBasketNumber === undefined) {
-		console.error("None of the test language, skill, current basket id, booklet id or current basket number were set in the session. Returning 500 ...");
-		c.status(500);
-		return c.html("");
+    throw new HTTPException(500, { message: "None of the test language, skill, current basket id, booklet id or current basket number were set in the session." });
 	}
 
   const body = await c.req.parseBody();
 
   const basketType: string = body["basketType"] as string;
   if (!basketType) {
-    console.warn("No basketType supplied. Returning 400 (Bad Request) ...")
-    c.status(400);
-    return c.html("");
+    throw new HTTPException(400, { message: "No basketType supplied." })
   }
 
   const positionInBasketSorter = (a: ScoredItem, b: ScoredItem) => a.positionInBasket - b.positionInBasket;
 
   const numScoredItems: number = submitBasketRequirements.itemScores?.length || 0;
   const currentBasketId: number = submitBasketRequirements.currentBasketId;
-
-  console.debug(`basketType: ${basketType}`);
-  console.debug(`currentBasketId: ${currentBasketId}`);
-  console.debug(`currentBasketNumber: ${submitBasketRequirements.currentBasketNumber}`);
-  console.debug(`scored item list length: ${numScoredItems}`);
 
   const returnMap: Record<string, string | number | ScoredBasket | boolean> = {};
 
@@ -55,15 +45,11 @@ export async function submitBasket(
     case "mcq": {
       const itemId: number = parseInt(body["itemId"] as string);
       if (!itemId) {
-        console.error("Invalid or missing item id. Returning 400 (Bad Request) ...")
-        c.status(400);
-        return c.html("");
+        throw new HTTPException(400, { message: "Invalid or missing item id." })
       }
       const answerId: number = parseInt(body["response"] as string);
       if (!answerId) {
-        console.warn("No response supplied. Returning 400 (Bad Request) ...")
-        c.status(400);
-        return c.html("");
+        throw new HTTPException(400, { message: "No response supplied." })
       }
 
       const itemResult: ItemResult = await getScoredIdResponseItem(itemId, answerId);
@@ -73,14 +59,11 @@ export async function submitBasket(
         scoredItem.positionInBasket = 1;
         scoredItem.responseId = answerId;
         scoredItem.positionInTest = numScoredItems + 1;
-        console.debug(`Item position in test: ${scoredItem.positionInTest}`);
 
         scoredItem.answers = await getItemAnswers(itemId);
 
         if (!scoredItem.answers?.length) {
-          console.warn(`No answers for item ${itemId}. Returning 400 (Bad Request) ...`);
-          c.status(400);
-          return c.html("");
+          throw new HTTPException(400, { message: `No answers for item ${itemId}.` });
         }
 
         scoredItemList.push(scoredItem);
@@ -89,9 +72,7 @@ export async function submitBasket(
         /* @ts-ignore */
         await storeSingleIdResponse((await session.getPassId()) as string, scoredItem);
       } else {
-        console.error(`Failed to get scored item for itemId ${itemId} and responseId ${answerId}`);
-        c.status(500);
-        return c.html("");
+        throw new HTTPException(500, { message: `Failed to get scored item for itemId ${itemId} and responseId ${answerId}` });
       }
       break;
     }
@@ -111,22 +92,16 @@ export async function submitBasket(
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
-            console.warn(`No position supplied for item ${item.id}. Returning 400 (Bad Request) ...`);
-            c.status(400);
-            return c.html("");
+            throw new HTTPException(400, { message: `No position supplied for item ${item.id}.` });
           }
 
           item.basketId = currentBasketId;
           item.positionInTest = numScoredItems + item.positionInBasket;
-          console.debug(`Item position in basket: ${item.positionInBasket}`);
-          console.debug(`Item position in test: ${item.positionInTest}`);
 
           item.answers = await getItemAnswers(item.id);
 
           if (!item.answers?.length) {
-            console.warn(`No answers for item ${item.id}. Returning 400 (Bad Request) ...`);
-            c.status(400);
-            return c.html("");
+            throw new HTTPException(400, { message: `No answers for item ${item.id}.` });
           }
 
           itemsToLog.push(item);
@@ -160,12 +135,9 @@ export async function submitBasket(
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
-            console.warn(`No position supplied for item ${item.id}. Returning 400 (Bad Request) ...`);
-            c.status(400);
-            return c.html("");
+            throw new HTTPException(400, { message: `No position supplied for item ${item.id}.` });
           }
           item.positionInTest = numScoredItems + item.positionInBasket;
-          console.debug(`Item position in test: ${item.positionInTest}`);
           item.answers = await getItemAnswers(item.id);
           scoredItemList.push(item);
           itemsToLog.push(item);
@@ -200,12 +172,9 @@ export async function submitBasket(
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
-            console.warn(`No position supplied for item ${item.id}. Returning 400 (Bad Request) ...`);
-            c.status(400);
-            return c.html("");
+            throw new HTTPException(400, { message: `No position supplied for item ${item.id}.` });
           }
           item.positionInTest = numScoredItems + item.positionInBasket;
-          console.debug(`Item position in test: ${item.positionInTest}`);
           item.answers = await getItemAnswers(itemResult.item.id);
           scoredItemList.push(item);
           itemsToLog.push(item);
@@ -241,9 +210,7 @@ export async function submitBasket(
           if (position) {
             item.positionInBasket = parseInt(position);
           } else {
-            console.warn(`No position supplied for item ${item.id}. Returning 400 (Bad Request) ...`);
-            c.status(400);
-            return c.html("");
+            throw new HTTPException(400, { message: `No position supplied for item ${item.id}.` });
           }
 
           item.positionInTest = numScoredItems + item.positionInBasket;
@@ -278,14 +245,11 @@ export async function submitBasket(
   itemScores = [ ...itemScores, ...sparsifyItems(scoredItemList) ];
 
   const nextBasketNumber = submitBasketRequirements.currentBasketNumber + 1;
-  console.debug(`nextBasketNumber: ${nextBasketNumber}`);
 
   const basketIds: Array<number> | null = await getBaskets(submitBasketRequirements.bookletId);
 
   if (!basketIds) {
-    console.error(`No basket ids for booklet ${submitBasketRequirements.bookletId}`);
-    c.status(500);
-    return c.html("");
+    throw new HTTPException(500, { message: `No basket ids for booklet ${submitBasketRequirements.bookletId}` });
   }
 
   if (nextBasketNumber >= basketIds.length) {
