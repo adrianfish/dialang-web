@@ -1,4 +1,4 @@
-const url = "/api/reports/skill-distribution";
+const url = "/reports/api/skill-distribution";
 fetch(url)
 .then(r => {
   if (r.ok) {

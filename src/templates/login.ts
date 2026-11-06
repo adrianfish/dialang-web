@@ -4,7 +4,7 @@ export const login = () => `
   </head>
   <body>
     <h1>Reports Login</h1>
-    <form method="POST" action="/reportslogin">
+    <form method="POST" action="/reports/login">
       <span>Password:</span>
       <input type="password" name="password" />
       <div>

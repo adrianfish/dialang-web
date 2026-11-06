@@ -12,13 +12,8 @@ import { resumeSession } from "./src/routes/resumesession.ts";
 import { saveSession } from "./src/routes/savesession.ts";
 import { getSession } from "./src/routes/getsession.ts";
 import { deleteSession } from "./src/routes/deletesession.ts";
-import { reports } from "./src/routes/reports/reports.ts";
-import { reportsLogin } from "./src/routes/reports/reportslogin.ts";
-import { alDistribution } from "./src/routes/reports/al-distribution.ts";
-import { tlDistribution } from "./src/routes/reports/tl-distribution.ts";
-import { skillDistribution } from "./src/routes/reports/skill-distribution.ts";
+import reports from "./src/routes/reports/reports.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
-import { sessions } from "./src/routes/reports/sessions.ts";
 import { SessionDO } from "./src/session-do.ts";
 import { errorHandler, notFoundHandler } from "./src/error-handlers.ts";
 //import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
@@ -60,6 +55,11 @@ await lti
   .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiOptions);
 */
 
+app.route("/reports", reports);
+
+app.get("/content/*", content);
+app.get("/images/*", content);
+
 app.post("/api/setal", setAl);
 app.post("/api/settl", setTl);
 app.post("/api/scorevspt", scoreVspt);
@@ -68,19 +68,11 @@ app.post("/api/starttest", startTest);
 //app.post("/api/submitbasket", (c) => submitBasket(c, lti));
 app.post("/api/submitbasket", submitBasket);
 app.post("/api/resumesession", resumeSession);
-app.get("/content/*", content);
-app.get("/images/*", content);
+app.post("/api/submitquestionnaire", submitQuestionnaire);
 app.get("/api/savesession", saveSession);
 app.get("/api/deletesession", deleteSession);
 app.get("/api/session", getSession);
-app.get("/api/reports/al-distribution", alDistribution);
-app.get("/api/reports/tl-distribution", tlDistribution);
-app.get("/api/reports/skill-distribution", skillDistribution);
-app.post("/api/reports/sessions", sessions);
-app.post("/api/submitquestionnaire", submitQuestionnaire);
-const reportsSecret: string | undefined = env.REPORTS_SECRET;
-app.on([ "GET", "POST" ], "/reportslogin", (c) => reportsLogin(c, reportsSecret));
-app.get("/reports/:report?", reports);
+
 app.onError(errorHandler);
 app.notFound(notFoundHandler);
 //app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));

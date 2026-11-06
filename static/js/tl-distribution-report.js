@@ -1,4 +1,4 @@
-const url = "/api/reports/tl-distribution";
+const url = "/reports/api/tl-distribution";
 fetch(url)
 .then(r => {
   if (r.ok) {

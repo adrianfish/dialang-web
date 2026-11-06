@@ -26,6 +26,5 @@ export async function sessions(
   }
 
   const sessions: Array<TestSession> = await getTestSessions(fromMillis, toMillis, completed);
-  console.log(sessions);
   return c.json({ label: `Sessions from ${from ? from : "the start of time"} to ${to ? to : "now"}`, sessions });
 }
