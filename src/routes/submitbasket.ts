@@ -2,7 +2,7 @@ import { HTTPException } from "hono/http-exception";
 import { getSession } from "../utils/utils.ts";
 import { getBaskets, getItemAnswers } from "../data/data.ts";
 import { SessionDO } from "../session-do.ts";
-//import { LTIKit, Score } from "@adrianfish/lti-kit";
+import { LTIKit, Score } from "lti-kit";
 import { getItemGrade, getScoredIdResponseItem, getScoredTextResponseItem } from "../scoring/scoring.ts";
 import { storeMultipleIdResponses, storeMultipleTextualResponses, storeSingleIdResponse, storeTestResult } from "../data-capture/data-capture.ts";
 
@@ -11,7 +11,7 @@ import type { CurrentBasketData, ItemResult, ItemScore, ScoredBasket, ScoredItem
 
 export async function submitBasket(
   c: Context,
-  //lti: LTIKit,
+  lti: LTIKit,
 ): Promise<Response> {
 
   const session: SessionDO | null = getSession(c);
@@ -258,10 +258,9 @@ export async function submitBasket(
       = await getItemGrade(submitBasketRequirements.tl, submitBasketRequirements.skill, submitBasketRequirements.bookletId, itemScores);
 
     // If we're in an LTI session, post the score.
-    /*
-    if (session.isLTI) {
+    if (await session.getIsLTI()) {
       const ltik: string = body["ltik"] as string;
-      const userId = session.user;
+      const userId: string | undefined = await session.getUser();
 
       if (ltik && userId) {
         const score: Score = {
@@ -277,7 +276,6 @@ export async function submitBasket(
         console.warn("We're in an LTI session, but the ltik or userId were not supplied. Score not posted");
       }
     }
-    */
 
     const testResult: TestResult = {
       itemRawScore: rawScore as number,

@@ -16,11 +16,12 @@ import reports from "./src/routes/reports/reports.ts";
 import { submitQuestionnaire } from "./src/routes/submitquestionnaire.ts";
 import { SessionDO } from "./src/session-do.ts";
 import { errorHandler, notFoundHandler } from "./src/error-handlers.ts";
-//import { deepLinkingHandler } from "./src/lti-handlers/deep-linking.ts";
-//import { launchHandler } from "./src/lti-handlers/launch.ts";
-//import { LTIKit, DEEPLINKING } from "@adrianfish/lti-kit";
-//import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
+import { deepLinkingHandler } from "./src/lti/deep-linking.ts";
+import { launchHandler } from "./src/lti/launch.ts";
+import { D1LTIStorage, DEEPLINKING, LTIKit } from "lti-kit";
+import { handleBuildDeepLinks } from "./src/routes/handle-build-deep-links.ts";
 
+import type { LTIStorage } from "lti-kit";
 import type { Env } from "./src/session-do.ts";
 
 /* @ts-ignore */
@@ -31,11 +32,9 @@ const hostname: string = env.HOSTNAME || "adrian-dialang.ngrok.app";
 /* @ts-ignore */
 const port: number = parseInt(env.PORT || "8787");
 
-/*
 const ltiSecret: string | undefined = env.LTI_SECRET;
 if (!ltiSecret) {
   console.error("No LTI_SECRET defined as an environment variable. Exiting ...");
-  exit(1);
 }
 
 const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
@@ -49,11 +48,12 @@ const ltiOptions = {
 
 const lti = new LTIKit();
 
+const ltiStorage: LTIStorage = new D1LTIStorage(env.DIALANG_DATA_CAPTURE);
+
 await lti
   .onLaunch(launchHandler)
   .onDeepLinking(deepLinkingHandler)
-  .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiOptions);
-*/
+  .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiStorage, ltiOptions);
 
 app.route("/reports", reports);
 
@@ -65,8 +65,8 @@ app.post("/api/settl", setTl);
 app.post("/api/scorevspt", scoreVspt);
 app.post("/api/scoresa", scoreSA);
 app.post("/api/starttest", startTest);
-//app.post("/api/submitbasket", (c) => submitBasket(c, lti));
-app.post("/api/submitbasket", submitBasket);
+app.post("/api/submitbasket", (c) => submitBasket(c, lti));
+//app.post("/api/submitbasket", submitBasket);
 app.post("/api/resumesession", resumeSession);
 app.post("/api/submitquestionnaire", submitQuestionnaire);
 app.get("/api/savesession", saveSession);
@@ -75,9 +75,9 @@ app.get("/api/session", getSession);
 
 app.onError(errorHandler);
 app.notFound(notFoundHandler);
-//app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
+app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
 
-//app.route(ltiOptions.ltiRoute, lti.handler());
+app.route(ltiOptions.ltiRoute, lti.handler());
 
 /* @ts-ignore */
 app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));

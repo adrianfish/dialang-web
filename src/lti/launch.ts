@@ -4,7 +4,7 @@ import { storeAdminLanguage, storeTestLanguageAndSkill } from "../data-capture/d
 import { SessionDO } from "../session-do.ts";
 
 import type { Context } from "hono";
-import type { LTIContext, LTIToken } from "@adrianfish/lti-kit";
+import type { LTIContext, LTIToken } from "lti-kit";
 import type { ALData, DialangSession } from "../types.ts";
 
 export async function launchHandler(c: Context, ltiContext: LTIContext): Promise<Response> {

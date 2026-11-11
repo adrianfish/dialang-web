@@ -59,6 +59,14 @@ export class SessionDO extends DurableObject<Env> {
     return this.ctx.storage.get("skill");
   }
 
+  async getIsLTI(): Promise<string | undefined> {
+    return this.ctx.storage.get("isLTI");
+  }
+
+  async getUser(): Promise<string | undefined> {
+    return this.ctx.storage.get("user");
+  }
+
   async getStartTestRequirements(): Promise<StartTestRequirements> {
 
     const keys: Array<string> = ["tl", "skill", "vsptSubmitted", "saSubmitted", "vsptZScore", "saPPE", "scoredItems"];

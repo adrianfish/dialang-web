@@ -24,7 +24,7 @@ export async function startTest(
 
 	const bookletId = await calculateBookletId(startTestRequirements);
 
-  await storeBookletId(await session.getPassId(), bookletId);
+  await storeBookletId((await session.getPassId()) as string, bookletId);
 
 	const bookletLength: number | null = await getBookletLength(bookletId);
   if (!bookletLength) {

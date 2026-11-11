@@ -1,8 +1,8 @@
-import { LTIKit } from "@adrianfish/lti-kit";
+import { LTIKit } from "lti-kit";
 import { getLanguageName, getSkillName } from "../data/data.ts";
 
 import type { Context } from "hono";
-import type { ContentItem } from "@adrianfish/lti-kit";
+import type { ContentItem } from "lti-kit";
 
 export async function handleBuildDeepLinks(
   c: Context,
