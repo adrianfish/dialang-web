@@ -32,29 +32,6 @@ const hostname: string = env.HOSTNAME || "adrian-dialang.ngrok.app";
 /* @ts-ignore */
 const port: number = parseInt(env.PORT || "8787");
 
-const ltiSecret: string | undefined = env.LTI_SECRET;
-if (!ltiSecret) {
-  console.error("No LTI_SECRET defined as an environment variable. Exiting ...");
-}
-
-const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
-const ltiLogoUri: string = `https://${hostname}/static/images/large_logo.png`;
-
-const ltiOptions = {
-  ltiRoute: "/lti",
-  debug: false,
-  services: [ DEEPLINKING ],
-};
-
-const lti = new LTIKit();
-
-const ltiStorage: LTIStorage = new D1LTIStorage(env.DIALANG_DATA_CAPTURE);
-
-await lti
-  .onLaunch(launchHandler)
-  .onDeepLinking(deepLinkingHandler)
-  .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiStorage, ltiOptions);
-
 app.route("/reports", reports);
 
 app.get("/content/*", content);
@@ -66,18 +43,43 @@ app.post("/api/scorevspt", scoreVspt);
 app.post("/api/scoresa", scoreSA);
 app.post("/api/starttest", startTest);
 app.post("/api/submitbasket", (c) => submitBasket(c, lti));
-//app.post("/api/submitbasket", submitBasket);
 app.post("/api/resumesession", resumeSession);
 app.post("/api/submitquestionnaire", submitQuestionnaire);
+
 app.get("/api/savesession", saveSession);
 app.get("/api/deletesession", deleteSession);
 app.get("/api/session", getSession);
 
 app.onError(errorHandler);
 app.notFound(notFoundHandler);
-app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
 
-app.route(ltiOptions.ltiRoute, lti.handler());
+const ltiSecret: string | undefined = env.LTI_SECRET;
+
+if (ltiSecret) {
+  console.info("LTI_SECRET supplied. Enabling LTI ...");
+  const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
+  const ltiLogoUri: string = `https://${hostname}/static/images/large_logo.png`;
+
+  const ltiOptions = {
+    ltiRoute: "/lti",
+    debug: false,
+    services: [ DEEPLINKING ],
+  };
+
+  const lti = new LTIKit();
+
+  const ltiStorage: LTIStorage = new D1LTIStorage(env.DIALANG_DATA_CAPTURE);
+
+  await lti
+    .onLaunch(launchHandler)
+    .onDeepLinking(deepLinkingHandler)
+    .setup(hostname, ltiSecret, "Dialang", ltiDescription, ltiLogoUri, ltiStorage, ltiOptions);
+
+  app.post("/api/builddeeplinks", (c) => handleBuildDeepLinks(c, lti));
+  app.route(ltiOptions.ltiRoute, lti.handler());
+} else {
+  console.info("No LTI_SECRET supplied. LTI will not be enabled.");
+}
 
 /* @ts-ignore */
 app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));

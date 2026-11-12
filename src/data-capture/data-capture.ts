@@ -11,7 +11,7 @@ import type { ALData,
 
 export async function storeAdminLanguage(sessionId: string, alData: ALData): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare(`
+  return (await env.DIALANG_RESULTS.prepare(`
     INSERT INTO sessions (session_id, al, started, ip_address, referrer)
       VALUES(?, ?, ?, ?, ?)
   `)
@@ -21,7 +21,7 @@ export async function storeAdminLanguage(sessionId: string, alData: ALData): Pro
 
 export async function storeTestLanguageAndSkill(passId: string, sessionId: string, tl: string, skill: string): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare(`
+  return (await env.DIALANG_RESULTS.prepare(`
     INSERT INTO passes (pass_id, session_id, tl, skill, started)
       VALUES(?, ?, ?, ?, ?)
   `)
@@ -31,7 +31,7 @@ export async function storeTestLanguageAndSkill(passId: string, sessionId: strin
 
 export async function storeVSPTResult(passId: string, vsptData: VSPTData): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare(`
+  return (await env.DIALANG_RESULTS.prepare(`
     UPDATE passes SET
       vspt_zscore = ?,
       vspt_mearascore = ?,
@@ -44,18 +44,18 @@ export async function storeVSPTResult(passId: string, vsptData: VSPTData): Promi
 
 export async function storeVSPTResponses(passId: string, responses: Record<string, boolean>): Promise<void> {
 
-  const statement = env.DIALANG_DATA_CAPTURE.prepare("INSERT INTO vspt_responses VALUES(?, ?, ?)");
+  const statement = env.DIALANG_RESULTS.prepare("INSERT INTO vspt_responses VALUES(?, ?, ?)");
 
   const statements = Object.entries(responses).map(([ wordId, response ]) => {
     return statement.bind(passId, wordId, response);
   });
 
-  await env.DIALANG_DATA_CAPTURE.batch(statements);
+  await env.DIALANG_RESULTS.batch(statements);
 }
 
 export async function storeSAResult(passId: string, saData: SAData): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare(`
+  return (await env.DIALANG_RESULTS.prepare(`
     UPDATE passes SET
       sa_ppe = ?,
       sa_level = ?
@@ -67,25 +67,25 @@ export async function storeSAResult(passId: string, saData: SAData): Promise<boo
 
 export async function storeBookletId(passId: string, bookletId: number): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare("UPDATE passes SET booklet_id = ? WHERE pass_id = ?")
+  return (await env.DIALANG_RESULTS.prepare("UPDATE passes SET booklet_id = ? WHERE pass_id = ?")
   .bind(bookletId, passId)
   .run()).success;
 }
 
 export async function storeSAResponses(passId: string, responses: Record<string, boolean>): Promise<void> {
 
-  const statement = env.DIALANG_DATA_CAPTURE.prepare("INSERT INTO sa_responses VALUES(?, ?, ?)");
+  const statement = env.DIALANG_RESULTS.prepare("INSERT INTO sa_responses VALUES(?, ?, ?)");
 
   const statements = Object.entries(responses).map(([ statementId, response ]) => {
     return statement.bind(passId, statementId, response);
   });
 
-  await env.DIALANG_DATA_CAPTURE.batch(statements);
+  await env.DIALANG_RESULTS.batch(statements);
 }
 
 export async function storeSingleIdResponse(passId: string, item: ScoredItem): Promise<void> {
 
-  await env.DIALANG_DATA_CAPTURE.prepare(`
+  await env.DIALANG_RESULTS.prepare(`
     INSERT INTO item_responses 
       (pass_id, basket_id, item_id, answer_id, score, correct, pass_order)
       VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -102,7 +102,7 @@ export async function storeSingleIdResponse(passId: string, item: ScoredItem): P
 
 export async function storeMultipleIdResponses(passId: string, items: Array<ScoredItem>): Promise<void> {
 
-  const statement = env.DIALANG_DATA_CAPTURE.prepare(`
+  const statement = env.DIALANG_RESULTS.prepare(`
     INSERT INTO item_responses 
       (pass_id, basket_id, item_id, answer_id, score, correct, pass_order)
       VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -119,12 +119,12 @@ export async function storeMultipleIdResponses(passId: string, items: Array<Scor
                           item.positionInTest);
   });
 
-  await env.DIALANG_DATA_CAPTURE.batch(statements);
+  await env.DIALANG_RESULTS.batch(statements);
 }
 
 export async function storeMultipleTextualResponses(passId: string, items: Array<ScoredItem>): Promise<void> {
 
-  const statement = env.DIALANG_DATA_CAPTURE.prepare(`
+  const statement = env.DIALANG_RESULTS.prepare(`
     INSERT INTO item_responses 
       (pass_id, basket_id, item_id, answer_text, score, correct, pass_order)
       VALUES (?, ?, ?, ?, ?, ?, ?)
@@ -141,12 +141,12 @@ export async function storeMultipleTextualResponses(passId: string, items: Array
                           item.positionInTest);
   });
 
-  await env.DIALANG_DATA_CAPTURE.batch(statements);
+  await env.DIALANG_RESULTS.batch(statements);
 }
 
 export async function storeTestResult(passId: string, testResult: TestResult): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare(`
+  return (await env.DIALANG_RESULTS.prepare(`
     UPDATE passes SET
       item_raw_score = ?,
       item_grade = ?,
@@ -160,14 +160,14 @@ export async function storeTestResult(passId: string, testResult: TestResult): P
 
 export async function storeSavedSession(savedSession: SavedDialangSession): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare("INSERT INTO saved_sessions VALUES (?, ?)")
+  return (await env.DIALANG_RESULTS.prepare("INSERT INTO saved_sessions VALUES (?, ?)")
     .bind(savedSession.saveToken, JSON.stringify(savedSession))
     .run()).success;
 }
 
 export async function getSavedSession(token: string): Promise<SavedDialangSession | null> {
 
-  const result = await env.DIALANG_DATA_CAPTURE.prepare(`
+  const result = await env.DIALANG_RESULTS.prepare(`
     SELECT saved_json
       FROM saved_sessions
         WHERE token = ?`)
@@ -185,7 +185,7 @@ export async function getSavedSession(token: string): Promise<SavedDialangSessio
 
 export async function deleteSavedSession(token: string): Promise<boolean> {
 
-  return (await env.DIALANG_DATA_CAPTURE.prepare("DELETE FROM saved_sessions WHERE token = ?")
+  return (await env.DIALANG_RESULTS.prepare("DELETE FROM saved_sessions WHERE token = ?")
     .bind(token).run()).success;
 }
 
@@ -195,7 +195,7 @@ export async function getAllTestSessions(): Promise<Array<TestSession>> {
 
 export async function getTestSession(sessionId: string): Promise<TestSession | null> {
 
-  const passes = await env.DIALANG_DATA_CAPTURE.prepare(`
+  const passes = await env.DIALANG_RESULTS.prepare(`
     SELECT * FROM passes WHERE session_id = ?
   `).bind(sessionId)
   .run();
@@ -206,7 +206,7 @@ export async function getTestSession(sessionId: string): Promise<TestSession | n
 
   const pass = passes.results[0];
 
-  const sessions = await env.DIALANG_DATA_CAPTURE.prepare("SELECT * FROM sessions WHERE session_id = ?")
+  const sessions = await env.DIALANG_RESULTS.prepare("SELECT * FROM sessions WHERE session_id = ?")
   .bind(pass.session_id)
   .run();
 
@@ -219,7 +219,7 @@ export async function getTestSession(sessionId: string): Promise<TestSession | n
 
 export async function getTestSessions(fromMillis: number, toMillis: number, completedOnly: boolean): Promise<Array<TestSession>> {
 
-  const passes = await env.DIALANG_DATA_CAPTURE.prepare(`
+  const passes = await env.DIALANG_RESULTS.prepare(`
     SELECT * FROM passes WHERE started >= ? AND started <= ?
     ${completedOnly ? "AND item_grade IS NOT NULL" : ""}
       ORDER BY started DESC
@@ -233,7 +233,7 @@ export async function getTestSessions(fromMillis: number, toMillis: number, comp
   const testSessions: Array<TestSession> = [];
 
   for (const pass of passes.results) {
-    const sessions = await env.DIALANG_DATA_CAPTURE.prepare("SELECT * FROM sessions WHERE session_id = ?")
+    const sessions = await env.DIALANG_RESULTS.prepare("SELECT * FROM sessions WHERE session_id = ?")
     .bind(pass.session_id)
     .run();
 
@@ -271,7 +271,7 @@ function buildTestSession(session: any, pass: any): TestSession {
 
 async function isValidSession(sessionId: string): Promise<boolean> {
 
-  const result = await env.DIALANG_DATA_CAPTURE.prepare(`
+  const result = await env.DIALANG_RESULTS.prepare(`
     SELECT count(*) AS total FROM sessions
       WHERE session_id = ?
   `)
@@ -297,7 +297,7 @@ export async function storeQuestionnaire(sessionId: string, body: Questionnaire)
     gender: body.gender === "-1" ? "n/a" : body.gender === "other" ? body.othergender : body.gender,
   };
 
-  const result = await env.DIALANG_DATA_CAPTURE.prepare(`
+  const result = await env.DIALANG_RESULTS.prepare(`
     INSERT INTO questionnaire VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
   `)
   .bind(sessionId, q.agegroup, q.gender, q.othergender, q.firstlanguage, q.nationality, q.institution, q.reason, q.accuracy, q.comments)

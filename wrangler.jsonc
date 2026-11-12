@@ -1,58 +1,49 @@
-/**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "dialang",
 	"main": "main.ts",
 	"compatibility_date": "2026-10-06",
-  // One Durable Object per test session (SQLite-backed storage).
-  "durable_objects": {
-    "bindings": [{ "name": "SESSION", "class_name": "SessionDO" }]
-  },
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "SESSION",
+				"class_name": "SessionDO"
+			}
+		]
+	},
 	"assets": {
 		"binding": "ASSETS",
 		"directory": "./static"
 	},
-  "r2_buckets": [{ "binding": "BUCKET", "bucket_name": "dialang", "remote": true }],
-  "kv_namespaces": [
-    {
-      "binding": "DIALANG_KV",
-      "id": "0ca6c8e775f140c781d9568472526b47"
-    }
-  ],
-  "d1_databases": [
-  {
-    "binding": "DIALANG_DATA_CAPTURE",
-    "database_name": "dialang-data-capture",
-    "migrations_dir": "migrations" }
-  ],
+	"r2_buckets": [
+		{
+			"binding": "BUCKET",
+			"bucket_name": "dialang",
+			"remote": true
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "DIALANG_DATA",
+			"id": "0ca6c8e775f140c781d9568472526b47"
+		}
+	],
+	"d1_databases": [
+		{
+			"binding": "DIALANG_RESULTS",
+			"database_name": "dialang-results",
+			"migrations_dir": "migrations",
+			"database_id": "e94addf1-2c44-4d29-9d9d-88bd47fbb728"
+		}
+	],
 	"observability": {
 		"enabled": true
 	},
-	"upload_source_maps": true
-	/**
-	 * Smart Placement
-	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
-	 */
-	// "placement": {  "mode": "smart" }
-	/**
-	 * Bindings
-	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
-	 * databases, object storage, AI inference, real-time communication and more.
-	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
-	 */
-	/**
-	 * Environment Variables
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
-	 * Note: Use secrets to store sensitive data.
-	 * https://developers.cloudflare.com/workers/configuration/secrets/
-	 */
-	// "vars": {  "MY_VARIABLE": "production_value" }
-	/**
-	 * Service Bindings (communicate between multiple Workers)
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
-	 */
-	// "services": [  {   "binding": "MY_SERVICE",   "service": "my-service"  } ]
+	"upload_source_maps": true,
+	"exports": {
+		"SessionDO": {
+			"type": "durable-object",
+			"storage": "sqlite"
+		}
+	}
 }

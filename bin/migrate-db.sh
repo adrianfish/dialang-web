@@ -6,4 +6,4 @@ else
   type=$1
 fi
 
-npx wrangler d1 migrations apply DIALANG_DATA_CAPTURE ${type}
+npx wrangler d1 migrations apply DIALANG_RESULTS ${type}
