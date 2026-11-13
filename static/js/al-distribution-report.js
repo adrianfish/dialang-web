@@ -34,4 +34,4 @@ fetch(url)
   );
 
 })
-.catch(error => log.error(error.message));
+.catch(error => console.error(error.message));

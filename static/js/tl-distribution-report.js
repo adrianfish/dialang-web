@@ -4,7 +4,7 @@ fetch(url)
   if (r.ok) {
     return r.json();
   }
-  throw new Error(`Failed to get al distribution data from ${url}: ${r.status}`);
+  throw new Error(`Failed to get tl distribution data from ${url}: ${r.status}`);
 })
 .then(data => {
 
@@ -34,4 +34,4 @@ fetch(url)
   );
 
 })
-.catch(error => log.error(error.message));
+.catch(error => console.error(error.message));
