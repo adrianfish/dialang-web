@@ -19,8 +19,8 @@ export interface Env {
   SESSION: DurableObjectNamespace<SessionDO>;
 }
 
-//const ttl = 1000 * 60 * 2;
-const ttl = 1000 * 60 * 60 * 4;
+const ttl = 1000 * 60 * 2;
+//const ttl = 1000 * 60 * 60 * 4;
 
 export class SessionDO extends DurableObject<Env> {
 
