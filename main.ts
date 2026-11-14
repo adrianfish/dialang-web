@@ -42,7 +42,6 @@ app.post("/api/settl", setTl);
 app.post("/api/scorevspt", scoreVspt);
 app.post("/api/scoresa", scoreSA);
 app.post("/api/starttest", startTest);
-app.post("/api/submitbasket", (c) => submitBasket(c, lti));
 app.post("/api/resumesession", resumeSession);
 app.post("/api/submitquestionnaire", submitQuestionnaire);
 
@@ -55,6 +54,7 @@ app.notFound(notFoundHandler);
 
 const ltiSecret: string | undefined = env.LTI_SECRET;
 
+let lti;
 if (ltiSecret) {
   console.info("LTI_SECRET supplied. Enabling LTI ...");
   const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
@@ -66,7 +66,7 @@ if (ltiSecret) {
     services: [ DEEPLINKING ],
   };
 
-  const lti = new LTIKit();
+  lti = new LTIKit();
 
   const ltiStorage: LTIStorage = new D1LTIStorage(env.DIALANG_DATA_CAPTURE);
 
@@ -80,6 +80,8 @@ if (ltiSecret) {
 } else {
   console.info("No LTI_SECRET supplied. LTI will not be enabled.");
 }
+
+app.post("/api/submitbasket", (c) => submitBasket(c, lti));
 
 /* @ts-ignore */
 app.get("*", (c) => c.env.ASSETS.fetch(c.req.raw));

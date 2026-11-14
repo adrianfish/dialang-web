@@ -214,13 +214,17 @@ export async function getTestSession(sessionId: string): Promise<TestSession | n
     return null;
   }
 
-  return buildTestSession(sessions.results[0], pass);
+  pass.al = sessions.results[0].al;
+  pass.ip_address = sessions.results[0].ip_address;
+  pass.referrer = sessions.results[0].referrer;
+
+  return buildTestSession(pass);
 }
 
 export async function getTestSessions(fromMillis: number, toMillis: number, completedOnly: boolean): Promise<Array<TestSession>> {
 
   const passes = await env.DIALANG_RESULTS.prepare(`
-    SELECT * FROM passes WHERE started >= ? AND started <= ?
+    SELECT s.al, s.ip_address, s.referrer, p.* FROM passes p INNER JOIN sessions s ON s.session_id = p.session_id WHERE p.started >= ? AND p.started <= ?
     ${completedOnly ? "AND item_grade IS NOT NULL" : ""}
       ORDER BY started DESC
   `).bind(fromMillis, toMillis)
@@ -233,28 +237,19 @@ export async function getTestSessions(fromMillis: number, toMillis: number, comp
   const testSessions: Array<TestSession> = [];
 
   for (const pass of passes.results) {
-    const sessions = await env.DIALANG_RESULTS.prepare("SELECT * FROM sessions WHERE session_id = ?")
-    .bind(pass.session_id)
-    .run();
-
-    if (!sessions.success || !sessions.results.length) {
-      console.warn(`No session for pass.session_id = ${pass.session_id}. Skipping this pass ...`);
-      continue;
-    }
-
-    testSessions.push(buildTestSession(sessions.results[0], pass));
+    testSessions.push(buildTestSession(pass));
   }
 
   return testSessions;
 }
 
-function buildTestSession(session: any, pass: any): TestSession {
+function buildTestSession(pass: any): TestSession {
 
   return {
     sessionId: pass.session_id,
-    ipAddress: session.ip_address,
-    referrer: session.referrer,
-    al: session.al,
+    ipAddress: pass.ip_address,
+    referrer: pass.referrer,
+    al: pass.al,
     tl: pass.tl,
     skill: pass.skill,
     started: pass.started,
@@ -303,7 +298,7 @@ export async function storeQuestionnaire(sessionId: string, body: Questionnaire)
   .bind(sessionId, q.agegroup, q.gender, q.othergender, q.firstlanguage, q.nationality, q.institution, q.reason, q.accuracy, q.comments)
   .run();
 
-  if (!result.success || result.meta.rows_written !== 1) {
+  if (result.meta.changes < 1) {
     console.warn("Failed to store questionnaire");
     return false;
   }
