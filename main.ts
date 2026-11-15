@@ -54,7 +54,7 @@ app.notFound(notFoundHandler);
 
 const ltiSecret: string | undefined = env.LTI_SECRET;
 
-let lti;
+let lti: LTIKit;
 if (ltiSecret) {
   console.info("LTI_SECRET supplied. Enabling LTI ...");
   const ltiDescription: string = "Test your language proficiency against the Common European Framework of Reference for Languages (CEFR)."
@@ -68,7 +68,7 @@ if (ltiSecret) {
 
   lti = new LTIKit();
 
-  const ltiStorage: LTIStorage = new D1LTIStorage(env.DIALANG_DATA_CAPTURE);
+  const ltiStorage: LTIStorage = new D1LTIStorage(env.DIALANG_RESULTS);
 
   await lti
     .onLaunch(launchHandler)

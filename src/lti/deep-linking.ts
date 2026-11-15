@@ -1,3 +1,5 @@
+import { readFileSync } from "node:fs";
+
 import type { Context } from "hono";
 import type { LTIContext } from "lti-kit";
 
@@ -11,7 +13,7 @@ export const deepLinkingHandler = async (c: Context, ltiContext: LTIContext): Pr
 
   const locale = token.userInfo.locale;
 
-  let menu = await Deno.readTextFile(`./static/content/deep-linking-menu/${locale}.html`);
+  let menu: string = readFileSync(`./static/content/deep-linking-menu/${locale}.html`, "utf-8");
   menu = menu.replace("${platformCode}", platformCode);
   menu = menu.replace("${contextId}", contextId);
   menu = menu.replace("${user}", user);
