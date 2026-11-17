@@ -1,5 +1,5 @@
-import { sessionTableTemplate } from "../templates/report-templates.js";
-import { sessionTemplate } from "../templates/report-templates.js";
+import { sessionTableTemplate } from "../../templates/report-templates.js";
+import { sessionTemplate } from "../../templates/report-templates.js";
 import { render } from 'https://esm.run/lit-html@1';
 
 document.getElementById("display-sessions-button").addEventListener("click", e => {

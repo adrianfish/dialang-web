@@ -1,0 +1,13 @@
+body {
+    font-family: arial,sans-serif;
+}
+
+#dashboard-panels {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+div.chart {
+  width: 400px;
+}
