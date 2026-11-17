@@ -27,7 +27,7 @@ export const sessionReportTemplate = `
     <button type="button" id="display-sessions-button">Display Sessions</button>
     <div id="output">
     </div>
-    <script type="module" src="/js/session-report.js"></script>
+    <script type="module" src="/js/reports/session-report.js"></script>
   </body>
 </html>
 `;

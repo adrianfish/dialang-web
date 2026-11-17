@@ -6,7 +6,7 @@ export const skillDistributionReportTemplate = `
   <body>
     <h1>Distribution by Skill</h1>
     <div style="width: 800px;"><canvas id="distribution"></canvas></div>
-    <script src="/js/skill-distribution-report.js"></script>
+    <script src="/js/reports/skill-distribution.js"></script>
   </body>
 </html>
 `;

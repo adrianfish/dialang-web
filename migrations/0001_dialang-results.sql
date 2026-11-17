@@ -26,6 +26,10 @@ CREATE TABLE IF NOT EXISTS passes (
   ended           INTEGER
 );
 
+CREATE INDEX idx_passes_vspt_level ON passes(vspt_level) WHERE vspt_level IS NOT NULL;
+CREATE INDEX idx_passes_sa_level ON passes(sa_level) WHERE sa_level IS NOT NULL;
+CREATE INDEX idx_passes_item_level ON passes(item_level) WHERE item_level IS NOT NULL;
+
 CREATE TABLE IF NOT EXISTS saved_sessions (
   token       TEXT PRIMARY KEY,
   saved_json  TEXT NOT NULL

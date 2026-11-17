@@ -6,7 +6,7 @@ export const tlDistributionReportTemplate = `
   <body>
     <h1>Distribution by Test Language</h1>
     <div style="width: 800px;"><canvas id="distribution"></canvas></div>
-    <script src="/js/tl-distribution-report.js"></script>
+    <script src="/js/reports/tl-distribution.js"></script>
   </body>
 </html>
 `;

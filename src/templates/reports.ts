@@ -8,6 +8,7 @@ export const reports = `
     <div><a href="/reports/al-distribution.html">Distribution by Administration Language</a></div>
     <div><a href="/reports/tl-distribution.html">Distribution by Test Language</a></div>
     <div><a href="/reports/skill-distribution.html">Distribution by Skill</a></div>
+    <div><a href="/reports/estimation-accuracy.html">Estimation Accuracy</a></div>
   </body>
 </html>
 `;

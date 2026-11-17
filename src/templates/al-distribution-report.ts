@@ -6,7 +6,7 @@ export const alDistributionReportTemplate = `
   <body>
     <h1>Distribution by Administration Language</h1>
     <div style="width: 800px;"><canvas id="distribution"></canvas></div>
-    <script src="/js/al-distribution-report.js"></script>
+    <script src="/js/reports/al-distribution.js"></script>
   </body>
 </html>
 `;
