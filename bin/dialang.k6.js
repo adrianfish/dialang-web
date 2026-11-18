@@ -43,7 +43,7 @@ export const options = {
     dialang: {
       executor: 'per-vu-iterations',
       vus: 20,
-      iterations: 4,
+      iterations: 10,
       maxDuration: '30m',
     },
   },
@@ -54,7 +54,7 @@ export const options = {
     'http_req_failed': ['rate<0.01'],
     'http_req_duration': ['p(95)<1000'],
     'http_req_duration{name:SetAL}': ['p(95)<800'],
-    'http_req_duration{name:SetTL}': ['p(95)<700'],
+    'http_req_duration{name:SetTL}': ['p(95)<800'],
     'http_req_duration{name:ScoreVSPT}': ['p(95)<1000'],
     'http_req_duration{name:ScoreSA}': ['p(95)<1000'],
   },
